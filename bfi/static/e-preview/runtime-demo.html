@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Avatar handler · BFI</title>
+    <link rel="stylesheet" href="avatar-runtime/avatar.css" />
+    <link rel="stylesheet" href="runtime-demo.css" />
+    <script type="module" src="runtime-demo.js"></script>
+  </head>
+  <body data-theme="academic">
+    <main>
+      <a href="index.html">← Character studio</a>
+      <p class="eyebrow">SHARED AVATAR RENDERER</p>
+      <h1>A presence<br /><em>beside the work.</em></h1>
+      <p>
+        The same set-pose artwork used by the local handler and overlay. This
+        hosted preview is scripted; no model or local computer is connected.
+      </p>
+      <div class="roles">
+        <button data-role="academic">Academic</button
+        ><button data-role="engineering">Hacker</button
+        ><button data-role="business">Business</button>
+      </div>
+      <div class="layout">
+        <section class="handler">
+          <p class="eyebrow">HANDLER</p>
+          <h2 id="name">Academic</h2>
+          <label>Pose<select id="pose"></select></label>
+          <div class="actions">
+            <button id="think">Thinking</button
+            ><button id="reply">Reply cue</button
+            ><button id="show">Hide avatar</button
+            ><label><input id="motion" type="checkbox" checked /> Motion</label>
+          </div>
+          <p id="example">Ready to explore.</p>
+          <details>
+            <summary>Example handler command</summary>
+            <pre id="command"></pre>
+          </details>
+        </section>
+        <div class="desktop">
+          <span>AVATAR SURFACE · TRANSPARENT ART</span>
+          <div id="avatar"></div>
+        </div>
+      </div>
+      <p class="note">
+        The repository also contains the actual local API, tool-call
+        integration, and an optional native overlay launcher. Native Windows
+        behavior still needs a PC check. This page demonstrates presentation
+        only.
+      </p>
+    </main>
+  </body>
+</html>

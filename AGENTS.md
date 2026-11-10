@@ -81,3 +81,12 @@ motion. A universal poseable model is deferred to the board's Later research car
 do not replace the library with a generic rig. `limited-motion.html` is a focused
 Academic reading example with a fixed body and pose-local head/book/hand transforms.
 It does not approve new art or establish a reusable full-body model.
+
+The current application now uses E art through bfi/avatar.py and static/avatar/.
+There are 128 runtime entries: 74 SVG poses + 54 transparent concept cutouts, with
+source/review metadata preserved. Avatar tools are request-scoped presentation calls;
+mock mode must not claim model tool use. Chat/overlay share ephemeral state and
+matching colors. Native Qt overlay code is optional and Windows behavior is not yet
+verified. Read docs/HANDOFF.md and docs/avatar-runtime.md before continuing. Do not
+expose the local backend through the static demo or claim voice/OS control/model
+training from this integration. Rebuild the demo renderer copy with build_avatar_catalog.py.

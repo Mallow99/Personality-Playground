@@ -1,4 +1,5 @@
-"use strict";
+import { connectAvatar, avatarAPI } from "/static/avatar/avatar.js";
+("use strict");
 const $ = (id) => document.getElementById(id);
 let config;
 let current = null;
@@ -6,6 +7,10 @@ let busy = false;
 let loading = false;
 let status = null;
 let selectedProfile = "academic";
+let avatarController = null,
+  avatarCatalog = null,
+  avatarState = null,
+  requestedAvatarRole = null;
 
 function activeProfile() {
   const id =
@@ -16,11 +21,63 @@ function activeProfile() {
 }
 
 function replayAvatar() {
-  document.querySelectorAll(".character-art").forEach((art) => {
-    art.classList.remove("arriving");
-    void art.offsetWidth;
-    art.classList.add("arriving");
+  avatarController?.views.forEach((v) => v.replay());
+}
+function syncAvatarRole(profileId) {
+  if (!avatarCatalog) return;
+  const role = profileId === "companion" ? "academic" : profileId;
+  if (requestedAvatarRole === role) return;
+  requestedAvatarRole = role;
+  $("avatar-pose").replaceChildren();
+  for (const pose of avatarCatalog.poses.filter((p) => p.role === role)) {
+    const option = document.createElement("option");
+    option.value = pose.id;
+    option.textContent =
+      pose.label + (pose.source === "generated-concept" ? " · concept" : "");
+    $("avatar-pose").append(option);
+  }
+  $("avatar-pose").value = `${role}/standing`;
+  avatarAPI("", { profile: role }).catch((error) => {
+    $("avatar-connection").textContent = error.message;
+    requestedAvatarRole = null;
   });
+}
+async function startAvatar() {
+  avatarController = await connectAvatar(
+    [$("sidebar-avatar"), $("corner-art")],
+    (state, catalog, error) => {
+      if (error) {
+        $("avatar-connection").textContent = error.message;
+        return;
+      }
+      avatarState = state;
+      document.body.dataset.theme = state.profile;
+      $("corner-companion").hidden =
+        !state.visible || !$("mirror-avatar").checked;
+      $("sidebar-avatar").hidden = !$("corner-companion").hidden;
+      $("corner-companion").dataset.dock = state.dock;
+      $("toggle-corner").textContent = state.visible
+        ? "Hide avatar"
+        : "Show avatar";
+      if (requestedAvatarRole === state.profile)
+        $("avatar-pose").value = state.pose_id;
+      $("avatar-dock").value = state.dock;
+      $("avatar-size").value = state.size;
+      $("avatar-motion").checked = state.motion;
+      document.body.dataset.motion = state.motion ? "on" : "off";
+      $("avatar-connection").textContent =
+        "128 poses · shared with the separate overlay";
+    },
+  );
+  avatarCatalog = avatarController.catalog;
+  syncAvatarRole(activeProfile().id);
+}
+async function avatarChange(changes) {
+  try {
+    await avatarAPI("", changes);
+  } catch (error) {
+    showError(error);
+  }
 }
 
 async function api(path, options = {}) {
@@ -77,7 +134,8 @@ function updateControls() {
   $("profile-select").disabled = locked;
   $("allow-project").disabled = locked || !config?.tools.project_files;
   $("allow-web").disabled = locked || !config?.tools.web_search;
-  document.body.dataset.pose = busy ? "thinking" : $("avatar-pose").value;
+  $("allow-avatar").disabled = locked;
+  $("avatar-pose").disabled = locked;
   document
     .querySelectorAll(".conversation-item, [data-prompt]")
     .forEach((b) => {
@@ -130,11 +188,13 @@ function renderCharacter() {
     "Context window",
     `Up to ${config.history_pairs} recent exchanges; ${config.context_chars.toLocaleString()} character budget (not tokens)`,
   );
-  const replies = (current?.messages || []).filter(
-    (m) => m.role === "assistant",
-  );
-  $("corner-line").textContent =
-    replies.at(-1)?.content.slice(0, 220) || "Here when you need me.";
+  document
+    .querySelectorAll('img[src="/static/mark.svg"], img[data-character-mark]')
+    .forEach((img) => {
+      img.dataset.characterMark = "true";
+      img.src = `/static/e-preview/assets/${profile.id === "companion" ? "academic" : profile.id}-face.svg`;
+    });
+  syncAvatarRole(profile.id);
 }
 
 function render() {
@@ -341,6 +401,7 @@ $("chat-form").addEventListener("submit", async (event) => {
         content,
         project_tools: $("allow-project").checked,
         web_search: $("allow-web").checked,
+        avatar_tools: $("allow-avatar").checked,
       }),
     });
     $("message").value = "";
@@ -459,27 +520,25 @@ $("profile-select").addEventListener("change", async (event) => {
   refreshStatus();
 });
 $("replay-avatar").addEventListener("click", replayAvatar);
-$("avatar-pose").addEventListener("change", updateControls);
-$("avatar-motion").checked = !window.matchMedia(
-  "(prefers-reduced-motion: reduce)",
-).matches;
-document.body.dataset.motion = $("avatar-motion").checked ? "on" : "off";
-$("avatar-motion").addEventListener("change", () => {
-  document.body.dataset.motion = $("avatar-motion").checked ? "on" : "off";
-});
-const cornerArt = document.querySelector(".character-art").cloneNode(true);
-$("corner-art").append(cornerArt);
-$("toggle-corner").addEventListener("click", () => {
-  $("corner-companion").hidden = !$("corner-companion").hidden;
-  $("toggle-corner").textContent = $("corner-companion").hidden
-    ? "Show in corner"
-    : "Hide corner";
-  replayAvatar();
-});
-$("hide-corner").addEventListener("click", () => {
-  $("corner-companion").hidden = true;
-  $("toggle-corner").textContent = "Show in corner";
-});
+$("avatar-pose").addEventListener("change", () =>
+  avatarChange({ pose_id: $("avatar-pose").value }),
+);
+$("avatar-motion").addEventListener("change", () =>
+  avatarChange({ motion: $("avatar-motion").checked }),
+);
+$("avatar-dock").addEventListener("change", () =>
+  avatarChange({ dock: $("avatar-dock").value }),
+);
+$("avatar-size").addEventListener("change", () =>
+  avatarChange({ size: $("avatar-size").value }),
+);
+$("toggle-corner").addEventListener("click", () =>
+  avatarChange({ visible: !avatarState?.visible }),
+);
+$("hide-corner").addEventListener("click", () =>
+  avatarChange({ visible: false }),
+);
+addEventListener("pagehide", () => avatarController?.close());
 $("open-tools").addEventListener("click", () => $("tools-dialog").showModal());
 $("close-tools").addEventListener("click", () => $("tools-dialog").close());
 $("tool-form").addEventListener("submit", async (event) => {
@@ -511,6 +570,7 @@ async function init() {
   loading = true;
   try {
     config = await api("/config");
+    await startAvatar();
     for (const profile of config.profiles) {
       const option = node("option", "", profile.character.name);
       option.value = profile.id;
@@ -540,3 +600,9 @@ async function init() {
   }
 }
 init();
+
+$("mirror-avatar").addEventListener("change", () => {
+  $("corner-companion").hidden =
+    !$("mirror-avatar").checked || !avatarState?.visible;
+  $("sidebar-avatar").hidden = !$("corner-companion").hidden;
+});

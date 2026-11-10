@@ -269,3 +269,32 @@ movement before adding their grip adjustment. The torso, sleeves, and crossed le
 stay fixed. A timeline and strength control make the motion inspectable; the
 close-up uses the same SVG with a tighter viewport. Reduced motion disables autoplay.
 This is a pose-specific animation study, not the deferred universal rig project.
+
+## From a visual study to a handler-controlled companion
+
+The artwork is now useful without solving universal rigging. The catalog pairs a
+stable pose ID with a local SVG or transparent PNG. The 54 new images are cropped
+from their recorded cells, with label strips and near-white background removed;
+the original RGB art and full source sheets remain. This is a reproducible paper-cut
+packaging step, not another model-generated redraw.
+
+Follow a request in `bfi/main.py`: the existing generation lock starts a thinking
+cue, builds only the enabled tools, and wraps the runner with `AvatarTools` when
+avatar tools are enabled. That wrapper knows the request's character. Catalog search
+returns a few candidates; `avatar_set` validates the chosen ID and updates `AvatarHub`.
+The model does not send CSS or arbitrary image URLs. Final reply text starts a timed
+text cue. Tool names, arguments and actual results remain in saved provenance.
+
+Then read `avatar/avatar.js`: both the handler and separate overlay poll the same
+revisioned state. They render plain text captions and bundled artwork. Reading uses
+small local transforms; other poses remain whole. Colors follow the active character.
+The static hosted demo reuses the renderer with local scripted state, while the real
+local app uses API state. This distinction prevents a pretty preview from being
+mistaken for a running model or desktop-control system.
+
+Finally, `bfi/desktop.py` is an optional native host around that browser surface.
+It requests an always-on-top transparent window and can pass mouse input through
+using a tray toggle. Its dependency is separate from ordinary chat. The wrapper is
+provided for PC testing, not claimed as verified Windows behavior. See
+[the handoff](HANDOFF.md) and [runtime guide](avatar-runtime.md) for exact commands,
+state limits, evidence and next checks.

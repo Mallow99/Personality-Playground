@@ -8,7 +8,7 @@ small boundary in `bfi/tools.py`, with two ways to use it:
    and see its actual JSON result, including in mock mode.
 2. With a real function-tool-capable local model, opt in using the composer
    checkboxes for a single message. The backend can request up to three enabled
-   tool calls and then return a final reply. The checkboxes reset after the attempt.
+   tool calls and then return a final reply. Project/web checkboxes reset after the attempt; the avatar-pose preference stays enabled.
 
 The model's tool names and arguments are validated. Unknown tools, extra arguments,
 and excessive calls fail visibly. Tools supplied in source files are not automatically
@@ -65,3 +65,15 @@ one-off tool call and does not add its output to chat automatically.
 
 A Python virtual environment separates dependencies. It is not a sandbox for
 model-generated programs. A local browser preview is not a desktop-control tool.
+
+## Avatar presentation tools
+
+**Model avatar poses** enables `avatar_catalog` and `avatar_set` for a real compatible
+endpoint. This local presentation preference stays enabled between messages; project
+and web permissions still reset after each attempt. Normal thinking/reply cues work
+with this option off, and mock mode never invents model tool calls. Avatar tools share
+the existing maximum of three calls with project reads/search and record actual
+results in reply provenance. They can select bundled own-character poses and bounded
+presentation fields, never arbitrary URLs/scripts, another profile, or owner motion
+preferences. See [the avatar runtime guide](avatar-runtime.md) for the API, renderer,
+overlay and optional native launcher.

@@ -146,10 +146,13 @@ def check_browser(mock_url, unavailable_url, output, executable):
             page.locator(".provenance summary").click()
             assert profile in page.locator(".provenance").inner_text()
         page.locator("#avatar-motion").uncheck()
-        page.locator("#avatar-pose").select_option("thinking")
-        assert page.locator("body").get_attribute("data-pose") == "thinking"
-        page.locator("#toggle-corner").click()
-        assert page.locator("#corner-companion").is_visible()
+        page.locator("#avatar-pose").select_option("business/thinking")
+        page.wait_for_function(
+            '() => document.querySelector("#sidebar-avatar").dataset.pose === "business/thinking"'
+        )
+        if page.locator("#corner-companion").is_hidden():
+            page.locator("#toggle-corner").click()
+        page.wait_for_selector("#corner-companion", state="visible")
         page.locator("#hide-corner").click()
         page.locator("#open-tools").click()
         page.locator("#run-tool").click()

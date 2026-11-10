@@ -1,0 +1,227 @@
+.avatar-view {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  color: var(--avatar-dark, #58402b);
+  font:
+    13px/1.5 system-ui,
+    sans-serif;
+}
+.avatar-art {
+  width: 100%;
+  height: 230px;
+  position: relative;
+}
+.avatar-art > img,
+.avatar-art > svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.avatar-caption {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  margin: 6px 0;
+  padding: 10px 12px;
+  background: var(--avatar-paper, #ebd8af);
+  color: var(--avatar-dark, #58402b);
+  border: 1px solid var(--avatar-accent, #87a452);
+  border-radius: 10px;
+  max-height: 130px;
+  overflow: auto;
+  width: 100%;
+}
+.avatar-caption:empty {
+  display: none;
+}
+.avatar-status {
+  font-size: 10px;
+  color: var(--avatar-accent, #87a452);
+}
+.avatar-voice {
+  position: absolute;
+  right: 10%;
+  top: 22%;
+  color: var(--avatar-accent, #87a452);
+  font-size: 13px;
+  letter-spacing: 2px;
+  display: none;
+}
+.avatar-view[data-activity="speaking"] .avatar-voice {
+  display: block;
+}
+.avatar-view[data-activity="speaking"][data-motion="on"] .avatar-voice {
+  animation: avatar-talk 0.65s ease-in-out infinite alternate;
+}
+.avatar-view[data-activity="thinking"] .avatar-status::after {
+  content: " · · ·";
+}
+.avatar-view[data-size="small"] .avatar-art {
+  height: 150px;
+}
+.avatar-view[data-size="large"] .avatar-art {
+  height: 310px;
+}
+@keyframes avatar-talk {
+  from {
+    opacity: 0.35;
+    transform: scaleY(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+body[data-theme="academic"] {
+  --avatar-dark: #58402b;
+  --avatar-accent: #87a452;
+  --avatar-paper: #ebd8af;
+  --skin-bg: #f7f3ea;
+  --skin-panel: #eee9db;
+  --skin-side: #58402b;
+  --ink: #58402b;
+  --green: #87a452;
+  --line: #d8ceba;
+  --muted: #796d56;
+  color: #58402b;
+}
+body[data-theme="engineering"] {
+  --avatar-dark: #20171e;
+  --avatar-accent: #d9254c;
+  --avatar-paper: #f6a0b4;
+  --skin-bg: #20171e;
+  --skin-panel: #2b2029;
+  --skin-side: #160f15;
+  --ink: #f6a0b4;
+  --green: #d9254c;
+  --line: #523041;
+  --muted: #c4a3b4;
+  color: #f6d9e5;
+}
+body[data-theme="business"] {
+  --avatar-dark: #153b64;
+  --avatar-accent: #247dd4;
+  --avatar-paper: #b9e9fa;
+  --skin-bg: #eef8fc;
+  --skin-panel: #e1f1fa;
+  --skin-side: #153b64;
+  --ink: #153b64;
+  --green: #247dd4;
+  --line: #c4dce9;
+  --muted: #56718a;
+  color: #153b64;
+}
+body,
+main,
+.sidebar,
+.character-pane,
+.composer {
+  transition:
+    background-color 0.4s,
+    color 0.4s,
+    border-color 0.4s;
+}
+#sidebar-avatar {
+  margin: 12px 0;
+}
+#sidebar-avatar .avatar-art {
+  height: 200px;
+}
+#sidebar-avatar .avatar-caption {
+  display: none;
+}
+#corner-companion {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: 8px;
+  width: 250px;
+  z-index: 20;
+}
+#corner-companion[data-dock="bottom-left"] {
+  left: 15px;
+  right: auto;
+  top: auto;
+  bottom: 15px;
+}
+#corner-companion[data-dock="bottom-right"] {
+  left: auto;
+  right: 15px;
+  top: auto;
+  bottom: 15px;
+}
+#corner-companion[data-dock="top-left"] {
+  left: 15px;
+  right: auto;
+  top: 15px;
+  bottom: auto;
+}
+#corner-companion[data-dock="top-right"] {
+  left: auto;
+  right: 15px;
+  top: 15px;
+  bottom: auto;
+}
+#corner-companion .avatar-caption {
+  font-size: 12px;
+}
+#corner-companion .text-button {
+  background: var(--skin-panel);
+  color: inherit;
+  border-radius: 4px;
+}
+.runtime-settings {
+  display: grid;
+  gap: 8px;
+  font-size: 11px;
+}
+.runtime-settings select {
+  max-width: 100%;
+  padding: 7px;
+  font: inherit;
+}
+.overlay-link {
+  font-size: 11px;
+  text-decoration: underline;
+}
+.tool-permissions {
+  flex-wrap: wrap;
+}
+@media (max-width: 620px) {
+  #corner-companion {
+    width: 175px;
+  }
+  #corner-companion .avatar-art {
+    height: 155px;
+  }
+  #corner-companion .avatar-caption {
+    font-size: 10px;
+    max-height: 85px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .avatar-voice {
+    animation: none !important;
+  }
+  body,
+  main,
+  .sidebar,
+  .character-pane,
+  .composer {
+    transition: none;
+  }
+}
+#corner-companion {
+  pointer-events: none;
+}
+#corner-companion button,
+#corner-companion .avatar-caption {
+  pointer-events: auto;
+}
+.avatar-art > img,
+.avatar-art > svg {
+  filter: drop-shadow(0 0 1px var(--avatar-paper));
+}

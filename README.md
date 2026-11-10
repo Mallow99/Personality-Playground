@@ -23,8 +23,10 @@ make informed changes. Start with [the code walkthrough](docs/learning.md).
 - Saved conversations in SQLite, JSON export, and deletion.
 - A readable character configuration, snapshotted when a conversation begins.
 - Connection checks, understandable errors, and source information on each reply.
-- Character-specific geometric shapes, entrance animation, blinking, poses,
-  motion-off controls, an in-app corner character, and a `/concepts` studio.
+- E character artwork with 128 selectable poses, matching handler colors, an in-app
+  corner avatar, a synchronized `/overlay` surface, and model-callable visual tools.
+- An optional native overlay launcher; Windows transparency/topmost/click-through
+  behavior still needs a PC check. See [avatar setup](docs/avatar-runtime.md).
 - Optional read-only project tools and Brave web search, with a real result
   inspector and per-message opt-in for model-requested tool calls.
 - A [route to the first personality-training experiment](docs/training.md), with
@@ -34,10 +36,12 @@ make informed changes. Start with [the code walkthrough](docs/learning.md).
 and model. The app never silently switches to mock if that server fails.
 
 There is no completed personality-training experiment, computer control, code
-execution, cloud delegation, calendar access, audio, native desktop overlay, model
+execution, cloud delegation, calendar access, audio, verified native desktop behavior, model
 lifecycle management, or cross-conversation memory yet. Saved chat history is the
 first persistence layer; it is not a general memory system. Profiles are currently
 prompt configured; the weight-training goal remains explicit.
+
+For the next session, read [the handoff](docs/HANDOFF.md) and [how the avatar works](docs/avatar-runtime.md).
 
 ## Run it
 
@@ -186,7 +190,8 @@ keep the app bound to `127.0.0.1`. This is not a shared or public deployment ser
 The app does not start, load, or unload model servers. Stop the separate inference
 process to release its model; merely closing this UI does not free VRAM.
 Three profiles do not imply three simultaneously loaded models. The geometric
-corner character is inside this app, and its speaking pose produces no audio.
+avatar can be mirrored in this app or shown by the optional native host. Its reply
+cues produce no audio. Native Windows behavior remains unverified.
 
 Models, adapters, training runs, conversation data, and `.env` are ignored by Git.
 Do not commit credentials or private exports. No open-source license has been chosen

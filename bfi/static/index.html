@@ -8,7 +8,8 @@
     <link rel="icon" type="image/svg+xml" href="/static/mark.svg" />
     <link rel="stylesheet" href="/static/style.css" />
     <link rel="stylesheet" href="/static/characters.css" />
-    <script src="/static/app.js" defer></script>
+    <link rel="stylesheet" href="/static/avatar/avatar.css" />
+    <script type="module" src="/static/app.js"></script>
   </head>
   <body>
     <aside class="sidebar" aria-label="Conversation navigation">
@@ -163,6 +164,10 @@
             </div>
             <div class="tool-permissions">
               <label
+                ><input id="allow-avatar" type="checkbox" checked /> Model
+                avatar poses</label
+              >
+              <label
                 ><input type="checkbox" id="allow-project" disabled /> Project
                 files</label
               >
@@ -181,19 +186,7 @@
           <div class="section-label dark-label">
             YOUR COMPANION <span>001</span>
           </div>
-          <div class="character-art" aria-hidden="true">
-            <div class="orbit orbit-one"></div>
-            <div class="orbit orbit-two"></div>
-            <div class="character-body">
-              <div class="eyes"><i></i><i></i></div>
-              <div class="glasses"><i></i><i></i></div>
-              <div class="avatar-mouth"></div>
-            </div>
-            <div class="avatar-foot foot-left"></div>
-            <div class="avatar-foot foot-right"></div>
-            <span class="art-coordinate">BFI—001</span
-            ><span class="art-spark">✳</span>
-          </div>
+          <div id="sidebar-avatar"></div>
           <div class="character-heading">
             <h2 id="character-name">Companion</h2>
             <span class="draft-tag">DRAFT</span>
@@ -205,17 +198,43 @@
             </button>
             <label
               >Pose
-              <select id="avatar-pose" aria-label="Avatar pose">
-                <option value="attentive">Attentive</option>
-                <option value="thinking">Thinking</option>
-                <option value="speaking">Speaking</option>
-                <option value="docked">Docked</option>
-              </select></label
-            >
+              <select id="avatar-pose" aria-label="Avatar pose"></select
+            ></label>
             <label><input id="avatar-motion" type="checkbox" /> Motion</label>
             <button id="toggle-corner" class="text-button">
               Show in corner
             </button>
+          </div>
+          <div class="runtime-settings">
+            <label
+              ><input id="mirror-avatar" type="checkbox" checked /> Mirror
+              avatar in this handler</label
+            >
+            <label
+              >Screen corner
+              <select id="avatar-dock">
+                <option value="bottom-right">Bottom right</option>
+                <option value="bottom-left">Bottom left</option>
+                <option value="top-right">Top right</option>
+                <option value="top-left">Top left</option>
+              </select></label
+            >
+            <label
+              >Avatar size
+              <select id="avatar-size">
+                <option value="small">Small</option>
+                <option value="normal" selected>Normal</option>
+                <option value="large">Large</option>
+              </select></label
+            >
+            <a
+              class="overlay-link"
+              href="/overlay"
+              target="_blank"
+              rel="noopener"
+              >Open separate avatar window ↗</a
+            >
+            <small id="avatar-connection">Connecting avatar…</small>
           </div>
           <div class="character-fact">
             <span>PERSONALITY</span><strong>Still taking shape</strong
@@ -330,8 +349,6 @@
         Hide ×
       </button>
       <div id="corner-art"></div>
-      <p id="corner-line">Here when you need me.</p>
-      <small>In-app companion · text only</small>
     </div>
   </body>
 </html>

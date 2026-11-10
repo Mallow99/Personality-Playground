@@ -1,0 +1,141 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--skin-bg);
+  color: var(--ink);
+  font:
+    15px/1.6 system-ui,
+    sans-serif;
+}
+main {
+  max-width: 1040px;
+  margin: auto;
+  padding: 28px 24px 60px;
+}
+a {
+  color: inherit;
+  font-size: 12px;
+}
+h1 {
+  font:
+    normal clamp(42px, 7vw, 72px) / 1.05 Georgia,
+    serif;
+  letter-spacing: -0.03em;
+  margin: 20px 0;
+}
+h1 em {
+  color: var(--avatar-accent);
+}
+h2 {
+  font:
+    normal 35px Georgia,
+    serif;
+}
+.eyebrow,
+.note {
+  font-size: 11px;
+}
+.eyebrow {
+  letter-spacing: 0.15em;
+}
+main > p {
+  max-width: 720px;
+}
+.roles,
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 24px 0;
+}
+button,
+select {
+  padding: 10px 14px;
+  color: inherit;
+  background: var(--skin-panel);
+  border: 1px solid var(--avatar-accent);
+  font: inherit;
+  cursor: pointer;
+}
+button[aria-pressed="true"] {
+  background: var(--avatar-accent);
+  color: var(--avatar-paper);
+}
+select {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  font-size: 12px;
+}
+label {
+  font-size: 12px;
+}
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--avatar-accent);
+}
+.handler {
+  padding: 26px;
+  background: var(--skin-panel);
+  min-width: 0;
+}
+.desktop {
+  position: relative;
+  min-height: 490px;
+  background: var(--skin-bg);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.desktop > span {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+}
+#avatar {
+  max-width: 270px;
+}
+.actions button {
+  font-size: 12px;
+}
+#example {
+  font-size: 13px;
+  min-height: 40px;
+}
+pre {
+  font: 11px/1.6 monospace;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+summary {
+  font-size: 11px;
+  cursor: pointer;
+}
+.note {
+  opacity: 0.7;
+  margin-top: 24px;
+}
+@media (max-width: 650px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .desktop {
+    min-height: 400px;
+  }
+  h1 {
+    font-size: 49px;
+  }
+}
+@media (max-width: 650px) {
+  .desktop {
+    order: -1;
+    min-height: 370px;
+  }
+}

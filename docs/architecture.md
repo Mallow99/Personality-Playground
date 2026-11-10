@@ -169,3 +169,25 @@ hand-grip adjustments. `reading-limited.svg` groups complete source contours;
 SVG remains unchanged. These assets do not replace the 74-pose catalog or infer
 new anatomy. A separate module controls transforms, comparison, inspection and
 reduced motion. The MP4 is recorded from actual Chromium playback.
+
+## Handler-controlled avatar runtime
+
+`AvatarHub` owns a single process-wide presentation snapshot. Request-scoped
+`AvatarTools` adds bounded catalog lookup and own-character visual updates to the
+existing backend tool loop; provenance records actual calls. Thinking/reply/error
+lifecycle states work without model-directed tools, including honestly labeled mock
+mode. Owner visibility/motion controls remain available while a reply is pending.
+Presentation state is ephemeral; no conversation schema migration is needed.
+
+The runtime catalog contains 74 existing SVGs and 54 source-preserving transparent
+cutouts. Chat now uses this art instead of the original CSS face mascot. A shared
+renderer synchronizes chat and a separate loopback `/overlay` surface through a
+500 ms poll. The optional Qt native host uses that surface and requests transparency,
+topmost placement and recoverable click-through. It is not a general computer-use
+interface, and Windows behavior remains unverified. A static scripted demo packages
+the same renderer without publishing the API or private history.
+
+Authored set poses remain the foundation; only the reading pose currently has local
+head/book/hand transforms. A full poseable model stays a separate Later research
+track. One active global avatar and serialized generation remain explicit limits;
+this increment does not establish multiple loaded models or autonomous work.
