@@ -32,6 +32,27 @@ flowchart LR
 These are starting choices, not permanent commitments. None chooses a model family,
 final character, training framework, or research hypothesis.
 
+## Second increment: real profiles, visuals, and bounded tools
+
+`config/profiles.json` defines the three provisional characters. `Settings.for_profile`
+resolves optional per-character endpoint/model/key overrides on the server, and
+`create_app` creates the corresponding backend adapters. A conversation stores its
+profile inside the existing character snapshot, so no destructive schema migration
+was required. Old conversations keep their original draft profile. Identity checks
+prevent continuing a chat after its configured backend/model/adapter label changes.
+
+The browser applies a theme based on the selected or snapshotted character. Shared
+`characters.css` supplies the geometric shapes and motion used in chat and the
+separate visual studio. Pose and theme changes are presentation state, independent
+of endpoint readiness, trained weights, or operating-system window control.
+
+`ToolRunner` provides read-only project text and optional Brave search. An explicit
+inspector calls it directly. For model-assisted tools, `complete_with_tools` sends
+only the definitions enabled for that message, validates the requested names and
+arguments, executes at most three calls, and requests a final reply. Actual results
+and usage counts are retained in reply provenance. This adds no shell or computer
+control. See `tools.md` for boundaries and the partial-failure limitation.
+
 ## One successful exchange
 
 1. `app.js` prevents the browser's normal form submission, reads the draft, and
@@ -70,8 +91,9 @@ not a replacement for authentication if public serving is added later.
 
 - **Memory:** separate user-inspectable facts from raw transcripts; include source,
   timestamp, correction, deletion, and consent controls. Log exactly what was retrieved.
-- **Tools:** introduce typed tool requests, supported service APIs, permissions,
-  results, and citations. Tool text must remain distinguishable from model guesses.
+- **Tools beyond the first read/search tools:** extend typed requests, supported
+  service APIs, permissions, results, and citations. Tool text must remain
+  distinguishable from model guesses.
 - **Calendar:** Google Calendar with Canvas synced into it is the deadline source of
   truth. A future read-only connector should expose freshness and sync failures.
 - **Frontier assistance:** a separate explicit provider adapter, supported API and

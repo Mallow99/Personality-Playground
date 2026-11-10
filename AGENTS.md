@@ -19,3 +19,16 @@ Use `uv sync --locked`, `uv run --locked pytest`, `uv run --locked ruff check .`
 history, credentials, model files, adapters, and run artifacts outside Git. The app
 is a single-process local prototype; do not expose it publicly without designing
 authentication and reviewing its data boundaries.
+
+The owner expects requested features to be implemented in the repository, not only
+captured as board ideas. Preserve the distinction between working code, a visual
+study, and future plans. The live optional planning board is in Notion; private IDs
+may be available in ignored `data/project-links.json`. Do not publish personal
+captures. Keep the Next shortlist small and capture new ideas without artificial
+deadlines. The app must run without Notion or a hosted service.
+
+Three provisional profiles now exist in `config/profiles.json`. Their prompts and
+themes are not trained personality. Do not imply an adapter label loaded a LoRA,
+or an entrance animation established model readiness. Local inference, AMD training,
+adapter serving, and native desktop overlays require separate evidence. Model tools
+are explicitly opted in per message; keep tool outputs inspectable and bounded.

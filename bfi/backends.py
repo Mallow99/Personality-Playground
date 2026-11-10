@@ -1,10 +1,12 @@
 """Replaceable inference adapters. Mock mode never silently substitutes for a failed server."""
 
+import json
 from typing import Protocol
 
 import httpx
 
 from bfi.config import Settings
+from bfi.tools import ToolError
 
 
 class BackendError(Exception):
@@ -136,6 +138,10 @@ class OpenAIBackend:
                 "max_tokens": self.settings.max_tokens,
             },
         )
+        return self.parse_reply(data)
+
+    @staticmethod
+    def parse_reply(data):
         try:
             content = data["choices"][0]["message"]["content"]
             if not isinstance(content, str) or not content.strip():
@@ -163,3 +169,92 @@ class OpenAIBackend:
                 "template and OpenAI chat-completions support.",
                 "invalid_response",
             ) from exc
+
+    async def complete_with_tools(self, messages, definitions, runner):
+        """At most three tool calls, then one final text response. No arbitrary execution."""
+        context, trace, usage = list(messages), [], {}
+        allowed = {d["function"]["name"] for d in definitions}
+        for generation in range(4):
+            body = {
+                "model": self.settings.model,
+                "messages": context,
+                "stream": False,
+                "temperature": 0.7,
+                "max_tokens": self.settings.max_tokens,
+            }
+            if len(trace) < 3:
+                body.update(tools=definitions, tool_choice="auto")
+            data = await self.request("POST", "/chat/completions", json=body)
+            try:
+                message = data["choices"][0]["message"]
+                calls = message.get("tool_calls")
+                if not calls:
+                    reply = self.parse_reply(data)
+                    for key, value in (reply["usage"] or {}).items():
+                        usage[key] = usage.get(key, 0) + value
+                    return {
+                        **reply,
+                        "usage": usage or None,
+                        "tool_steps": trace,
+                        "generation_calls": generation + 1,
+                    }
+                if not isinstance(calls, list) or len(calls) + len(trace) > 3:
+                    raise ValueError
+                # Save only the standard assistant fields, not arbitrary server extras.
+                assistant = {
+                    "role": "assistant",
+                    "content": message.get("content"),
+                    "tool_calls": [],
+                }
+                for call in calls:
+                    function = call["function"]
+                    if (
+                        not isinstance(call["id"], str)
+                        or len(call["id"]) > 200
+                        or function["name"] not in allowed
+                        or not isinstance(function["arguments"], str)
+                        or len(function["arguments"]) > 4000
+                    ):
+                        raise ValueError
+                    arguments = json.loads(function["arguments"])
+                    assistant["tool_calls"].append(
+                        {"id": call["id"], "type": "function", "function": function}
+                    )
+                    try:
+                        result = await runner.run(function["name"], arguments, allowed)
+                    except ToolError as exc:
+                        result = {"error": str(exc)}
+                    trace.append(
+                        {
+                            "call_id": call["id"],
+                            "name": function["name"],
+                            "arguments": arguments,
+                            "result": result,
+                        }
+                    )
+                context.append(assistant)
+                for step in trace[-len(calls) :]:
+                    context.append(
+                        {
+                            "role": "tool",
+                            "tool_call_id": step["call_id"],
+                            "content": runner.serialize(step["result"]),
+                        }
+                    )
+                for key, value in (data.get("usage") or {}).items():
+                    if (
+                        key in {"prompt_tokens", "completion_tokens", "total_tokens"}
+                        and type(value) is int
+                        and value >= 0
+                    ):
+                        usage[key] = usage.get(key, 0) + value
+            except (KeyError, IndexError, TypeError, ValueError, AttributeError) as exc:
+                raise BackendError(
+                    "The model returned invalid or excessive tool calls. "
+                    "Only the tools enabled for this message may run; "
+                    "a maximum of three calls is allowed.",
+                    "invalid_tool_calls",
+                ) from exc
+        raise BackendError(
+            "The model did not produce a final reply within the tool-call limit.", "tool_limit"
+        )

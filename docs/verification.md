@@ -14,11 +14,16 @@ uv run --locked ruff check .
 uv run --locked ruff format --check .
 ```
 
-Result: **27 tests passed**; lint and Python formatting passed. The tests cover
+Result after the profiles/tools increment: **43 tests passed**; lint and Python formatting passed. The tests cover
 restart persistence, character snapshots, backend separation, request validation,
 deletion, context trimming, API request shape, source metadata, credential exclusion,
 backend errors, model-status uncertainty, local browser boundaries, and overlapping
 generation. HTTP adapter tests use simulated responses; they do not run a model.
+New coverage verifies the three distinct profile prompts, per-profile routing,
+credential exclusion, old-route separation, actual project reads, hidden/private
+path rejection, symlink boundaries, explicit tool permissions, a complete simulated
+model/tool/model round trip, persisted trace and token totals, tool-call limits,
+and Brave request/source/error behavior. Live web search is not verified without a key.
 
 The installed Starlette test client emits one upstream deprecation warning about
 its use of `httpx`. This does not fail the suite; revisit the development test
@@ -56,6 +61,11 @@ new/reopened conversations, the status dialog, deletion, draft retention after a
 real HTTP connection failure, and continued operation with browser storage disabled.
 Checked layouts at 1440×1000, 768×1024, and 390×844 with no horizontal page overflow.
 The main test page produced no JavaScript errors or external network requests.
+The extended script also checks all three profiles in actual chat, studio-to-chat
+selection, themes, poses, motion controls, in-app corner presence, and actual reads
+from a disposable project fixture. It saves all three studio directions. Separate
+1440×1080 screenshots of all three studio/chat themes were visually inspected; the
+studio mobile text-fit issue found during inspection was corrected and rechecked.
 
 Screenshots and the scripted test export are saved under `runs/browser-smoke/`,
 which Git ignores. Initial home and mobile screenshots were also visually inspected.

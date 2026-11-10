@@ -9,8 +9,11 @@ System prompts and application features are supporting layers, not a quiet chang
 
 Two appealing directions are a helpful, opinionated, responsible character with a
 somewhat serious Jarvis feel, and a helpful, sassy, expressive character with a more
-cyberpunk identity. Neither is chosen yet. The initial “Companion” configuration and
-green geometric artwork are provisional scaffolding, not a final character decision.
+cyberpunk identity. Neither is chosen as the final character. The app now implements
+three provisional specialist profiles: Academic, Engineering (coding/security), and
+Business, with separate prompts and brown/green, black/red, and white/grey/blue themes.
+The old “Companion” configuration remains for older chats. These are working options,
+not proof of weight-trained personality or a commitment to run three models at once.
 Avoid Cyberpunk and Capri story spoilers in character design, examples, and datasets.
 
 Practical competence matters alongside personality. A character may specialize in a
@@ -42,6 +45,13 @@ Manage model loading and unloading so the system remains comfortable on an every
 PC. Preserve reproducible training and evaluation against the unmodified starting
 model. Google Calendar, with Canvas synced into it, is the school deadline source
 of truth; an AI-generated date is not a replacement for that source.
+
+An optional Notion board now captures ideas, decisions, dependencies, and work. It
+is not a runtime dependency. The owner expects features in the repository as well
+as captured ideas. The local app includes profile switching, a geometric motion
+studio, an in-app corner character, and opt-in project-read/search tool interfaces.
+Computer use, code execution/sandboxing, proactive speech, and native overlay work
+remain separate future implementations.
 
 Memory supports the trained personality. Long-term development may involve curated
 training updates; individual conversations should not automatically edit weights.

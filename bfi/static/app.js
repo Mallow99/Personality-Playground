@@ -5,6 +5,23 @@ let current = null;
 let busy = false;
 let loading = false;
 let status = null;
+let selectedProfile = "academic";
+
+function activeProfile() {
+  const id =
+    current?.character.profile_id || (current ? "companion" : selectedProfile);
+  return (
+    config.profiles.find((p) => p.id === id) || { id: "companion", ...config }
+  );
+}
+
+function replayAvatar() {
+  document.querySelectorAll(".character-art").forEach((art) => {
+    art.classList.remove("arriving");
+    void art.offsetWidth;
+    art.classList.add("arriving");
+  });
+}
 
 async function api(path, options = {}) {
   const response = await fetch(`/api${path}`, {
@@ -57,6 +74,10 @@ function updateControls() {
   $("send").disabled = locked || !$("message").value.trim();
   $("delete-chat").disabled = locked || !current;
   $("export-chat").disabled = locked || !current;
+  $("profile-select").disabled = locked;
+  $("allow-project").disabled = locked || !config?.tools.project_files;
+  $("allow-web").disabled = locked || !config?.tools.web_search;
+  document.body.dataset.pose = busy ? "thinking" : $("avatar-pose").value;
   document
     .querySelectorAll(".conversation-item, [data-prompt]")
     .forEach((b) => {
@@ -77,10 +98,43 @@ function addDefinition(parent, term, value) {
 }
 
 function renderCharacter() {
-  const character = current?.character || config.character;
+  const profile = activeProfile();
+  const character = current?.character || profile.character;
   $("character-name").textContent = character.name;
   $("character-description").textContent = character.description;
   $("character-prompt").textContent = character.system_prompt;
+  $("profile-select").value = profile.id;
+  const changed = document.body.dataset.theme !== character.theme;
+  document.body.dataset.theme = character.theme || "foundation";
+  if (changed) replayAvatar();
+  const list = $("backend-details");
+  list.replaceChildren();
+  addDefinition(list, "Character", character.name);
+  addDefinition(
+    list,
+    "Backend",
+    profile.backend === "mock"
+      ? "Scripted mock (no inference)"
+      : "OpenAI-compatible endpoint",
+  );
+  addDefinition(list, "Requested model", profile.requested_model);
+  addDefinition(list, "Endpoint", profile.endpoint || "None");
+  addDefinition(
+    list,
+    "Configured adapter",
+    profile.adapter_label ||
+      "None declared; no personality training established",
+  );
+  addDefinition(
+    list,
+    "Context window",
+    `Up to ${config.history_pairs} recent exchanges; ${config.context_chars.toLocaleString()} character budget (not tokens)`,
+  );
+  const replies = (current?.messages || []).filter(
+    (m) => m.role === "assistant",
+  );
+  $("corner-line").textContent =
+    replies.at(-1)?.content.slice(0, 220) || "Here when you need me.";
 }
 
 function render() {
@@ -128,6 +182,19 @@ function render() {
       );
       addDefinition(list, "Endpoint", p.endpoint || "None — scripted mock");
       addDefinition(list, "Cloud delegation", "None by this app");
+      addDefinition(list, "Profile", p.profile_id || "Original draft");
+      if (p.configured_adapter)
+        addDefinition(
+          list,
+          "Configured adapter (unverified)",
+          p.configured_adapter,
+        );
+      if (p.tool_steps?.length)
+        addDefinition(
+          list,
+          "Actual tool calls and results",
+          JSON.stringify(p.tool_steps, null, 2),
+        );
       addDefinition(
         list,
         "Locality",
@@ -159,16 +226,16 @@ function render() {
   if (
     current &&
     ["backend", "endpoint", "requested_model"].some(
-      (key) => current.backend[key] !== config[key],
+      (key) => current.backend[key] !== activeProfile()[key],
     )
   ) {
     $("mode-notice").textContent =
       "Archived backend/model. Start a new conversation to use the current configuration.";
   } else {
     $("mode-notice").textContent =
-      config.backend === "mock"
+      activeProfile().backend === "mock"
         ? "Mock mode — scripted replies, no model inference. Your history is still saved."
-        : `Endpoint mode · ${config.requested_model} · Conversation history is sent to your configured server.`;
+        : `Endpoint mode · ${activeProfile().requested_model} · Conversation history is sent to your configured server.`;
   }
   updateControls();
   $("scroll-area").scrollTop = $("scroll-area").scrollHeight;
@@ -197,7 +264,7 @@ async function refreshList() {
       node(
         "small",
         "",
-        `${conversation.backend.backend === "mock" ? "MOCK" : "ENDPOINT"} · ${new Date(conversation.updated_at).toLocaleDateString(undefined, { month: "short", day: "numeric" })}`,
+        `${conversation.character.name} · ${conversation.backend.backend === "mock" ? "MOCK" : "ENDPOINT"} · ${new Date(conversation.updated_at).toLocaleDateString(undefined, { month: "short", day: "numeric" })}`,
       ),
     );
     button.addEventListener("click", () => selectConversation(conversation.id));
@@ -216,11 +283,13 @@ async function selectConversation(id) {
   try {
     const next = await api(`/conversations/${id}`);
     current = next;
+    selectedProfile = current.character.profile_id || "companion";
     rememberConversation(current.id);
     $("message").value = "";
     $("error").hidden = true;
     render();
     await refreshList();
+    refreshStatus();
   } catch (error) {
     showError(error);
   } finally {
@@ -230,11 +299,13 @@ async function selectConversation(id) {
 }
 
 async function refreshStatus() {
+  const profileId = activeProfile().id;
   $("refresh-status").disabled = true;
   $("status-label").textContent = "Checking backend…";
   $("status-detail").textContent = "Checking the configured backend…";
   try {
-    status = await api("/status");
+    status = await api(`/status?profile_id=${encodeURIComponent(profileId)}`);
+    if (activeProfile().id !== profileId) return;
     $("status-label").textContent = status.label;
     $("open-status").dataset.state = status.state;
     $("status-detail").textContent = status.detail;
@@ -258,12 +329,19 @@ $("chat-form").addEventListener("submit", async (event) => {
   $("messages").append(pending);
   try {
     if (!current) {
-      current = await api("/conversations", { method: "POST" });
+      current = await api("/conversations", {
+        method: "POST",
+        body: JSON.stringify({ profile_id: selectedProfile }),
+      });
       rememberConversation(current.id);
     }
     current = await api(`/conversations/${current.id}/messages`, {
       method: "POST",
-      body: JSON.stringify({ content }),
+      body: JSON.stringify({
+        content,
+        project_tools: $("allow-project").checked,
+        web_search: $("allow-web").checked,
+      }),
     });
     $("message").value = "";
     render();
@@ -273,6 +351,8 @@ $("chat-form").addEventListener("submit", async (event) => {
   } finally {
     pending.remove();
     busy = false;
+    $("allow-project").checked = false;
+    $("allow-web").checked = false;
     updateControls();
     $("message").focus();
   }
@@ -289,6 +369,7 @@ $("message").addEventListener("keydown", (event) => {
 $("new-chat").addEventListener("click", async () => {
   if (busy || loading) return;
   current = null;
+  if (selectedProfile === "companion") selectedProfile = "academic";
   rememberConversation(null);
   $("message").value = "";
   $("error").hidden = true;
@@ -353,28 +434,100 @@ $("open-status").addEventListener("click", () =>
 $("close-status").addEventListener("click", () => $("status-dialog").close());
 $("refresh-status").addEventListener("click", refreshStatus);
 
+$("profile-select").addEventListener("change", async (event) => {
+  if (
+    $("message").value.trim() &&
+    !window.confirm(
+      "Start a new conversation with this character and discard the unsent draft?",
+    )
+  ) {
+    event.target.value = activeProfile().id;
+    return;
+  }
+  selectedProfile = event.target.value;
+  current = null;
+  rememberConversation(null);
+  $("message").value = "";
+  $("allow-project").checked = $("allow-web").checked = false;
+  $("error").hidden = true;
+  render();
+  try {
+    await refreshList();
+  } catch (error) {
+    showError(error);
+  }
+  refreshStatus();
+});
+$("replay-avatar").addEventListener("click", replayAvatar);
+$("avatar-pose").addEventListener("change", updateControls);
+$("avatar-motion").checked = !window.matchMedia(
+  "(prefers-reduced-motion: reduce)",
+).matches;
+document.body.dataset.motion = $("avatar-motion").checked ? "on" : "off";
+$("avatar-motion").addEventListener("change", () => {
+  document.body.dataset.motion = $("avatar-motion").checked ? "on" : "off";
+});
+const cornerArt = document.querySelector(".character-art").cloneNode(true);
+$("corner-art").append(cornerArt);
+$("toggle-corner").addEventListener("click", () => {
+  $("corner-companion").hidden = !$("corner-companion").hidden;
+  $("toggle-corner").textContent = $("corner-companion").hidden
+    ? "Show in corner"
+    : "Hide corner";
+  replayAvatar();
+});
+$("hide-corner").addEventListener("click", () => {
+  $("corner-companion").hidden = true;
+  $("toggle-corner").textContent = "Show in corner";
+});
+$("open-tools").addEventListener("click", () => $("tools-dialog").showModal());
+$("close-tools").addEventListener("click", () => $("tools-dialog").close());
+$("tool-form").addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const name = $("tool-name").value;
+  const value = $("tool-argument").value.trim();
+  const args =
+    name === "list_project_files"
+      ? {}
+      : name === "read_project_file"
+        ? { path: value }
+        : { query: value };
+  $("run-tool").disabled = true;
+  $("tool-result").textContent = "Running the configured tool…";
+  try {
+    const result = await api("/tools/inspect", {
+      method: "POST",
+      body: JSON.stringify({ name, arguments: args }),
+    });
+    $("tool-result").textContent = JSON.stringify(result, null, 2);
+  } catch (error) {
+    $("tool-result").textContent = error.message;
+  } finally {
+    $("run-tool").disabled = false;
+  }
+});
+
 async function init() {
   loading = true;
   try {
     config = await api("/config");
-    const list = $("backend-details");
-    addDefinition(
-      list,
-      "Backend",
-      config.backend === "mock"
-        ? "Scripted mock (no inference)"
-        : "OpenAI-compatible endpoint",
-    );
-    addDefinition(list, "Requested model", config.requested_model);
-    addDefinition(list, "Endpoint", config.endpoint || "None");
-    addDefinition(
-      list,
-      "Context window",
-      `Up to ${config.history_pairs} recent exchanges; ${config.context_chars.toLocaleString()} character budget (not tokens)`,
-    );
+    for (const profile of config.profiles) {
+      const option = node("option", "", profile.character.name);
+      option.value = profile.id;
+      $("profile-select").append(option);
+    }
+    const legacy = node("option", "", "Original draft");
+    legacy.value = "companion";
+    legacy.hidden = true;
+    $("profile-select").append(legacy);
+    const fromUrl = new URLSearchParams(location.search).get("profile");
+    if (config.profiles.some((p) => p.id === fromUrl))
+      selectedProfile = fromUrl;
+    $("tool-capabilities").textContent =
+      `Project files: ${config.tools.project_files ? "enabled" : "not configured"}. Web search: ${config.tools.web_search ? "enabled" : "not configured"}. ${config.tools.detail}`;
     const conversations = await refreshList();
     const saved = rememberedConversation();
-    if (saved && conversations.some((c) => c.id === saved))
+    if (!fromUrl && saved && conversations.some((c) => c.id === saved))
       current = await api(`/conversations/${saved}`);
     render();
     await refreshList();

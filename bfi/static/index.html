@@ -7,6 +7,7 @@
     <title>Best Friend Initiative · Workbench</title>
     <link rel="icon" type="image/svg+xml" href="/static/mark.svg" />
     <link rel="stylesheet" href="/static/style.css" />
+    <link rel="stylesheet" href="/static/characters.css" />
     <script src="/static/app.js" defer></script>
   </head>
   <body>
@@ -18,6 +19,15 @@
       <div class="workspace-label">
         <span class="tiny-dot"></span> PERSONAL WORKSPACE
       </div>
+      <label class="profile-label" for="profile-select">ACTIVE CHARACTER</label>
+      <select
+        id="profile-select"
+        aria-label="Character profile"
+        disabled
+      ></select>
+      <a class="studio-link" href="/concepts"
+        >Character studio <span>→</span></a
+      >
       <button id="new-chat" class="new-chat">
         <span>＋</span> New conversation
       </button>
@@ -148,8 +158,21 @@
               </div>
             </form>
             <div class="composer-footer">
-              <span>No cloud delegation · No tool access yet</span
+              <span>No cloud delegation · Tools opt in per message</span
               ><span>Take it one step at a time.</span>
+            </div>
+            <div class="tool-permissions">
+              <label
+                ><input type="checkbox" id="allow-project" disabled /> Project
+                files</label
+              >
+              <label
+                ><input type="checkbox" id="allow-web" disabled /> Web
+                search</label
+              >
+              <button id="open-tools" type="button" class="text-button">
+                Tools & setup
+              </button>
             </div>
           </div>
         </section>
@@ -163,7 +186,11 @@
             <div class="orbit orbit-two"></div>
             <div class="character-body">
               <div class="eyes"><i></i><i></i></div>
+              <div class="glasses"><i></i><i></i></div>
+              <div class="avatar-mouth"></div>
             </div>
+            <div class="avatar-foot foot-left"></div>
+            <div class="avatar-foot foot-right"></div>
             <span class="art-coordinate">BFI—001</span
             ><span class="art-spark">✳</span>
           </div>
@@ -172,6 +199,24 @@
             <span class="draft-tag">DRAFT</span>
           </div>
           <p id="character-description" class="character-description"></p>
+          <div class="avatar-controls">
+            <button id="replay-avatar" class="text-button">
+              Replay entrance
+            </button>
+            <label
+              >Pose
+              <select id="avatar-pose" aria-label="Avatar pose">
+                <option value="attentive">Attentive</option>
+                <option value="thinking">Thinking</option>
+                <option value="speaking">Speaking</option>
+                <option value="docked">Docked</option>
+              </select></label
+            >
+            <label><input id="avatar-motion" type="checkbox" /> Motion</label>
+            <button id="toggle-corner" class="text-button">
+              Show in corner
+            </button>
+          </div>
           <div class="character-fact">
             <span>PERSONALITY</span><strong>Still taking shape</strong
             ><small>No personality training yet.</small>
@@ -188,7 +233,7 @@
             <summary>Inspect character prompt <span>＋</span></summary>
             <p id="character-prompt"></p>
             <small
-              >Edit config/character.json, restart the app, then start a new
+              >Edit config/profiles.json, restart the app, then start a new
               conversation.</small
             >
           </details>
@@ -232,5 +277,61 @@
         Check connection again
       </button>
     </dialog>
+    <dialog id="tools-dialog" aria-labelledby="tools-heading">
+      <div class="dialog-top">
+        <span class="eyebrow">REAL RESULTS, VISIBLE SOURCES</span
+        ><button id="close-tools" class="icon-button" aria-label="Close tools">
+          ×
+        </button>
+      </div>
+      <h2 id="tools-heading">A small tool bench.</h2>
+      <p id="tool-capabilities"></p>
+      <p class="dialog-note">
+        Set BFI_PROJECT_ROOT in .env to a project directory to enable read-only
+        text files. Hidden, private/runtime directories, links, sensitive
+        filenames, and large files are excluded. Review that directory before
+        sharing it with a model. Set BFI_BRAVE_API_KEY for optional Brave web
+        search. Restart after changes.
+      </p>
+      <p class="dialog-note">
+        The checkboxes by the composer allow a real, compatible model up to
+        three tool calls for that message only. They reset after sending. Mock
+        mode cannot choose tools; this inspector can run configured tools
+        directly. No computer control or code execution is implemented.
+      </p>
+      <form id="tool-form">
+        <label for="tool-name">Inspect a tool</label>
+        <select id="tool-name">
+          <option value="list_project_files">List project files</option>
+          <option value="read_project_file">Read project file</option>
+          <option value="web_search">Search the web (Brave)</option>
+        </select>
+        <label for="tool-argument"
+          >Relative file path or search query (not needed for listing)</label
+        >
+        <input
+          id="tool-argument"
+          type="text"
+          maxlength="500"
+          placeholder="README.md"
+        />
+        <button id="run-tool" class="primary-button" type="submit">
+          Run selected tool
+        </button>
+      </form>
+      <pre id="tool-result" role="status">Tool results appear here.</pre>
+    </dialog>
+    <div id="corner-companion" hidden>
+      <button
+        id="hide-corner"
+        class="text-button"
+        aria-label="Hide corner companion"
+      >
+        Hide ×
+      </button>
+      <div id="corner-art"></div>
+      <p id="corner-line">Here when you need me.</p>
+      <small>In-app companion · text only</small>
+    </div>
   </body>
 </html>
