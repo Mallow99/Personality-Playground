@@ -4,13 +4,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Avatar handler · BFI</title>
-    <link rel="stylesheet" href="avatar-runtime/avatar.css" />
-    <link rel="stylesheet" href="runtime-demo.css" />
-    <script type="module" src="runtime-demo.js"></script>
+    <link rel="stylesheet" href="avatar-runtime/avatar.css?v=2" />
+    <link rel="stylesheet" href="runtime-demo.css?v=2" />
+    <script type="module" src="runtime-demo.js?v=2"></script>
   </head>
   <body data-theme="academic">
     <main>
-      <a href="pose-library.html">Approved pose library ↗</a>
+      <a href="art-review.html">Full visual review · all 128 poses ↗</a> ·
+      <a href="pose-library.html">54-pose proposal gallery</a>
       <p class="eyebrow">SHARED AVATAR RENDERER</p>
       <h1>A presence<br /><em>beside the work.</em></h1>
       <p>
@@ -26,21 +27,37 @@
         <section class="handler">
           <p class="eyebrow">HANDLER</p>
           <h2 id="name">Academic</h2>
-          <label>Pose<select id="pose"></select></label>
+          <label>Pose<select id="pose" disabled></select></label>
+          <p id="pose-note" class="pose-note"></p>
+          <label
+            >Art background<select id="surface">
+              <option value="studio">Studio contrast</option>
+              <option value="theme">App theme</option>
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+            </select></label
+          >
           <div class="actions">
-            <button id="reveal" aria-pressed="false">Reveal rear layer</button
-            ><button id="think">Thinking</button
-            ><button id="reply">Reply cue</button
+            <button id="reveal" aria-pressed="false" hidden>
+              Reveal rear layer</button
+            ><button id="animate-example" hidden>Try a moving pose</button
+            ><button id="think">Thinking pose</button
+            ><button id="reply">Reply cue</button><button id="idle">Idle</button
             ><button id="show">Hide avatar</button
-            ><label><input id="motion" type="checkbox" checked /> Motion</label>
+            ><label
+              ><input id="motion" type="checkbox" checked /> Movement / reply
+              marks</label
+            >
           </div>
-          <p id="example">Ready to explore.</p>
+          <p id="example" role="status" aria-live="polite">
+            Loading artwork and controls…
+          </p>
           <details>
             <summary>Example handler command</summary>
             <pre id="command"></pre>
           </details>
         </section>
-        <div class="desktop">
+        <div class="desktop" data-surface="studio">
           <span>AVATAR SURFACE · TRANSPARENT ART</span>
           <div id="avatar"></div>
         </div>

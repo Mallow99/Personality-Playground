@@ -146,7 +146,12 @@ def process(sheet, index, slug):
     source = Image.new("RGB", (cw, ch), "white")
     cell_to_canvas = [1, 0, 0, 0, 1, 0]
     frame = sheet.get("pose_frames", {}).get(slug)
-    if frame:
+    override = sheet.get("pose_sources", {}).get(slug)
+    if override:
+        path = SOURCES / override
+        source.paste(Image.open(path).convert("RGB").resize((cw, ch)), (0, 0))
+        bounds = (0, 0, cw, ch)
+    elif frame:
         bounds = tuple(frame["bounds"])
         crop = image.crop(bounds)
         size = [round(value * frame["scale"]) for value in crop.size]
@@ -180,7 +185,7 @@ def process(sheet, index, slug):
             "height": str(ch),
             "viewBox": f"0 0 {cw} {ch}",
             "role": "img",
-            "data-source-sheet": sheet["file"],
+            "data-source-sheet": override or sheet["file"],
             "data-pose": slug,
         },
     )
@@ -254,7 +259,7 @@ def process(sheet, index, slug):
             "code-review",
         ]
         else "everyday",
-        "sheet": sheet["file"],
+        "sheet": override or sheet["file"],
         "sheet_sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
         "crop": list(bounds),
         "cell_to_canvas": cell_to_canvas,
@@ -268,7 +273,7 @@ def process(sheet, index, slug):
     }
 
 
-def main(only_frames=False):
+def main(only_frames=False, selected=None):
     manifest = {
         "version": 2,
         "tool_versions": {name: version(name) for name in ["numpy", "CairoSVG", "Pillow"]},
@@ -279,7 +284,7 @@ def main(only_frames=False):
         "reference": "generated E pose sheets; not approved production rig",
         "characters": {},
     }
-    if only_frames:
+    if only_frames or selected:
         manifest = json.loads((OUT / "manifest.json").read_text())
     for sheet in json.loads((SOURCES / "sources.json").read_text())["sheets"]:
         role = sheet["role"]
@@ -287,10 +292,12 @@ def main(only_frames=False):
         for i, slug in enumerate(sheet["poses"]):
             if slug is None:
                 continue
+            if selected and f"{role}/{slug}" not in selected:
+                continue
             if only_frames and slug not in sheet.get("pose_frames", {}):
                 continue
             result = process(sheet, i, slug)
-            if only_frames:
+            if only_frames or selected:
                 manifest["characters"][role] = [
                     p for p in manifest["characters"][role] if p["id"] != slug
                 ]
@@ -321,4 +328,6 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--only-frames", action="store_true")
-    main(parser.parse_args().only_frames)
+    parser.add_argument("--only", nargs="+", help="Rebuild only role/pose IDs.")
+    args = parser.parse_args()
+    main(args.only_frames, args.only)

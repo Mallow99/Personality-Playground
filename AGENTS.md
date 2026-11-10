@@ -97,3 +97,17 @@ Restore occluded rear material before moving an overlapping front part. Reading'
 pages and Business seated's thigh have authored underlayers and reveal controls.
 Other catalog poses stay intact/static; do not claim all 128 are fully rigged.
 The primary E preview routes to the handler; mapping-lab.html is a historical archive.
+
+Latest visual/control correction: remove the pale CSS glow; PNG alpha changes alone
+do not remove white-matte RGB. Rebuild runtime clean copies first; the catalog build then regenerates cutouts and focus variants.
+Fifteen work poses have explicit local eye edits (config/avatar-focus.json), while other
+gazes remain authored. Test actual visibility, not only hidden state. Repeated renders
+during a pending SVG load must await the same loading promise. Use
+scripts/check_avatar_art.py and scripts/browser_avatar_controls.py for these regressions.
+
+The latest full visual pass includes a replacement Hacker flirty reference with both
+arms visible (poses-v4). Its former guide must not mark an arm hidden. Review all
+128 runtime sprites in art-review.html; config/avatar-visual-review.json records
+findings. build_avatar_clean.py removes detached baseline scraps and the known
+neighboring fragments in Hacker tired. Preserve original sources and glamour hashes.
+Do not substitute image-loading tests for checking anatomy and crop quality.

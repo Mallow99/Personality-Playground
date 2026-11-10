@@ -752,10 +752,13 @@
       },
       {
         "pose": "flirty",
-        "assembly_geometry_iou": 0.999692,
+        "assembly_geometry_iou": 0.999234,
         "visibleParts": [
           "head",
           "torso",
+          "left-upper-arm",
+          "left-forearm",
+          "left-hand",
           "right-upper-arm",
           "right-forearm",
           "right-hand",
@@ -766,7 +769,8 @@
           "right-shin",
           "right-foot"
         ],
-        "guideStatus": "draft"
+        "guideStatus": "draft",
+        "mappingMethod": "joint-regions"
       },
       {
         "pose": "glamour",

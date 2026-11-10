@@ -1,3 +1,6 @@
+.avatar-view[hidden] {
+  display: none !important;
+}
 .avatar-view {
   position: relative;
   display: flex;
@@ -220,8 +223,4 @@ main,
 #corner-companion button,
 #corner-companion .avatar-caption {
   pointer-events: auto;
-}
-.avatar-art > img,
-.avatar-art > svg {
-  filter: drop-shadow(0 0 1px var(--avatar-paper));
 }

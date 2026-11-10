@@ -4,6 +4,15 @@ The repository now includes working handler/avatar integration. Start with
 [avatar runtime and launch instructions](avatar-runtime.md), then
 [the learning trail](learning.md) and [architecture decisions](architecture.md).
 
+## Latest visual/control correction
+
+`e-preview/art-review.html` shows every runtime pose with source comparison and
+repair notes. Hacker flirty was replaced with a clear two-arm pose. All sprites
+were reviewed in twelve contact pages; runtime copies remove neighboring fragments,
+caption debris and pale matte edges. Fifteen work poses have local gaze edits.
+Hide/show and loading-readiness bugs are fixed; controls are checked for rendered
+outcomes. The source/learning record is in poses-v4 and docs/learning.md.
+
 ## Current result
 
 - Chat uses the selected E artwork and matching Academic/Hacker/Business colors.

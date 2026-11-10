@@ -5,904 +5,997 @@
       "id": "academic/standing",
       "role": "academic",
       "label": "Standing",
-      "src": "/static/e-preview/assets/poses/academic/standing.svg",
+      "src": "/static/avatar/clean/academic/standing.svg",
       "tags": [
         "standing"
       ],
       "description": "Standing",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/academic/standing.svg"
     },
     {
       "id": "academic/standing-2",
       "role": "academic",
       "label": "Standing 2",
-      "src": "/static/e-preview/assets/poses/academic/standing-2.svg",
+      "src": "/static/avatar/clean/academic/standing-2.svg",
       "tags": [
         "standing",
         "2"
       ],
       "description": "Standing 2",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/academic/standing-2.svg"
     },
     {
       "id": "academic/seated",
       "role": "academic",
       "label": "Seated",
-      "src": "/static/e-preview/assets/poses/academic/seated.svg",
+      "src": "/static/avatar/clean/academic/seated.svg",
       "tags": [
         "seated"
       ],
       "description": "Seated",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/academic/seated.svg"
     },
     {
       "id": "academic/seated-2",
       "role": "academic",
       "label": "Seated 2",
-      "src": "/static/e-preview/assets/poses/academic/seated-2.svg",
+      "src": "/static/avatar/clean/academic/seated-2.svg",
       "tags": [
         "seated",
         "2"
       ],
       "description": "Seated 2",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/academic/seated-2.svg"
     },
     {
       "id": "academic/tired",
       "role": "academic",
       "label": "Tired",
-      "src": "/static/e-preview/assets/poses/academic/tired.svg",
+      "src": "/static/avatar/clean/academic/tired.svg",
       "tags": [
         "tired"
       ],
       "description": "Tired",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/academic/tired.svg"
     },
     {
       "id": "academic/lying-down",
       "role": "academic",
       "label": "Lying Down",
-      "src": "/static/e-preview/assets/poses/academic/lying-down.svg",
+      "src": "/static/avatar/clean/academic/lying-down.svg",
       "tags": [
         "lying",
         "down"
       ],
       "description": "Lying Down",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/academic/lying-down.svg"
     },
     {
       "id": "academic/thinking",
       "role": "academic",
       "label": "Thinking",
-      "src": "/static/e-preview/assets/poses/academic/thinking.svg",
+      "src": "/static/avatar/clean/academic/thinking.svg",
       "tags": [
         "thinking"
       ],
       "description": "Thinking",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/academic/thinking.svg"
     },
     {
       "id": "academic/working",
       "role": "academic",
       "label": "Working",
-      "src": "/static/e-preview/assets/poses/academic/working.svg",
+      "src": "/static/avatar/focus/academic/working.svg",
       "tags": [
         "working"
       ],
       "description": "Working",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/academic/working.svg",
+      "gaze_target": "workbench",
+      "asset_version": "51bb7f4c6c40"
     },
     {
       "id": "academic/laughing",
       "role": "academic",
       "label": "Laughing",
-      "src": "/static/e-preview/assets/poses/academic/laughing.svg",
+      "src": "/static/avatar/clean/academic/laughing.svg",
       "tags": [
         "laughing"
       ],
       "description": "Laughing",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/academic/laughing.svg"
     },
     {
       "id": "academic/frustrated",
       "role": "academic",
       "label": "Frustrated",
-      "src": "/static/e-preview/assets/poses/academic/frustrated.svg",
+      "src": "/static/avatar/clean/academic/frustrated.svg",
       "tags": [
         "frustrated"
       ],
       "description": "Frustrated",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/academic/frustrated.svg"
     },
     {
       "id": "academic/exasperated",
       "role": "academic",
       "label": "Exasperated",
-      "src": "/static/e-preview/assets/poses/academic/exasperated.svg",
+      "src": "/static/avatar/clean/academic/exasperated.svg",
       "tags": [
         "exasperated"
       ],
       "description": "Exasperated",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/academic/exasperated.svg"
     },
     {
       "id": "academic/reading",
       "role": "academic",
       "label": "Reading",
-      "src": "/static/e-preview/assets/poses/academic/reading.svg",
+      "src": "/static/avatar/clean/academic/reading.svg",
       "tags": [
         "reading"
       ],
       "description": "Reading",
       "source": "traced-pose",
-      "motion": "reading"
+      "motion": "reading",
+      "original_src": "/static/e-preview/assets/poses/academic/reading.svg",
+      "gaze_target": "book",
+      "asset_version": "f75a1d9cfa69",
+      "layered_src": "/static/avatar/focus/academic/reading.svg"
     },
     {
       "id": "academic/chalkboard",
       "role": "academic",
       "label": "Chalkboard",
-      "src": "/static/e-preview/assets/poses/academic/chalkboard.svg",
+      "src": "/static/avatar/clean/academic/chalkboard.svg",
       "tags": [
         "chalkboard"
       ],
       "description": "Chalkboard",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/academic/chalkboard.svg"
     },
     {
       "id": "academic/writing-prose",
       "role": "academic",
       "label": "Writing Prose",
-      "src": "/static/e-preview/assets/poses/academic/writing-prose.svg",
+      "src": "/static/avatar/focus/academic/writing-prose.svg",
       "tags": [
         "writing",
         "prose"
       ],
       "description": "Writing Prose",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/academic/writing-prose.svg",
+      "gaze_target": "page",
+      "asset_version": "f81778749356"
     },
     {
       "id": "academic/teasing",
       "role": "academic",
       "label": "Teasing",
-      "src": "/static/e-preview/assets/poses/academic/teasing.svg",
+      "src": "/static/avatar/clean/academic/teasing.svg",
       "tags": [
         "teasing"
       ],
       "description": "Teasing",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/academic/teasing.svg"
     },
     {
       "id": "academic/flirty",
       "role": "academic",
       "label": "Flirty",
-      "src": "/static/e-preview/assets/poses/academic/flirty.svg",
+      "src": "/static/avatar/clean/academic/flirty.svg",
       "tags": [
         "flirty"
       ],
       "description": "Flirty",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/academic/flirty.svg"
     },
     {
       "id": "academic/glamour",
       "role": "academic",
       "label": "Glamour",
-      "src": "/static/e-preview/assets/poses/academic/glamour.svg",
+      "src": "/static/avatar/clean/academic/glamour.svg",
       "tags": [
         "glamour"
       ],
       "description": "Glamour",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/academic/glamour.svg"
     },
     {
       "id": "academic/silly",
       "role": "academic",
       "label": "Silly",
-      "src": "/static/e-preview/assets/poses/academic/silly.svg",
+      "src": "/static/avatar/clean/academic/silly.svg",
       "tags": [
         "silly"
       ],
       "description": "Silly",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/academic/silly.svg"
     },
     {
       "id": "academic/greeting",
       "role": "academic",
       "label": "Greeting",
-      "src": "/static/e-preview/assets/poses/academic/greeting.svg",
+      "src": "/static/avatar/clean/academic/greeting.svg",
       "tags": [
         "greeting"
       ],
       "description": "Greeting",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/academic/greeting.svg"
     },
     {
       "id": "academic/listening",
       "role": "academic",
       "label": "Listening",
-      "src": "/static/e-preview/assets/poses/academic/listening.svg",
+      "src": "/static/avatar/clean/academic/listening.svg",
       "tags": [
         "listening"
       ],
       "description": "Listening",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/academic/listening.svg"
     },
     {
       "id": "academic/confused",
       "role": "academic",
       "label": "Confused",
-      "src": "/static/e-preview/assets/poses/academic/confused.svg",
+      "src": "/static/avatar/clean/academic/confused.svg",
       "tags": [
         "confused"
       ],
       "description": "Confused",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/academic/confused.svg"
     },
     {
       "id": "academic/celebrating",
       "role": "academic",
       "label": "Celebrating",
-      "src": "/static/e-preview/assets/poses/academic/celebrating.svg",
+      "src": "/static/avatar/clean/academic/celebrating.svg",
       "tags": [
         "celebrating"
       ],
       "description": "Celebrating",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/academic/celebrating.svg"
     },
     {
       "id": "academic/concerned",
       "role": "academic",
       "label": "Concerned",
-      "src": "/static/e-preview/assets/poses/academic/concerned.svg",
+      "src": "/static/avatar/clean/academic/concerned.svg",
       "tags": [
         "concerned"
       ],
       "description": "Concerned",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/academic/concerned.svg"
     },
     {
       "id": "academic/sultry",
       "role": "academic",
       "label": "Sultry",
-      "src": "/static/e-preview/assets/poses/academic/sultry.svg",
+      "src": "/static/avatar/clean/academic/sultry.svg",
       "tags": [
         "sultry"
       ],
       "description": "Sultry",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/academic/sultry.svg"
     },
     {
       "id": "engineering/standing",
       "role": "engineering",
       "label": "Standing",
-      "src": "/static/e-preview/assets/poses/engineering/standing.svg",
+      "src": "/static/avatar/clean/engineering/standing.svg",
       "tags": [
         "standing"
       ],
       "description": "Standing",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/engineering/standing.svg"
     },
     {
       "id": "engineering/standing-2",
       "role": "engineering",
       "label": "Standing 2",
-      "src": "/static/e-preview/assets/poses/engineering/standing-2.svg",
+      "src": "/static/avatar/clean/engineering/standing-2.svg",
       "tags": [
         "standing",
         "2"
       ],
       "description": "Standing 2",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/engineering/standing-2.svg"
     },
     {
       "id": "engineering/seated",
       "role": "engineering",
       "label": "Seated",
-      "src": "/static/e-preview/assets/poses/engineering/seated.svg",
+      "src": "/static/avatar/clean/engineering/seated.svg",
       "tags": [
         "seated"
       ],
       "description": "Seated",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/engineering/seated.svg"
     },
     {
       "id": "engineering/seated-2",
       "role": "engineering",
       "label": "Seated 2",
-      "src": "/static/e-preview/assets/poses/engineering/seated-2.svg",
+      "src": "/static/avatar/clean/engineering/seated-2.svg",
       "tags": [
         "seated",
         "2"
       ],
       "description": "Seated 2",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/engineering/seated-2.svg"
     },
     {
       "id": "engineering/tired",
       "role": "engineering",
       "label": "Tired",
-      "src": "/static/e-preview/assets/poses/engineering/tired.svg",
+      "src": "/static/avatar/clean/engineering/tired.svg",
       "tags": [
         "tired"
       ],
       "description": "Tired",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/engineering/tired.svg"
     },
     {
       "id": "engineering/thinking",
       "role": "engineering",
       "label": "Thinking",
-      "src": "/static/e-preview/assets/poses/engineering/thinking.svg",
+      "src": "/static/avatar/clean/engineering/thinking.svg",
       "tags": [
         "thinking"
       ],
       "description": "Thinking",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/engineering/thinking.svg"
     },
     {
       "id": "engineering/laughing",
       "role": "engineering",
       "label": "Laughing",
-      "src": "/static/e-preview/assets/poses/engineering/laughing.svg",
+      "src": "/static/avatar/clean/engineering/laughing.svg",
       "tags": [
         "laughing"
       ],
       "description": "Laughing",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/engineering/laughing.svg"
     },
     {
       "id": "engineering/frustrated",
       "role": "engineering",
       "label": "Frustrated",
-      "src": "/static/e-preview/assets/poses/engineering/frustrated.svg",
+      "src": "/static/avatar/clean/engineering/frustrated.svg",
       "tags": [
         "frustrated"
       ],
       "description": "Frustrated",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/engineering/frustrated.svg"
     },
     {
       "id": "engineering/exasperated",
       "role": "engineering",
       "label": "Exasperated",
-      "src": "/static/e-preview/assets/poses/engineering/exasperated.svg",
+      "src": "/static/avatar/clean/engineering/exasperated.svg",
       "tags": [
         "exasperated"
       ],
       "description": "Exasperated",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/engineering/exasperated.svg"
     },
     {
       "id": "engineering/teasing",
       "role": "engineering",
       "label": "Teasing",
-      "src": "/static/e-preview/assets/poses/engineering/teasing.svg",
+      "src": "/static/avatar/clean/engineering/teasing.svg",
       "tags": [
         "teasing"
       ],
       "description": "Teasing",
       "source": "traced-pose",
-      "motion": "none"
-    },
-    {
-      "id": "engineering/flirty",
-      "role": "engineering",
-      "label": "Flirty",
-      "src": "/static/e-preview/assets/poses/engineering/flirty.svg",
-      "tags": [
-        "flirty"
-      ],
-      "description": "Flirty",
-      "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/engineering/teasing.svg"
     },
     {
       "id": "engineering/glamour",
       "role": "engineering",
       "label": "Glamour",
-      "src": "/static/e-preview/assets/poses/engineering/glamour.svg",
+      "src": "/static/avatar/clean/engineering/glamour.svg",
       "tags": [
         "glamour"
       ],
       "description": "Glamour",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/engineering/glamour.svg"
     },
     {
       "id": "engineering/silly",
       "role": "engineering",
       "label": "Silly",
-      "src": "/static/e-preview/assets/poses/engineering/silly.svg",
+      "src": "/static/avatar/clean/engineering/silly.svg",
       "tags": [
         "silly"
       ],
       "description": "Silly",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/engineering/silly.svg"
     },
     {
       "id": "engineering/greeting",
       "role": "engineering",
       "label": "Greeting",
-      "src": "/static/e-preview/assets/poses/engineering/greeting.svg",
+      "src": "/static/avatar/clean/engineering/greeting.svg",
       "tags": [
         "greeting"
       ],
       "description": "Greeting",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/engineering/greeting.svg"
     },
     {
       "id": "engineering/listening",
       "role": "engineering",
       "label": "Listening",
-      "src": "/static/e-preview/assets/poses/engineering/listening.svg",
+      "src": "/static/avatar/clean/engineering/listening.svg",
       "tags": [
         "listening"
       ],
       "description": "Listening",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/engineering/listening.svg"
     },
     {
       "id": "engineering/confused",
       "role": "engineering",
       "label": "Confused",
-      "src": "/static/e-preview/assets/poses/engineering/confused.svg",
+      "src": "/static/avatar/clean/engineering/confused.svg",
       "tags": [
         "confused"
       ],
       "description": "Confused",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/engineering/confused.svg"
     },
     {
       "id": "engineering/celebrating",
       "role": "engineering",
       "label": "Celebrating",
-      "src": "/static/e-preview/assets/poses/engineering/celebrating.svg",
+      "src": "/static/avatar/clean/engineering/celebrating.svg",
       "tags": [
         "celebrating"
       ],
       "description": "Celebrating",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/engineering/celebrating.svg"
     },
     {
       "id": "engineering/coding",
       "role": "engineering",
       "label": "Coding",
-      "src": "/static/e-preview/assets/poses/engineering/coding.svg",
+      "src": "/static/avatar/focus/engineering/coding.svg",
       "tags": [
         "coding"
       ],
       "description": "Coding",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/engineering/coding.svg",
+      "gaze_target": "keyboard",
+      "asset_version": "507dee9f2fd8"
     },
     {
       "id": "engineering/debugging",
       "role": "engineering",
       "label": "Debugging",
-      "src": "/static/e-preview/assets/poses/engineering/debugging.svg",
+      "src": "/static/avatar/focus/engineering/debugging.svg",
       "tags": [
         "debugging"
       ],
       "description": "Debugging",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/engineering/debugging.svg",
+      "gaze_target": "code panel",
+      "asset_version": "aaac4e928436"
     },
     {
       "id": "engineering/security-review",
       "role": "engineering",
       "label": "Security Review",
-      "src": "/static/e-preview/assets/poses/engineering/security-review.svg",
+      "src": "/static/avatar/focus/engineering/security-review.svg",
       "tags": [
         "security",
         "review"
       ],
       "description": "Security Review",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/engineering/security-review.svg",
+      "gaze_target": "review panel",
+      "asset_version": "d66e5046e37e"
     },
     {
       "id": "engineering/lying-down",
       "role": "engineering",
       "label": "Lying Down",
-      "src": "/static/e-preview/assets/poses/engineering/lying-down.svg",
+      "src": "/static/avatar/clean/engineering/lying-down.svg",
       "tags": [
         "lying",
         "down"
       ],
       "description": "Lying Down",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/engineering/lying-down.svg"
     },
     {
       "id": "engineering/concerned",
       "role": "engineering",
       "label": "Concerned",
-      "src": "/static/e-preview/assets/poses/engineering/concerned.svg",
+      "src": "/static/avatar/clean/engineering/concerned.svg",
       "tags": [
         "concerned"
       ],
       "description": "Concerned",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/engineering/concerned.svg"
     },
     {
       "id": "engineering/sultry",
       "role": "engineering",
       "label": "Sultry",
-      "src": "/static/e-preview/assets/poses/engineering/sultry.svg",
+      "src": "/static/avatar/clean/engineering/sultry.svg",
       "tags": [
         "sultry"
       ],
       "description": "Sultry",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/engineering/sultry.svg"
     },
     {
       "id": "engineering/working",
       "role": "engineering",
       "label": "Working",
-      "src": "/static/e-preview/assets/poses/engineering/working.svg",
+      "src": "/static/avatar/focus/engineering/working.svg",
       "tags": [
         "working"
       ],
       "description": "Working",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/engineering/working.svg",
+      "gaze_target": "laptop",
+      "asset_version": "dd1f911600d4"
     },
     {
       "id": "engineering/testing",
       "role": "engineering",
       "label": "Testing",
-      "src": "/static/e-preview/assets/poses/engineering/testing.svg",
+      "src": "/static/avatar/clean/engineering/testing.svg",
       "tags": [
         "testing"
       ],
       "description": "Testing",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/engineering/testing.svg"
     },
     {
       "id": "engineering/code-review",
       "role": "engineering",
       "label": "Code Review",
-      "src": "/static/e-preview/assets/poses/engineering/code-review.svg",
+      "src": "/static/avatar/clean/engineering/code-review.svg",
       "tags": [
         "code",
         "review"
       ],
       "description": "Code Review",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/engineering/code-review.svg"
+    },
+    {
+      "id": "engineering/flirty",
+      "role": "engineering",
+      "label": "Flirty",
+      "src": "/static/avatar/clean/engineering/flirty.svg",
+      "tags": [
+        "flirty"
+      ],
+      "description": "Flirty",
+      "source": "traced-pose",
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/engineering/flirty.svg"
     },
     {
       "id": "business/standing",
       "role": "business",
       "label": "Standing",
-      "src": "/static/e-preview/assets/poses/business/standing.svg",
+      "src": "/static/avatar/clean/business/standing.svg",
       "tags": [
         "standing"
       ],
       "description": "Standing",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/business/standing.svg"
     },
     {
       "id": "business/standing-2",
       "role": "business",
       "label": "Standing 2",
-      "src": "/static/e-preview/assets/poses/business/standing-2.svg",
+      "src": "/static/avatar/clean/business/standing-2.svg",
       "tags": [
         "standing",
         "2"
       ],
       "description": "Standing 2",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/business/standing-2.svg"
     },
     {
       "id": "business/seated",
       "role": "business",
       "label": "Seated",
-      "src": "/static/e-preview/assets/poses/business/seated.svg",
+      "src": "/static/avatar/clean/business/seated.svg",
       "tags": [
         "seated"
       ],
       "description": "Seated",
       "source": "traced-pose",
       "motion": "seated-hand",
-      "layered_src": "/static/e-preview/assets/business-seated-layered.svg"
+      "layered_src": "/static/e-preview/assets/business-seated-layered.svg",
+      "original_src": "/static/e-preview/assets/poses/business/seated.svg"
     },
     {
       "id": "business/seated-2",
       "role": "business",
       "label": "Seated 2",
-      "src": "/static/e-preview/assets/poses/business/seated-2.svg",
+      "src": "/static/avatar/clean/business/seated-2.svg",
       "tags": [
         "seated",
         "2"
       ],
       "description": "Seated 2",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/business/seated-2.svg"
     },
     {
       "id": "business/tired",
       "role": "business",
       "label": "Tired",
-      "src": "/static/e-preview/assets/poses/business/tired.svg",
+      "src": "/static/avatar/clean/business/tired.svg",
       "tags": [
         "tired"
       ],
       "description": "Tired",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/business/tired.svg"
     },
     {
       "id": "business/lying-down",
       "role": "business",
       "label": "Lying Down",
-      "src": "/static/e-preview/assets/poses/business/lying-down.svg",
+      "src": "/static/avatar/clean/business/lying-down.svg",
       "tags": [
         "lying",
         "down"
       ],
       "description": "Lying Down",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/business/lying-down.svg"
     },
     {
       "id": "business/thinking",
       "role": "business",
       "label": "Thinking",
-      "src": "/static/e-preview/assets/poses/business/thinking.svg",
+      "src": "/static/avatar/clean/business/thinking.svg",
       "tags": [
         "thinking"
       ],
       "description": "Thinking",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/business/thinking.svg"
     },
     {
       "id": "business/working",
       "role": "business",
       "label": "Working",
-      "src": "/static/e-preview/assets/poses/business/working.svg",
+      "src": "/static/avatar/focus/business/working.svg",
       "tags": [
         "working"
       ],
       "description": "Working",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/business/working.svg",
+      "gaze_target": "clipboard",
+      "asset_version": "cff8c4c7aa48"
     },
     {
       "id": "business/laughing",
       "role": "business",
       "label": "Laughing",
-      "src": "/static/e-preview/assets/poses/business/laughing.svg",
+      "src": "/static/avatar/clean/business/laughing.svg",
       "tags": [
         "laughing"
       ],
       "description": "Laughing",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/business/laughing.svg"
     },
     {
       "id": "business/frustrated",
       "role": "business",
       "label": "Frustrated",
-      "src": "/static/e-preview/assets/poses/business/frustrated.svg",
+      "src": "/static/avatar/clean/business/frustrated.svg",
       "tags": [
         "frustrated"
       ],
       "description": "Frustrated",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/business/frustrated.svg"
     },
     {
       "id": "business/exasperated",
       "role": "business",
       "label": "Exasperated",
-      "src": "/static/e-preview/assets/poses/business/exasperated.svg",
+      "src": "/static/avatar/clean/business/exasperated.svg",
       "tags": [
         "exasperated"
       ],
       "description": "Exasperated",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/business/exasperated.svg"
     },
     {
       "id": "business/coordinating",
       "role": "business",
       "label": "Coordinating",
-      "src": "/static/e-preview/assets/poses/business/coordinating.svg",
+      "src": "/static/avatar/clean/business/coordinating.svg",
       "tags": [
         "coordinating"
       ],
       "description": "Coordinating",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/business/coordinating.svg"
     },
     {
       "id": "business/formal-report",
       "role": "business",
       "label": "Formal Report",
-      "src": "/static/e-preview/assets/poses/business/formal-report.svg",
+      "src": "/static/avatar/focus/business/formal-report.svg",
       "tags": [
         "formal",
         "report"
       ],
       "description": "Formal Report",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/business/formal-report.svg",
+      "gaze_target": "report",
+      "asset_version": "b309b84f0767"
     },
     {
       "id": "business/task-complete",
       "role": "business",
       "label": "Task Complete",
-      "src": "/static/e-preview/assets/poses/business/task-complete.svg",
+      "src": "/static/avatar/clean/business/task-complete.svg",
       "tags": [
         "task",
         "complete"
       ],
       "description": "Task Complete",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/business/task-complete.svg"
     },
     {
       "id": "business/teasing",
       "role": "business",
       "label": "Teasing",
-      "src": "/static/e-preview/assets/poses/business/teasing.svg",
+      "src": "/static/avatar/clean/business/teasing.svg",
       "tags": [
         "teasing"
       ],
       "description": "Teasing",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/business/teasing.svg"
     },
     {
       "id": "business/flirty",
       "role": "business",
       "label": "Flirty",
-      "src": "/static/e-preview/assets/poses/business/flirty.svg",
+      "src": "/static/avatar/clean/business/flirty.svg",
       "tags": [
         "flirty"
       ],
       "description": "Flirty",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/business/flirty.svg"
     },
     {
       "id": "business/glamour",
       "role": "business",
       "label": "Glamour",
-      "src": "/static/e-preview/assets/poses/business/glamour.svg",
+      "src": "/static/avatar/clean/business/glamour.svg",
       "tags": [
         "glamour"
       ],
       "description": "Glamour",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/business/glamour.svg"
     },
     {
       "id": "business/silly",
       "role": "business",
       "label": "Silly",
-      "src": "/static/e-preview/assets/poses/business/silly.svg",
+      "src": "/static/avatar/clean/business/silly.svg",
       "tags": [
         "silly"
       ],
       "description": "Silly",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/business/silly.svg"
     },
     {
       "id": "business/greeting",
       "role": "business",
       "label": "Greeting",
-      "src": "/static/e-preview/assets/poses/business/greeting.svg",
+      "src": "/static/avatar/clean/business/greeting.svg",
       "tags": [
         "greeting"
       ],
       "description": "Greeting",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/business/greeting.svg"
     },
     {
       "id": "business/listening",
       "role": "business",
       "label": "Listening",
-      "src": "/static/e-preview/assets/poses/business/listening.svg",
+      "src": "/static/avatar/clean/business/listening.svg",
       "tags": [
         "listening"
       ],
       "description": "Listening",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/business/listening.svg"
     },
     {
       "id": "business/confused",
       "role": "business",
       "label": "Confused",
-      "src": "/static/e-preview/assets/poses/business/confused.svg",
+      "src": "/static/avatar/clean/business/confused.svg",
       "tags": [
         "confused"
       ],
       "description": "Confused",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/business/confused.svg"
     },
     {
       "id": "business/celebrating",
       "role": "business",
       "label": "Celebrating",
-      "src": "/static/e-preview/assets/poses/business/celebrating.svg",
+      "src": "/static/avatar/clean/business/celebrating.svg",
       "tags": [
         "celebrating"
       ],
       "description": "Celebrating",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/business/celebrating.svg"
     },
     {
       "id": "business/concerned",
       "role": "business",
       "label": "Concerned",
-      "src": "/static/e-preview/assets/poses/business/concerned.svg",
+      "src": "/static/avatar/clean/business/concerned.svg",
       "tags": [
         "concerned"
       ],
       "description": "Concerned",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/business/concerned.svg"
     },
     {
       "id": "business/sultry",
       "role": "business",
       "label": "Sultry",
-      "src": "/static/e-preview/assets/poses/business/sultry.svg",
+      "src": "/static/avatar/clean/business/sultry.svg",
       "tags": [
         "sultry"
       ],
       "description": "Sultry",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "none",
+      "original_src": "/static/e-preview/assets/poses/business/sultry.svg"
     },
     {
       "id": "academic/S01",
@@ -917,6 +1010,7 @@
       "description": "Lets a character direct your attention to a diagram or control on the left while keeping the explanation visually grounded.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "b4ceb9d9ee28",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/academic-1.png",
@@ -928,7 +1022,8 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 0
       }
     },
     {
@@ -944,6 +1039,7 @@
       "description": "Provides the opposite pointing direction so the character can indicate content without awkwardly mirroring every feature of their design.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "599578a84160",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/engineering-1.png",
@@ -955,7 +1051,8 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 0
       }
     },
     {
@@ -971,6 +1068,7 @@
       "description": "Introduces an option or idea with an inviting gesture, useful when the character is offering a choice rather than telling you what to do.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "752e1f9de1d3",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-1.png",
@@ -982,7 +1080,8 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 0
       }
     },
     {
@@ -998,6 +1097,7 @@
       "description": "Gives arrivals and goodbyes a compact, friendly signal that can work in a corner without taking over the screen.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "cbf7a850628f",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/academic-1.png",
@@ -1009,7 +1109,8 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 0
       }
     },
     {
@@ -1025,6 +1126,7 @@
       "description": "Adds a restrained acknowledgment or thank-you, giving the character a quieter response than a wave or celebration.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "4c34474a006a",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/engineering-1.png",
@@ -1036,7 +1138,8 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 0
       }
     },
     {
@@ -1052,6 +1155,7 @@
       "description": "Shows active attention during your explanation, making listening feel different from waiting for a task to finish.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "6d8da302697e",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-1.png",
@@ -1063,7 +1167,8 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 0
       }
     },
     {
@@ -1079,6 +1184,7 @@
       "description": "Makes curiosity visible when something unfamiliar catches the character's attention, supporting interests beyond their assigned specialty.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "2e24626008c7",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/academic-1.png",
@@ -1090,7 +1196,8 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 0
       }
     },
     {
@@ -1106,6 +1213,7 @@
       "description": "Offers a relaxed, thoughtful resting state for longer conversations without implying that the character is busy typing or searching.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "9a27fc15ee22",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/engineering-1.png",
@@ -1117,7 +1225,8 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 0
       }
     },
     {
@@ -1132,6 +1241,7 @@
       "description": "Marks the moment an explanation or solution clicks, useful for revealing a connection rather than celebrating the entire task.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "79b5b0ff5b87",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-1.png",
@@ -1143,7 +1253,8 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 0
       }
     },
     {
@@ -1158,6 +1269,7 @@
       "description": "Gives respectful doubt a recognizable expression, so disagreement can feel like considered judgment rather than an error state.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "e107f433ea51",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/academic-1.png",
@@ -1169,7 +1281,8 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 35
       }
     },
     {
@@ -1184,6 +1297,7 @@
       "description": "Separates a genuine unexpected result from confusion, adding a clear reaction when the character encounters something surprising.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "cf51eb284703",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/engineering-1.png",
@@ -1195,7 +1309,8 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 1
       }
     },
     {
@@ -1210,6 +1325,7 @@
       "description": "Supports encouragement after a setback with an open, nonjudgmental gesture instead of making every supportive response look worried.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "ed78d06998f8",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-1.png",
@@ -1221,7 +1337,8 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 2
       }
     },
     {
@@ -1236,6 +1353,7 @@
       "description": "Helps acknowledge and correct a real mistake, with a modest gesture that avoids making the apology more dramatic than the problem.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "a2bbf817ccb3",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/academic-1.png",
@@ -1247,7 +1365,8 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 22
       }
     },
     {
@@ -1262,6 +1381,7 @@
       "description": "Provides a quiet release of tension after something works, giving success a less energetic alternative to cheering.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "3f866366efe3",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/engineering-1.png",
@@ -1273,7 +1393,8 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 0
       }
     },
     {
@@ -1288,6 +1409,7 @@
       "description": "Acknowledges a disappointing result without implying that the character has given up, preserving a useful distinction from frustration.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "d5a49b8eafd4",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-1.png",
@@ -1299,7 +1421,8 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 1
       }
     },
     {
@@ -1314,6 +1437,7 @@
       "description": "Adds a human-readable awkward or bashful reaction for playful conversation, broadening emotional range beyond task status.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "882c61232a21",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/academic-1.png",
@@ -1325,7 +1449,8 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 10
       }
     },
     {
@@ -1340,6 +1465,7 @@
       "description": "Signals readiness to tackle a difficult problem, giving commitment a clear silhouette without making the character look angry.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "d49c11e9704a",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/engineering-1.png",
@@ -1351,7 +1477,8 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 1
       }
     },
     {
@@ -1366,6 +1493,7 @@
       "description": "Gives teasing observations a confident visual tone, useful for short playful moments when that personality fits the conversation.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "8b6f2e197407",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-1.png",
@@ -1377,7 +1505,8 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 0
       }
     },
     {
@@ -1394,6 +1523,7 @@
       "description": "Provides a relaxed, amused reaction to a joke or familiar situation, showing warmth without turning every laugh into a large gesture.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "f49b49585a82",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/academic-2.png",
@@ -1405,7 +1535,8 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 0
       }
     },
     {
@@ -1420,6 +1551,7 @@
       "description": "Supports dry humor with minimal movement, especially when a deliberately understated reaction would land better than an animated one.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "1f14759abfca",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/engineering-2.png",
@@ -1431,7 +1563,8 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 0
       }
     },
     {
@@ -1446,6 +1579,7 @@
       "description": "Adds an unmistakable comic reaction to an obvious silly mistake; it should remain contextual rather than a default response to the user.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "025cf3070533",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-2.png",
@@ -1457,7 +1591,8 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 0
       }
     },
     {
@@ -1473,6 +1608,7 @@
       "description": "Shows that the character has noticed something worth reconsidering, useful for a humorous second look or a sudden change of interpretation.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "eb040c4cdbed",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/academic-2.png",
@@ -1484,7 +1620,8 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 0
       }
     },
     {
@@ -1499,6 +1636,7 @@
       "description": "Gives break reminders and transitions out of focused work a distinct full-body silhouette, adding variety to idle behavior.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "a12ab58ca7ed",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/engineering-2.png",
@@ -1510,7 +1648,8 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 0
       }
     },
     {
@@ -1526,6 +1665,7 @@
       "description": "Provides a gentle winding-down pose for late-night conversation or a goodnight scene, distinct from being upset or disengaged.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "af41e73542f1",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-2.png",
@@ -1537,7 +1677,8 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 0
       }
     },
     {
@@ -1552,6 +1693,7 @@
       "description": "Supports prose and D&D narration with a broad storytelling gesture, letting the Academic act as an imaginative collaborator as well as a teacher.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "16c9688a0de3",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/academic-2.png",
@@ -1563,7 +1705,8 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 0
       }
     },
     {
@@ -1579,6 +1722,7 @@
       "description": "Shows an explanation being constructed step by step, matching the goal of teaching through visible diagrams rather than only presenting finished answers.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "46de7f5213a2",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/academic-2.png",
@@ -1590,14 +1734,15 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 147
       }
     },
     {
       "id": "academic/A03",
       "role": "academic",
       "label": "Annotating a passage",
-      "src": "/static/avatar/cutouts/A03.png",
+      "src": "/static/avatar/focus/academic/A03.svg",
       "tags": [
         "A03",
         "annotating"
@@ -1605,6 +1750,7 @@
       "description": "Distinguishes close reading and critique from drafting new prose, useful when discussing a quotation, revising wording, or examining an argument.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "d4deb33c07f7",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/academic-2.png",
@@ -1616,8 +1762,11 @@
           0,
           512,
           456
-        ]
-      }
+        ],
+        "baseline_debris_pixels": 64
+      },
+      "original_src": "/static/avatar/cutouts/A03.png",
+      "gaze_target": "book"
     },
     {
       "id": "academic/A04",
@@ -1631,6 +1780,7 @@
       "description": "Makes the Academic's curious streak visible during exploration, giving discovery a different feel from confidently explaining known material.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "d4f6bf8cf853",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/academic-2.png",
@@ -1642,7 +1792,8 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 109
       }
     },
     {
@@ -1658,6 +1809,7 @@
       "description": "Communicates comparison between sources or interpretations, useful when evidence conflicts and the answer requires weighing alternatives.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "9b71ebaff8f2",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/academic-3.png",
@@ -1669,7 +1821,8 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 0
       }
     },
     {
@@ -1685,6 +1838,7 @@
       "description": "Adds a recognizable tabletop action for D&D sessions, making a roll or playful uncertainty feel different from ordinary academic work.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "090c489d8ccc",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/academic-3.png",
@@ -1696,7 +1850,8 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 0
       }
     },
     {
@@ -1712,6 +1867,7 @@
       "description": "Provides a clear game-master identity for running a scene, with room for expressive hands while the screen keeps the silhouette simple.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "5c600221eb7b",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/academic-3.png",
@@ -1723,14 +1879,15 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 0
       }
     },
     {
       "id": "academic/A08",
       "role": "academic",
       "label": "Building a world map",
-      "src": "/static/avatar/cutouts/A08.png",
+      "src": "/static/avatar/focus/academic/A08.svg",
       "tags": [
         "A08",
         "world",
@@ -1739,6 +1896,7 @@
       "description": "Supports collaborative worldbuilding, geography, and campaign planning by showing the character actively shaping a setting.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "5e5b921dfdb8",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/academic-3.png",
@@ -1750,8 +1908,11 @@
           0,
           512,
           456
-        ]
-      }
+        ],
+        "baseline_debris_pixels": 3
+      },
+      "original_src": "/static/avatar/cutouts/A08.png",
+      "gaze_target": "map"
     },
     {
       "id": "academic/A09",
@@ -1766,6 +1927,7 @@
       "description": "Separates delivering a passage from silently studying it, useful for narrated prose, a dramatic quotation, or an explanation built around a text.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "969dacc2826b",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/academic-3.png",
@@ -1777,7 +1939,8 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 0
       }
     },
     {
@@ -1793,6 +1956,7 @@
       "description": "Shows the pause involved in choosing words, giving writing and revision a reflective state rather than continuous fake typing.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "d977518a5457",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/academic-3.png",
@@ -1804,14 +1968,15 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 0
       }
     },
     {
       "id": "engineering/H01",
       "role": "engineering",
       "label": "Reviewing a diff",
-      "src": "/static/avatar/cutouts/H01.png",
+      "src": "/static/avatar/focus/engineering/H01.svg",
       "tags": [
         "H01",
         "patch",
@@ -1820,6 +1985,7 @@
       "description": "Makes before-and-after code comparison visible, helping distinguish reviewing a proposed change from writing or debugging code.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "2b1944d26013",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/engineering-2.png",
@@ -1831,8 +1997,11 @@
           0,
           512,
           456
-        ]
-      }
+        ],
+        "baseline_debris_pixels": 0
+      },
+      "original_src": "/static/avatar/cutouts/H01.png",
+      "gaze_target": "code panels"
     },
     {
       "id": "engineering/H02",
@@ -1847,6 +2016,7 @@
       "description": "Signals evidence gathering across diagnostic output, useful when the Hacker is tracing a problem instead of already claiming to know the cause.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "fc3aa9148d3a",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/engineering-2.png",
@@ -1858,7 +2028,8 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 1
       }
     },
     {
@@ -1874,6 +2045,7 @@
       "description": "Provides a calm waiting posture for builds or tests, so a long operation does not require constant energetic typing animations.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "5d68a1b7d6f5",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/engineering-2.png",
@@ -1885,14 +2057,15 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 0
       }
     },
     {
       "id": "engineering/H04",
       "role": "engineering",
       "label": "Terminal focus",
-      "src": "/static/avatar/cutouts/H04.png",
+      "src": "/static/avatar/focus/engineering/H04.svg",
       "tags": [
         "H04",
         "terminal",
@@ -1901,6 +2074,7 @@
       "description": "Offers a focused, compact working pose for local terminal tasks, giving hands-on execution a clear visual state.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "54d24ad2345a",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/engineering-2.png",
@@ -1912,8 +2086,11 @@
           0,
           512,
           456
-        ]
-      }
+        ],
+        "baseline_debris_pixels": 0
+      },
+      "original_src": "/static/avatar/cutouts/H04.png",
+      "gaze_target": "keyboard"
     },
     {
       "id": "engineering/H05",
@@ -1927,6 +2104,7 @@
       "description": "Shows a deliberate pause to inspect program state, helping explain why debugging sometimes involves stopping and examining one detail.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "062214809b8a",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/engineering-3.png",
@@ -1938,7 +2116,8 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 3
       }
     },
     {
@@ -1954,6 +2133,7 @@
       "description": "Marks a verified test result with a small victory, giving success a specific meaning rather than celebrating before checks finish.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "8a68a57ac41e",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/engineering-3.png",
@@ -1965,7 +2145,8 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 0
       }
     },
     {
@@ -1981,6 +2162,7 @@
       "description": "Distinguishes reproducing a bug in a controlled local example from general investigation, reinforcing a careful evidence-first workflow.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "d0eb3e9b8e97",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/engineering-3.png",
@@ -1992,7 +2174,8 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 1
       }
     },
     {
@@ -2008,6 +2191,7 @@
       "description": "Turns an abstract dependency problem into a simple visual metaphor, supporting explanations of tangled modules or package relationships.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "6f1c2e78cfab",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/engineering-3.png",
@@ -2019,7 +2203,8 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 1
       }
     },
     {
@@ -2035,6 +2220,7 @@
       "description": "Shows architectural thinking before implementation, giving system design a distinct pose from keyboard work or reading logs.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "5d2170dc84d2",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/engineering-3.png",
@@ -2046,7 +2232,8 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 0
       }
     },
     {
@@ -2062,6 +2249,7 @@
       "description": "Adds a deliberately silly flourish after finishing, giving her confidence and humor a place beyond purely functional coding states.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "15abaa9c3e37",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/engineering-3.png",
@@ -2073,7 +2261,8 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 0
       }
     },
     {
@@ -2089,6 +2278,7 @@
       "description": "Supports the Business character's design role by showing evaluation of a layout or proposal, broadening his identity beyond spreadsheets.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "2bca2948282c",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-2.png",
@@ -2100,7 +2290,8 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 0
       }
     },
     {
@@ -2115,6 +2306,7 @@
       "description": "Makes a handoff to another specialist visible, useful for explaining delegation and who is currently responsible for the next step.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "2c252ff078af",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-2.png",
@@ -2126,7 +2318,8 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 0
       }
     },
     {
@@ -2142,6 +2335,7 @@
       "description": "Distinguishes presenting a finished report from drafting one, creating a clear moment for the morning-results or task-completion experience.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "16721851bf09",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-2.png",
@@ -2153,7 +2347,8 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 0
       }
     },
     {
@@ -2168,6 +2363,7 @@
       "description": "Shows two competing options being weighed, useful for business decisions where priorities and tradeoffs matter more than a single confident answer.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "c238ad9bddeb",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-2.png",
@@ -2179,7 +2375,8 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 0
       }
     },
     {
@@ -2194,6 +2391,7 @@
       "description": "Makes reprioritization visible with one task moving ahead of others, matching the need to keep the next steps manageable.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "59fd61f07669",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-3.png",
@@ -2205,7 +2403,8 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 0
       }
     },
     {
@@ -2221,6 +2420,7 @@
       "description": "Provides an attentive, restrained listening pose for planning conversations, showing that straightforwardness can still include patience.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "1005d8edcc65",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-3.png",
@@ -2232,14 +2432,15 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 0
       }
     },
     {
       "id": "business/B07",
       "role": "business",
       "label": "Checking a budget",
-      "src": "/static/avatar/cutouts/B07.png",
+      "src": "/static/avatar/focus/business/B07.svg",
       "tags": [
         "B07",
         "budget",
@@ -2248,6 +2449,7 @@
       "description": "Signals deliberate review of costs and constraints, distinguishing financial judgment from generic research or report writing.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "9e806eca0d44",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-3.png",
@@ -2259,8 +2461,11 @@
           0,
           512,
           456
-        ]
-      }
+        ],
+        "baseline_debris_pixels": 0
+      },
+      "original_src": "/static/avatar/cutouts/B07.png",
+      "gaze_target": "spreadsheet"
     },
     {
       "id": "business/B08",
@@ -2275,6 +2480,7 @@
       "description": "Represents checking the progress of a long-running task, useful for an eventual overnight-work interface without pretending that monitoring is the work itself.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "7f501b7f75f5",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-3.png",
@@ -2286,7 +2492,8 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 0
       }
     },
     {
@@ -2302,6 +2509,7 @@
       "description": "Makes a consequential concern visible before action, supporting clear communication about uncertainty, dependencies, or decisions needing the owner's input.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "a601524a44dc",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-3.png",
@@ -2313,14 +2521,15 @@
           0,
           512,
           456
-        ]
+        ],
+        "baseline_debris_pixels": 0
       }
     },
     {
       "id": "business/B10",
       "role": "business",
       "label": "Closing the laptop",
-      "src": "/static/avatar/cutouts/B10.png",
+      "src": "/static/avatar/focus/business/B10.svg",
       "tags": [
         "B10",
         "closing",
@@ -2329,6 +2538,7 @@
       "description": "Gives a completed session a recognizable ending, pairing a relaxed posture with the point where the character can summarize and hand control back.",
       "source": "generated-concept",
       "approval": "approved",
+      "asset_version": "69c8c73b9c8a",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-3.png",
@@ -2340,8 +2550,11 @@
           0,
           512,
           456
-        ]
-      }
+        ],
+        "baseline_debris_pixels": 0
+      },
+      "original_src": "/static/avatar/cutouts/B10.png",
+      "gaze_target": "laptop"
     }
   ],
   "roles": {

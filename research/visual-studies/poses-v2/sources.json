@@ -183,7 +183,10 @@
         "flirty",
         "glamour",
         "silly"
-      ]
+      ],
+      "pose_sources": {
+        "flirty": "../poses-v4/engineering-flirty-normalized.png"
+      }
     },
     {
       "role": "business",

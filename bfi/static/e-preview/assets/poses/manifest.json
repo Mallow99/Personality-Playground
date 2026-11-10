@@ -810,29 +810,6 @@
         "path_count": 3
       },
       {
-        "id": "flirty",
-        "label": "Flirty",
-        "category": "everyday",
-        "sheet": "engineering-c.png",
-        "sheet_sha256": "435589175c545b2ebaaddee26628cc29993bceed5fe29602831c3cb69532bf5c",
-        "crop": [
-          0,
-          512,
-          512,
-          966
-        ],
-        "canvas": [
-          512,
-          512
-        ],
-        "geometry_iou": 0.995458,
-        "boundary_geometry_iou": 1.0,
-        "cleanup_tolerance_px": 0.75,
-        "palette_agreement": 0.998251,
-        "vector_sha256": "7491b01677c5fae70e51491c305d2dc112dbc02d30bee2f834732cce62e36a31",
-        "path_count": 3
-      },
-      {
         "id": "glamour",
         "label": "Glamour",
         "category": "everyday",
@@ -1223,6 +1200,37 @@
         "cleanup_tolerance_px": 0.75,
         "palette_agreement": 0.997426,
         "vector_sha256": "f8b818257ee8da364e6b106b3dd1caa0da977e4bac105b3e1a5cb494b366ae62",
+        "path_count": 3
+      },
+      {
+        "id": "flirty",
+        "label": "Flirty",
+        "category": "everyday",
+        "sheet": "../poses-v4/engineering-flirty-normalized.png",
+        "sheet_sha256": "c8fe70aa07997f3d2255b17350f5a4cf6647a8aaed8755834f91bb3a35c0ee30",
+        "crop": [
+          0,
+          0,
+          512,
+          512
+        ],
+        "cell_to_canvas": [
+          1,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.995153,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998288,
+        "vector_sha256": "f06732a72473918eab95b4aed95e0caa76ea4ba34e7c28723eb4a5f5f7600419",
         "path_count": 3
       }
     ],

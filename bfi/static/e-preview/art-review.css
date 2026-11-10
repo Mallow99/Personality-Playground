@@ -1,0 +1,143 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: #eeeae5;
+  color: #262127;
+  font:
+    15px/1.6 system-ui,
+    sans-serif;
+}
+main {
+  max-width: 1240px;
+  margin: auto;
+  padding: 28px 20px 60px;
+}
+h1 {
+  font:
+    normal clamp(35px, 6vw, 58px) / 1.15 Georgia,
+    serif;
+}
+main > p {
+  max-width: 800px;
+}
+a {
+  color: inherit;
+}
+select,
+input {
+  font: inherit;
+  padding: 8px;
+  border: 1px solid #999;
+  background: #fff;
+  color: #222;
+  max-width: 100%;
+}
+label {
+  font-size: 12px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  margin: 28px 0;
+}
+.tools a {
+  font-size: 12px;
+}
+#cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.card {
+  border: 1px solid #b3a9ad;
+  background: #f7f5f2;
+  min-width: 0;
+}
+.art {
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+  background: #b6acaf;
+}
+.art > img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: none;
+}
+.art .original {
+  display: none;
+}
+.card-content {
+  padding: 16px;
+}
+.card h2 {
+  font:
+    normal 23px Georgia,
+    serif;
+  margin: 0 0 8px;
+}
+.card small {
+  font-size: 10px;
+}
+.card ul {
+  padding-left: 17px;
+  font-size: 12px;
+}
+.card-content > a {
+  font-size: 12px;
+}
+body[data-background="light"] .art {
+  background: #fff;
+}
+body[data-background="dark"] .art {
+  background: #151719;
+}
+body[data-source="true"] .art {
+  background: #fff;
+}
+body[data-source="true"] .art .packaged {
+  display: none;
+}
+body[data-source="true"] .art .original {
+  display: block;
+}
+.art .sheet {
+  object-fit: fill;
+  inset: auto;
+}
+#cards > [hidden] {
+  display: none !important;
+}
+@media (max-width: 900px) {
+  #cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 580px) {
+  #cards {
+    grid-template-columns: 1fr;
+  }
+  .tools {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .art {
+    height: 330px;
+  }
+}
+:focus-visible {
+  outline: 3px solid #c12b52;
+  outline-offset: 3px;
+}

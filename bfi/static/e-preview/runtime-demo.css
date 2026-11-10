@@ -139,3 +139,41 @@ summary {
     min-height: 370px;
   }
 }
+[hidden] {
+  display: none !important;
+}
+button:disabled,
+select:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+button:focus-visible,
+select:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--avatar-accent);
+  outline-offset: 3px;
+}
+.pose-note {
+  font-size: 12px;
+  min-height: 3em;
+}
+.desktop[data-surface="studio"] {
+  background: var(--studio-bg);
+}
+body[data-theme="academic"] {
+  --studio-bg: #cfc4af;
+}
+body[data-theme="engineering"] {
+  --studio-bg: #8e7d87;
+}
+body[data-theme="business"] {
+  --studio-bg: #7f95aa;
+}
+.desktop[data-surface="light"] {
+  background: #f5f5f5;
+  color: #222;
+}
+.desktop[data-surface="dark"] {
+  background: #151719;
+  color: #eee;
+}

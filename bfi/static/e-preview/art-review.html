@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Full avatar review · BFI</title>
+    <link rel="stylesheet" href="art-review.css?v=1" />
+    <script type="module" src="art-review.js?v=1"></script>
+  </head>
+  <body>
+    <main>
+      <a href="runtime-demo.html">← Interactive avatar preview</a>
+      <h1>Every pose, together.</h1>
+      <p>
+        All 128 packaged sprites. Compare their source art, inspect the edges on
+        different backgrounds, or open a pose in the interactive preview. Notes
+        record the visual pass and its repairs.
+      </p>
+      <div class="tools">
+        <label
+          >Character<select id="role">
+            <option value="all">All three</option>
+            <option value="academic">Academic</option>
+            <option value="engineering">Hacker</option>
+            <option value="business">Business</option>
+          </select></label
+        >
+        <label
+          >Find a pose<input
+            id="search"
+            type="search"
+            placeholder="flirty, reading, report…"
+        /></label>
+        <label
+          >Background<select id="background">
+            <option value="studio">Studio</option>
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+          </select></label
+        >
+        <label><input id="source" type="checkbox" /> Show source art</label>
+        <a href="assets/avatar-visual-review.json" download
+          >Download review record</a
+        >
+      </div>
+      <p id="count" role="status">Loading the library…</p>
+      <div id="cards"></div>
+    </main>
+  </body>
+</html>

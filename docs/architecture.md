@@ -206,3 +206,18 @@ All 54 suggestions were explicitly approved by the owner. The approval registry 
 the catalog and review baseline while retaining local revision notes. The primary
 preview now opens the handler; the old anatomical mapping lab is an archive. New
 animation needs a complete rear surface, not just silhouette-overlap measurements.
+
+## Edge, gaze and control correction
+
+Remove the global pale artwork shadow. Background contrast belongs to the preview
+surface, not a glow around every contour. PNG packaging now removes white-matte
+contamination from RGB as well as estimating alpha; source sheets are retained.
+Fifteen pose-local work-gaze variants live under static/avatar/focus, with explicit
+configuration and source hashes. Runtime catalog entries identify the work target
+and retain original source URLs. The other authored gazes are unchanged.
+
+Visible behavior is the control contract. Explicit hidden CSS overrides display:flex;
+repeated updates to a loading SVG await the shared loading promise. Browser checks
+cover actual visibility, delayed readiness, motion transforms, hand visibility,
+thinking pose selection, reply/idle cues, background changes and phone layouts.
+Backend presentation fields and model tools are unchanged by this correction.

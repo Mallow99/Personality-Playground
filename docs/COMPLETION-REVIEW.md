@@ -40,3 +40,33 @@ and avatar-runtime.md for launch instructions and remaining platform validation.
 The historical lab is retained for learning, including its approximate morphs.
 It is not part of the production renderer. The current application uses authored
 pose changes rather than claiming a reliable full-library body morph.
+
+## Subsequent visual/control feedback
+
+The owner correctly identified pale edges and ineffective controls despite the
+previous checks. The Hide check had verified a state attribute rather than rendered
+visibility. This pass removes the pale CSS glow, reverses white-matte edge blending
+on all 54 cutouts, and fixes hiding in the shared renderer. A loading regression
+check holds the SVG request while controls change, then verifies layer readiness.
+Fifteen main work poses have local eye edits directed toward their props; originals
+remain available. Other poses retain their authored gaze. Background choices and
+explicit still/moving notes make the demo's actual capabilities inspectable.
+See browser_avatar_controls.py and check_avatar_art.py for the new checks.
+
+## Full art pass after the missed flirty correction
+
+The owner identified a specific missed defect: Hacker flirty had only one readable
+arm and a distorted hip/torso. A new reference was generated and directly traced;
+both arms and hands are explicit. The rejected reference and source sheet remain.
+The former legacy guide's hidden-arm annotation was removed and the guide rebuilt.
+
+All 128 runtime entries were inspected in twelve larger role contact pages, before
+and after repairs. The pass also found two neighboring-figure fragments in Hacker
+tired, a leaked caption under Hacker teasing, and detached baseline/caption scraps
+in multiple other exports. Runtime copies remove those artifacts. Fifteen work
+poses now look toward their books, keyboard, map, panels, report or spreadsheet.
+
+`art-review.html` displays every packaged runtime sprite, with character/search
+filters, light/dark backgrounds, source-art comparison and per-pose review notes.
+`config/avatar-visual-review.json` records the inspected inventory and findings.
+The 54-proposal white-source gallery remains separate from this runtime review.

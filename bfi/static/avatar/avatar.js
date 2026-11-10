@@ -122,15 +122,21 @@ export class AvatarView {
     if (!pose) return;
     this.el.dataset.pose = pose.id;
     this.syncAnimation();
-    if (this.key === pose.id) return;
+    if (this.key === pose.id) return this.loading;
     this.key = pose.id;
     const ticket = ++this.ticket;
     this.svg = null;
     this.motionKind = pose.motion;
     if (pose.motion === "reading" || pose.motion === "seated-hand") {
-      const path = this.resolveURL(
-        pose.layered_src || "/static/e-preview/assets/reading-limited.svg",
+      const assetURL = new URL(
+        this.resolveURL(
+          pose.layered_src || "/static/e-preview/assets/reading-limited.svg",
+        ),
+        location.href,
       );
+      if (pose.asset_version)
+        assetURL.searchParams.set("v", pose.asset_version);
+      const path = assetURL.href;
       if (!cache.has(path))
         cache.set(
           path,
@@ -144,21 +150,31 @@ export class AvatarView {
               throw e;
             }),
         );
-      try {
-        const text = await cache.get(path);
-        if (ticket !== this.ticket) return;
-        const doc = new DOMParser().parseFromString(text, "image/svg+xml");
-        this.svg = document.importNode(doc.documentElement, true);
-        this.art.replaceChildren(this.svg);
-        this.syncAnimation();
-      } catch {
-        if (ticket === this.ticket) this.image(pose);
-      }
-    } else this.image(pose);
+      this.loading = cache
+        .get(path)
+        .then((text) => {
+          if (ticket !== this.ticket) return;
+          const doc = new DOMParser().parseFromString(text, "image/svg+xml");
+          if (doc.querySelector("parsererror"))
+            throw Error("Artwork could not parse");
+          this.svg = document.importNode(doc.documentElement, true);
+          this.art.replaceChildren(this.svg);
+          this.syncAnimation();
+        })
+        .catch(() => {
+          if (ticket === this.ticket) this.image(pose);
+        });
+      await this.loading;
+    } else {
+      this.image(pose);
+      this.loading = Promise.resolve();
+    }
   }
   image(pose) {
     const img = document.createElement("img");
-    img.src = this.resolveURL(pose.src);
+    const url = new URL(this.resolveURL(pose.src), location.href);
+    if (pose.asset_version) url.searchParams.set("v", pose.asset_version);
+    img.src = url.href;
     img.alt = pose.label;
     img.draggable = false;
     this.art.replaceChildren(img);

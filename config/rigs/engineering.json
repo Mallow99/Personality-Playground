@@ -931,92 +931,89 @@
     },
     "flirty": {
       "head": [
-        217,
-        6,
-        325,
-        96
+        185,
+        12,
+        308,
+        110
       ],
       "joints": {
         "neck": [
-          279,
-          105
+          254,
+          111
         ],
         "hip": [
-          284,
-          200
+          257,
+          224
         ],
         "leftShoulder": [
-          289,
-          147
+          287,
+          135
         ],
         "rightShoulder": [
-          251,
-          146
+          211,
+          136
         ],
         "leftElbow": [
-          305,
-          185
+          309,
+          167
         ],
         "rightElbow": [
-          242,
-          186
+          182,
+          165
         ],
         "leftWrist": [
-          288,
-          218
+          329,
+          112
         ],
         "rightWrist": [
-          232,
-          222
+          215,
+          202
         ],
         "leftHand": [
-          278,
-          229
+          325,
+          101
         ],
         "rightHand": [
-          218,
-          232
+          231,
+          195
         ],
         "leftHip": [
-          302,
-          203
+          276,
+          230
         ],
         "rightHip": [
-          270,
-          210
+          236,
+          229
         ],
         "leftKnee": [
-          299,
-          310
+          278,
+          309
         ],
         "rightKnee": [
-          270,
-          303
+          224,
+          310
         ],
         "leftAnkle": [
-          312,
-          410
+          292,
+          420
         ],
         "rightAnkle": [
-          252,
-          408
+          214,
+          417
         ],
         "leftToe": [
-          327,
-          439
+          321,
+          455
         ],
         "rightToe": [
-          264,
-          439
+          188,
+          454
         ]
       },
       "props": [],
       "mappingStatus": "draft",
-      "hiddenParts": [
-        "left-upper-arm",
-        "left-forearm",
-        "left-hand"
-      ]
+      "hiddenParts": [],
+      "notes": "Both arms now visible in the repaired reference. Legacy draft guide refreshed; production uses the intact sprite."
     },
     "glamour": {
       "head": [

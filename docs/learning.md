@@ -313,3 +313,64 @@ has rear pages beneath both hands. Other poses remain static whole sprites; the
 application does not animate their rough experimental anatomical cuts. The old lab
 is archived rather than presented as the finished entry point. The full catalog is
 checked for image decoding, in addition to handler/overlay behavior and approval data.
+
+## Fixing white edges, work-directed eyes, and apparently inactive controls
+
+The pale fringe had two different causes. CSS applied a pale `drop-shadow` around
+all artwork, including every transparent gap. The new PNGs also still contained
+white blended into the edge RGB. Lowering their alpha did not remove that white;
+it merely made the white edge translucent. Both were visible on dark backgrounds.
+
+`avatar_matte.py` estimates how much of a known character color was mixed with
+white in the source. The relationship is `source = alpha × foreground +
+(1 − alpha) × white`. The export reverses that mixture before storing transparent
+RGBA. Opaque interiors stay opaque; faint paper texture becomes fully transparent.
+The original sheets remain unchanged. A synthetic check starts with known colors
+and known coverage, composites them on white, and checks their recovery. Inspect
+exports on both light and dark backgrounds, not only the source's white page.
+
+The eye correction is deliberately local. `config/avatar-focus.json` records eye
+apertures and pupil polygons for fifteen work poses. `build_avatar_focus.py`
+keeps the head/body contours and glasses, fills the old pupil area, then clips a
+new pupil toward the book, keyboard, panel or report. Reading's eye group lives
+inside its moving head. A rendered comparison checks that no pixels outside the
+head changed. Other poses retain their original authored gaze; this is not
+automatic eye tracking or a full-library face rig.
+
+The Hide button exposed a testing mistake. Its HTML `hidden` property changed,
+but `.avatar-view { display: flex }` overrode the browser's default hiding rule.
+The old test checked the property, so it passed while the character stayed on
+screen. An explicit `.avatar-view[hidden] { display: none !important }` fixes the
+rendered result. Browser checks now ask whether it is actually visible.
+
+A second bug involved asynchronous loading: repeated state updates while the same
+SVG was loading returned early. The newest render could hide the reveal control,
+then never revisit it when the SVG arrived. The renderer now returns the same
+pending loading promise to those callers. The regression test deliberately holds
+the SVG request, changes the controls, then releases it and checks readiness.
+
+The preview now changes the actual thinking pose, reports every action visibly,
+provides an Idle state and contrasting background choices, and shows layer reveal
+only on supported drawings. It identifies still poses honestly and offers a moving
+example where one exists. Reply marks remain a silent text cue, not audio.
+
+## An image loading successfully is not a visual review
+
+The missed Hacker flirty correction was present in its reference, not introduced
+by SVG tracing. Faithfully tracing a defective drawing preserved the defect. The
+fix required a new reference with both arms clear, then the same trace/comparison
+pipeline. `pose_sources` in the source manifest overrides just this cell; `--only`
+rebuilds its stable role/pose ID. Other art and the old sheet are retained.
+
+The full review used twelve larger contact pages covering all 128 runtime sprites.
+It also found a neighboring figure leaking into Hacker tired and small caption
+scraps beneath multiple figures. Runtime clean copies remove detached baseline
+scraps; a separate explicit rule removes that known neighboring fragment. This is
+not anatomical slicing, a limb redraw, or inferred hidden geometry. The final
+contact pages were inspected again to check the feet and limbs stayed intact.
+`render_avatar_contact_pages.py` reproduces the pages. The web review page shows the
+same runtime assets beside source views, and records specific repairs by pose ID.
+
+Six newer task poses use local eye overlays over embedded transparent cutouts;
+nine older poses use vector eye edits. Their bodies remain authored images or
+traces. Work-directed gaze is pose-specific; other poses retain their source gaze.

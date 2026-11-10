@@ -67,12 +67,14 @@ characters do not silently borrow the wrong character's image.
 
 `build_avatar_catalog.py` reads the generated image-cell mappings, verifies source
 hashes, removes the label strip and near-white background, and preserves the source
-RGB under alpha. It does not redraw the figures or infer anatomy. Cutouts are padded
+RGB in opaque interiors; edge RGB is corrected to remove the white source matte.
+It does not redraw the figures or infer anatomy. Cutouts are padded
 to a common canvas. Original sheets and the 54-image review checklist remain intact.
 Rebuild after changing source art or the shared renderer:
 
 ```sh
-uv run --with numpy --with pillow python scripts/build_avatar_catalog.py
+uv run --locked python scripts/build_avatar_clean.py
+uv run --with numpy --with pillow --with cairosvg --with shapely python scripts/build_avatar_catalog.py
 ```
 
 The build also packages an exact copy of the renderer/catalog/cutouts for the
@@ -155,3 +157,12 @@ behavior is established by these tests.
 On the PC: first verify the native overlay in mock mode, then connect a local model
 with a working tool template and confirm actual `avatar_catalog`/`avatar_set` traces.
 Only then adjust gesture style, reply timing or new paper-cut pieces.
+
+## Work gaze and clean edges
+
+The shared renderer has no pale outline filter. All 54 PNGs remove white-matte
+contamination; original sheets remain intact. Fifteen work-pose catalog entries use
+separate focus SVG variants, with a gaze_target and original_src. These local eye
+edits keep the body and head silhouettes; other poses retain the source gaze.
+The static preview offers contrasting backgrounds for inspection. Its controls
+report actual results and show layer reveal only when it is supported.

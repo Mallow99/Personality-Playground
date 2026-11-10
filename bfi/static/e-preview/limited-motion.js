@@ -45,7 +45,7 @@ function apply() {
     progress < 0.22
       ? "Reading"
       : progress < 0.52
-        ? "Glancing up"
+        ? "Following the page"
         : progress < 0.78
           ? "Adjusting the grip"
           : "Back to the page";
@@ -144,7 +144,7 @@ async function load(path) {
 }
 try {
   [svg, originalSvg] = await Promise.all([
-    load("assets/reading-limited.svg"),
+    load("avatar-runtime/focus/academic/reading.svg"),
     load("assets/poses/academic/reading.svg"),
   ]);
   originalSvg.setAttribute("viewBox", "90 90 330 370");

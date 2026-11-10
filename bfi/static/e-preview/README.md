@@ -8,6 +8,8 @@ is exposed by this static preview.
 
 - **Handler presentation:** `runtime-demo.html` — switch roles, poses, matching
   themes, text reply cues, visibility and motion. All replies here are scripted.
+- **Full runtime visual review:** `art-review.html` — all 128 packaged sprites,
+  source comparison, background choices and per-pose repair notes.
 - **Approved proposals:** `pose-library.html` — all 54 images with reasons and
   source references. The approved baseline defaults to Keep. Existing saved
   revision choices take precedence; exporting decisions remains local.
@@ -38,11 +40,15 @@ the rear surfaces. Originals and source hashes remain available.
 ```sh
 python scripts/build_e_pose_plan.py
 uv run --with numpy --with cairosvg --with shapely python scripts/build_limited_motion.py
-uv run --with numpy --with pillow python scripts/build_avatar_catalog.py
+uv run --locked python scripts/build_avatar_clean.py
+uv run --with numpy --with pillow --with cairosvg --with shapely python scripts/build_avatar_catalog.py
+uv run --with numpy --with cairosvg --with shapely python scripts/check_avatar_art.py
+uv run --locked python scripts/build_avatar_review.py
 node scripts/check_e_preview.mjs
 uv run --locked --group browser python scripts/browser_e_review.py
 uv run --locked --group browser python scripts/browser_limited_motion.py
 uv run --locked --group browser python scripts/browser_avatar.py
+uv run --locked --group browser python scripts/browser_avatar_controls.py
 ```
 
 The catalog builder copies the actual renderer, catalog and cutouts into
@@ -53,3 +59,16 @@ For real handler tools, shared overlay state and native launch instructions, rea
 The source art, prior experiments, 74 SVGs, whole-shape maps and earlier recordings
 are retained. Shared proposal ideas have one demonstrating character each; they do
 not silently become three different character images.
+
+## Edge and gaze revision
+
+All 54 PNGs now unmix the white source matte from edge RGB, and the shared renderer
+no longer adds a pale outline. Use the demo's Studio, Theme, Light and Dark surfaces
+to inspect the result. Thinking selects a real thinking pose; Hide removes the
+rendered avatar; Idle ends the reply cue. Each action reports its result. Reveal
+only appears for supported layered poses, and a still pose says what Motion affects.
+
+Fifteen main work poses have explicit local eye corrections, pointing toward their
+book, workbench, keyboard, panel or report. Other poses retain their authored gaze.
+The original source artwork remains unchanged; focus variants and their configuration
+are separate. Rebuild focus variants after rebuilding the reading layers.
