@@ -60,3 +60,12 @@ new sultry poses. Semantic rig guides are in config/rigs; named pieces preserve
 anatomical identity across poses, with draft ownership and visible inspection tools.
 Pose transitions morph matched pieces; do not replace this with whole-card slides.
 Always check crop spill, geometry fidelity, and actual rendered movement.
+
+Latest owner correction: stop arbitrarily cutting big geometric forms into body
+regions. Prove whole-form grouping on Academic standing/seated before expanding.
+The other 72 mappings are legacy drafts. A hand should remain one coherent form;
+a continuous leg may stay whole rather than acquiring artificial shin cuts. Pose
+transformations mean transitions between poses, not transformations into objects.
+Mix playful poses into the main library; remove the adult-studies section/filter.
+The 54 suggested pose concepts require owner sign-off; do not generate them all or
+infer approval. Preserve silent talking-cue and transition comparisons for review.

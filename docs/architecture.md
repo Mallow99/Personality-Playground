@@ -143,3 +143,18 @@ coordinates, including allowed palette indices. These override automatic hand
 regions before vector clipping. Three overlapping work poses use this refinement;
 remaining mappings stay draft. The builder accepts optional `role/pose` selections
 and preserves other report rows, allowing small, reviewable refinement rounds.
+
+## Whole-shape replacement proof and pose review
+
+Academic standing/seated now use `mappingMethod: whole-shape`. Connected source
+color forms are grouped intact by `componentAssignments`; this branch does not
+intersect forms with anatomical regions. Continuous legs remain coarse pieces.
+The other 72 maps remain legacy drafts. Source component IDs are pose-local, while
+body group IDs support cross-pose matching. At rest the DOM exposes each source
+form separately; during motion grouped contours interpolate and full forms return
+at completion. Single-form offsets reset on pose changes; exported maps retain them.
+
+Pose transition modes compare rotation-aware interpolation, direct morphing, and
+still swaps. Talking cues are visual only. `pose-review.js` stores explicit owner
+decisions locally and exports JSON; no server write, external sync, or training is
+triggered. The 54 proposed concepts are distinct from 74 available drawings.

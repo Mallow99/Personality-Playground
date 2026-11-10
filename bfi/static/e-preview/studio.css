@@ -251,14 +251,6 @@ input {
   transform-origin: center;
   animation: blink 7s infinite;
 }
-.speaking .actor-mouth {
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: talk 0.38s steps(2, end) infinite;
-}
-.speaking > svg {
-  animation: breath 1.8s ease-in-out infinite;
-}
 .floor-line {
   position: absolute;
   bottom: 65px;

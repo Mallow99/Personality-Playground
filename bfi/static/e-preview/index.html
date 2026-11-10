@@ -12,13 +12,14 @@
     <link rel="stylesheet" href="motion-v2.css" />
     <link rel="stylesheet" href="rig.css" />
     <script type="module" src="studio.js"></script>
+    <script type="module" src="pose-review.js"></script>
   </head>
   <body>
     <header>
       <a class="brand" href="#">BFI<span>BEST FRIEND INITIATIVE</span></a>
       <nav>
-        <a href="#poses">Poses</a><a href="#icons">Icons</a
-        ><a href="#cursors">Cursors</a>
+        <a href="#poses">Poses</a><a href="#pose-approval">Pose list</a
+        ><a href="#icons">Icons</a><a href="#cursors">Cursors</a>
       </nav>
       <label class="motion-toggle"
         ><input id="motion" type="checkbox" checked /> Motion</label
@@ -27,7 +28,7 @@
     <main>
       <section class="intro">
         <div>
-          <p class="eyebrow">CHARACTER STUDY / E · 03</p>
+          <p class="eyebrow">CHARACTER STUDY / E · 04</p>
           <h1>Room for<br /><em>individuals.</em></h1>
         </div>
         <p class="intro-copy">
@@ -54,6 +55,7 @@
           </div>
           <div id="actor" class="actor"></div>
           <div class="floor-line"></div>
+          <p id="talk-status" class="talk-status" role="status">Silent</p>
           <div class="stage-bottom">
             <span id="pose-caption">Standing</span
             ><button id="visibility">Disappear</button>
@@ -78,6 +80,23 @@
               </select></label
             ><button id="speaking" aria-pressed="false">Speaking: off</button>
           </div>
+          <label class="motion-choice"
+            >Talking cue<select id="talk-mode">
+              <option value="both">Voice marks + gestures</option>
+              <option value="marks">Voice marks</option>
+              <option value="gestures">Gestures</option>
+            </select></label
+          >
+          <label class="motion-choice"
+            >Between poses<select id="pose-transition">
+              <option value="turn">Turn and reshape</option>
+              <option value="morph">Direct shape morph</option>
+              <option value="still">Still swap for comparison</option>
+            </select></label
+          >
+          <button id="mapping-pair">
+            Compare Academic standing / seated ↗
+          </button>
           <button id="sequence" class="primary">
             Play character sequence <span>↗</span></button
           ><button id="transition">
@@ -96,7 +115,7 @@
         <div class="section-heading">
           <div>
             <p class="eyebrow">PIECE BY PIECE</p>
-            <h2>The same hand. A different pose.</h2>
+            <h2>Whole forms. Deliberate groups.</h2>
           </div>
           <p>
             Named pieces travel between poses.<br />Click a piece to inspect it.
@@ -120,6 +139,19 @@
               value="850"
           /></label>
         </div>
+        <label
+          ><input id="piece-isolate" type="checkbox" /> Isolate selected
+          part</label
+        >
+        <label
+          ><input id="form-drag" type="checkbox" /> Drag single form (with Drag
+          pieces enabled)</label
+        >
+        <p id="form-status" class="fine-print">
+          Whole-shape comparison: Academic standing and seated. Continuous legs
+          stay intact; other poses still have legacy region maps. Form
+          adjustments reset on pose changes.
+        </p>
         <div class="rig-editor">
           <label
             >Body part
@@ -279,17 +311,15 @@
           </div>
           <p>
             Expanded poses and mapped body pieces.<br />Everyday, specialist,
-            and optional playful studies.
+            and expressive poses in one library.
           </p>
         </div>
         <label class="pose-filter-label"
           >Show
           <select id="pose-filter">
-            <option value="practical">Everyday & specialist</option>
+            <option value="all">All poses</option>
             <option value="everyday">Everyday</option>
             <option value="specialist">Specialist</option>
-            <option value="playful">Playful adult studies</option>
-            <option value="all">All poses</option>
           </select></label
         >
         <div id="pose-grid" class="pose-grid"></div>
@@ -309,6 +339,28 @@
           blocked, and completion states can reuse suitable poses.
         </p>
         <div id="pose-plan"></div>
+      </details>
+      <details id="pose-approval" open>
+        <summary>Review 54 suggested poses</summary>
+        <p>
+          24 shared ideas and 10 per character. None is approved yet. Choose
+          Keep, Revise, or Skip; decisions save in this browser. Download them
+          to share your sign-off. These are suggestions, not generated artwork.
+        </p>
+        <div class="review-tools">
+          <label
+            >Show
+            <select id="review-filter">
+              <option value="all">All suggestions</option>
+              <option value="shared">Shared</option>
+              <option value="academic">Academic</option>
+              <option value="engineering">Hacker</option>
+              <option value="business">Business</option>
+            </select></label
+          ><button id="review-download">Download my decisions</button>
+        </div>
+        <p id="review-status" role="status"></p>
+        <div id="review-list"></div>
       </details>
       <section id="icons" class="sheet-section">
         <div class="section-heading">

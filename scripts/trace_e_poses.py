@@ -238,9 +238,7 @@ def process(sheet, index, slug):
     return {
         "id": slug,
         "label": slug.replace("-", " ").title(),
-        "category": "playful"
-        if slug in ["teasing", "flirty", "glamour", "silly", "sultry"]
-        else "specialist"
+        "category": "specialist"
         if slug
         in [
             "reading",

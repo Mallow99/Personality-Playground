@@ -334,7 +334,7 @@
       {
         "id": "teasing",
         "label": "Teasing",
-        "category": "playful",
+        "category": "everyday",
         "sheet": "academic-c.png",
         "sheet_sha256": "93dc388417fd037db28171cf2409fb48ac7ed1fb9556c5955e2f2f40f57341d5",
         "crop": [
@@ -357,7 +357,7 @@
       {
         "id": "flirty",
         "label": "Flirty",
-        "category": "playful",
+        "category": "everyday",
         "sheet": "academic-c.png",
         "sheet_sha256": "93dc388417fd037db28171cf2409fb48ac7ed1fb9556c5955e2f2f40f57341d5",
         "crop": [
@@ -380,7 +380,7 @@
       {
         "id": "glamour",
         "label": "Glamour",
-        "category": "playful",
+        "category": "everyday",
         "sheet": "academic-c.png",
         "sheet_sha256": "93dc388417fd037db28171cf2409fb48ac7ed1fb9556c5955e2f2f40f57341d5",
         "crop": [
@@ -403,7 +403,7 @@
       {
         "id": "silly",
         "label": "Silly",
-        "category": "playful",
+        "category": "everyday",
         "sheet": "academic-c.png",
         "sheet_sha256": "93dc388417fd037db28171cf2409fb48ac7ed1fb9556c5955e2f2f40f57341d5",
         "crop": [
@@ -549,7 +549,7 @@
       {
         "id": "sultry",
         "label": "Sultry",
-        "category": "playful",
+        "category": "everyday",
         "sheet": "../poses-v3/academic-new.png",
         "sheet_sha256": "798e5128f1e677bf0d674baa36319268abe302e2c8e6b86d55fd78edcb3c2ecc",
         "crop": [
@@ -789,7 +789,7 @@
       {
         "id": "teasing",
         "label": "Teasing",
-        "category": "playful",
+        "category": "everyday",
         "sheet": "engineering-c.png",
         "sheet_sha256": "435589175c545b2ebaaddee26628cc29993bceed5fe29602831c3cb69532bf5c",
         "crop": [
@@ -812,7 +812,7 @@
       {
         "id": "flirty",
         "label": "Flirty",
-        "category": "playful",
+        "category": "everyday",
         "sheet": "engineering-c.png",
         "sheet_sha256": "435589175c545b2ebaaddee26628cc29993bceed5fe29602831c3cb69532bf5c",
         "crop": [
@@ -835,7 +835,7 @@
       {
         "id": "glamour",
         "label": "Glamour",
-        "category": "playful",
+        "category": "everyday",
         "sheet": "engineering-c.png",
         "sheet_sha256": "435589175c545b2ebaaddee26628cc29993bceed5fe29602831c3cb69532bf5c",
         "crop": [
@@ -858,7 +858,7 @@
       {
         "id": "silly",
         "label": "Silly",
-        "category": "playful",
+        "category": "everyday",
         "sheet": "engineering-c.png",
         "sheet_sha256": "435589175c545b2ebaaddee26628cc29993bceed5fe29602831c3cb69532bf5c",
         "crop": [
@@ -1104,7 +1104,7 @@
       {
         "id": "sultry",
         "label": "Sultry",
-        "category": "playful",
+        "category": "everyday",
         "sheet": "../poses-v3/engineering-new.png",
         "sheet_sha256": "442709b70f76fd580c19882a6846baf5f60472b4c5babc1be3b377ad6ff7d52b",
         "crop": [
@@ -1552,7 +1552,7 @@
       {
         "id": "teasing",
         "label": "Teasing",
-        "category": "playful",
+        "category": "everyday",
         "sheet": "business-c.png",
         "sheet_sha256": "e0a62cd5ad2ec06309c186ce299d1d9b150e23a3bed324795af6b4bdd409704f",
         "crop": [
@@ -1575,7 +1575,7 @@
       {
         "id": "flirty",
         "label": "Flirty",
-        "category": "playful",
+        "category": "everyday",
         "sheet": "business-c.png",
         "sheet_sha256": "e0a62cd5ad2ec06309c186ce299d1d9b150e23a3bed324795af6b4bdd409704f",
         "crop": [
@@ -1598,7 +1598,7 @@
       {
         "id": "glamour",
         "label": "Glamour",
-        "category": "playful",
+        "category": "everyday",
         "sheet": "business-c.png",
         "sheet_sha256": "e0a62cd5ad2ec06309c186ce299d1d9b150e23a3bed324795af6b4bdd409704f",
         "crop": [
@@ -1621,7 +1621,7 @@
       {
         "id": "silly",
         "label": "Silly",
-        "category": "playful",
+        "category": "everyday",
         "sheet": "business-c.png",
         "sheet_sha256": "e0a62cd5ad2ec06309c186ce299d1d9b150e23a3bed324795af6b4bdd409704f",
         "crop": [
@@ -1767,7 +1767,7 @@
       {
         "id": "sultry",
         "label": "Sultry",
-        "category": "playful",
+        "category": "everyday",
         "sheet": "../poses-v3/business-new.png",
         "sheet_sha256": "ff8f5c6eb4888aee2aeefcfd472e6acd25b0a2a3a46a4c3ad4ffe2496a91f0cc",
         "crop": [

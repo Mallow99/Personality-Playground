@@ -48,13 +48,87 @@ with tempfile.TemporaryDirectory(prefix="bfi-e-browser-") as folder:
                 page.wait_for_function(
                     '() => document.querySelector("#actor svg").dataset.pose==="seated"'
                 )
-                page.locator("#pose-filter").select_option("playful")
-                assert page.locator("#pose-grid figure:visible").count() == 5
-                page.locator("#pose-filter").select_option("practical")
-                assert page.locator("#pose-grid figure:visible").count() == len(items) - 5
+                page.locator("#pose-filter").select_option("all")
+                assert page.locator("#pose-grid figure:visible").count() == len(items)
+                page.locator("#pose-filter").select_option("everyday")
+                assert page.locator("#pose-grid figure:visible").count() == sum(
+                    p["category"] == "everyday" for p in items
+                )
                 page.locator("#comparison-mode").select_option("vector")
                 page.locator("#actor").screenshot(path=str(OUT / f"{role}-seated.png"))
                 page.locator("#fidelity").screenshot(path=str(OUT / f"{role}-comparison.png"))
+            assert "adult studies" not in page.locator("body").inner_text().lower()
+            assert page.locator(".review-row").count() == 54
+            page.get_by_label("Decision for S01", exact=True).select_option("keep")
+            page.get_by_label("Notes for S01", exact=True).fill("clear extended hand")
+            page.reload()
+            page.wait_for_selector("#actor svg")
+            assert page.get_by_label("Decision for S01", exact=True).input_value() == "keep"
+            with page.expect_download() as export:
+                page.locator("#review-download").click()
+            decisions = json.loads(Path(export.value.path()).read_text())["decisions"]
+            assert len(decisions) == 54
+            assert sum(d["decision"] == "keep" for d in decisions) == 1
+            assert sum(d["decision"] == "unreviewed" for d in decisions) == 53
+            page.locator("#motion").uncheck()
+            page.locator("#speaking").click()
+            assert page.locator("#actor .speech-marks").is_visible()
+            assert "Talking" in page.locator("#talk-status").inner_text()
+            page.locator("#talk-mode").select_option("gestures")
+            assert not page.locator("#actor .speech-marks").is_visible()
+            page.locator("#talk-mode").select_option("both")
+            page.locator("#speaking").click()
+            assert page.locator('#actor svg[data-whole-shapes="true"]').count() == 1
+            assert page.locator('#actor [data-shape="c0-3"]').count() == 1
+            page.locator("#piece-drag").check()
+            page.locator("#form-drag").check()
+            page.locator('#actor [data-shape="c0-3"]').scroll_into_view_if_needed()
+            point = page.locator('#actor [data-shape="c0-3"]').evaluate("""p=>{
+                const b=p.getBBox();
+                for(let x=1;x<10;x++)for(let y=1;y<10;y++){
+                    const q=new DOMPoint(b.x+b.width*x/10,b.y+b.height*y/10);
+                    if(p.isPointInFill(q)){const r=q.matrixTransform(p.getScreenCTM());
+                        return {x:r.x,y:r.y};}
+                }
+            }""")
+            assert point
+            page.mouse.move(point["x"], point["y"])
+            page.mouse.down()
+            page.mouse.move(point["x"] + 14, point["y"] + 6, steps=4)
+            page.mouse.up()
+            assert "translate(" in page.locator('#actor [data-shape="c0-3"]').get_attribute(
+                "transform"
+            )
+            assert "translate(0 0)" in page.locator('#actor [data-part="left-hand"]').get_attribute(
+                "transform"
+            )
+            page.locator("#piece-reset").click()
+            page.locator("#form-drag").uncheck()
+            page.locator("#piece-drag").uncheck()
+            page.locator("#motion").check()
+            page.locator("#mapping-pair").click()
+            page.wait_for_function(
+                '() => document.querySelector("#actor").dataset.transitioning==="false" && '
+                'document.querySelector("#actor").dataset.pose==="seated"'
+            )
+            page.locator("#actor").screenshot(path=str(OUT / "whole-shapes-seated.png"))
+            page.locator("#pose-transition").select_option("morph")
+            page.locator("#mapping-pair").click()
+            page.wait_for_function(
+                '() => document.querySelector("#actor").dataset.transitioning==="false" && '
+                'document.querySelector("#actor").dataset.pose==="standing"'
+            )
+            page.locator("#pose-transition").select_option("still")
+            page.locator("#mapping-pair").click()
+            page.wait_for_function('() => document.querySelector("#actor").dataset.pose==="seated"')
+            page.locator("#pose-transition").select_option("turn")
+            page.locator("#motion").uncheck()
+            page.locator('[data-profile="business"]').click()
+            page.wait_for_function(
+                '() => document.querySelector("#actor").dataset.profile==="business"'
+            )
+            page.locator("#pose").select_option("seated")
+            page.wait_for_function('() => document.querySelector("#actor").dataset.pose==="seated"')
             assert page.locator("#actor [data-part]").count() == 17
             page.locator("#piece-select").select_option("left-hand")
             page.locator("#piece-x").evaluate(

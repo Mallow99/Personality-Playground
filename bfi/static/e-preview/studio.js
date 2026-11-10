@@ -296,10 +296,7 @@ $("comparison-wipe").addEventListener("input", () => {
 function filterPoses() {
   const category = $("pose-filter").value;
   document.querySelectorAll("#pose-grid figure").forEach((el) => {
-    el.hidden =
-      category === "practical"
-        ? el.dataset.category === "playful"
-        : category !== "all" && el.dataset.category !== category;
+    el.hidden = category !== "all" && el.dataset.category !== category;
   });
 }
 $("pose-filter").addEventListener("change", filterPoses);
@@ -309,12 +306,12 @@ $("actor").addEventListener("rigchange", (event) => {
   $("piece-select").innerHTML = parts
     .map(
       (p) =>
-        `<option value="${p.id}">${p.id.replaceAll("-", " ")}${p.visible ? "" : " (occluded / absent)"}</option>`,
+        `<option value="${p.id}">${p.label || p.id.replaceAll("-", " ")}${p.visible ? "" : " (no separate form)"}</option>`,
     )
     .join("");
   $("piece-select").value = actor.selected;
   $("rig-status").textContent =
-    `${parts.filter((p) => p.visible).length} visible pieces · ${parts.length} stable IDs · guide ownership is draft`;
+    `${parts.filter((p) => p.visible).length} visible groups · ${actor.data.mappingMethod === "whole-shape" ? "WHOLE SHAPES · Academic comparison proof" : "LEGACY region map · needs refinement"} · draft ownership`;
 });
 $("actor").addEventListener("rigpart", (event) => {
   const { id, offset } = event.detail;
@@ -387,3 +384,40 @@ $("stage-pose").addEventListener(
     return pose($("stage-pose").value);
   }),
 );
+
+$("piece-isolate").addEventListener("change", () =>
+  actor.isolatePart($("piece-isolate").checked),
+);
+$("pose-transition").addEventListener("change", () => {
+  actor.settle();
+  actor.options.transitionStyle = $("pose-transition").value;
+});
+$("talk-mode").addEventListener("change", () => {
+  $("actor").dataset.speechStyle = $("talk-mode").value;
+});
+$("actor").addEventListener("speechchange", (event) => {
+  $("talk-status").textContent = event.detail.speaking
+    ? "Talking · silent cue proof"
+    : "Silent";
+});
+$("mapping-pair").addEventListener(
+  "click",
+  guarded(async () => {
+    const next =
+      selected === "academic" && $("pose").value === "standing"
+        ? "seated"
+        : "standing";
+    if (selected !== "academic") await choose("academic", false);
+    stopSequence();
+    showActor(true);
+    await pose(next);
+  }),
+);
+
+$("form-drag").addEventListener("change", () => {
+  actor.dragForms = $("form-drag").checked;
+});
+$("actor").addEventListener("shapechange", (event) => {
+  $("form-status").textContent =
+    `Selected whole form ${event.detail.id} in ${event.detail.part}. This form's ID belongs to this pose; body group IDs match between poses.`;
+});

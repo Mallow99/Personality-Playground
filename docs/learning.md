@@ -209,3 +209,33 @@ uv run --with numpy --with cairosvg --with shapely python scripts/build_e_rigs.p
 
 The builder updates those exports and their existing report rows while retaining
 all other poses. Omitting selections rebuilds the complete library.
+
+## Preserve a geometric form before assigning anatomy
+
+The owner pointed out why the region method still felt wrong: it could cut a single
+intentional sleeve or leg into several arbitrary fragments. Academic standing/seated
+now use a whole-shape proof. `componentAssignments` assigns complete connected color
+forms to meaningful groups, preserving their contours. A hand comb shape stays whole;
+a long continuous leg stays whole. Major forms were assigned explicitly. Tiny texture
+fragments still use an estimated owner, so this is not a finished authoring rig.
+
+Each visible form has a pose-local `data-shape` ID, inside a stable `data-part` body
+group. Dragging a group moves its shapes together; single-form dragging moves just
+one shape. Do not assume that `c0-3` means the same shape in a different source pose.
+The body group supplies the cross-pose identity. Flat generated pictures do not
+contain hidden hand layers: genuinely joined shapes require an authored joint if
+we decide to separate them. Other poses are still labeled as legacy region maps.
+
+`turnPair` separates a contour's center from its local coordinates and estimates
+its rotation toward the target. That lets the form turn during its journey instead
+of only stretching corners along straight lines. Remaining contour differences still
+interpolate; this is not skeletal animation. Use the three transition modes to judge
+what feels appropriate before expanding the rig.
+
+Talking is a visible state: voice marks, small gestures, and a readable indicator.
+It is deliberately independent of future audio. Audio amplitude, word timing, or
+mouth shapes would require a separate input and alignment design.
+
+The pose checklist uses stable review codes and local browser storage. All 54 ideas
+start unreviewed; exporting decisions is explicit. The exported file can later inform
+which art to generate, without silently turning suggestions into approvals.

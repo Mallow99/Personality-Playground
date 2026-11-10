@@ -23,9 +23,10 @@
     "academic": [
       {
         "pose": "standing",
-        "assembly_geometry_iou": 0.998986,
+        "assembly_geometry_iou": 0.999972,
         "visibleParts": [
           "head",
+          "neck",
           "torso",
           "left-upper-arm",
           "left-forearm",
@@ -41,7 +42,8 @@
           "right-foot",
           "prop-main"
         ],
-        "guideStatus": "draft"
+        "guideStatus": "draft",
+        "mappingMethod": "whole-shape"
       },
       {
         "pose": "standing-2",
@@ -66,7 +68,7 @@
       },
       {
         "pose": "seated",
-        "assembly_geometry_iou": 0.999152,
+        "assembly_geometry_iou": 0.999945,
         "visibleParts": [
           "head",
           "torso",
@@ -84,7 +86,8 @@
           "right-foot",
           "prop-main"
         ],
-        "guideStatus": "draft"
+        "guideStatus": "draft",
+        "mappingMethod": "whole-shape"
       },
       {
         "pose": "seated-2",

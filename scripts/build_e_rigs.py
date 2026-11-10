@@ -150,6 +150,29 @@ def build(role, pose, entry, guide):
         if fill in PALETTES[role]:
             i = PALETTES[role].index(fill)
             shapes[i] = shapes[i].union(geometry(path.get("d", "")))
+    whole = guide.get("mappingMethod") == "whole-shape"
+    grouped = [[GeometryCollection() for _ in range(3)] for _ in PARTS]
+    components = []
+    if whole:
+        for color, art in enumerate(shapes):
+            polygons = [art] if art.geom_type == "Polygon" else list(art.geoms)
+            for rank, polygon in enumerate(sorted(polygons, key=lambda p: -p.area)):
+                shape_id = f"c{color}-{rank}"
+                center = polygon.representative_point()
+                fallback = PARTS[int(labels[min(511, int(center.y)), min(511, int(center.x))])]
+                owner = guide.get("componentAssignments", {}).get(shape_id, fallback)
+                grouped[PARTS.index(owner)][color] = grouped[PARTS.index(owner)][color].union(
+                    polygon
+                )
+                components.append(
+                    {
+                        "id": shape_id,
+                        "part": owner,
+                        "color": color,
+                        "area": round(polygon.area, 3),
+                        "path": to_path(polygon),
+                    }
+                )
     data = {
         "version": 1,
         "role": role,
@@ -162,6 +185,8 @@ def build(role, pose, entry, guide):
         "cellToCanvas": entry.get("cell_to_canvas", [1, 0, 0, 0, 1, 0]),
         "source_sha256": entry["vector_sha256"],
         "parts": [],
+        "mappingMethod": "whole-shape" if whole else "joint-regions",
+        "sourceComponents": components,
     }
     svg = ET.Element(
         f"{{{NS}}}svg",
@@ -181,12 +206,16 @@ def build(role, pose, entry, guide):
         region = (
             geometry(boundary_path(labels == i)).simplify(0.2, preserve_topology=True).buffer(0.16)
         )
-        paths = [
-            to_path(art.intersection(region))
-            if color in allowed_colors.get(name, [0, 1, 2])
-            else ""
-            for color, art in enumerate(shapes)
-        ]
+        paths = (
+            [to_path(art) for art in grouped[i]]
+            if whole
+            else [
+                to_path(art.intersection(region))
+                if color in allowed_colors.get(name, [0, 1, 2])
+                else ""
+                for color, art in enumerate(shapes)
+            ]
+        )
         if name == "head":
             pivot = [
                 (mapped["head"][0] + mapped["head"][2]) / 2,
@@ -197,6 +226,12 @@ def build(role, pose, entry, guide):
         else:
             pivot = [256, 256]
         part = {"id": name, "pivot": pivot, "paths": paths, "visible": any(paths)}
+        if whole:
+            part["label"] = (
+                name.replace("-thigh", " leg (continuous form)")
+                .replace("-upper-arm", " sleeve")
+                .replace("-", " ")
+            )
         data["parts"].append(part)
         group = ET.SubElement(svg, f"{{{NS}}}g", {"data-part": name})
         for color, path in zip(PALETTES[role], paths, strict=True):
@@ -220,6 +255,21 @@ def build(role, pose, entry, guide):
     (folder / f"{pose}.rig.json").write_text(json.dumps(data, separators=(",", ":")))
     check = ROOT / "runs/e-rig-review" / role
     check.mkdir(parents=True, exist_ok=True)
+    if whole:
+        review = ET.fromstring(ET.tostring(svg))
+        for i, group in enumerate(review.findall(f"{{{NS}}}g")):
+            color = (
+                f"#{(47 + i * 79) % 220:02x}{(83 + i * 107) % 220:02x}{(131 + i * 53) % 220:02x}"
+            )
+            for path in group:
+                path.set("fill", color)
+        debug = np.array(
+            Image.open(
+                io.BytesIO(
+                    cairosvg.svg2png(bytestring=ET.tostring(review), background_color="#ffffff")
+                )
+            ).convert("RGB")
+        )
     Image.fromarray(debug).save(check / f"{pose}.parts.png")
     assert overlap >= 0.99, (role, pose, overlap)
     return {
@@ -227,6 +277,7 @@ def build(role, pose, entry, guide):
         "assembly_geometry_iou": round(overlap, 6),
         "visibleParts": [p["id"] for p in data["parts"] if p["visible"]],
         "guideStatus": data["guideStatus"],
+        "mappingMethod": data["mappingMethod"],
     }
 
 

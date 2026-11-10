@@ -2,6 +2,7 @@ import {
   rings,
   resample,
   morphPath,
+  turnPair,
 } from "../bfi/static/e-preview/rig-actor.js";
 // Deterministic component checks; no browser/DOM rendering claim.
 import assert from "node:assert/strict";
@@ -113,6 +114,37 @@ for (const [role, items] of Object.entries(poseCatalog))
     count++;
   }
 assert.equal(count, 74);
+const review = JSON.parse(
+  await readFile(new URL("assets/pose-review.json", root), "utf8"),
+);
+assert.equal(review.proposals.length, 54);
+assert.equal(new Set(review.proposals.map((p) => p.code)).size, 54);
+assert(review.proposals.every((p) => p.status === "unreviewed"));
+const turning = turnPair(
+  [
+    [0, 0],
+    [30, 0],
+    [30, 4],
+    [0, 4],
+  ],
+  [
+    [20, 10],
+    [20, 40],
+    [16, 40],
+    [16, 10],
+  ],
+);
+const middle = turning(0.5);
+const middleArea = Math.abs(
+  middle.reduce((s, p, i) => {
+    const q = middle[(i + 1) % middle.length];
+    return s + p[0] * q[1] - q[0] * p[1];
+  }, 0) / 2,
+);
+assert(
+  Math.abs(middleArea - 120) < 0.01,
+  "Turning should preserve a rigid form's area",
+);
 for (const role of Object.keys(profiles)) {
   const a = JSON.parse(
     await readFile(

@@ -124,3 +124,17 @@ The actor now morphs 17 stable anatomical/prop groups across poses, with small
 independent movements and an inspector for selecting, dragging, and rotating them.
 Guide ownership remains draft, especially around crossed arms and props. Preserved
 silhouettes do not establish correct anatomy or natural movement.
+
+## Whole-shape comparison and owner pose sign-off
+
+The owner clarified that large intentional forms should remain whole. Academic
+standing/seated are now the focused whole-form grouping proof; 72 other maps still
+use legacy regions. Face, hands, sleeves, book forms, and continuous legs are grouped
+without arbitrary anatomical cuts. Joined silhouettes may need authored boundaries
+later. The inspector labels the difference and can move a single source form.
+
+Existing playful poses are now part of the ordinary gallery. The separate
+adult-studies section/filter is removed. The [54 proposed pose concepts](pose-plan.md)
+are unapproved and have stable review codes. Silent talking cues compare head/hand
+gestures and voice marks; pose changes compare turning contours, direct morphing,
+and still swaps. These remain visual studies, with no audio or agent capability added.

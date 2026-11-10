@@ -1,0 +1,551 @@
+{
+  "version": 1,
+  "title": "Suggested poses for owner review",
+  "proposals": [
+    {
+      "code": "S01",
+      "id": "pointing-left",
+      "role": "shared",
+      "label": "Pointing left",
+      "reason": "Guide an explanation",
+      "visual": "One clear extended arm; other hand relaxed.",
+      "recommended": true,
+      "status": "unreviewed"
+    },
+    {
+      "code": "S02",
+      "id": "pointing-right",
+      "role": "shared",
+      "label": "Pointing right",
+      "reason": "Direct attention elsewhere",
+      "visual": "A separately authored opposite gesture, keeping anatomical identity.",
+      "recommended": true,
+      "status": "unreviewed"
+    },
+    {
+      "code": "S03",
+      "id": "open-palm",
+      "role": "shared",
+      "label": "Open-palm presentation",
+      "reason": "Introduce an option",
+      "visual": "One open palm, upright relaxed posture.",
+      "recommended": true,
+      "status": "unreviewed"
+    },
+    {
+      "code": "S04",
+      "id": "small-wave",
+      "role": "shared",
+      "label": "Small wave",
+      "reason": "Casual greeting or goodbye",
+      "visual": "Compact raised hand with readable fingers.",
+      "recommended": true,
+      "status": "unreviewed"
+    },
+    {
+      "code": "S05",
+      "id": "polite-bow",
+      "role": "shared",
+      "label": "Polite bow",
+      "reason": "Acknowledge a request or thank someone",
+      "visual": "Slight torso tilt, hands kept clear.",
+      "recommended": false,
+      "status": "unreviewed"
+    },
+    {
+      "code": "S06",
+      "id": "leaning-listen",
+      "role": "shared",
+      "label": "Leaning in to listen",
+      "reason": "Attentive conversation",
+      "visual": "Forward tilt and open shoulders, no work prop.",
+      "recommended": false,
+      "status": "unreviewed"
+    },
+    {
+      "code": "S07",
+      "id": "curious-inspection",
+      "role": "shared",
+      "label": "Curious inspection",
+      "reason": "Notice an unfamiliar detail",
+      "visual": "Head tilted toward a small floating detail.",
+      "recommended": false,
+      "status": "unreviewed"
+    },
+    {
+      "code": "S08",
+      "id": "chin-rest",
+      "role": "shared",
+      "label": "Chin resting on hand",
+      "reason": "Quiet contemplation",
+      "visual": "Seated elbow support with face and hand separated.",
+      "recommended": false,
+      "status": "unreviewed"
+    },
+    {
+      "code": "S09",
+      "id": "eureka",
+      "role": "shared",
+      "label": "Eureka",
+      "reason": "Connect two ideas",
+      "visual": "Raised finger, lifted head, sudden confident posture.",
+      "recommended": false,
+      "status": "unreviewed"
+    },
+    {
+      "code": "S10",
+      "id": "skeptical",
+      "role": "shared",
+      "label": "Skeptical",
+      "reason": "Disagree or question evidence",
+      "visual": "One raised brow/tilted head; asymmetrical arm gesture.",
+      "recommended": false,
+      "status": "unreviewed"
+    },
+    {
+      "code": "S11",
+      "id": "surprised",
+      "role": "shared",
+      "label": "Surprised",
+      "reason": "Unexpected result",
+      "visual": "Hands slightly spread and shoulders lifted.",
+      "recommended": false,
+      "status": "unreviewed"
+    },
+    {
+      "code": "S12",
+      "id": "reassuring",
+      "role": "shared",
+      "label": "Reassuring",
+      "reason": "Encourage without lecturing",
+      "visual": "Open hand offered forward, soft lean.",
+      "recommended": false,
+      "status": "unreviewed"
+    },
+    {
+      "code": "S13",
+      "id": "apologetic",
+      "role": "shared",
+      "label": "Apologetic / correcting",
+      "reason": "Acknowledge a mistake",
+      "visual": "Small downward head tilt and corrective hand gesture.",
+      "recommended": false,
+      "status": "unreviewed"
+    },
+    {
+      "code": "S14",
+      "id": "relieved",
+      "role": "shared",
+      "label": "Relieved",
+      "reason": "A quiet successful outcome",
+      "visual": "Lowered shoulders, hand against chest or side.",
+      "recommended": false,
+      "status": "unreviewed"
+    },
+    {
+      "code": "S15",
+      "id": "disappointed",
+      "role": "shared",
+      "label": "Disappointed",
+      "reason": "A setback worth acknowledging",
+      "visual": "Slumped but attentive posture, no exaggerated despair.",
+      "recommended": false,
+      "status": "unreviewed"
+    },
+    {
+      "code": "S16",
+      "id": "embarrassed",
+      "role": "shared",
+      "label": "Embarrassed",
+      "reason": "An awkward or funny moment",
+      "visual": "Turned head and one hand near cheek.",
+      "recommended": false,
+      "status": "unreviewed"
+    },
+    {
+      "code": "S17",
+      "id": "determined",
+      "role": "shared",
+      "label": "Determined",
+      "reason": "Commit to a difficult task",
+      "visual": "Firm stance and forward-facing shoulders.",
+      "recommended": false,
+      "status": "unreviewed"
+    },
+    {
+      "code": "S18",
+      "id": "smug",
+      "role": "shared",
+      "label": "Smug / teasing",
+      "reason": "A sharp but playful observation",
+      "visual": "Hip shift, tilted head, one small presenting gesture.",
+      "recommended": false,
+      "status": "unreviewed"
+    },
+    {
+      "code": "S19",
+      "id": "arms-folded-amused",
+      "role": "shared",
+      "label": "Arms folded, amused",
+      "reason": "A dry joke lands",
+      "visual": "Relaxed crossed arms; tilted head.",
+      "recommended": false,
+      "status": "unreviewed"
+    },
+    {
+      "code": "S20",
+      "id": "deadpan",
+      "role": "shared",
+      "label": "Deadpan",
+      "reason": "Understated humor",
+      "visual": "Still upright silhouette and one minimal hand gesture.",
+      "recommended": false,
+      "status": "unreviewed"
+    },
+    {
+      "code": "S21",
+      "id": "facepalm",
+      "role": "shared",
+      "label": "Facepalm",
+      "reason": "React to a silly mistake",
+      "visual": "One hand to brow; face shape remains legible.",
+      "recommended": false,
+      "status": "unreviewed"
+    },
+    {
+      "code": "S22",
+      "id": "double-take",
+      "role": "shared",
+      "label": "Double take",
+      "reason": "React, then reconsider",
+      "visual": "Over-shoulder head turn with paused body.",
+      "recommended": false,
+      "status": "unreviewed"
+    },
+    {
+      "code": "S23",
+      "id": "stretching",
+      "role": "shared",
+      "label": "Stretching",
+      "reason": "Take a break",
+      "visual": "Arms overhead, long angular silhouette.",
+      "recommended": false,
+      "status": "unreviewed"
+    },
+    {
+      "code": "S24",
+      "id": "sleepy-nod",
+      "role": "shared",
+      "label": "Sleepy nod",
+      "reason": "Wind down after a long session",
+      "visual": "Seated with lowered head, supported by one hand.",
+      "recommended": false,
+      "status": "unreviewed"
+    },
+    {
+      "code": "A01",
+      "id": "storytelling",
+      "role": "academic",
+      "label": "Storytelling / DM narration",
+      "reason": "Narrate prose or a D&D scene",
+      "visual": "Book aside; broad narrative gesture.",
+      "recommended": true,
+      "status": "unreviewed"
+    },
+    {
+      "code": "A02",
+      "id": "diagram-building",
+      "role": "academic",
+      "label": "Building a diagram",
+      "reason": "Explain visually",
+      "visual": "One hand places a shape, the other links it.",
+      "recommended": true,
+      "status": "unreviewed"
+    },
+    {
+      "code": "A03",
+      "id": "annotating",
+      "role": "academic",
+      "label": "Annotating a passage",
+      "reason": "Close reading",
+      "visual": "Book or page flat, writing hand distinct.",
+      "recommended": true,
+      "status": "unreviewed"
+    },
+    {
+      "code": "A04",
+      "id": "experimenting",
+      "role": "academic",
+      "label": "Experiment / discovery",
+      "reason": "Follow a curious question",
+      "visual": "Simple experiment prop and attentive lean.",
+      "recommended": true,
+      "status": "unreviewed"
+    },
+    {
+      "code": "A05",
+      "id": "comparing-books",
+      "role": "academic",
+      "label": "Comparing sources",
+      "reason": "Weigh conflicting explanations",
+      "visual": "Two books/pages held at different heights.",
+      "recommended": false,
+      "status": "unreviewed"
+    },
+    {
+      "code": "A06",
+      "id": "rolling-dice",
+      "role": "academic",
+      "label": "Rolling dice",
+      "reason": "Resolve a tabletop action",
+      "visual": "Hand just released, a few geometric dice.",
+      "recommended": false,
+      "status": "unreviewed"
+    },
+    {
+      "code": "A07",
+      "id": "dm-screen",
+      "role": "academic",
+      "label": "Behind a DM screen",
+      "reason": "Run a tabletop scene",
+      "visual": "Head and hands visible above a simple screen.",
+      "recommended": false,
+      "status": "unreviewed"
+    },
+    {
+      "code": "A08",
+      "id": "world-map",
+      "role": "academic",
+      "label": "Building a world map",
+      "reason": "Plan a setting",
+      "visual": "Seated over a map, pointing and drawing hands separated.",
+      "recommended": false,
+      "status": "unreviewed"
+    },
+    {
+      "code": "A09",
+      "id": "reading-aloud",
+      "role": "academic",
+      "label": "Reading aloud",
+      "reason": "Deliver prose or explain a quotation",
+      "visual": "Book in one hand, conversational free hand.",
+      "recommended": false,
+      "status": "unreviewed"
+    },
+    {
+      "code": "A10",
+      "id": "quill-pause",
+      "role": "academic",
+      "label": "Writer pausing mid-sentence",
+      "reason": "Consider wording",
+      "visual": "Pen suspended above a page, tilted head.",
+      "recommended": false,
+      "status": "unreviewed"
+    },
+    {
+      "code": "H01",
+      "id": "patch-review",
+      "role": "engineering",
+      "label": "Reviewing a diff",
+      "reason": "Compare a proposed code change",
+      "visual": "Two small panels, a precise pointing gesture.",
+      "recommended": true,
+      "status": "unreviewed"
+    },
+    {
+      "code": "H02",
+      "id": "log-investigation",
+      "role": "engineering",
+      "label": "Investigating logs",
+      "reason": "Follow diagnostic evidence",
+      "visual": "Lean toward a narrow stack of log panels.",
+      "recommended": true,
+      "status": "unreviewed"
+    },
+    {
+      "code": "H03",
+      "id": "build-wait",
+      "role": "engineering",
+      "label": "Waiting for a build",
+      "reason": "A quiet working pause",
+      "visual": "Sideways seated, one foot moving lightly.",
+      "recommended": true,
+      "status": "unreviewed"
+    },
+    {
+      "code": "H04",
+      "id": "terminal-focus",
+      "role": "engineering",
+      "label": "Terminal focus",
+      "reason": "Inspect a local terminal session",
+      "visual": "Compact forward lean with both hands at keyboard.",
+      "recommended": true,
+      "status": "unreviewed"
+    },
+    {
+      "code": "H05",
+      "id": "breakpoint",
+      "role": "engineering",
+      "label": "At a breakpoint",
+      "reason": "Explain paused program state",
+      "visual": "One hand on keyboard, other indicates a single variable.",
+      "recommended": false,
+      "status": "unreviewed"
+    },
+    {
+      "code": "H06",
+      "id": "tests-pass",
+      "role": "engineering",
+      "label": "Tests passed",
+      "reason": "A small earned victory",
+      "visual": "Brief fist lift or satisfied lean back.",
+      "recommended": false,
+      "status": "unreviewed"
+    },
+    {
+      "code": "H07",
+      "id": "local-reproduction",
+      "role": "engineering",
+      "label": "Reproducing a bug locally",
+      "reason": "Check a controlled example",
+      "visual": "One small test window, concentrated asymmetric pose.",
+      "recommended": false,
+      "status": "unreviewed"
+    },
+    {
+      "code": "H08",
+      "id": "dependency-tangle",
+      "role": "engineering",
+      "label": "Untangling dependencies",
+      "reason": "Make a confusing system readable",
+      "visual": "Holds a knot of links, separates one connection.",
+      "recommended": false,
+      "status": "unreviewed"
+    },
+    {
+      "code": "H09",
+      "id": "system-sketch",
+      "role": "engineering",
+      "label": "Sketching a system",
+      "reason": "Design architecture",
+      "visual": "Side-on at a board with a few boxes and arrows.",
+      "recommended": false,
+      "status": "unreviewed"
+    },
+    {
+      "code": "H10",
+      "id": "keyboard-flourish",
+      "role": "engineering",
+      "label": "Keyboard flourish",
+      "reason": "Silly confidence after finishing",
+      "visual": "An angular keyboard balanced in one hand.",
+      "recommended": false,
+      "status": "unreviewed"
+    },
+    {
+      "code": "B01",
+      "id": "design-critique",
+      "role": "business",
+      "label": "Design critique",
+      "reason": "Evaluate a layout or proposal",
+      "visual": "Standing beside a layout, one measured gesture.",
+      "recommended": true,
+      "status": "unreviewed"
+    },
+    {
+      "code": "B02",
+      "id": "delegating",
+      "role": "business",
+      "label": "Delegating a task",
+      "reason": "Make a clear handoff",
+      "visual": "Hands a task card toward another character.",
+      "recommended": true,
+      "status": "unreviewed"
+    },
+    {
+      "code": "B03",
+      "id": "report-delivery",
+      "role": "business",
+      "label": "Delivering a report",
+      "reason": "Present a finished result",
+      "visual": "Closed report offered forward.",
+      "recommended": true,
+      "status": "unreviewed"
+    },
+    {
+      "code": "B04",
+      "id": "negotiating",
+      "role": "business",
+      "label": "Weighing a tradeoff",
+      "reason": "Consider competing options",
+      "visual": "Two open hands at unequal heights.",
+      "recommended": true,
+      "status": "unreviewed"
+    },
+    {
+      "code": "B05",
+      "id": "prioritizing",
+      "role": "business",
+      "label": "Prioritizing",
+      "reason": "Choose what matters next",
+      "visual": "Moves one task card above a short stack.",
+      "recommended": false,
+      "status": "unreviewed"
+    },
+    {
+      "code": "B06",
+      "id": "meeting-listen",
+      "role": "business",
+      "label": "Listening in a meeting",
+      "reason": "Receive context before deciding",
+      "visual": "Seated, hands calmly together, slight forward lean.",
+      "recommended": false,
+      "status": "unreviewed"
+    },
+    {
+      "code": "B07",
+      "id": "budget-review",
+      "role": "business",
+      "label": "Checking a budget",
+      "reason": "Review money and constraints",
+      "visual": "Spreadsheet beside a small calculator; pointing hand clear.",
+      "recommended": false,
+      "status": "unreviewed"
+    },
+    {
+      "code": "B08",
+      "id": "job-monitoring",
+      "role": "business",
+      "label": "Monitoring a long task",
+      "reason": "Check progress during agentic work",
+      "visual": "Standing at a compact progress board.",
+      "recommended": false,
+      "status": "unreviewed"
+    },
+    {
+      "code": "B09",
+      "id": "risk-review",
+      "role": "business",
+      "label": "Reviewing a risk",
+      "reason": "Flag a consequential tradeoff",
+      "visual": "One hand holds a caution card, other steadies report.",
+      "recommended": false,
+      "status": "unreviewed"
+    },
+    {
+      "code": "B10",
+      "id": "closing-laptop",
+      "role": "business",
+      "label": "Closing the laptop",
+      "reason": "Wrap up and report completion",
+      "visual": "Hand on closing lid, relaxed shoulders.",
+      "recommended": false,
+      "status": "unreviewed"
+    }
+  ],
+  "rules": [
+    "No suggestion is approved automatically.",
+    "Available art is separate from proposed additions.",
+    "Personality and humor extend beyond job specialty."
+  ]
+}
