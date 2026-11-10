@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 640" role="img" aria-labelledby="academic-title">
+  <title id="academic-title">Academic D: a three-color polygon feasibility study</title>
+  <g data-piece="coat-back">
+    <polygon points="130,242 149,277 112,310 90,293 99,262" fill="#EBD8AF"/>
+    <polygon points="144,298 163,333 132,397 104,451 85,432 111,358" fill="#EBD8AF"/>
+    <polygon points="211,279 228,284 240,421 201,405 189,332" fill="#EBD8AF"/>
+  </g>
+  <g data-piece="legs">
+    <polygon points="151,391 176,400 160,475 181,536 156,604 142,608 162,537 140,478" fill="#58402B"/>
+    <polygon points="195,394 219,390 216,463 200,521 233,601 211,605 182,524 197,465" fill="#58402B"/>
+  </g>
+  <g data-piece="body">
+    <polygon points="174,247 204,235 195,282 216,325 186,370 198,391 167,410 150,376 171,328 157,290" fill="#58402B"/>
+    <polygon points="185,340 200,360 182,391 169,375" fill="#87A452"/>
+  </g>
+  <g data-piece="pointing-arm">
+    <polygon points="218,259 250,272 246,296 213,286" fill="#EBD8AF"/>
+    <polygon points="251,274 294,255 298,264 266,289 250,290" fill="#58402B"/>
+    <polygon points="289,254 320,249 322,257 307,262 317,270 313,276 298,265 301,280 294,282 285,264" fill="#58402B"/>
+  </g>
+  <g data-piece="book">
+    <polygon points="73,227 112,236 143,221 149,287 110,305 78,293" fill="#87A452"/>
+    <polygon points="77,230 110,242 141,226 136,234 112,249 81,238" fill="#EBD8AF"/>
+    <polygon points="85,274 90,273 98,305 93,307" fill="#58402B"/>
+    <polygon points="98,273 104,274 109,304 103,306" fill="#58402B"/>
+    <polygon points="111,270 117,269 119,297 113,300" fill="#58402B"/>
+  </g>
+  <g data-piece="collar">
+    <polygon points="151,211 180,225 218,208 211,233 178,250 143,227" fill="#EBD8AF"/>
+    <polygon points="151,254 167,265 142,301 131,297" fill="#EBD8AF"/>
+  </g>
+  <g data-piece="head">
+    <polygon points="111,119 215,113 224,168 177,211 145,183" fill="#58402B"/>
+    <polygon points="63,102 111,112 108,58 170,69 220,73 248,143 208,148 160,117 116,160 58,153" fill="#58402B"/>
+    <polygon points="183,45 204,36 217,53 208,77" fill="#87A452"/>
+  </g>
+  <g data-piece="glasses">
+    <polygon points="105,142 157,131 164,163 115,177" fill="#87A452"/>
+    <polygon points="169,129 218,119 222,154 173,165" fill="#87A452"/>
+    <polygon points="153,140 176,135 177,144 157,150" fill="#87A452"/>
+    <polygon points="115,148 149,140 151,157 122,166" fill="#EBD8AF"/>
+    <polygon points="178,135 210,129 212,148 180,156" fill="#EBD8AF"/>
+    <polygon points="134,144 143,143 143,157 138,160 132,153" fill="#58402B"/>
+    <polygon points="192,134 201,133 201,148 197,151 190,143" fill="#58402B"/>
+  </g>
+</svg>

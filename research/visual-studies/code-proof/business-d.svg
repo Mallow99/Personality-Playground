@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 640" aria-hidden="true" focusable="false" data-study="business-d">
+  <!-- Feasibility study: separated silhouette shards, not an anatomical figure. -->
+  <g data-piece="leg-back" fill="#153B64">
+    <polygon points="148,367 190,353 178,445 148,518 146,603 123,606 111,503 132,425"/>
+  </g>
+  <g data-piece="leg-front" fill="#153B64">
+    <polygon points="201,357 235,366 216,460 220,535 263,597 213,592 177,501 186,420"/>
+  </g>
+  <g data-piece="shoulder-back" fill="#153B64">
+    <polygon points="71,170 157,168 113,207 84,274"/>
+  </g>
+  <g data-piece="shoulder-front" fill="#153B64">
+    <polygon points="236,178 320,198 300,231 258,226"/>
+  </g>
+  <g data-piece="jacket-body" fill="#153B64">
+    <polygon points="160,198 201,195 224,235 235,328 137,359 151,289"/>
+  </g>
+  <g data-piece="sleeve-back" fill="#153B64">
+    <polygon points="137,229 154,259 100,309 78,281"/>
+  </g>
+  <g data-piece="sleeve-front" fill="#153B64">
+    <polygon points="316,285 331,310 304,332 296,322"/>
+  </g>
+  <g data-piece="neck" fill="#153B64">
+    <polygon points="191,158 219,164 207,178"/>
+  </g>
+  <g data-piece="collar-back" fill="#B9E9FA">
+    <polygon points="178,158 201,186 126,191"/>
+  </g>
+  <g data-piece="collar-front" fill="#B9E9FA">
+    <polygon points="227,167 254,210 208,191"/>
+  </g>
+  <g data-piece="tie" fill="#247DD4">
+    <polygon points="202,197 213,201 207,212 196,208"/>
+    <polygon points="197,216 207,217 221,284 200,312 179,284"/>
+  </g>
+  <g data-piece="tie-hand" fill="#B9E9FA">
+    <polygon points="146,228 159,208 175,198 194,195 196,201 177,207 169,217 192,213 195,220 174,227 165,240 154,246"/>
+    <polygon points="172,231 192,226 194,232 173,238"/>
+  </g>
+  <g data-piece="clipboard" fill="#247DD4">
+    <polygon points="248,238 307,244 291,351 225,341"/>
+  </g>
+  <g data-piece="clipboard-clip" fill="#B9E9FA">
+    <polygon points="268,231 289,233 288,241 267,239"/>
+  </g>
+  <g data-piece="clipboard-hand" fill="#B9E9FA">
+    <polygon points="272,303 284,315 279,331 269,327 270,314"/>
+    <polygon points="243,293 269,301 273,309 242,302"/>
+    <polygon points="240,307 268,314 270,322 239,315"/>
+    <polygon points="238,321 269,328 267,335 237,328"/>
+  </g>
+  <g data-piece="face" fill="#153B64">
+    <polygon points="170,90 245,68 261,92 208,158 165,139"/>
+  </g>
+  <g data-piece="eye" fill="#B9E9FA">
+    <polygon points="179,120 248,92 226,124"/>
+  </g>
+  <g data-piece="pupil" fill="#247DD4">
+    <polygon points="210,108 219,104 222,112 218,120 211,120 208,115"/>
+  </g>
+  <g data-piece="hair-plate" fill="#153B64">
+    <polygon points="140,52 205,28 272,48 224,61 161,88 156,107 133,86"/>
+  </g>
+  <g data-piece="hair-part" fill="#247DD4">
+    <polygon points="225,62 272,48 261,94 242,78"/>
+  </g>
+</svg>
