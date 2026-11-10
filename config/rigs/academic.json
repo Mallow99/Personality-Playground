@@ -1163,7 +1163,58 @@
         }
       ],
       "hiddenParts": [],
-      "mappingStatus": "draft"
+      "mappingStatus": "draft",
+      "ownershipRegions": [
+        {
+          "id": "right-hand",
+          "polygon": [
+            [
+              174,
+              310
+            ],
+            [
+              209,
+              304
+            ],
+            [
+              216,
+              346
+            ],
+            [
+              181,
+              350
+            ]
+          ],
+          "colors": [
+            0
+          ]
+        },
+        {
+          "id": "left-hand",
+          "polygon": [
+            [
+              308,
+              306
+            ],
+            [
+              341,
+              311
+            ],
+            [
+              333,
+              349
+            ],
+            [
+              302,
+              345
+            ]
+          ],
+          "colors": [
+            0
+          ]
+        }
+      ],
+      "notes": " Explicit hand regions separate fingers from sleeve and held prop; draft visual review."
     },
     "chalkboard": {
       "head": [

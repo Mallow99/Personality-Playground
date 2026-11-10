@@ -137,3 +137,9 @@ target paths when movement finishes. Per-piece drift, translation, rotation, and
 pointer dragging are browser-only controls. Reassembly fidelity is measured;
 anatomical ownership remains draft. No database or chat-serving changes are needed.
 `config/pose-plan.json` records available/planned poses and possible state reuse.
+
+Hand ownership can be bounded explicitly with `ownershipRegions` in source-cell
+coordinates, including allowed palette indices. These override automatic hand
+regions before vector clipping. Three overlapping work poses use this refinement;
+remaining mappings stay draft. The builder accepts optional `role/pose` selections
+and preserves other report rows, allowing small, reviewable refinement rounds.

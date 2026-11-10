@@ -1,5 +1,6 @@
 """Split faithful pose art into stable semantic pieces without redrawing it."""
 
+import argparse
 import hashlib
 import io
 import json
@@ -82,6 +83,10 @@ def guide_frame(guide, matrix):
     result["props"] = [
         {**p, "polygon": [point(v) for v in p["polygon"]]} for p in guide.get("props", [])
     ]
+    result["ownershipRegions"] = [
+        {**p, "polygon": [point(v) for v in p["polygon"]]}
+        for p in guide.get("ownershipRegions", [])
+    ]
     return result
 
 
@@ -93,8 +98,9 @@ def labels_for(guide, shape, classes, role):
     costs = np.full((len(PARTS), height, width), 1e8, dtype=np.float32)
     joints = guide["joints"]
     hidden = set(guide.get("hiddenParts", []))
+    manual = {p["id"] for p in guide.get("ownershipRegions", [])}
     for name, (start, end, radius) in BONES.items():
-        if name in hidden:
+        if name in hidden or name in manual:
             continue
         ax, ay = joints[start]
         bx, by = joints[end]
@@ -118,6 +124,13 @@ def labels_for(guide, shape, classes, role):
         image = Image.new("1", (width, height))
         ImageDraw.Draw(image).polygon([tuple(p) for p in prop["polygon"]], fill=1)
         labels[np.array(image, dtype=bool) & ~head & ~hand_near] = PARTS.index(prop["id"])
+    for region in guide.get("ownershipRegions", []):
+        image = Image.new("1", (width, height))
+        ImageDraw.Draw(image).polygon([tuple(p) for p in region["polygon"]], fill=1)
+        mask = np.array(image, dtype=bool)
+        if "colors" in region:
+            mask &= np.isin(classes, region["colors"])
+        labels[mask] = PARTS.index(region["id"])
     return labels
 
 
@@ -163,11 +176,17 @@ def build(role, pose, entry, guide):
     )
     ET.SubElement(svg, f"{{{NS}}}title").text = f"{role} {pose}, semantic body pieces"
     debug = np.full((512, 512, 3), 255, dtype=np.uint8)
+    allowed_colors = {p["id"]: p.get("colors", [0, 1, 2]) for p in mapped["ownershipRegions"]}
     for i, name in enumerate(PARTS):
         region = (
             geometry(boundary_path(labels == i)).simplify(0.2, preserve_topology=True).buffer(0.16)
         )
-        paths = [to_path(art.intersection(region)) for art in shapes]
+        paths = [
+            to_path(art.intersection(region))
+            if color in allowed_colors.get(name, [0, 1, 2])
+            else ""
+            for color, art in enumerate(shapes)
+        ]
         if name == "head":
             pivot = [
                 (mapped["head"][0] + mapped["head"][2]) / 2,
@@ -212,18 +231,39 @@ def build(role, pose, entry, guide):
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "poses", nargs="*", help="Optional role/pose selections; default rebuilds all"
+    )
+    selected = set(parser.parse_args().poses)
     manifest = json.loads((OUT / "manifest.json").read_text())
-    report = {"version": 1, "parts": PARTS, "characters": {}}
+    known = {
+        f"{role}/{p['id']}" for role, entries in manifest["characters"].items() for p in entries
+    }
+    if selected - known:
+        parser.error("Unknown pose selection: " + ", ".join(sorted(selected - known)))
+    report = (
+        json.loads((OUT / "rig-report.json").read_text())
+        if selected
+        else {"version": 1, "parts": PARTS, "characters": {}}
+    )
     for role, entries in manifest["characters"].items():
         path = ROOT / f"config/rigs/{role}.json"
         if not path.exists():
             print("WAITING FOR GUIDE", role, flush=True)
             continue
         guides = json.loads(path.read_text())["poses"]
-        report["characters"][role] = []
+        if not selected:
+            report["characters"][role] = []
         for entry in entries:
+            if selected and f"{role}/{entry['id']}" not in selected:
+                continue
             result = build(role, entry["id"], entry, guides[entry["id"]])
-            report["characters"][role].append(result)
+            rows = report["characters"][role]
+            if selected:
+                rows[next(i for i, row in enumerate(rows) if row["pose"] == entry["id"])] = result
+            else:
+                rows.append(result)
             print(role, entry["id"], result["assembly_geometry_iou"], flush=True)
     (OUT / "rig-report.json").write_text(json.dumps(report, indent=2) + "\n")
 

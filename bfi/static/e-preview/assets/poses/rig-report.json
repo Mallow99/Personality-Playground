@@ -258,7 +258,7 @@
       },
       {
         "pose": "reading",
-        "assembly_geometry_iou": 0.999209,
+        "assembly_geometry_iou": 0.999114,
         "visibleParts": [
           "head",
           "torso",
@@ -893,7 +893,7 @@
       },
       {
         "pose": "coding",
-        "assembly_geometry_iou": 0.999024,
+        "assembly_geometry_iou": 0.998982,
         "visibleParts": [
           "head",
           "torso",
@@ -1342,7 +1342,7 @@
       },
       {
         "pose": "formal-report",
-        "assembly_geometry_iou": 0.999002,
+        "assembly_geometry_iou": 0.999028,
         "visibleParts": [
           "head",
           "torso",

@@ -1870,7 +1870,78 @@
           ]
         }
       ],
-      "mappingStatus": "draft"
+      "mappingStatus": "draft",
+      "ownershipRegions": [
+        {
+          "id": "right-hand",
+          "polygon": [
+            [
+              263,
+              185
+            ],
+            [
+              282,
+              176
+            ],
+            [
+              298,
+              179
+            ],
+            [
+              311,
+              195
+            ],
+            [
+              297,
+              199
+            ],
+            [
+              280,
+              190
+            ],
+            [
+              264,
+              201
+            ]
+          ],
+          "colors": [
+            0
+          ]
+        },
+        {
+          "id": "left-hand",
+          "polygon": [
+            [
+              300,
+              174
+            ],
+            [
+              321,
+              171
+            ],
+            [
+              340,
+              183
+            ],
+            [
+              339,
+              194
+            ],
+            [
+              314,
+              190
+            ],
+            [
+              303,
+              185
+            ]
+          ],
+          "colors": [
+            0
+          ]
+        }
+      ],
+      "notes": " Explicit hand regions separate fingers from sleeve and held prop; draft visual review."
     },
     "debugging": {
       "head": [

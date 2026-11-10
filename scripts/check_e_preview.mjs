@@ -87,6 +87,19 @@ for (const [role, items] of Object.entries(poseCatalog))
       report.parts,
     );
     assert(rig.assembly_geometry_iou >= 0.99);
+    for (const region of rig.guide.ownershipRegions || []) {
+      const part = rig.parts.find((p) => p.id === region.id);
+      const xs = region.polygon.map((p) => p[0]),
+        ys = region.polygon.map((p) => p[1]);
+      assert(part.visible, `${role}/${item.id}: missing mapped hand`);
+      for (const [color, path] of part.paths.entries()) {
+        if (!region.colors.includes(color)) assert.equal(path, "");
+        for (const [x, y] of rings(path).flat()) {
+          assert(x >= Math.min(...xs) - 0.5 && x <= Math.max(...xs) + 0.5);
+          assert(y >= Math.min(...ys) - 0.5 && y <= Math.max(...ys) + 0.5);
+        }
+      }
+    }
     assert.equal(
       rig.source_sha256,
       manifest.characters[role].find((p) => p.id === item.id).vector_sha256,

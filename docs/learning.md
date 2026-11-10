@@ -193,3 +193,19 @@ Select a hand in the studio, move it, then change poses. Its stable name makes t
 relationship inspectable in both the DOM and exported piece map. Preview offsets
 are separate from the saved artwork. The [pose plan](pose-plan.md) records what
 exists, what is proposed, and which application states can reuse a drawing.
+
+For overlapping fingers, joint proximity is only a first estimate. Selected poses
+now add `ownershipRegions`: a polygon and allowed palette indices for each hand.
+The builder disables that hand's automatic region, then assigns only the specified
+pixels to it. This prevents a hand from taking some sleeve or book with it. Reading,
+coding, and formal-report poses are the first manually bounded examples; other
+poses still use draft joint estimates. Their assembled art remains unchanged.
+
+You can rebuild just those examples instead of the entire library:
+
+```sh
+uv run --with numpy --with cairosvg --with shapely python scripts/build_e_rigs.py academic/reading engineering/coding business/formal-report
+```
+
+The builder updates those exports and their existing report rows while retaining
+all other poses. Omitting selections rebuilds the complete library.

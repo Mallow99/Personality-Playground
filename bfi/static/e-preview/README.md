@@ -65,3 +65,8 @@ uv run --locked --group browser python scripts/browser_e_preview.py
 Run from the repository root. `rig-report.json` records coverage and reassembly
 checks. Source comparisons and rig debug masks are saved under ignored `runs/`.
 Browser recordings are genuine Chromium playback, without audio or model calls.
+
+Reading, coding, and formal-report hand maps now use explicit ownership polygons
+and palette filters to separate fingers from sleeves and held objects. Other
+maps remain joint-based drafts. Pass optional `role/pose` arguments to the rig
+builder to rebuild selected poses while keeping the rest of the report intact.
