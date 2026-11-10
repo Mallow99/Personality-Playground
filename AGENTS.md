@@ -1,5 +1,14 @@
 # Project working agreement
 
+**Latest owner decision: V5 visual quality is rejected as a significant regression
+across the board. Visual work is paused for a new-chat handoff. Read
+`docs/HANDOFF.md` first. Do not treat earlier completion reports/tests or candidate
+metadata as aesthetic approval. Do not regenerate, roll back or redeploy as part of
+the handoff. `build_avatar_catalog.py` automatically rebuilds rejected v5 through
+`build_design`; do not run it blindly. The two-eye head and brighter dark palettes
+were assistant proposals, not approved identity decisions. The inward-facing
+writing clipboard requirement remains valid even though this implementation failed.**
+
 This is both a local AI character application and a skill-building project for its
 owner. Explain consequential decisions plainly and point to the actual code. Keep
 `docs/learning.md` and the decision record in `docs/architecture.md` aligned with
@@ -19,3 +28,106 @@ Use `uv sync --locked`, `uv run --locked pytest`, `uv run --locked ruff check .`
 history, credentials, model files, adapters, and run artifacts outside Git. The app
 is a single-process local prototype; do not expose it publicly without designing
 authentication and reviewing its data boundaries.
+
+The owner expects requested features to be implemented in the repository, not only
+captured as board ideas. Preserve the distinction between working code, a visual
+study, and future plans. The live optional planning board is in Notion; private IDs
+may be available in ignored `data/project-links.json`. Do not publish personal
+captures. Keep the Next shortlist small and capture new ideas without artificial
+deadlines. The app must run without Notion or a hosted service.
+
+Three provisional profiles now exist in `config/profiles.json`. Their prompts and
+themes are not trained personality. Do not imply an adapter label loaded a LoRA,
+or an entrance animation established model readiness. Local inference, AMD training,
+adapter serving, and native desktop overlays require separate evidence. Model tools
+are explicitly opted in per message; keep tool outputs inspectable and bounded.
+
+Visual baseline is now **E**, selected after the pose studies. Read
+`research/visual-studies/README.md` and `baseline.json` before further art work.
+Preserve E's separate palettes, neutral academic, feminine hacker, and masculine
+business character, with loose geometric standing/seated poses. Earlier D SVGs are
+feasibility proofs, not the chosen E artwork. The E proof pack now lives in
+`bfi/static/e-preview/`, with editable poses/icons, motif transitions, and agent
+cursor studies. These proofs await visual review; ordinary chat artwork remains
+the earlier prototype. Preserve the broader individual directions in
+`docs/character-directions.md`. Model training, autonomous jobs, frontier routing,
+and OS control are separate work, not established by the demonstration.
+
+
+The owner rejected the first hand-built E SVGs and transitions. Use the generated
+pose sheets in `research/visual-studies/poses-v2/` and their direct boundary traces.
+Do not hand-redesign the figures during conversion. Verify source/SVG overlays;
+technical tests alone do not establish aesthetic similarity. Keep all generated poses and
+source crops inspectable. Adult playful poses are optional manual choices, separate
+from ordinary activity. Academic also supports prose and Dungeons & Dragons goals.
+
+
+The latest source inventory is 74 poses (24 academic, 26 engineering, 24 business).
+The owner accepted the prior art except Hacker specialist poses; the replacement
+sheet is in poses-v3. Original glamour sources and vectors must be retained alongside
+new sultry poses. Semantic rig guides are in config/rigs; named pieces preserve
+anatomical identity across poses, with draft ownership and visible inspection tools.
+Pose transitions morph matched pieces; do not replace this with whole-card slides.
+Always check crop spill, geometry fidelity, and actual rendered movement.
+
+Latest owner correction: stop arbitrarily cutting big geometric forms into body
+regions. Prove whole-form grouping on Academic standing/seated before expanding.
+The other 72 mappings are legacy drafts. A hand should remain one coherent form;
+a continuous leg may stay whole rather than acquiring artificial shin cuts. Pose
+transformations mean transitions between poses, not transformations into objects.
+Mix playful poses into the main library; remove the adult-studies section/filter.
+The 54 suggested pose concepts require owner sign-off; do not generate them all or
+infer approval. Preserve silent talking-cue and transition comparisons for review.
+
+The owner subsequently explicitly requested an image and reason for every one of
+the 54 suggestions. They are generated under research/visual-studies/pose-proposals,
+with one demonstrating character per shared idea and their own roles for specialties.
+They remain unapproved concepts and are separate from the 74 active SVG poses.
+Preserve review codes, saved choices, image cell mappings, hashes, and reasons.
+
+Current direction: retain authored set poses and add limited local hand/head/prop
+motion. A universal poseable model is deferred to the board's Later research card;
+do not replace the library with a generic rig. `limited-motion.html` is a focused
+Academic reading example with a fixed body and pose-local head/book/hand transforms.
+It does not approve new art or establish a reusable full-body model.
+
+The current application now uses E art through bfi/avatar.py and static/avatar/.
+There are 128 runtime entries: 74 SVG poses + 54 transparent concept cutouts, with
+source/review metadata preserved. Avatar tools are request-scoped presentation calls;
+mock mode must not claim model tool use. Chat/overlay share ephemeral state and
+matching colors. Native Qt overlay code is optional and Windows behavior is not yet
+verified. Read docs/HANDOFF.md and docs/avatar-runtime.md before continuing. Do not
+expose the local backend through the static demo or claim voice/OS control/model
+training from this integration. Rebuild the demo renderer copy with build_avatar_catalog.py.
+
+Latest completion correction: all 54 suggestions are now explicitly owner-approved
+(config/pose-approvals.json). Visible shape grouping alone is NOT full layering.
+Restore occluded rear material before moving an overlapping front part. Reading's
+pages and Business seated's thigh have authored underlayers and reveal controls.
+Other catalog poses stay intact/static; do not claim all 128 are fully rigged.
+The primary E preview routes to the handler; mapping-lab.html is a historical archive.
+
+Latest visual/control correction: remove the pale CSS glow; PNG alpha changes alone
+do not remove white-matte RGB. Rebuild runtime clean copies first; the catalog build then regenerates cutouts and focus variants.
+Fifteen work poses have explicit local eye edits (config/avatar-focus.json), while other
+gazes remain authored. Test actual visibility, not only hidden state. Repeated renders
+during a pending SVG load must await the same loading promise. Use
+scripts/check_avatar_art.py and scripts/browser_avatar_controls.py for these regressions.
+
+The latest full visual pass includes a replacement Hacker flirty reference with both
+arms visible (poses-v4). Its former guide must not mark an arm hidden. Review all
+128 runtime sprites in art-review.html; config/avatar-visual-review.json records
+findings. build_avatar_clean.py removes detached baseline scraps and the known
+neighboring fragments in Hacker tired. Preserve original sources and glamour hashes.
+Do not substitute image-loading tests for checking anatomy and crop quality.
+
+Latest owner design correction: Business writing clipboards face HIM; the viewer
+sees only the plain solid back, never the paper/grid. V5 regenerates working and
+formal-report endpoints and adds full rear board planes beneath fingers. The first
+v5 reference's presentation-facing writing boards are rejected; use the inward
+reference. Business uses a consistent two-eye candidate across 42 poses, with
+closed resting eyes and explicit forehead-hand edits. All 128 have normal/dark
+variants; contrast is an owner-only auto/light/dark preference. No pale glow.
+Preserve authored transforms when resetting motion. Read poses-v5/README.md and
+check actual clipboard orientation, not just pixel opacity. Aesthetic review remains
+open; do not silently call this candidate approved.

@@ -1,0 +1,430 @@
+/* Shared character presentation. These variables affect appearance, never model readiness. */
+body {
+  --skin-bg: #f8f9f5;
+  --skin-panel: #f4f6ef;
+  --skin-side: #232d27;
+  --body-color: #aac88b;
+  --body-shadow: #94b376;
+  --eye-color: #314c30;
+}
+body[data-theme="academic"] {
+  --skin-bg: #f7f3ea;
+  --skin-panel: #eeeee0;
+  --skin-side: #373b2d;
+  --green: #cbd5ad;
+  --ink: #4f5b3b;
+  --body-color: #b7c38b;
+  --body-shadow: #8d9d61;
+  --eye-color: #42492c;
+}
+body[data-theme="engineering"] {
+  --skin-bg: #181b20;
+  --skin-panel: #202329;
+  --skin-side: #111317;
+  --green: #f1747a;
+  --ink: #8e323d;
+  --body-color: #d85864;
+  --body-shadow: #a3364b;
+  --eye-color: #201b25;
+  --line: #34353b;
+  --muted: #a5a0a1;
+  color: #e4dfe0;
+}
+body[data-theme="business"] {
+  --skin-bg: #f1f5f9;
+  --skin-panel: #e8eff7;
+  --skin-side: #273b54;
+  --green: #c5dbf9;
+  --ink: #365c8b;
+  --body-color: #91b3df;
+  --body-shadow: #5d89bd;
+  --eye-color: #233a5a;
+}
+body,
+main {
+  background: var(--skin-bg);
+}
+.sidebar {
+  background: var(--skin-side);
+}
+.character-pane {
+  background: var(--skin-panel);
+}
+.profile-label {
+  color: #acb9a0;
+  letter-spacing: 1.3px;
+  font-size: 8px;
+  margin: 0 0 9px;
+}
+#profile-select {
+  width: 100%;
+  background: #ffffff0b;
+  border: 1px solid #68755b;
+  color: #eef3e6;
+  border-radius: 7px;
+  padding: 11px 9px;
+  font: inherit;
+  font-size: 12px;
+}
+#profile-select option {
+  background: #27352d;
+  color: #eef3e6;
+}
+.workspace-label {
+  margin-bottom: 19px;
+}
+.studio-link {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: #aebc9d;
+  margin: 12px 0 22px;
+}
+.character-art {
+  background: color-mix(in srgb, var(--body-color) 14%, var(--skin-bg));
+}
+.character-body {
+  background: var(--body-color);
+  box-shadow: inset -12px -8px 0 var(--body-shadow);
+  transition: transform 0.3s;
+}
+.eyes i {
+  background: var(--eye-color);
+}
+.glasses {
+  display: none;
+  position: absolute;
+  left: 18px;
+  top: 32px;
+  gap: 6px;
+  z-index: 2;
+}
+.glasses i {
+  border: 3px solid #5c4d35;
+  border-radius: 10px;
+  width: 31px;
+  height: 31px;
+}
+.glasses:after {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 3px;
+  top: 11px;
+  left: 30px;
+  background: #5c4d35;
+}
+[data-theme="academic"] .glasses {
+  display: flex;
+}
+[data-theme="academic"] .eyes {
+  gap: 31px;
+  left: 31px;
+  top: 39px;
+}
+[data-theme="academic"] .character-body {
+  border-radius: 40% 40% 27% 27%;
+}
+[data-theme="engineering"] .character-body {
+  border-radius: 8px;
+  clip-path: polygon(
+    18% 0,
+    82% 0,
+    100% 22%,
+    94% 80%,
+    70% 100%,
+    24% 96%,
+    0 73%,
+    0 20%
+  );
+  transform: rotate(-7deg);
+}
+[data-theme="engineering"] .eyes i {
+  width: 17px;
+  height: 6px;
+  border-radius: 1px;
+  transform: skewY(-9deg);
+}
+[data-theme="engineering"] .eyes {
+  gap: 12px;
+  left: 25px;
+  top: 43px;
+}
+[data-theme="business"] .character-body {
+  border-radius: 18px 18px 8px 8px;
+  transform: rotate(0);
+  border: 7px solid #d6e2f0;
+}
+[data-theme="business"] .eyes {
+  left: 23px;
+  top: 33px;
+  gap: 16px;
+}
+.avatar-mouth {
+  position: absolute;
+  top: 74px;
+  left: 42px;
+  width: 18px;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--eye-color);
+}
+.avatar-foot {
+  position: absolute;
+  width: 35px;
+  height: 13px;
+  background: var(--body-shadow);
+  border-radius: 6px;
+  bottom: 23px;
+  z-index: 2;
+}
+.foot-left {
+  left: calc(50% - 40px);
+  transform: rotate(-8deg);
+}
+.foot-right {
+  left: calc(50% + 5px);
+  transform: rotate(8deg);
+}
+.avatar-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 20px;
+  margin-bottom: 22px;
+  font-size: 9px;
+}
+.avatar-controls label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.avatar-controls select {
+  font: inherit;
+  background: var(--skin-bg);
+  color: inherit;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 5px;
+}
+.avatar-controls input {
+  accent-color: var(--ink);
+}
+body[data-motion="on"] .eyes {
+  animation: blink 7s infinite;
+}
+body[data-pose="thinking"] .character-body {
+  transform: rotate(9deg) translateY(-5px);
+}
+body[data-pose="thinking"] .eyes {
+  left: 25px;
+}
+body[data-pose="docked"] .character-body {
+  transform: translateY(16px) rotate(-12deg);
+}
+body[data-pose="speaking"][data-motion="on"] .avatar-mouth {
+  animation: speak 0.45s ease-in-out infinite alternate;
+}
+body[data-motion="on"] .arriving .character-body {
+  animation: assemble-head 0.65s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+body[data-motion="on"] .arriving .eyes,
+body[data-motion="on"] .arriving .glasses {
+  animation: assemble-eyes 0.8s 0.15s both;
+}
+body[data-motion="on"] .arriving .avatar-foot {
+  animation: assemble-foot 0.6s 0.2s both;
+}
+.tool-permissions {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-top: 12px;
+  font-size: 10px;
+  color: var(--muted);
+}
+.tool-permissions label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.tool-permissions input {
+  accent-color: var(--ink);
+}
+#tool-form {
+  display: grid;
+  gap: 10px;
+  font-size: 11px;
+}
+#tool-form select,
+#tool-form input {
+  background: #fff;
+  color: #27352d;
+  border: 1px solid #c7d1bf;
+  border-radius: 6px;
+  padding: 10px;
+  width: 100%;
+  font: inherit;
+}
+#tool-result {
+  padding: 14px;
+  background: #edf1e4;
+  color: #3e5036;
+  border-radius: 6px;
+  font-size: 10px;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  max-height: 240px;
+  overflow: auto;
+}
+#corner-companion {
+  position: fixed;
+  z-index: 5;
+  bottom: 24px;
+  right: 24px;
+  width: 205px;
+  background: var(--skin-panel);
+  border: 1px solid var(--line);
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 6px 40px #0002;
+  color: inherit;
+}
+#corner-companion > .text-button {
+  float: right;
+}
+#corner-companion .character-art {
+  height: 140px;
+  margin: 17px 0 7px;
+}
+#corner-companion p {
+  font-size: 11px;
+  line-height: 1.7;
+  margin: 9px 4px;
+  max-height: 90px;
+  overflow: auto;
+}
+#corner-companion small {
+  font-size: 8px;
+  color: var(--muted);
+}
+[data-theme="engineering"] .composer,
+[data-theme="engineering"] .suggestions button {
+  background: #25282d;
+  border-color: #414148;
+}
+[data-theme="engineering"] textarea,
+[data-theme="engineering"] .message-content,
+[data-theme="engineering"] .character-heading {
+  color: #e4dfe0;
+}
+[data-theme="engineering"] .status-pill {
+  background: #30242a;
+  color: #e5c1c5;
+  border-color: #65404b;
+}
+[data-theme="engineering"] .provenance dl {
+  background: #25282d;
+}
+[data-theme="engineering"] .character-description,
+[data-theme="engineering"] .character-fact small,
+[data-theme="engineering"] .empty-state > p {
+  color: #aaa3a5;
+}
+@keyframes blink {
+  0%,
+  92%,
+  96%,
+  100% {
+    transform: scaleY(1);
+  }
+  94% {
+    transform: scaleY(0.08);
+  }
+}
+@keyframes speak {
+  from {
+    height: 3px;
+    transform: translateY(0);
+  }
+  to {
+    height: 10px;
+    transform: translateY(-3px);
+  }
+}
+@keyframes assemble-head {
+  from {
+    opacity: 0;
+    transform: translateY(28px) rotate(-20deg) scale(0.5);
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes assemble-eyes {
+  0%,
+  35% {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+@keyframes assemble-foot {
+  from {
+    opacity: 0;
+    translate: 0 25px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+@media (max-width: 620px) {
+  .profile-label {
+    display: none;
+  }
+  #profile-select {
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    padding: 7px;
+    font-size: 11px;
+  }
+  .studio-link {
+    grid-column: 2;
+    grid-row: 2;
+    margin: 0;
+    font-size: 9px;
+  }
+  .sidebar {
+    gap: 10px;
+  }
+  .tool-permissions {
+    font-size: 9px;
+    gap: 9px;
+  }
+  #corner-companion {
+    width: 165px;
+    bottom: 12px;
+    right: 12px;
+  }
+  main {
+    height: calc(100dvh - 177px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .eyes,
+  .character-body,
+  .avatar-mouth,
+  .avatar-foot,
+  .glasses {
+    animation: none !important;
+    transition: none !important;
+  }
+}

@@ -32,6 +32,37 @@ flowchart LR
 These are starting choices, not permanent commitments. None chooses a model family,
 final character, training framework, or research hypothesis.
 
+## Second increment: real profiles, visuals, and bounded tools
+
+`config/profiles.json` defines the three provisional characters. `Settings.for_profile`
+resolves optional per-character endpoint/model/key overrides on the server, and
+`create_app` creates the corresponding backend adapters. A conversation stores its
+profile inside the existing character snapshot, so no destructive schema migration
+was required. Old conversations keep their original draft profile. Identity checks
+prevent continuing a chat after its configured backend/model/adapter label changes.
+
+The browser applies a theme based on the selected or snapshotted character. Shared
+`characters.css` supplies the geometric shapes and motion used in chat and the
+separate visual studio. Pose and theme changes are presentation state, independent
+of endpoint readiness, trained weights, or operating-system window control.
+
+The selected replacement visual baseline is **E**, recorded in
+[`research/visual-studies/baseline.json`](../research/visual-studies/baseline.json).
+Its reference sheet establishes distinct silhouettes and separate palettes.
+The new `/static/e-preview/index.html` proof is independent of the ordinary chat
+artwork. Shared presentation components load bundled SVG pose parts, reject stale
+asset responses, cancel superseded motif transitions, and position an input-transparent
+agent cursor by its hotspot. No API or database schema changed. The hosted copy is
+static and contains no chat data or backend configuration. E proofs await visual
+review; native cursors, model lifecycle, audio, and autonomous jobs remain separate.
+
+`ToolRunner` provides read-only project text and optional Brave search. An explicit
+inspector calls it directly. For model-assisted tools, `complete_with_tools` sends
+only the definitions enabled for that message, validates the requested names and
+arguments, executes at most three calls, and requests a final reply. Actual results
+and usage counts are retained in reply provenance. This adds no shell or computer
+control. See `tools.md` for boundaries and the partial-failure limitation.
+
 ## One successful exchange
 
 1. `app.js` prevents the browser's normal form submission, reads the draft, and
@@ -70,8 +101,9 @@ not a replacement for authentication if public serving is added later.
 
 - **Memory:** separate user-inspectable facts from raw transcripts; include source,
   timestamp, correction, deletion, and consent controls. Log exactly what was retrieved.
-- **Tools:** introduce typed tool requests, supported service APIs, permissions,
-  results, and citations. Tool text must remain distinguishable from model guesses.
+- **Tools beyond the first read/search tools:** extend typed requests, supported
+  service APIs, permissions, results, and citations. Tool text must remain
+  distinguishable from model guesses.
 - **Calendar:** Google Calendar with Canvas synced into it is the deadline source of
   truth. A future read-only connector should expose freshness and sync failures.
 - **Frontier assistance:** a separate explicit provider adapter, supported API and
@@ -84,3 +116,128 @@ not a replacement for authentication if public serving is added later.
   immediately change weights.
 
 Do not build all of these at once. Prefer one useful, verifiable change at a time.
+
+## Pose fidelity correction
+
+The first E approximation was rejected. The preview now consumes a per-character
+catalog of 74 generated-reference poses (24 Academic, 26 Hacker, 24 Business) and directly traced SVGs. Source crops and
+palette-normalized references remain available beside each vector. Selection still
+uses the actor generation guard; `explaining` remains a compatibility alias for the
+role-specific explanation/report/debugging pose. `poseForActivity` supplies visual
+mappings without introducing tools or agent execution. Dense pixel-boundary paths
+prioritize source fidelity. The motif module
+uses cancellable WAAPI choreography instead of the initial CSS slide layers.
+
+`config/rigs` holds draft source-cell joint guides, head bounds, and prop regions.
+`build_e_rigs.py` intersects regions with the traced vectors and emits 17 named
+body/prop groups per pose. `.rig.json` retains source guides, canvas transforms,
+paths, pivots, and the source hash; `.rig.svg` is the assembled export.
+`rig-actor.js` interpolates corresponding piece/color contours and restores full
+target paths when movement finishes. Per-piece drift, translation, rotation, and
+pointer dragging are browser-only controls. Reassembly fidelity is measured;
+anatomical ownership remains draft. No database or chat-serving changes are needed.
+`config/pose-plan.json` records available/planned poses and possible state reuse.
+
+Hand ownership can be bounded explicitly with `ownershipRegions` in source-cell
+coordinates, including allowed palette indices. These override automatic hand
+regions before vector clipping. Three overlapping work poses use this refinement;
+remaining mappings stay draft. The builder accepts optional `role/pose` selections
+and preserves other report rows, allowing small, reviewable refinement rounds.
+
+## Whole-shape replacement proof and pose review
+
+Academic standing/seated now use `mappingMethod: whole-shape`. Connected source
+color forms are grouped intact by `componentAssignments`; this branch does not
+intersect forms with anatomical regions. Continuous legs remain coarse pieces.
+The other 72 maps remain legacy drafts. Source component IDs are pose-local, while
+body group IDs support cross-pose matching. At rest the DOM exposes each source
+form separately; during motion grouped contours interpolate and full forms return
+at completion. Single-form offsets reset on pose changes; exported maps retain them.
+
+Pose transition modes compare rotation-aware interpolation, direct morphing, and
+still swaps. Talking cues are visual only. `pose-review.js` stores explicit owner
+decisions locally and exports JSON; no server write, external sync, or training is
+triggered. The 54 proposed concepts are distinct from 74 available drawings.
+
+## Set-pose movement example
+
+The current direction preserves authored set poses and adds limited local movement.
+A fully poseable model is deferred as separate research. `limited-motion.html`
+demonstrates Academic reading with a fixed body, head tilt, book shift and small
+hand-grip adjustments. `reading-limited.svg` groups complete source contours;
+`reading-limited.json` records source provenance and rest fidelity. The original
+SVG remains unchanged. These assets do not replace the 74-pose catalog or infer
+new anatomy. A separate module controls transforms, comparison, inspection and
+reduced motion. The MP4 is recorded from actual Chromium playback.
+
+## Handler-controlled avatar runtime
+
+`AvatarHub` owns a single process-wide presentation snapshot. Request-scoped
+`AvatarTools` adds bounded catalog lookup and own-character visual updates to the
+existing backend tool loop; provenance records actual calls. Thinking/reply/error
+lifecycle states work without model-directed tools, including honestly labeled mock
+mode. Owner visibility/motion controls remain available while a reply is pending.
+Presentation state is ephemeral; no conversation schema migration is needed.
+
+The runtime catalog contains 74 existing SVGs and 54 source-preserving transparent
+cutouts. Chat now uses this art instead of the original CSS face mascot. A shared
+renderer synchronizes chat and a separate loopback `/overlay` surface through a
+500 ms poll. The optional Qt native host uses that surface and requests transparency,
+topmost placement and recoverable click-through. It is not a general computer-use
+interface, and Windows behavior remains unverified. A static scripted demo packages
+the same renderer without publishing the API or private history.
+
+Authored set poses remain the foundation; only the reading pose currently has local
+head/book/hand transforms. A full poseable model stays a separate Later research
+track. One active global avatar and serialized generation remain explicit limits;
+this increment does not establish multiple loaded models or autonomous work.
+
+## Occlusion repair and completion review
+
+Visible contours are not complete anatomical layers. Moving a hand away can expose
+an empty hand-shaped hole in the object or leg behind it. The reading asset now
+restores rear page material beneath both hands; Business seated restores the crossed
+thigh beneath its resting hand. These are authored rear surfaces, drawn behind the
+front hands. The reveal control and browser checks inspect the rear independently.
+The remaining 126 catalog entries stay intact sprites and do not expose missing
+surfaces through guessed body movement. They are not represented as fully layered rigs.
+
+All 54 suggestions were explicitly approved by the owner. The approval registry feeds
+the catalog and review baseline while retaining local revision notes. The primary
+preview now opens the handler; the old anatomical mapping lab is an archive. New
+animation needs a complete rear surface, not just silhouette-overlap measurements.
+
+## Edge, gaze and control correction
+
+Remove the global pale artwork shadow. Background contrast belongs to the preview
+surface, not a glow around every contour. PNG packaging now removes white-matte
+contamination from RGB as well as estimating alpha; source sheets are retained.
+Fifteen pose-local work-gaze variants live under static/avatar/focus, with explicit
+configuration and source hashes. Runtime catalog entries identify the work target
+and retain original source URLs. The other authored gazes are unchanged.
+
+Visible behavior is the control contract. Explicit hidden CSS overrides display:flex;
+repeated updates to a loading SVG await the shared loading promise. Browser checks
+cover actual visibility, delayed readiness, motion transforms, hand visibility,
+thinking pose selection, reply/idle cues, background changes and phone layouts.
+Backend presentation fields and model tools are unchanged by this correction.
+
+## V5 Business design and surface contrast
+
+Business now has a shared two-eye head reference family across 42 runtime entries,
+with two regenerated writing endpoints whose paper faces the character. Their
+solid rear board planes sit below gripping fingers. Source and previous artwork
+remain available; v5 is recorded as a candidate rather than silently user-approved.
+Display-board poses keep separate opaque paper surfaces facing their audience.
+
+`build_avatar_design.py` runs after cutout/focus packaging and produces Business
+variants and all 128 dark-background variants. Catalog IDs and model tool contracts
+remain stable. `contrast` is an owner-only auto/light/dark display preference shared
+with the overlay. Auto samples the app surface, not the operating-system screen.
+Unknown transparent desktop surfaces need an explicit owner choice.
+
+The renderer preserves authored SVG transforms while resetting only known motion
+groups. Material checks inspect actual raster opacity of the clipboard backs;
+browser checks cover both art variants, automatic selection, cross-window owner
+preferences and preserved head placement. The original 74 traces and source sheets
+remain available for comparison.

@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Character studio · Best Friend Initiative</title>
+    <link rel="icon" href="/static/mark.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/static/style.css" />
+    <link rel="stylesheet" href="/static/characters.css" />
+    <link rel="stylesheet" href="/static/concepts.css" />
+    <script src="/static/concepts.js" defer></script>
+  </head>
+  <body
+    class="studio"
+    data-theme="academic"
+    data-pose="attentive"
+    data-motion="on"
+  >
+    <header class="studio-header">
+      <a href="/" class="studio-brand"
+        ><img src="/static/mark.svg" width="34" height="34" alt="" /><span
+          >Best Friend Initiative<small>CHARACTER STUDIO / 02</small></span
+        ></a
+      ><a href="/static/e-preview/index.html" class="back-link"
+        >Explore E poses & motion ↗</a
+      ><a href="/" class="back-link">← Back to the workbench</a>
+    </header>
+    <main class="studio-main">
+      <div class="studio-intro">
+        <div>
+          <span class="eyebrow">DISTINCT BY DESIGN. TRAINED WITH INTENT.</span>
+          <h1>Three directions.<br />One initiative.</h1>
+        </div>
+        <p>
+          Explore a shape, a voice, a way of thinking.<br />These are drafts you
+          can already select in the chat app.<br /><span
+            >Personality training and final model choices are still ahead.</span
+          >
+        </p>
+      </div>
+      <div class="studio-layout">
+        <section class="profile-choices" aria-labelledby="choices-heading">
+          <h2 id="choices-heading">Pick a direction to explore</h2>
+          <button
+            id="choose-academic"
+            data-profile="academic"
+            aria-pressed="true"
+          >
+            <span class="profile-number">01</span>
+            <div>
+              <strong>Academic</strong><small>Curious. Patient. Grounded.</small
+              ><span class="palette palette-academic"
+                ><i></i><i></i><i></i
+              ></span>
+            </div>
+            <span class="choice-arrow">→</span>
+          </button>
+          <button
+            id="choose-engineering"
+            data-profile="engineering"
+            aria-pressed="false"
+          >
+            <span class="profile-number">02</span>
+            <div>
+              <strong>Coding / security</strong
+              ><small>Direct. Expressive. Precise.</small
+              ><span class="palette palette-engineering"
+                ><i></i><i></i><i></i
+              ></span>
+            </div>
+            <span class="choice-arrow">→</span>
+          </button>
+          <button
+            id="choose-business"
+            data-profile="business"
+            aria-pressed="false"
+          >
+            <span class="profile-number">03</span>
+            <div>
+              <strong>Business</strong
+              ><small>Composed. Practical. Decisive.</small
+              ><span class="palette palette-business"
+                ><i></i><i></i><i></i
+              ></span>
+            </div>
+            <span class="choice-arrow">→</span>
+          </button>
+          <div class="studio-note">
+            <span class="eyebrow">ONE MODEL, ONE MOMENT</span>
+            <p>
+              Three characters can share a compatible model, or use different
+              ones. A character is more than its parameter count.
+            </p>
+            <small
+              >This page changes presentation only. It does not load a model or
+              run tools.</small
+            >
+          </div>
+        </section>
+        <section
+          class="studio-preview"
+          aria-label="Interactive character preview"
+        >
+          <div class="preview-top">
+            <span id="preview-number">CHARACTER / 01</span
+            ><span class="preview-badge">Appearance preview</span>
+          </div>
+          <div class="studio-stage" id="studio-stage" data-corner="off">
+            <div class="stage-grid" aria-hidden="true"></div>
+            <span class="stage-label">A PRESENCE, NOT AN INTERRUPTION</span>
+            <div class="studio-actor">
+              <div class="character-art arriving" aria-hidden="true">
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
+                <div class="character-body">
+                  <div class="eyes"><i></i><i></i></div>
+                  <div class="glasses"><i></i><i></i></div>
+                  <div class="avatar-mouth"></div>
+                </div>
+                <div class="avatar-foot foot-left"></div>
+                <div class="avatar-foot foot-right"></div>
+                <span class="art-spark">✳</span>
+              </div>
+              <p id="sample-line">
+                Let’s make this manageable. What’s one thing you want to
+                understand?
+              </p>
+              <small>Scripted sample · no audio</small>
+            </div>
+            <div class="stage-caption">
+              <span id="shape-note"
+                >Soft forms. A studious little presence.</span
+              ><span id="stage-profile">ACADEMIC</span>
+            </div>
+          </div>
+          <div class="preview-controls">
+            <button id="studio-replay">Replay entrance</button
+            ><label
+              >Pose
+              <select id="studio-pose">
+                <option value="attentive">Attentive</option>
+                <option value="thinking">Thinking</option>
+                <option value="speaking">Speaking</option>
+                <option value="docked">Docked</option>
+              </select></label
+            ><button id="studio-corner" aria-pressed="false">
+              Try the corner</button
+            ><label
+              ><input id="studio-motion" type="checkbox" checked />
+              Motion</label
+            >
+          </div>
+          <div class="profile-description">
+            <div>
+              <span class="eyebrow">THE CHARACTER</span>
+              <h2 id="preview-name">Academic</h2>
+              <p id="preview-description"></p>
+            </div>
+            <a id="try-profile" class="try-profile" href="/?profile=academic"
+              >Talk with this profile <span>→</span></a
+            >
+          </div>
+          <div class="route-summary">
+            <span id="preview-route">Reading configuration…</span
+            ><span
+              >Prompt configured · no personality training established</span
+            >
+          </div>
+        </section>
+      </div>
+      <p id="studio-error" role="alert" hidden></p>
+      <footer class="studio-footer">
+        <span>ORIGINAL GEOMETRIC STUDY / BFI</span
+        ><span>An in-app preview. A Windows desktop overlay comes later.</span>
+      </footer>
+    </main>
+  </body>
+</html>

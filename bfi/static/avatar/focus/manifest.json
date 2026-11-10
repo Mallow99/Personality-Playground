@@ -1,0 +1,197 @@
+[
+  {
+    "id": "academic/reading",
+    "target": "book",
+    "source_path": "e-preview/assets/reading-limited.svg",
+    "source_sha256": "87837dba2e2b592f4b436bfc787b9dee29f3785cd732b5fd2f7513314b247bad",
+    "src": "/static/avatar/focus/academic/reading.svg",
+    "original_src": "/static/e-preview/assets/poses/academic/reading.svg",
+    "layered": true,
+    "head": null,
+    "asset_version": "f75a1d9cfa69"
+  },
+  {
+    "id": "academic/writing-prose",
+    "target": "page",
+    "source_path": "avatar/clean/academic/writing-prose.svg",
+    "source_sha256": "9a062b7c963f9b673beb2b9a725dea4e9a04784ff2deda01504a5b82333e1621",
+    "src": "/static/avatar/focus/academic/writing-prose.svg",
+    "original_src": "/static/e-preview/assets/poses/academic/writing-prose.svg",
+    "layered": false,
+    "head": null,
+    "asset_version": "f81778749356"
+  },
+  {
+    "id": "academic/working",
+    "target": "workbench",
+    "source_path": "avatar/clean/academic/working.svg",
+    "source_sha256": "ff0c5619d9c114a2b6b368f5102d557b44560238a589ded1e7afd115ea318314",
+    "src": "/static/avatar/focus/academic/working.svg",
+    "original_src": "/static/e-preview/assets/poses/academic/working.svg",
+    "layered": false,
+    "head": null,
+    "asset_version": "51bb7f4c6c40"
+  },
+  {
+    "id": "engineering/coding",
+    "target": "keyboard",
+    "source_path": "avatar/clean/engineering/coding.svg",
+    "source_sha256": "a78a828066b84eadd17fd5ca93d68e4612041d61c58e1de17f25d53938be6421",
+    "src": "/static/avatar/focus/engineering/coding.svg",
+    "original_src": "/static/e-preview/assets/poses/engineering/coding.svg",
+    "layered": false,
+    "head": null,
+    "asset_version": "507dee9f2fd8"
+  },
+  {
+    "id": "engineering/working",
+    "target": "laptop",
+    "source_path": "avatar/clean/engineering/working.svg",
+    "source_sha256": "3846073bfe5b48046798449bbb90095460cbae9697db6214935ea490a1667b2a",
+    "src": "/static/avatar/focus/engineering/working.svg",
+    "original_src": "/static/e-preview/assets/poses/engineering/working.svg",
+    "layered": false,
+    "head": null,
+    "asset_version": "dd1f911600d4"
+  },
+  {
+    "id": "engineering/debugging",
+    "target": "code panel",
+    "source_path": "avatar/clean/engineering/debugging.svg",
+    "source_sha256": "03b4ee677ac8b79f2c832fda0c86b7749fa39e7004528e95a53ab8e20a61e9a0",
+    "src": "/static/avatar/focus/engineering/debugging.svg",
+    "original_src": "/static/e-preview/assets/poses/engineering/debugging.svg",
+    "layered": false,
+    "head": null,
+    "asset_version": "aaac4e928436"
+  },
+  {
+    "id": "engineering/security-review",
+    "target": "review panel",
+    "source_path": "avatar/clean/engineering/security-review.svg",
+    "source_sha256": "28e62e85c547ba4d688d682c8e815c30728abc8d88f25d1def6e3246291fbc08",
+    "src": "/static/avatar/focus/engineering/security-review.svg",
+    "original_src": "/static/e-preview/assets/poses/engineering/security-review.svg",
+    "layered": false,
+    "head": null,
+    "asset_version": "d66e5046e37e"
+  },
+  {
+    "id": "business/working",
+    "target": "clipboard",
+    "source_path": "avatar/clean/business/working.svg",
+    "source_sha256": "3f20baed6d4b235211f3b740b718b6bc924ad43530a5d72e98bddd16f0966a63",
+    "src": "/static/avatar/focus/business/working.svg",
+    "original_src": "/static/e-preview/assets/poses/business/working.svg",
+    "layered": false,
+    "head": null,
+    "asset_version": "cff8c4c7aa48"
+  },
+  {
+    "id": "business/formal-report",
+    "target": "report",
+    "source_path": "avatar/clean/business/formal-report.svg",
+    "source_sha256": "711e98e02511385c9c5ffee34cdd92aae55a2d3ab686cdbda5c6f69f5f7c60a9",
+    "src": "/static/avatar/focus/business/formal-report.svg",
+    "original_src": "/static/e-preview/assets/poses/business/formal-report.svg",
+    "layered": false,
+    "head": null,
+    "asset_version": "b309b84f0767"
+  },
+  {
+    "id": "academic/A03",
+    "target": "book",
+    "source_path": "avatar/cutouts/A03.png",
+    "source_sha256": "594a126cb28a493cab2a52670d6139bd2f3b7a070ed930c7bbfc5ce1de6647d9",
+    "src": "/static/avatar/focus/academic/A03.svg",
+    "original_src": "/static/avatar/cutouts/A03.png",
+    "layered": false,
+    "head": [
+      215,
+      130,
+      323,
+      234
+    ],
+    "asset_version": "d4deb33c07f7"
+  },
+  {
+    "id": "academic/A08",
+    "target": "map",
+    "source_path": "avatar/cutouts/A08.png",
+    "source_sha256": "2ba9a2bdd63168dc948a87e769d81d4c2dcac618f55dae3574dcc2bff2c60140",
+    "src": "/static/avatar/focus/academic/A08.svg",
+    "original_src": "/static/avatar/cutouts/A08.png",
+    "layered": false,
+    "head": [
+      214,
+      128,
+      326,
+      234
+    ],
+    "asset_version": "5e5b921dfdb8"
+  },
+  {
+    "id": "engineering/H04",
+    "target": "keyboard",
+    "source_path": "avatar/cutouts/H04.png",
+    "source_sha256": "86d152b82c75d605ed3890212769d17cf57fdf64b58c24377d1e8074b83af5e9",
+    "src": "/static/avatar/focus/engineering/H04.svg",
+    "original_src": "/static/avatar/cutouts/H04.png",
+    "layered": false,
+    "head": [
+      167,
+      86,
+      292,
+      189
+    ],
+    "asset_version": "54d24ad2345a"
+  },
+  {
+    "id": "engineering/H01",
+    "target": "code panels",
+    "source_path": "avatar/cutouts/H01.png",
+    "source_sha256": "2cedd4efacfbe4048bfff80d480006fc98eb6659666d865cde45b25c6e27c47c",
+    "src": "/static/avatar/focus/engineering/H01.svg",
+    "original_src": "/static/avatar/cutouts/H01.png",
+    "layered": false,
+    "head": [
+      150,
+      58,
+      253,
+      152
+    ],
+    "asset_version": "2b1944d26013"
+  },
+  {
+    "id": "business/B07",
+    "target": "spreadsheet",
+    "source_path": "avatar/cutouts/B07.png",
+    "source_sha256": "1da570f6cd1ffee72deec8ca7f2079db7cf338e61dbb170a267e4abac1327803",
+    "src": "/static/avatar/focus/business/B07.svg",
+    "original_src": "/static/avatar/cutouts/B07.png",
+    "layered": false,
+    "head": [
+      150,
+      72,
+      250,
+      147
+    ],
+    "asset_version": "9e806eca0d44"
+  },
+  {
+    "id": "business/B10",
+    "target": "laptop",
+    "source_path": "avatar/cutouts/B10.png",
+    "source_sha256": "b8e051e3e78fcba7e4e230613929d3a93aa7015f1fa1afc07d4b21f3534e9c96",
+    "src": "/static/avatar/focus/business/B10.svg",
+    "original_src": "/static/avatar/cutouts/B10.png",
+    "layered": false,
+    "head": [
+      130,
+      64,
+      225,
+      149
+    ],
+    "asset_version": "69c8c73b9c8a"
+  }
+]

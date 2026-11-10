@@ -1,0 +1,1808 @@
+{
+  "version": 2,
+  "tool_versions": {
+    "numpy": "2.5.4",
+    "CairoSVG": "2.9.1",
+    "Pillow": "13.0.0"
+  },
+  "method": "direct contours with 0.75px cleanup; exact boundaries retained; documented three-color normalization, no silhouette redraw",
+  "reference": "generated E pose sheets; not approved production rig",
+  "characters": {
+    "academic": [
+      {
+        "id": "standing",
+        "label": "Standing",
+        "category": "everyday",
+        "sheet": "academic-a.png",
+        "sheet_sha256": "12e36e63e41ef38bee3a8fe0519b038176641f37a5bc8d0014d2996544270103",
+        "crop": [
+          0,
+          0,
+          512,
+          470
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.993633,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.99873,
+        "vector_sha256": "5e135a9e7bdf83913e1734c77f7cccc0b69657efbf70c128d210baa3b56c8dfd",
+        "path_count": 3
+      },
+      {
+        "id": "standing-2",
+        "label": "Standing 2",
+        "category": "everyday",
+        "sheet": "academic-a.png",
+        "sheet_sha256": "12e36e63e41ef38bee3a8fe0519b038176641f37a5bc8d0014d2996544270103",
+        "crop": [
+          512,
+          0,
+          1024,
+          470
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.99163,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998838,
+        "vector_sha256": "74f435450080e9e7b2435d20c7bcef43fa017df15d3eec069b5344e91f2a5b0c",
+        "path_count": 3
+      },
+      {
+        "id": "seated",
+        "label": "Seated",
+        "category": "everyday",
+        "sheet": "academic-a.png",
+        "sheet_sha256": "12e36e63e41ef38bee3a8fe0519b038176641f37a5bc8d0014d2996544270103",
+        "crop": [
+          1024,
+          0,
+          1536,
+          470
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.993109,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.999013,
+        "vector_sha256": "67ef63e41892fb2f36f800d928d73612b789909c3e7530bd2b9e91d8ac612aaa",
+        "path_count": 3
+      },
+      {
+        "id": "seated-2",
+        "label": "Seated 2",
+        "category": "everyday",
+        "sheet": "academic-a.png",
+        "sheet_sha256": "12e36e63e41ef38bee3a8fe0519b038176641f37a5bc8d0014d2996544270103",
+        "crop": [
+          0,
+          512,
+          512,
+          966
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.993774,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.999144,
+        "vector_sha256": "042e7c6c8d9ba83259e21f5e11174f95dab4fc38431ae09fb93c5c20b66a0afa",
+        "path_count": 3
+      },
+      {
+        "id": "tired",
+        "label": "Tired",
+        "category": "everyday",
+        "sheet": "academic-a.png",
+        "sheet_sha256": "12e36e63e41ef38bee3a8fe0519b038176641f37a5bc8d0014d2996544270103",
+        "crop": [
+          512,
+          512,
+          1024,
+          966
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.993975,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998913,
+        "vector_sha256": "03b334c3894486e4faf78c8da8f6889e624e1563ac20a231ea1b02bd6a788ba2",
+        "path_count": 3
+      },
+      {
+        "id": "lying-down",
+        "label": "Lying Down",
+        "category": "everyday",
+        "sheet": "academic-a.png",
+        "sheet_sha256": "12e36e63e41ef38bee3a8fe0519b038176641f37a5bc8d0014d2996544270103",
+        "crop": [
+          1024,
+          512,
+          1536,
+          966
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.992875,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.999145,
+        "vector_sha256": "bed0727005a5add70563b390a832321f70d5e805c7bbce573be62e5bfbf9b848",
+        "path_count": 3
+      },
+      {
+        "id": "thinking",
+        "label": "Thinking",
+        "category": "everyday",
+        "sheet": "academic-b.png",
+        "sheet_sha256": "2390229f0101f1293f07443bb8fd6e52d7160e35b4b90b6fd22184c47a6c82aa",
+        "crop": [
+          0,
+          0,
+          512,
+          470
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.993954,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998911,
+        "vector_sha256": "63888571f20789a97794996bb493ab5b7de8c79b0a00f4eb5e1d55ff5641e768",
+        "path_count": 3
+      },
+      {
+        "id": "working",
+        "label": "Working",
+        "category": "everyday",
+        "sheet": "academic-b.png",
+        "sheet_sha256": "2390229f0101f1293f07443bb8fd6e52d7160e35b4b90b6fd22184c47a6c82aa",
+        "crop": [
+          512,
+          0,
+          1024,
+          470
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.993286,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998945,
+        "vector_sha256": "c72437cf9d2056f7ad5c7c624d1e218f09b504f47e58e53e1a9f5c654889d019",
+        "path_count": 3
+      },
+      {
+        "id": "laughing",
+        "label": "Laughing",
+        "category": "everyday",
+        "sheet": "academic-b.png",
+        "sheet_sha256": "2390229f0101f1293f07443bb8fd6e52d7160e35b4b90b6fd22184c47a6c82aa",
+        "crop": [
+          1024,
+          0,
+          1536,
+          470
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.993316,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.999068,
+        "vector_sha256": "bd672f040b65ad075d5c34180b10562e93d345354791c6b9616678576a978937",
+        "path_count": 3
+      },
+      {
+        "id": "frustrated",
+        "label": "Frustrated",
+        "category": "everyday",
+        "sheet": "academic-b.png",
+        "sheet_sha256": "2390229f0101f1293f07443bb8fd6e52d7160e35b4b90b6fd22184c47a6c82aa",
+        "crop": [
+          0,
+          512,
+          512,
+          966
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.991353,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.999002,
+        "vector_sha256": "2d3dd16c58e34aa53e66e5a677cae3903a560bed40107c8fd85de61a718ef6ba",
+        "path_count": 3
+      },
+      {
+        "id": "exasperated",
+        "label": "Exasperated",
+        "category": "everyday",
+        "sheet": "academic-b.png",
+        "sheet_sha256": "2390229f0101f1293f07443bb8fd6e52d7160e35b4b90b6fd22184c47a6c82aa",
+        "crop": [
+          512,
+          512,
+          1024,
+          966
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.993312,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.999049,
+        "vector_sha256": "db610c73be594559d9c760dbe21a5fdf27e2d4883c317ea8b2286124af1499f9",
+        "path_count": 3
+      },
+      {
+        "id": "reading",
+        "label": "Reading",
+        "category": "specialist",
+        "sheet": "academic-b.png",
+        "sheet_sha256": "2390229f0101f1293f07443bb8fd6e52d7160e35b4b90b6fd22184c47a6c82aa",
+        "crop": [
+          1024,
+          512,
+          1536,
+          966
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.994292,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998727,
+        "vector_sha256": "d30ca77875ad1da3c6e6c66fc274430c4ed8d47d27c634601a9fe5bf93de0931",
+        "path_count": 3
+      },
+      {
+        "id": "chalkboard",
+        "label": "Chalkboard",
+        "category": "specialist",
+        "sheet": "academic-c.png",
+        "sheet_sha256": "93dc388417fd037db28171cf2409fb48ac7ed1fb9556c5955e2f2f40f57341d5",
+        "crop": [
+          0,
+          0,
+          512,
+          470
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.995653,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.996736,
+        "vector_sha256": "3274f15c0c0f45b3dcb63ffb6831d13ab47507d40c863c0a364754943dac5153",
+        "path_count": 3
+      },
+      {
+        "id": "writing-prose",
+        "label": "Writing Prose",
+        "category": "specialist",
+        "sheet": "academic-c.png",
+        "sheet_sha256": "93dc388417fd037db28171cf2409fb48ac7ed1fb9556c5955e2f2f40f57341d5",
+        "crop": [
+          512,
+          0,
+          1024,
+          470
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.993128,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998499,
+        "vector_sha256": "660f00c8909dcc49259c31e1f8913570f118209440d29ce824051d9793defccf",
+        "path_count": 3
+      },
+      {
+        "id": "teasing",
+        "label": "Teasing",
+        "category": "everyday",
+        "sheet": "academic-c.png",
+        "sheet_sha256": "93dc388417fd037db28171cf2409fb48ac7ed1fb9556c5955e2f2f40f57341d5",
+        "crop": [
+          1024,
+          0,
+          1536,
+          470
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.991256,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.99854,
+        "vector_sha256": "29c5f577cf2377d1e206e0c1fc1b4f1a51be913e9701d77bbd774fc30e42404e",
+        "path_count": 3
+      },
+      {
+        "id": "flirty",
+        "label": "Flirty",
+        "category": "everyday",
+        "sheet": "academic-c.png",
+        "sheet_sha256": "93dc388417fd037db28171cf2409fb48ac7ed1fb9556c5955e2f2f40f57341d5",
+        "crop": [
+          0,
+          512,
+          512,
+          966
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.991944,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998537,
+        "vector_sha256": "e9957ebe3750bd36a63997cef10285284d611b62e120d13d6b336406ca51a8c2",
+        "path_count": 3
+      },
+      {
+        "id": "glamour",
+        "label": "Glamour",
+        "category": "everyday",
+        "sheet": "academic-c.png",
+        "sheet_sha256": "93dc388417fd037db28171cf2409fb48ac7ed1fb9556c5955e2f2f40f57341d5",
+        "crop": [
+          512,
+          512,
+          1024,
+          966
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.99484,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.999065,
+        "vector_sha256": "06de56c6eb7009a33ec741a12e9a36d54397791ebe6cb5c57d7e8ef0cb6f95e9",
+        "path_count": 3
+      },
+      {
+        "id": "silly",
+        "label": "Silly",
+        "category": "everyday",
+        "sheet": "academic-c.png",
+        "sheet_sha256": "93dc388417fd037db28171cf2409fb48ac7ed1fb9556c5955e2f2f40f57341d5",
+        "crop": [
+          1024,
+          512,
+          1536,
+          966
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.990366,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998306,
+        "vector_sha256": "a3f530b1e356df2b9dd342432aeb37e57e4874df35a9c0bbab0dcfecb80abf6f",
+        "path_count": 3
+      },
+      {
+        "id": "greeting",
+        "label": "Greeting",
+        "category": "everyday",
+        "sheet": "../poses-v3/academic-new.png",
+        "sheet_sha256": "798e5128f1e677bf0d674baa36319268abe302e2c8e6b86d55fd78edcb3c2ecc",
+        "crop": [
+          0,
+          0,
+          512,
+          470
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.994491,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998676,
+        "vector_sha256": "80d2345727f3eb2895a8bc6b36285506d636d064ad4f0678552eb54dff6072d9",
+        "path_count": 3
+      },
+      {
+        "id": "listening",
+        "label": "Listening",
+        "category": "everyday",
+        "sheet": "../poses-v3/academic-new.png",
+        "sheet_sha256": "798e5128f1e677bf0d674baa36319268abe302e2c8e6b86d55fd78edcb3c2ecc",
+        "crop": [
+          512,
+          0,
+          1024,
+          470
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.992828,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.999271,
+        "vector_sha256": "9f9d770664236b2e203fe1696034e7a8326e998cf57cfbb863eaf2e44a46d993",
+        "path_count": 3
+      },
+      {
+        "id": "confused",
+        "label": "Confused",
+        "category": "everyday",
+        "sheet": "../poses-v3/academic-new.png",
+        "sheet_sha256": "798e5128f1e677bf0d674baa36319268abe302e2c8e6b86d55fd78edcb3c2ecc",
+        "crop": [
+          1024,
+          0,
+          1536,
+          470
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.993285,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998562,
+        "vector_sha256": "3080503c13b38dc0c3dbaa04f26495ce19f87133da09f89267c6573120ee2691",
+        "path_count": 3
+      },
+      {
+        "id": "celebrating",
+        "label": "Celebrating",
+        "category": "everyday",
+        "sheet": "../poses-v3/academic-new.png",
+        "sheet_sha256": "798e5128f1e677bf0d674baa36319268abe302e2c8e6b86d55fd78edcb3c2ecc",
+        "crop": [
+          0,
+          512,
+          512,
+          966
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.99108,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998609,
+        "vector_sha256": "a4ad703bbc0233f839041b5d4268138e9ebaac1056b1fb15269365502027c862",
+        "path_count": 3
+      },
+      {
+        "id": "concerned",
+        "label": "Concerned",
+        "category": "everyday",
+        "sheet": "../poses-v3/academic-new.png",
+        "sheet_sha256": "798e5128f1e677bf0d674baa36319268abe302e2c8e6b86d55fd78edcb3c2ecc",
+        "crop": [
+          512,
+          512,
+          944,
+          966
+        ],
+        "cell_to_canvas": [
+          1.0,
+          0,
+          0.0,
+          0,
+          1.0,
+          0.0
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.99274,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.99851,
+        "vector_sha256": "9971b7221ce8a63d47d7fe162bfc0bd40f5ff32788e03e0275158bff1fc89c7a",
+        "path_count": 3
+      },
+      {
+        "id": "sultry",
+        "label": "Sultry",
+        "category": "everyday",
+        "sheet": "../poses-v3/academic-new.png",
+        "sheet_sha256": "798e5128f1e677bf0d674baa36319268abe302e2c8e6b86d55fd78edcb3c2ecc",
+        "crop": [
+          944,
+          604,
+          1536,
+          960
+        ],
+        "cell_to_canvas": [
+          0.8006756756756757,
+          0,
+          82.05405405405405,
+          0,
+          0.800561797752809,
+          66.34831460674157
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.992471,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998794,
+        "vector_sha256": "fdcfcdc72ab91a44f88c34f760b2e43e7d1c173c90e883425ca5a1c144e72ab8",
+        "path_count": 3
+      }
+    ],
+    "engineering": [
+      {
+        "id": "standing",
+        "label": "Standing",
+        "category": "everyday",
+        "sheet": "engineering-a.png",
+        "sheet_sha256": "b81de9706e03232fc59bf901ce93f20daa30c075fee61e259078f6b70362808c",
+        "crop": [
+          0,
+          0,
+          512,
+          470
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.994624,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998256,
+        "vector_sha256": "180014ae15c5fe9b0c668e06039a420891e034fa5e3c2429f4b9606e20977266",
+        "path_count": 3
+      },
+      {
+        "id": "standing-2",
+        "label": "Standing 2",
+        "category": "everyday",
+        "sheet": "engineering-a.png",
+        "sheet_sha256": "b81de9706e03232fc59bf901ce93f20daa30c075fee61e259078f6b70362808c",
+        "crop": [
+          512,
+          0,
+          1024,
+          470
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.995331,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998172,
+        "vector_sha256": "7c0bb1cc2540e514b034a33a11a9a4a04fc8df2903215d358635d2f1b389a086",
+        "path_count": 3
+      },
+      {
+        "id": "seated",
+        "label": "Seated",
+        "category": "everyday",
+        "sheet": "engineering-a.png",
+        "sheet_sha256": "b81de9706e03232fc59bf901ce93f20daa30c075fee61e259078f6b70362808c",
+        "crop": [
+          1024,
+          0,
+          1536,
+          470
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.995416,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998252,
+        "vector_sha256": "b09a03344ee68f1fc6773700a7ea9325ed0820b1cb7ec17b7ed26bbc0a5a0178",
+        "path_count": 3
+      },
+      {
+        "id": "seated-2",
+        "label": "Seated 2",
+        "category": "everyday",
+        "sheet": "engineering-a.png",
+        "sheet_sha256": "b81de9706e03232fc59bf901ce93f20daa30c075fee61e259078f6b70362808c",
+        "crop": [
+          0,
+          512,
+          512,
+          966
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.995491,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998507,
+        "vector_sha256": "2f55003de0cf98d62d1f4bb96909474d647699c3fc843300ceaf23707514e9df",
+        "path_count": 3
+      },
+      {
+        "id": "tired",
+        "label": "Tired",
+        "category": "everyday",
+        "sheet": "engineering-a.png",
+        "sheet_sha256": "b81de9706e03232fc59bf901ce93f20daa30c075fee61e259078f6b70362808c",
+        "crop": [
+          512,
+          512,
+          1024,
+          966
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.995313,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998648,
+        "vector_sha256": "f54e3e50b508dab59693bf0d3feaf6ee9d8387872f6c7bbd36ad070a4b2b11b9",
+        "path_count": 3
+      },
+      {
+        "id": "thinking",
+        "label": "Thinking",
+        "category": "everyday",
+        "sheet": "engineering-b.png",
+        "sheet_sha256": "8c51d7665e69e446ca5bed75b3de39ed9f902625762f897a13c7b2318776ac54",
+        "crop": [
+          0,
+          0,
+          512,
+          470
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.99547,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.997917,
+        "vector_sha256": "6a98a0e4223835233eaaf47abaecafae2dc2e19f7ae8bfccbaddd6927594fff6",
+        "path_count": 3
+      },
+      {
+        "id": "laughing",
+        "label": "Laughing",
+        "category": "everyday",
+        "sheet": "engineering-b.png",
+        "sheet_sha256": "8c51d7665e69e446ca5bed75b3de39ed9f902625762f897a13c7b2318776ac54",
+        "crop": [
+          1024,
+          0,
+          1536,
+          470
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.994695,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998463,
+        "vector_sha256": "bd37a04473d6506b5b39f121d103b4dbee49c2eee880c92092a16b516604e7f9",
+        "path_count": 3
+      },
+      {
+        "id": "frustrated",
+        "label": "Frustrated",
+        "category": "everyday",
+        "sheet": "engineering-b.png",
+        "sheet_sha256": "8c51d7665e69e446ca5bed75b3de39ed9f902625762f897a13c7b2318776ac54",
+        "crop": [
+          0,
+          512,
+          512,
+          966
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.995318,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998498,
+        "vector_sha256": "24169ef9c2c8ed2456acf1e72a87364de2f232842755c9f12043ae6f98415f2f",
+        "path_count": 3
+      },
+      {
+        "id": "exasperated",
+        "label": "Exasperated",
+        "category": "everyday",
+        "sheet": "engineering-b.png",
+        "sheet_sha256": "8c51d7665e69e446ca5bed75b3de39ed9f902625762f897a13c7b2318776ac54",
+        "crop": [
+          512,
+          512,
+          1024,
+          966
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.995908,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.997961,
+        "vector_sha256": "abd025caf2caa7ba15b8ed5deadaa45d886f9565e4717c001fa9c0653777857b",
+        "path_count": 3
+      },
+      {
+        "id": "teasing",
+        "label": "Teasing",
+        "category": "everyday",
+        "sheet": "engineering-c.png",
+        "sheet_sha256": "435589175c545b2ebaaddee26628cc29993bceed5fe29602831c3cb69532bf5c",
+        "crop": [
+          1024,
+          0,
+          1536,
+          470
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.993468,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.997999,
+        "vector_sha256": "d18a03499500853f75e4d5b4f7d14e6f0a8939c3397c8f8006782812e1cd2161",
+        "path_count": 3
+      },
+      {
+        "id": "glamour",
+        "label": "Glamour",
+        "category": "everyday",
+        "sheet": "engineering-c.png",
+        "sheet_sha256": "435589175c545b2ebaaddee26628cc29993bceed5fe29602831c3cb69532bf5c",
+        "crop": [
+          512,
+          512,
+          1024,
+          966
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.995078,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998382,
+        "vector_sha256": "9c35f9068df7b6689b9efd47456836e0c9d2efd30e17293d69274fb121cd661e",
+        "path_count": 3
+      },
+      {
+        "id": "silly",
+        "label": "Silly",
+        "category": "everyday",
+        "sheet": "engineering-c.png",
+        "sheet_sha256": "435589175c545b2ebaaddee26628cc29993bceed5fe29602831c3cb69532bf5c",
+        "crop": [
+          1024,
+          512,
+          1536,
+          966
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.995417,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998693,
+        "vector_sha256": "5cd12ab7a8ab71574b526a7d91e461a1d5dee277f25821528b26bba1e5fe8923",
+        "path_count": 3
+      },
+      {
+        "id": "greeting",
+        "label": "Greeting",
+        "category": "everyday",
+        "sheet": "../poses-v3/engineering-new.png",
+        "sheet_sha256": "442709b70f76fd580c19882a6846baf5f60472b4c5babc1be3b377ad6ff7d52b",
+        "crop": [
+          0,
+          0,
+          512,
+          470
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.99513,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998891,
+        "vector_sha256": "8c0d92ed61be821da3a8fbb38bdcf1018152cae7d0e3ff1d6ff2736e6b806438",
+        "path_count": 3
+      },
+      {
+        "id": "listening",
+        "label": "Listening",
+        "category": "everyday",
+        "sheet": "../poses-v3/engineering-new.png",
+        "sheet_sha256": "442709b70f76fd580c19882a6846baf5f60472b4c5babc1be3b377ad6ff7d52b",
+        "crop": [
+          512,
+          0,
+          1024,
+          470
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.995564,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998223,
+        "vector_sha256": "d06df32c4dda99579ad3f0ab9b20ed234287f88f2be338986d8404425be0de02",
+        "path_count": 3
+      },
+      {
+        "id": "confused",
+        "label": "Confused",
+        "category": "everyday",
+        "sheet": "../poses-v3/engineering-new.png",
+        "sheet_sha256": "442709b70f76fd580c19882a6846baf5f60472b4c5babc1be3b377ad6ff7d52b",
+        "crop": [
+          1024,
+          0,
+          1536,
+          470
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.995036,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998961,
+        "vector_sha256": "7b856eff2c2550a6f536ac24623e84e3a54642ca20a3c8ce03ee63dbfadb2b31",
+        "path_count": 3
+      },
+      {
+        "id": "celebrating",
+        "label": "Celebrating",
+        "category": "everyday",
+        "sheet": "../poses-v3/engineering-new.png",
+        "sheet_sha256": "442709b70f76fd580c19882a6846baf5f60472b4c5babc1be3b377ad6ff7d52b",
+        "crop": [
+          0,
+          512,
+          512,
+          966
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.994097,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998388,
+        "vector_sha256": "0af388c9e59128fbb08532943e808a1003285d7deb7695c659ce1829a6f42271",
+        "path_count": 3
+      },
+      {
+        "id": "coding",
+        "label": "Coding",
+        "category": "specialist",
+        "sheet": "../poses-v3/engineering-specialist.png",
+        "sheet_sha256": "3c3498dc701628dd30fde4fe808d7e04f15feca23bd0b31ffaa6047896b47822",
+        "crop": [
+          0,
+          0,
+          512,
+          434
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.995158,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.9983,
+        "vector_sha256": "fb191bd180f9a3e9045a9249b050954452bbf82220bd447b6ed1183c74b52eaf",
+        "path_count": 3
+      },
+      {
+        "id": "debugging",
+        "label": "Debugging",
+        "category": "specialist",
+        "sheet": "../poses-v3/engineering-specialist.png",
+        "sheet_sha256": "3c3498dc701628dd30fde4fe808d7e04f15feca23bd0b31ffaa6047896b47822",
+        "crop": [
+          512,
+          0,
+          1024,
+          434
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.995966,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998016,
+        "vector_sha256": "a9bd813406d90d307685f95c69e2d7eaf31852168b5cb4d0ce57ed861143eab4",
+        "path_count": 3
+      },
+      {
+        "id": "security-review",
+        "label": "Security Review",
+        "category": "specialist",
+        "sheet": "../poses-v3/engineering-specialist.png",
+        "sheet_sha256": "3c3498dc701628dd30fde4fe808d7e04f15feca23bd0b31ffaa6047896b47822",
+        "crop": [
+          1024,
+          0,
+          1536,
+          434
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.99633,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998256,
+        "vector_sha256": "b0ffc8ff6399f03c75c13db9b700a5816f3d63ada31cd3b722cd68ca8248c2e5",
+        "path_count": 3
+      },
+      {
+        "id": "lying-down",
+        "label": "Lying Down",
+        "category": "everyday",
+        "sheet": "engineering-a.png",
+        "sheet_sha256": "b81de9706e03232fc59bf901ce93f20daa30c075fee61e259078f6b70362808c",
+        "crop": [
+          960,
+          570,
+          1536,
+          942
+        ],
+        "cell_to_canvas": [
+          0.8402777777777778,
+          0,
+          65.77777777777777,
+          0,
+          0.8387096774193549,
+          101.35483870967741
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.993796,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998354,
+        "vector_sha256": "3e49abfbf5bcc5cce59d880e9400ac65f83bb41a0fde7fc9dffab4d8adc4ec5a",
+        "path_count": 3
+      },
+      {
+        "id": "concerned",
+        "label": "Concerned",
+        "category": "everyday",
+        "sheet": "../poses-v3/engineering-new.png",
+        "sheet_sha256": "442709b70f76fd580c19882a6846baf5f60472b4c5babc1be3b377ad6ff7d52b",
+        "crop": [
+          512,
+          512,
+          944,
+          966
+        ],
+        "cell_to_canvas": [
+          1.0,
+          0,
+          0.0,
+          0,
+          1.0,
+          0.0
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.996039,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998702,
+        "vector_sha256": "c1b26321a50ccc9530727782c8e90dab5f576292e2194c1000eeae75a5641eb3",
+        "path_count": 3
+      },
+      {
+        "id": "sultry",
+        "label": "Sultry",
+        "category": "everyday",
+        "sheet": "../poses-v3/engineering-new.png",
+        "sheet_sha256": "442709b70f76fd580c19882a6846baf5f60472b4c5babc1be3b377ad6ff7d52b",
+        "crop": [
+          944,
+          604,
+          1536,
+          960
+        ],
+        "cell_to_canvas": [
+          0.8006756756756757,
+          0,
+          82.05405405405405,
+          0,
+          0.800561797752809,
+          66.34831460674157
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.99511,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998626,
+        "vector_sha256": "619d1e01df6242bd2127fe59f35aeaf50d5c06f08b464289aa26e2298ccacd56",
+        "path_count": 3
+      },
+      {
+        "id": "working",
+        "label": "Working",
+        "category": "everyday",
+        "sheet": "../poses-v3/engineering-specialist.png",
+        "sheet_sha256": "3c3498dc701628dd30fde4fe808d7e04f15feca23bd0b31ffaa6047896b47822",
+        "crop": [
+          0,
+          540,
+          512,
+          958
+        ],
+        "cell_to_canvas": [
+          1.0,
+          0,
+          0.0,
+          0,
+          1.0,
+          0.0
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.995927,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998705,
+        "vector_sha256": "3846073bfe5b48046798449bbb90095460cbae9697db6214935ea490a1667b2a",
+        "path_count": 3
+      },
+      {
+        "id": "testing",
+        "label": "Testing",
+        "category": "specialist",
+        "sheet": "../poses-v3/engineering-specialist.png",
+        "sheet_sha256": "3c3498dc701628dd30fde4fe808d7e04f15feca23bd0b31ffaa6047896b47822",
+        "crop": [
+          512,
+          488,
+          1024,
+          958
+        ],
+        "cell_to_canvas": [
+          1.0,
+          0,
+          0.0,
+          0,
+          1.0,
+          24.0
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.996023,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998351,
+        "vector_sha256": "31d78c38ce48aaa891155d0071c0cc883a6a60052d2b76a52f01770758676824",
+        "path_count": 3
+      },
+      {
+        "id": "code-review",
+        "label": "Code Review",
+        "category": "specialist",
+        "sheet": "../poses-v3/engineering-specialist.png",
+        "sheet_sha256": "3c3498dc701628dd30fde4fe808d7e04f15feca23bd0b31ffaa6047896b47822",
+        "crop": [
+          1024,
+          488,
+          1536,
+          958
+        ],
+        "cell_to_canvas": [
+          1.0,
+          0,
+          0.0,
+          0,
+          1.0,
+          24.0
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.994899,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.997426,
+        "vector_sha256": "f8b818257ee8da364e6b106b3dd1caa0da977e4bac105b3e1a5cb494b366ae62",
+        "path_count": 3
+      },
+      {
+        "id": "flirty",
+        "label": "Flirty",
+        "category": "everyday",
+        "sheet": "../poses-v4/engineering-flirty-normalized.png",
+        "sheet_sha256": "c8fe70aa07997f3d2255b17350f5a4cf6647a8aaed8755834f91bb3a35c0ee30",
+        "crop": [
+          0,
+          0,
+          512,
+          512
+        ],
+        "cell_to_canvas": [
+          1,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.995153,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998288,
+        "vector_sha256": "f06732a72473918eab95b4aed95e0caa76ea4ba34e7c28723eb4a5f5f7600419",
+        "path_count": 3
+      }
+    ],
+    "business": [
+      {
+        "id": "standing",
+        "label": "Standing",
+        "category": "everyday",
+        "sheet": "business-a.png",
+        "sheet_sha256": "f21165385c68c3c41e634178c91902a29eb445a5358a034ab9f5acdc93259608",
+        "crop": [
+          0,
+          0,
+          512,
+          470
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.995565,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998907,
+        "vector_sha256": "528912c2e527b0e37504e95c989fba7d2802e1773959e2668c55602800f9f06a",
+        "path_count": 3
+      },
+      {
+        "id": "standing-2",
+        "label": "Standing 2",
+        "category": "everyday",
+        "sheet": "business-a.png",
+        "sheet_sha256": "f21165385c68c3c41e634178c91902a29eb445a5358a034ab9f5acdc93259608",
+        "crop": [
+          512,
+          0,
+          1024,
+          470
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.994609,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998582,
+        "vector_sha256": "9707f6f1ee980cb02554e28126264d7d806a4be31e7f284419507786441f33bc",
+        "path_count": 3
+      },
+      {
+        "id": "seated",
+        "label": "Seated",
+        "category": "everyday",
+        "sheet": "business-a.png",
+        "sheet_sha256": "f21165385c68c3c41e634178c91902a29eb445a5358a034ab9f5acdc93259608",
+        "crop": [
+          1024,
+          0,
+          1536,
+          470
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.99523,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998548,
+        "vector_sha256": "ed1d1e18b29151a5630603f4295a362b65b17e47d2784add469522d5068178fa",
+        "path_count": 3
+      },
+      {
+        "id": "seated-2",
+        "label": "Seated 2",
+        "category": "everyday",
+        "sheet": "business-a.png",
+        "sheet_sha256": "f21165385c68c3c41e634178c91902a29eb445a5358a034ab9f5acdc93259608",
+        "crop": [
+          0,
+          512,
+          512,
+          966
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.996146,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998571,
+        "vector_sha256": "d0661fb2882bd7f1eb16708473afd7e44ad980a7200a8bc38968431699ac45fa",
+        "path_count": 3
+      },
+      {
+        "id": "tired",
+        "label": "Tired",
+        "category": "everyday",
+        "sheet": "business-a.png",
+        "sheet_sha256": "f21165385c68c3c41e634178c91902a29eb445a5358a034ab9f5acdc93259608",
+        "crop": [
+          512,
+          512,
+          1024,
+          966
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.995748,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.999184,
+        "vector_sha256": "ab0adf451928ad2dda4d67d5735adb2a0285b23f03364ebad0180173aa16db6f",
+        "path_count": 3
+      },
+      {
+        "id": "lying-down",
+        "label": "Lying Down",
+        "category": "everyday",
+        "sheet": "business-a.png",
+        "sheet_sha256": "f21165385c68c3c41e634178c91902a29eb445a5358a034ab9f5acdc93259608",
+        "crop": [
+          1024,
+          512,
+          1536,
+          966
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.995449,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.999188,
+        "vector_sha256": "5cb5296828a1100fde9aefccd036dc3ce4c3859edd75e0c8b17bc5d667f788c3",
+        "path_count": 3
+      },
+      {
+        "id": "thinking",
+        "label": "Thinking",
+        "category": "everyday",
+        "sheet": "business-b.png",
+        "sheet_sha256": "94e4e45cf6cc178ae50820ed157b5afd5920fd8321add713886c553d45813cef",
+        "crop": [
+          0,
+          0,
+          512,
+          458
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.99543,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998911,
+        "vector_sha256": "e5283b71a625f6a22c7e62fe859b924f31ecb6746d8eb6b5bdd50ee61ba3a37f",
+        "path_count": 3
+      },
+      {
+        "id": "working",
+        "label": "Working",
+        "category": "everyday",
+        "sheet": "business-b.png",
+        "sheet_sha256": "94e4e45cf6cc178ae50820ed157b5afd5920fd8321add713886c553d45813cef",
+        "crop": [
+          512,
+          0,
+          1024,
+          458
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.995536,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998956,
+        "vector_sha256": "1763803f0583283e23bb223ca0f865962a6a3beaa71a28618ab9bd2ad136c8c2",
+        "path_count": 3
+      },
+      {
+        "id": "laughing",
+        "label": "Laughing",
+        "category": "everyday",
+        "sheet": "business-b.png",
+        "sheet_sha256": "94e4e45cf6cc178ae50820ed157b5afd5920fd8321add713886c553d45813cef",
+        "crop": [
+          1024,
+          0,
+          1536,
+          458
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.995017,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.999037,
+        "vector_sha256": "cb78d9a75e6cdd986fd43a72ebd40ade39e434f1d263d237b51c4dbaf09091cd",
+        "path_count": 3
+      },
+      {
+        "id": "frustrated",
+        "label": "Frustrated",
+        "category": "everyday",
+        "sheet": "business-b.png",
+        "sheet_sha256": "94e4e45cf6cc178ae50820ed157b5afd5920fd8321add713886c553d45813cef",
+        "crop": [
+          0,
+          512,
+          512,
+          966
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.995534,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.999221,
+        "vector_sha256": "9287e0d1d8b9f2d4c682629d0574c09cae0b99bbdf634864543331002e542493",
+        "path_count": 3
+      },
+      {
+        "id": "exasperated",
+        "label": "Exasperated",
+        "category": "everyday",
+        "sheet": "business-b.png",
+        "sheet_sha256": "94e4e45cf6cc178ae50820ed157b5afd5920fd8321add713886c553d45813cef",
+        "crop": [
+          512,
+          512,
+          1024,
+          966
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.99594,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.999094,
+        "vector_sha256": "9441c8e896027306ee6029de7743ffaf993577b7f84d7a2570b960c8b63109d8",
+        "path_count": 3
+      },
+      {
+        "id": "coordinating",
+        "label": "Coordinating",
+        "category": "specialist",
+        "sheet": "business-b.png",
+        "sheet_sha256": "94e4e45cf6cc178ae50820ed157b5afd5920fd8321add713886c553d45813cef",
+        "crop": [
+          1024,
+          512,
+          1536,
+          966
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.996347,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.999262,
+        "vector_sha256": "61d7c75533ac55208f4a35e152be1e4a7bc136b3b5dbc864f9c704f5ca8db082",
+        "path_count": 3
+      },
+      {
+        "id": "formal-report",
+        "label": "Formal Report",
+        "category": "specialist",
+        "sheet": "business-c.png",
+        "sheet_sha256": "e0a62cd5ad2ec06309c186ce299d1d9b150e23a3bed324795af6b4bdd409704f",
+        "crop": [
+          0,
+          0,
+          512,
+          470
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.994925,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998667,
+        "vector_sha256": "20347c5c09d3f7b05237daf8d4575947b91be5c1c724221f1eb62a2fa534e2c2",
+        "path_count": 3
+      },
+      {
+        "id": "task-complete",
+        "label": "Task Complete",
+        "category": "specialist",
+        "sheet": "business-c.png",
+        "sheet_sha256": "e0a62cd5ad2ec06309c186ce299d1d9b150e23a3bed324795af6b4bdd409704f",
+        "crop": [
+          512,
+          0,
+          1024,
+          470
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.994717,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.999272,
+        "vector_sha256": "009e9c5796c33fab89efb817e87965ad4f246d650bd8756db4759e05096fc656",
+        "path_count": 3
+      },
+      {
+        "id": "teasing",
+        "label": "Teasing",
+        "category": "everyday",
+        "sheet": "business-c.png",
+        "sheet_sha256": "e0a62cd5ad2ec06309c186ce299d1d9b150e23a3bed324795af6b4bdd409704f",
+        "crop": [
+          1024,
+          0,
+          1536,
+          470
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.994292,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998739,
+        "vector_sha256": "1f81c9243807c32b16147b530479452eeb5674f2e542187d45fe61dd50c555ed",
+        "path_count": 3
+      },
+      {
+        "id": "flirty",
+        "label": "Flirty",
+        "category": "everyday",
+        "sheet": "business-c.png",
+        "sheet_sha256": "e0a62cd5ad2ec06309c186ce299d1d9b150e23a3bed324795af6b4bdd409704f",
+        "crop": [
+          0,
+          512,
+          512,
+          964
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.996943,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.999266,
+        "vector_sha256": "422b68689f41dfaea3b97907dd687b93ac3a22cb05b900bb2f52d266b1fe6c0f",
+        "path_count": 3
+      },
+      {
+        "id": "glamour",
+        "label": "Glamour",
+        "category": "everyday",
+        "sheet": "business-c.png",
+        "sheet_sha256": "e0a62cd5ad2ec06309c186ce299d1d9b150e23a3bed324795af6b4bdd409704f",
+        "crop": [
+          512,
+          512,
+          1024,
+          964
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.994591,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.999208,
+        "vector_sha256": "42a821fedbf443e118e6a74ff3d6176ce78bc5386de188e3debf931c4fdf2939",
+        "path_count": 3
+      },
+      {
+        "id": "silly",
+        "label": "Silly",
+        "category": "everyday",
+        "sheet": "business-c.png",
+        "sheet_sha256": "e0a62cd5ad2ec06309c186ce299d1d9b150e23a3bed324795af6b4bdd409704f",
+        "crop": [
+          1024,
+          512,
+          1536,
+          964
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.995131,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.999296,
+        "vector_sha256": "186206d3dd043fe9c9d86e6e387140c54678189cb1672e9f8e8320a7177ce33b",
+        "path_count": 3
+      },
+      {
+        "id": "greeting",
+        "label": "Greeting",
+        "category": "everyday",
+        "sheet": "../poses-v3/business-new.png",
+        "sheet_sha256": "ff8f5c6eb4888aee2aeefcfd472e6acd25b0a2a3a46a4c3ad4ffe2496a91f0cc",
+        "crop": [
+          0,
+          0,
+          512,
+          470
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.995088,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.999115,
+        "vector_sha256": "8e9108531e94f29863ed650d26b18010f677579435ebed8162818e5f7932b501",
+        "path_count": 3
+      },
+      {
+        "id": "listening",
+        "label": "Listening",
+        "category": "everyday",
+        "sheet": "../poses-v3/business-new.png",
+        "sheet_sha256": "ff8f5c6eb4888aee2aeefcfd472e6acd25b0a2a3a46a4c3ad4ffe2496a91f0cc",
+        "crop": [
+          512,
+          0,
+          1024,
+          470
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.995738,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998749,
+        "vector_sha256": "6f153f419c0c0cdfbf8272c70e142dd3bc3429e4c64ba1a99a61022ebd579316",
+        "path_count": 3
+      },
+      {
+        "id": "confused",
+        "label": "Confused",
+        "category": "everyday",
+        "sheet": "../poses-v3/business-new.png",
+        "sheet_sha256": "ff8f5c6eb4888aee2aeefcfd472e6acd25b0a2a3a46a4c3ad4ffe2496a91f0cc",
+        "crop": [
+          1024,
+          0,
+          1536,
+          470
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.995323,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998777,
+        "vector_sha256": "0a8ed0716f2f5a4e6cd746269ae607b580a84bbe809ddebb7737edca7950f46f",
+        "path_count": 3
+      },
+      {
+        "id": "celebrating",
+        "label": "Celebrating",
+        "category": "everyday",
+        "sheet": "../poses-v3/business-new.png",
+        "sheet_sha256": "ff8f5c6eb4888aee2aeefcfd472e6acd25b0a2a3a46a4c3ad4ffe2496a91f0cc",
+        "crop": [
+          0,
+          512,
+          512,
+          966
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.996362,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998773,
+        "vector_sha256": "0e54bb3ca309b5571f229c25afd28b709fa74cf110583a75e642980a89f053fa",
+        "path_count": 3
+      },
+      {
+        "id": "concerned",
+        "label": "Concerned",
+        "category": "everyday",
+        "sheet": "../poses-v3/business-new.png",
+        "sheet_sha256": "ff8f5c6eb4888aee2aeefcfd472e6acd25b0a2a3a46a4c3ad4ffe2496a91f0cc",
+        "crop": [
+          512,
+          512,
+          944,
+          966
+        ],
+        "cell_to_canvas": [
+          1.0,
+          0,
+          0.0,
+          0,
+          1.0,
+          0.0
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.995699,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.997975,
+        "vector_sha256": "6ed2704fb274e60bdbfc5a0131841cdc67d5416173695e9d5ec6f1193e8063cd",
+        "path_count": 3
+      },
+      {
+        "id": "sultry",
+        "label": "Sultry",
+        "category": "everyday",
+        "sheet": "../poses-v3/business-new.png",
+        "sheet_sha256": "ff8f5c6eb4888aee2aeefcfd472e6acd25b0a2a3a46a4c3ad4ffe2496a91f0cc",
+        "crop": [
+          944,
+          604,
+          1536,
+          960
+        ],
+        "cell_to_canvas": [
+          0.8006756756756757,
+          0,
+          82.05405405405405,
+          0,
+          0.800561797752809,
+          66.34831460674157
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "geometry_iou": 0.994548,
+        "boundary_geometry_iou": 1.0,
+        "cleanup_tolerance_px": 0.75,
+        "palette_agreement": 0.998703,
+        "vector_sha256": "dea7bdcc4d828095ecbaa6b7b43aefbe29a9ef42fb8398a688ff09c209615fd0",
+        "path_count": 3
+      }
+    ]
+  }
+}

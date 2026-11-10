@@ -1,0 +1,196 @@
+:root {
+  color-scheme: light;
+  font-family: system-ui, sans-serif;
+  color: #58402b;
+  background: #f7f3e9;
+  line-height: 1.6;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+main {
+  max-width: 1120px;
+  margin: auto;
+  padding: 32px 28px 70px;
+}
+a {
+  color: inherit;
+  font-size: 13px;
+}
+h1 {
+  font:
+    normal clamp(38px, 6vw, 68px) / 1.05 Georgia,
+    serif;
+  letter-spacing: -0.03em;
+  margin: 16px 0 22px;
+}
+h1 em {
+  color: #718d3c;
+  font-weight: normal;
+}
+h2 {
+  font:
+    normal 32px/1.2 Georgia,
+    serif;
+  margin: 8px 0 22px;
+}
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  margin: 30px 0 10px;
+  font-weight: 650;
+}
+.intro {
+  max-width: 720px;
+  font-size: 15px;
+  margin: 0 0 28px;
+}
+.example {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  border: 1px solid #d5cab8;
+  background: #fff;
+}
+.art-panel {
+  padding: 18px 22px 8px;
+  min-width: 0;
+}
+.stage-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+}
+#scene {
+  position: relative;
+  aspect-ratio: 330/370;
+  width: 100%;
+  max-height: 590px;
+  margin: 8px auto;
+}
+#limited-actor,
+#original-actor {
+  position: absolute;
+  inset: 0;
+}
+#scene svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+[hidden] {
+  display: none !important;
+}
+#phase {
+  font-size: 11px;
+  min-height: 20px;
+  text-align: center;
+  color: #776950;
+}
+.panel {
+  padding: 28px 30px;
+  background: #fbf9f2;
+}
+.panel .eyebrow {
+  margin-top: 0;
+}
+.panel p {
+  font-size: 14px;
+}
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 25px 0;
+}
+button {
+  padding: 10px 13px;
+  border: 1px solid #bbae97;
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  font: 12px system-ui;
+  cursor: pointer;
+}
+button[aria-pressed="true"],
+#play {
+  background: #58402b;
+  color: #fff;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 3px solid #87a452;
+  outline-offset: 3px;
+}
+button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+label {
+  display: block;
+  font-size: 12px;
+  margin: 22px 0;
+}
+label output {
+  float: right;
+}
+input[type="range"] {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  accent-color: #718d3c;
+}
+.note {
+  font-size: 12px !important;
+  color: #766b56;
+}
+details {
+  border-bottom: 1px solid #d5cab8;
+  padding: 20px 0;
+  font-size: 14px;
+}
+summary {
+  cursor: pointer;
+  font-size: 13px;
+}
+video {
+  display: block;
+  width: 100%;
+  max-width: 960px;
+  margin: 22px auto;
+  background: #fff;
+}
+#error {
+  color: #8b2222;
+}
+@media (max-width: 700px) {
+  main {
+    padding: 22px 18px 48px;
+  }
+  .example {
+    grid-template-columns: 1fr;
+  }
+  .art-panel {
+    padding: 16px 14px 8px;
+  }
+  #scene {
+    max-height: none;
+  }
+  .panel {
+    padding: 24px 22px;
+  }
+  h2 {
+    font-size: 28px;
+  }
+  .stage-label {
+    font-size: 8px;
+  }
+  .intro {
+    font-size: 14px;
+  }
+}

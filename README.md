@@ -13,23 +13,35 @@ This project also builds its owner's skills. AI can do much of the coding, but t
 owner should be able to inspect it, reproduce the results, explain the choices, and
 make informed changes. Start with [the code walkthrough](docs/learning.md).
 
-## Milestone 01: a small, working foundation
+## What works now
 
-- A browser chat interface for one provisional character.
+- A browser chat interface with three selectable provisional characters: Academic,
+  Engineering (coding/security), and Business. Each has its own prompt, theme,
+  conversation identity, and optional local model/endpoint overrides.
 - A replaceable backend: a clearly labeled scripted mock, or a configurable
   loopback OpenAI-compatible chat endpoint.
 - Saved conversations in SQLite, JSON export, and deletion.
 - A readable character configuration, snapshotted when a conversation begins.
 - Connection checks, understandable errors, and source information on each reply.
+- E character artwork with 128 selectable poses, matching handler colors, an in-app
+  corner avatar, a synchronized `/overlay` surface, and model-callable visual tools.
+- An optional native overlay launcher; Windows transparency/topmost/click-through
+  behavior still needs a PC check. See [avatar setup](docs/avatar-runtime.md).
+- Optional read-only project tools and Brave web search, with a real result
+  inspector and per-message opt-in for model-requested tool calls.
 - A [route to the first personality-training experiment](docs/training.md), with
   an unmodified-model comparison and a research question still open for discussion.
 
 **Default mode is mock. It runs no model.** Real inference requires a separate server
 and model. The app never silently switches to mock if that server fails.
 
-There is no personality training, tool execution, cloud delegation, calendar access,
-voice, model management, or cross-conversation memory implemented yet. Saved chat
-history is the first persistence layer; it is not a general memory system.
+There is no completed personality-training experiment, computer control, code
+execution, cloud delegation, calendar access, audio, verified native desktop behavior, model
+lifecycle management, or cross-conversation memory yet. Saved chat history is the
+first persistence layer; it is not a general memory system. Profiles are currently
+prompt configured; the weight-training goal remains explicit.
+
+For the next session, read [the handoff](docs/HANDOFF.md) and [how the avatar works](docs/avatar-runtime.md).
 
 ## Run it
 
@@ -94,6 +106,8 @@ Start a **new conversation** after changing the backend, endpoint, or model. Exi
 conversations stay readable but cannot be continued with a different configuration.
 This keeps scripted mock history out of real model context. Character edits also
 apply to new conversations; older chats keep their original character prompt.
+Use the sidebar selector to switch profiles; it starts a fresh conversation. Read
+[character and model planning](docs/characters.md) before assigning models by role.
 
 `openai` names an API format, not OpenAI's hosted service. This milestone accepts
 loopback HTTP(S) endpoints only and never follows redirects. A local server can
@@ -103,11 +117,30 @@ computes. It records the requested ID and the server-reported ID separately, wit
 
 ## Inspect your work
 
+The optional Notion project board holds the live idea inbox and a short Next list.
+It is not needed to start or use the local app. See [planning](docs/planning.md).
+
+The selected visual baseline is **[E](research/visual-studies/option-e.png)**. The
+[reference gallery and design brief](research/visual-studies/README.md) preserve
+the choice and earlier studies. The [E proof pack](bfi/static/e-preview/README.md) now provides 74 generated-reference pose traces, source/SVG comparisons,
+17 named body pieces per pose, piece morphing and editing controls, icons, motif
+transitions, browser playback recordings, and agent cursor studies. The
+[pose plan](docs/pose-plan.md) distinguishes available artwork from future additions. Open
+`/static/e-preview/index.html` with the local app running. The private hosted preview is linked in the project
+conversation and optional board. The ordinary chat art
+remains the earlier prototype while these proofs await review.
+
+To try real project reads, set `BFI_PROJECT_ROOT=.` in `.env`, restart, and open
+**Tools & setup**. The inspector works even in mock mode. A real compatible model
+can use enabled tools when you opt in for a message. Optional web search requires
+`BFI_BRAVE_API_KEY`. See [tools](docs/tools.md) and [local runtime integration,
+including Strata research](docs/integrations.md).
+
 | What you want to understand                | Where to start                                     |
 | ------------------------------------------ | -------------------------------------------------- |
 | What happens when you press Send           | [Learning walkthrough](docs/learning.md)           |
 | Why these components were chosen           | [Architecture and decisions](docs/architecture.md) |
-| Character name, description, and prompt    | [config/character.json](config/character.json)     |
+| Character name, description, and prompt    | [config/profiles.json](config/profiles.json)       |
 | Endpoint, model, and context limits        | [.env.example](.env.example)                       |
 | API routes and the request flow            | [bfi/main.py](bfi/main.py)                         |
 | Real server requests and the mock          | [bfi/backends.py](bfi/backends.py)                 |
@@ -147,12 +180,18 @@ complete exchanges to the configured endpoint. Older text remains saved but may 
 be sent; per-reply provenance reports omissions. Character counts and pair limits
 are approximate guards, not model-specific token budgeting. Context overflow can
 still happen; reduce the limits if your server rejects requests.
+Tool-enabled requests also send actual tool results to the selected model. Saved
+provenance and exports may include project text and search queries. A configured
+adapter label records intent; it does not train, load, or independently identify a LoRA.
 
-One app process, one active generation, non-streaming text, and one local user are
+One app process, one active model request sequence, non-streaming text, and one local user are
 intentional limits. Replies display as plain text. There is no authentication;
 keep the app bound to `127.0.0.1`. This is not a shared or public deployment service.
 The app does not start, load, or unload model servers. Stop the separate inference
 process to release its model; merely closing this UI does not free VRAM.
+Three profiles do not imply three simultaneously loaded models. The geometric
+avatar can be mirrored in this app or shown by the optional native host. Its reply
+cues produce no audio. Native Windows behavior remains unverified.
 
 Models, adapters, training runs, conversation data, and `.env` are ignored by Git.
 Do not commit credentials or private exports. No open-source license has been chosen

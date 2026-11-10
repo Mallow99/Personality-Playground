@@ -2,8 +2,9 @@
 
 import ipaddress
 import os
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from pathlib import Path
+from typing import Literal
 from urllib.parse import urlsplit
 
 from pydantic import BaseModel, ConfigDict, Field
@@ -16,6 +17,8 @@ class Character(BaseModel):
     name: str = Field(min_length=1, max_length=60)
     description: str = Field(min_length=1, max_length=300)
     system_prompt: str = Field(min_length=1, max_length=8000)
+    profile_id: str = "companion"
+    theme: Literal["foundation", "academic", "engineering", "business"] = "foundation"
 
 
 @dataclass(frozen=True)
@@ -30,6 +33,10 @@ class Settings:
     context_chars: int = 24000
     data_dir: Path = ROOT / "data"
     character_file: Path = ROOT / "config/character.json"
+    profiles_file: Path = ROOT / "config/profiles.json"
+    project_root: Path | None = None
+    search_api_key: str = ""
+    adapter_label: str = ""
 
     def __post_init__(self):
         if self.backend not in {"mock", "openai"}:
@@ -75,12 +82,31 @@ class Settings:
             context_chars=int(os.getenv("BFI_CONTEXT_CHARS", "24000")),
             data_dir=path("BFI_DATA_DIR", "data"),
             character_file=path("BFI_CHARACTER_FILE", "config/character.json"),
+            profiles_file=path("BFI_PROFILES_FILE", "config/profiles.json"),
+            project_root=path("BFI_PROJECT_ROOT", ".") if os.getenv("BFI_PROJECT_ROOT") else None,
+            search_api_key=os.getenv("BFI_BRAVE_API_KEY", ""),
+            adapter_label=os.getenv("BFI_ADAPTER_LABEL", ""),
+        )
+
+    def for_profile(self, profile_id):
+        """Each profile may use its own local server/model; omitted values inherit defaults."""
+        prefix = f"BFI_{profile_id.upper()}_"
+        return replace(
+            self,
+            backend=os.getenv(prefix + "BACKEND", self.backend),
+            base_url=os.getenv(prefix + "BASE_URL", self.base_url).rstrip("/"),
+            model=os.getenv(prefix + "MODEL", self.model),
+            api_key=os.getenv(prefix + "API_KEY", self.api_key),
+            adapter_label=os.getenv(prefix + "ADAPTER_LABEL", self.adapter_label),
         )
 
     @property
     def identity(self):
-        return {
+        identity = {
             "backend": self.backend,
             "endpoint": self.base_url if self.backend != "mock" else None,
             "requested_model": self.model if self.backend != "mock" else "mock-script-v1",
         }
+        if self.adapter_label:
+            identity["configured_adapter"] = self.adapter_label
+        return identity

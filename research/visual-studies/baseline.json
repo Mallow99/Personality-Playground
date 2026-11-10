@@ -1,0 +1,69 @@
+{
+  "baseline": "E",
+  "status": "selected_visual_baseline",
+  "reference_sheet": "option-e.png",
+  "reference_sha256": "9aab61e4bd21b21f69816eb11a7ac4ccc69d2bd6388b4ab012634e43fd86da39",
+  "roles": {
+    "academic": {
+      "presentation": "gender-neutral",
+      "identity": [
+        "olive glasses and book",
+        "loose parchment coat/cardigan",
+        "curious gestures"
+      ],
+      "palette_family": [
+        "oak",
+        "olive",
+        "parchment"
+      ]
+    },
+    "engineering": {
+      "presentation": "feminine",
+      "identity": [
+        "short asymmetric crimson bob",
+        "cropped angular jacket/collar",
+        "crossed-arm standing and sideways seated poses"
+      ],
+      "palette_family": [
+        "charcoal",
+        "crimson",
+        "rose"
+      ]
+    },
+    "business": {
+      "presentation": "masculine",
+      "identity": [
+        "navy waistcoat",
+        "icy sleeve pieces",
+        "blue tie and compact hair",
+        "relaxed standing and seated poses"
+      ],
+      "palette_family": [
+        "navy",
+        "blue",
+        "ice"
+      ],
+      "face_candidate": "V5 rejected by owner for visual regression; no new face design approved"
+    }
+  },
+  "constraints": [
+    "loose separated angular 2D shapes",
+    "manageable polygon parts reproducible in code",
+    "approximately three distinct colors per role",
+    "no shared dark/light character fills",
+    "no story spoilers"
+  ],
+  "production_svg_status": "74_pose_traces; whole-shape grouping proof on Academic standing/seated; 72 legacy maps",
+  "existing_svg_proofs": "earlier D feasibility studies only",
+  "icons": "face_and_motif_proofs_pending_review",
+  "animation": "Limited reading and seated Business hand movement; intact authored endpoints elsewhere",
+  "proof_pack": "../../bfi/static/e-preview/index.html",
+  "previous_proof_status": "hand-built SVG poses and first transitions rejected by owner",
+  "pose_sources": "poses-v2/sources.json",
+  "pose_manifest": "../../bfi/static/e-preview/assets/poses/manifest.json",
+  "pose_additions": "poses-v3/README.md",
+  "body_guides": "../../config/rigs",
+  "pose_plan": "../../config/pose-plan.json",
+  "visual_review": "Latest v5 rejected for significant quality loss across the board. Visual work paused for handoff; cause unconfirmed. Read docs/HANDOFF.md before any rebuild. E remains the original selected shape/wardrobe reference, not approval of later exports.",
+  "pose_review": "../../config/pose-review.json"
+}

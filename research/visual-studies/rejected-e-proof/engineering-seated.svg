@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" role="img" aria-label="Engineering E seated, confidently gesturing">
+<g data-piece="legs">
+<polygon points="175,345 222,322 251,348 301,399 323,421 301,445 266,431 225,383 177,419 143,415 127,397" fill="#20171E"/>
+<polygon points="302,398 327,419 318,440 292,418" fill="#F6A0B4"/>
+<polygon points="328,421 371,459 329,448 318,440" fill="#D9254C"/>
+<polygon points="175,394 209,399 237,423 280,449 267,480 232,476 202,450 158,451 142,432" fill="#20171E"/>
+<polygon points="265,445 284,452 274,478 250,469" fill="#F6A0B4"/>
+<polygon points="277,465 326,490 284,483 273,477" fill="#D9254C"/>
+<polygon points="185,341 218,329 218,353 170,386 146,388" fill="#20171E"/>
+</g>
+<g data-piece="torso" transform="translate(0 72)">
+<polygon points="140,159 192,141 196,162 177,186 150,177" fill="#D9254C"/>
+<polygon points="206,166 280,143 260,210 233,190 185,190" fill="#D9254C"/>
+<polygon points="230,122 271,135 224,145" fill="#D9254C"/>
+<polygon points="190,196 223,200 211,230 226,249 193,271 171,259 184,232" fill="#20171E"/>
+</g>
+<g data-piece="arm-left">
+<polygon points="145,271 160,279 143,340 130,362 111,360 127,319" fill="#20171E"/>
+<polygon points="129,358 142,363 118,474 102,480 102,463" fill="#20171E"/>
+<polygon points="105,457 122,462 119,478 101,480" fill="#F6A0B4"/>
+</g>
+<g data-piece="hand-left">
+<polygon points="105,479 118,481 116,489 91,487 77,495 73,491 86,482 72,484 70,479 90,477" fill="#20171E"/>
+</g>
+<g data-piece="arm-right">
+<polygon points="251,276 267,279 292,296 283,310 252,296" fill="#20171E"/>
+<polygon points="284,297 296,298 321,251 306,243" fill="#20171E"/>
+<polygon points="306,241 325,249 320,262 300,254" fill="#F6A0B4"/>
+</g>
+<g data-piece="hand-right">
+<polygon points="321,246 328,231 348,216 353,222 340,234 365,231 366,237 341,242 360,249 355,254 334,247" fill="#20171E"/>
+</g>
+<g data-piece="prop">
+<polygon points="216,204 220,215 210,219" fill="#20171E"/>
+</g>
+<g data-piece="head" transform="translate(0 72)">
+<polygon points="134,69 175,29 228,20 229,33 256,52 253,86 241,96 242,61 212,47 188,97 182,81 167,119 142,107 151,78 134,89" fill="#D9254C"/>
+<polygon points="212,47 242,61 232,107 213,135 198,130 173,112 194,83" fill="#20171E"/>
+<polygon class="actor-eyes" points="201,91 208,77 239,64 225,93 199,103" fill="#F6A0B4"/>
+<polygon class="actor-eyes" points="216,82 222,80 225,85 220,94 214,95 212,90" fill="#D9254C"/>
+<polygon class="actor-mouth" points="208,115 219,111 214,119" fill="#F6A0B4"/>
+<polygon points="175,43 211,30 189,76 177,107 176,83 165,117 155,113" fill="#D9254C"/>
+</g>
+</svg>

@@ -1,0 +1,153 @@
+{
+  "version": 1,
+  "layout": [
+    3,
+    2
+  ],
+  "batches": [
+    {
+      "id": "academic-1",
+      "role": "academic",
+      "cells": [
+        "S01",
+        "S04",
+        "S07",
+        "S10",
+        "S13",
+        "S16"
+      ],
+      "prompt": "Create ONE new character pose reference sheet, landscape 1536x1024, a strict 3 columns by 2 rows grid of SIX equal square cells. Use the attached image ONLY as the established character identity/style reference, not its poses or labels. Each cell has exactly one complete full-body character, clear expressive DIFFERENT pose, fitting fully inside its own cell with generous white margins; no hand, hair, foot or prop may spill into another cell. White background, no panel borders, no global title. Reserve bottom 35 pixels of EACH cell for the exact short code and title given below. Keep everything else inside the cell. Read cells row-major left to right.\nAdult gender-neutral Academic: angular oak-brown swept hair with small olive floating tuft, large olive rectangular glasses, oak-brown geometric mask face, loose parchment coat/cardigan with olive shirt, oak legs. Exactly oak #58402B, olive #87A452, parchment #EBD8AF.\nMatch the reference closely: simple flat 2D angular anime-ish geometric character, loose separated broad polygons with clean white negative-space joints. Preserve recognizable hair, face, outfit and palette in every pose. Clear functional hand gestures, fingers as a small coherent angular shape. No realistic anatomy, no skin, no gradients, no texture, no shading, no complex low-poly rendering, no extra colors. Props use only this character palette. Use varied natural stylized weight distribution and silhouettes; do not recycle one stance six times. Do not add other characters. Props are minimal and meaningful; avoid decorative clutter or readable code.\nCell 1: label \"S01 Pointing left\". Pose: One clear extended arm; other hand relaxed. Context: Guide an explanation. Point toward the VIEWER LEFT. \nCell 2: label \"S04 Small wave\". Pose: Compact raised hand with readable fingers. Context: Casual greeting or goodbye. \nCell 3: label \"S07 Curious inspection\". Pose: Head tilted toward a small floating detail. Context: Notice an unfamiliar detail. \nCell 4: label \"S10 Skeptical\". Pose: One raised brow/tilted head; asymmetrical arm gesture. Context: Disagree or question evidence. \nCell 5: label \"S13 Apologetic / correcting\". Pose: Small downward head tilt and corrective hand gesture. Context: Acknowledge a mistake. \nCell 6: label \"S16 Embarrassed\". Pose: Turned head and one hand near cheek. Context: An awkward or funny moment. \n",
+      "reference": "../poses-v3/academic-new.png",
+      "sheet": "academic-1.png",
+      "sha256": "af611c694f03d9b4a5f0e83382e8fcc314295d54811066aa367a6d71a9be6acc"
+    },
+    {
+      "id": "academic-2",
+      "role": "academic",
+      "cells": [
+        "S19",
+        "S22",
+        "A01",
+        "A02",
+        "A03",
+        "A04"
+      ],
+      "prompt": "Create ONE new character pose reference sheet, landscape 1536x1024, a strict 3 columns by 2 rows grid of SIX equal square cells. Use the attached image ONLY as the established character identity/style reference, not its poses or labels. Each cell has exactly one complete full-body character, clear expressive DIFFERENT pose, fitting fully inside its own cell with generous white margins; no hand, hair, foot or prop may spill into another cell. White background, no panel borders, no global title. Reserve bottom 35 pixels of EACH cell for the exact short code and title given below. Keep everything else inside the cell. Read cells row-major left to right.\nAdult gender-neutral Academic: angular oak-brown swept hair with small olive floating tuft, large olive rectangular glasses, oak-brown geometric mask face, loose parchment coat/cardigan with olive shirt, oak legs. Exactly oak #58402B, olive #87A452, parchment #EBD8AF.\nMatch the reference closely: simple flat 2D angular anime-ish geometric character, loose separated broad polygons with clean white negative-space joints. Preserve recognizable hair, face, outfit and palette in every pose. Clear functional hand gestures, fingers as a small coherent angular shape. No realistic anatomy, no skin, no gradients, no texture, no shading, no complex low-poly rendering, no extra colors. Props use only this character palette. Use varied natural stylized weight distribution and silhouettes; do not recycle one stance six times. Do not add other characters. Props are minimal and meaningful; avoid decorative clutter or readable code.\nCell 1: label \"S19 Arms folded, amused\". Pose: Relaxed crossed arms; tilted head. Context: A dry joke lands. \nCell 2: label \"S22 Double take\". Pose: Over-shoulder head turn with paused body. Context: React, then reconsider. \nCell 3: label \"A01 Storytelling / DM narration\". Pose: Book aside; broad narrative gesture. Context: Narrate prose or a D&D scene. \nCell 4: label \"A02 Building a diagram\". Pose: One hand places a shape, the other links it. Context: Explain visually. \nCell 5: label \"A03 Annotating a passage\". Pose: Book or page flat, writing hand distinct. Context: Close reading. \nCell 6: label \"A04 Experiment / discovery\". Pose: Simple experiment prop and attentive lean. Context: Follow a curious question. \n",
+      "reference": "../poses-v3/academic-new.png",
+      "sheet": "academic-2.png",
+      "sha256": "4176513c86ebfc3860dab72b576c716c9f1fa38a28f3e77fba3b44056655c70e"
+    },
+    {
+      "id": "academic-3",
+      "role": "academic",
+      "cells": [
+        "A05",
+        "A06",
+        "A07",
+        "A08",
+        "A09",
+        "A10"
+      ],
+      "prompt": "Create ONE new character pose reference sheet, landscape 1536x1024, a strict 3 columns by 2 rows grid of SIX equal square cells. Use the attached image ONLY as the established character identity/style reference, not its poses or labels. Each cell has exactly one complete full-body character, clear expressive DIFFERENT pose, fitting fully inside its own cell with generous white margins; no hand, hair, foot or prop may spill into another cell. White background, no panel borders, no global title. Reserve bottom 35 pixels of EACH cell for the exact short code and title given below. Keep everything else inside the cell. Read cells row-major left to right.\nAdult gender-neutral Academic: angular oak-brown swept hair with small olive floating tuft, large olive rectangular glasses, oak-brown geometric mask face, loose parchment coat/cardigan with olive shirt, oak legs. Exactly oak #58402B, olive #87A452, parchment #EBD8AF.\nMatch the reference closely: simple flat 2D angular anime-ish geometric character, loose separated broad polygons with clean white negative-space joints. Preserve recognizable hair, face, outfit and palette in every pose. Clear functional hand gestures, fingers as a small coherent angular shape. No realistic anatomy, no skin, no gradients, no texture, no shading, no complex low-poly rendering, no extra colors. Props use only this character palette. Use varied natural stylized weight distribution and silhouettes; do not recycle one stance six times. Do not add other characters. Props are minimal and meaningful; avoid decorative clutter or readable code.\nCell 1: label \"A05 Comparing sources\". Pose: Two books/pages held at different heights. Context: Weigh conflicting explanations. \nCell 2: label \"A06 Rolling dice\". Pose: Hand just released, a few geometric dice. Context: Resolve a tabletop action. \nCell 3: label \"A07 Behind a DM screen\". Pose: Head and hands visible above a simple screen. Context: Run a tabletop scene. \nCell 4: label \"A08 Building a world map\". Pose: Seated over a map, pointing and drawing hands separated. Context: Plan a setting. \nCell 5: label \"A09 Reading aloud\". Pose: Book in one hand, conversational free hand. Context: Deliver prose or explain a quotation. \nCell 6: label \"A10 Writer pausing mid-sentence\". Pose: Pen suspended above a page, tilted head. Context: Consider wording. \n",
+      "reference": "../poses-v3/academic-new.png",
+      "sheet": "academic-3.png",
+      "sha256": "6c86430f3374d7a8305858f94fe002d9533941f7120f0189064df98caecb893e"
+    },
+    {
+      "id": "engineering-1",
+      "role": "engineering",
+      "cells": [
+        "S02",
+        "S05",
+        "S08",
+        "S11",
+        "S14",
+        "S17"
+      ],
+      "prompt": "Create ONE new character pose reference sheet, landscape 1536x1024, a strict 3 columns by 2 rows grid of SIX equal square cells. Use the attached image ONLY as the established character identity/style reference, not its poses or labels. Each cell has exactly one complete full-body character, clear expressive DIFFERENT pose, fitting fully inside its own cell with generous white margins; no hand, hair, foot or prop may spill into another cell. White background, no panel borders, no global title. Reserve bottom 35 pixels of EACH cell for the exact short code and title given below. Keep everything else inside the cell. Read cells row-major left to right.\nAdult feminine Hacker: short asymmetrical crimson bob, single visible rose eye in charcoal mask face, cropped angular crimson jacket/collar, charcoal flared trousers with rose cuffs and one rose thigh accent, crimson angular shoes. Exactly charcoal #20171E, crimson #D9254C, rose #F6A0B4.\nMatch the reference closely: simple flat 2D angular anime-ish geometric character, loose separated broad polygons with clean white negative-space joints. Preserve recognizable hair, face, outfit and palette in every pose. Clear functional hand gestures, fingers as a small coherent angular shape. No realistic anatomy, no skin, no gradients, no texture, no shading, no complex low-poly rendering, no extra colors. Props use only this character palette. Use varied natural stylized weight distribution and silhouettes; do not recycle one stance six times. Do not add other characters. Props are minimal and meaningful; avoid decorative clutter or readable code.\nCell 1: label \"S02 Pointing right\". Pose: A separately authored opposite gesture, keeping anatomical identity. Context: Direct attention elsewhere. Point toward the VIEWER RIGHT. \nCell 2: label \"S05 Polite bow\". Pose: Slight torso tilt, hands kept clear. Context: Acknowledge a request or thank someone. \nCell 3: label \"S08 Chin resting on hand\". Pose: Seated elbow support with face and hand separated. Context: Quiet contemplation. \nCell 4: label \"S11 Surprised\". Pose: Hands slightly spread and shoulders lifted. Context: Unexpected result. \nCell 5: label \"S14 Relieved\". Pose: Lowered shoulders, hand against chest or side. Context: A quiet successful outcome. \nCell 6: label \"S17 Determined\". Pose: Firm stance and forward-facing shoulders. Context: Commit to a difficult task. \n",
+      "reference": "../poses-v3/engineering-new.png",
+      "sheet": "engineering-1.png",
+      "sha256": "a9af8f4c75b7a99e08d57850789ffc921cdbe492e0f1cd8057ffdec551d42f6f"
+    },
+    {
+      "id": "engineering-2",
+      "role": "engineering",
+      "cells": [
+        "S20",
+        "S23",
+        "H01",
+        "H02",
+        "H03",
+        "H04"
+      ],
+      "prompt": "Create ONE new character pose reference sheet, landscape 1536x1024, a strict 3 columns by 2 rows grid of SIX equal square cells. Use the attached image ONLY as the established character identity/style reference, not its poses or labels. Each cell has exactly one complete full-body character, clear expressive DIFFERENT pose, fitting fully inside its own cell with generous white margins; no hand, hair, foot or prop may spill into another cell. White background, no panel borders, no global title. Reserve bottom 35 pixels of EACH cell for the exact short code and title given below. Keep everything else inside the cell. Read cells row-major left to right.\nAdult feminine Hacker: short asymmetrical crimson bob, single visible rose eye in charcoal mask face, cropped angular crimson jacket/collar, charcoal flared trousers with rose cuffs and one rose thigh accent, crimson angular shoes. Exactly charcoal #20171E, crimson #D9254C, rose #F6A0B4.\nMatch the reference closely: simple flat 2D angular anime-ish geometric character, loose separated broad polygons with clean white negative-space joints. Preserve recognizable hair, face, outfit and palette in every pose. Clear functional hand gestures, fingers as a small coherent angular shape. No realistic anatomy, no skin, no gradients, no texture, no shading, no complex low-poly rendering, no extra colors. Props use only this character palette. Use varied natural stylized weight distribution and silhouettes; do not recycle one stance six times. Do not add other characters. Props are minimal and meaningful; avoid decorative clutter or readable code.\nCell 1: label \"S20 Deadpan\". Pose: Still upright silhouette and one minimal hand gesture. Context: Understated humor. \nCell 2: label \"S23 Stretching\". Pose: Arms overhead, long angular silhouette. Context: Take a break. \nCell 3: label \"H01 Reviewing a diff\". Pose: Two small panels, a precise pointing gesture. Context: Compare a proposed code change. \nCell 4: label \"H02 Investigating logs\". Pose: Lean toward a narrow stack of log panels. Context: Follow diagnostic evidence. \nCell 5: label \"H03 Waiting for a build\". Pose: Sideways seated, one foot moving lightly. Context: A quiet working pause. \nCell 6: label \"H04 Terminal focus\". Pose: Compact forward lean with both hands at keyboard. Context: Inspect a local terminal session. \n",
+      "reference": "../poses-v3/engineering-new.png",
+      "sheet": "engineering-2.png",
+      "sha256": "bca2b1f1b83d4d688c56950471e9175a48039ee62ad3623ee76fa49707c54e9e"
+    },
+    {
+      "id": "engineering-3",
+      "role": "engineering",
+      "cells": [
+        "H05",
+        "H06",
+        "H07",
+        "H08",
+        "H09",
+        "H10"
+      ],
+      "prompt": "Create ONE new character pose reference sheet, landscape 1536x1024, a strict 3 columns by 2 rows grid of SIX equal square cells. Use the attached image ONLY as the established character identity/style reference, not its poses or labels. Each cell has exactly one complete full-body character, clear expressive DIFFERENT pose, fitting fully inside its own cell with generous white margins; no hand, hair, foot or prop may spill into another cell. White background, no panel borders, no global title. Reserve bottom 35 pixels of EACH cell for the exact short code and title given below. Keep everything else inside the cell. Read cells row-major left to right.\nAdult feminine Hacker: short asymmetrical crimson bob, single visible rose eye in charcoal mask face, cropped angular crimson jacket/collar, charcoal flared trousers with rose cuffs and one rose thigh accent, crimson angular shoes. Exactly charcoal #20171E, crimson #D9254C, rose #F6A0B4.\nMatch the reference closely: simple flat 2D angular anime-ish geometric character, loose separated broad polygons with clean white negative-space joints. Preserve recognizable hair, face, outfit and palette in every pose. Clear functional hand gestures, fingers as a small coherent angular shape. No realistic anatomy, no skin, no gradients, no texture, no shading, no complex low-poly rendering, no extra colors. Props use only this character palette. Use varied natural stylized weight distribution and silhouettes; do not recycle one stance six times. Do not add other characters. Props are minimal and meaningful; avoid decorative clutter or readable code.\nCell 1: label \"H05 At a breakpoint\". Pose: One hand on keyboard, other indicates a single variable. Context: Explain paused program state. \nCell 2: label \"H06 Tests passed\". Pose: Brief fist lift or satisfied lean back. Context: A small earned victory. \nCell 3: label \"H07 Reproducing a bug locally\". Pose: One small test window, concentrated asymmetric pose. Context: Check a controlled example. \nCell 4: label \"H08 Untangling dependencies\". Pose: Holds a knot of links, separates one connection. Context: Make a confusing system readable. \nCell 5: label \"H09 Sketching a system\". Pose: Side-on at a board with a few boxes and arrows. Context: Design architecture. \nCell 6: label \"H10 Keyboard flourish\". Pose: An angular keyboard balanced in one hand. Context: Silly confidence after finishing. \n",
+      "reference": "../poses-v3/engineering-new.png",
+      "sheet": "engineering-3.png",
+      "sha256": "4a5e98a9542fe6adb5540728f0f106466246f7bbf74cafa6fa3655109e9faef2"
+    },
+    {
+      "id": "business-1",
+      "role": "business",
+      "cells": [
+        "S03",
+        "S06",
+        "S09",
+        "S12",
+        "S15",
+        "S18"
+      ],
+      "prompt": "Create ONE new character pose reference sheet, landscape 1536x1024, a strict 3 columns by 2 rows grid of SIX equal square cells. Use the attached image ONLY as the established character identity/style reference, not its poses or labels. Each cell has exactly one complete full-body character, clear expressive DIFFERENT pose, fitting fully inside its own cell with generous white margins; no hand, hair, foot or prop may spill into another cell. White background, no panel borders, no global title. Reserve bottom 35 pixels of EACH cell for the exact short code and title given below. Keep everything else inside the cell. Read cells row-major left to right.\nAdult masculine Business: compact angular navy hair, navy mask face with icy-blue eye slash, navy waistcoat and trousers, ice sleeves, blue tie, navy angular shoes. Exactly navy #153B64, blue #247DD4, ice #B9E9FA.\nMatch the reference closely: simple flat 2D angular anime-ish geometric character, loose separated broad polygons with clean white negative-space joints. Preserve recognizable hair, face, outfit and palette in every pose. Clear functional hand gestures, fingers as a small coherent angular shape. No realistic anatomy, no skin, no gradients, no texture, no shading, no complex low-poly rendering, no extra colors. Props use only this character palette. Use varied natural stylized weight distribution and silhouettes; do not recycle one stance six times. Do not add other characters. Props are minimal and meaningful; avoid decorative clutter or readable code.\nCell 1: label \"S03 Open-palm presentation\". Pose: One open palm, upright relaxed posture. Context: Introduce an option. \nCell 2: label \"S06 Leaning in to listen\". Pose: Forward tilt and open shoulders, no work prop. Context: Attentive conversation. \nCell 3: label \"S09 Eureka\". Pose: Raised finger, lifted head, sudden confident posture. Context: Connect two ideas. \nCell 4: label \"S12 Reassuring\". Pose: Open hand offered forward, soft lean. Context: Encourage without lecturing. \nCell 5: label \"S15 Disappointed\". Pose: Slumped but attentive posture, no exaggerated despair. Context: A setback worth acknowledging. \nCell 6: label \"S18 Smug / teasing\". Pose: Hip shift, tilted head, one small presenting gesture. Context: A sharp but playful observation. \n",
+      "reference": "../poses-v3/business-new.png",
+      "sheet": "business-1.png",
+      "sha256": "f17832e36cc6b5e01362f7f237836ff98478cdc6427a64b97f8e71bdf857f338"
+    },
+    {
+      "id": "business-2",
+      "role": "business",
+      "cells": [
+        "S21",
+        "S24",
+        "B01",
+        "B02",
+        "B03",
+        "B04"
+      ],
+      "prompt": "Create ONE new character pose reference sheet, landscape 1536x1024, a strict 3 columns by 2 rows grid of SIX equal square cells. Use the attached image ONLY as the established character identity/style reference, not its poses or labels. Each cell has exactly one complete full-body character, clear expressive DIFFERENT pose, fitting fully inside its own cell with generous white margins; no hand, hair, foot or prop may spill into another cell. White background, no panel borders, no global title. Reserve bottom 35 pixels of EACH cell for the exact short code and title given below. Keep everything else inside the cell. Read cells row-major left to right.\nAdult masculine Business: compact angular navy hair, navy mask face with icy-blue eye slash, navy waistcoat and trousers, ice sleeves, blue tie, navy angular shoes. Exactly navy #153B64, blue #247DD4, ice #B9E9FA.\nMatch the reference closely: simple flat 2D angular anime-ish geometric character, loose separated broad polygons with clean white negative-space joints. Preserve recognizable hair, face, outfit and palette in every pose. Clear functional hand gestures, fingers as a small coherent angular shape. No realistic anatomy, no skin, no gradients, no texture, no shading, no complex low-poly rendering, no extra colors. Props use only this character palette. Use varied natural stylized weight distribution and silhouettes; do not recycle one stance six times. Do not add other characters. Props are minimal and meaningful; avoid decorative clutter or readable code.\nCell 1: label \"S21 Facepalm\". Pose: One hand to brow; face shape remains legible. Context: React to a silly mistake. \nCell 2: label \"S24 Sleepy nod\". Pose: Seated with lowered head, supported by one hand. Context: Wind down after a long session. \nCell 3: label \"B01 Design critique\". Pose: Standing beside a layout, one measured gesture. Context: Evaluate a layout or proposal. \nCell 4: label \"B02 Delegating a task\". Pose: Hands a task card toward another character. Context: Make a clear handoff. \nCell 5: label \"B03 Delivering a report\". Pose: Closed report offered forward. Context: Present a finished result. \nCell 6: label \"B04 Weighing a tradeoff\". Pose: Two open hands at unequal heights. Context: Consider competing options. \n",
+      "reference": "../poses-v3/business-new.png",
+      "sheet": "business-2.png",
+      "sha256": "fcf2462dfe44f6bcccfc092318e593afe2799ec84bfb74d2b1e45151a7ab4d13"
+    },
+    {
+      "id": "business-3",
+      "role": "business",
+      "cells": [
+        "B05",
+        "B06",
+        "B07",
+        "B08",
+        "B09",
+        "B10"
+      ],
+      "prompt": "Create ONE new character pose reference sheet, landscape 1536x1024, a strict 3 columns by 2 rows grid of SIX equal square cells. Use the attached image ONLY as the established character identity/style reference, not its poses or labels. Each cell has exactly one complete full-body character, clear expressive DIFFERENT pose, fitting fully inside its own cell with generous white margins; no hand, hair, foot or prop may spill into another cell. White background, no panel borders, no global title. Reserve bottom 35 pixels of EACH cell for the exact short code and title given below. Keep everything else inside the cell. Read cells row-major left to right.\nAdult masculine Business: compact angular navy hair, navy mask face with icy-blue eye slash, navy waistcoat and trousers, ice sleeves, blue tie, navy angular shoes. Exactly navy #153B64, blue #247DD4, ice #B9E9FA.\nMatch the reference closely: simple flat 2D angular anime-ish geometric character, loose separated broad polygons with clean white negative-space joints. Preserve recognizable hair, face, outfit and palette in every pose. Clear functional hand gestures, fingers as a small coherent angular shape. No realistic anatomy, no skin, no gradients, no texture, no shading, no complex low-poly rendering, no extra colors. Props use only this character palette. Use varied natural stylized weight distribution and silhouettes; do not recycle one stance six times. Do not add other characters. Props are minimal and meaningful; avoid decorative clutter or readable code.\nCell 1: label \"B05 Prioritizing\". Pose: Moves one task card above a short stack. Context: Choose what matters next. \nCell 2: label \"B06 Listening in a meeting\". Pose: Seated, hands calmly together, slight forward lean. Context: Receive context before deciding. \nCell 3: label \"B07 Checking a budget\". Pose: Spreadsheet beside a small calculator; pointing hand clear. Context: Review money and constraints. \nCell 4: label \"B08 Monitoring a long task\". Pose: Standing at a compact progress board. Context: Check progress during agentic work. \nCell 5: label \"B09 Reviewing a risk\". Pose: One hand holds a caution card, other steadies report. Context: Flag a consequential tradeoff. \nCell 6: label \"B10 Closing the laptop\". Pose: Hand on closing lid, relaxed shoulders. Context: Wrap up and report completion. \n",
+      "reference": "../poses-v3/business-new.png",
+      "sheet": "business-3.png",
+      "sha256": "95a58f16ec5d1b19d9aacc6e249b627aa7ea49ef4c012cd78f99657656f56dc7"
+    }
+  ]
+}

@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BFI · Character reference studies</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #f5f1e9;
+        color: #292724;
+        font-family: system-ui, sans-serif;
+      }
+      main {
+        max-width: 1300px;
+        margin: auto;
+        padding: 35px 5vw;
+      }
+      h1 {
+        font:
+          400 clamp(30px, 5vw, 50px) / 1.1 Georgia,
+          serif;
+        margin: 10px 0 18px;
+      }
+      p {
+        max-width: 760px;
+        line-height: 1.8;
+        color: #67625a;
+        font-size: 14px;
+      }
+      small {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+      }
+      a {
+        color: inherit;
+      }
+      nav {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        font-size: 13px;
+        margin: 25px 0 35px;
+      }
+      section {
+        margin-bottom: 50px;
+      }
+      h2 {
+        font-size: 21px;
+        font-weight: 500;
+      }
+      figure {
+        margin: 0;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+      figcaption {
+        font-size: 12px;
+        line-height: 1.7;
+        margin: 12px 0;
+        color: #67625a;
+      }
+      .sheets {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px;
+      }
+      .sheet {
+        background: #fffcf6;
+        border: 1px solid #d9d3c8;
+        padding: 15px;
+        border-radius: 5px;
+      }
+      .sheet h3 {
+        font-size: 15px;
+        margin: 5px 0 15px;
+        font-weight: 500;
+      }
+      .proofs {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+      .proofs figure {
+        border-top: 2px solid #d6ccba;
+        background: #fbf7ee;
+        padding: 12px;
+      }
+      .proofs img {
+        width: 100%;
+        height: 420px;
+        object-fit: contain;
+      }
+      .proofs figcaption {
+        text-align: center;
+      }
+      .muted {
+        font-size: 12px;
+      }
+      details {
+        margin: 25px 0;
+        border-top: 1px solid #d9d3c8;
+        padding-top: 20px;
+      }
+      summary {
+        cursor: pointer;
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+      footer {
+        border-top: 1px solid #d9d3c8;
+        padding-top: 18px;
+        margin-top: 40px;
+        font-size: 12px;
+        color: #67625a;
+      }
+      @media (max-width: 650px) {
+        main {
+          padding: 25px 5vw;
+        }
+        .sheets {
+          grid-template-columns: 1fr;
+        }
+        .proofs {
+          gap: 6px;
+        }
+        .proofs figure {
+          padding: 6px;
+        }
+        .proofs img {
+          height: 260px;
+        }
+        .proofs figcaption {
+          font-size: 10px;
+        }
+        p {
+          font-size: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <small>BEST FRIEND INITIATIVE / SELECTED VISUAL BASELINE</small>
+      <h1>E is the baseline.</h1>
+      <p>
+        E's character identities, outfits, and standing/seated poses are locked
+        as the starting point. Further design and animation work are paused for
+        review. The sheet still needs to be recreated as production SVGs.
+      </p>
+      <nav>
+        <a href="#baseline">Baseline E</a><a href="#review">Review scope</a
+        ><a href="#archive">Earlier studies</a
+        ><a href="#proofs">Code feasibility</a
+        ><a href="README.md">Design brief</a>
+      </nav>
+      <section id="baseline">
+        <h2>E · Different wardrobes</h2>
+        <figure class="sheet">
+          <a href="option-e.png"
+            ><img
+              src="option-e.png"
+              alt="Selected E baseline: neutral academic, feminine hacker, and masculine business character in standing and seated poses"
+          /></a>
+          <figcaption>
+            The selected reference sheet. Click to open it at full size.
+          </figcaption>
+        </figure>
+      </section>
+      <section id="review">
+        <h2>What E establishes</h2>
+        <p>
+          <strong>Academic:</strong> neutral presentation, loose parchment
+          coat/cardigan, olive book/glasses, curious gestures.<br /><strong
+            >Hacker:</strong
+          >
+          feminine presentation, short asymmetric crimson bob, cropped
+          jacket/collar, crossed-arm stance and sideways seat.<br /><strong
+            >Business:</strong
+          >
+          masculine presentation, navy waistcoat, icy sleeve pieces, blue tie,
+          compact hair and relaxed poses.
+        </p>
+        <p>
+          Keep loose angular pieces, readable gestures, and independent
+          approximately three-color palettes. Production SVGs, rigging, exact
+          color values, simplified icons, and motif animations remain follow-up
+          work. The app's existing runtime art is unchanged by this selection.
+        </p>
+      </section>
+      <details id="archive">
+        <summary>Earlier studies — retained, not selected</summary>
+        <div class="sheets">
+          <figure class="sheet">
+            <h3>D · Previous leader</h3>
+            <a href="option-d.png"
+              ><img src="option-d.png" alt="Earlier option D"
+            /></a>
+            <figcaption>Superseded by E.</figcaption>
+          </figure>
+          <figure class="sheet">
+            <h3>A · Earlier preference</h3>
+            <a href="option-a.png"
+              ><img src="option-a.png" alt="Earlier option A"
+            /></a>
+            <figcaption>Retained for comparison.</figcaption>
+          </figure>
+          <figure class="sheet">
+            <h3>F · Alternate construction</h3>
+            <a href="option-f.png"
+              ><img src="option-f.png" alt="Unselected option F"
+            /></a>
+            <figcaption>Not selected.</figcaption>
+          </figure>
+        </div>
+        <p class="muted">
+          <a href="option-b.png">B</a> · <a href="option-c.png">C</a> ·
+          <a href="icon-study.png">Unconfirmed icons</a> ·
+          <a href="first-pose-study.png">First pose sheet</a>
+        </p>
+      </details>
+      <details id="proofs">
+        <summary>Earlier D SVG feasibility studies — not E artwork</summary>
+        <p>
+          These use actual separate polygons and demonstrate a code path. E
+          still needs its own SVG conversion; do not substitute the D shapes.
+        </p>
+        <div class="proofs">
+          <figure>
+            <a href="code-proof/academic-d.svg"
+              ><img
+                src="code-proof/academic-d.svg"
+                alt="Academic D SVG feasibility study"
+            /></a>
+            <figcaption>Academic / oak, olive, parchment</figcaption>
+          </figure>
+          <figure>
+            <a href="code-proof/hacker-d.svg"
+              ><img
+                src="code-proof/hacker-d.svg"
+                alt="Hacker D SVG feasibility study"
+            /></a>
+            <figcaption>Hacker / charcoal, crimson, rose</figcaption>
+          </figure>
+          <figure>
+            <a href="code-proof/business-d.svg"
+              ><img
+                src="code-proof/business-d.svg"
+                alt="Business D SVG feasibility study"
+            /></a>
+            <figcaption>Business / navy, blue, ice</figcaption>
+          </figure>
+        </div>
+      </details>
+      <footer>
+        Baseline recorded in <a href="baseline.json">baseline.json</a>.
+        Animation prototype preserved privately for later work. No model,
+        memory, tool, or training behavior changes here.
+      </footer>
+    </main>
+  </body>
+</html>

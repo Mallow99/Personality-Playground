@@ -1,0 +1,542 @@
+{
+  "S01": {
+    "sheet": "assets/proposals/academic-1.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 0,
+    "row": 0,
+    "illustratedBy": "academic",
+    "sha256": "af611c694f03d9b4a5f0e83382e8fcc314295d54811066aa367a6d71a9be6acc",
+    "status": "generated_concept"
+  },
+  "S04": {
+    "sheet": "assets/proposals/academic-1.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 1,
+    "row": 0,
+    "illustratedBy": "academic",
+    "sha256": "af611c694f03d9b4a5f0e83382e8fcc314295d54811066aa367a6d71a9be6acc",
+    "status": "generated_concept"
+  },
+  "S07": {
+    "sheet": "assets/proposals/academic-1.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 2,
+    "row": 0,
+    "illustratedBy": "academic",
+    "sha256": "af611c694f03d9b4a5f0e83382e8fcc314295d54811066aa367a6d71a9be6acc",
+    "status": "generated_concept"
+  },
+  "S10": {
+    "sheet": "assets/proposals/academic-1.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 0,
+    "row": 1,
+    "illustratedBy": "academic",
+    "sha256": "af611c694f03d9b4a5f0e83382e8fcc314295d54811066aa367a6d71a9be6acc",
+    "status": "generated_concept"
+  },
+  "S13": {
+    "sheet": "assets/proposals/academic-1.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 1,
+    "row": 1,
+    "illustratedBy": "academic",
+    "sha256": "af611c694f03d9b4a5f0e83382e8fcc314295d54811066aa367a6d71a9be6acc",
+    "status": "generated_concept"
+  },
+  "S16": {
+    "sheet": "assets/proposals/academic-1.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 2,
+    "row": 1,
+    "illustratedBy": "academic",
+    "sha256": "af611c694f03d9b4a5f0e83382e8fcc314295d54811066aa367a6d71a9be6acc",
+    "status": "generated_concept"
+  },
+  "S19": {
+    "sheet": "assets/proposals/academic-2.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 0,
+    "row": 0,
+    "illustratedBy": "academic",
+    "sha256": "4176513c86ebfc3860dab72b576c716c9f1fa38a28f3e77fba3b44056655c70e",
+    "status": "generated_concept"
+  },
+  "S22": {
+    "sheet": "assets/proposals/academic-2.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 1,
+    "row": 0,
+    "illustratedBy": "academic",
+    "sha256": "4176513c86ebfc3860dab72b576c716c9f1fa38a28f3e77fba3b44056655c70e",
+    "status": "generated_concept"
+  },
+  "A01": {
+    "sheet": "assets/proposals/academic-2.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 2,
+    "row": 0,
+    "illustratedBy": "academic",
+    "sha256": "4176513c86ebfc3860dab72b576c716c9f1fa38a28f3e77fba3b44056655c70e",
+    "status": "generated_concept"
+  },
+  "A02": {
+    "sheet": "assets/proposals/academic-2.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 0,
+    "row": 1,
+    "illustratedBy": "academic",
+    "sha256": "4176513c86ebfc3860dab72b576c716c9f1fa38a28f3e77fba3b44056655c70e",
+    "status": "generated_concept"
+  },
+  "A03": {
+    "sheet": "assets/proposals/academic-2.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 1,
+    "row": 1,
+    "illustratedBy": "academic",
+    "sha256": "4176513c86ebfc3860dab72b576c716c9f1fa38a28f3e77fba3b44056655c70e",
+    "status": "generated_concept"
+  },
+  "A04": {
+    "sheet": "assets/proposals/academic-2.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 2,
+    "row": 1,
+    "illustratedBy": "academic",
+    "sha256": "4176513c86ebfc3860dab72b576c716c9f1fa38a28f3e77fba3b44056655c70e",
+    "status": "generated_concept"
+  },
+  "A05": {
+    "sheet": "assets/proposals/academic-3.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 0,
+    "row": 0,
+    "illustratedBy": "academic",
+    "sha256": "6c86430f3374d7a8305858f94fe002d9533941f7120f0189064df98caecb893e",
+    "status": "generated_concept"
+  },
+  "A06": {
+    "sheet": "assets/proposals/academic-3.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 1,
+    "row": 0,
+    "illustratedBy": "academic",
+    "sha256": "6c86430f3374d7a8305858f94fe002d9533941f7120f0189064df98caecb893e",
+    "status": "generated_concept"
+  },
+  "A07": {
+    "sheet": "assets/proposals/academic-3.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 2,
+    "row": 0,
+    "illustratedBy": "academic",
+    "sha256": "6c86430f3374d7a8305858f94fe002d9533941f7120f0189064df98caecb893e",
+    "status": "generated_concept"
+  },
+  "A08": {
+    "sheet": "assets/proposals/academic-3.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 0,
+    "row": 1,
+    "illustratedBy": "academic",
+    "sha256": "6c86430f3374d7a8305858f94fe002d9533941f7120f0189064df98caecb893e",
+    "status": "generated_concept"
+  },
+  "A09": {
+    "sheet": "assets/proposals/academic-3.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 1,
+    "row": 1,
+    "illustratedBy": "academic",
+    "sha256": "6c86430f3374d7a8305858f94fe002d9533941f7120f0189064df98caecb893e",
+    "status": "generated_concept"
+  },
+  "A10": {
+    "sheet": "assets/proposals/academic-3.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 2,
+    "row": 1,
+    "illustratedBy": "academic",
+    "sha256": "6c86430f3374d7a8305858f94fe002d9533941f7120f0189064df98caecb893e",
+    "status": "generated_concept"
+  },
+  "S02": {
+    "sheet": "assets/proposals/engineering-1.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 0,
+    "row": 0,
+    "illustratedBy": "engineering",
+    "sha256": "a9af8f4c75b7a99e08d57850789ffc921cdbe492e0f1cd8057ffdec551d42f6f",
+    "status": "generated_concept"
+  },
+  "S05": {
+    "sheet": "assets/proposals/engineering-1.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 1,
+    "row": 0,
+    "illustratedBy": "engineering",
+    "sha256": "a9af8f4c75b7a99e08d57850789ffc921cdbe492e0f1cd8057ffdec551d42f6f",
+    "status": "generated_concept"
+  },
+  "S08": {
+    "sheet": "assets/proposals/engineering-1.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 2,
+    "row": 0,
+    "illustratedBy": "engineering",
+    "sha256": "a9af8f4c75b7a99e08d57850789ffc921cdbe492e0f1cd8057ffdec551d42f6f",
+    "status": "generated_concept"
+  },
+  "S11": {
+    "sheet": "assets/proposals/engineering-1.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 0,
+    "row": 1,
+    "illustratedBy": "engineering",
+    "sha256": "a9af8f4c75b7a99e08d57850789ffc921cdbe492e0f1cd8057ffdec551d42f6f",
+    "status": "generated_concept"
+  },
+  "S14": {
+    "sheet": "assets/proposals/engineering-1.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 1,
+    "row": 1,
+    "illustratedBy": "engineering",
+    "sha256": "a9af8f4c75b7a99e08d57850789ffc921cdbe492e0f1cd8057ffdec551d42f6f",
+    "status": "generated_concept"
+  },
+  "S17": {
+    "sheet": "assets/proposals/engineering-1.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 2,
+    "row": 1,
+    "illustratedBy": "engineering",
+    "sha256": "a9af8f4c75b7a99e08d57850789ffc921cdbe492e0f1cd8057ffdec551d42f6f",
+    "status": "generated_concept"
+  },
+  "S20": {
+    "sheet": "assets/proposals/engineering-2.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 0,
+    "row": 0,
+    "illustratedBy": "engineering",
+    "sha256": "bca2b1f1b83d4d688c56950471e9175a48039ee62ad3623ee76fa49707c54e9e",
+    "status": "generated_concept"
+  },
+  "S23": {
+    "sheet": "assets/proposals/engineering-2.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 1,
+    "row": 0,
+    "illustratedBy": "engineering",
+    "sha256": "bca2b1f1b83d4d688c56950471e9175a48039ee62ad3623ee76fa49707c54e9e",
+    "status": "generated_concept"
+  },
+  "H01": {
+    "sheet": "assets/proposals/engineering-2.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 2,
+    "row": 0,
+    "illustratedBy": "engineering",
+    "sha256": "bca2b1f1b83d4d688c56950471e9175a48039ee62ad3623ee76fa49707c54e9e",
+    "status": "generated_concept"
+  },
+  "H02": {
+    "sheet": "assets/proposals/engineering-2.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 0,
+    "row": 1,
+    "illustratedBy": "engineering",
+    "sha256": "bca2b1f1b83d4d688c56950471e9175a48039ee62ad3623ee76fa49707c54e9e",
+    "status": "generated_concept"
+  },
+  "H03": {
+    "sheet": "assets/proposals/engineering-2.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 1,
+    "row": 1,
+    "illustratedBy": "engineering",
+    "sha256": "bca2b1f1b83d4d688c56950471e9175a48039ee62ad3623ee76fa49707c54e9e",
+    "status": "generated_concept"
+  },
+  "H04": {
+    "sheet": "assets/proposals/engineering-2.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 2,
+    "row": 1,
+    "illustratedBy": "engineering",
+    "sha256": "bca2b1f1b83d4d688c56950471e9175a48039ee62ad3623ee76fa49707c54e9e",
+    "status": "generated_concept"
+  },
+  "H05": {
+    "sheet": "assets/proposals/engineering-3.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 0,
+    "row": 0,
+    "illustratedBy": "engineering",
+    "sha256": "4a5e98a9542fe6adb5540728f0f106466246f7bbf74cafa6fa3655109e9faef2",
+    "status": "generated_concept"
+  },
+  "H06": {
+    "sheet": "assets/proposals/engineering-3.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 1,
+    "row": 0,
+    "illustratedBy": "engineering",
+    "sha256": "4a5e98a9542fe6adb5540728f0f106466246f7bbf74cafa6fa3655109e9faef2",
+    "status": "generated_concept"
+  },
+  "H07": {
+    "sheet": "assets/proposals/engineering-3.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 2,
+    "row": 0,
+    "illustratedBy": "engineering",
+    "sha256": "4a5e98a9542fe6adb5540728f0f106466246f7bbf74cafa6fa3655109e9faef2",
+    "status": "generated_concept"
+  },
+  "H08": {
+    "sheet": "assets/proposals/engineering-3.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 0,
+    "row": 1,
+    "illustratedBy": "engineering",
+    "sha256": "4a5e98a9542fe6adb5540728f0f106466246f7bbf74cafa6fa3655109e9faef2",
+    "status": "generated_concept"
+  },
+  "H09": {
+    "sheet": "assets/proposals/engineering-3.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 1,
+    "row": 1,
+    "illustratedBy": "engineering",
+    "sha256": "4a5e98a9542fe6adb5540728f0f106466246f7bbf74cafa6fa3655109e9faef2",
+    "status": "generated_concept"
+  },
+  "H10": {
+    "sheet": "assets/proposals/engineering-3.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 2,
+    "row": 1,
+    "illustratedBy": "engineering",
+    "sha256": "4a5e98a9542fe6adb5540728f0f106466246f7bbf74cafa6fa3655109e9faef2",
+    "status": "generated_concept"
+  },
+  "S03": {
+    "sheet": "assets/proposals/business-1.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 0,
+    "row": 0,
+    "illustratedBy": "business",
+    "sha256": "f17832e36cc6b5e01362f7f237836ff98478cdc6427a64b97f8e71bdf857f338",
+    "status": "generated_concept"
+  },
+  "S06": {
+    "sheet": "assets/proposals/business-1.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 1,
+    "row": 0,
+    "illustratedBy": "business",
+    "sha256": "f17832e36cc6b5e01362f7f237836ff98478cdc6427a64b97f8e71bdf857f338",
+    "status": "generated_concept"
+  },
+  "S09": {
+    "sheet": "assets/proposals/business-1.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 2,
+    "row": 0,
+    "illustratedBy": "business",
+    "sha256": "f17832e36cc6b5e01362f7f237836ff98478cdc6427a64b97f8e71bdf857f338",
+    "status": "generated_concept"
+  },
+  "S12": {
+    "sheet": "assets/proposals/business-1.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 0,
+    "row": 1,
+    "illustratedBy": "business",
+    "sha256": "f17832e36cc6b5e01362f7f237836ff98478cdc6427a64b97f8e71bdf857f338",
+    "status": "generated_concept"
+  },
+  "S15": {
+    "sheet": "assets/proposals/business-1.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 1,
+    "row": 1,
+    "illustratedBy": "business",
+    "sha256": "f17832e36cc6b5e01362f7f237836ff98478cdc6427a64b97f8e71bdf857f338",
+    "status": "generated_concept"
+  },
+  "S18": {
+    "sheet": "assets/proposals/business-1.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 2,
+    "row": 1,
+    "illustratedBy": "business",
+    "sha256": "f17832e36cc6b5e01362f7f237836ff98478cdc6427a64b97f8e71bdf857f338",
+    "status": "generated_concept"
+  },
+  "S21": {
+    "sheet": "assets/proposals/business-2.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 0,
+    "row": 0,
+    "illustratedBy": "business",
+    "sha256": "fcf2462dfe44f6bcccfc092318e593afe2799ec84bfb74d2b1e45151a7ab4d13",
+    "status": "generated_concept"
+  },
+  "S24": {
+    "sheet": "assets/proposals/business-2.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 1,
+    "row": 0,
+    "illustratedBy": "business",
+    "sha256": "fcf2462dfe44f6bcccfc092318e593afe2799ec84bfb74d2b1e45151a7ab4d13",
+    "status": "generated_concept"
+  },
+  "B01": {
+    "sheet": "assets/proposals/business-2.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 2,
+    "row": 0,
+    "illustratedBy": "business",
+    "sha256": "fcf2462dfe44f6bcccfc092318e593afe2799ec84bfb74d2b1e45151a7ab4d13",
+    "status": "generated_concept"
+  },
+  "B02": {
+    "sheet": "assets/proposals/business-2.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 0,
+    "row": 1,
+    "illustratedBy": "business",
+    "sha256": "fcf2462dfe44f6bcccfc092318e593afe2799ec84bfb74d2b1e45151a7ab4d13",
+    "status": "generated_concept"
+  },
+  "B03": {
+    "sheet": "assets/proposals/business-2.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 1,
+    "row": 1,
+    "illustratedBy": "business",
+    "sha256": "fcf2462dfe44f6bcccfc092318e593afe2799ec84bfb74d2b1e45151a7ab4d13",
+    "status": "generated_concept"
+  },
+  "B04": {
+    "sheet": "assets/proposals/business-2.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 2,
+    "row": 1,
+    "illustratedBy": "business",
+    "sha256": "fcf2462dfe44f6bcccfc092318e593afe2799ec84bfb74d2b1e45151a7ab4d13",
+    "status": "generated_concept"
+  },
+  "B05": {
+    "sheet": "assets/proposals/business-3.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 0,
+    "row": 0,
+    "illustratedBy": "business",
+    "sha256": "95a58f16ec5d1b19d9aacc6e249b627aa7ea49ef4c012cd78f99657656f56dc7",
+    "status": "generated_concept"
+  },
+  "B06": {
+    "sheet": "assets/proposals/business-3.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 1,
+    "row": 0,
+    "illustratedBy": "business",
+    "sha256": "95a58f16ec5d1b19d9aacc6e249b627aa7ea49ef4c012cd78f99657656f56dc7",
+    "status": "generated_concept"
+  },
+  "B07": {
+    "sheet": "assets/proposals/business-3.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 2,
+    "row": 0,
+    "illustratedBy": "business",
+    "sha256": "95a58f16ec5d1b19d9aacc6e249b627aa7ea49ef4c012cd78f99657656f56dc7",
+    "status": "generated_concept"
+  },
+  "B08": {
+    "sheet": "assets/proposals/business-3.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 0,
+    "row": 1,
+    "illustratedBy": "business",
+    "sha256": "95a58f16ec5d1b19d9aacc6e249b627aa7ea49ef4c012cd78f99657656f56dc7",
+    "status": "generated_concept"
+  },
+  "B09": {
+    "sheet": "assets/proposals/business-3.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 1,
+    "row": 1,
+    "illustratedBy": "business",
+    "sha256": "95a58f16ec5d1b19d9aacc6e249b627aa7ea49ef4c012cd78f99657656f56dc7",
+    "status": "generated_concept"
+  },
+  "B10": {
+    "sheet": "assets/proposals/business-3.png",
+    "columns": 3,
+    "rows": 2,
+    "column": 2,
+    "row": 1,
+    "illustratedBy": "business",
+    "sha256": "95a58f16ec5d1b19d9aacc6e249b627aa7ea49ef4c012cd78f99657656f56dc7",
+    "status": "generated_concept"
+  }
+}

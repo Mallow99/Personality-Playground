@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" aria-hidden="true" focusable="false" data-character="business" data-pose="standing">
+  <g data-piece="legs">
+    <polygon points="166,286 201,294 194,352 181,435 177,496 184,575 124,581 150,566 144,478 155,445 153,352" fill="#153B64"/>
+    <polygon points="207,297 233,301 259,414 247,451 281,563 310,574 312,584 239,581 210,476 213,437 193,353" fill="#153B64"/>
+  </g>
+  <g data-piece="arm-left">
+    <polygon points="136,147 122,196 153,215 170,181" fill="#B9E9FA"/>
+    <polygon points="116,203 108,220 145,235 152,219" fill="#B9E9FA"/>
+    <polygon points="114,230 131,225 154,275 169,266 170,282 149,299 133,285" fill="#153B64"/>
+  </g>
+  <g data-piece="arm-right">
+    <polygon points="272,155 284,197 254,216 245,187" fill="#B9E9FA"/>
+    <polygon points="290,202 301,222 263,241 255,224" fill="#B9E9FA"/>
+    <polygon points="268,247 289,238 297,254 276,265" fill="#153B64"/>
+  </g>
+  <g data-piece="torso">
+    <polygon points="137,144 190,134 209,150 230,137 270,153 245,228 231,289 163,276 171,235" fill="#153B64"/>
+    <polygon points="193,133 209,149 195,164" fill="#B9E9FA"/>
+    <polygon points="231,137 213,149 230,166" fill="#B9E9FA"/>
+    <polygon points="209,153 216,155 221,166 213,172 202,165" fill="#247DD4"/>
+    <polygon points="208,173 218,173 230,231 214,252 194,230" fill="#247DD4"/>
+  </g>
+  <g data-piece="head">
+    <polygon points="151,54 162,31 215,17 251,35 249,68 237,53 180,75 177,88" fill="#153B64"/>
+    <polygon points="184,73 237,55 247,72 212,121 182,108" fill="#153B64"/>
+    <g class="actor-eyes">
+    <polygon points="193,96 237,76 223,100" fill="#B9E9FA"/>
+    <polygon points="210,88 218,85 220,90 216,97 211,97 208,93" fill="#247DD4"/>
+    </g>
+    <g class="actor-mouth">
+    <polygon points="204,109 213,108 209,112" fill="#247DD4"/>
+    </g>
+    <polygon points="199,124 219,130 208,141" fill="#153B64"/>
+  </g>
+  <g data-piece="prop">
+    <polygon points="278,265 330,247 314,339 268,357" fill="#247DD4"/>
+    <polygon points="295,270 317,263 316,270 294,278" fill="#B9E9FA"/>
+  </g>
+  <g data-piece="hand-left">
+    <polygon points="158,273 172,263 176,267 169,280 157,289" fill="#153B64"/>
+  </g>
+  <g data-piece="hand-right">
+    <polygon points="310,309 320,319 315,338 306,342 303,331" fill="#153B64"/>
+    <polygon points="298,308 313,316 310,322 294,315" fill="#B9E9FA"/>
+    <polygon points="293,320 310,328 307,334 289,327" fill="#B9E9FA"/>
+    <polygon points="288,332 307,339 303,345 285,339" fill="#B9E9FA"/>
+  </g>
+</svg>

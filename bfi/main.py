@@ -1,4 +1,5 @@
 import asyncio
+import json
 import time
 
 from dotenv import load_dotenv
@@ -8,13 +9,27 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 from starlette.middleware.trustedhost import TrustedHostMiddleware
 
+from bfi.avatar import AvatarHub, AvatarTools
 from bfi.backends import BackendError, MockBackend, OpenAIBackend
 from bfi.config import ROOT, Character, Settings
 from bfi.store import Store
+from bfi.tools import ToolError, ToolRunner
 
 
 class MessageInput(BaseModel):
     content: str = Field(min_length=1, max_length=8000)
+    project_tools: bool = False
+    web_search: bool = False
+    avatar_tools: bool = False
+
+
+class ConversationInput(BaseModel):
+    profile_id: str = Field(default="companion", max_length=40)
+
+
+class ToolInput(BaseModel):
+    name: str = Field(max_length=60)
+    arguments: dict = Field(default_factory=dict)
 
 
 def context_for(conversation, content, settings):
@@ -41,11 +56,25 @@ def create_app(settings=None, backend=None):
         load_dotenv(ROOT / ".env")
         settings = Settings.from_env()
     character = Character.model_validate_json(settings.character_file.read_text(encoding="utf-8"))
+    profiles = {"companion": (character, settings)}
+    for entry in json.loads(settings.profiles_file.read_text(encoding="utf-8")):
+        profile = Character.model_validate(entry)
+        if profile.profile_id not in {"academic", "engineering", "business"}:
+            raise ValueError("Profile IDs must be academic, engineering, or business.")
+        if profile.profile_id in profiles:
+            raise ValueError("Duplicate profile ID.")
+        profiles[profile.profile_id] = (profile, settings.for_profile(profile.profile_id))
     store = Store(settings.data_dir / "conversations.sqlite3")
-    backend = backend or (MockBackend() if settings.backend == "mock" else OpenAIBackend(settings))
+    backends = {
+        pid: backend or (MockBackend() if route.backend == "mock" else OpenAIBackend(route))
+        for pid, (_, route) in profiles.items()
+    }
+    tools = ToolRunner(settings)
+    avatar = AvatarHub()
     app = FastAPI(title="Best Friend Initiative", version="0.1.0", docs_url=None, redoc_url=None)
     app.add_middleware(TrustedHostMiddleware, allowed_hosts=["127.0.0.1", "localhost", "[::1]"])
     generation_lock = asyncio.Lock()
+    app.state.avatar = avatar
 
     @app.middleware("http")
     async def local_browser_boundary(request: Request, call_next):
@@ -75,6 +104,11 @@ def create_app(settings=None, backend=None):
             raise HTTPException(404, "Conversation not found.")
         return conversation
 
+    def get_profile(profile_id):
+        if profile_id not in profiles:
+            raise HTTPException(404, "Character profile not found.")
+        return profiles[profile_id]
+
     @app.get("/api/config")
     async def config():
         return {
@@ -83,19 +117,72 @@ def create_app(settings=None, backend=None):
             "cloud_delegation": "disabled",
             "history_pairs": settings.history_pairs,
             "context_chars": settings.context_chars,
+            "profiles": [
+                {
+                    "id": pid,
+                    "character": char.model_dump(),
+                    **route.identity,
+                    "adapter_label": route.adapter_label,
+                    "adapter_verified": False,
+                }
+                for pid, (char, route) in profiles.items()
+                if pid != "companion"
+            ],
+            "tools": {**tools.capabilities(), "avatar": True},
         }
 
+    @app.get("/api/avatar/catalog")
+    async def avatar_catalog():
+        return avatar.catalog
+
+    @app.get("/api/avatar")
+    async def avatar_state():
+        return avatar.snapshot()
+
+    @app.post("/api/avatar")
+    async def avatar_action(changes: dict):
+        if generation_lock.locked() and set(changes) & {
+            "profile",
+            "pose_id",
+            "caption",
+            "speaking",
+        }:
+            raise HTTPException(409, "Wait for the current reply before changing the avatar.")
+        try:
+            return avatar.update(changes)
+        except ToolError as exc:
+            raise HTTPException(400, str(exc)) from exc
+
     @app.get("/api/status")
-    async def status():
-        return {**settings.identity, **await backend.status(), "cloud_delegation": "disabled"}
+    async def status(profile_id: str = "companion"):
+        _, route = get_profile(profile_id)
+        return {
+            **route.identity,
+            **await backends[profile_id].status(),
+            "cloud_delegation": "disabled",
+            "adapter_label": route.adapter_label,
+            "adapter_verified": False,
+        }
 
     @app.get("/api/conversations")
     def conversations():
         return store.list()
 
     @app.post("/api/conversations", status_code=201)
-    def new_conversation():
-        return store.create(character.model_dump(), settings.identity)
+    def new_conversation(payload: ConversationInput | None = None):
+        char, route = get_profile(payload.profile_id if payload else "companion")
+        return store.create(char.model_dump(), route.identity)
+
+    @app.post("/api/tools/inspect")
+    async def inspect_tool(payload: ToolInput):
+        allowed = {d["function"]["name"] for d in tools.definitions(project=True, web=True)}
+        try:
+            return {
+                "name": payload.name,
+                "result": await tools.run(payload.name, payload.arguments, allowed),
+            }
+        except ToolError as exc:
+            raise HTTPException(400, str(exc)) from exc
 
     @app.get("/api/conversations/{cid}")
     def conversation(cid: str):
@@ -117,7 +204,10 @@ def create_app(settings=None, backend=None):
             raise HTTPException(409, "A reply is already being generated. Wait and try again.")
         async with generation_lock:
             conversation = get_conversation(cid)
-            if conversation["backend"] != settings.identity:
+            profile_id = conversation["character"].get("profile_id", "companion")
+            _, route = get_profile(profile_id)
+            backend = backends[profile_id]
+            if conversation["backend"] != route.identity:
                 raise HTTPException(
                     409,
                     "This conversation uses a different backend or model. "
@@ -131,24 +221,69 @@ def create_app(settings=None, backend=None):
                     "Shorten the message or raise that setting.",
                 )
             started = time.perf_counter()
-            result = await backend.complete(messages)
-            provenance = {
-                **settings.identity,
-                "reported_model": result["reported_model"],
-                "cloud_assistance": "none_by_app",
-                "endpoint_locality": "mock"
-                if settings.backend == "mock"
-                else "unverified_loopback",
-                "elapsed_ms": round((time.perf_counter() - started) * 1000),
-                "usage": result["usage"],
-                "context_messages_omitted": omitted,
-            }
-            return store.append_exchange(cid, content, result["content"], provenance)
+            definitions = tools.definitions(project=message.project_tools, web=message.web_search)
+            if (message.project_tools and not tools.capabilities()["project_files"]) or (
+                message.web_search and not tools.capabilities()["web_search"]
+            ):
+                raise HTTPException(
+                    400, "Requested tools are not configured. Open Tools for setup."
+                )
+            runner = tools
+            if message.avatar_tools and profile_id in avatar.catalog["roles"]:
+                runner = AvatarTools(tools, avatar, profile_id)
+                if hasattr(backend, "complete_with_tools"):
+                    definitions += AvatarTools.definitions()
+            avatar.begin(profile_id, cid)
+            try:
+                if definitions:
+                    if not hasattr(backend, "complete_with_tools"):
+                        raise HTTPException(
+                            400,
+                            "The mock backend cannot choose tools. "
+                            "Use the inspector, or connect a tool-capable local model.",
+                        )
+                    result = await backend.complete_with_tools(messages, definitions, runner)
+                else:
+                    result = await backend.complete(messages)
+                saved = store.append_exchange(
+                    cid,
+                    content,
+                    result["content"],
+                    {
+                        **route.identity,
+                        "reported_model": result["reported_model"],
+                        "cloud_assistance": "none_by_app",
+                        "endpoint_locality": "mock"
+                        if route.backend == "mock"
+                        else "unverified_loopback",
+                        "elapsed_ms": round((time.perf_counter() - started) * 1000),
+                        "usage": result["usage"],
+                        "context_messages_omitted": omitted,
+                        "profile_id": profile_id,
+                        "configured_adapter": route.adapter_label or None,
+                        "adapter_verified": False,
+                        "tool_steps": result.get("tool_steps", []),
+                        "generation_calls": result.get("generation_calls", 1),
+                    },
+                )
+                avatar.finish(result["content"])
+                return saved
+            except Exception:
+                avatar.finish()
+                raise
 
     app.mount("/static", StaticFiles(directory=ROOT / "bfi/static"), name="static")
 
     @app.get("/")
     async def index():
         return FileResponse(ROOT / "bfi/static/index.html")
+
+    @app.get("/overlay")
+    async def overlay():
+        return FileResponse(ROOT / "bfi/static/avatar/overlay.html")
+
+    @app.get("/concepts")
+    async def concepts():
+        return FileResponse(ROOT / "bfi/static/concepts.html")
 
     return app

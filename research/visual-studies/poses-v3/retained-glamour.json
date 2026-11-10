@@ -1,0 +1,14 @@
+{
+  "academic": {
+    "sheet_sha256": "93dc388417fd037db28171cf2409fb48ac7ed1fb9556c5955e2f2f40f57341d5",
+    "vector_sha256": "06de56c6eb7009a33ec741a12e9a36d54397791ebe6cb5c57d7e8ef0cb6f95e9"
+  },
+  "engineering": {
+    "sheet_sha256": "435589175c545b2ebaaddee26628cc29993bceed5fe29602831c3cb69532bf5c",
+    "vector_sha256": "9c35f9068df7b6689b9efd47456836e0c9d2efd30e17293d69274fb121cd661e"
+  },
+  "business": {
+    "sheet_sha256": "e0a62cd5ad2ec06309c186ce299d1d9b150e23a3bed324795af6b4bdd409704f",
+    "vector_sha256": "42a821fedbf443e118e6a74ff3d6176ce78bc5386de188e3debf931c4fdf2939"
+  }
+}

@@ -1,0 +1,1526 @@
+{
+  "scope": "All 128 runtime poses visually inspected in 12 role contact pages, plus targeted source/edge/control checks. This records findings, not a universal rig or a guarantee of perfect anatomy.",
+  "checks": [
+    "silhouette and limb readability",
+    "pose/prop contact",
+    "crop and neighboring fragments",
+    "baseline captions",
+    "light/dark edges",
+    "work gaze"
+  ],
+  "poses": [
+    {
+      "id": "academic/standing",
+      "role": "academic",
+      "label": "Standing",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow."
+      ]
+    },
+    {
+      "id": "academic/standing-2",
+      "role": "academic",
+      "label": "Standing 2",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow."
+      ]
+    },
+    {
+      "id": "academic/seated",
+      "role": "academic",
+      "label": "Seated",
+      "review": "inspected",
+      "findings": [
+        "Crossed legs and whole hands retained. Kept static so hidden book surfaces are not exposed by guessed movement.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow."
+      ]
+    },
+    {
+      "id": "academic/seated-2",
+      "role": "academic",
+      "label": "Seated 2",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow."
+      ]
+    },
+    {
+      "id": "academic/tired",
+      "role": "academic",
+      "label": "Tired",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow."
+      ]
+    },
+    {
+      "id": "academic/lying-down",
+      "role": "academic",
+      "label": "Lying Down",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow."
+      ]
+    },
+    {
+      "id": "academic/thinking",
+      "role": "academic",
+      "label": "Thinking",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow."
+      ]
+    },
+    {
+      "id": "academic/working",
+      "role": "academic",
+      "label": "Working",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the workbench."
+      ]
+    },
+    {
+      "id": "academic/laughing",
+      "role": "academic",
+      "label": "Laughing",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow."
+      ]
+    },
+    {
+      "id": "academic/frustrated",
+      "role": "academic",
+      "label": "Frustrated",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow."
+      ]
+    },
+    {
+      "id": "academic/exasperated",
+      "role": "academic",
+      "label": "Exasperated",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow."
+      ]
+    },
+    {
+      "id": "academic/reading",
+      "role": "academic",
+      "label": "Reading",
+      "review": "inspected",
+      "findings": [
+        "Rear pages retained beneath both hands; limited local movement and work-directed eyes.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the book."
+      ]
+    },
+    {
+      "id": "academic/chalkboard",
+      "role": "academic",
+      "label": "Chalkboard",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow."
+      ]
+    },
+    {
+      "id": "academic/writing-prose",
+      "role": "academic",
+      "label": "Writing Prose",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the page."
+      ]
+    },
+    {
+      "id": "academic/teasing",
+      "role": "academic",
+      "label": "Teasing",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow."
+      ]
+    },
+    {
+      "id": "academic/flirty",
+      "role": "academic",
+      "label": "Flirty",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow."
+      ]
+    },
+    {
+      "id": "academic/glamour",
+      "role": "academic",
+      "label": "Glamour",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow."
+      ]
+    },
+    {
+      "id": "academic/silly",
+      "role": "academic",
+      "label": "Silly",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow."
+      ]
+    },
+    {
+      "id": "academic/greeting",
+      "role": "academic",
+      "label": "Greeting",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow."
+      ]
+    },
+    {
+      "id": "academic/listening",
+      "role": "academic",
+      "label": "Listening",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow."
+      ]
+    },
+    {
+      "id": "academic/confused",
+      "role": "academic",
+      "label": "Confused",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow."
+      ]
+    },
+    {
+      "id": "academic/celebrating",
+      "role": "academic",
+      "label": "Celebrating",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow."
+      ]
+    },
+    {
+      "id": "academic/concerned",
+      "role": "academic",
+      "label": "Concerned",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow."
+      ]
+    },
+    {
+      "id": "academic/sultry",
+      "role": "academic",
+      "label": "Sultry",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow."
+      ]
+    },
+    {
+      "id": "engineering/standing",
+      "role": "engineering",
+      "label": "Standing",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow."
+      ]
+    },
+    {
+      "id": "engineering/standing-2",
+      "role": "engineering",
+      "label": "Standing 2",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow."
+      ]
+    },
+    {
+      "id": "engineering/seated",
+      "role": "engineering",
+      "label": "Seated",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow."
+      ]
+    },
+    {
+      "id": "engineering/seated-2",
+      "role": "engineering",
+      "label": "Seated 2",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow."
+      ]
+    },
+    {
+      "id": "engineering/tired",
+      "role": "engineering",
+      "label": "Tired",
+      "review": "inspected",
+      "findings": [
+        "Removed two neighboring-figure fragments at the right edge; both intended arms and legs retained.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow."
+      ]
+    },
+    {
+      "id": "engineering/thinking",
+      "role": "engineering",
+      "label": "Thinking",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow."
+      ]
+    },
+    {
+      "id": "engineering/laughing",
+      "role": "engineering",
+      "label": "Laughing",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow."
+      ]
+    },
+    {
+      "id": "engineering/frustrated",
+      "role": "engineering",
+      "label": "Frustrated",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow."
+      ]
+    },
+    {
+      "id": "engineering/exasperated",
+      "role": "engineering",
+      "label": "Exasperated",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow."
+      ]
+    },
+    {
+      "id": "engineering/teasing",
+      "role": "engineering",
+      "label": "Teasing",
+      "review": "inspected",
+      "findings": [
+        "Removed the leaked caption beneath the feet; playful pointing gesture retained.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow."
+      ]
+    },
+    {
+      "id": "engineering/glamour",
+      "role": "engineering",
+      "label": "Glamour",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow."
+      ]
+    },
+    {
+      "id": "engineering/silly",
+      "role": "engineering",
+      "label": "Silly",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow."
+      ]
+    },
+    {
+      "id": "engineering/greeting",
+      "role": "engineering",
+      "label": "Greeting",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow."
+      ]
+    },
+    {
+      "id": "engineering/listening",
+      "role": "engineering",
+      "label": "Listening",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow."
+      ]
+    },
+    {
+      "id": "engineering/confused",
+      "role": "engineering",
+      "label": "Confused",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow."
+      ]
+    },
+    {
+      "id": "engineering/celebrating",
+      "role": "engineering",
+      "label": "Celebrating",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow."
+      ]
+    },
+    {
+      "id": "engineering/coding",
+      "role": "engineering",
+      "label": "Coding",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the keyboard."
+      ]
+    },
+    {
+      "id": "engineering/debugging",
+      "role": "engineering",
+      "label": "Debugging",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the code panel."
+      ]
+    },
+    {
+      "id": "engineering/security-review",
+      "role": "engineering",
+      "label": "Security Review",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the review panel."
+      ]
+    },
+    {
+      "id": "engineering/lying-down",
+      "role": "engineering",
+      "label": "Lying Down",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow."
+      ]
+    },
+    {
+      "id": "engineering/concerned",
+      "role": "engineering",
+      "label": "Concerned",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow."
+      ]
+    },
+    {
+      "id": "engineering/sultry",
+      "role": "engineering",
+      "label": "Sultry",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow."
+      ]
+    },
+    {
+      "id": "engineering/working",
+      "role": "engineering",
+      "label": "Working",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the laptop."
+      ]
+    },
+    {
+      "id": "engineering/testing",
+      "role": "engineering",
+      "label": "Testing",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow."
+      ]
+    },
+    {
+      "id": "engineering/code-review",
+      "role": "engineering",
+      "label": "Code Review",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow."
+      ]
+    },
+    {
+      "id": "engineering/flirty",
+      "role": "engineering",
+      "label": "Flirty",
+      "review": "inspected",
+      "findings": [
+        "Replaced the one-arm, distorted-hip drawing. Both complete arms and hands are visible: one at the hip, one at the collar. Original rejected reference retained.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow."
+      ]
+    },
+    {
+      "id": "business/standing",
+      "role": "business",
+      "label": "Standing",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Business two-eye design candidate; closed eyes and foreground hands remain pose-specific.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the conversation."
+      ]
+    },
+    {
+      "id": "business/standing-2",
+      "role": "business",
+      "label": "Standing 2",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Business two-eye design candidate; closed eyes and foreground hands remain pose-specific.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the conversation."
+      ]
+    },
+    {
+      "id": "business/seated",
+      "role": "business",
+      "label": "Seated",
+      "review": "inspected",
+      "findings": [
+        "Rear thigh retained beneath the resting hand; local hand movement only.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Business two-eye design candidate; closed eyes and foreground hands remain pose-specific.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the conversation."
+      ]
+    },
+    {
+      "id": "business/seated-2",
+      "role": "business",
+      "label": "Seated 2",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Business two-eye design candidate; closed eyes and foreground hands remain pose-specific.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the conversation."
+      ]
+    },
+    {
+      "id": "business/tired",
+      "role": "business",
+      "label": "Tired",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Business two-eye design candidate; closed eyes and foreground hands remain pose-specific.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the conversation."
+      ]
+    },
+    {
+      "id": "business/lying-down",
+      "role": "business",
+      "label": "Lying Down",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Business two-eye design candidate; closed eyes and foreground hands remain pose-specific.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the conversation."
+      ]
+    },
+    {
+      "id": "business/thinking",
+      "role": "business",
+      "label": "Thinking",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Business two-eye design candidate; closed eyes and foreground hands remain pose-specific.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the conversation."
+      ]
+    },
+    {
+      "id": "business/working",
+      "role": "business",
+      "label": "Working",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Business two-eye design candidate; closed eyes and foreground hands remain pose-specific.",
+        "Writing clipboard turns toward him: the viewer sees the solid back, with paper on the far side.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the clipboard."
+      ]
+    },
+    {
+      "id": "business/laughing",
+      "role": "business",
+      "label": "Laughing",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Business two-eye design candidate; closed eyes and foreground hands remain pose-specific.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the conversation."
+      ]
+    },
+    {
+      "id": "business/frustrated",
+      "role": "business",
+      "label": "Frustrated",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Business two-eye design candidate; closed eyes and foreground hands remain pose-specific.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the conversation."
+      ]
+    },
+    {
+      "id": "business/exasperated",
+      "role": "business",
+      "label": "Exasperated",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Business two-eye design candidate; closed eyes and foreground hands remain pose-specific.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the conversation."
+      ]
+    },
+    {
+      "id": "business/coordinating",
+      "role": "business",
+      "label": "Coordinating",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Business two-eye design candidate; closed eyes and foreground hands remain pose-specific.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the work."
+      ]
+    },
+    {
+      "id": "business/formal-report",
+      "role": "business",
+      "label": "Formal Report",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Business two-eye design candidate; closed eyes and foreground hands remain pose-specific.",
+        "Writing clipboard turns toward him: the viewer sees the solid back, with paper on the far side.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the clipboard."
+      ]
+    },
+    {
+      "id": "business/task-complete",
+      "role": "business",
+      "label": "Task Complete",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Business two-eye design candidate; closed eyes and foreground hands remain pose-specific.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the conversation."
+      ]
+    },
+    {
+      "id": "business/teasing",
+      "role": "business",
+      "label": "Teasing",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Business two-eye design candidate; closed eyes and foreground hands remain pose-specific.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the conversation."
+      ]
+    },
+    {
+      "id": "business/flirty",
+      "role": "business",
+      "label": "Flirty",
+      "review": "inspected",
+      "findings": [
+        "Forearm behind the hip is visible; its hand is intentionally occluded. Supporting arm, leaning pose and crossed legs retained.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Business two-eye design candidate; closed eyes and foreground hands remain pose-specific.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the conversation."
+      ]
+    },
+    {
+      "id": "business/glamour",
+      "role": "business",
+      "label": "Glamour",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Business two-eye design candidate; closed eyes and foreground hands remain pose-specific.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the conversation."
+      ]
+    },
+    {
+      "id": "business/silly",
+      "role": "business",
+      "label": "Silly",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Business two-eye design candidate; closed eyes and foreground hands remain pose-specific.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the conversation."
+      ]
+    },
+    {
+      "id": "business/greeting",
+      "role": "business",
+      "label": "Greeting",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Business two-eye design candidate; closed eyes and foreground hands remain pose-specific.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the conversation."
+      ]
+    },
+    {
+      "id": "business/listening",
+      "role": "business",
+      "label": "Listening",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Business two-eye design candidate; closed eyes and foreground hands remain pose-specific.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the conversation."
+      ]
+    },
+    {
+      "id": "business/confused",
+      "role": "business",
+      "label": "Confused",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Business two-eye design candidate; closed eyes and foreground hands remain pose-specific.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the conversation."
+      ]
+    },
+    {
+      "id": "business/celebrating",
+      "role": "business",
+      "label": "Celebrating",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Business two-eye design candidate; closed eyes and foreground hands remain pose-specific.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the conversation."
+      ]
+    },
+    {
+      "id": "business/concerned",
+      "role": "business",
+      "label": "Concerned",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached baseline/label scraps removed from the runtime copy.",
+        "Business two-eye design candidate; closed eyes and foreground hands remain pose-specific.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the conversation."
+      ]
+    },
+    {
+      "id": "business/sultry",
+      "role": "business",
+      "label": "Sultry",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Business two-eye design candidate; closed eyes and foreground hands remain pose-specific.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the conversation."
+      ]
+    },
+    {
+      "id": "academic/S01",
+      "role": "academic",
+      "label": "Pointing left",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "engineering/S02",
+      "role": "engineering",
+      "label": "Pointing right",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "business/S03",
+      "role": "business",
+      "label": "Open-palm presentation",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Business two-eye design candidate; closed eyes and foreground hands remain pose-specific.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the conversation.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "academic/S04",
+      "role": "academic",
+      "label": "Small wave",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "engineering/S05",
+      "role": "engineering",
+      "label": "Polite bow",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "business/S06",
+      "role": "business",
+      "label": "Leaning in to listen",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Business two-eye design candidate; closed eyes and foreground hands remain pose-specific.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the conversation.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "academic/S07",
+      "role": "academic",
+      "label": "Curious inspection",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "engineering/S08",
+      "role": "engineering",
+      "label": "Chin resting on hand",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "business/S09",
+      "role": "business",
+      "label": "Eureka",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Business two-eye design candidate; closed eyes and foreground hands remain pose-specific.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the conversation.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "academic/S10",
+      "role": "academic",
+      "label": "Skeptical",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached caption pixels removed from the cutout.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "engineering/S11",
+      "role": "engineering",
+      "label": "Surprised",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached caption pixels removed from the cutout.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "business/S12",
+      "role": "business",
+      "label": "Reassuring",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached caption pixels removed from the cutout.",
+        "Business two-eye design candidate; closed eyes and foreground hands remain pose-specific.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the conversation.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "academic/S13",
+      "role": "academic",
+      "label": "Apologetic / correcting",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached caption pixels removed from the cutout.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "engineering/S14",
+      "role": "engineering",
+      "label": "Relieved",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "business/S15",
+      "role": "business",
+      "label": "Disappointed",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached caption pixels removed from the cutout.",
+        "Business two-eye design candidate; closed eyes and foreground hands remain pose-specific.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the conversation.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "academic/S16",
+      "role": "academic",
+      "label": "Embarrassed",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached caption pixels removed from the cutout.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "engineering/S17",
+      "role": "engineering",
+      "label": "Determined",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached caption pixels removed from the cutout.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "business/S18",
+      "role": "business",
+      "label": "Smug / teasing",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Business two-eye design candidate; closed eyes and foreground hands remain pose-specific.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the conversation.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "academic/S19",
+      "role": "academic",
+      "label": "Arms folded, amused",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "engineering/S20",
+      "role": "engineering",
+      "label": "Deadpan",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "business/S21",
+      "role": "business",
+      "label": "Facepalm",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Business two-eye design candidate; closed eyes and foreground hands remain pose-specific.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the conversation.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "academic/S22",
+      "role": "academic",
+      "label": "Double take",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "engineering/S23",
+      "role": "engineering",
+      "label": "Stretching",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "business/S24",
+      "role": "business",
+      "label": "Sleepy nod",
+      "review": "inspected",
+      "findings": [
+        "Closed eyes are intentional in the resting pose; both arms and seated legs remain readable.",
+        "Business two-eye design candidate; closed eyes and foreground hands remain pose-specific.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the conversation.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "academic/A01",
+      "role": "academic",
+      "label": "Storytelling / DM narration",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "academic/A02",
+      "role": "academic",
+      "label": "Building a diagram",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached caption pixels removed from the cutout.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "academic/A03",
+      "role": "academic",
+      "label": "Annotating a passage",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached caption pixels removed from the cutout.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the book.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "academic/A04",
+      "role": "academic",
+      "label": "Experiment / discovery",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached caption pixels removed from the cutout.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "academic/A05",
+      "role": "academic",
+      "label": "Comparing sources",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "academic/A06",
+      "role": "academic",
+      "label": "Rolling dice",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "academic/A07",
+      "role": "academic",
+      "label": "Behind a DM screen",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "academic/A08",
+      "role": "academic",
+      "label": "Building a world map",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached caption pixels removed from the cutout.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the map.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "academic/A09",
+      "role": "academic",
+      "label": "Reading aloud",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "academic/A10",
+      "role": "academic",
+      "label": "Writer pausing mid-sentence",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "engineering/H01",
+      "role": "engineering",
+      "label": "Reviewing a diff",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the code panels.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "engineering/H02",
+      "role": "engineering",
+      "label": "Investigating logs",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached caption pixels removed from the cutout.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "engineering/H03",
+      "role": "engineering",
+      "label": "Waiting for a build",
+      "review": "inspected",
+      "findings": [
+        "Both arms rest behind the head; chair supports the seated pose and one foot is lifted intentionally.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "engineering/H04",
+      "role": "engineering",
+      "label": "Terminal focus",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the keyboard.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "engineering/H05",
+      "role": "engineering",
+      "label": "At a breakpoint",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached caption pixels removed from the cutout.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "engineering/H06",
+      "role": "engineering",
+      "label": "Tests passed",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "engineering/H07",
+      "role": "engineering",
+      "label": "Reproducing a bug locally",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached caption pixels removed from the cutout.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "engineering/H08",
+      "role": "engineering",
+      "label": "Untangling dependencies",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Detached caption pixels removed from the cutout.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "engineering/H09",
+      "role": "engineering",
+      "label": "Sketching a system",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "engineering/H10",
+      "role": "engineering",
+      "label": "Keyboard flourish",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "business/B01",
+      "role": "business",
+      "label": "Design critique",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Business two-eye design candidate; closed eyes and foreground hands remain pose-specific.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the conversation.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "business/B02",
+      "role": "business",
+      "label": "Delegating a task",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Business two-eye design candidate; closed eyes and foreground hands remain pose-specific.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the work.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "business/B03",
+      "role": "business",
+      "label": "Delivering a report",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Business two-eye design candidate; closed eyes and foreground hands remain pose-specific.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the work.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "business/B04",
+      "role": "business",
+      "label": "Weighing a tradeoff",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Business two-eye design candidate; closed eyes and foreground hands remain pose-specific.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the conversation.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "business/B05",
+      "role": "business",
+      "label": "Prioritizing",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Business two-eye design candidate; closed eyes and foreground hands remain pose-specific.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the work.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "business/B06",
+      "role": "business",
+      "label": "Listening in a meeting",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Business two-eye design candidate; closed eyes and foreground hands remain pose-specific.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the conversation.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "business/B07",
+      "role": "business",
+      "label": "Checking a budget",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Business two-eye design candidate; closed eyes and foreground hands remain pose-specific.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the work.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "business/B08",
+      "role": "business",
+      "label": "Monitoring a long task",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Business two-eye design candidate; closed eyes and foreground hands remain pose-specific.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the conversation.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "business/B09",
+      "role": "business",
+      "label": "Reviewing a risk",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Business two-eye design candidate; closed eyes and foreground hands remain pose-specific.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the work.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    },
+    {
+      "id": "business/B10",
+      "role": "business",
+      "label": "Closing the laptop",
+      "review": "inspected",
+      "findings": [
+        "Silhouette, limb/prop readability, framing, edges and gaze inspected; no additional blocking pose defect identified.",
+        "Business two-eye design candidate; closed eyes and foreground hands remain pose-specific.",
+        "Separate role-colored artwork is available for dark backgrounds; no edge glow.",
+        "Gaze is directed toward the work.",
+        "White source matte removed from the transparent edge RGB."
+      ]
+    }
+  ]
+}

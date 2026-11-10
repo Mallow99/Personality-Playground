@@ -1,0 +1,140 @@
+# Characters, models, and personality training
+
+The application now has three **working, selectable profiles** in
+`config/profiles.json`. Each has a separate prompt, visual theme, and conversation
+snapshot. They can use different local endpoints and model aliases. The names and
+voices are provisional; they do not settle the research question or prove trained
+personality.
+
+## Selected visual baseline: E
+
+The owner selected **[E's reference sheet](../research/visual-studies/option-e.png)**
+as the baseline: a neutral academic with a loose coat/cardigan, a feminine hacker
+with a short asymmetric bob and cropped jacket, and a masculine business character
+with a waistcoat and compact hairstyle. Preserve the standing and seated poses,
+loose angular pieces, clear gestures, and separate approximately three-color palettes.
+
+See the [design brief](../research/visual-studies/README.md) and
+[selection record](../research/visual-studies/baseline.json). The [E interactive proof](../bfi/static/e-preview/README.md) now contains 74 generated-reference
+pose traces, source/SVG comparisons, 17 mapped body pieces per pose, face/motif icons, revised transitions, speaking/visibility
+controls, and cursor studies. They await visual review. Earlier D studies remain
+archived. The table below describes
+the earlier app prototype, whose runtime artwork has not been replaced yet.
+
+| Profile     | Useful starting purpose                                            | Provisional voice                                | Implemented appearance                     |
+| ----------- | ------------------------------------------------------------------ | ------------------------------------------------ | ------------------------------------------ |
+| Academic    | Explain a concept, support study/research, make a manageable plan  | Warm, patient, curious; opinionated with reasons | Brown/green, rounded body, glasses         |
+| Engineering | Code, debugging, tests, technical and authorized security learning | Direct, precise, expressive; light dry humor     | Black/red, angular body, sharper eyes      |
+| Business    | Planning, research, analysis, drafting, decisions                  | Composed, practical, decisive                    | White/grey/blue, structured body and frame |
+
+Choose a profile using the selector in the chat sidebar. Switching starts a fresh
+conversation rather than inserting another character into an existing transcript.
+Reopening a conversation restores its original character and appearance. A changed
+model/backend/adapter label requires a new conversation; existing histories remain
+readable. Older foundation conversations retain the original draft character.
+
+## The pieces are separate
+
+```text
+Character profile
+  ├── Name, provisional personality prompt, specialty
+  ├── Visual theme, shape, poses
+  ├── Backend endpoint + model alias
+  ├── Optional adapter label (a declaration, not a loading command)
+  └── Explicit tool permissions for the current message
+```
+
+The **base model** generates text. A **personality LoRA** is a learned set of weight
+changes for a particular compatible base. A **software backend adapter** is Python
+code that talks to a server. A **visual skin** changes the interface. Those uses of
+“adapter” must not get confused. None of the three profiles has a trained LoRA yet.
+
+## One, two, or three?
+
+The code provides three candidates so you can compare them. That does not commit
+the project to operating all three. Start with one useful vertical slice and expand
+when it earns its place. BFI serializes generation; it does **not** automatically
+load or unload external model processes or guarantee that only one model occupies
+VRAM. Manage loading in the loader until lifecycle integration is verified.
+
+Two eventual arrangements are valid:
+
+- A shared compatible base with separate personality LoRAs. This can reduce duplicate
+  weight storage, but adapter switching and compatibility must be demonstrated.
+- Different bases for specialties when measured usefulness justifies the disk,
+  loading time, training complexity, and evaluation cost.
+
+## Flash Next or ~27B: do not assign by costume
+
+Use a ~27B companion candidate for a role only if it performs the relevant tasks and
+has a viable training/export/serving route. A smaller compatible model is the first
+training feasibility target. Qwen3.8-Flash-Next through Strata is an inference
+candidate for whichever tasks justify it; its documented low-RAM path does not prove
+comfortable performance on this PC or a suitable personality-training route.
+
+Suggested comparison tasks, with the same evidence and scoring standard:
+
+| Role        | Representative test                                                                         |
+| ----------- | ------------------------------------------------------------------------------------------- |
+| Academic    | Explain an unfamiliar idea, identify uncertainty, and make a realistic study step           |
+| Engineering | Explain a small codebase, suggest a reviewable change, and correctly interpret test results |
+| Business    | Compare options using supplied evidence, state assumptions, and recommend an action         |
+
+Record quality, personality consistency, factual grounding, latency, RAM/VRAM, and
+adapter feasibility separately. Keep the final mapping open until those observations
+exist. Compare the unmodified starting checkpoint against the learned adapter using
+the [training plan](training.md), not merely different prompts.
+
+## Motion that exists now
+
+The chat app and `/concepts` studio have original geometric artwork, a layered
+entrance, blinking, attentive/thinking/speaking/docked poses, motion-off controls,
+and reduced-motion support. The optional in-app corner character shows a short
+extract of the actual last assistant reply. Its “speaking” motion is visual; no
+audio or speech synthesis is implemented. The studio's sample line is explicitly
+scripted. Character changes animate presentation, never assert model readiness.
+
+The corner character belongs to the browser window. A true Windows desktop overlay,
+window-edge seating, click-through behavior, multi-monitor handling, background
+presence, and opt-in proactive appearances remain future work. Model-requested
+attention and computer control are different permissions; neither is enabled by an
+avatar animation.
+
+## Expanded individual directions
+
+See [Individuals, with specialties](character-directions.md) for the owner’s
+expanded directions, proposed personality facets, future capability goals, and
+evaluation ideas. Simultaneous characters are preferred; fast swapping is a
+fallback to measure on the delivered PC, not a permanent single-model restriction.
+
+## Expanded pose review, version 3
+
+The owner rejected the first hand-built E SVG poses and motif transitions. The
+[new generated sheets and trace record](../research/visual-studies/poses-v2/README.md)
+and [latest additions](../research/visual-studies/poses-v3/README.md)
+supply 24 Academic, 26 Hacker, and 24 Business poses. Standing/seated variants, fatigue, reclining,
+laughter, frustration, and exasperation sit alongside practical specialties and
+optional adult playful studies. The preview provides generated-source,
+normalized-reference, SVG, and wipe views. Activity mappings are presentation
+helpers, not new tools or agent capabilities. The Hacker specialist set was revised;
+original glamour drawings remain beside new sultry choices. The
+[pose inventory](pose-plan.md) records missing practical reactions and specialties.
+
+The actor now morphs 17 stable anatomical/prop groups across poses, with small
+independent movements and an inspector for selecting, dragging, and rotating them.
+Guide ownership remains draft, especially around crossed arms and props. Preserved
+silhouettes do not establish correct anatomy or natural movement.
+
+## Whole-shape comparison and owner pose sign-off
+
+The owner clarified that large intentional forms should remain whole. Academic
+standing/seated are now the focused whole-form grouping proof; 72 other maps still
+use legacy regions. Face, hands, sleeves, book forms, and continuous legs are grouped
+without arbitrary anatomical cuts. Joined silhouettes may need authored boundaries
+later. The inspector labels the difference and can move a single source form.
+
+Existing playful poses are now part of the ordinary gallery. The separate
+adult-studies section/filter is removed. The [54 proposed pose concepts](pose-plan.md)
+are unapproved and have stable review codes. Silent talking cues compare head/hand
+gestures and voice marks; pose changes compare turning contours, direct morphing,
+and still swaps. These remain visual studies, with no audio or agent capability added.

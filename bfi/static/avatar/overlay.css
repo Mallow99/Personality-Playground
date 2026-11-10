@@ -1,0 +1,45 @@
+html,
+body {
+  margin: 0;
+  background: transparent !important;
+  min-height: 100%;
+  overflow: hidden;
+}
+body {
+  display: block;
+  padding: 12px;
+  box-sizing: border-box;
+}
+#overlay-avatar {
+  max-width: 340px;
+  margin: auto;
+}
+#connection {
+  font: 10px system-ui;
+  text-align: center;
+  color: var(--avatar-accent);
+}
+#hide-avatar {
+  display: block;
+  margin: 8px auto;
+  font: 10px system-ui;
+  color: var(--avatar-dark);
+  background: var(--avatar-paper);
+  border: 1px solid var(--avatar-accent);
+  padding: 5px 9px;
+  border-radius: 4px;
+}
+[hidden] {
+  display: none !important;
+}
+
+.contrast-control {
+  display: block;
+  width: fit-content;
+  margin: 8px auto;
+  padding: 5px 9px;
+  font: 11px system-ui;
+  color: var(--avatar-dark);
+  background: var(--avatar-paper);
+  border-radius: 4px;
+}

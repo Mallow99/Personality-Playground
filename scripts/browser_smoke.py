@@ -26,7 +26,7 @@ def reserve_port():
     return sock
 
 
-def start_app(backend, data_dir, endpoint):
+def start_app(backend, data_dir, endpoint, project_dir):
     reservation = reserve_port()
     port = reservation.getsockname()[1]
     reservation.close()
@@ -41,6 +41,9 @@ def start_app(backend, data_dir, endpoint):
         "BFI_TIMEOUT_SECONDS": "2",
         "BFI_HISTORY_PAIRS": "12",
         "BFI_CONTEXT_CHARS": "24000",
+        "BFI_PROFILES_FILE": str(ROOT / "config/profiles.json"),
+        "BFI_PROJECT_ROOT": str(project_dir),
+        "BFI_BRAVE_API_KEY": "",
     }
     process = subprocess.Popen(
         [
@@ -132,6 +135,53 @@ def check_browser(mock_url, unavailable_url, output, executable):
         page.locator("#empty-state").wait_for(state="visible")
         assert page.request.get(f"{mock_url}/api/conversations/{cid}").status == 404
 
+        page.set_viewport_size({"width": 1440, "height": 1000})
+        for profile in ("academic", "engineering", "business"):
+            page.locator("#profile-select").select_option(profile)
+            assert page.locator("body").get_attribute("data-theme") == profile
+            page.locator("#message").fill(f"Hello from {profile}")
+            page.locator("#send").click()
+            page.locator(".message.assistant").wait_for()
+            assert page.locator(".message").count() == 2
+            page.locator(".provenance summary").click()
+            assert profile in page.locator(".provenance").inner_text()
+        page.locator("#avatar-motion").uncheck()
+        page.locator("#avatar-pose").select_option("business/thinking")
+        page.wait_for_function(
+            '() => document.querySelector("#sidebar-avatar").dataset.pose === "business/thinking"'
+        )
+        if page.locator("#corner-companion").is_hidden():
+            page.locator("#toggle-corner").click()
+        page.wait_for_selector("#corner-companion", state="visible")
+        page.locator("#hide-corner").click()
+        page.locator("#open-tools").click()
+        page.locator("#run-tool").click()
+        page.get_by_text('"files":', exact=False).wait_for()
+        assert "README.md" in page.locator("#tool-result").inner_text()
+        page.locator("#tool-name").select_option("read_project_file")
+        page.locator("#tool-argument").fill("README.md")
+        page.locator("#run-tool").click()
+        page.get_by_text("local_project_text", exact=False).wait_for()
+        assert "Browser test project" in page.locator("#tool-result").inner_text()
+        page.locator("#close-tools").click()
+        page.goto(mock_url + "/concepts")
+        page.get_by_text("Current route: scripted mock", exact=False).wait_for()
+        page.locator("#studio-motion").uncheck()
+        for profile in ("academic", "engineering", "business"):
+            page.locator(f"#choose-{profile}").click()
+            assert page.locator("body").get_attribute("data-theme") == profile
+            page.screenshot(path=str(output / f"studio-{profile}.png"), full_page=True)
+        page.locator("#studio-pose").select_option("speaking")
+        page.locator("#studio-corner").click()
+        assert page.locator("#studio-stage").get_attribute("data-corner") == "on"
+        for width, height in ((390, 844), (768, 1024)):
+            page.set_viewport_size({"width": width, "height": height})
+            assert not page.evaluate("document.documentElement.scrollWidth > innerWidth")
+            page.screenshot(path=str(output / f"studio-{width}.png"), full_page=True)
+        page.locator("#try-profile").click()
+        page.get_by_text("Mock backend", exact=True).wait_for()
+        assert page.locator("#profile-select").input_value() == "business"
+
         page.goto(unavailable_url)
         page.get_by_text("Endpoint not confirmed", exact=True).wait_for()
         page.locator("#message").fill("Preserve this draft on connection failure")
@@ -170,9 +220,12 @@ def main():
     endpoint = f"http://127.0.0.1:{unavailable.getsockname()[1]}/v1"
     try:
         with tempfile.TemporaryDirectory(prefix="bfi-browser-") as temp:
-            mock, mock_url = start_app("mock", Path(temp) / "mock", endpoint)
+            project = Path(temp) / "project"
+            project.mkdir()
+            (project / "README.md").write_text("# Browser test project", encoding="utf-8")
+            mock, mock_url = start_app("mock", Path(temp) / "mock", endpoint, project)
             processes.append(mock)
-            real, real_url = start_app("openai", Path(temp) / "unavailable", endpoint)
+            real, real_url = start_app("openai", Path(temp) / "unavailable", endpoint, project)
             processes.append(real)
             check_browser(mock_url, real_url, args.output.resolve(), args.chromium)
     finally:

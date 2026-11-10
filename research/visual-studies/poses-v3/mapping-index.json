@@ -1,0 +1,896 @@
+{
+  "academic": [
+    {
+      "id": "standing",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/academic-a.png",
+      "cell": [
+        0,
+        0
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "standing-2",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/academic-a.png",
+      "cell": [
+        1,
+        0
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "seated",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/academic-a.png",
+      "cell": [
+        2,
+        0
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "seated-2",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/academic-a.png",
+      "cell": [
+        0,
+        1
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "tired",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/academic-a.png",
+      "cell": [
+        1,
+        1
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "lying-down",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/academic-a.png",
+      "cell": [
+        2,
+        1
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "thinking",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/academic-b.png",
+      "cell": [
+        0,
+        0
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "working",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/academic-b.png",
+      "cell": [
+        1,
+        0
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "laughing",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/academic-b.png",
+      "cell": [
+        2,
+        0
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "frustrated",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/academic-b.png",
+      "cell": [
+        0,
+        1
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "exasperated",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/academic-b.png",
+      "cell": [
+        1,
+        1
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "reading",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/academic-b.png",
+      "cell": [
+        2,
+        1
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "chalkboard",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/academic-c.png",
+      "cell": [
+        0,
+        0
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "writing-prose",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/academic-c.png",
+      "cell": [
+        1,
+        0
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "teasing",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/academic-c.png",
+      "cell": [
+        2,
+        0
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "flirty",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/academic-c.png",
+      "cell": [
+        0,
+        1
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "glamour",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/academic-c.png",
+      "cell": [
+        1,
+        1
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "silly",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/academic-c.png",
+      "cell": [
+        2,
+        1
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "greeting",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v3/academic-new.png",
+      "cell": [
+        0,
+        0
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "listening",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v3/academic-new.png",
+      "cell": [
+        1,
+        0
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "confused",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v3/academic-new.png",
+      "cell": [
+        2,
+        0
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "celebrating",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v3/academic-new.png",
+      "cell": [
+        0,
+        1
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "concerned",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v3/academic-new.png",
+      "cell": [
+        1,
+        1
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "sultry",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v3/academic-new.png",
+      "cell": [
+        2,
+        1
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    }
+  ],
+  "engineering": [
+    {
+      "id": "standing",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/engineering-a.png",
+      "cell": [
+        0,
+        0
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "standing-2",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/engineering-a.png",
+      "cell": [
+        1,
+        0
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "seated",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/engineering-a.png",
+      "cell": [
+        2,
+        0
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "seated-2",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/engineering-a.png",
+      "cell": [
+        0,
+        1
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "tired",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/engineering-a.png",
+      "cell": [
+        1,
+        1
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "lying-down",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/engineering-a.png",
+      "cell": [
+        2,
+        1
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "thinking",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/engineering-b.png",
+      "cell": [
+        0,
+        0
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "laughing",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/engineering-b.png",
+      "cell": [
+        2,
+        0
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "frustrated",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/engineering-b.png",
+      "cell": [
+        0,
+        1
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "exasperated",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/engineering-b.png",
+      "cell": [
+        1,
+        1
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "teasing",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/engineering-c.png",
+      "cell": [
+        2,
+        0
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "flirty",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/engineering-c.png",
+      "cell": [
+        0,
+        1
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "glamour",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/engineering-c.png",
+      "cell": [
+        1,
+        1
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "silly",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/engineering-c.png",
+      "cell": [
+        2,
+        1
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "greeting",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v3/engineering-new.png",
+      "cell": [
+        0,
+        0
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "listening",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v3/engineering-new.png",
+      "cell": [
+        1,
+        0
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "confused",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v3/engineering-new.png",
+      "cell": [
+        2,
+        0
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "celebrating",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v3/engineering-new.png",
+      "cell": [
+        0,
+        1
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "concerned",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v3/engineering-new.png",
+      "cell": [
+        1,
+        1
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "sultry",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v3/engineering-new.png",
+      "cell": [
+        2,
+        1
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "coding",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v3/engineering-specialist.png",
+      "cell": [
+        0,
+        0
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "debugging",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v3/engineering-specialist.png",
+      "cell": [
+        1,
+        0
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "security-review",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v3/engineering-specialist.png",
+      "cell": [
+        2,
+        0
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "working",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v3/engineering-specialist.png",
+      "cell": [
+        0,
+        1
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "testing",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v3/engineering-specialist.png",
+      "cell": [
+        1,
+        1
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "code-review",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v3/engineering-specialist.png",
+      "cell": [
+        2,
+        1
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    }
+  ],
+  "business": [
+    {
+      "id": "standing",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/business-a.png",
+      "cell": [
+        0,
+        0
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "standing-2",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/business-a.png",
+      "cell": [
+        1,
+        0
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "seated",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/business-a.png",
+      "cell": [
+        2,
+        0
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "seated-2",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/business-a.png",
+      "cell": [
+        0,
+        1
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "tired",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/business-a.png",
+      "cell": [
+        1,
+        1
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "lying-down",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/business-a.png",
+      "cell": [
+        2,
+        1
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "thinking",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/business-b.png",
+      "cell": [
+        0,
+        0
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "working",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/business-b.png",
+      "cell": [
+        1,
+        0
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "laughing",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/business-b.png",
+      "cell": [
+        2,
+        0
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "frustrated",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/business-b.png",
+      "cell": [
+        0,
+        1
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "exasperated",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/business-b.png",
+      "cell": [
+        1,
+        1
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "coordinating",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/business-b.png",
+      "cell": [
+        2,
+        1
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "formal-report",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/business-c.png",
+      "cell": [
+        0,
+        0
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "task-complete",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/business-c.png",
+      "cell": [
+        1,
+        0
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "teasing",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/business-c.png",
+      "cell": [
+        2,
+        0
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "flirty",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/business-c.png",
+      "cell": [
+        0,
+        1
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "glamour",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/business-c.png",
+      "cell": [
+        1,
+        1
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "silly",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v2/business-c.png",
+      "cell": [
+        2,
+        1
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "greeting",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v3/business-new.png",
+      "cell": [
+        0,
+        0
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "listening",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v3/business-new.png",
+      "cell": [
+        1,
+        0
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "confused",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v3/business-new.png",
+      "cell": [
+        2,
+        0
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "celebrating",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v3/business-new.png",
+      "cell": [
+        0,
+        1
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "concerned",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v3/business-new.png",
+      "cell": [
+        1,
+        1
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "id": "sultry",
+      "sheet": "/workspace/Personality-Playground/research/visual-studies/poses-v3/business-new.png",
+      "cell": [
+        2,
+        1
+      ],
+      "canvas": [
+        512,
+        512
+      ]
+    }
+  ]
+}
