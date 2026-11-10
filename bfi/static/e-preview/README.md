@@ -70,3 +70,17 @@ The 17 registered anatomical/prop IDs are a compatibility interface, not a deman
 to cut every drawing into 17 pieces. Original generated sheets, direct traces,
 source crops, normalized references, exact boundary alternatives, and wipe views
 remain inspectable. Ordinary chat artwork remains the earlier prototype.
+
+## Illustrated proposal review
+
+All 54 suggestions now have a generated concept image and a specific reason.
+The shared 24 ideas rotate the demonstrating character; the 30 specialist ideas
+use their own character. Tap a picture for an enlarged view and rationale, or open
+its original six-cell sheet. CSS displays one cell from a preserved source PNG;
+these images have not been traced or added to the active 74-pose animation library.
+
+`pose-review-reasons.json` and the proposal source manifests feed the plan builder.
+Exported decisions include the sheet hash and cell so the reviewed picture remains
+identifiable. Saved choices retain the same review codes. Validate image coverage,
+hashes, modal behavior, and phone layout with `scripts/check_e_preview.mjs` and
+`uv run --locked --group browser python scripts/browser_e_review.py`.

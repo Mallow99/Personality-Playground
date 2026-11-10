@@ -345,7 +345,10 @@
         <p>
           24 shared ideas and 10 per character. None is approved yet. Choose
           Keep, Revise, or Skip; decisions save in this browser. Download them
-          to share your sign-off. These are suggestions, not generated artwork.
+          to share your sign-off. Each suggestion now has a generated concept
+          image and a reason. Tap an image to enlarge it. Shared poses rotate
+          the demonstrating character; they remain applicable to all three.
+          Images remain unapproved concepts.
         </p>
         <div class="review-tools">
           <label
@@ -428,5 +431,20 @@
       <p id="error" role="alert" hidden></p>
     </main>
     <div id="transition-layer" hidden></div>
+    <dialog id="review-image-dialog" aria-labelledby="review-image-title">
+      <button id="review-image-close" class="review-image-close">
+        Close illustration
+      </button>
+      <h2 id="review-image-title"></h2>
+      <div id="review-image-frame"></div>
+      <p id="review-image-reason"></p>
+      <a
+        id="review-image-sheet"
+        href="assets/proposals/academic-1.png"
+        target="_blank"
+        rel="noopener"
+        >Open original sheet ↗</a
+      >
+    </dialog>
   </body>
 </html>

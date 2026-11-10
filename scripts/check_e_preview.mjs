@@ -7,6 +7,7 @@ import {
 // Deterministic component checks; no browser/DOM rendering claim.
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
+import { createHash } from "node:crypto";
 import {
   AgentCursor,
   profiles,
@@ -120,6 +121,28 @@ const review = JSON.parse(
 assert.equal(review.proposals.length, 54);
 assert.equal(new Set(review.proposals.map((p) => p.code)).size, 54);
 assert(review.proposals.every((p) => p.status === "unreviewed"));
+const cells = new Set(),
+  sheets = new Set();
+for (const p of review.proposals) {
+  assert(p.reason.length > 70, `Missing useful reason for ${p.code}`);
+  const meta = p.image;
+  assert(
+    meta &&
+      meta.row >= 0 &&
+      meta.row < 2 &&
+      meta.column >= 0 &&
+      meta.column < 3,
+  );
+  const cell = `${meta.sheet}:${meta.row}:${meta.column}`;
+  assert(!cells.has(cell), `Reused illustration cell for ${p.code}`);
+  cells.add(cell);
+  sheets.add(meta.sheet);
+  const png = await readFile(new URL(meta.sheet, root));
+  assert.equal(png.readUInt32BE(16), 1536);
+  assert.equal(png.readUInt32BE(20), 1024);
+  assert.equal(createHash("sha256").update(png).digest("hex"), meta.sha256);
+}
+assert.equal(sheets.size, 9);
 const turning = turnPair(
   [
     [0, 0],

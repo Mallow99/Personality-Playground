@@ -350,6 +350,16 @@ for prefix, role, rows in [
                 status="unreviewed",
             )
         )
+# Generation was explicitly requested for all concepts; approval remains a separate decision.
+reasons = json.loads((ROOT / "config/pose-review-reasons.json").read_text())
+image_manifest = ROOT / "research/visual-studies/pose-proposals/images.json"
+images = json.loads(image_manifest.read_text()) if image_manifest.exists() else {}
+for proposal in proposals:
+    proposal["useCase"] = proposal["reason"]
+    proposal["reason"] = reasons[proposal["code"]]
+    if proposal["code"] in images:
+        proposal["image"] = images[proposal["code"]]
+
 review = dict(
     version=1,
     title="Suggested poses for owner review",
@@ -365,7 +375,7 @@ plan = dict(
     rules=[
         "Poses can be reused across application states.",
         "All existing expressive poses appear in the main library.",
-        "Suggestions require owner sign-off before more art batches.",
+        "Generated concepts remain unapproved until the owner reviews them.",
         "Whole-shape mapping proof currently covers Academic standing/seated only.",
     ],
     stateBindings={
@@ -394,8 +404,9 @@ lines = [
     "# Suggested poses for sign-off",
     "",
     (
-        "54 proposed pose concepts: 24 shared, then 10 for each individual. These are "
-        "not generated or approved. Existing 74 poses remain available, including "
+        "54 proposed pose concepts: 24 shared, then 10 for each individual. Each now has a "
+        "generated concept image and a reason; none is approved automatically. "
+        "Existing 74 poses remain available, including "
         "teasing, flirty, glamour, silly, and sultry in the main library."
     ),
     "",
@@ -416,7 +427,11 @@ for role, label in [
     lines += ["## " + label, ""]
     for p in proposals:
         if p["role"] == role:
-            lines += [f"- [ ] **{p['code']} · {p['label']}** — {p['reason']}. {p['visual']}"]
+            lines += [
+                f"- [ ] **{p['code']} · {p['label']}** — {p['reason']} Pose: {p['visual']} "
+                f"([image sheet, cell {p['image']['row'] * 3 + p['image']['column'] + 1}]"
+                f"(../bfi/static/e-preview/{p['image']['sheet']}))"
+            ]
     lines += [""]
 lines += [
     "## Review and animation direction",

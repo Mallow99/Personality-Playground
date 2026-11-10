@@ -1,6 +1,7 @@
 # Character design studies
 
-Latest: [54 generated pose references and verified direct traces](poses-v2/README.md).
+Latest: [54 illustrated pose suggestions with reasons](pose-proposals/README.md).
+The active library still has 74 traced poses; the 54 new concepts await review.
 The owner rejected the first hand-built E poses and initial motif transitions.
 
 **[Option E](option-e.png) is the selected visual baseline.** Build from E's character

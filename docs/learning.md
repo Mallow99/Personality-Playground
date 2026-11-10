@@ -239,3 +239,18 @@ mouth shapes would require a separate input and alignment design.
 The pose checklist uses stable review codes and local browser storage. All 54 ideas
 start unreviewed; exporting decisions is explicit. The exported file can later inform
 which art to generate, without silently turning suggestions into approvals.
+
+## An image for every proposal, without changing the rigs
+
+The owner explicitly requested generation of all 54 suggested poses for review.
+Nine six-cell sheets provide one image per proposal. Shared ideas rotate the
+character used to demonstrate them, rather than creating three copies of every idea.
+The original PNGs stay intact. `images.json` assigns the row/column, source hash,
+and demonstrating role to each review code. The browser clips the corresponding
+cell with CSS; the zoom dialog uses the same mapping. This changes presentation,
+not the source artwork or the 74 active vector poses.
+
+`config/pose-review-reasons.json` explains why each pose is useful. The plan builder
+joins those reasons and image references to the existing codes. Saved review choices
+stay separate from generated metadata, and exported decisions identify the exact
+sheet/cell/hash. Generating an illustration does not mean it was approved or rigged.

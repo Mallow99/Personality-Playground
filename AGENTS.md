@@ -69,3 +69,9 @@ transformations mean transitions between poses, not transformations into objects
 Mix playful poses into the main library; remove the adult-studies section/filter.
 The 54 suggested pose concepts require owner sign-off; do not generate them all or
 infer approval. Preserve silent talking-cue and transition comparisons for review.
+
+The owner subsequently explicitly requested an image and reason for every one of
+the 54 suggestions. They are generated under research/visual-studies/pose-proposals,
+with one demonstrating character per shared idea and their own roles for specialties.
+They remain unapproved concepts and are separate from the 74 active SVG poses.
+Preserve review codes, saved choices, image cell mappings, hashes, and reasons.
