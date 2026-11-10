@@ -120,8 +120,8 @@ The selected visual baseline is **[E](research/visual-studies/option-e.png)**. T
 [reference gallery and design brief](research/visual-studies/README.md) preserve
 the choice and earlier studies. The [E proof pack](bfi/static/e-preview/README.md) now provides 54 generated-reference pose traces, source/SVG comparisons,
 icons, motif transitions, an animated SVG export, and agent cursor studies. Open
-`/static/e-preview/index.html` with the local app running, or open the
-[private live demo](https://bfi-e-character-proof.poyoboi29.chatgpt.site). The ordinary chat art
+`/static/e-preview/index.html` with the local app running. The private hosted preview is linked in the project
+conversation and optional board. The ordinary chat art
 remains the earlier prototype while these proofs await review.
 
 To try real project reads, set `BFI_PROJECT_ROOT=.` in `.env`, restart, and open

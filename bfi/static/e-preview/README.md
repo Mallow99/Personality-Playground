@@ -1,6 +1,6 @@
 # E pose studio, revision 2
 
-[Private live demo](https://bfi-e-character-proof.poyoboi29.chatgpt.site). Locally,
+The private hosted preview is linked in the project conversation and board. Locally,
 open `/static/e-preview/index.html` with BFI running. This static page makes no model
 calls and does not operate the computer. Ordinary chat artwork is unchanged.
 
