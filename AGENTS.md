@@ -32,3 +32,10 @@ themes are not trained personality. Do not imply an adapter label loaded a LoRA,
 or an entrance animation established model readiness. Local inference, AMD training,
 adapter serving, and native desktop overlays require separate evidence. Model tools
 are explicitly opted in per message; keep tool outputs inspectable and bounded.
+
+Visual baseline is now **E**, selected after the pose studies. Read
+`research/visual-studies/README.md` and `baseline.json` before further art work.
+Preserve E's separate palettes, neutral academic, feminine hacker, and masculine
+business character, with loose geometric standing/seated poses. Earlier D SVGs are
+feasibility proofs, not the chosen E artwork. Icons remain unconfirmed. Animation
+and further design work are paused for review; do not resume them implicitly.

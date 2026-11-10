@@ -116,6 +116,11 @@ computes. It records the requested ID and the server-reported ID separately, wit
 The optional Notion project board holds the live idea inbox and a short Next list.
 It is not needed to start or use the local app. See [planning](docs/planning.md).
 
+The selected visual baseline is **[E](research/visual-studies/option-e.png)**. The
+[reference gallery and design brief](research/visual-studies/README.md) preserve
+the choice and earlier studies. Recreating E as production SVGs remains pending;
+new animation and art work are paused for review.
+
 To try real project reads, set `BFI_PROJECT_ROOT=.` in `.env`, restart, and open
 **Tools & setup**. The inspector works even in mock mode. A real compatible model
 can use enabled tools when you opt in for a message. Optional web search requires

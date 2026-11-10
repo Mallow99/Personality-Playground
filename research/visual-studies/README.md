@@ -1,9 +1,13 @@
 # Character design studies
 
-These are **unselected reference studies**, not final character assets. Animation
-implementation is paused while the character language is refined. The app has not
-been updated with these proposed designs. The owner prefers **D**, followed by **A**;
-E and F are newer alternatives awaiting feedback. A–C were too similar to each other.
+**[Option E](option-e.png) is the selected visual baseline.** Build from E's character
+identities, outfits, standing/seated poses, and distinct personalities. Earlier
+options remain archived for comparison; the previous preference for D/A is superseded.
+Animation and further design work are paused for review.
+
+E is currently a generated reference sheet, not production SVGs or a completed rig.
+The app's runtime artwork has not been replaced. The older D-style SVG proofs show
+that this general construction can work in code; they are not E's implementation.
 
 ## Keep this brief intact
 
@@ -33,12 +37,12 @@ Open [the local gallery](index.html), or the individual images:
 | ------------------------------------------ | ---------------------------------------------------------------------------- | -------------------------------------------------------------- |
 | [Initial icons](icon-study.png)            | Heads and a few identity objects                                             | A substantial improvement; possible icon use only, unconfirmed |
 | [First poses](first-pose-study.png)        | Standing and seated bodies built from loose shapes                           | Much closer; shared colors still needed correction             |
-| [A — Loose](option-a.png)                  | Long open shapes, airy poses                                                 | Second preference                                              |
+| [A — Loose](option-a.png)                  | Long open shapes, airy poses                                                 | Earlier preference; E selected                                 |
 | [B — Bold](option-b.png)                   | Wider shapes and proportions                                                 | Too close to A/C to count as a substantially different design  |
 | [C — Sharp](option-c.png)                  | More diagonal wedges                                                         | Earlier preference, but D superseded it                        |
-| [D — New silhouettes](option-d.png)        | Distinct hair, clothing shapes, posture, and expression                      | Current leading reference, not a final selection               |
-| [E — Different wardrobes](option-e.png)    | Cardigan/poncho academic, short-bob/cropped hacker, waistcoat business       | New alternative; awaiting feedback                             |
-| [F — Different construction](option-f.png) | Offset plates, hair ribbons, banner-like jacket panels, active/relaxed poses | New alternative; awaiting feedback                             |
+| [D — New silhouettes](option-d.png)        | Distinct hair, clothing shapes, posture, and expression                      | Earlier leader; superseded by E                                |
+| [E — Different wardrobes](option-e.png)    | Cardigan/poncho academic, short-bob/cropped hacker, waistcoat business       | **Selected baseline**                                          |
+| [F — Different construction](option-f.png) | Offset plates, hair ribbons, banner-like jacket panels, active/relaxed poses | Archived alternative; not selected                             |
 
 The PNG sheets are generated concept references. Final production geometry and exact
 colors will need their own review; they should not be treated as already rigged art.
@@ -47,7 +51,8 @@ colors will need their own review; they should not be treated as already rigged 
 
 The small [SVG feasibility studies](code-proof/) approximate D's standing silhouettes.
 They use flat filled polygons grouped by logical part, without raster images,
-scripts, shading, or outside assets. These are prototypes rather than final traces.
+scripts, shading, or outside assets. These are earlier D prototypes, not E assets.
+Recreate E as its own shapes on resumption; do not silently substitute these proofs.
 
 | Character | Dark               | Accent            | Light               |
 | --------- | ------------------ | ----------------- | ------------------- |
@@ -78,7 +83,30 @@ revisited after a visual direction is chosen. It is not shipped in this commit.
 
 ## Reopen and reproduce
 
-Open `index.html` directly from a local checkout; it uses local images and SVGs and
-makes no external requests. Inspect a proof's `polygon points` and `data-piece`
+Open `index.html` directly from a local checkout, or serve the folder locally if
+your browser blocks file URLs:
+
+```sh
+python -m http.server 8766 --bind 127.0.0.1 --directory research/visual-studies
+```
+
+Then open `http://127.0.0.1:8766`. The gallery uses local images and SVGs and makes no
+external requests. Inspect a proof's `polygon points` and `data-piece`
 groups to see what would move independently. The existing app, tools, model routing,
 history, and personality-training goal are unchanged by this design-only checkpoint.
+
+## Resume from E, after review
+
+1. Recreate E's standing and seated shapes as separate SVG/polygon parts, preserving
+   the chosen silhouettes and genders rather than redesigning them.
+2. Check proportions, fingers/gestures, negative-space gaps, and distinct palettes
+   at phone and desktop sizes. Confirm exact production swatches before rigging.
+3. Decide whether separate simplified icons are useful; none is selected yet.
+4. Resume the preserved motif animations after the static assets are reviewed.
+
+Academic remains neutral: a loose parchment coat/cardigan, olive book/glasses, and
+curious gestures. Hacker remains feminine: short asymmetric crimson bob, cropped
+angular jacket/collar, crossed-arm stance and sideways seated pose. Business remains
+masculine: navy waistcoat, icy sleeve pieces, blue tie, compact hair, and relaxed
+standing/seated poses. This is a visual baseline; model assignments, names, voice,
+and personality training are separate decisions.

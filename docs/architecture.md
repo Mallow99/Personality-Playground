@@ -46,6 +46,14 @@ The browser applies a theme based on the selected or snapshotted character. Shar
 separate visual studio. Pose and theme changes are presentation state, independent
 of endpoint readiness, trained weights, or operating-system window control.
 
+The selected replacement visual baseline is **E**, recorded in
+[`research/visual-studies/baseline.json`](../research/visual-studies/baseline.json).
+Its reference sheet establishes distinct character silhouettes and separate palettes;
+it has not replaced the runtime artwork. The earlier D SVG proofs demonstrate
+editable polygon construction only. E needs its own standing/seated SVG parts before
+rigging. Further design and animation work are paused for the owner's review;
+simplified icons remain unconfirmed.
+
 `ToolRunner` provides read-only project text and optional Brave search. An explicit
 inspector calls it directly. For model-assisted tools, `complete_with_tools` sends
 only the definitions enabled for that message, validates the requested names and

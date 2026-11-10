@@ -103,6 +103,16 @@
       .muted {
         font-size: 12px;
       }
+      details {
+        margin: 25px 0;
+        border-top: 1px solid #d9d3c8;
+        padding-top: 20px;
+      }
+      summary {
+        cursor: pointer;
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
       footer {
         border-top: 1px solid #d9d3c8;
         padding-top: 18px;
@@ -137,88 +147,96 @@
   </head>
   <body>
     <main>
-      <small>BEST FRIEND INITIATIVE / WORK IN PROGRESS</small>
-      <h1>Character reference studies.</h1>
+      <small>BEST FRIEND INITIATIVE / SELECTED VISUAL BASELINE</small>
+      <h1>E is the baseline.</h1>
       <p>
-        D is the current leading direction, followed by A. E and F explore
-        different outfits, poses, and construction. These are reference options;
-        no final character or icon is selected. Animation work is paused.
+        E's character identities, outfits, and standing/seated poses are locked
+        as the starting point. Further design and animation work are paused for
+        review. The sheet still needs to be recreated as production SVGs.
       </p>
       <nav>
-        <a href="#leading">Leading references</a
-        ><a href="#alternatives">New alternatives</a
+        <a href="#baseline">Baseline E</a><a href="#review">Review scope</a
+        ><a href="#archive">Earlier studies</a
         ><a href="#proofs">Code feasibility</a
         ><a href="README.md">Design brief</a>
       </nav>
-      <section id="leading">
-        <h2>Leading references</h2>
-        <div class="sheets">
-          <figure class="sheet">
-            <h3>D · Distinct silhouettes</h3>
-            <a href="option-d.png"
-              ><img
-                src="option-d.png"
-                alt="D: academic, feminine hacker, and masculine business pose references"
-            /></a>
-            <figcaption>
-              Current favorite. Different head shapes, posture, and clothing
-              cues.
-            </figcaption>
-          </figure>
-          <figure class="sheet">
-            <h3>A · Loose construction</h3>
-            <a href="option-a.png"
-              ><img
-                src="option-a.png"
-                alt="A: long loose geometric standing and seated poses"
-            /></a>
-            <figcaption>
-              Second preference. Airier gaps and long angular limbs.
-            </figcaption>
-          </figure>
-        </div>
+      <section id="baseline">
+        <h2>E · Different wardrobes</h2>
+        <figure class="sheet">
+          <a href="option-e.png"
+            ><img
+              src="option-e.png"
+              alt="Selected E baseline: neutral academic, feminine hacker, and masculine business character in standing and seated poses"
+          /></a>
+          <figcaption>
+            The selected reference sheet. Click to open it at full size.
+          </figcaption>
+        </figure>
       </section>
-      <section id="alternatives">
-        <h2>New alternatives</h2>
-        <div class="sheets">
-          <figure class="sheet">
-            <h3>E · Different wardrobes</h3>
-            <a href="option-e.png"
-              ><img
-                src="option-e.png"
-                alt="E: poncho/cardigan academic, cropped-jacket hacker, waistcoat business"
-            /></a>
-            <figcaption>
-              Changes to outfit silhouette, hair, stance, and seated gestures.
-            </figcaption>
-          </figure>
-          <figure class="sheet">
-            <h3>F · Different construction</h3>
-            <a href="option-f.png"
-              ><img
-                src="option-f.png"
-                alt="F: alternate polygon construction and more active poses"
-            /></a>
-            <figcaption>
-              Offset head plates, hair ribbons, and revised coat/jacket
-              structures.
-            </figcaption>
-          </figure>
-        </div>
-      </section>
-      <section id="proofs">
-        <h2>Can we build it in code?</h2>
+      <section id="review">
+        <h2>What E establishes</h2>
         <p>
-          These SVG studies use actual separate polygons. They demonstrate a
-          code path for D, not final production artwork. Each character has its
-          own three-color palette.
+          <strong>Academic:</strong> neutral presentation, loose parchment
+          coat/cardigan, olive book/glasses, curious gestures.<br /><strong
+            >Hacker:</strong
+          >
+          feminine presentation, short asymmetric crimson bob, cropped
+          jacket/collar, crossed-arm stance and sideways seat.<br /><strong
+            >Business:</strong
+          >
+          masculine presentation, navy waistcoat, icy sleeve pieces, blue tie,
+          compact hair and relaxed poses.
+        </p>
+        <p>
+          Keep loose angular pieces, readable gestures, and independent
+          approximately three-color palettes. Production SVGs, rigging, exact
+          color values, simplified icons, and motif animations remain follow-up
+          work. The app's existing runtime art is unchanged by this selection.
+        </p>
+      </section>
+      <details id="archive">
+        <summary>Earlier studies — retained, not selected</summary>
+        <div class="sheets">
+          <figure class="sheet">
+            <h3>D · Previous leader</h3>
+            <a href="option-d.png"
+              ><img src="option-d.png" alt="Earlier option D"
+            /></a>
+            <figcaption>Superseded by E.</figcaption>
+          </figure>
+          <figure class="sheet">
+            <h3>A · Earlier preference</h3>
+            <a href="option-a.png"
+              ><img src="option-a.png" alt="Earlier option A"
+            /></a>
+            <figcaption>Retained for comparison.</figcaption>
+          </figure>
+          <figure class="sheet">
+            <h3>F · Alternate construction</h3>
+            <a href="option-f.png"
+              ><img src="option-f.png" alt="Unselected option F"
+            /></a>
+            <figcaption>Not selected.</figcaption>
+          </figure>
+        </div>
+        <p class="muted">
+          <a href="option-b.png">B</a> · <a href="option-c.png">C</a> ·
+          <a href="icon-study.png">Unconfirmed icons</a> ·
+          <a href="first-pose-study.png">First pose sheet</a>
+        </p>
+      </details>
+      <details id="proofs">
+        <summary>Earlier D SVG feasibility studies — not E artwork</summary>
+        <p>
+          These use actual separate polygons and demonstrate a code path. E
+          still needs its own SVG conversion; do not substitute the D shapes.
         </p>
         <div class="proofs">
           <figure>
             <a href="code-proof/academic-d.svg"
               ><img
                 src="code-proof/academic-d.svg"
-                alt="Academic polygon SVG study"
+                alt="Academic D SVG feasibility study"
             /></a>
             <figcaption>Academic / oak, olive, parchment</figcaption>
           </figure>
@@ -226,7 +244,7 @@
             <a href="code-proof/hacker-d.svg"
               ><img
                 src="code-proof/hacker-d.svg"
-                alt="Hacker polygon SVG study"
+                alt="Hacker D SVG feasibility study"
             /></a>
             <figcaption>Hacker / charcoal, crimson, rose</figcaption>
           </figure>
@@ -234,18 +252,16 @@
             <a href="code-proof/business-d.svg"
               ><img
                 src="code-proof/business-d.svg"
-                alt="Business polygon SVG study"
+                alt="Business D SVG feasibility study"
             /></a>
             <figcaption>Business / navy, blue, ice</figcaption>
           </figure>
         </div>
-      </section>
+      </details>
       <footer>
-        Earlier studies: <a href="option-b.png">B</a> ·
-        <a href="option-c.png">C</a> ·
-        <a href="icon-study.png">Unconfirmed icons</a> ·
-        <a href="first-pose-study.png">First pose sheet</a>. Click any image for
-        its full-size reference.
+        Baseline recorded in <a href="baseline.json">baseline.json</a>.
+        Animation prototype preserved privately for later work. No model,
+        memory, tool, or training behavior changes here.
       </footer>
     </main>
   </body>

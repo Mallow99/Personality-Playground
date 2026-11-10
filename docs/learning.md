@@ -68,6 +68,20 @@ terms implies a model is present; that is why mock labeling matters.
 
 These are things to inspect on the PC later, not prerequisites for making requests now.
 
+## Read the character artwork as code
+
+The chosen [E sheet](../research/visual-studies/option-e.png) is a PNG: a grid of
+colored pixels. It records the design, but cannot expose an arm or book as a separate
+movable piece. The [selection record](../research/visual-studies/baseline.json) names
+the chosen sheet, role identities, and constraints; the app does not load this record.
+
+Open an [earlier D SVG proof](../research/visual-studies/code-proof/academic-d.svg)
+in a text editor. Each `polygon` has `points` listing its corners and a `fill` color.
+The `g` elements group related shapes; `data-piece` labels parts that future code
+could move together. These are inspectable building blocks, not a completed animation
+rig. E still needs its own geometry. That conversion and new animation work are
+paused for review; see the [design brief](../research/visual-studies/README.md).
+
 The machine-readable API reference is at `http://127.0.0.1:8000/openapi.json`. It
 describes route names, expected inputs, and response schemas. The app avoids loading
 an interactive documentation page from a third-party CDN so mock mode stays offline.

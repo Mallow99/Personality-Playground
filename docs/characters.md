@@ -6,6 +6,21 @@ snapshot. They can use different local endpoints and model aliases. The names an
 voices are provisional; they do not settle the research question or prove trained
 personality.
 
+## Selected visual baseline: E
+
+The owner selected **[E's reference sheet](../research/visual-studies/option-e.png)**
+as the baseline: a neutral academic with a loose coat/cardigan, a feminine hacker
+with a short asymmetric bob and cropped jacket, and a masculine business character
+with a waistcoat and compact hairstyle. Preserve the standing and seated poses,
+loose angular pieces, clear gestures, and separate approximately three-color palettes.
+
+See the [design brief](../research/visual-studies/README.md) and
+[selection record](../research/visual-studies/baseline.json). E still needs to be
+recreated as production SVGs and rigged. The older D SVG studies prove a polygon
+construction route; they do not implement E. Simplified icons are unconfirmed.
+Animation and further design work are paused for review. The table below describes
+the earlier app prototype, whose runtime artwork has not been replaced yet.
+
 | Profile     | Useful starting purpose                                            | Provisional voice                                | Implemented appearance                     |
 | ----------- | ------------------------------------------------------------------ | ------------------------------------------------ | ------------------------------------------ |
 | Academic    | Explain a concept, support study/research, make a manageable plan  | Warm, patient, curious; opinionated with reasons | Brown/green, rounded body, glasses         |
