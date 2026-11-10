@@ -1,5 +1,14 @@
 # Project working agreement
 
+**Latest owner decision: V5 visual quality is rejected as a significant regression
+across the board. Visual work is paused for a new-chat handoff. Read
+`docs/HANDOFF.md` first. Do not treat earlier completion reports/tests or candidate
+metadata as aesthetic approval. Do not regenerate, roll back or redeploy as part of
+the handoff. `build_avatar_catalog.py` automatically rebuilds rejected v5 through
+`build_design`; do not run it blindly. The two-eye head and brighter dark palettes
+were assistant proposals, not approved identity decisions. The inward-facing
+writing clipboard requirement remains valid even though this implementation failed.**
+
 This is both a local AI character application and a skill-building project for its
 owner. Explain consequential decisions plainly and point to the actual code. Keep
 `docs/learning.md` and the decision record in `docs/architecture.md` aligned with

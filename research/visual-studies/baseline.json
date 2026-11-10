@@ -43,7 +43,7 @@
         "blue",
         "ice"
       ],
-      "face_candidate": "poses-v5: consistent two-eye family; closed resting eyes and foreground-hand exceptions"
+      "face_candidate": "V5 rejected by owner for visual regression; no new face design approved"
     }
   },
   "constraints": [
@@ -64,6 +64,6 @@
   "pose_additions": "poses-v3/README.md",
   "body_guides": "../../config/rigs",
   "pose_plan": "../../config/pose-plan.json",
-  "visual_review": "E remains the baseline. V5 Business two-eye/inward-writing candidate is awaiting owner aesthetic review; 128 runtime normal/dark pairs are implemented.",
+  "visual_review": "Latest v5 rejected for significant quality loss across the board. Visual work paused for handoff; cause unconfirmed. Read docs/HANDOFF.md before any rebuild. E remains the original selected shape/wardrobe reference, not approval of later exports.",
   "pose_review": "../../config/pose-review.json"
 }

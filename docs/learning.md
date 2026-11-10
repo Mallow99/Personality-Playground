@@ -418,3 +418,22 @@ placement when motion is paused and resumed.
 This is a design candidate. Numeric checks establish material opacity, contrast,
 asset loading and control behavior; they do not establish the owner's aesthetic
 approval or a universal body rig.
+
+## Paused after the v5 quality regression
+
+The owner rejected the latest version as a significant quality drop across the
+board and requested a new-chat handoff. No single cause has been established.
+The brighter palettes and shared two-eye heads were proposed fixes, not accepted
+character-design decisions. They should not become requirements by repetition.
+
+The failure highlights a limit of the review method: a complete material plane,
+correct prop orientation, readable contrast and working controls can coexist with
+worse artwork. Quantizing every PNG color and fitting a shared head into draft
+guide bounds can preserve mechanical invariants while changing expression,
+proportions and character identity. These are hypotheses to compare against the
+source and earlier checkpoints, not a diagnosis proved by the tests.
+
+The current state is preserved for comparison. No further art, rollback or preview
+deployment was made for this handoff. `docs/HANDOFF.md` records the owner's actual
+requirements, known checkpoints, likely investigation points and useful functional
+fixes that should not be discarded blindly.

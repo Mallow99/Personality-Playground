@@ -1,4 +1,8 @@
-# Avatar completion review
+# Avatar completion review — visual conclusions superseded
+
+**The owner rejected the latest v5 artwork for a significant quality regression.
+Earlier technical passes and visual-inspection claims below do not establish
+acceptance. Work is paused; [read the current handoff](HANDOFF.md) first.**
 
 The owner approved all 54 suggested poses and identified the missing-layer defect.
 This pass addresses that defect without replacing authored poses with a generic rig.

@@ -1,4 +1,11 @@
-# Business v5 candidate: consistent eyes and inward writing boards
+# Rejected Business v5 experiment — retained for diagnosis
+
+**Latest decision: the owner rejected this version for a significant quality drop
+across the board. Work is paused. The cause is unconfirmed. Read
+[the handoff](../../../docs/HANDOFF.md); do not automatically reproduce or deploy
+this experiment. The inward-facing writing requirement remains valid.**
+
+The historical recipe below records what the rejected experiment did.
 
 The owner identified unresolved dark-background readability, lost Business quality,
 hollow-looking clipboard cells and inconsistent one-eye/cyclops face construction.
@@ -26,7 +33,7 @@ There are no pale edge glows. The three colors in each dark palette remain disti
 from the other characters' colors. The owner can compare the candidate in the
 runtime demo and all-pose review; aesthetic approval is still open.
 
-Rebuild and check:
+Historical reproduction commands (not the next action; they recreate rejected art):
 
 ```sh
 uv run --locked python scripts/build_avatar_clean.py

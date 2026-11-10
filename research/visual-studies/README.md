@@ -1,3 +1,7 @@
+**Current status: v5 was rejected by the owner for a significant quality drop.
+Visual work is paused. [Read the handoff](../../docs/HANDOFF.md) before continuing.
+Earlier candidate/review statements below are historical and are not approval.**
+
 Latest runtime work: [Business v5 candidate](poses-v5/README.md) uses a consistent
 two-eye family and writing boards whose paper faces the character. The normal/dark
 variants are implemented; aesthetic review remains open. The records below are
