@@ -55,7 +55,7 @@
   "production_svg_status": "74_pose_traces; whole-shape grouping proof on Academic standing/seated; 72 legacy maps",
   "existing_svg_proofs": "earlier D feasibility studies only",
   "icons": "face_and_motif_proofs_pending_review",
-  "animation": "rotation-aware versus direct morph; silent talking cues",
+  "animation": "Limited reading and seated Business hand movement; intact authored endpoints elsewhere",
   "proof_pack": "../../bfi/static/e-preview/index.html",
   "previous_proof_status": "hand-built SVG poses and first transitions rejected by owner",
   "pose_sources": "poses-v2/sources.json",
@@ -63,6 +63,6 @@
   "pose_additions": "poses-v3/README.md",
   "body_guides": "../../config/rigs",
   "pose_plan": "../../config/pose-plan.json",
-  "visual_review": "Whole-shape pair, talking cues, transitions and 54 unapproved pose concepts await review",
+  "visual_review": "All 54 suggestions explicitly approved; 128 entries integrated. Two pose-local layered motion examples; historical maps archived.",
   "pose_review": "../../config/pose-review.json"
 }

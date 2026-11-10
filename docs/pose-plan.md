@@ -1,6 +1,6 @@
 # Suggested poses for sign-off
 
-54 proposed pose concepts: 24 shared, then 10 for each individual. Each now has a generated concept image and a reason; none is approved automatically. Existing 74 poses remain available, including teasing, flirty, glamour, silly, and sultry in the main library.
+54 proposed pose concepts: 24 shared, then 10 for each individual. Each now has a generated concept image and a reason; all 54 were explicitly approved by the owner. Existing 74 poses remain available, including teasing, flirty, glamour, silly, and sultry in the main library.
 
 Reply with codes (for example, "keep S01–S04 and A01; revise H03") or use the live checklist and download your decisions. Shared means one concept adapted separately for each character. First four per group are recommended starting points, not approvals.
 

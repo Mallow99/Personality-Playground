@@ -645,7 +645,8 @@
       ],
       "description": "Seated",
       "source": "traced-pose",
-      "motion": "none"
+      "motion": "seated-hand",
+      "layered_src": "/static/e-preview/assets/business-seated-layered.svg"
     },
     {
       "id": "business/seated-2",
@@ -915,6 +916,7 @@
       ],
       "description": "Lets a character direct your attention to a diagram or control on the left while keeping the explanation visually grounded.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/academic-1.png",
@@ -941,6 +943,7 @@
       ],
       "description": "Provides the opposite pointing direction so the character can indicate content without awkwardly mirroring every feature of their design.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/engineering-1.png",
@@ -967,6 +970,7 @@
       ],
       "description": "Introduces an option or idea with an inviting gesture, useful when the character is offering a choice rather than telling you what to do.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-1.png",
@@ -993,6 +997,7 @@
       ],
       "description": "Gives arrivals and goodbyes a compact, friendly signal that can work in a corner without taking over the screen.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/academic-1.png",
@@ -1019,6 +1024,7 @@
       ],
       "description": "Adds a restrained acknowledgment or thank-you, giving the character a quieter response than a wave or celebration.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/engineering-1.png",
@@ -1045,6 +1051,7 @@
       ],
       "description": "Shows active attention during your explanation, making listening feel different from waiting for a task to finish.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-1.png",
@@ -1071,6 +1078,7 @@
       ],
       "description": "Makes curiosity visible when something unfamiliar catches the character's attention, supporting interests beyond their assigned specialty.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/academic-1.png",
@@ -1097,6 +1105,7 @@
       ],
       "description": "Offers a relaxed, thoughtful resting state for longer conversations without implying that the character is busy typing or searching.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/engineering-1.png",
@@ -1122,6 +1131,7 @@
       ],
       "description": "Marks the moment an explanation or solution clicks, useful for revealing a connection rather than celebrating the entire task.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-1.png",
@@ -1147,6 +1157,7 @@
       ],
       "description": "Gives respectful doubt a recognizable expression, so disagreement can feel like considered judgment rather than an error state.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/academic-1.png",
@@ -1172,6 +1183,7 @@
       ],
       "description": "Separates a genuine unexpected result from confusion, adding a clear reaction when the character encounters something surprising.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/engineering-1.png",
@@ -1197,6 +1209,7 @@
       ],
       "description": "Supports encouragement after a setback with an open, nonjudgmental gesture instead of making every supportive response look worried.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-1.png",
@@ -1222,6 +1235,7 @@
       ],
       "description": "Helps acknowledge and correct a real mistake, with a modest gesture that avoids making the apology more dramatic than the problem.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/academic-1.png",
@@ -1247,6 +1261,7 @@
       ],
       "description": "Provides a quiet release of tension after something works, giving success a less energetic alternative to cheering.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/engineering-1.png",
@@ -1272,6 +1287,7 @@
       ],
       "description": "Acknowledges a disappointing result without implying that the character has given up, preserving a useful distinction from frustration.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-1.png",
@@ -1297,6 +1313,7 @@
       ],
       "description": "Adds a human-readable awkward or bashful reaction for playful conversation, broadening emotional range beyond task status.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/academic-1.png",
@@ -1322,6 +1339,7 @@
       ],
       "description": "Signals readiness to tackle a difficult problem, giving commitment a clear silhouette without making the character look angry.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/engineering-1.png",
@@ -1347,6 +1365,7 @@
       ],
       "description": "Gives teasing observations a confident visual tone, useful for short playful moments when that personality fits the conversation.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-1.png",
@@ -1374,6 +1393,7 @@
       ],
       "description": "Provides a relaxed, amused reaction to a joke or familiar situation, showing warmth without turning every laugh into a large gesture.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/academic-2.png",
@@ -1399,6 +1419,7 @@
       ],
       "description": "Supports dry humor with minimal movement, especially when a deliberately understated reaction would land better than an animated one.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/engineering-2.png",
@@ -1424,6 +1445,7 @@
       ],
       "description": "Adds an unmistakable comic reaction to an obvious silly mistake; it should remain contextual rather than a default response to the user.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-2.png",
@@ -1450,6 +1472,7 @@
       ],
       "description": "Shows that the character has noticed something worth reconsidering, useful for a humorous second look or a sudden change of interpretation.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/academic-2.png",
@@ -1475,6 +1498,7 @@
       ],
       "description": "Gives break reminders and transitions out of focused work a distinct full-body silhouette, adding variety to idle behavior.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/engineering-2.png",
@@ -1501,6 +1525,7 @@
       ],
       "description": "Provides a gentle winding-down pose for late-night conversation or a goodnight scene, distinct from being upset or disengaged.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-2.png",
@@ -1526,6 +1551,7 @@
       ],
       "description": "Supports prose and D&D narration with a broad storytelling gesture, letting the Academic act as an imaginative collaborator as well as a teacher.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/academic-2.png",
@@ -1552,6 +1578,7 @@
       ],
       "description": "Shows an explanation being constructed step by step, matching the goal of teaching through visible diagrams rather than only presenting finished answers.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/academic-2.png",
@@ -1577,6 +1604,7 @@
       ],
       "description": "Distinguishes close reading and critique from drafting new prose, useful when discussing a quotation, revising wording, or examining an argument.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/academic-2.png",
@@ -1602,6 +1630,7 @@
       ],
       "description": "Makes the Academic's curious streak visible during exploration, giving discovery a different feel from confidently explaining known material.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/academic-2.png",
@@ -1628,6 +1657,7 @@
       ],
       "description": "Communicates comparison between sources or interpretations, useful when evidence conflicts and the answer requires weighing alternatives.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/academic-3.png",
@@ -1654,6 +1684,7 @@
       ],
       "description": "Adds a recognizable tabletop action for D&D sessions, making a roll or playful uncertainty feel different from ordinary academic work.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/academic-3.png",
@@ -1680,6 +1711,7 @@
       ],
       "description": "Provides a clear game-master identity for running a scene, with room for expressive hands while the screen keeps the silhouette simple.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/academic-3.png",
@@ -1706,6 +1738,7 @@
       ],
       "description": "Supports collaborative worldbuilding, geography, and campaign planning by showing the character actively shaping a setting.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/academic-3.png",
@@ -1732,6 +1765,7 @@
       ],
       "description": "Separates delivering a passage from silently studying it, useful for narrated prose, a dramatic quotation, or an explanation built around a text.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/academic-3.png",
@@ -1758,6 +1792,7 @@
       ],
       "description": "Shows the pause involved in choosing words, giving writing and revision a reflective state rather than continuous fake typing.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/academic-3.png",
@@ -1784,6 +1819,7 @@
       ],
       "description": "Makes before-and-after code comparison visible, helping distinguish reviewing a proposed change from writing or debugging code.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/engineering-2.png",
@@ -1810,6 +1846,7 @@
       ],
       "description": "Signals evidence gathering across diagnostic output, useful when the Hacker is tracing a problem instead of already claiming to know the cause.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/engineering-2.png",
@@ -1836,6 +1873,7 @@
       ],
       "description": "Provides a calm waiting posture for builds or tests, so a long operation does not require constant energetic typing animations.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/engineering-2.png",
@@ -1862,6 +1900,7 @@
       ],
       "description": "Offers a focused, compact working pose for local terminal tasks, giving hands-on execution a clear visual state.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/engineering-2.png",
@@ -1887,6 +1926,7 @@
       ],
       "description": "Shows a deliberate pause to inspect program state, helping explain why debugging sometimes involves stopping and examining one detail.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/engineering-3.png",
@@ -1913,6 +1953,7 @@
       ],
       "description": "Marks a verified test result with a small victory, giving success a specific meaning rather than celebrating before checks finish.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/engineering-3.png",
@@ -1939,6 +1980,7 @@
       ],
       "description": "Distinguishes reproducing a bug in a controlled local example from general investigation, reinforcing a careful evidence-first workflow.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/engineering-3.png",
@@ -1965,6 +2007,7 @@
       ],
       "description": "Turns an abstract dependency problem into a simple visual metaphor, supporting explanations of tangled modules or package relationships.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/engineering-3.png",
@@ -1991,6 +2034,7 @@
       ],
       "description": "Shows architectural thinking before implementation, giving system design a distinct pose from keyboard work or reading logs.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/engineering-3.png",
@@ -2017,6 +2061,7 @@
       ],
       "description": "Adds a deliberately silly flourish after finishing, giving her confidence and humor a place beyond purely functional coding states.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/engineering-3.png",
@@ -2043,6 +2088,7 @@
       ],
       "description": "Supports the Business character's design role by showing evaluation of a layout or proposal, broadening his identity beyond spreadsheets.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-2.png",
@@ -2068,6 +2114,7 @@
       ],
       "description": "Makes a handoff to another specialist visible, useful for explaining delegation and who is currently responsible for the next step.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-2.png",
@@ -2094,6 +2141,7 @@
       ],
       "description": "Distinguishes presenting a finished report from drafting one, creating a clear moment for the morning-results or task-completion experience.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-2.png",
@@ -2119,6 +2167,7 @@
       ],
       "description": "Shows two competing options being weighed, useful for business decisions where priorities and tradeoffs matter more than a single confident answer.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-2.png",
@@ -2144,6 +2193,7 @@
       ],
       "description": "Makes reprioritization visible with one task moving ahead of others, matching the need to keep the next steps manageable.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-3.png",
@@ -2170,6 +2220,7 @@
       ],
       "description": "Provides an attentive, restrained listening pose for planning conversations, showing that straightforwardness can still include patience.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-3.png",
@@ -2196,6 +2247,7 @@
       ],
       "description": "Signals deliberate review of costs and constraints, distinguishing financial judgment from generic research or report writing.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-3.png",
@@ -2222,6 +2274,7 @@
       ],
       "description": "Represents checking the progress of a long-running task, useful for an eventual overnight-work interface without pretending that monitoring is the work itself.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-3.png",
@@ -2248,6 +2301,7 @@
       ],
       "description": "Makes a consequential concern visible before action, supporting clear communication about uncertainty, dependencies, or decisions needing the owner's input.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-3.png",
@@ -2274,6 +2328,7 @@
       ],
       "description": "Gives a completed session a recognizable ending, pairing a relaxed posture with the point where the character can summarize and hand control back.",
       "source": "generated-concept",
+      "approval": "approved",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-3.png",

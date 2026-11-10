@@ -20,7 +20,7 @@ const el = (tag, text) => {
 function status() {
   const counts = options.map(
     (s) =>
-      `${plan.proposals.filter((p) => (decisions[p.code]?.decision || "unreviewed") === s).length} ${s}`,
+      `${plan.proposals.filter((p) => (decisions[p.code]?.decision || (p.status === "approved" ? "keep" : "unreviewed")) === s).length} ${s}`,
   );
   $("review-status").textContent =
     counts.join(" · ") +
@@ -100,7 +100,7 @@ function render() {
           "small",
           p.role === "shared"
             ? `Shared pose · illustrated by ${p.image.illustratedBy === "engineering" ? "Hacker" : p.image.illustratedBy}; adaptable to all three.`
-            : "Generated concept · awaiting your review",
+            : "Owner-approved pose · revisions welcome",
         ),
       );
       const select = el("select");
@@ -117,7 +117,9 @@ function render() {
       }
       select.value = options.includes(decisions[p.code]?.decision)
         ? decisions[p.code].decision
-        : "unreviewed";
+        : p.status === "approved"
+          ? "keep"
+          : "unreviewed";
       const note = el("input");
       note.type = "text";
       note.maxLength = 500;
@@ -153,7 +155,9 @@ $("review-download").addEventListener("click", () => {
         column: p.image.column,
         sha256: p.image.sha256,
       },
-      decision: decisions[p.code]?.decision || "unreviewed",
+      decision:
+        decisions[p.code]?.decision ||
+        (p.status === "approved" ? "keep" : "unreviewed"),
       note: decisions[p.code]?.note || "",
     })),
   };

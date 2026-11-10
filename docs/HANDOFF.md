@@ -7,11 +7,12 @@ The repository now includes working handler/avatar integration. Start with
 ## Current result
 
 - Chat uses the selected E artwork and matching Academic/Hacker/Business colors.
-- 128 catalog entries: 74 authored/traced poses and 54 transparent concept cutouts.
+- 128 catalog entries: 74 authored/traced poses and 54 owner-approved transparent cutouts.
 - Model-callable `avatar_catalog` and `avatar_set`, scoped to the speaking character,
   with actual tool results retained in reply provenance.
 - Shared state across the in-app avatar and `/overlay` browser surface.
-- A pose-local reading animation; other poses remain intact images with reply cues.
+- Pose-local reading and seated Business hand movement, with restored rear surfaces.
+  The other 126 entries remain intact images with reply cues.
 - An optional PySide6 native overlay launcher, with topmost/transparency/click-through
   code. Native Windows behavior still needs execution and visual verification.
 - A static mobile-friendly presentation preview in `e-preview/runtime-demo.html`.
@@ -22,8 +23,8 @@ The repository now includes working handler/avatar integration. Start with
 Keep set poses as the visual foundation. Avoid arbitrary anatomical slicing or
 assuming one generic rig will preserve all poses. Full poseable-model research is
 on the board under Later. Existing images remain useful as endpoint artwork and
-future pose references. The 54 new ideas have images and specific reasons, but
-review choices remain separate from making their art available in a prototype.
+future pose references. The 54 new ideas have images and specific reasons.
+The owner explicitly approved all 54; config/pose-approvals.json records this.
 
 The owner wants to understand the work and be able to explain it. Keep consequential
 changes connected to code, validation and limitations in the learning/architecture
@@ -39,7 +40,7 @@ use still need separate implementation/evidence.
    transparency, topmost behavior, drag, dock, scale, tray recovery and click-through.
 3. Connect a real local model. Leave avatar tools off if its function template is
    unsupported; then enable them and inspect actual tool traces.
-4. Review which concept poses to retain and improve. Add local hand/face/prop pieces
+4. Inspect the approved library and suggest revisions where useful. Add local hand/face/prop pieces
    only where the pose supports them; do not launch another full-library remapping.
 
 ## Verification commands

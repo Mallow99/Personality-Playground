@@ -51,7 +51,7 @@ handle transparency/topmost flags differently.
 - Global hide/show is shared with other surfaces. The overlay's show button and
   native tray can restore the avatar.
 - Motion respects reduced-motion preferences. Static cutouts do not require
-  continuous per-frame animation; only the reading example has local transforms.
+  continuous per-frame animation; the reading and Business seated examples have local transforms.
 - The reply indicator is a timed text cue, not audio-driven speech or lip sync.
   Its timeout is estimated from reply length. Captions are plain text, up to 400
   characters; the complete reply remains in chat.
@@ -59,8 +59,9 @@ handle transparency/topmost flags differently.
 ## The 128-pose catalog
 
 `bfi/static/avatar/catalog.json` registers 74 existing SVG poses and 54 new
-transparent PNG cutouts. The new images remain labeled `generated-concept`; making
-them available in this prototype does not retroactively mark review choices approved.
+transparent PNG cutouts. The 54 additions retain `generated-concept` as their source
+type and separately record `approval: approved`, following the owner’s explicit
+sign-off in `config/pose-approvals.json`. Origin and approval are different facts.
 Shared concepts still have only the character that demonstrated each one. Other
 characters do not silently borrow the wrong character's image.
 
@@ -79,8 +80,10 @@ owner-private static presentation demo at `e-preview/runtime-demo.html`. That pa
 uses scripted cues and never connects to the local handler. The live local app and
 `/overlay` use the real API instead.
 
-Only `academic/reading` currently supports pose-local head/book/hand motion. Other
-art stays intact with a reply indicator. The rough anatomical region maps from the
+`academic/reading` supports pose-local head/book/hand motion, and `business/seated`
+supports a small resting-hand rotation. Both restore the rear material hidden by
+the original hands. Reveal controls expose those surfaces for inspection. The other
+126 catalog entries stay intact with a reply indicator. The rough anatomical region maps from the
 studio are not used as the default chat renderer. A fully poseable character model
 remains deferred research; authored poses are the foundation.
 

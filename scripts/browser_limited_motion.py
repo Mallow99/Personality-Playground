@@ -56,6 +56,14 @@ with tempfile.TemporaryDirectory(prefix="bfi-limited-motion-") as folder:
                 assert page.locator("#play").is_disabled()
                 page.locator(".art-panel").screenshot(path=str(OUT / f"original-{width}.png"))
                 page.locator("#original").click()
+            assert page.locator("#restored-book-under-hands").count() == 1
+            page.locator("#reveal").click()
+            assert (
+                page.locator("#reading-left-hand").evaluate("el=>getComputedStyle(el).visibility")
+                == "hidden"
+            )
+            page.locator(".art-panel").screenshot(path=str(OUT / "rear-layer.png"))
+            page.locator("#reveal").click()
             page.locator("#zoom").click()
             assert page.locator("#limited-actor svg").get_attribute("viewBox") == "155 105 205 275"
             page.emulate_media(reduced_motion="reduce")

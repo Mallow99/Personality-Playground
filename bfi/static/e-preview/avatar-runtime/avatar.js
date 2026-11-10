@@ -42,32 +42,39 @@ export class AvatarView {
     this.start = performance.now();
     const tick = (now) => {
       if (this.svg && this.state?.motion && !this.media.matches) {
-        const t = ((now - this.start) / 8000) % 1,
-          wave = Math.sin(Math.PI * 2 * t),
-          lift = (1 - Math.cos(Math.PI * 2 * t)) / 2;
-        const glance =
-          t > 0.15 && t < 0.75
-            ? Math.sin((Math.PI * (t - 0.15)) / 0.6) ** 2
-            : 0;
-        const grip =
-          t > 0.35 && t < 0.8
-            ? Math.sin((Math.PI * (t - 0.35)) / 0.45) ** 2
-            : 0;
-        this.svg
-          .querySelector("#reading-head")
-          .setAttribute("transform", `rotate(${-3.2 * glance} 247 232)`);
-        this.svg
-          .querySelector("#held-book")
-          .setAttribute(
-            "transform",
-            `translate(0 ${-0.9 * lift}) rotate(${0.65 * wave} 258 330)`,
-          );
-        this.svg
-          .querySelector("#reading-left-hand")
-          .setAttribute("transform", `rotate(${1.8 * grip} 315 325)`);
-        this.svg
-          .querySelector("#reading-right-hand")
-          .setAttribute("transform", `rotate(${-1.1 * grip} 192 326)`);
+        if (this.motionKind === "seated-hand") {
+          const amount = Math.sin((Math.PI * 2 * (now - this.start)) / 8000);
+          this.svg
+            .querySelector("#seated-moving-hand")
+            .setAttribute("transform", `rotate(${-4 * amount} 246 267)`);
+        } else {
+          const t = ((now - this.start) / 8000) % 1,
+            wave = Math.sin(Math.PI * 2 * t),
+            lift = (1 - Math.cos(Math.PI * 2 * t)) / 2;
+          const glance =
+            t > 0.15 && t < 0.75
+              ? Math.sin((Math.PI * (t - 0.15)) / 0.6) ** 2
+              : 0;
+          const grip =
+            t > 0.35 && t < 0.8
+              ? Math.sin((Math.PI * (t - 0.35)) / 0.45) ** 2
+              : 0;
+          this.svg
+            .querySelector("#reading-head")
+            .setAttribute("transform", `rotate(${-3.2 * glance} 247 232)`);
+          this.svg
+            .querySelector("#held-book")
+            .setAttribute(
+              "transform",
+              `translate(0 ${-0.9 * lift}) rotate(${0.65 * wave} 258 330)`,
+            );
+          this.svg
+            .querySelector("#reading-left-hand")
+            .setAttribute("transform", `rotate(${1.8 * grip} 315 325)`);
+          this.svg
+            .querySelector("#reading-right-hand")
+            .setAttribute("transform", `rotate(${-1.1 * grip} 192 326)`);
+        }
       } else if (this.svg) {
         this.svg
           .querySelectorAll("[transform]")
@@ -119,9 +126,10 @@ export class AvatarView {
     this.key = pose.id;
     const ticket = ++this.ticket;
     this.svg = null;
-    if (pose.motion === "reading") {
+    this.motionKind = pose.motion;
+    if (pose.motion === "reading" || pose.motion === "seated-hand") {
       const path = this.resolveURL(
-        "/static/e-preview/assets/reading-limited.svg",
+        pose.layered_src || "/static/e-preview/assets/reading-limited.svg",
       );
       if (!cache.has(path))
         cache.set(

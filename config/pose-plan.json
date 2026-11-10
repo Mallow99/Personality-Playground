@@ -3,7 +3,7 @@
   "rules": [
     "Poses can be reused across application states.",
     "All existing expressive poses appear in the main library.",
-    "Generated concepts remain unapproved until the owner reviews them.",
+    "The owner explicitly approved the 54 illustrated suggestions.",
     "Whole-shape mapping proof currently covers Academic standing/seated only."
   ],
   "stateBindings": {

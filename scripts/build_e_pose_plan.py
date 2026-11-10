@@ -351,10 +351,12 @@ for prefix, role, rows in [
             )
         )
 # Generation was explicitly requested for all concepts; approval remains a separate decision.
+approvals = set(json.loads((ROOT / "config/pose-approvals.json").read_text())["codes"])
 reasons = json.loads((ROOT / "config/pose-review-reasons.json").read_text())
 image_manifest = ROOT / "research/visual-studies/pose-proposals/images.json"
 images = json.loads(image_manifest.read_text()) if image_manifest.exists() else {}
 for proposal in proposals:
+    proposal["status"] = "approved" if proposal["code"] in approvals else "unreviewed"
     proposal["useCase"] = proposal["reason"]
     proposal["reason"] = reasons[proposal["code"]]
     if proposal["code"] in images:
@@ -375,7 +377,7 @@ plan = dict(
     rules=[
         "Poses can be reused across application states.",
         "All existing expressive poses appear in the main library.",
-        "Generated concepts remain unapproved until the owner reviews them.",
+        "The owner explicitly approved the 54 illustrated suggestions.",
         "Whole-shape mapping proof currently covers Academic standing/seated only.",
     ],
     stateBindings={
@@ -405,7 +407,7 @@ lines = [
     "",
     (
         "54 proposed pose concepts: 24 shared, then 10 for each individual. Each now has a "
-        "generated concept image and a reason; none is approved automatically. "
+        "generated concept image and a reason; all 54 were explicitly approved by the owner. "
         "Existing 74 poses remain available, including "
         "teasing, flirty, glamour, silly, and sultry in the main library."
     ),
@@ -453,4 +455,4 @@ lines += [
     "",
 ]
 (ROOT / "docs/pose-plan.md").write_text("\n".join(lines))
-print(f"Built {len(proposals)} unreviewed pose suggestions.")
+print(f"Built {len(proposals)} owner-approved pose suggestions.")

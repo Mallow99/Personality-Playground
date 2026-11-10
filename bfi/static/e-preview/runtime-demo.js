@@ -17,12 +17,15 @@ let state = {
     caption: "Here when you need me.",
   },
   timer;
-function render() {
+async function render() {
   document.body.dataset.theme = state.profile;
   $("name").textContent = catalog.roles[state.profile].name;
   $("avatar").hidden = !state.visible;
   $("show").textContent = state.visible ? "Hide avatar" : "Show avatar";
-  view.set(state, catalog);
+  const changed = view.key !== state.pose_id;
+  if (changed) $("reveal").setAttribute("aria-pressed", "false");
+  await view.set(state, catalog);
+  $("reveal").disabled = !view.svg;
   $("command").textContent = JSON.stringify(
     {
       name: "avatar_set",
@@ -46,7 +49,10 @@ function role(id) {
     const o = document.createElement("option");
     o.value = p.id;
     o.textContent =
-      p.label + (p.source === "generated-concept" ? " · concept" : "");
+      p.label +
+      (p.source === "generated-concept" && p.approval !== "approved"
+        ? " · concept"
+        : "");
     $("pose").append(o);
   }
   document
@@ -101,4 +107,27 @@ render();
 addEventListener("pagehide", () => {
   clearTimeout(timer);
   view.destroy();
+});
+
+const requested = new URLSearchParams(location.search),
+  requestedPose = catalog.poses.find((p) => p.id === requested.get("pose"));
+if (requestedPose) {
+  role(requestedPose.role);
+  state.pose_id = requestedPose.id;
+  $("pose").value = state.pose_id;
+  render();
+}
+
+$("reveal").addEventListener("click", () => {
+  const hidden = $("reveal").getAttribute("aria-pressed") !== "true";
+  $("reveal").setAttribute("aria-pressed", String(hidden));
+  if (view.svg)
+    for (const id of [
+      "reading-left-hand",
+      "reading-right-hand",
+      "seated-moving-hand",
+    ]) {
+      const hand = view.svg.querySelector("#" + id);
+      if (hand) hand.style.visibility = hidden ? "hidden" : "visible";
+    }
 });

@@ -1,100 +1,55 @@
-# E pose and whole-shape studio, revision 4
+# E avatar preview and approved pose library
 
-The owner-private hosted demo is linked in the project conversation and private
-board. Locally open `/static/e-preview/index.html` with BFI running. Models, voice,
-and computer control are independent of this visual proof.
+`index.html` opens `runtime-demo.html`, the scripted presentation of the same E
+renderer used by the local handler. It has 128 catalog entries: 74 existing SVG
+poses and 54 owner-approved transparent cutouts. The owner-private hosted URL is
+kept in the conversation and private board. No model, chat history, or local API
+is exposed by this static preview.
 
-All **74 poses** share the main library: 24 Academic, 26 Hacker, 24 Business.
-Teasing, flirty, glamour, silly, and sultry are mixed in with other everyday poses.
-The separate adult-studies section/filter is removed. No original artwork is deleted.
+- **Handler presentation:** `runtime-demo.html` — switch roles, poses, matching
+  themes, text reply cues, visibility and motion. All replies here are scripted.
+- **Approved proposals:** `pose-library.html` — all 54 images with reasons and
+  source references. The approved baseline defaults to Keep. Existing saved
+  revision choices take precedence; exporting decisions remains local.
+- **Reading layer inspection:** `limited-motion.html` — compare the original,
+  pause/scrub local movement, and reveal complete book material behind both hands.
+- **Business layer inspection:** `runtime-demo.html?pose=business/seated` — turn
+  motion off and use Reveal rear layer to inspect the thigh beneath the hand.
+- **Historical mapping lab:** `mapping-lab.html` — retained for learning and source
+  comparisons. Its approximate region maps and morphs are not the production
+  renderer and do not establish complete rear surfaces.
 
-## Whole-shape mapping proof
+## What moves
 
-Use **Compare Academic standing / seated**, then enable **Show mapped pieces**
-and **Isolate selected part**. These two poses group complete connected source
-forms into the face, hands, sleeves, book, torso, and continuous legs. A long leg
-stays one piece instead of receiving arbitrary thigh/shin cuts. Source components
-are named individually with `data-shape` and grouped under stable `data-part` IDs.
+Academic reading groups whole source contours into head, book and hands, with the
+body fixed. Authored olive page material lies beneath both hands. The seated
+Business example has a whole hand above restored navy thigh material; only that
+hand rotates slightly. These are pose-local layers, not a universal skeleton.
+The other 126 entries remain intact sprites. Reduced motion disables local motion.
+Talking uses a silent timed reply cue, not voice playback or lip sync.
 
-Enable **Drag pieces** to move a body group. Also enable **Drag single form** to
-move one geometric form independently. Reset restores offsets. Form offsets reset
-on pose changes; form IDs belong to a particular source pose. Body-group IDs match
-across poses. Map download preserves both kinds of offsets.
+The repair deliberately changes the reading footprint where missing material was
+exposed: source silhouette overlap is 99.50%. Silhouette similarity alone did not
+catch the earlier defect. The builder also hides front hands and checks pixels on
+the rear surfaces. Originals and source hashes remain available.
 
-These two whole-shape maps are the focused replacement proof. The remaining 72
-poses retain earlier region maps and are labeled **LEGACY** in the inspector.
-Tiny source-texture fragments still use estimated ownership. Where a hand/arm or
-both legs form a continuous silhouette, source pixels contain no hidden authoring
-layers. A deliberate authored joint would be required to separate that silhouette.
-Do not mistake source fidelity for perfect anatomy or claim all mappings are fixed.
-
-## Pose changes and talking
-
-**Turn and reshape** moves the matched contours around their centers and turns
-them toward the target orientation, with remaining shape interpolation. Compare it
-with **Direct shape morph** and **Still swap**. Full target paths are restored at
-rest; intermediate ring correspondence remains approximate. Character switching
-continues to use its separate motif transition. Motion off/reduced motion disables
-animated effects.
-
-Talking has three selectable cue studies: voice marks beside the head, small
-head/hand gestures, or both. A readable stage indicator remains useful without
-animation. These are silent state cues, not audio-driven lip-sync or speech timing.
-The original face geometry remains intact. Browser playback recordings are embedded.
-
-## Pose approval
-
-**Review 54 suggested poses** contains 24 shared concepts and 10 for each
-individual, with purpose and silhouette notes. Every proposal begins unreviewed;
-recommendations are not approvals. Keep/Revise/Skip and notes save in this browser.
-**Download my decisions** exports a JSON file to share. Nothing is sent to a model,
-GitHub, or Notion automatically. See [the written checklist](../../../docs/pose-plan.md).
-
-## Build and inspect
-
-`config/rigs/academic.json` identifies the whole-shape proof and explicit major
-component assignments. The builder groups complete color components without region
-intersection in this mode. Legacy maps still use joint regions and hand overrides.
-`.rig.json` records source components, grouping, guides, geometry, and source hashes;
-`.rig.svg` is the assembled export. The new pair retains over 99.99% silhouette
-occupancy overlap with unsplit vectors at source resolution.
+## Rebuild and verify
 
 ```sh
-uv run --with numpy --with cairosvg --with shapely python scripts/build_e_rigs.py academic/standing academic/seated
 python scripts/build_e_pose_plan.py
+uv run --with numpy --with cairosvg --with shapely python scripts/build_limited_motion.py
+uv run --with numpy --with pillow python scripts/build_avatar_catalog.py
 node scripts/check_e_preview.mjs
-uv run --locked --group browser python scripts/browser_e_preview.py
+uv run --locked --group browser python scripts/browser_e_review.py
+uv run --locked --group browser python scripts/browser_limited_motion.py
+uv run --locked --group browser python scripts/browser_avatar.py
 ```
 
-The 17 registered anatomical/prop IDs are a compatibility interface, not a demand
-to cut every drawing into 17 pieces. Original generated sheets, direct traces,
-source crops, normalized references, exact boundary alternatives, and wipe views
-remain inspectable. Ordinary chat artwork remains the earlier prototype.
+The catalog builder copies the actual renderer, catalog and cutouts into
+`avatar-runtime/` so the private static demo can run without the local backend.
+For real handler tools, shared overlay state and native launch instructions, read
+`docs/avatar-runtime.md`. For the completion boundary, see `docs/COMPLETION-REVIEW.md`.
 
-## Illustrated proposal review
-
-All 54 suggestions now have a generated concept image and a specific reason.
-The shared 24 ideas rotate the demonstrating character; the 30 specialist ideas
-use their own character. Tap a picture for an enlarged view and rationale, or open
-its original six-cell sheet. CSS displays one cell from a preserved source PNG;
-these images have not been traced or added to the active 74-pose animation library.
-
-`pose-review-reasons.json` and the proposal source manifests feed the plan builder.
-Exported decisions include the sheet hash and cell so the reviewed picture remains
-identifiable. Saved choices retain the same review codes. Validate image coverage,
-hashes, modal behavior, and phone layout with `scripts/check_e_preview.mjs` and
-`uv run --locked --group browser python scripts/browser_e_review.py`.
-
-## One-pose limited movement example
-
-Open `limited-motion.html` for Academic reading: a small head tilt, book movement,
-and local hand-grip adjustments while the torso, sleeves and legs remain fixed.
-Compare the literal original SVG, pause/scrub the eight-second loop, adjust its
-strength, or use the close-up. The page also includes an actual browser recording.
-Reduced motion disables autoplay. This does not require a universal character rig
-and does not replace the existing poses.
-
-Rebuild with `uv run --with numpy --with cairosvg --with shapely python scripts/build_limited_motion.py`.
-Run `uv run --locked --group browser python scripts/browser_limited_motion.py` to
-check the body stays fixed, whole hands, controls, three layouts, reduced motion,
-and record `assets/reading-limited.mp4`.
+The source art, prior experiments, 74 SVGs, whole-shape maps and earlier recordings
+are retained. Shared proposal ideas have one demonstrating character each; they do
+not silently become three different character images.

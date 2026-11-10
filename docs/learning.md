@@ -298,3 +298,18 @@ using a tray toggle. Its dependency is separate from ordinary chat. The wrapper 
 provided for PC testing, not claimed as verified Windows behavior. See
 [the handoff](HANDOFF.md) and [runtime guide](avatar-runtime.md) for exact commands,
 state limits, evidence and next checks.
+
+## Why a plausible assembled image was not enough
+
+I grouped only the visible pixels of each object. That left the hand's footprint
+missing from the book or thigh behind it. A silhouette test at rest could pass while
+moving the front part revealed a hole. The repair adds explicit rear material and
+checks it with the front hands hidden. Rear page reconstruction changes some small
+negative-space edges; that is an intentional geometry repair, not an exact tracing
+claim. The source image stays available for comparison.
+
+Business seated now has a restored rear thigh and one local hand rotation. Reading
+has rear pages beneath both hands. Other poses remain static whole sprites; the
+application does not animate their rough experimental anatomical cuts. The old lab
+is archived rather than presented as the finished entry point. The full catalog is
+checked for image decoding, in addition to handler/overlay behavior and approval data.

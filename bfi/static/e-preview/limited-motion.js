@@ -152,7 +152,7 @@ try {
   originalSvg.removeAttribute("height");
   $("limited-actor").append(svg);
   $("original-actor").append(originalSvg);
-  for (const id of ["play", "original", "restart", "zoom"])
+  for (const id of ["play", "original", "restart", "zoom", "reveal"])
     $(id).disabled = false;
   apply();
   reduced();
@@ -161,3 +161,16 @@ try {
   $("error").hidden = false;
   $("error").textContent = error.message;
 }
+
+$("reveal").addEventListener("click", () => {
+  pause();
+  if (original) $("original").click();
+  pause();
+  const hidden = $("reveal").getAttribute("aria-pressed") !== "true";
+  $("reveal").setAttribute("aria-pressed", String(hidden));
+  for (const id of ["reading-left-hand", "reading-right-hand"])
+    svg.querySelector("#" + id).style.visibility = hidden
+      ? "hidden"
+      : "visible";
+  $("reveal").textContent = hidden ? "Restore hands" : "Reveal behind hands";
+});

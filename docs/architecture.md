@@ -191,3 +191,18 @@ Authored set poses remain the foundation; only the reading pose currently has lo
 head/book/hand transforms. A full poseable model stays a separate Later research
 track. One active global avatar and serialized generation remain explicit limits;
 this increment does not establish multiple loaded models or autonomous work.
+
+## Occlusion repair and completion review
+
+Visible contours are not complete anatomical layers. Moving a hand away can expose
+an empty hand-shaped hole in the object or leg behind it. The reading asset now
+restores rear page material beneath both hands; Business seated restores the crossed
+thigh beneath its resting hand. These are authored rear surfaces, drawn behind the
+front hands. The reveal control and browser checks inspect the rear independently.
+The remaining 126 catalog entries stay intact sprites and do not expose missing
+surfaces through guessed body movement. They are not represented as fully layered rigs.
+
+All 54 suggestions were explicitly approved by the owner. The approval registry feeds
+the catalog and review baseline while retaining local revision notes. The primary
+preview now opens the handler; the old anatomical mapping lab is an archive. New
+animation needs a complete rear surface, not just silhouette-overlap measurements.

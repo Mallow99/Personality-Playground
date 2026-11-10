@@ -33,7 +33,10 @@ function syncAvatarRole(profileId) {
     const option = document.createElement("option");
     option.value = pose.id;
     option.textContent =
-      pose.label + (pose.source === "generated-concept" ? " · concept" : "");
+      pose.label +
+      (pose.source === "generated-concept" && pose.approval !== "approved"
+        ? " · concept"
+        : "");
     $("avatar-pose").append(option);
   }
   $("avatar-pose").value = `${role}/standing`;

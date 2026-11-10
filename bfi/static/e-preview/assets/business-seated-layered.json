@@ -1,0 +1,13 @@
+{
+  "source": "poses/business/seated.svg",
+  "source_sha256": "ed1d1e18b29151a5630603f4295a362b65b17e47d2784add469522d5068178fa",
+  "front": "seated-moving-hand",
+  "rear": "seated-rear-thigh",
+  "restored_area": 448.315,
+  "fixed": [
+    "torso",
+    "arms",
+    "legs"
+  ],
+  "motion": "small hand rotation only"
+}

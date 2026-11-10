@@ -52,11 +52,11 @@ with tempfile.TemporaryDirectory(prefix="bfi-review-images-") as folder:
                 page.screenshot(path=str(OUT / f"expanded-{width}.png"))
                 page.keyboard.press("Escape")
                 assert not page.locator("#review-image-dialog").is_visible()
-            page.get_by_label("Decision for S01", exact=True).select_option("keep")
+            page.get_by_label("Decision for S01", exact=True).select_option("skip")
             page.get_by_label("Notes for S01", exact=True).fill("Keep the clear pointing hand.")
             page.reload()
             page.wait_for_selector(".review-row")
-            assert page.get_by_label("Decision for S01", exact=True).input_value() == "keep"
+            assert page.get_by_label("Decision for S01", exact=True).input_value() == "skip"
             assert "pointing hand" in page.get_by_label("Notes for S01", exact=True).input_value()
             page.locator("#review-filter").select_option("business")
             assert page.locator(".review-row").count() == 10
@@ -70,7 +70,7 @@ with tempfile.TemporaryDirectory(prefix="bfi-review-images-") as folder:
             data = json.loads(Path(event.value.path()).read_text())["decisions"]
             assert len(data) == 54
             assert all(item["illustration"]["sha256"] for item in data)
-            assert sum(item["decision"] == "keep" for item in data) == 1
+            assert sum(item["decision"] == "skip" for item in data) == 1
             assert not errors, errors
             browser.close()
             print(

@@ -163,7 +163,10 @@ class AvatarHub:
             rows = [p for score, p in sorted(scored, key=lambda item: -item[0]) if score]
         return {
             "poses": [
-                {k: p[k] for k in ("id", "label", "description", "source", "motion")}
+                {
+                    **{k: p[k] for k in ("id", "label", "description", "source", "motion")},
+                    "approval": p.get("approval", "existing"),
+                }
                 for p in rows[:limit]
             ],
             "total_for_character": len([p for p in self.poses.values() if p["role"] == role]),

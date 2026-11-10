@@ -22,7 +22,7 @@ with tempfile.TemporaryDirectory(prefix="bfi-e-browser-") as folder:
             page = context.new_page()
             errors = []
             page.on("pageerror", lambda error: errors.append(str(error)))
-            page.goto(url + "/static/e-preview/index.html")
+            page.goto(url + "/static/e-preview/mapping-lab.html")
             page.wait_for_selector("#actor svg")
             page.locator("#motion").uncheck()
             manifest = json.loads(

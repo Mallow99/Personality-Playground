@@ -17,7 +17,7 @@ import {
   cursorHotspot,
 } from "../bfi/static/e-preview/components.js";
 const root = new URL("../bfi/static/e-preview/", import.meta.url);
-const markup = await readFile(new URL("index.html", root), "utf8");
+const markup = await readFile(new URL("mapping-lab.html", root), "utf8");
 for (const m of markup.matchAll(/(?:src|href)="([^"#]+)"/g)) {
   if (m[1].startsWith("http")) continue;
   await readFile(new URL(m[1], root));
@@ -120,7 +120,7 @@ const review = JSON.parse(
 );
 assert.equal(review.proposals.length, 54);
 assert.equal(new Set(review.proposals.map((p) => p.code)).size, 54);
-assert(review.proposals.every((p) => p.status === "unreviewed"));
+assert(review.proposals.every((p) => p.status === "approved"));
 const cells = new Set(),
   sheets = new Set();
 for (const p of review.proposals) {

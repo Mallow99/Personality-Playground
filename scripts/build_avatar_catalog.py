@@ -29,6 +29,10 @@ for role, poses in manifest["characters"].items():
                 motion="reading" if role == "academic" and pose["id"] == "reading" else "none",
             )
         )
+for entry in entries:
+    if entry["id"] == "business/seated":
+        entry["motion"] = "seated-hand"
+        entry["layered_src"] = "/static/e-preview/assets/business-seated-layered.svg"
 for p in proposals:
     meta = p["image"]
     source = STATIC / "e-preview" / meta["sheet"]
@@ -53,6 +57,7 @@ for p in proposals:
             tags=[p["code"], *p["id"].split("-")],
             description=p["reason"],
             source="generated-concept",
+            approval=p["status"],
             motion="none",
             provenance=dict(
                 sheet=meta["sheet"],

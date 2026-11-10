@@ -90,3 +90,10 @@ matching colors. Native Qt overlay code is optional and Windows behavior is not 
 verified. Read docs/HANDOFF.md and docs/avatar-runtime.md before continuing. Do not
 expose the local backend through the static demo or claim voice/OS control/model
 training from this integration. Rebuild the demo renderer copy with build_avatar_catalog.py.
+
+Latest completion correction: all 54 suggestions are now explicitly owner-approved
+(config/pose-approvals.json). Visible shape grouping alone is NOT full layering.
+Restore occluded rear material before moving an overlapping front part. Reading's
+pages and Business seated's thigh have authored underlayers and reveal controls.
+Other catalog poses stay intact/static; do not claim all 128 are fully rigged.
+The primary E preview routes to the handler; mapping-lab.html is a historical archive.

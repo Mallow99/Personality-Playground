@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en" data-theme="academic">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Approved pose library · BFI</title>
+    <link rel="stylesheet" href="studio.css" />
+    <link rel="stylesheet" href="rig.css" />
+    <script type="module" src="pose-review.js"></script>
+  </head>
+  <body>
+    <main>
+      <p>
+        <a href="runtime-demo.html">← Avatar handler</a> ·
+        <a href="limited-motion.html">Layered movement example</a>
+      </p>
+      <details id="pose-approval" open>
+        <summary>54 approved poses</summary>
+        <p>
+          All 54 illustrated suggestions are approved by the owner. You can
+          still choose Keep, Revise, or Skip; decisions save in this browser.
+          Download them to share your sign-off. Each suggestion now has a
+          generated concept image and a reason. Tap an image to enlarge it.
+          Shared poses rotate the demonstrating character; they remain
+          applicable to all three. Approval is recorded in the repository. Local
+          revision notes remain yours.
+        </p>
+        <div class="review-tools">
+          <label
+            >Show
+            <select id="review-filter">
+              <option value="all">All suggestions</option>
+              <option value="shared">Shared</option>
+              <option value="academic">Academic</option>
+              <option value="engineering">Hacker</option>
+              <option value="business">Business</option>
+            </select></label
+          ><button id="review-download">Download my decisions</button>
+        </div>
+        <p id="review-status" role="status"></p>
+        <div id="review-list"></div>
+      </details>
+      <dialog id="review-image-dialog" aria-labelledby="review-image-title">
+        <button id="review-image-close" class="review-image-close">
+          Close illustration
+        </button>
+        <h2 id="review-image-title"></h2>
+        <div id="review-image-frame"></div>
+        <p id="review-image-reason"></p>
+        <a
+          id="review-image-sheet"
+          href="assets/proposals/academic-1.png"
+          target="_blank"
+          rel="noopener"
+          >Open original sheet ↗</a
+        >
+      </dialog>
+    </main>
+  </body>
+</html>

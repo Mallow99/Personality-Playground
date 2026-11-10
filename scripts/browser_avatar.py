@@ -103,11 +103,33 @@ with tempfile.TemporaryDirectory(prefix="bfi-avatar-") as folder:
                 page.set_viewport_size({"width": width, "height": height})
                 assert page.evaluate("document.documentElement.scrollWidth<=innerWidth")
             page.screenshot(path=str(OUT / "static-demo-phone.png"))
+            catalog = page.request.get(url + "/api/avatar/catalog").json()
+            loaded = page.evaluate(
+                """async poses=>{
+              const failures=[];
+              for(const pose of poses){const image=new Image();image.src=pose.src;
+                try{await image.decode();if(!image.naturalWidth)failures.push(pose.id);}
+                catch{failures.push(pose.id);}}
+              return failures;
+            }""",
+                catalog["poses"],
+            )
+            assert loaded == [], loaded
+            page.goto(url + "/static/e-preview/runtime-demo.html?pose=business/seated")
+            page.wait_for_selector("#restored-thigh-under-hand")
+            page.locator("#motion").uncheck()
+            page.locator("#reveal").click()
+            assert (
+                page.locator("#seated-moving-hand").evaluate("el=>getComputedStyle(el).visibility")
+                == "hidden"
+            )
+            page.locator(".desktop").screenshot(path=str(OUT / "business-rear-thigh.png"))
             assert not errors, errors
             browser.close()
             print(
                 "PASS: 3 character themes, concept cutouts, mock reply cues, two-window sync, "
-                "reading motion, owner controls, 3 layouts and caption text isolation."
+                "two layered motion examples, 128 image decodes, owner controls, 3 layouts "
+                "and caption text isolation."
             )
     finally:
         process.terminate()

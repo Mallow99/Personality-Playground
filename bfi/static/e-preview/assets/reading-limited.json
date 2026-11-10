@@ -1,8 +1,17 @@
 {
   "source": "poses/academic/reading.svg",
   "source_sha256": "d30ca77875ad1da3c6e6c66fc274430c4ed8d47d27c634601a9fe5bf93de0931",
-  "assembly_iou": 0.9999520510177171,
-  "method": "whole connected source contours; no anatomical region slicing",
+  "assembly_iou": 0.995037812820574,
+  "method": "whole contours plus authored rear-page geometry beneath hands",
+  "occlusion": {
+    "front": [
+      "reading-left-hand",
+      "reading-right-hand"
+    ],
+    "rear": "book-pages",
+    "restored": "restored-book-under-hands",
+    "underlap_area": 1820.836
+  },
   "source_form_counts": {
     "body": 544,
     "head": 306,

@@ -10,7 +10,7 @@
       "reason": "Lets a character direct your attention to a diagram or control on the left while keeping the explanation visually grounded.",
       "visual": "One clear extended arm; other hand relaxed.",
       "recommended": true,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "Guide an explanation",
       "image": {
         "sheet": "assets/proposals/academic-1.png",
@@ -31,7 +31,7 @@
       "reason": "Provides the opposite pointing direction so the character can indicate content without awkwardly mirroring every feature of their design.",
       "visual": "A separately authored opposite gesture, keeping anatomical identity.",
       "recommended": true,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "Direct attention elsewhere",
       "image": {
         "sheet": "assets/proposals/engineering-1.png",
@@ -52,7 +52,7 @@
       "reason": "Introduces an option or idea with an inviting gesture, useful when the character is offering a choice rather than telling you what to do.",
       "visual": "One open palm, upright relaxed posture.",
       "recommended": true,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "Introduce an option",
       "image": {
         "sheet": "assets/proposals/business-1.png",
@@ -73,7 +73,7 @@
       "reason": "Gives arrivals and goodbyes a compact, friendly signal that can work in a corner without taking over the screen.",
       "visual": "Compact raised hand with readable fingers.",
       "recommended": true,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "Casual greeting or goodbye",
       "image": {
         "sheet": "assets/proposals/academic-1.png",
@@ -94,7 +94,7 @@
       "reason": "Adds a restrained acknowledgment or thank-you, giving the character a quieter response than a wave or celebration.",
       "visual": "Slight torso tilt, hands kept clear.",
       "recommended": false,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "Acknowledge a request or thank someone",
       "image": {
         "sheet": "assets/proposals/engineering-1.png",
@@ -115,7 +115,7 @@
       "reason": "Shows active attention during your explanation, making listening feel different from waiting for a task to finish.",
       "visual": "Forward tilt and open shoulders, no work prop.",
       "recommended": false,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "Attentive conversation",
       "image": {
         "sheet": "assets/proposals/business-1.png",
@@ -136,7 +136,7 @@
       "reason": "Makes curiosity visible when something unfamiliar catches the character's attention, supporting interests beyond their assigned specialty.",
       "visual": "Head tilted toward a small floating detail.",
       "recommended": false,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "Notice an unfamiliar detail",
       "image": {
         "sheet": "assets/proposals/academic-1.png",
@@ -157,7 +157,7 @@
       "reason": "Offers a relaxed, thoughtful resting state for longer conversations without implying that the character is busy typing or searching.",
       "visual": "Seated elbow support with face and hand separated.",
       "recommended": false,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "Quiet contemplation",
       "image": {
         "sheet": "assets/proposals/engineering-1.png",
@@ -178,7 +178,7 @@
       "reason": "Marks the moment an explanation or solution clicks, useful for revealing a connection rather than celebrating the entire task.",
       "visual": "Raised finger, lifted head, sudden confident posture.",
       "recommended": false,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "Connect two ideas",
       "image": {
         "sheet": "assets/proposals/business-1.png",
@@ -199,7 +199,7 @@
       "reason": "Gives respectful doubt a recognizable expression, so disagreement can feel like considered judgment rather than an error state.",
       "visual": "One raised brow/tilted head; asymmetrical arm gesture.",
       "recommended": false,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "Disagree or question evidence",
       "image": {
         "sheet": "assets/proposals/academic-1.png",
@@ -220,7 +220,7 @@
       "reason": "Separates a genuine unexpected result from confusion, adding a clear reaction when the character encounters something surprising.",
       "visual": "Hands slightly spread and shoulders lifted.",
       "recommended": false,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "Unexpected result",
       "image": {
         "sheet": "assets/proposals/engineering-1.png",
@@ -241,7 +241,7 @@
       "reason": "Supports encouragement after a setback with an open, nonjudgmental gesture instead of making every supportive response look worried.",
       "visual": "Open hand offered forward, soft lean.",
       "recommended": false,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "Encourage without lecturing",
       "image": {
         "sheet": "assets/proposals/business-1.png",
@@ -262,7 +262,7 @@
       "reason": "Helps acknowledge and correct a real mistake, with a modest gesture that avoids making the apology more dramatic than the problem.",
       "visual": "Small downward head tilt and corrective hand gesture.",
       "recommended": false,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "Acknowledge a mistake",
       "image": {
         "sheet": "assets/proposals/academic-1.png",
@@ -283,7 +283,7 @@
       "reason": "Provides a quiet release of tension after something works, giving success a less energetic alternative to cheering.",
       "visual": "Lowered shoulders, hand against chest or side.",
       "recommended": false,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "A quiet successful outcome",
       "image": {
         "sheet": "assets/proposals/engineering-1.png",
@@ -304,7 +304,7 @@
       "reason": "Acknowledges a disappointing result without implying that the character has given up, preserving a useful distinction from frustration.",
       "visual": "Slumped but attentive posture, no exaggerated despair.",
       "recommended": false,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "A setback worth acknowledging",
       "image": {
         "sheet": "assets/proposals/business-1.png",
@@ -325,7 +325,7 @@
       "reason": "Adds a human-readable awkward or bashful reaction for playful conversation, broadening emotional range beyond task status.",
       "visual": "Turned head and one hand near cheek.",
       "recommended": false,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "An awkward or funny moment",
       "image": {
         "sheet": "assets/proposals/academic-1.png",
@@ -346,7 +346,7 @@
       "reason": "Signals readiness to tackle a difficult problem, giving commitment a clear silhouette without making the character look angry.",
       "visual": "Firm stance and forward-facing shoulders.",
       "recommended": false,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "Commit to a difficult task",
       "image": {
         "sheet": "assets/proposals/engineering-1.png",
@@ -367,7 +367,7 @@
       "reason": "Gives teasing observations a confident visual tone, useful for short playful moments when that personality fits the conversation.",
       "visual": "Hip shift, tilted head, one small presenting gesture.",
       "recommended": false,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "A sharp but playful observation",
       "image": {
         "sheet": "assets/proposals/business-1.png",
@@ -388,7 +388,7 @@
       "reason": "Provides a relaxed, amused reaction to a joke or familiar situation, showing warmth without turning every laugh into a large gesture.",
       "visual": "Relaxed crossed arms; tilted head.",
       "recommended": false,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "A dry joke lands",
       "image": {
         "sheet": "assets/proposals/academic-2.png",
@@ -409,7 +409,7 @@
       "reason": "Supports dry humor with minimal movement, especially when a deliberately understated reaction would land better than an animated one.",
       "visual": "Still upright silhouette and one minimal hand gesture.",
       "recommended": false,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "Understated humor",
       "image": {
         "sheet": "assets/proposals/engineering-2.png",
@@ -430,7 +430,7 @@
       "reason": "Adds an unmistakable comic reaction to an obvious silly mistake; it should remain contextual rather than a default response to the user.",
       "visual": "One hand to brow; face shape remains legible.",
       "recommended": false,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "React to a silly mistake",
       "image": {
         "sheet": "assets/proposals/business-2.png",
@@ -451,7 +451,7 @@
       "reason": "Shows that the character has noticed something worth reconsidering, useful for a humorous second look or a sudden change of interpretation.",
       "visual": "Over-shoulder head turn with paused body.",
       "recommended": false,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "React, then reconsider",
       "image": {
         "sheet": "assets/proposals/academic-2.png",
@@ -472,7 +472,7 @@
       "reason": "Gives break reminders and transitions out of focused work a distinct full-body silhouette, adding variety to idle behavior.",
       "visual": "Arms overhead, long angular silhouette.",
       "recommended": false,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "Take a break",
       "image": {
         "sheet": "assets/proposals/engineering-2.png",
@@ -493,7 +493,7 @@
       "reason": "Provides a gentle winding-down pose for late-night conversation or a goodnight scene, distinct from being upset or disengaged.",
       "visual": "Seated with lowered head, supported by one hand.",
       "recommended": false,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "Wind down after a long session",
       "image": {
         "sheet": "assets/proposals/business-2.png",
@@ -514,7 +514,7 @@
       "reason": "Supports prose and D&D narration with a broad storytelling gesture, letting the Academic act as an imaginative collaborator as well as a teacher.",
       "visual": "Book aside; broad narrative gesture.",
       "recommended": true,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "Narrate prose or a D&D scene",
       "image": {
         "sheet": "assets/proposals/academic-2.png",
@@ -535,7 +535,7 @@
       "reason": "Shows an explanation being constructed step by step, matching the goal of teaching through visible diagrams rather than only presenting finished answers.",
       "visual": "One hand places a shape, the other links it.",
       "recommended": true,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "Explain visually",
       "image": {
         "sheet": "assets/proposals/academic-2.png",
@@ -556,7 +556,7 @@
       "reason": "Distinguishes close reading and critique from drafting new prose, useful when discussing a quotation, revising wording, or examining an argument.",
       "visual": "Book or page flat, writing hand distinct.",
       "recommended": true,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "Close reading",
       "image": {
         "sheet": "assets/proposals/academic-2.png",
@@ -577,7 +577,7 @@
       "reason": "Makes the Academic's curious streak visible during exploration, giving discovery a different feel from confidently explaining known material.",
       "visual": "Simple experiment prop and attentive lean.",
       "recommended": true,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "Follow a curious question",
       "image": {
         "sheet": "assets/proposals/academic-2.png",
@@ -598,7 +598,7 @@
       "reason": "Communicates comparison between sources or interpretations, useful when evidence conflicts and the answer requires weighing alternatives.",
       "visual": "Two books/pages held at different heights.",
       "recommended": false,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "Weigh conflicting explanations",
       "image": {
         "sheet": "assets/proposals/academic-3.png",
@@ -619,7 +619,7 @@
       "reason": "Adds a recognizable tabletop action for D&D sessions, making a roll or playful uncertainty feel different from ordinary academic work.",
       "visual": "Hand just released, a few geometric dice.",
       "recommended": false,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "Resolve a tabletop action",
       "image": {
         "sheet": "assets/proposals/academic-3.png",
@@ -640,7 +640,7 @@
       "reason": "Provides a clear game-master identity for running a scene, with room for expressive hands while the screen keeps the silhouette simple.",
       "visual": "Head and hands visible above a simple screen.",
       "recommended": false,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "Run a tabletop scene",
       "image": {
         "sheet": "assets/proposals/academic-3.png",
@@ -661,7 +661,7 @@
       "reason": "Supports collaborative worldbuilding, geography, and campaign planning by showing the character actively shaping a setting.",
       "visual": "Seated over a map, pointing and drawing hands separated.",
       "recommended": false,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "Plan a setting",
       "image": {
         "sheet": "assets/proposals/academic-3.png",
@@ -682,7 +682,7 @@
       "reason": "Separates delivering a passage from silently studying it, useful for narrated prose, a dramatic quotation, or an explanation built around a text.",
       "visual": "Book in one hand, conversational free hand.",
       "recommended": false,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "Deliver prose or explain a quotation",
       "image": {
         "sheet": "assets/proposals/academic-3.png",
@@ -703,7 +703,7 @@
       "reason": "Shows the pause involved in choosing words, giving writing and revision a reflective state rather than continuous fake typing.",
       "visual": "Pen suspended above a page, tilted head.",
       "recommended": false,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "Consider wording",
       "image": {
         "sheet": "assets/proposals/academic-3.png",
@@ -724,7 +724,7 @@
       "reason": "Makes before-and-after code comparison visible, helping distinguish reviewing a proposed change from writing or debugging code.",
       "visual": "Two small panels, a precise pointing gesture.",
       "recommended": true,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "Compare a proposed code change",
       "image": {
         "sheet": "assets/proposals/engineering-2.png",
@@ -745,7 +745,7 @@
       "reason": "Signals evidence gathering across diagnostic output, useful when the Hacker is tracing a problem instead of already claiming to know the cause.",
       "visual": "Lean toward a narrow stack of log panels.",
       "recommended": true,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "Follow diagnostic evidence",
       "image": {
         "sheet": "assets/proposals/engineering-2.png",
@@ -766,7 +766,7 @@
       "reason": "Provides a calm waiting posture for builds or tests, so a long operation does not require constant energetic typing animations.",
       "visual": "Sideways seated, one foot moving lightly.",
       "recommended": true,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "A quiet working pause",
       "image": {
         "sheet": "assets/proposals/engineering-2.png",
@@ -787,7 +787,7 @@
       "reason": "Offers a focused, compact working pose for local terminal tasks, giving hands-on execution a clear visual state.",
       "visual": "Compact forward lean with both hands at keyboard.",
       "recommended": true,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "Inspect a local terminal session",
       "image": {
         "sheet": "assets/proposals/engineering-2.png",
@@ -808,7 +808,7 @@
       "reason": "Shows a deliberate pause to inspect program state, helping explain why debugging sometimes involves stopping and examining one detail.",
       "visual": "One hand on keyboard, other indicates a single variable.",
       "recommended": false,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "Explain paused program state",
       "image": {
         "sheet": "assets/proposals/engineering-3.png",
@@ -829,7 +829,7 @@
       "reason": "Marks a verified test result with a small victory, giving success a specific meaning rather than celebrating before checks finish.",
       "visual": "Brief fist lift or satisfied lean back.",
       "recommended": false,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "A small earned victory",
       "image": {
         "sheet": "assets/proposals/engineering-3.png",
@@ -850,7 +850,7 @@
       "reason": "Distinguishes reproducing a bug in a controlled local example from general investigation, reinforcing a careful evidence-first workflow.",
       "visual": "One small test window, concentrated asymmetric pose.",
       "recommended": false,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "Check a controlled example",
       "image": {
         "sheet": "assets/proposals/engineering-3.png",
@@ -871,7 +871,7 @@
       "reason": "Turns an abstract dependency problem into a simple visual metaphor, supporting explanations of tangled modules or package relationships.",
       "visual": "Holds a knot of links, separates one connection.",
       "recommended": false,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "Make a confusing system readable",
       "image": {
         "sheet": "assets/proposals/engineering-3.png",
@@ -892,7 +892,7 @@
       "reason": "Shows architectural thinking before implementation, giving system design a distinct pose from keyboard work or reading logs.",
       "visual": "Side-on at a board with a few boxes and arrows.",
       "recommended": false,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "Design architecture",
       "image": {
         "sheet": "assets/proposals/engineering-3.png",
@@ -913,7 +913,7 @@
       "reason": "Adds a deliberately silly flourish after finishing, giving her confidence and humor a place beyond purely functional coding states.",
       "visual": "An angular keyboard balanced in one hand.",
       "recommended": false,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "Silly confidence after finishing",
       "image": {
         "sheet": "assets/proposals/engineering-3.png",
@@ -934,7 +934,7 @@
       "reason": "Supports the Business character's design role by showing evaluation of a layout or proposal, broadening his identity beyond spreadsheets.",
       "visual": "Standing beside a layout, one measured gesture.",
       "recommended": true,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "Evaluate a layout or proposal",
       "image": {
         "sheet": "assets/proposals/business-2.png",
@@ -955,7 +955,7 @@
       "reason": "Makes a handoff to another specialist visible, useful for explaining delegation and who is currently responsible for the next step.",
       "visual": "Hands a task card toward another character.",
       "recommended": true,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "Make a clear handoff",
       "image": {
         "sheet": "assets/proposals/business-2.png",
@@ -976,7 +976,7 @@
       "reason": "Distinguishes presenting a finished report from drafting one, creating a clear moment for the morning-results or task-completion experience.",
       "visual": "Closed report offered forward.",
       "recommended": true,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "Present a finished result",
       "image": {
         "sheet": "assets/proposals/business-2.png",
@@ -997,7 +997,7 @@
       "reason": "Shows two competing options being weighed, useful for business decisions where priorities and tradeoffs matter more than a single confident answer.",
       "visual": "Two open hands at unequal heights.",
       "recommended": true,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "Consider competing options",
       "image": {
         "sheet": "assets/proposals/business-2.png",
@@ -1018,7 +1018,7 @@
       "reason": "Makes reprioritization visible with one task moving ahead of others, matching the need to keep the next steps manageable.",
       "visual": "Moves one task card above a short stack.",
       "recommended": false,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "Choose what matters next",
       "image": {
         "sheet": "assets/proposals/business-3.png",
@@ -1039,7 +1039,7 @@
       "reason": "Provides an attentive, restrained listening pose for planning conversations, showing that straightforwardness can still include patience.",
       "visual": "Seated, hands calmly together, slight forward lean.",
       "recommended": false,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "Receive context before deciding",
       "image": {
         "sheet": "assets/proposals/business-3.png",
@@ -1060,7 +1060,7 @@
       "reason": "Signals deliberate review of costs and constraints, distinguishing financial judgment from generic research or report writing.",
       "visual": "Spreadsheet beside a small calculator; pointing hand clear.",
       "recommended": false,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "Review money and constraints",
       "image": {
         "sheet": "assets/proposals/business-3.png",
@@ -1081,7 +1081,7 @@
       "reason": "Represents checking the progress of a long-running task, useful for an eventual overnight-work interface without pretending that monitoring is the work itself.",
       "visual": "Standing at a compact progress board.",
       "recommended": false,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "Check progress during agentic work",
       "image": {
         "sheet": "assets/proposals/business-3.png",
@@ -1102,7 +1102,7 @@
       "reason": "Makes a consequential concern visible before action, supporting clear communication about uncertainty, dependencies, or decisions needing the owner's input.",
       "visual": "One hand holds a caution card, other steadies report.",
       "recommended": false,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "Flag a consequential tradeoff",
       "image": {
         "sheet": "assets/proposals/business-3.png",
@@ -1123,7 +1123,7 @@
       "reason": "Gives a completed session a recognizable ending, pairing a relaxed posture with the point where the character can summarize and hand control back.",
       "visual": "Hand on closing lid, relaxed shoulders.",
       "recommended": false,
-      "status": "unreviewed",
+      "status": "approved",
       "useCase": "Wrap up and report completion",
       "image": {
         "sheet": "assets/proposals/business-3.png",
