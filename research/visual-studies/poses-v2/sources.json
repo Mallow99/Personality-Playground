@@ -1,0 +1,195 @@
+{
+  "version": 2,
+  "source": "image-generated from selected E before tracing",
+  "sheets": [
+    {
+      "role": "academic",
+      "batch": "a",
+      "file": "academic-a.png",
+      "grid": [
+        3,
+        2
+      ],
+      "art_bottom": [
+        470,
+        454
+      ],
+      "poses": [
+        "standing",
+        "standing-2",
+        "seated",
+        "seated-2",
+        "tired",
+        "lying-down"
+      ]
+    },
+    {
+      "role": "engineering",
+      "batch": "a",
+      "file": "engineering-a.png",
+      "grid": [
+        3,
+        2
+      ],
+      "art_bottom": [
+        470,
+        454
+      ],
+      "poses": [
+        "standing",
+        "standing-2",
+        "seated",
+        "seated-2",
+        "tired",
+        "lying-down"
+      ]
+    },
+    {
+      "role": "business",
+      "batch": "a",
+      "file": "business-a.png",
+      "grid": [
+        3,
+        2
+      ],
+      "art_bottom": [
+        470,
+        454
+      ],
+      "poses": [
+        "standing",
+        "standing-2",
+        "seated",
+        "seated-2",
+        "tired",
+        "lying-down"
+      ]
+    },
+    {
+      "role": "academic",
+      "batch": "b",
+      "file": "academic-b.png",
+      "grid": [
+        3,
+        2
+      ],
+      "art_bottom": [
+        470,
+        454
+      ],
+      "poses": [
+        "thinking",
+        "working",
+        "laughing",
+        "frustrated",
+        "exasperated",
+        "reading"
+      ]
+    },
+    {
+      "role": "engineering",
+      "batch": "b",
+      "file": "engineering-b.png",
+      "grid": [
+        3,
+        2
+      ],
+      "art_bottom": [
+        470,
+        454
+      ],
+      "poses": [
+        "thinking",
+        "working",
+        "laughing",
+        "frustrated",
+        "exasperated",
+        "security-review"
+      ]
+    },
+    {
+      "role": "business",
+      "batch": "b",
+      "file": "business-b.png",
+      "grid": [
+        3,
+        2
+      ],
+      "art_bottom": [
+        458,
+        454
+      ],
+      "poses": [
+        "thinking",
+        "working",
+        "laughing",
+        "frustrated",
+        "exasperated",
+        "coordinating"
+      ]
+    },
+    {
+      "role": "academic",
+      "batch": "c",
+      "file": "academic-c.png",
+      "grid": [
+        3,
+        2
+      ],
+      "art_bottom": [
+        470,
+        454
+      ],
+      "poses": [
+        "chalkboard",
+        "writing-prose",
+        "teasing",
+        "flirty",
+        "glamour",
+        "silly"
+      ]
+    },
+    {
+      "role": "engineering",
+      "batch": "c",
+      "file": "engineering-c.png",
+      "grid": [
+        3,
+        2
+      ],
+      "art_bottom": [
+        470,
+        454
+      ],
+      "poses": [
+        "coding",
+        "debugging",
+        "teasing",
+        "flirty",
+        "glamour",
+        "silly"
+      ]
+    },
+    {
+      "role": "business",
+      "batch": "c",
+      "file": "business-c.png",
+      "grid": [
+        3,
+        2
+      ],
+      "art_bottom": [
+        470,
+        452
+      ],
+      "poses": [
+        "formal-report",
+        "task-complete",
+        "teasing",
+        "flirty",
+        "glamour",
+        "silly"
+      ]
+    }
+  ]
+}

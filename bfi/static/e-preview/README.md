@@ -1,56 +1,63 @@
-# E interactive proof
+# E pose studio, revision 2
 
-[Open the private live demo](https://bfi-e-character-proof.poyoboi29.chatgpt.site).
-Owner sign-in may be required. This hosted preview has no backend/model connection.
+[Private live demo](https://bfi-e-character-proof.poyoboi29.chatgpt.site). Locally,
+open `/static/e-preview/index.html` with BFI running. This static page makes no model
+calls and does not operate the computer. Ordinary chat artwork is unchanged.
 
-Open `/static/e-preview/index.html` while BFI is running, or serve this directory
-with any local static HTTP server. This demo works without model or Python API calls.
-The hosted copy uses the same HTML, CSS, JavaScript, and assets. The ordinary chat
-and `/concepts` artwork remain the earlier prototype.
+The owner rejected the original hand-built E SVGs. This revision generated nine
+pose sheets **before** conversion and directly traced 54 poses, 18 per character.
+The [source record](../../../research/visual-studies/poses-v2/README.md) preserves
+the sheets, crop bounds, method, and limitations. Earlier approximations are archived.
 
-Included: 12 SVG poses (standing, seated, explaining, thinking), six face/motif SVGs,
-three skippable 2.5-second theme transitions, a 12-second character sequence, speaking
-and visibility controls, and 13 cursor states per role. All three characters support
-the controls; Academic is the default sequence. Captions are scripted; there is no audio.
+Each role has 11 everyday poses, three specialist poses, and four optional adult
+playful studies. Academic includes reading, chalkboard teaching, prose writing, and
+Dungeons & Dragons planning. Hacker includes security review, coding, and debugging.
+Business includes coordination, formal reports, and task completion. The playful
+set is a manual choice, not an automatic working state.
 
-## Integration interface
+The preview includes generated-source, normalized-reference, SVG and wipe views,
+face/motif icons, role cursor exports, revised motif transitions, speaking gestures,
+and appearance/pose controls. A speaking gesture is not lip synchronization or audio.
 
-`components.js` exports `CharacterActor`, `ProfileTransition`, and `AgentCursor`.
-Use a separate actor instance for each visible character. `setPose(pose, profile)`
-returns a promise; late asset responses cannot overwrite the latest selection.
-`setSpeaking(boolean)`, `show()`, and `hide()` change presentation. `destroy()` clears
-pending loads and removes art. A host can call these from actual application events;
-it must not use visual state as evidence of model readiness.
+## Fidelity
 
-`ProfileTransition.play(profile)` cancels its previous sequence; `stop()` clears it.
-The page's theme is controlled independently through `data-theme`. Global Motion off
-and `prefers-reduced-motion` suppress animated effects. The sample sequence still
-shows timed static poses/captions when reduced motion is active.
+Each SVG follows the actual reference pixel boundaries. Palette normalization
+removes generated texture and keeps three distinct colors per role. All 54 exact boundary traces match their normalized reference's occupancy at
+source resolution. The displayed SVGs clean the contours within 0.75 source pixels
+for crisp scaling; occupancy overlap is 99.03–99.69% and palette agreement on
+shared occupied pixels is 99.67–99.93%. Both versions are inspectable. That does not prove pose quality, agreement with E, or pixel equality
+to the unnormalized generated source. Inspect the source/SVG slider yourself.
+These are contour traces, not yet semantic head/arm/prop rigs.
 
-`AgentCursor.update({profileId, shape, x, y})` places the cursor's **hotspot** at x/y
-in its positioned container, and `hide()` removes it. Overlay input is transparent.
-The user's normal pointer stays visible. `cursorSVG(profile, shape)` exports the same
-art shown in the pad; `cursorHotspot(shape)` provides coordinates for future native
-integration. Browser SVG downloads do not install Windows cursors.
+## Reusable interfaces
 
-## Reproduce checks
+`CharacterActor.setPose(pose, profile)` loads a catalog pose with stale-response
+protection. `setSpeaking`, `show`, `hide`, and `destroy` are presentation controls.
+`explaining` remains an alias for the character's specialist explanation pose.
+`poseForActivity(profile, activity)` suggests a visual mapping; it grants no tools.
+`MotifTransition.play(profile)` and `stop()` manage the revised cancellable WAAPI
+motifs. Skip/Escape, reduced motion, and Motion off end their animations cleanly.
+`AgentCursor.update({profileId, shape, x, y})` positions an input-transparent pointer
+at its hotspot. It does not click or install a native operating-system cursor.
+
+## Reproduce
 
 ```sh
+UV_CACHE_DIR=/tmp/bfi-uv-cache uv run --with cairosvg --with numpy python scripts/trace_e_poses.py
 node scripts/check_e_preview.mjs
-node --check --input-type=module < bfi/static/e-preview/components.js
-node --check --input-type=module < bfi/static/e-preview/studio.js
+uv run --locked --group browser python scripts/browser_e_preview.py
 ```
 
-Run these from the repository root. The deterministic checks cover asset references,
-shared-palette exclusions, cursor exports/hotspots, stale actor loads, and transition
-cancellation/skip/reduced-motion logic. They do not establish browser rendering.
+Run from repository root. The trace manifest contains source/vector hashes and
+comparison measurements. Browser screenshots and recordings are saved under ignored
+`runs/e-preview-v2`. Exported sheets are regenerated with `node scripts/export_e_art.mjs`.
 
-The shared-browser runtime was unavailable and the managed preview relay timed out
-in this session. Full-page browser layout and playback QA remain unverified. The
-hacker/business asset contact sheets were inspected separately. Exported contact
-sheets/GIFs illustrate the actual SVG assets; they are not a screen recording.
+## Verification of revision 2
 
-Current checkpoint: 43 existing Python tests passed, Ruff lint/format passed, both
-JavaScript modules passed syntax checks, and the deterministic component checks
-passed. All SVG exports parse and the reference/documentation links resolve. Pose,
-icon, and cursor contact sheets were rendered from SVG and visually inspected.
+Real Chromium checks passed all 54 pose selections, source/reference/vector image
+loads, category filters, desktop/tablet/phone widths, motif playback/cancellation,
+rapid switching, speaking/appearance sequence, reduced motion, and cursor sampling,
+with no page errors. Screenshots were inspected. The playback videos in the page
+are actual Chromium recordings at native timing, not rendered SVG-frame exports.
+Record them again using `uv run --locked --group browser python scripts/record_e_preview.py`.
+The code/palette and trace checks, Ruff, and 43 existing Python tests passed.

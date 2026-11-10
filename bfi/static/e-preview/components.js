@@ -1,3 +1,5 @@
+import { poseCatalog } from "./pose-catalog.js";
+export { poseCatalog };
 // Presentation only. These components never load models or execute computer actions.
 export const profiles = {
   academic: {
@@ -22,15 +24,35 @@ export const profiles = {
     motif: "Clipboard & sheets",
   },
 };
-export const poses = ["standing", "seated", "explaining", "thinking"];
+export const poses = [
+  "standing",
+  "standing-2",
+  "seated",
+  "seated-2",
+  "tired",
+  "lying-down",
+  "thinking",
+  "working",
+  "laughing",
+  "frustrated",
+  "exasperated",
+];
+export const explanationPose = {
+  academic: "chalkboard",
+  engineering: "debugging",
+  business: "formal-report",
+};
 export const motionEnabled = () =>
   document.documentElement.dataset.motion !== "off" &&
   !matchMedia("(prefers-reduced-motion: reduce)").matches;
 const svgCache = new Map();
 async function artwork(id, pose) {
-  const key = `${id}-${pose}`;
+  const actual = pose === "explaining" ? explanationPose[id] : pose;
+  const key = `${id}-${actual}`;
   if (!svgCache.has(key)) {
-    const task = fetch(new URL(`assets/${key}.svg`, import.meta.url))
+    const task = fetch(
+      new URL(`assets/poses/${id}/${actual}.svg`, import.meta.url),
+    )
       .then((r) => {
         if (!r.ok) throw Error(`Artwork unavailable: ${key}`);
         return r.text();
@@ -58,7 +80,12 @@ export class CharacterActor {
     this.el.dataset.visible = "true";
   }
   async setPose(pose = this.pose, profile = this.profile) {
-    if (!poses.includes(pose) || !profiles[profile])
+    if (
+      !profiles[profile] ||
+      !(
+        pose === "explaining" || poseCatalog[profile].some((p) => p.id === pose)
+      )
+    )
       throw Error("Unknown character or pose");
     const ticket = ++this.generation;
     this.profile = profile;
@@ -200,4 +227,27 @@ export class AgentCursor {
   hide() {
     this.el.hidden = true;
   }
+}
+
+// Suggested presentation bindings; these labels grant no tools or autonomy.
+export const activityPoses = {
+  academic: {
+    reading: "reading",
+    explaining: "chalkboard",
+    drafting: "writing-prose",
+    tabletop: "working",
+  },
+  engineering: {
+    coding: "coding",
+    debugging: "debugging",
+    security: "security-review",
+  },
+  business: {
+    coordinating: "coordinating",
+    reporting: "formal-report",
+    completed: "task-complete",
+  },
+};
+export function poseForActivity(profile, activity) {
+  return activityPoses[profile]?.[activity] || "standing";
 }

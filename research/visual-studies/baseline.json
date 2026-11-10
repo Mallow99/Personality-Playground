@@ -52,9 +52,12 @@
     "no shared dark/light character fills",
     "no story spoilers"
   ],
-  "production_svg_status": "E_proof_pack_available_pending_visual_review",
+  "production_svg_status": "54_generated_pose_traces_pending_visual_review",
   "existing_svg_proofs": "earlier D feasibility studies only",
   "icons": "face_and_motif_proofs_pending_review",
-  "animation": "interactive_proof_available",
-  "proof_pack": "../../bfi/static/e-preview/index.html"
+  "animation": "motif_v2_and_expanded_pose_preview",
+  "proof_pack": "../../bfi/static/e-preview/index.html",
+  "previous_proof_status": "hand-built SVG poses and first transitions rejected by owner",
+  "pose_sources": "poses-v2/sources.json",
+  "pose_manifest": "../../bfi/static/e-preview/assets/poses/manifest.json"
 }

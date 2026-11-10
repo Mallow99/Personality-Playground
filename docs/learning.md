@@ -118,7 +118,9 @@ the tradeoffs, not because the first implementation happened to suggest one.
 
 ## Trace the new E proof
 
-Open `bfi/static/e-preview/assets/academic-standing.svg`. A small part looks like:
+The rejected first proof is archived at
+`research/visual-studies/rejected-e-proof/academic-standing.svg`. Its hand-written
+polygon illustrates the format, but does not implement the chosen art faithfully:
 
 ```xml
 <g data-piece="legs">
@@ -148,3 +150,21 @@ late-response ordering, asset references, and cursor coordinates without a brows
 The optional motion exporter creates a GIF directly from SVG frames; it is not a
 recording of a model or computer agent. See the [proof README](../bfi/static/e-preview/README.md)
 for the exact verification limits and how to open the live controls.
+
+## Why the first conversion failed, and how to check the replacement
+
+The first SVGs were independently drawn interpretations. Their proportions and
+negative-space shapes drifted from E. Passing XML, palette, and code tests did not
+prove that the drawings matched the chosen art. The owner rejected that result.
+
+The replacement starts with generated pose references, then traces the actual
+boundaries. Read `scripts/trace_e_poses.py`: it classifies pixels into the three
+character colors plus empty space, collects exposed pixel edges, walks closed
+contours, and writes compound SVG paths. No redraw or hidden raster is substituted.
+The source sheets, crop bounds, and hashes make the conversion reproducible.
+
+This produces faithful but dense paths. Simplifying them or dividing a head, arm,
+and book into rigged parts must preserve their contours and be checked again.
+Overlap/color scores compare rendered SVGs to the normalized reference at source
+resolution. They cannot grade good posing or similarity to E. Use the live source
+comparison instead of accepting a passing test as a verdict on the artwork.

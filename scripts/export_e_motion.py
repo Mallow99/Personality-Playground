@@ -4,7 +4,6 @@ Run with: UV_CACHE_DIR=/tmp/bfi-uv-cache uv run --with cairosvg python scripts/e
 """
 
 import io
-import re
 from pathlib import Path
 
 import cairosvg
@@ -19,34 +18,26 @@ for index in range(96):
     pose = (
         "standing"
         if seconds < 1.8
-        else "explaining"
+        else "chalkboard"
         if seconds < 6.5
         else "thinking"
         if seconds < 8.5
         else "seated"
     )
-    svg = (ROOT / f"academic-{pose}.svg").read_text()
+    svg = (ROOT / "poses/academic" / f"{pose}.svg").read_text()
     speaking = 3 <= seconds < 6.5
-    if speaking:
-        scale = ".45" if index % 3 == 0 else "1.2"
-        svg = re.sub(
-            r'class="actor-mouth"',
-            'class="actor-mouth" '
-            f'transform="translate(203 146) scale(1 {scale}) translate(-203 -146)"',
-            svg,
-        )
     image = Image.open(
-        io.BytesIO(cairosvg.svg2png(bytestring=svg.encode(), output_width=360, output_height=540))
+        io.BytesIO(cairosvg.svg2png(bytestring=svg.encode(), output_width=360, output_height=360))
     ).convert("RGBA")
     opacity = min(1, seconds / 0.5, max(0, (12 - seconds) / 0.5))
     image.putalpha(
         image.getchannel("A").point(lambda alpha, opacity=opacity: round(alpha * opacity))
     )
     frame = Image.new("RGB", (420, 640), "#f6f0e5")
-    frame.paste(image, (30, 45), image)
+    frame.paste(image, (30, 125), image)
     draw = ImageDraw.Draw(frame)
     draw.text((20, 16), "ACADEMIC / E — VECTOR MOTION SKETCH", fill="#58402B", font=FONT)
-    label = "Speaking · scripted caption · no audio" if speaking else pose.capitalize()
+    label = "Speaking gesture · no audio" if speaking else pose.capitalize()
     draw.text((20, 588), label, fill="#58402B", font=FONT)
     draw.text((20, 613), "Exported SVG frames; not a screen recording.", fill="#58402B", font=FONT)
     frames.append(frame)

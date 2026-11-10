@@ -116,3 +116,14 @@ not a replacement for authentication if public serving is added later.
   immediately change weights.
 
 Do not build all of these at once. Prefer one useful, verifiable change at a time.
+
+## Pose fidelity correction
+
+The first E approximation was rejected. The preview now consumes a per-character
+catalog of 18 generated-reference poses and directly traced SVGs. Source crops and
+palette-normalized references remain available beside each vector. Selection still
+uses the actor generation guard; `explaining` remains a compatibility alias for the
+role-specific explanation/report/debugging pose. `poseForActivity` supplies visual
+mappings without introducing tools or agent execution. Dense pixel-boundary paths
+prioritize source fidelity; semantic rigging remains separate. The new motif module
+uses cancellable WAAPI choreography instead of the initial CSS slide layers.

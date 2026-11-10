@@ -1,5 +1,8 @@
 # Character design studies
 
+Latest: [54 generated pose references and verified direct traces](poses-v2/README.md).
+The owner rejected the first hand-built E poses and initial motif transitions.
+
 **[Option E](option-e.png) is the selected visual baseline.** Build from E's character
 identities, outfits, standing/seated poses, and distinct personalities. Earlier
 options remain archived for comparison; the previous preference for D/A is superseded.
@@ -113,7 +116,7 @@ masculine: navy waistcoat, icy sleeve pieces, blue tie, compact hair, and relaxe
 standing/seated poses. This is a visual baseline; model assignments, names, voice,
 and personality training are separate decisions.
 
-## E proof pack delivered
+## First E proof pack (rejected)
 
 Open `/static/e-preview/index.html` with BFI running. The source includes twelve
 pose SVGs, six face/motif icons, three motif transitions, speaking and appearance

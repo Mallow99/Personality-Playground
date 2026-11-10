@@ -43,3 +43,11 @@ cursor studies. These proofs await visual review; ordinary chat artwork remains
 the earlier prototype. Preserve the broader individual directions in
 `docs/character-directions.md`. Model training, autonomous jobs, frontier routing,
 and OS control are separate work, not established by the demonstration.
+
+
+The owner rejected the first hand-built E SVGs and transitions. Use the generated
+pose sheets in `research/visual-studies/poses-v2/` and their direct boundary traces.
+Do not hand-redesign the figures during conversion. Verify source/SVG overlays;
+technical tests alone do not establish aesthetic similarity. Keep all 54 poses and
+source crops inspectable. Adult playful poses are optional manual choices, separate
+from ordinary activity. Academic also supports prose and Dungeons & Dragons goals.

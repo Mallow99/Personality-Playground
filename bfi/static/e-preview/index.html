@@ -9,6 +9,7 @@
     />
     <title>E studio · Best Friend Initiative</title>
     <link rel="stylesheet" href="studio.css" />
+    <link rel="stylesheet" href="motion-v2.css" />
     <script type="module" src="studio.js"></script>
   </head>
   <body>
@@ -25,12 +26,12 @@
     <main>
       <section class="intro">
         <div>
-          <p class="eyebrow">CHARACTER STUDY / E · 01</p>
+          <p class="eyebrow">CHARACTER STUDY / E · 02</p>
           <h1>Room for<br /><em>individuals.</em></h1>
         </div>
         <p class="intro-copy">
           Three perspectives. Their own interests, judgment, and quirks.<br /><span
-            >A working visual proof, built from editable shapes.</span
+            >Generated poses, directly traced and compared.</span
           >
         </p>
       </section>
@@ -87,21 +88,104 @@
           </p>
         </div>
       </section>
-      <details>
-        <summary>
-          Exported Academic motion sketch · 12 seconds · no audio
-        </summary>
-        <p>
-          A vector export for reference; the live controls above use the
-          reusable components.
-        </p>
-        <img
-          id="motion-sketch"
-          class="motion-sketch"
-          src="assets/academic-motion.gif"
-          alt="Academic SVG proof cycling through standing, explaining, speaking, thinking, and seated poses, fading in and out."
-        />
+      <details class="playback-review">
+        <summary>Watch actual browser playback</summary>
+        <div class="recorded-grid">
+          <figure>
+            <video
+              controls
+              playsinline
+              preload="none"
+              src="assets/motif-reel.mp4"
+              aria-label="Recorded motif transitions"
+            ></video>
+            <figcaption>
+              Motif transitions · silent browser recording
+            </figcaption>
+          </figure>
+          <figure>
+            <video
+              controls
+              playsinline
+              preload="none"
+              src="assets/character-reel.mp4"
+              aria-label="Recorded character pose sequence"
+            ></video>
+            <figcaption>
+              Character sequence · silent browser recording
+            </figcaption>
+          </figure>
+        </div>
       </details>
+      <section id="fidelity" class="sheet-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">SOURCE / VECTOR</p>
+            <h2>The same pose. Check the match.</h2>
+          </div>
+          <p id="comparison-label">Academic / standing</p>
+        </div>
+        <div class="compare-controls">
+          <label
+            >View
+            <select id="comparison-mode">
+              <option value="wipe">Wipe comparison</option>
+              <option value="boundary">Exact boundary trace</option>
+              <option value="source">Generated source</option>
+              <option value="vector">Traced SVG</option>
+              <option value="normalized">Three-color reference</option>
+              <option value="boundary">Exact boundary trace</option>
+            </select></label
+          ><label
+            >Wipe
+            <input
+              id="comparison-wipe"
+              type="range"
+              min="0"
+              max="100"
+              value="50"
+          /></label>
+        </div>
+        <div id="comparison-box" data-mode="wipe">
+          <img
+            id="compare-boundary"
+            src="assets/poses/academic/standing.boundary.svg"
+            alt="Exact reference boundary trace"
+          />
+          <img
+            id="compare-source"
+            src="assets/poses/academic/standing.source.png"
+            alt="Generated Academic standing pose"
+          /><img
+            id="compare-reference"
+            src="assets/poses/academic/standing.reference.png"
+            alt="Normalized three-color tracing reference"
+          /><img
+            id="compare-vector"
+            src="assets/poses/academic/standing.svg"
+            alt="Traced Academic standing pose"
+          />
+        </div>
+        <p class="compare-note">
+          The SVG follows the generated pose with edge cleanup of at most 0.75
+          source pixels. Exact boundary traces are also available. Palette
+          normalization removes generation texture; it does not redraw the
+          character. The source remains available for comparison.
+        </p>
+        <div class="compare-downloads">
+          <a
+            id="source-link"
+            href="assets/poses/academic/standing.source.png"
+            download
+            >Generated source ↗</a
+          ><a
+            id="vector-link"
+            href="assets/poses/academic/standing.svg"
+            download
+            >Traced SVG ↗</a
+          >
+        </div>
+      </section>
       <section id="poses" class="sheet-section">
         <div class="section-heading">
           <div>
@@ -109,15 +193,20 @@
             <h2>More than a resting face.</h2>
           </div>
           <p>
-            Standing and seated from E.<br />Explaining and thinking, newly
-            explored.
+            18 poses per individual.<br />Everyday, specialist, and optional
+            playful studies.
           </p>
         </div>
-        <p>
-          <a href="assets/pose-sheet.svg" download
-            >Download all twelve poses ↗</a
-          >
-        </p>
+        <label class="pose-filter-label"
+          >Show
+          <select id="pose-filter">
+            <option value="practical">Everyday & specialist</option>
+            <option value="everyday">Everyday</option>
+            <option value="specialist">Specialist</option>
+            <option value="playful">Playful adult studies</option>
+            <option value="all">All poses</option>
+          </select></label
+        >
         <div id="pose-grid" class="pose-grid"></div>
         <details>
           <summary>Compare with the selected E reference</summary>
@@ -193,55 +282,6 @@
       </footer>
       <p id="error" role="alert" hidden></p>
     </main>
-    <div id="transition-layer" hidden>
-      <button class="skip">Skip animation · Esc</button>
-      <div class="motif-scene" aria-hidden="true">
-        <div class="motif academic-motif">
-          <img class="book book-a" src="assets/academic-motif.svg" alt="" /><img
-            class="book book-b"
-            src="assets/academic-motif.svg"
-            alt=""
-          /><svg class="flying-glasses" viewBox="0 0 200 80">
-            <path
-              d="m8 16 68-8 8 53-64 10ZM116 8l73-4-10 57-64 9ZM81 31l35-6"
-            />
-          </svg>
-        </div>
-        <div class="motif engineering-motif">
-          <div class="error-window err-a">
-            × ERROR 01
-            <hr />
-            <i></i><i></i>
-          </div>
-          <div class="error-window err-b">
-            × ERROR 02
-            <hr />
-            <i></i><i></i>
-          </div>
-          <div class="error-window err-c">
-            × ERROR 03
-            <hr />
-            <i></i>
-          </div>
-          <svg class="error-eyes" viewBox="0 0 300 100">
-            <g>
-              <path d="m8 18 111 13-13 56-73-17Z" />
-              <path class="pupil" d="m70 38 24 3-12 27Z" />
-            </g>
-            <g class="wink">
-              <path d="m179 30 110-20-35 66-78 12Z" />
-              <path class="pupil" d="m221 36 25-5-21 32Z" />
-            </g>
-          </svg>
-        </div>
-        <div class="motif business-motif">
-          <img class="clipboard" src="assets/business-motif.svg" alt="" />
-          <div class="paper paper-a">▥<br />────<br />────<br />────</div>
-          <div class="paper paper-b">▥<br />────<br />────</div>
-          <div class="paper paper-c">▥<br />────<br />────</div>
-        </div>
-      </div>
-      <p class="transition-label"></p>
-    </div>
+    <div id="transition-layer" hidden></div>
   </body>
 </html>

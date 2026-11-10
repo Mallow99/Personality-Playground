@@ -6,7 +6,7 @@ import {
   ProfileTransition,
   AgentCursor,
   profiles,
-  poses,
+  poseCatalog,
   cursorShapes,
   cursorSVG,
   cursorHotspot,
@@ -17,33 +17,34 @@ for (const m of markup.matchAll(/(?:src|href)="([^"#]+)"/g)) {
   if (m[1].startsWith("http")) continue;
   await readFile(new URL(m[1], root));
 }
+const studio = await readFile(new URL("studio.js", root), "utf8");
+for (const match of studio.matchAll(/\$\("([a-z-]+)"\)/g))
+  assert(markup.includes(`id="${match[1]}"`), `Missing UI element ${match[1]}`);
 const palettes = Object.values(profiles).flatMap((p) => p.colors);
 assert.equal(new Set(palettes).size, 9);
-for (const id of Object.keys(profiles))
-  for (const kind of [...poses, "face", "motif"]) {
+const manifest = JSON.parse(
+  await readFile(new URL("assets/poses/manifest.json", root), "utf8"),
+);
+for (const [id, items] of Object.entries(poseCatalog)) {
+  assert.equal(items.length, 18);
+  for (const item of items) {
     const source = await readFile(
-      new URL(`assets/${id}-${kind}.svg`, root),
+      new URL(`assets/poses/${id}/${item.id}.svg`, root),
       "utf8",
     );
     assert(
       !/<(?:script|image|foreignObject)\b|\b(?:href|onload)=/i.test(source),
     );
     for (const color of source.matchAll(/(?:fill|stroke)="(#[\da-f]+)"/gi))
-      assert(
-        profiles[id].colors.includes(color[1]),
-        `${id}: unexpected ${color[1]}`,
-      );
-    if (poses.includes(kind)) {
-      assert(source.includes('data-piece="head"'));
-      assert(source.includes("actor-mouth"));
-    }
+      assert(profiles[id].colors.includes(color[1]));
+    const check = manifest.characters[id].find((p) => p.id === item.id);
+    assert(check.geometry_iou >= 0.98);
+    assert.equal(check.boundary_geometry_iou, 1);
+    assert(check.palette_agreement >= 0.995);
   }
-assert.equal(
-  (await readdir(new URL("assets/", root))).filter(
-    (x) => /^(academic|engineering|business)-/.test(x) && x.endsWith(".svg"),
-  ).length,
-  18,
-);
+  for (const kind of ["face", "motif"])
+    await readFile(new URL(`assets/${id}-${kind}.svg`, root));
+}
 for (const id of Object.keys(profiles))
   for (const shape of cursorShapes) {
     const source = cursorSVG(id, shape);
@@ -96,9 +97,9 @@ const host = element(),
   actor = new CharacterActor(host);
 const first = actor.setPose("standing", "academic"),
   second = actor.setPose("seated", "business");
-pending.get(new URL("assets/business-seated.svg", root).href)();
+pending.get(new URL("assets/poses/business/seated.svg", root).href)();
 await second;
-pending.get(new URL("assets/academic-standing.svg", root).href)();
+pending.get(new URL("assets/poses/academic/standing.svg", root).href)();
 await first;
 assert.equal(host.dataset.profile, "business");
 assert.equal(host.dataset.pose, "seated");

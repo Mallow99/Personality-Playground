@@ -1,8 +1,9 @@
+import { MotifTransition } from "./motion-v2.js";
 import {
   profiles,
-  poses,
+  poseCatalog,
+  explanationPose,
   CharacterActor,
-  ProfileTransition,
   AgentCursor,
   cursorShapes,
   cursorSVG,
@@ -10,7 +11,7 @@ import {
 } from "./components.js";
 const $ = (id) => document.getElementById(id);
 const actor = new CharacterActor($("actor")),
-  transition = new ProfileTransition($("transition-layer")),
+  transition = new MotifTransition($("transition-layer")),
   cursor = new AgentCursor($("agent-cursor"));
 let selected = "academic",
   shape = "arrow",
@@ -48,7 +49,9 @@ function showActor(value) {
 }
 async function pose(value) {
   $("pose").value = value;
-  $("pose-caption").textContent = value[0].toUpperCase() + value.slice(1);
+  $("pose-caption").textContent =
+    poseCatalog[selected].find((p) => p.id === value)?.label || value;
+  updateComparison(value);
   await actor.setPose(value, selected);
 }
 function cursorGrid() {
@@ -89,12 +92,29 @@ async function choose(id, animate = true) {
     .forEach((b) =>
       b.setAttribute("aria-pressed", String(b.dataset.profile === id)),
     );
-  $("pose-grid").innerHTML = poses
+  const available = poseCatalog[id];
+  $("pose").innerHTML = available
+    .map((p) => `<option value="${p.id}">${p.label}</option>`)
+    .join("");
+  $("pose-grid").innerHTML = available
     .map(
-      (pose) =>
-        `<figure><img src="assets/${id}-${pose}.svg" alt="${p.name}, ${pose}" loading="lazy"><figcaption>${pose}<a href="assets/${id}-${pose}.svg" download aria-label="Download ${p.name} ${pose} SVG">SVG ↗</a></figcaption></figure>`,
+      (p) =>
+        `<figure data-category="${p.category}"><button class="pose-pick" data-pose="${p.id}" aria-label="Show ${p.label}"><img src="assets/poses/${id}/${p.id}.svg" alt="${profiles[id].name}, ${p.label}" loading="lazy"></button><figcaption>${p.label}<a href="assets/poses/${id}/${p.id}.svg" download>SVG ↗</a></figcaption></figure>`,
     )
     .join("");
+  $("pose-grid")
+    .querySelectorAll(".pose-pick")
+    .forEach((button) =>
+      button.addEventListener(
+        "click",
+        guarded(() => {
+          stopSequence();
+          showActor(true);
+          return pose(button.dataset.pose);
+        }),
+      ),
+    );
+  filterPoses();
   $("icon-grid").innerHTML = ["face", "motif"]
     .map(
       (type) =>
@@ -149,9 +169,9 @@ $("sequence").addEventListener(
     if (ticket !== sequenceId) return;
     $("sequence").textContent = "Stop sequence";
     $("sequence-status").textContent = motionEnabled()
-      ? "Standing → explaining → speaking → seated → disappear."
+      ? "Standing → specialist gesture → thinking → laughing → seated → disappear."
       : "Reduced motion: timed still poses with caption, without animated effects.";
-    later(() => pose("explaining"), 1800);
+    later(() => pose(explanationPose[selected]), 1800);
     later(() => {
       actor.setSpeaking(true);
       $("speaking").setAttribute("aria-pressed", "true");
@@ -163,7 +183,8 @@ $("sequence").addEventListener(
       $("speaking").textContent = "Speaking: off";
       return pose("thinking");
     }, 6500);
-    later(() => pose("seated"), 8500);
+    later(() => pose("laughing"), 7800);
+    later(() => pose("seated"), 9500);
     later(() => {
       showActor(false);
       stopSequence();
@@ -176,9 +197,7 @@ const mq = matchMedia("(prefers-reduced-motion: reduce)");
 function setMotion() {
   const enabled = $("motion").checked && !mq.matches;
   document.documentElement.dataset.motion = enabled ? "on" : "off";
-  $("motion-sketch").src = enabled
-    ? "assets/academic-motion.gif"
-    : "assets/academic-standing.svg";
+
   if (!enabled) {
     transition.stop();
     cursorId++;
@@ -246,3 +265,38 @@ $("download-cursor").addEventListener("click", () => {
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 });
 guarded(() => choose("academic", false))();
+
+function updateComparison(value) {
+  const id = value === "explaining" ? explanationPose[selected] : value;
+  const base = `assets/poses/${selected}/${id}`;
+  $("compare-source").src = base + ".source.png";
+  $("compare-reference").src = base + ".reference.png";
+  $("compare-vector").src = base + ".svg";
+  $("compare-boundary").src = base + ".boundary.svg";
+  $("compare-vector").alt = `${profiles[selected].name} ${id}, traced SVG`;
+  $("compare-source").alt =
+    `Generated source for ${profiles[selected].name} ${id}`;
+  $("comparison-label").textContent =
+    `${profiles[selected].name} / ${id.replaceAll("-", " ")}`;
+  $("source-link").href = base + ".source.png";
+  $("vector-link").href = base + ".svg";
+}
+$("comparison-mode").addEventListener("change", () => {
+  $("comparison-box").dataset.mode = $("comparison-mode").value;
+});
+$("comparison-wipe").addEventListener("input", () => {
+  $("comparison-box").style.setProperty(
+    "--wipe",
+    $("comparison-wipe").value + "%",
+  );
+});
+function filterPoses() {
+  const category = $("pose-filter").value;
+  document.querySelectorAll("#pose-grid figure").forEach((el) => {
+    el.hidden =
+      category === "practical"
+        ? el.dataset.category === "playful"
+        : category !== "all" && el.dataset.category !== category;
+  });
+}
+$("pose-filter").addEventListener("change", filterPoses);
