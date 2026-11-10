@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-hidden="true" focusable="false" data-character="business" data-pose="motif">
+  <g data-piece="prop">
+    <polygon points="23,8 85,19 77,91 11,79" fill="#153B64"/>
+    <polygon points="30,24 76,32 69,79 22,70" fill="#247DD4"/>
+    <polygon points="43,10 65,14 63,25 40,21" fill="#B9E9FA"/>
+    <polygon points="34,36 67,42 66,48 33,42" fill="#B9E9FA"/>
+    <polygon points="32,49 64,55 63,61 31,55" fill="#B9E9FA"/>
+    <polygon points="30,62 54,66 53,72 29,68" fill="#B9E9FA"/>
+  </g>
+</svg>

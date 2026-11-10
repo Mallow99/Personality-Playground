@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en" data-motion="on" data-theme="academic">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="E geometric character, pose, motif animation and agent cursor proof for Best Friend Initiative."
+    />
+    <title>E studio · Best Friend Initiative</title>
+    <link rel="stylesheet" href="studio.css" />
+    <script type="module" src="studio.js"></script>
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="#">BFI<span>BEST FRIEND INITIATIVE</span></a>
+      <nav>
+        <a href="#poses">Poses</a><a href="#icons">Icons</a
+        ><a href="#cursors">Cursors</a>
+      </nav>
+      <label class="motion-toggle"
+        ><input id="motion" type="checkbox" checked /> Motion</label
+      >
+    </header>
+    <main>
+      <section class="intro">
+        <div>
+          <p class="eyebrow">CHARACTER STUDY / E · 01</p>
+          <h1>Room for<br /><em>individuals.</em></h1>
+        </div>
+        <p class="intro-copy">
+          Three perspectives. Their own interests, judgment, and quirks.<br /><span
+            >A working visual proof, built from editable shapes.</span
+          >
+        </p>
+      </section>
+      <div class="profile-tabs" role="group" aria-label="Select character">
+        <button data-profile="academic" aria-pressed="true">
+          <span>01</span> Academic
+          <img src="assets/academic-face.svg" alt="" /></button
+        ><button data-profile="engineering" aria-pressed="false">
+          <span>02</span> Hacker
+          <img src="assets/engineering-face.svg" alt="" /></button
+        ><button data-profile="business" aria-pressed="false">
+          <span>03</span> Business <img src="assets/business-face.svg" alt="" />
+        </button>
+      </div>
+      <section class="workbench" aria-label="Character motion preview">
+        <div class="actor-stage">
+          <div class="stage-meta">
+            <span id="stage-role">ACADEMIC</span><span>E / GEOMETRY PROOF</span>
+          </div>
+          <div id="actor" class="actor"></div>
+          <div class="floor-line"></div>
+          <div class="stage-bottom">
+            <span id="pose-caption">Standing</span
+            ><button id="visibility">Disappear</button>
+          </div>
+        </div>
+        <div class="character-panel">
+          <p class="eyebrow">A WAY OF THINKING</p>
+          <h2 id="character-name">Academic</h2>
+          <p id="character-summary" class="character-summary"></p>
+          <blockquote id="line"></blockquote>
+          <span class="sample-label">SCRIPTED SAMPLE · NO AUDIO</span>
+          <div class="controls">
+            <label
+              >Pose<select id="pose">
+                <option value="standing">Standing</option>
+                <option value="seated">Seated</option>
+                <option value="explaining">Explaining</option>
+                <option value="thinking">Thinking</option>
+              </select></label
+            ><button id="speaking" aria-pressed="false">Speaking: off</button>
+          </div>
+          <button id="sequence" class="primary">
+            Play character sequence <span>↗</span></button
+          ><button id="transition">
+            Replay motif transition <span>↗</span>
+          </button>
+          <p class="fine-print">
+            Appearance preview. No models are loaded and no computer actions
+            run.
+          </p>
+          <p id="sequence-status" role="status" aria-live="polite">
+            Ready to explore.
+          </p>
+        </div>
+      </section>
+      <details>
+        <summary>
+          Exported Academic motion sketch · 12 seconds · no audio
+        </summary>
+        <p>
+          A vector export for reference; the live controls above use the
+          reusable components.
+        </p>
+        <img
+          id="motion-sketch"
+          class="motion-sketch"
+          src="assets/academic-motion.gif"
+          alt="Academic SVG proof cycling through standing, explaining, speaking, thinking, and seated poses, fading in and out."
+        />
+      </details>
+      <section id="poses" class="sheet-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">01 / POSE LIBRARY</p>
+            <h2>More than a resting face.</h2>
+          </div>
+          <p>
+            Standing and seated from E.<br />Explaining and thinking, newly
+            explored.
+          </p>
+        </div>
+        <p>
+          <a href="assets/pose-sheet.svg" download
+            >Download all twelve poses ↗</a
+          >
+        </p>
+        <div id="pose-grid" class="pose-grid"></div>
+        <details>
+          <summary>Compare with the selected E reference</summary>
+          <img
+            class="reference"
+            src="assets/reference-e.png"
+            alt="Selected E reference sheet, with standing and seated Academic, Hacker, and Business characters."
+          />
+        </details>
+      </section>
+      <section id="icons" class="sheet-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">02 / SMALL IDENTITIES</p>
+            <h2>A face. A signature.</h2>
+          </div>
+          <p>Face cards and role motifs.<br />24, 48, and 96 pixel studies.</p>
+        </div>
+        <p>
+          <a href="assets/icon-sheet.svg" download>Download icon sheet ↗</a>
+        </p>
+        <div id="icon-grid" class="icon-grid"></div>
+      </section>
+      <section id="cursors" class="sheet-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">03 / AGENT PRESENCE</p>
+            <h2>Know who has the pointer.</h2>
+          </div>
+          <p>
+            Role color plus a personal mark.<br />Browser proof · OS integration
+            comes later.
+          </p>
+        </div>
+        <p>
+          <a href="assets/cursor-sheet.svg" download
+            >Download all cursor looks ↗</a
+          >
+        </p>
+        <div class="cursor-layout">
+          <div
+            id="cursor-grid"
+            class="cursor-grid"
+            role="group"
+            aria-label="Cursor shapes"
+          ></div>
+          <div>
+            <div id="cursor-pad" class="cursor-pad">
+              <p class="eyebrow" id="cursor-owner">ACADEMIC / ARROW</p>
+              <strong>Try the pointer here.</strong>
+              <p>Move over the pad, or play the sample on touch.</p>
+              <button id="cursor-demo">Play cursor sample</button>
+              <div id="agent-cursor" hidden></div>
+            </div>
+            <div class="cursor-actions">
+              <button id="download-cursor">Download selected SVG</button>
+              <p id="cursor-state" role="status">
+                Illustrated agent pointer; your normal cursor stays visible.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer>
+        <strong>Best Friend Initiative</strong>
+        <p>
+          E baseline · code-built SVG proof<br />Personality training, agent
+          control, and voice are separate work.
+        </p>
+        <a href="https://github.com/Mallow99/Personality-Playground/pull/1"
+          >Source & implementation ↗</a
+        >
+      </footer>
+      <p id="error" role="alert" hidden></p>
+    </main>
+    <div id="transition-layer" hidden>
+      <button class="skip">Skip animation · Esc</button>
+      <div class="motif-scene" aria-hidden="true">
+        <div class="motif academic-motif">
+          <img class="book book-a" src="assets/academic-motif.svg" alt="" /><img
+            class="book book-b"
+            src="assets/academic-motif.svg"
+            alt=""
+          /><svg class="flying-glasses" viewBox="0 0 200 80">
+            <path
+              d="m8 16 68-8 8 53-64 10ZM116 8l73-4-10 57-64 9ZM81 31l35-6"
+            />
+          </svg>
+        </div>
+        <div class="motif engineering-motif">
+          <div class="error-window err-a">
+            × ERROR 01
+            <hr />
+            <i></i><i></i>
+          </div>
+          <div class="error-window err-b">
+            × ERROR 02
+            <hr />
+            <i></i><i></i>
+          </div>
+          <div class="error-window err-c">
+            × ERROR 03
+            <hr />
+            <i></i>
+          </div>
+          <svg class="error-eyes" viewBox="0 0 300 100">
+            <g>
+              <path d="m8 18 111 13-13 56-73-17Z" />
+              <path class="pupil" d="m70 38 24 3-12 27Z" />
+            </g>
+            <g class="wink">
+              <path d="m179 30 110-20-35 66-78 12Z" />
+              <path class="pupil" d="m221 36 25-5-21 32Z" />
+            </g>
+          </svg>
+        </div>
+        <div class="motif business-motif">
+          <img class="clipboard" src="assets/business-motif.svg" alt="" />
+          <div class="paper paper-a">▥<br />────<br />────<br />────</div>
+          <div class="paper paper-b">▥<br />────<br />────</div>
+          <div class="paper paper-c">▥<br />────<br />────</div>
+        </div>
+      </div>
+      <p class="transition-label"></p>
+    </div>
+  </body>
+</html>

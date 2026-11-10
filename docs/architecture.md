@@ -48,11 +48,13 @@ of endpoint readiness, trained weights, or operating-system window control.
 
 The selected replacement visual baseline is **E**, recorded in
 [`research/visual-studies/baseline.json`](../research/visual-studies/baseline.json).
-Its reference sheet establishes distinct character silhouettes and separate palettes;
-it has not replaced the runtime artwork. The earlier D SVG proofs demonstrate
-editable polygon construction only. E needs its own standing/seated SVG parts before
-rigging. Further design and animation work are paused for the owner's review;
-simplified icons remain unconfirmed.
+Its reference sheet establishes distinct silhouettes and separate palettes.
+The new `/static/e-preview/index.html` proof is independent of the ordinary chat
+artwork. Shared presentation components load bundled SVG pose parts, reject stale
+asset responses, cancel superseded motif transitions, and position an input-transparent
+agent cursor by its hotspot. No API or database schema changed. The hosted copy is
+static and contains no chat data or backend configuration. E proofs await visual
+review; native cursors, model lifecycle, audio, and autonomous jobs remain separate.
 
 `ToolRunner` provides read-only project text and optional Brave search. An explicit
 inspector calls it directly. For model-assisted tools, `complete_with_tools` sends

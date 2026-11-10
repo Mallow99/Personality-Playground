@@ -79,8 +79,7 @@ Open an [earlier D SVG proof](../research/visual-studies/code-proof/academic-d.s
 in a text editor. Each `polygon` has `points` listing its corners and a `fill` color.
 The `g` elements group related shapes; `data-piece` labels parts that future code
 could move together. These are inspectable building blocks, not a completed animation
-rig. E still needs its own geometry. That conversion and new animation work are
-paused for review; see the [design brief](../research/visual-studies/README.md).
+rig. E now has its own editable proof geometry and presentation components; see the [design brief](../research/visual-studies/README.md).
 
 The machine-readable API reference is at `http://127.0.0.1:8000/openapi.json`. It
 describes route names, expected inputs, and response schemas. The app avoids loading
@@ -115,3 +114,37 @@ to keep it.
 Not knowing these yet is fine. Keep the questions visible and answer them as the
 relevant work becomes concrete. Choose the research question after you understand
 the tradeoffs, not because the first implementation happened to suggest one.
+
+
+## Trace the new E proof
+
+Open `bfi/static/e-preview/assets/academic-standing.svg`. A small part looks like:
+
+```xml
+<g data-piece="legs">
+  <polygon points="151,335 184,349 179,408 155,466 166,566 139,568 125,461 148,398"
+           fill="#58402B" />
+</g>
+```
+
+Each x/y pair is a corner in a 400-by-600 drawing space. The browser connects those
+corners and fills the shape. `data-piece` gives related shapes an inspectable name.
+The gaps between pieces are transparent space, not extra white shapes.
+
+In `components.js`, trace `CharacterActor.setPose`: fetch a bundled SVG, clone it,
+and replace the visible art. A generation number stops an older fetch from winning
+if you select another character quickly. Short opacity/position animations smooth
+the pose swap; this proof does not interpolate every polygon into a new skeleton.
+`setSpeaking` toggles mouth motion. `show`/`hide` control appearance independently.
+
+Then follow a profile button in `studio.js`: it changes theme tokens, chooses art,
+and starts the book/error-window/clipboard transition. `AgentCursor.update` takes
+coordinates for the pointer's hotspot and draws an input-transparent illustration.
+No mouse clicks or operating-system commands are executed.
+
+`node scripts/export_e_art.mjs` regenerates the cursor files and review sheets from
+the component/source SVGs. `node scripts/check_e_preview.mjs` exercises cancellation,
+late-response ordering, asset references, and cursor coordinates without a browser.
+The optional motion exporter creates a GIF directly from SVG frames; it is not a
+recording of a model or computer agent. See the [proof README](../bfi/static/e-preview/README.md)
+for the exact verification limits and how to open the live controls.

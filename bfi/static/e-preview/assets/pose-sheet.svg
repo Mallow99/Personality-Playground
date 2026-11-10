@@ -1,0 +1,375 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1980" viewBox="0 0 1400 1980"><title>E pose library</title><rect width="100%" height="100%" fill="#f6f0e5"/><text x="25" y="32" font-family="sans-serif" font-size="20" fill="#58402B">Academic / E</text><svg x="15" y="50" width="320" height="550" viewBox="0 0 400 600"><title>Academic — standing; E geometry proof</title><g data-piece="head" transform="translate(0 0) rotate(0 200 115)"><polygon points="86,76 221,44 236,68 258,64 249,96 182,110 124,143 62,129 97,109" fill="#58402B"/><polygon points="219,34 237,22 254,43 242,54" fill="#87A452"/><polygon points="164,112 248,93 219,158" fill="#58402B"/><path fill="#87A452" fill-rule="evenodd" d="M120 111 177 99 183 137 132 149ZM132 119 138 139 174 131 169 110ZM187 96 247 84 253 123 196 136ZM199 104 204 125 243 117 238 95Z"/><g class="actor-eyes"><polygon points="143,124 162,117 160,130" fill="#87A452"/><polygon points="215,110 231,103 228,117" fill="#87A452"/></g><path class="actor-mouth" d="m196 144 15-3-8 10Z" fill="#EBD8AF"/></g><g data-piece="torso"><polygon points="142,178 185,197 153,281 76,338 36,293 83,235" fill="#EBD8AF"/><polygon points="245,175 285,222 324,270 262,309 219,259" fill="#EBD8AF"/><polygon points="184,203 222,182 235,267 194,318 168,291 207,234" fill="#87A452"/></g><g data-piece="legs"><polygon points="151,335 184,349 179,408 155,466 166,566 139,568 125,461 148,398" fill="#58402B"/><polygon points="204,337 226,325 252,395 215,459 236,567 206,572 184,461 221,394" fill="#58402B"/></g><g data-piece="arm-left"><polygon points="116,194 151,226 133,258 99,239" fill="#EBD8AF"/></g><g data-piece="prop"><polygon points="139,193 194,212 255,185 242,261 193,285 151,255" fill="#87A452"/><polygon points="139,193 193,202 252,184 194,218" fill="#EBD8AF"/></g><g data-piece="hand-left"><polygon points="169,251 174,243 187,273 180,277" fill="#58402B"/><polygon points="178,248 183,240 196,273 189,277" fill="#58402B"/><polygon points="187,245 192,237 205,273 198,277" fill="#58402B"/></g><g data-piece="arm-right"><polygon points="261,193 289,215 310,188 285,166" fill="#EBD8AF"/></g><g data-piece="hand-right"><polygon points="286,161 276,146 294,100 301,102 288,137 308,119 313,126 293,150 317,137 322,144 297,168" fill="#58402B"/></g></svg>
+<text x="25" y="635" font-family="sans-serif" font-size="17" fill="#58402B">standing</text><svg x="365" y="50" width="320" height="550" viewBox="0 0 400 600"><title>Academic — seated; E geometry proof</title><g data-piece="head" transform="translate(0 95) rotate(0 200 115)"><polygon points="86,76 221,44 236,68 258,64 249,96 182,110 124,143 62,129 97,109" fill="#58402B"/><polygon points="219,34 237,22 254,43 242,54" fill="#87A452"/><polygon points="164,112 248,93 219,158" fill="#58402B"/><path fill="#87A452" fill-rule="evenodd" d="M120 111 177 99 183 137 132 149ZM132 119 138 139 174 131 169 110ZM187 96 247 84 253 123 196 136ZM199 104 204 125 243 117 238 95Z"/><g class="actor-eyes"><polygon points="143,124 162,117 160,130" fill="#87A452"/><polygon points="215,110 231,103 228,117" fill="#87A452"/></g><path class="actor-mouth" d="m196 144 15-3-8 10Z" fill="#EBD8AF"/></g><g data-piece="torso"><polygon points="142,276 185,295 153,379 76,436 36,391 83,333" fill="#EBD8AF"/><polygon points="245,273 285,320 324,368 262,407 219,357" fill="#EBD8AF"/><polygon points="184,301 222,280 235,365 194,416 168,389 207,332" fill="#87A452"/></g><g data-piece="legs"><polygon points="109,432 182,470 279,427 309,461 192,506 92,470" fill="#58402B"/><polygon points="211,438 239,462 132,520 75,501 55,478 114,482" fill="#58402B"/><polygon points="109,432 74,413 40,451 75,466" fill="#EBD8AF"/></g><g data-piece="arm-left"><polygon points="105,315 134,342 125,403 84,414 68,390" fill="#EBD8AF"/></g><g data-piece="arm-right"><polygon points="267,311 290,352 285,405 252,404 240,354" fill="#EBD8AF"/></g><g data-piece="prop"><polygon points="130,340 185,359 246,332 233,408 184,432 142,402" fill="#87A452"/><polygon points="130,340 184,349 243,331 185,365" fill="#EBD8AF"/></g><g data-piece="hand-left"><polygon points="130,393 135,385 148,415 141,419" fill="#58402B"/><polygon points="139,390 144,382 157,415 150,419" fill="#58402B"/><polygon points="148,387 153,379 166,415 159,419" fill="#58402B"/></g><g data-piece="hand-right"><polygon points="227,387 232,379 245,409 238,413" fill="#58402B"/><polygon points="236,384 241,376 254,409 247,413" fill="#58402B"/><polygon points="245,381 250,373 263,409 256,413" fill="#58402B"/></g></svg>
+<text x="375" y="635" font-family="sans-serif" font-size="17" fill="#58402B">seated</text><svg x="715" y="50" width="320" height="550" viewBox="0 0 400 600"><title>Academic — explaining; E geometry proof</title><g data-piece="head" transform="translate(0 0) rotate(0 200 115)"><polygon points="86,76 221,44 236,68 258,64 249,96 182,110 124,143 62,129 97,109" fill="#58402B"/><polygon points="219,34 237,22 254,43 242,54" fill="#87A452"/><polygon points="164,112 248,93 219,158" fill="#58402B"/><path fill="#87A452" fill-rule="evenodd" d="M120 111 177 99 183 137 132 149ZM132 119 138 139 174 131 169 110ZM187 96 247 84 253 123 196 136ZM199 104 204 125 243 117 238 95Z"/><g class="actor-eyes"><polygon points="143,124 162,117 160,130" fill="#87A452"/><polygon points="215,110 231,103 228,117" fill="#87A452"/></g><path class="actor-mouth" d="m196 144 15-3-8 10Z" fill="#EBD8AF"/></g><g data-piece="torso"><polygon points="142,178 185,197 153,281 76,338 36,293 83,235" fill="#EBD8AF"/><polygon points="245,175 285,222 324,270 262,309 219,259" fill="#EBD8AF"/><polygon points="184,203 222,182 235,267 194,318 168,291 207,234" fill="#87A452"/></g><g data-piece="legs"><polygon points="151,335 184,349 179,408 155,466 166,566 139,568 125,461 148,398" fill="#58402B"/><polygon points="204,337 226,325 252,395 215,459 236,567 206,572 184,461 221,394" fill="#58402B"/></g><g data-piece="arm-left"><polygon points="110,196 140,222 132,266 101,268" fill="#EBD8AF"/></g><g data-piece="prop"><polygon points="112,236 167,255 228,228 215,304 166,328 124,298" fill="#87A452"/><polygon points="112,236 166,245 225,227 167,261" fill="#EBD8AF"/></g><g data-piece="hand-left"><polygon points="147,289 152,281 165,311 158,315" fill="#58402B"/><polygon points="156,286 161,278 174,311 167,315" fill="#58402B"/><polygon points="165,283 170,275 183,311 176,315" fill="#58402B"/></g><g data-piece="arm-right"><polygon points="264,196 284,211 320,185 309,167" fill="#EBD8AF"/></g><g data-piece="hand-right"><polygon points="310,165 318,151 363,143 365,150 334,159 359,164 357,171 330,167 346,182 341,187" fill="#58402B"/></g></svg>
+<text x="725" y="635" font-family="sans-serif" font-size="17" fill="#58402B">explaining</text><svg x="1065" y="50" width="320" height="550" viewBox="0 0 400 600"><title>Academic — thinking; E geometry proof</title><g data-piece="head" transform="translate(0 0) rotate(-5 200 115)"><polygon points="86,76 221,44 236,68 258,64 249,96 182,110 124,143 62,129 97,109" fill="#58402B"/><polygon points="219,34 237,22 254,43 242,54" fill="#87A452"/><polygon points="164,112 248,93 219,158" fill="#58402B"/><path fill="#87A452" fill-rule="evenodd" d="M120 111 177 99 183 137 132 149ZM132 119 138 139 174 131 169 110ZM187 96 247 84 253 123 196 136ZM199 104 204 125 243 117 238 95Z"/><g class="actor-eyes"><polygon points="143,124 162,117 160,130" fill="#87A452"/><polygon points="215,110 231,103 228,117" fill="#87A452"/></g><path class="actor-mouth" d="m196 144 15-3-8 10Z" fill="#EBD8AF"/></g><g data-piece="torso"><polygon points="142,178 185,197 153,281 76,338 36,293 83,235" fill="#EBD8AF"/><polygon points="245,175 285,222 324,270 262,309 219,259" fill="#EBD8AF"/><polygon points="184,203 222,182 235,267 194,318 168,291 207,234" fill="#87A452"/></g><g data-piece="legs"><polygon points="151,335 184,349 179,408 155,466 166,566 139,568 125,461 148,398" fill="#58402B"/><polygon points="204,337 226,325 252,395 215,459 236,567 206,572 184,461 221,394" fill="#58402B"/></g><g data-piece="arm-left"><polygon points="110,196 143,218 177,254 160,274 116,246" fill="#EBD8AF"/></g><g data-piece="prop"><polygon points="139,259 194,278 255,251 242,327 193,351 151,321" fill="#87A452"/><polygon points="139,259 193,268 252,250 194,284" fill="#EBD8AF"/></g><g data-piece="hand-left"><polygon points="166,308 171,300 184,330 177,334" fill="#58402B"/><polygon points="175,305 180,297 193,330 186,334" fill="#58402B"/><polygon points="184,302 189,294 202,330 195,334" fill="#58402B"/></g><g data-piece="arm-right"><polygon points="267,196 287,220 261,250 229,209 240,190 257,221" fill="#EBD8AF"/></g><g data-piece="hand-right"><polygon points="239,184 221,166 214,144 221,141 230,157 239,147 245,150 236,166 249,179" fill="#58402B"/></g></svg>
+<text x="1075" y="635" font-family="sans-serif" font-size="17" fill="#58402B">thinking</text><text x="25" y="692" font-family="sans-serif" font-size="20" fill="#20171E">Hacker / E</text><svg x="15" y="710" width="320" height="550" viewBox="0 0 400 600">
+<g data-piece="legs">
+<polygon points="174,266 198,278 182,321 156,390 124,417 127,307" fill="#20171E"/>
+<polygon points="127,389 153,418 162,450 149,546 103,505 122,443" fill="#20171E"/>
+<polygon points="122,445 103,504 148,535 149,546 103,505" fill="#20171E"/>
+<polygon points="124,387 153,418 126,435" fill="#F6A0B4"/>
+<polygon points="184,272 218,286 230,344 238,393 275,430 287,493 242,516 204,427 179,356 170,311" fill="#20171E"/>
+<polygon points="242,511 287,488 292,511 249,535" fill="#F6A0B4"/>
+<polygon points="124,535 146,551 140,573 107,578 124,560" fill="#D9254C"/>
+<polygon points="264,530 281,522 286,559 313,577 269,578" fill="#D9254C"/>
+</g>
+<g data-piece="torso">
+<polygon points="140,159 192,141 196,162 177,186 150,177" fill="#D9254C"/>
+<polygon points="206,166 280,143 260,210 233,190 185,190" fill="#D9254C"/>
+<polygon points="230,122 271,135 224,145" fill="#D9254C"/>
+<polygon points="190,196 223,200 211,230 226,249 193,271 171,259 184,232" fill="#20171E"/>
+</g>
+<g data-piece="arm-left">
+<polygon points="150,197 166,183 188,202 151,224 126,222" fill="#20171E"/>
+<polygon points="151,225 226,192 232,207 153,247 128,253 123,233" fill="#20171E"/>
+<polygon points="125,226 143,222 145,233 127,241" fill="#F6A0B4"/>
+</g>
+<g data-piece="hand-left">
+<polygon points="147,211 160,206 174,213 173,219 158,215 146,222 137,221" fill="#20171E"/>
+<polygon points="153,220 168,217 184,225 181,231 165,224 153,227" fill="#20171E"/>
+</g>
+<g data-piece="arm-right">
+<polygon points="225,210 221,228 202,233 174,229 158,239 221,251 235,235" fill="#20171E"/>
+<polygon points="223,211 241,218 236,229 221,224" fill="#F6A0B4"/>
+</g>
+<g data-piece="hand-right">
+<polygon points="235,219 246,217 263,224 260,229 244,224 232,228" fill="#20171E"/>
+<polygon points="230,229 243,226 258,236 254,241 242,233 227,235" fill="#20171E"/>
+</g>
+<g data-piece="prop">
+<polygon points="216,132 220,143 210,147" fill="#20171E"/>
+</g>
+<g data-piece="head">
+<polygon points="134,69 175,29 228,20 229,33 256,52 253,86 241,96 242,61 212,47 188,97 182,81 167,119 142,107 151,78 134,89" fill="#D9254C"/>
+<polygon points="212,47 242,61 232,107 213,135 198,130 173,112 194,83" fill="#20171E"/>
+<polygon class="actor-eyes" points="201,91 208,77 239,64 225,93 199,103" fill="#F6A0B4"/>
+<polygon class="actor-eyes" points="216,82 222,80 225,85 220,94 214,95 212,90" fill="#D9254C"/>
+<polygon class="actor-mouth" points="208,115 219,111 214,119" fill="#F6A0B4"/>
+<polygon points="175,43 211,30 189,76 177,107 176,83 165,117 155,113" fill="#D9254C"/>
+</g>
+</svg>
+<text x="25" y="1295" font-family="sans-serif" font-size="17" fill="#20171E">standing</text><svg x="365" y="710" width="320" height="550" viewBox="0 0 400 600">
+<g data-piece="legs">
+<polygon points="175,345 222,322 251,348 301,399 323,421 301,445 266,431 225,383 177,419 143,415 127,397" fill="#20171E"/>
+<polygon points="302,398 327,419 318,440 292,418" fill="#F6A0B4"/>
+<polygon points="328,421 371,459 329,448 318,440" fill="#D9254C"/>
+<polygon points="175,394 209,399 237,423 280,449 267,480 232,476 202,450 158,451 142,432" fill="#20171E"/>
+<polygon points="265,445 284,452 274,478 250,469" fill="#F6A0B4"/>
+<polygon points="277,465 326,490 284,483 273,477" fill="#D9254C"/>
+<polygon points="185,341 218,329 218,353 170,386 146,388" fill="#20171E"/>
+</g>
+<g data-piece="torso" transform="translate(0 72)">
+<polygon points="140,159 192,141 196,162 177,186 150,177" fill="#D9254C"/>
+<polygon points="206,166 280,143 260,210 233,190 185,190" fill="#D9254C"/>
+<polygon points="230,122 271,135 224,145" fill="#D9254C"/>
+<polygon points="190,196 223,200 211,230 226,249 193,271 171,259 184,232" fill="#20171E"/>
+</g>
+<g data-piece="arm-left">
+<polygon points="145,271 160,279 143,340 130,362 111,360 127,319" fill="#20171E"/>
+<polygon points="129,358 142,363 118,474 102,480 102,463" fill="#20171E"/>
+<polygon points="105,457 122,462 119,478 101,480" fill="#F6A0B4"/>
+</g>
+<g data-piece="hand-left">
+<polygon points="105,479 118,481 116,489 91,487 77,495 73,491 86,482 72,484 70,479 90,477" fill="#20171E"/>
+</g>
+<g data-piece="arm-right">
+<polygon points="251,276 267,279 292,296 283,310 252,296" fill="#20171E"/>
+<polygon points="284,297 296,298 321,251 306,243" fill="#20171E"/>
+<polygon points="306,241 325,249 320,262 300,254" fill="#F6A0B4"/>
+</g>
+<g data-piece="hand-right">
+<polygon points="321,246 328,231 348,216 353,222 340,234 365,231 366,237 341,242 360,249 355,254 334,247" fill="#20171E"/>
+</g>
+<g data-piece="prop">
+<polygon points="216,204 220,215 210,219" fill="#20171E"/>
+</g>
+<g data-piece="head" transform="translate(0 72)">
+<polygon points="134,69 175,29 228,20 229,33 256,52 253,86 241,96 242,61 212,47 188,97 182,81 167,119 142,107 151,78 134,89" fill="#D9254C"/>
+<polygon points="212,47 242,61 232,107 213,135 198,130 173,112 194,83" fill="#20171E"/>
+<polygon class="actor-eyes" points="201,91 208,77 239,64 225,93 199,103" fill="#F6A0B4"/>
+<polygon class="actor-eyes" points="216,82 222,80 225,85 220,94 214,95 212,90" fill="#D9254C"/>
+<polygon class="actor-mouth" points="208,115 219,111 214,119" fill="#F6A0B4"/>
+<polygon points="175,43 211,30 189,76 177,107 176,83 165,117 155,113" fill="#D9254C"/>
+</g>
+</svg>
+<text x="375" y="1295" font-family="sans-serif" font-size="17" fill="#20171E">seated</text><svg x="715" y="710" width="320" height="550" viewBox="0 0 400 600">
+<g data-piece="legs">
+<polygon points="174,266 198,278 182,321 156,390 124,417 127,307" fill="#20171E"/>
+<polygon points="127,389 153,418 162,450 149,546 103,505 122,443" fill="#20171E"/>
+<polygon points="122,445 103,504 148,535 149,546 103,505" fill="#20171E"/>
+<polygon points="124,387 153,418 126,435" fill="#F6A0B4"/>
+<polygon points="184,272 218,286 230,344 238,393 275,430 287,493 242,516 204,427 179,356 170,311" fill="#20171E"/>
+<polygon points="242,511 287,488 292,511 249,535" fill="#F6A0B4"/>
+<polygon points="124,535 146,551 140,573 107,578 124,560" fill="#D9254C"/>
+<polygon points="264,530 281,522 286,559 313,577 269,578" fill="#D9254C"/>
+</g>
+<g data-piece="torso">
+<polygon points="140,159 192,141 196,162 177,186 150,177" fill="#D9254C"/>
+<polygon points="206,166 280,143 260,210 233,190 185,190" fill="#D9254C"/>
+<polygon points="230,122 271,135 224,145" fill="#D9254C"/>
+<polygon points="190,196 223,200 211,230 226,249 193,271 171,259 184,232" fill="#20171E"/>
+</g>
+<g data-piece="arm-left">
+<polygon points="149,195 165,204 149,254 133,259 130,240" fill="#20171E"/>
+<polygon points="134,249 151,251 173,275 162,285 135,269" fill="#20171E"/>
+<polygon points="157,271 171,278 165,288 152,281" fill="#F6A0B4"/>
+</g>
+<g data-piece="hand-left">
+<polygon points="165,282 183,279 191,284 181,287 185,301 179,305 172,292 163,290" fill="#20171E"/>
+</g>
+<g data-piece="arm-right">
+<polygon points="254,202 270,204 293,241 276,254 249,227" fill="#20171E"/>
+<polygon points="279,242 295,244 321,199 308,192" fill="#20171E"/>
+<polygon points="308,188 329,197 323,210 301,201" fill="#F6A0B4"/>
+</g>
+<g data-piece="hand-right">
+<polygon points="323,194 329,180 349,165 353,171 341,184 363,180 365,186 341,192 359,198 355,203 334,196" fill="#20171E"/>
+</g>
+<g data-piece="prop">
+<polygon points="216,132 220,143 210,147" fill="#20171E"/>
+</g>
+<g data-piece="head">
+<polygon points="134,69 175,29 228,20 229,33 256,52 253,86 241,96 242,61 212,47 188,97 182,81 167,119 142,107 151,78 134,89" fill="#D9254C"/>
+<polygon points="212,47 242,61 232,107 213,135 198,130 173,112 194,83" fill="#20171E"/>
+<polygon class="actor-eyes" points="201,91 208,77 239,64 225,93 199,103" fill="#F6A0B4"/>
+<polygon class="actor-eyes" points="216,82 222,80 225,85 220,94 214,95 212,90" fill="#D9254C"/>
+<polygon class="actor-mouth" points="208,115 219,111 214,119" fill="#F6A0B4"/>
+<polygon points="175,43 211,30 189,76 177,107 176,83 165,117 155,113" fill="#D9254C"/>
+</g>
+</svg>
+<text x="725" y="1295" font-family="sans-serif" font-size="17" fill="#20171E">explaining</text><svg x="1065" y="710" width="320" height="550" viewBox="0 0 400 600">
+<g data-piece="legs">
+<polygon points="174,266 198,278 182,321 156,390 124,417 127,307" fill="#20171E"/>
+<polygon points="127,389 153,418 162,450 149,546 103,505 122,443" fill="#20171E"/>
+<polygon points="122,445 103,504 148,535 149,546 103,505" fill="#20171E"/>
+<polygon points="124,387 153,418 126,435" fill="#F6A0B4"/>
+<polygon points="184,272 218,286 230,344 238,393 275,430 287,493 242,516 204,427 179,356 170,311" fill="#20171E"/>
+<polygon points="242,511 287,488 292,511 249,535" fill="#F6A0B4"/>
+<polygon points="124,535 146,551 140,573 107,578 124,560" fill="#D9254C"/>
+<polygon points="264,530 281,522 286,559 313,577 269,578" fill="#D9254C"/>
+</g>
+<g data-piece="torso">
+<polygon points="140,159 192,141 196,162 177,186 150,177" fill="#D9254C"/>
+<polygon points="206,166 280,143 260,210 233,190 185,190" fill="#D9254C"/>
+<polygon points="230,122 271,135 224,145" fill="#D9254C"/>
+<polygon points="190,196 223,200 211,230 226,249 193,271 171,259 184,232" fill="#20171E"/>
+</g>
+<g data-piece="arm-left">
+<polygon points="148,196 165,203 152,245 177,258 171,273 135,257" fill="#20171E"/>
+<polygon points="163,255 209,236 225,244 180,272 171,273" fill="#20171E"/>
+<polygon points="205,235 220,239 218,252 202,247" fill="#F6A0B4"/>
+</g>
+<g data-piece="hand-left">
+<polygon points="220,240 234,237 245,244 242,250 230,246 220,252" fill="#20171E"/>
+</g>
+<g data-piece="arm-right">
+<polygon points="255,201 271,206 286,243 274,256 252,229" fill="#20171E"/>
+<polygon points="274,243 288,235 263,165 250,169" fill="#20171E"/>
+<polygon points="249,151 267,152 273,171 253,174" fill="#F6A0B4"/>
+</g>
+<g data-piece="hand-right">
+<polygon points="250,152 247,136 233,134 229,129 235,124 251,129 261,137 264,151" fill="#20171E"/>
+<polygon points="236,126 233,117 237,115 246,127" fill="#20171E"/>
+</g>
+<g data-piece="prop">
+<polygon points="216,132 220,143 210,147" fill="#20171E"/>
+</g>
+<g data-piece="head">
+<polygon points="134,69 175,29 228,20 229,33 256,52 253,86 241,96 242,61 212,47 188,97 182,81 167,119 142,107 151,78 134,89" fill="#D9254C"/>
+<polygon points="212,47 242,61 232,107 213,135 198,130 173,112 194,83" fill="#20171E"/>
+<polygon class="actor-eyes" points="201,91 208,77 239,64 225,93 199,103" fill="#F6A0B4"/>
+<polygon class="actor-eyes" points="216,82 222,80 225,85 220,94 214,95 212,90" fill="#D9254C"/>
+<polygon class="actor-mouth" points="208,115 219,111 214,119" fill="#F6A0B4"/>
+<polygon points="175,43 211,30 189,76 177,107 176,83 165,117 155,113" fill="#D9254C"/>
+</g>
+</svg>
+<text x="1075" y="1295" font-family="sans-serif" font-size="17" fill="#20171E">thinking</text><text x="25" y="1352" font-family="sans-serif" font-size="20" fill="#153B64">Business / E</text><svg x="15" y="1370" width="320" height="550" viewBox="0 0 400 600">
+  <g data-piece="legs">
+    <polygon points="166,286 201,294 194,352 181,435 177,496 184,575 124,581 150,566 144,478 155,445 153,352" fill="#153B64"/>
+    <polygon points="207,297 233,301 259,414 247,451 281,563 310,574 312,584 239,581 210,476 213,437 193,353" fill="#153B64"/>
+  </g>
+  <g data-piece="arm-left">
+    <polygon points="136,147 122,196 153,215 170,181" fill="#B9E9FA"/>
+    <polygon points="116,203 108,220 145,235 152,219" fill="#B9E9FA"/>
+    <polygon points="114,230 131,225 154,275 169,266 170,282 149,299 133,285" fill="#153B64"/>
+  </g>
+  <g data-piece="arm-right">
+    <polygon points="272,155 284,197 254,216 245,187" fill="#B9E9FA"/>
+    <polygon points="290,202 301,222 263,241 255,224" fill="#B9E9FA"/>
+    <polygon points="268,247 289,238 297,254 276,265" fill="#153B64"/>
+  </g>
+  <g data-piece="torso">
+    <polygon points="137,144 190,134 209,150 230,137 270,153 245,228 231,289 163,276 171,235" fill="#153B64"/>
+    <polygon points="193,133 209,149 195,164" fill="#B9E9FA"/>
+    <polygon points="231,137 213,149 230,166" fill="#B9E9FA"/>
+    <polygon points="209,153 216,155 221,166 213,172 202,165" fill="#247DD4"/>
+    <polygon points="208,173 218,173 230,231 214,252 194,230" fill="#247DD4"/>
+  </g>
+  <g data-piece="head">
+    <polygon points="151,54 162,31 215,17 251,35 249,68 237,53 180,75 177,88" fill="#153B64"/>
+    <polygon points="184,73 237,55 247,72 212,121 182,108" fill="#153B64"/>
+    <g class="actor-eyes">
+    <polygon points="193,96 237,76 223,100" fill="#B9E9FA"/>
+    <polygon points="210,88 218,85 220,90 216,97 211,97 208,93" fill="#247DD4"/>
+    </g>
+    <g class="actor-mouth">
+    <polygon points="204,109 213,108 209,112" fill="#247DD4"/>
+    </g>
+    <polygon points="199,124 219,130 208,141" fill="#153B64"/>
+  </g>
+  <g data-piece="prop">
+    <polygon points="278,265 330,247 314,339 268,357" fill="#247DD4"/>
+    <polygon points="295,270 317,263 316,270 294,278" fill="#B9E9FA"/>
+  </g>
+  <g data-piece="hand-left">
+    <polygon points="158,273 172,263 176,267 169,280 157,289" fill="#153B64"/>
+  </g>
+  <g data-piece="hand-right">
+    <polygon points="310,309 320,319 315,338 306,342 303,331" fill="#153B64"/>
+    <polygon points="298,308 313,316 310,322 294,315" fill="#B9E9FA"/>
+    <polygon points="293,320 310,328 307,334 289,327" fill="#B9E9FA"/>
+    <polygon points="288,332 307,339 303,345 285,339" fill="#B9E9FA"/>
+  </g>
+</svg>
+<text x="25" y="1955" font-family="sans-serif" font-size="17" fill="#153B64">standing</text><svg x="365" y="1370" width="320" height="550" viewBox="0 0 400 600">
+  <g data-piece="legs">
+    <polygon points="229,426 254,437 232,502 255,525 184,525 194,488" fill="#153B64"/>
+    <polygon points="143,385 186,354 221,356 309,392 291,423 244,401 197,439 145,452 105,449" fill="#153B64"/>
+    <polygon points="316,398 360,412 334,449 298,429" fill="#247DD4"/>
+  </g>
+  <g data-piece="arm-left">
+    <polygon points="136,206 121,252 151,270 170,240" fill="#B9E9FA"/>
+    <polygon points="115,261 105,279 142,296 151,277" fill="#B9E9FA"/>
+    <polygon points="110,306 128,297 151,343 132,371 119,350" fill="#153B64"/>
+  </g>
+  <g data-piece="arm-right">
+    <polygon points="273,213 288,250 259,269 245,245" fill="#B9E9FA"/>
+    <polygon points="292,254 305,275 268,293 258,276" fill="#B9E9FA"/>
+    <polygon points="285,285 304,305 291,320 230,335 218,320" fill="#153B64"/>
+  </g>
+  <g data-piece="torso" transform="translate(0 59)">
+    <polygon points="137,144 190,134 209,150 230,137 270,153 245,228 231,289 163,276 171,235" fill="#153B64"/>
+    <polygon points="193,133 209,149 195,164" fill="#B9E9FA"/>
+    <polygon points="231,137 213,149 230,166" fill="#B9E9FA"/>
+    <polygon points="209,153 216,155 221,166 213,172 202,165" fill="#247DD4"/>
+    <polygon points="208,173 218,173 230,231 214,252 194,230" fill="#247DD4"/>
+  </g>
+  <g data-piece="head" transform="translate(0 59)">
+    <polygon points="151,54 162,31 215,17 251,35 249,68 237,53 180,75 177,88" fill="#153B64"/>
+    <polygon points="184,73 237,55 247,72 212,121 182,108" fill="#153B64"/>
+    <g class="actor-eyes">
+    <polygon points="193,96 237,76 223,100" fill="#B9E9FA"/>
+    <polygon points="210,88 218,85 220,90 216,97 211,97 208,93" fill="#247DD4"/>
+    </g>
+    <g class="actor-mouth">
+    <polygon points="204,109 213,108 209,112" fill="#247DD4"/>
+    </g>
+    <polygon points="199,124 219,130 208,141" fill="#153B64"/>
+  </g>
+  <g data-piece="prop">
+
+  </g>
+  <g data-piece="hand-left">
+    <polygon points="136,351 152,340 159,346 145,368 135,375" fill="#153B64"/>
+  </g>
+  <g data-piece="hand-right">
+    <polygon points="219,324 236,326 222,342 220,365 211,369 210,347" fill="#B9E9FA"/>
+    <polygon points="208,347 214,344 212,369 206,373" fill="#B9E9FA"/>
+    <polygon points="216,341 222,339 220,364 214,367" fill="#B9E9FA"/>
+  </g>
+</svg>
+<text x="375" y="1955" font-family="sans-serif" font-size="17" fill="#153B64">seated</text><svg x="715" y="1370" width="320" height="550" viewBox="0 0 400 600">
+  <g data-piece="legs">
+    <polygon points="166,286 201,294 194,352 181,435 177,496 184,575 124,581 150,566 144,478 155,445 153,352" fill="#153B64"/>
+    <polygon points="207,297 233,301 259,414 247,451 281,563 310,574 312,584 239,581 210,476 213,437 193,353" fill="#153B64"/>
+  </g>
+  <g data-piece="arm-left">
+    <polygon points="136,147 122,192 151,211 170,181" fill="#B9E9FA"/>
+    <polygon points="116,200 108,217 142,233 152,215" fill="#B9E9FA"/>
+    <polygon points="114,229 129,225 104,251 63,236 60,223 97,235" fill="#153B64"/>
+  </g>
+  <g data-piece="arm-right">
+    <polygon points="272,155 284,196 254,216 245,187" fill="#B9E9FA"/>
+    <polygon points="290,202 301,222 263,241 255,224" fill="#B9E9FA"/>
+    <polygon points="280,246 298,243 326,187 310,180" fill="#153B64"/>
+  </g>
+  <g data-piece="torso">
+    <polygon points="137,144 190,134 209,150 230,137 270,153 245,228 231,289 163,276 171,235" fill="#153B64"/>
+    <polygon points="193,133 209,149 195,164" fill="#B9E9FA"/>
+    <polygon points="231,137 213,149 230,166" fill="#B9E9FA"/>
+    <polygon points="209,153 216,155 221,166 213,172 202,165" fill="#247DD4"/>
+    <polygon points="208,173 218,173 230,231 214,252 194,230" fill="#247DD4"/>
+  </g>
+  <g data-piece="head">
+    <polygon points="151,54 162,31 215,17 251,35 249,68 237,53 180,75 177,88" fill="#153B64"/>
+    <polygon points="184,73 237,55 247,72 212,121 182,108" fill="#153B64"/>
+    <g class="actor-eyes">
+    <polygon points="193,96 237,76 223,100" fill="#B9E9FA"/>
+    <polygon points="210,88 218,85 220,90 216,97 211,97 208,93" fill="#247DD4"/>
+    </g>
+    <g class="actor-mouth">
+    <polygon points="204,109 213,108 209,112" fill="#247DD4"/>
+    </g>
+    <polygon points="199,124 219,130 208,141" fill="#153B64"/>
+  </g>
+  <g data-piece="prop">
+    <polygon points="280,123 345,115 352,225 287,234" fill="#247DD4"/>
+    <polygon points="300,111 323,108 325,119 299,124" fill="#B9E9FA"/>
+    <polygon points="295,144 335,139 336,147 296,152" fill="#B9E9FA"/>
+    <polygon points="297,163 337,158 338,166 298,171" fill="#B9E9FA"/>
+    <polygon points="299,182 327,178 328,186 300,190" fill="#B9E9FA"/>
+  </g>
+  <g data-piece="hand-left">
+    <polygon points="61,224 48,217 32,218 30,213 49,209 39,199 42,194 60,207 66,204 79,212 77,222" fill="#B9E9FA"/>
+    <polygon points="48,204 47,192 52,191 60,205" fill="#B9E9FA"/>
+  </g>
+  <g data-piece="hand-right">
+    <polygon points="302,190 317,183 323,190 320,210 309,215 303,207" fill="#B9E9FA"/>
+    <polygon points="309,186 313,174 318,174 318,190" fill="#B9E9FA"/>
+  </g>
+</svg>
+<text x="725" y="1955" font-family="sans-serif" font-size="17" fill="#153B64">explaining</text><svg x="1065" y="1370" width="320" height="550" viewBox="0 0 400 600">
+  <g data-piece="legs">
+    <polygon points="166,286 201,294 194,352 181,435 177,496 184,575 124,581 150,566 144,478 155,445 153,352" fill="#153B64"/>
+    <polygon points="207,297 233,301 259,414 247,451 281,563 310,574 312,584 239,581 210,476 213,437 193,353" fill="#153B64"/>
+  </g>
+  <g data-piece="arm-left">
+    <polygon points="136,147 122,192 151,211 170,181" fill="#B9E9FA"/>
+    <polygon points="116,200 108,217 142,233 152,215" fill="#B9E9FA"/>
+    <polygon points="123,231 140,225 177,259 210,250 220,263 177,279 145,263" fill="#153B64"/>
+  </g>
+  <g data-piece="arm-right">
+    <polygon points="272,155 295,203 270,223 246,187" fill="#B9E9FA"/>
+    <polygon points="301,209 313,229 281,247 271,226" fill="#B9E9FA"/>
+    <polygon points="282,249 302,241 258,166 246,170" fill="#153B64"/>
+  </g>
+  <g data-piece="torso">
+    <polygon points="137,144 190,134 209,150 230,137 270,153 245,228 231,289 163,276 171,235" fill="#153B64"/>
+    <polygon points="193,133 209,149 195,164" fill="#B9E9FA"/>
+    <polygon points="231,137 213,149 230,166" fill="#B9E9FA"/>
+    <polygon points="209,153 216,155 221,166 213,172 202,165" fill="#247DD4"/>
+    <polygon points="208,173 218,173 230,231 214,252 194,230" fill="#247DD4"/>
+  </g>
+  <g data-piece="head" transform="rotate(-4 205 90)">
+    <polygon points="151,54 162,31 215,17 251,35 249,68 237,53 180,75 177,88" fill="#153B64"/>
+    <polygon points="184,73 237,55 247,72 212,121 182,108" fill="#153B64"/>
+    <g class="actor-eyes">
+    <polygon points="193,96 237,76 223,100" fill="#B9E9FA"/>
+    <polygon points="210,88 218,85 220,90 216,97 211,97 208,93" fill="#247DD4"/>
+    </g>
+    <g class="actor-mouth">
+    <polygon points="204,109 213,108 209,112" fill="#247DD4"/>
+    </g>
+    <polygon points="199,124 219,130 208,141" fill="#153B64"/>
+  </g>
+  <g data-piece="prop"/>
+  <g data-piece="hand-left">
+    <polygon points="211,252 226,245 238,252 229,263 216,267" fill="#B9E9FA"/>
+    <polygon points="226,246 238,241 241,246 232,253" fill="#B9E9FA"/>
+  </g>
+  <g data-piece="hand-right">
+    <polygon points="249,171 234,165 221,157 216,145 217,134 223,132 228,139 226,150 242,157 257,165" fill="#B9E9FA"/>
+    <polygon points="218,136 209,132 211,128 221,131" fill="#B9E9FA"/>
+  </g>
+</svg>
+<text x="1075" y="1955" font-family="sans-serif" font-size="17" fill="#153B64">thinking</text></svg>

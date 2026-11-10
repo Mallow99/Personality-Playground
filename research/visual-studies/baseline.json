@@ -11,7 +11,11 @@
         "loose parchment coat/cardigan",
         "curious gestures"
       ],
-      "palette_family": ["oak", "olive", "parchment"]
+      "palette_family": [
+        "oak",
+        "olive",
+        "parchment"
+      ]
     },
     "engineering": {
       "presentation": "feminine",
@@ -20,7 +24,11 @@
         "cropped angular jacket/collar",
         "crossed-arm standing and sideways seated poses"
       ],
-      "palette_family": ["charcoal", "crimson", "rose"]
+      "palette_family": [
+        "charcoal",
+        "crimson",
+        "rose"
+      ]
     },
     "business": {
       "presentation": "masculine",
@@ -30,7 +38,11 @@
         "blue tie and compact hair",
         "relaxed standing and seated poses"
       ],
-      "palette_family": ["navy", "blue", "ice"]
+      "palette_family": [
+        "navy",
+        "blue",
+        "ice"
+      ]
     }
   },
   "constraints": [
@@ -40,8 +52,9 @@
     "no shared dark/light character fills",
     "no story spoilers"
   ],
-  "production_svg_status": "pending_E_conversion",
+  "production_svg_status": "E_proof_pack_available_pending_visual_review",
   "existing_svg_proofs": "earlier D feasibility studies only",
-  "icons": "unconfirmed",
-  "animation": "paused_for_review"
+  "icons": "face_and_motif_proofs_pending_review",
+  "animation": "interactive_proof_available",
+  "proof_pack": "../../bfi/static/e-preview/index.html"
 }

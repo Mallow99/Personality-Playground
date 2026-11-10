@@ -3,9 +3,11 @@
 **[Option E](option-e.png) is the selected visual baseline.** Build from E's character
 identities, outfits, standing/seated poses, and distinct personalities. Earlier
 options remain archived for comparison; the previous preference for D/A is superseded.
-Animation and further design work are paused for review.
+The owner subsequently authorized the [E proof pack](../../bfi/static/e-preview/README.md).
+It supplies poses, icons, motif transitions, and cursors for the next visual review.
 
-E is currently a generated reference sheet, not production SVGs or a completed rig.
+E’s original reference remains the generated sheet. New code-built SVG proofs
+are available; they are not yet approved production artwork.
 The app's runtime artwork has not been replaced. The older D-style SVG proofs show
 that this general construction can work in code; they are not E's implementation.
 
@@ -110,3 +112,15 @@ angular jacket/collar, crossed-arm stance and sideways seated pose. Business rem
 masculine: navy waistcoat, icy sleeve pieces, blue tie, compact hair, and relaxed
 standing/seated poses. This is a visual baseline; model assignments, names, voice,
 and personality training are separate decisions.
+
+## E proof pack delivered
+
+Open `/static/e-preview/index.html` with BFI running. The source includes twelve
+pose SVGs, six face/motif icons, three motif transitions, speaking and appearance
+controls, 39 exported cursor SVGs, and downloadable contact sheets. A 12-second
+Academic GIF is a vector-frame export, not a browser recording. See the proof
+pack README for component interfaces and the browser verification limitation.
+
+The earlier pause/resume checklist above is historical context. This authorized
+pass completed a proof; choosing final refinements and installing it in chat remain
+separate from delivery of the demonstration.

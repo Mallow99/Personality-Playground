@@ -118,8 +118,11 @@ It is not needed to start or use the local app. See [planning](docs/planning.md)
 
 The selected visual baseline is **[E](research/visual-studies/option-e.png)**. The
 [reference gallery and design brief](research/visual-studies/README.md) preserve
-the choice and earlier studies. Recreating E as production SVGs remains pending;
-new animation and art work are paused for review.
+the choice and earlier studies. The [E proof pack](bfi/static/e-preview/README.md) now provides editable poses,
+icons, motif transitions, an animated SVG export, and agent cursor studies. Open
+`/static/e-preview/index.html` with the local app running, or open the
+[private live demo](https://bfi-e-character-proof.poyoboi29.chatgpt.site). The ordinary chat art
+remains the earlier prototype while these proofs await review.
 
 To try real project reads, set `BFI_PROJECT_ROOT=.` in `.env`, restart, and open
 **Tools & setup**. The inspector works even in mock mode. A real compatible model

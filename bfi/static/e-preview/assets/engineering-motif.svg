@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Engineering E angular eye and error-window motif">
+<g data-piece="prop">
+<polygon points="9,24 81,8 95,23 83,78 20,91 5,76" fill="#20171E"/>
+<polygon points="16,23 82,10 88,17 14,33" fill="#D9254C"/>
+<polygon class="actor-eyes" points="19,59 32,42 76,30 62,61 18,74" fill="#F6A0B4"/>
+<polygon class="actor-eyes" points="43,46 52,42 58,49 52,61 43,63 39,55" fill="#D9254C"/>
+<polygon class="actor-mouth" points="30,76 38,73 43,78 51,72 59,75 65,68 72,71 67,78 60,80 53,78 46,84 38,80 31,84" fill="#D9254C"/>
+</g>
+</svg>

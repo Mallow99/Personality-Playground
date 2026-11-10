@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" role="img" aria-label="Engineering E standing, arms crossed">
+<g data-piece="legs">
+<polygon points="174,266 198,278 182,321 156,390 124,417 127,307" fill="#20171E"/>
+<polygon points="127,389 153,418 162,450 149,546 103,505 122,443" fill="#20171E"/>
+<polygon points="122,445 103,504 148,535 149,546 103,505" fill="#20171E"/>
+<polygon points="124,387 153,418 126,435" fill="#F6A0B4"/>
+<polygon points="184,272 218,286 230,344 238,393 275,430 287,493 242,516 204,427 179,356 170,311" fill="#20171E"/>
+<polygon points="242,511 287,488 292,511 249,535" fill="#F6A0B4"/>
+<polygon points="124,535 146,551 140,573 107,578 124,560" fill="#D9254C"/>
+<polygon points="264,530 281,522 286,559 313,577 269,578" fill="#D9254C"/>
+</g>
+<g data-piece="torso">
+<polygon points="140,159 192,141 196,162 177,186 150,177" fill="#D9254C"/>
+<polygon points="206,166 280,143 260,210 233,190 185,190" fill="#D9254C"/>
+<polygon points="230,122 271,135 224,145" fill="#D9254C"/>
+<polygon points="190,196 223,200 211,230 226,249 193,271 171,259 184,232" fill="#20171E"/>
+</g>
+<g data-piece="arm-left">
+<polygon points="150,197 166,183 188,202 151,224 126,222" fill="#20171E"/>
+<polygon points="151,225 226,192 232,207 153,247 128,253 123,233" fill="#20171E"/>
+<polygon points="125,226 143,222 145,233 127,241" fill="#F6A0B4"/>
+</g>
+<g data-piece="hand-left">
+<polygon points="147,211 160,206 174,213 173,219 158,215 146,222 137,221" fill="#20171E"/>
+<polygon points="153,220 168,217 184,225 181,231 165,224 153,227" fill="#20171E"/>
+</g>
+<g data-piece="arm-right">
+<polygon points="225,210 221,228 202,233 174,229 158,239 221,251 235,235" fill="#20171E"/>
+<polygon points="223,211 241,218 236,229 221,224" fill="#F6A0B4"/>
+</g>
+<g data-piece="hand-right">
+<polygon points="235,219 246,217 263,224 260,229 244,224 232,228" fill="#20171E"/>
+<polygon points="230,229 243,226 258,236 254,241 242,233 227,235" fill="#20171E"/>
+</g>
+<g data-piece="prop">
+<polygon points="216,132 220,143 210,147" fill="#20171E"/>
+</g>
+<g data-piece="head">
+<polygon points="134,69 175,29 228,20 229,33 256,52 253,86 241,96 242,61 212,47 188,97 182,81 167,119 142,107 151,78 134,89" fill="#D9254C"/>
+<polygon points="212,47 242,61 232,107 213,135 198,130 173,112 194,83" fill="#20171E"/>
+<polygon class="actor-eyes" points="201,91 208,77 239,64 225,93 199,103" fill="#F6A0B4"/>
+<polygon class="actor-eyes" points="216,82 222,80 225,85 220,94 214,95 212,90" fill="#D9254C"/>
+<polygon class="actor-mouth" points="208,115 219,111 214,119" fill="#F6A0B4"/>
+<polygon points="175,43 211,30 189,76 177,107 176,83 165,117 155,113" fill="#D9254C"/>
+</g>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-hidden="true" focusable="false" data-character="business" data-pose="face">
+  <g data-piece="head">
+    <polygon points="8,39 18,14 58,3 88,15 87,43 75,30 30,49 27,63" fill="#153B64"/>
+    <polygon points="35,50 75,34 86,47 61,89 32,76" fill="#153B64"/>
+    <g class="actor-eyes">
+    <polygon points="42,67 78,51 65,72" fill="#B9E9FA"/>
+    <polygon points="56,61 62,58 65,63 62,69 57,69 55,65" fill="#247DD4"/>
+    </g>
+    <g class="actor-mouth">
+    <polygon points="55,79 63,78 59,82" fill="#247DD4"/>
+    </g>
+  </g>
+</svg>

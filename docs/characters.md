@@ -15,10 +15,10 @@ with a waistcoat and compact hairstyle. Preserve the standing and seated poses,
 loose angular pieces, clear gestures, and separate approximately three-color palettes.
 
 See the [design brief](../research/visual-studies/README.md) and
-[selection record](../research/visual-studies/baseline.json). E still needs to be
-recreated as production SVGs and rigged. The older D SVG studies prove a polygon
-construction route; they do not implement E. Simplified icons are unconfirmed.
-Animation and further design work are paused for review. The table below describes
+[selection record](../research/visual-studies/baseline.json). The [E interactive proof](../bfi/static/e-preview/README.md) now contains four
+editable poses per character, face/motif icons, transitions, speaking/visibility
+controls, and cursor studies. They await visual review. Earlier D studies remain
+archived. The table below describes
 the earlier app prototype, whose runtime artwork has not been replaced yet.
 
 | Profile     | Useful starting purpose                                            | Provisional voice                                | Implemented appearance                     |
@@ -99,3 +99,10 @@ window-edge seating, click-through behavior, multi-monitor handling, background
 presence, and opt-in proactive appearances remain future work. Model-requested
 attention and computer control are different permissions; neither is enabled by an
 avatar animation.
+
+## Expanded individual directions
+
+See [Individuals, with specialties](character-directions.md) for the owner’s
+expanded directions, proposed personality facets, future capability goals, and
+evaluation ideas. Simultaneous characters are preferred; fast swapping is a
+fallback to measure on the delivered PC, not a permanent single-model restriction.

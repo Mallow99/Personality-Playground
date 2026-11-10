@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Engineering E face mark">
+<g data-piece="head">
+<polygon points="13,42 41,10 73,5 73,14 94,29 91,58 82,64 83,34 62,23 47,67 43,50 32,84 16,75 25,47 13,61" fill="#D9254C"/>
+<polygon points="62,23 83,34 75,70 61,92 48,87 34,72 48,47" fill="#20171E"/>
+<polygon class="actor-eyes" points="53,58 58,47 80,36 70,61 51,68" fill="#F6A0B4"/>
+<polygon class="actor-eyes" points="63,50 68,48 70,53 66,60 61,61 60,56" fill="#D9254C"/>
+<polygon class="actor-mouth" points="58,77 68,73 64,80" fill="#F6A0B4"/>
+<polygon points="42,20 65,12 49,45 39,74 37,53 31,83 23,78" fill="#D9254C"/>
+</g>
+</svg>
