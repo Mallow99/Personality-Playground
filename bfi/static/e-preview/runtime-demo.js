@@ -1,4 +1,4 @@
-import { AvatarView } from "./avatar-runtime/avatar.js?v=2";
+import { AvatarView } from "./avatar-runtime/avatar.js?v=3";
 const $ = (id) => document.getElementById(id);
 const defaults = {
   academic: "reading",
@@ -30,6 +30,7 @@ async function start() {
     activity: "idle",
     visible: true,
     motion: true,
+    contrast: "auto",
     size: "normal",
     caption: "Here when you need me.",
   };
@@ -67,6 +68,10 @@ async function start() {
     if (view.media.matches)
       $("pose-note").textContent +=
         " Your reduced-motion setting keeps animation off.";
+    if (pose.face_design)
+      $("pose-note").textContent += " Business two-eye design candidate.";
+    if (pose.clipboard_orientation)
+      $("pose-note").textContent += " The paper faces him; we see the back.";
     $("animate-example").hidden =
       pose.motion !== "none" || !moving[state.profile];
     $("command").textContent = JSON.stringify(
@@ -209,10 +214,27 @@ async function start() {
   });
   $("surface").addEventListener("change", () => {
     document.querySelector(".desktop").dataset.surface = $("surface").value;
-    say("Art background changed. Source colors stay the same.");
+    render();
+    say("Background changed. Auto selects matching artwork contrast.");
   });
   const preferenceChanged = () => render();
   view.media.addEventListener("change", preferenceChanged);
+  $("contrast").addEventListener("change", () => {
+    state.contrast = $("contrast").value;
+    render();
+    say("Artwork contrast changed.");
+  });
+  const parameters = new URLSearchParams(location.search);
+  if (
+    ["studio", "theme", "light", "dark"].includes(parameters.get("surface"))
+  ) {
+    $("surface").value = parameters.get("surface");
+    document.querySelector(".desktop").dataset.surface = $("surface").value;
+  }
+  if (["auto", "light", "dark"].includes(parameters.get("contrast"))) {
+    state.contrast = parameters.get("contrast");
+    $("contrast").value = state.contrast;
+  }
   role("academic");
   const requested = catalog.poses.find(
     (p) => p.id === new URLSearchParams(location.search).get("pose"),

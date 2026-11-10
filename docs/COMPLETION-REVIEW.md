@@ -70,3 +70,26 @@ poses now look toward their books, keyboard, map, panels, report or spreadsheet.
 filters, light/dark backgrounds, source-art comparison and per-pose review notes.
 `config/avatar-visual-review.json` records the inspected inventory and findings.
 The 54-proposal white-source gallery remains separate from this runtime review.
+
+## V5 candidate after material/orientation feedback
+
+The previous review was insufficient: a clean crop did not establish a good dark
+silhouette, a coherent face, or a physically correct writing pose. Business now has
+a consistent two-eye candidate across 42 entries. Working and formal-report are
+regenerated endpoints whose paper faces him; the viewer sees the unmarked board
+back. Full backing planes remain below the gripping fingers. Other display boards
+have opaque paper for presenting information and are separate from writing poses.
+
+All 128 entries have role-colored dark variants. Auto chooses from the app surface;
+Light/Dark is an owner preference shared with the overlay. Model calls cannot
+change it. No edge glow is used. The source and previous designs remain available.
+The original proposal gallery is labeled as source references rather than the
+current Business design.
+
+The 42 revised Business poses were inspected in four full-body contact pages and
+targeted head/prop views; this caught hand overlaps and a reframed reclining pose.
+Actual browser screenshots cover all three roles on light/dark surfaces. Checks
+cover 256 image decodes, opaque board backs with plain centers, head placement
+through motion pause/resume, automatic surface selection and cross-window owner
+contrast. 65 backend tests and the prior control/handler regressions pass.
+V5 remains a candidate for the owner's aesthetic review, not a claim of perfect art.

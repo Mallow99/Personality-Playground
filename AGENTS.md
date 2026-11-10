@@ -111,3 +111,14 @@ arms visible (poses-v4). Its former guide must not mark an arm hidden. Review al
 findings. build_avatar_clean.py removes detached baseline scraps and the known
 neighboring fragments in Hacker tired. Preserve original sources and glamour hashes.
 Do not substitute image-loading tests for checking anatomy and crop quality.
+
+Latest owner design correction: Business writing clipboards face HIM; the viewer
+sees only the plain solid back, never the paper/grid. V5 regenerates working and
+formal-report endpoints and adds full rear board planes beneath fingers. The first
+v5 reference's presentation-facing writing boards are rejected; use the inward
+reference. Business uses a consistent two-eye candidate across 42 poses, with
+closed resting eyes and explicit forehead-hand edits. All 128 have normal/dark
+variants; contrast is an owner-only auto/light/dark preference. No pale glow.
+Preserve authored transforms when resetting motion. Read poses-v5/README.md and
+check actual clipboard orientation, not just pixel opacity. Aesthetic review remains
+open; do not silently call this candidate approved.

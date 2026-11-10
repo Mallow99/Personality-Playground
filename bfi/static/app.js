@@ -66,6 +66,7 @@ async function startAvatar() {
         $("avatar-pose").value = state.pose_id;
       $("avatar-dock").value = state.dock;
       $("avatar-size").value = state.size;
+      $("avatar-contrast").value = state.contrast;
       $("avatar-motion").checked = state.motion;
       document.body.dataset.motion = state.motion ? "on" : "off";
       $("avatar-connection").textContent =
@@ -609,3 +610,7 @@ $("mirror-avatar").addEventListener("change", () => {
     !$("mirror-avatar").checked || !avatarState?.visible;
   $("sidebar-avatar").hidden = !$("corner-companion").hidden;
 });
+
+$("avatar-contrast").addEventListener("change", () =>
+  avatarChange({ contrast: $("avatar-contrast").value }),
+);

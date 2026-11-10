@@ -42,7 +42,8 @@
         "navy",
         "blue",
         "ice"
-      ]
+      ],
+      "face_candidate": "poses-v5: consistent two-eye family; closed resting eyes and foreground-hand exceptions"
     }
   },
   "constraints": [
@@ -63,6 +64,6 @@
   "pose_additions": "poses-v3/README.md",
   "body_guides": "../../config/rigs",
   "pose_plan": "../../config/pose-plan.json",
-  "visual_review": "All 54 suggestions explicitly approved; 128 entries integrated. Two pose-local layered motion examples; historical maps archived.",
+  "visual_review": "E remains the baseline. V5 Business two-eye/inward-writing candidate is awaiting owner aesthetic review; 128 runtime normal/dark pairs are implemented.",
   "pose_review": "../../config/pose-review.json"
 }

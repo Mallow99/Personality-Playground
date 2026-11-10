@@ -20,10 +20,39 @@ export async function avatarAPI(path = "", changes) {
   return response.json();
 }
 const cache = new Map();
+const motionGroups =
+  "#reading-head,#held-book,#reading-left-hand,#reading-right-hand,#seated-moving-hand";
+
+function useDarkArt(element, preference) {
+  if (preference === "dark") return true;
+  if (preference === "light") return false;
+  for (let node = element; node; node = node.parentElement) {
+    const numbers = getComputedStyle(node)
+      .backgroundColor.match(/[\d.]+/g)
+      ?.map(Number);
+    if (!numbers || numbers.length < 3 || numbers[3] === 0) continue;
+    const linear = numbers
+      .slice(0, 3)
+      .map((c) =>
+        c / 255 <= 0.04045 ? c / 3294.6 : ((c / 255 + 0.055) / 1.055) ** 2.4,
+      );
+    return 0.2126 * linear[0] + 0.7152 * linear[1] + 0.0722 * linear[2] < 0.16;
+  }
+  return false;
+}
 export class AvatarView {
   constructor(element, { resolveURL = (path) => path } = {}) {
     this.resolveURL = resolveURL;
     this.el = element;
+    this.onSurface = (event) => {
+      if (
+        event.propertyName === "background-color" &&
+        this.state &&
+        this.catalog
+      )
+        this.set(this.state, this.catalog);
+    };
+    document.addEventListener("transitionend", this.onSurface);
     this.ticket = 0;
     this.key = "";
     this.media = matchMedia("(prefers-reduced-motion: reduce)");
@@ -77,7 +106,7 @@ export class AvatarView {
         }
       } else if (this.svg) {
         this.svg
-          .querySelectorAll("[transform]")
+          .querySelectorAll(motionGroups)
           .forEach((e) => e.removeAttribute("transform"));
       }
       this.frame = null;
@@ -100,11 +129,12 @@ export class AvatarView {
       this.frame = requestAnimationFrame(this.tick);
     else if (this.svg)
       this.svg
-        .querySelectorAll("[transform]")
+        .querySelectorAll(motionGroups)
         .forEach((e) => e.removeAttribute("transform"));
   }
   async set(state, catalog) {
     this.state = state;
+    this.catalog = catalog;
     this.el.dataset.activity = state.activity;
     this.el.dataset.motion = state.motion && !this.media.matches ? "on" : "off";
     this.el.dataset.profile = state.profile;
@@ -118,12 +148,24 @@ export class AvatarView {
           : state.activity === "error"
             ? "Reply unavailable"
             : "Here with you";
-    const pose = catalog.poses.find((p) => p.id === state.pose_id);
+    const originalPose = catalog.poses.find((p) => p.id === state.pose_id);
+    const dark = useDarkArt(this.el, state.contrast || "auto");
+    const pose =
+      originalPose && dark && originalPose.dark_src
+        ? {
+            ...originalPose,
+            src: originalPose.dark_src,
+            layered_src: originalPose.dark_layered_src,
+            asset_version: originalPose.dark_asset_version,
+          }
+        : originalPose;
+    this.el.dataset.contrast = dark ? "dark" : "light";
     if (!pose) return;
     this.el.dataset.pose = pose.id;
     this.syncAnimation();
-    if (this.key === pose.id) return this.loading;
-    this.key = pose.id;
+    const artKey = `${pose.id}:${dark}`;
+    if (this.key === artKey) return this.loading;
+    this.key = artKey;
     const ticket = ++this.ticket;
     this.svg = null;
     this.motionKind = pose.motion;
@@ -193,6 +235,7 @@ export class AvatarView {
     ++this.ticket;
     cancelAnimationFrame(this.frame);
     this.media.removeEventListener("change", this.onMedia);
+    document.removeEventListener("transitionend", this.onSurface);
     this.el.replaceChildren();
   }
 }
@@ -207,6 +250,7 @@ export async function connectAvatar(elements, onState = () => {}) {
       const state = await avatarAPI();
       if (state.revision !== revision) {
         revision = state.revision;
+        document.body.dataset.theme = state.profile;
         await Promise.all(views.map((v) => v.set(state, catalog)));
         onState(state, catalog);
       }

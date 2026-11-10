@@ -72,3 +72,14 @@ Fifteen main work poses have explicit local eye corrections, pointing toward the
 book, workbench, keyboard, panel or report. Other poses retain their authored gaze.
 The original source artwork remains unchanged; focus variants and their configuration
 are separate. Rebuild focus variants after rebuilding the reading layers.
+
+## V5 candidate
+
+Business now uses a consistent two-eye design. The regenerated working/report
+clipboards face the character: their visible backs are plain and opaque. The paper
+is on the far side. Display boards remain presentation poses with solid paper.
+All 128 sprites have dark-background variants; Auto changes the artwork palette
+as well as the background. Explicit Light/Dark is available in the app and overlay.
+The owner has not yet approved this candidate. See poses-v5 for source references.
+Run check_avatar_design.py and browser_avatar_design.py for material, contrast and
+shared-control checks. Authored head transforms remain intact when motion stops.

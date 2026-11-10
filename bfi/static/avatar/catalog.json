@@ -12,7 +12,9 @@
       "description": "Standing",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/academic/standing.svg"
+      "original_src": "/static/e-preview/assets/poses/academic/standing.svg",
+      "dark_asset_version": "75ddfb585ee7",
+      "dark_src": "/static/avatar/dark/academic/standing.svg"
     },
     {
       "id": "academic/standing-2",
@@ -26,7 +28,9 @@
       "description": "Standing 2",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/academic/standing-2.svg"
+      "original_src": "/static/e-preview/assets/poses/academic/standing-2.svg",
+      "dark_asset_version": "d5d96cccf88c",
+      "dark_src": "/static/avatar/dark/academic/standing-2.svg"
     },
     {
       "id": "academic/seated",
@@ -39,7 +43,9 @@
       "description": "Seated",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/academic/seated.svg"
+      "original_src": "/static/e-preview/assets/poses/academic/seated.svg",
+      "dark_asset_version": "ca277442e718",
+      "dark_src": "/static/avatar/dark/academic/seated.svg"
     },
     {
       "id": "academic/seated-2",
@@ -53,7 +59,9 @@
       "description": "Seated 2",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/academic/seated-2.svg"
+      "original_src": "/static/e-preview/assets/poses/academic/seated-2.svg",
+      "dark_asset_version": "931f325960a6",
+      "dark_src": "/static/avatar/dark/academic/seated-2.svg"
     },
     {
       "id": "academic/tired",
@@ -66,7 +74,9 @@
       "description": "Tired",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/academic/tired.svg"
+      "original_src": "/static/e-preview/assets/poses/academic/tired.svg",
+      "dark_asset_version": "096a9e4dab3c",
+      "dark_src": "/static/avatar/dark/academic/tired.svg"
     },
     {
       "id": "academic/lying-down",
@@ -80,7 +90,9 @@
       "description": "Lying Down",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/academic/lying-down.svg"
+      "original_src": "/static/e-preview/assets/poses/academic/lying-down.svg",
+      "dark_asset_version": "2a36412664e7",
+      "dark_src": "/static/avatar/dark/academic/lying-down.svg"
     },
     {
       "id": "academic/thinking",
@@ -93,7 +105,9 @@
       "description": "Thinking",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/academic/thinking.svg"
+      "original_src": "/static/e-preview/assets/poses/academic/thinking.svg",
+      "dark_asset_version": "56fadd522895",
+      "dark_src": "/static/avatar/dark/academic/thinking.svg"
     },
     {
       "id": "academic/working",
@@ -108,7 +122,9 @@
       "motion": "none",
       "original_src": "/static/e-preview/assets/poses/academic/working.svg",
       "gaze_target": "workbench",
-      "asset_version": "51bb7f4c6c40"
+      "asset_version": "51bb7f4c6c40",
+      "dark_asset_version": "e4a82f2c9f76",
+      "dark_src": "/static/avatar/dark/academic/working.svg"
     },
     {
       "id": "academic/laughing",
@@ -121,7 +137,9 @@
       "description": "Laughing",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/academic/laughing.svg"
+      "original_src": "/static/e-preview/assets/poses/academic/laughing.svg",
+      "dark_asset_version": "abbf5505fdc7",
+      "dark_src": "/static/avatar/dark/academic/laughing.svg"
     },
     {
       "id": "academic/frustrated",
@@ -134,7 +152,9 @@
       "description": "Frustrated",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/academic/frustrated.svg"
+      "original_src": "/static/e-preview/assets/poses/academic/frustrated.svg",
+      "dark_asset_version": "dbf14e8d923b",
+      "dark_src": "/static/avatar/dark/academic/frustrated.svg"
     },
     {
       "id": "academic/exasperated",
@@ -147,7 +167,9 @@
       "description": "Exasperated",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/academic/exasperated.svg"
+      "original_src": "/static/e-preview/assets/poses/academic/exasperated.svg",
+      "dark_asset_version": "176cd9d5b19d",
+      "dark_src": "/static/avatar/dark/academic/exasperated.svg"
     },
     {
       "id": "academic/reading",
@@ -163,7 +185,10 @@
       "original_src": "/static/e-preview/assets/poses/academic/reading.svg",
       "gaze_target": "book",
       "asset_version": "f75a1d9cfa69",
-      "layered_src": "/static/avatar/focus/academic/reading.svg"
+      "layered_src": "/static/avatar/focus/academic/reading.svg",
+      "dark_asset_version": "2e86f5a0d2c8",
+      "dark_src": "/static/avatar/dark/academic/reading.svg",
+      "dark_layered_src": "/static/avatar/dark/academic/reading.svg"
     },
     {
       "id": "academic/chalkboard",
@@ -176,7 +201,9 @@
       "description": "Chalkboard",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/academic/chalkboard.svg"
+      "original_src": "/static/e-preview/assets/poses/academic/chalkboard.svg",
+      "dark_asset_version": "63ed4071fcc9",
+      "dark_src": "/static/avatar/dark/academic/chalkboard.svg"
     },
     {
       "id": "academic/writing-prose",
@@ -192,7 +219,9 @@
       "motion": "none",
       "original_src": "/static/e-preview/assets/poses/academic/writing-prose.svg",
       "gaze_target": "page",
-      "asset_version": "f81778749356"
+      "asset_version": "f81778749356",
+      "dark_asset_version": "33d493d1f553",
+      "dark_src": "/static/avatar/dark/academic/writing-prose.svg"
     },
     {
       "id": "academic/teasing",
@@ -205,7 +234,9 @@
       "description": "Teasing",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/academic/teasing.svg"
+      "original_src": "/static/e-preview/assets/poses/academic/teasing.svg",
+      "dark_asset_version": "92904a3d9b2e",
+      "dark_src": "/static/avatar/dark/academic/teasing.svg"
     },
     {
       "id": "academic/flirty",
@@ -218,7 +249,9 @@
       "description": "Flirty",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/academic/flirty.svg"
+      "original_src": "/static/e-preview/assets/poses/academic/flirty.svg",
+      "dark_asset_version": "2eb70ac956b8",
+      "dark_src": "/static/avatar/dark/academic/flirty.svg"
     },
     {
       "id": "academic/glamour",
@@ -231,7 +264,9 @@
       "description": "Glamour",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/academic/glamour.svg"
+      "original_src": "/static/e-preview/assets/poses/academic/glamour.svg",
+      "dark_asset_version": "0471e4b400f1",
+      "dark_src": "/static/avatar/dark/academic/glamour.svg"
     },
     {
       "id": "academic/silly",
@@ -244,7 +279,9 @@
       "description": "Silly",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/academic/silly.svg"
+      "original_src": "/static/e-preview/assets/poses/academic/silly.svg",
+      "dark_asset_version": "8e271cb6a0a4",
+      "dark_src": "/static/avatar/dark/academic/silly.svg"
     },
     {
       "id": "academic/greeting",
@@ -257,7 +294,9 @@
       "description": "Greeting",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/academic/greeting.svg"
+      "original_src": "/static/e-preview/assets/poses/academic/greeting.svg",
+      "dark_asset_version": "e442cfd40e8f",
+      "dark_src": "/static/avatar/dark/academic/greeting.svg"
     },
     {
       "id": "academic/listening",
@@ -270,7 +309,9 @@
       "description": "Listening",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/academic/listening.svg"
+      "original_src": "/static/e-preview/assets/poses/academic/listening.svg",
+      "dark_asset_version": "ee8999a8ee1a",
+      "dark_src": "/static/avatar/dark/academic/listening.svg"
     },
     {
       "id": "academic/confused",
@@ -283,7 +324,9 @@
       "description": "Confused",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/academic/confused.svg"
+      "original_src": "/static/e-preview/assets/poses/academic/confused.svg",
+      "dark_asset_version": "4fd986e2058d",
+      "dark_src": "/static/avatar/dark/academic/confused.svg"
     },
     {
       "id": "academic/celebrating",
@@ -296,7 +339,9 @@
       "description": "Celebrating",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/academic/celebrating.svg"
+      "original_src": "/static/e-preview/assets/poses/academic/celebrating.svg",
+      "dark_asset_version": "2a7d1556e294",
+      "dark_src": "/static/avatar/dark/academic/celebrating.svg"
     },
     {
       "id": "academic/concerned",
@@ -309,7 +354,9 @@
       "description": "Concerned",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/academic/concerned.svg"
+      "original_src": "/static/e-preview/assets/poses/academic/concerned.svg",
+      "dark_asset_version": "0cfdf436308c",
+      "dark_src": "/static/avatar/dark/academic/concerned.svg"
     },
     {
       "id": "academic/sultry",
@@ -322,7 +369,9 @@
       "description": "Sultry",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/academic/sultry.svg"
+      "original_src": "/static/e-preview/assets/poses/academic/sultry.svg",
+      "dark_asset_version": "fc695dfd2fd3",
+      "dark_src": "/static/avatar/dark/academic/sultry.svg"
     },
     {
       "id": "engineering/standing",
@@ -335,7 +384,9 @@
       "description": "Standing",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/engineering/standing.svg"
+      "original_src": "/static/e-preview/assets/poses/engineering/standing.svg",
+      "dark_asset_version": "911ec3714368",
+      "dark_src": "/static/avatar/dark/engineering/standing.svg"
     },
     {
       "id": "engineering/standing-2",
@@ -349,7 +400,9 @@
       "description": "Standing 2",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/engineering/standing-2.svg"
+      "original_src": "/static/e-preview/assets/poses/engineering/standing-2.svg",
+      "dark_asset_version": "a7d2cd321a5c",
+      "dark_src": "/static/avatar/dark/engineering/standing-2.svg"
     },
     {
       "id": "engineering/seated",
@@ -362,7 +415,9 @@
       "description": "Seated",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/engineering/seated.svg"
+      "original_src": "/static/e-preview/assets/poses/engineering/seated.svg",
+      "dark_asset_version": "51d7be64c0f3",
+      "dark_src": "/static/avatar/dark/engineering/seated.svg"
     },
     {
       "id": "engineering/seated-2",
@@ -376,7 +431,9 @@
       "description": "Seated 2",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/engineering/seated-2.svg"
+      "original_src": "/static/e-preview/assets/poses/engineering/seated-2.svg",
+      "dark_asset_version": "466ed0e52e4c",
+      "dark_src": "/static/avatar/dark/engineering/seated-2.svg"
     },
     {
       "id": "engineering/tired",
@@ -389,7 +446,9 @@
       "description": "Tired",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/engineering/tired.svg"
+      "original_src": "/static/e-preview/assets/poses/engineering/tired.svg",
+      "dark_asset_version": "11daa6feaf50",
+      "dark_src": "/static/avatar/dark/engineering/tired.svg"
     },
     {
       "id": "engineering/thinking",
@@ -402,7 +461,9 @@
       "description": "Thinking",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/engineering/thinking.svg"
+      "original_src": "/static/e-preview/assets/poses/engineering/thinking.svg",
+      "dark_asset_version": "0bcb8b42d2cb",
+      "dark_src": "/static/avatar/dark/engineering/thinking.svg"
     },
     {
       "id": "engineering/laughing",
@@ -415,7 +476,9 @@
       "description": "Laughing",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/engineering/laughing.svg"
+      "original_src": "/static/e-preview/assets/poses/engineering/laughing.svg",
+      "dark_asset_version": "3138c169973e",
+      "dark_src": "/static/avatar/dark/engineering/laughing.svg"
     },
     {
       "id": "engineering/frustrated",
@@ -428,7 +491,9 @@
       "description": "Frustrated",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/engineering/frustrated.svg"
+      "original_src": "/static/e-preview/assets/poses/engineering/frustrated.svg",
+      "dark_asset_version": "21e7e8ef011e",
+      "dark_src": "/static/avatar/dark/engineering/frustrated.svg"
     },
     {
       "id": "engineering/exasperated",
@@ -441,7 +506,9 @@
       "description": "Exasperated",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/engineering/exasperated.svg"
+      "original_src": "/static/e-preview/assets/poses/engineering/exasperated.svg",
+      "dark_asset_version": "3db416074c83",
+      "dark_src": "/static/avatar/dark/engineering/exasperated.svg"
     },
     {
       "id": "engineering/teasing",
@@ -454,7 +521,9 @@
       "description": "Teasing",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/engineering/teasing.svg"
+      "original_src": "/static/e-preview/assets/poses/engineering/teasing.svg",
+      "dark_asset_version": "bd4f1dc77e60",
+      "dark_src": "/static/avatar/dark/engineering/teasing.svg"
     },
     {
       "id": "engineering/glamour",
@@ -467,7 +536,9 @@
       "description": "Glamour",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/engineering/glamour.svg"
+      "original_src": "/static/e-preview/assets/poses/engineering/glamour.svg",
+      "dark_asset_version": "d0d05c95fabf",
+      "dark_src": "/static/avatar/dark/engineering/glamour.svg"
     },
     {
       "id": "engineering/silly",
@@ -480,7 +551,9 @@
       "description": "Silly",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/engineering/silly.svg"
+      "original_src": "/static/e-preview/assets/poses/engineering/silly.svg",
+      "dark_asset_version": "3056e3ead23c",
+      "dark_src": "/static/avatar/dark/engineering/silly.svg"
     },
     {
       "id": "engineering/greeting",
@@ -493,7 +566,9 @@
       "description": "Greeting",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/engineering/greeting.svg"
+      "original_src": "/static/e-preview/assets/poses/engineering/greeting.svg",
+      "dark_asset_version": "b5702520def1",
+      "dark_src": "/static/avatar/dark/engineering/greeting.svg"
     },
     {
       "id": "engineering/listening",
@@ -506,7 +581,9 @@
       "description": "Listening",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/engineering/listening.svg"
+      "original_src": "/static/e-preview/assets/poses/engineering/listening.svg",
+      "dark_asset_version": "cb997beb221c",
+      "dark_src": "/static/avatar/dark/engineering/listening.svg"
     },
     {
       "id": "engineering/confused",
@@ -519,7 +596,9 @@
       "description": "Confused",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/engineering/confused.svg"
+      "original_src": "/static/e-preview/assets/poses/engineering/confused.svg",
+      "dark_asset_version": "f11ad4dc0635",
+      "dark_src": "/static/avatar/dark/engineering/confused.svg"
     },
     {
       "id": "engineering/celebrating",
@@ -532,7 +611,9 @@
       "description": "Celebrating",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/engineering/celebrating.svg"
+      "original_src": "/static/e-preview/assets/poses/engineering/celebrating.svg",
+      "dark_asset_version": "f5e5c5d68e1f",
+      "dark_src": "/static/avatar/dark/engineering/celebrating.svg"
     },
     {
       "id": "engineering/coding",
@@ -547,7 +628,9 @@
       "motion": "none",
       "original_src": "/static/e-preview/assets/poses/engineering/coding.svg",
       "gaze_target": "keyboard",
-      "asset_version": "507dee9f2fd8"
+      "asset_version": "507dee9f2fd8",
+      "dark_asset_version": "15130e193cec",
+      "dark_src": "/static/avatar/dark/engineering/coding.svg"
     },
     {
       "id": "engineering/debugging",
@@ -562,7 +645,9 @@
       "motion": "none",
       "original_src": "/static/e-preview/assets/poses/engineering/debugging.svg",
       "gaze_target": "code panel",
-      "asset_version": "aaac4e928436"
+      "asset_version": "aaac4e928436",
+      "dark_asset_version": "15e6c64151a5",
+      "dark_src": "/static/avatar/dark/engineering/debugging.svg"
     },
     {
       "id": "engineering/security-review",
@@ -578,7 +663,9 @@
       "motion": "none",
       "original_src": "/static/e-preview/assets/poses/engineering/security-review.svg",
       "gaze_target": "review panel",
-      "asset_version": "d66e5046e37e"
+      "asset_version": "d66e5046e37e",
+      "dark_asset_version": "368f814290d6",
+      "dark_src": "/static/avatar/dark/engineering/security-review.svg"
     },
     {
       "id": "engineering/lying-down",
@@ -592,7 +679,9 @@
       "description": "Lying Down",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/engineering/lying-down.svg"
+      "original_src": "/static/e-preview/assets/poses/engineering/lying-down.svg",
+      "dark_asset_version": "057af0fcaa35",
+      "dark_src": "/static/avatar/dark/engineering/lying-down.svg"
     },
     {
       "id": "engineering/concerned",
@@ -605,7 +694,9 @@
       "description": "Concerned",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/engineering/concerned.svg"
+      "original_src": "/static/e-preview/assets/poses/engineering/concerned.svg",
+      "dark_asset_version": "aea37535a269",
+      "dark_src": "/static/avatar/dark/engineering/concerned.svg"
     },
     {
       "id": "engineering/sultry",
@@ -618,7 +709,9 @@
       "description": "Sultry",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/engineering/sultry.svg"
+      "original_src": "/static/e-preview/assets/poses/engineering/sultry.svg",
+      "dark_asset_version": "bc512f439b16",
+      "dark_src": "/static/avatar/dark/engineering/sultry.svg"
     },
     {
       "id": "engineering/working",
@@ -633,7 +726,9 @@
       "motion": "none",
       "original_src": "/static/e-preview/assets/poses/engineering/working.svg",
       "gaze_target": "laptop",
-      "asset_version": "dd1f911600d4"
+      "asset_version": "dd1f911600d4",
+      "dark_asset_version": "2317a35214e4",
+      "dark_src": "/static/avatar/dark/engineering/working.svg"
     },
     {
       "id": "engineering/testing",
@@ -646,7 +741,9 @@
       "description": "Testing",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/engineering/testing.svg"
+      "original_src": "/static/e-preview/assets/poses/engineering/testing.svg",
+      "dark_asset_version": "6f788500367f",
+      "dark_src": "/static/avatar/dark/engineering/testing.svg"
     },
     {
       "id": "engineering/code-review",
@@ -660,7 +757,9 @@
       "description": "Code Review",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/engineering/code-review.svg"
+      "original_src": "/static/e-preview/assets/poses/engineering/code-review.svg",
+      "dark_asset_version": "eb6d9bf9995c",
+      "dark_src": "/static/avatar/dark/engineering/code-review.svg"
     },
     {
       "id": "engineering/flirty",
@@ -673,26 +772,35 @@
       "description": "Flirty",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/engineering/flirty.svg"
+      "original_src": "/static/e-preview/assets/poses/engineering/flirty.svg",
+      "dark_asset_version": "d8cc2893b6b8",
+      "dark_src": "/static/avatar/dark/engineering/flirty.svg"
     },
     {
       "id": "business/standing",
       "role": "business",
       "label": "Standing",
-      "src": "/static/avatar/clean/business/standing.svg",
+      "src": "/static/avatar/design-v5/business/standing.svg",
       "tags": [
         "standing"
       ],
       "description": "Standing",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/business/standing.svg"
+      "original_src": "/static/e-preview/assets/poses/business/standing.svg",
+      "previous_src": "/static/avatar/clean/business/standing.svg",
+      "asset_version": "424d26c8c542",
+      "face_design": "two-eye-v5",
+      "design_status": "candidate",
+      "gaze_target": "conversation",
+      "dark_asset_version": "2a514126fac0",
+      "dark_src": "/static/avatar/dark/business/standing.svg"
     },
     {
       "id": "business/standing-2",
       "role": "business",
       "label": "Standing 2",
-      "src": "/static/avatar/clean/business/standing-2.svg",
+      "src": "/static/avatar/design-v5/business/standing-2.svg",
       "tags": [
         "standing",
         "2"
@@ -700,27 +808,42 @@
       "description": "Standing 2",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/business/standing-2.svg"
+      "original_src": "/static/e-preview/assets/poses/business/standing-2.svg",
+      "previous_src": "/static/avatar/clean/business/standing-2.svg",
+      "asset_version": "457227bb3104",
+      "face_design": "two-eye-v5",
+      "design_status": "candidate",
+      "gaze_target": "conversation",
+      "dark_asset_version": "636ea76ac9f8",
+      "dark_src": "/static/avatar/dark/business/standing-2.svg"
     },
     {
       "id": "business/seated",
       "role": "business",
       "label": "Seated",
-      "src": "/static/avatar/clean/business/seated.svg",
+      "src": "/static/avatar/design-v5/business/seated.svg",
       "tags": [
         "seated"
       ],
       "description": "Seated",
       "source": "traced-pose",
       "motion": "seated-hand",
-      "layered_src": "/static/e-preview/assets/business-seated-layered.svg",
-      "original_src": "/static/e-preview/assets/poses/business/seated.svg"
+      "layered_src": "/static/avatar/design-v5/business/seated.svg",
+      "original_src": "/static/e-preview/assets/poses/business/seated.svg",
+      "previous_src": "/static/e-preview/assets/business-seated-layered.svg",
+      "asset_version": "b79f5064f59a",
+      "face_design": "two-eye-v5",
+      "design_status": "candidate",
+      "gaze_target": "conversation",
+      "dark_asset_version": "e4ad0880deb2",
+      "dark_src": "/static/avatar/dark/business/seated.svg",
+      "dark_layered_src": "/static/avatar/dark/business/seated.svg"
     },
     {
       "id": "business/seated-2",
       "role": "business",
       "label": "Seated 2",
-      "src": "/static/avatar/clean/business/seated-2.svg",
+      "src": "/static/avatar/design-v5/business/seated-2.svg",
       "tags": [
         "seated",
         "2"
@@ -728,26 +851,40 @@
       "description": "Seated 2",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/business/seated-2.svg"
+      "original_src": "/static/e-preview/assets/poses/business/seated-2.svg",
+      "previous_src": "/static/avatar/clean/business/seated-2.svg",
+      "asset_version": "64c4d3c2d32f",
+      "face_design": "two-eye-v5",
+      "design_status": "candidate",
+      "gaze_target": "conversation",
+      "dark_asset_version": "ec72d8da3715",
+      "dark_src": "/static/avatar/dark/business/seated-2.svg"
     },
     {
       "id": "business/tired",
       "role": "business",
       "label": "Tired",
-      "src": "/static/avatar/clean/business/tired.svg",
+      "src": "/static/avatar/design-v5/business/tired.svg",
       "tags": [
         "tired"
       ],
       "description": "Tired",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/business/tired.svg"
+      "original_src": "/static/e-preview/assets/poses/business/tired.svg",
+      "previous_src": "/static/avatar/clean/business/tired.svg",
+      "asset_version": "5b7dd79c4eaa",
+      "face_design": "two-eye-v5",
+      "design_status": "candidate",
+      "gaze_target": "conversation",
+      "dark_asset_version": "78fc94729a8f",
+      "dark_src": "/static/avatar/dark/business/tired.svg"
     },
     {
       "id": "business/lying-down",
       "role": "business",
       "label": "Lying Down",
-      "src": "/static/avatar/clean/business/lying-down.svg",
+      "src": "/static/avatar/design-v5/business/lying-down.svg",
       "tags": [
         "lying",
         "down"
@@ -755,26 +892,40 @@
       "description": "Lying Down",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/business/lying-down.svg"
+      "original_src": "/static/e-preview/assets/poses/business/lying-down.svg",
+      "previous_src": "/static/avatar/clean/business/lying-down.svg",
+      "asset_version": "f78cfaf17332",
+      "face_design": "two-eye-v5",
+      "design_status": "candidate",
+      "gaze_target": "conversation",
+      "dark_asset_version": "c8a1609cd896",
+      "dark_src": "/static/avatar/dark/business/lying-down.svg"
     },
     {
       "id": "business/thinking",
       "role": "business",
       "label": "Thinking",
-      "src": "/static/avatar/clean/business/thinking.svg",
+      "src": "/static/avatar/design-v5/business/thinking.svg",
       "tags": [
         "thinking"
       ],
       "description": "Thinking",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/business/thinking.svg"
+      "original_src": "/static/e-preview/assets/poses/business/thinking.svg",
+      "previous_src": "/static/avatar/clean/business/thinking.svg",
+      "asset_version": "ff16944f8caa",
+      "face_design": "two-eye-v5",
+      "design_status": "candidate",
+      "gaze_target": "conversation",
+      "dark_asset_version": "e26f587849fa",
+      "dark_src": "/static/avatar/dark/business/thinking.svg"
     },
     {
       "id": "business/working",
       "role": "business",
       "label": "Working",
-      "src": "/static/avatar/focus/business/working.svg",
+      "src": "/static/avatar/design-v5/business/working.svg",
       "tags": [
         "working"
       ],
@@ -783,65 +934,100 @@
       "motion": "none",
       "original_src": "/static/e-preview/assets/poses/business/working.svg",
       "gaze_target": "clipboard",
-      "asset_version": "cff8c4c7aa48"
+      "asset_version": "8091478a2d2b",
+      "design_source": "/static/avatar/design-v5/authored/working.reference.png",
+      "clipboard_orientation": "paper_faces_character",
+      "previous_src": "/static/avatar/focus/business/working.svg",
+      "face_design": "two-eye-v5",
+      "design_status": "candidate",
+      "dark_asset_version": "b1356322ef96",
+      "dark_src": "/static/avatar/dark/business/working.svg"
     },
     {
       "id": "business/laughing",
       "role": "business",
       "label": "Laughing",
-      "src": "/static/avatar/clean/business/laughing.svg",
+      "src": "/static/avatar/design-v5/business/laughing.svg",
       "tags": [
         "laughing"
       ],
       "description": "Laughing",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/business/laughing.svg"
+      "original_src": "/static/e-preview/assets/poses/business/laughing.svg",
+      "previous_src": "/static/avatar/clean/business/laughing.svg",
+      "asset_version": "b8f37da49b25",
+      "face_design": "two-eye-v5",
+      "design_status": "candidate",
+      "gaze_target": "conversation",
+      "dark_asset_version": "5c3c7efc873e",
+      "dark_src": "/static/avatar/dark/business/laughing.svg"
     },
     {
       "id": "business/frustrated",
       "role": "business",
       "label": "Frustrated",
-      "src": "/static/avatar/clean/business/frustrated.svg",
+      "src": "/static/avatar/design-v5/business/frustrated.svg",
       "tags": [
         "frustrated"
       ],
       "description": "Frustrated",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/business/frustrated.svg"
+      "original_src": "/static/e-preview/assets/poses/business/frustrated.svg",
+      "previous_src": "/static/avatar/clean/business/frustrated.svg",
+      "asset_version": "a33f3589f37d",
+      "face_design": "two-eye-v5",
+      "design_status": "candidate",
+      "gaze_target": "conversation",
+      "dark_asset_version": "011f425d6766",
+      "dark_src": "/static/avatar/dark/business/frustrated.svg"
     },
     {
       "id": "business/exasperated",
       "role": "business",
       "label": "Exasperated",
-      "src": "/static/avatar/clean/business/exasperated.svg",
+      "src": "/static/avatar/design-v5/business/exasperated.svg",
       "tags": [
         "exasperated"
       ],
       "description": "Exasperated",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/business/exasperated.svg"
+      "original_src": "/static/e-preview/assets/poses/business/exasperated.svg",
+      "previous_src": "/static/avatar/clean/business/exasperated.svg",
+      "asset_version": "725f588880e4",
+      "face_design": "two-eye-v5",
+      "design_status": "candidate",
+      "gaze_target": "conversation",
+      "dark_asset_version": "989949073f45",
+      "dark_src": "/static/avatar/dark/business/exasperated.svg"
     },
     {
       "id": "business/coordinating",
       "role": "business",
       "label": "Coordinating",
-      "src": "/static/avatar/clean/business/coordinating.svg",
+      "src": "/static/avatar/design-v5/business/coordinating.svg",
       "tags": [
         "coordinating"
       ],
       "description": "Coordinating",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/business/coordinating.svg"
+      "original_src": "/static/e-preview/assets/poses/business/coordinating.svg",
+      "previous_src": "/static/avatar/clean/business/coordinating.svg",
+      "asset_version": "8c5331e122dd",
+      "face_design": "two-eye-v5",
+      "design_status": "candidate",
+      "gaze_target": "work",
+      "dark_asset_version": "ac1e5c4cc3ab",
+      "dark_src": "/static/avatar/dark/business/coordinating.svg"
     },
     {
       "id": "business/formal-report",
       "role": "business",
       "label": "Formal Report",
-      "src": "/static/avatar/focus/business/formal-report.svg",
+      "src": "/static/avatar/design-v5/business/formal-report.svg",
       "tags": [
         "formal",
         "report"
@@ -850,14 +1036,21 @@
       "source": "traced-pose",
       "motion": "none",
       "original_src": "/static/e-preview/assets/poses/business/formal-report.svg",
-      "gaze_target": "report",
-      "asset_version": "b309b84f0767"
+      "gaze_target": "clipboard",
+      "asset_version": "30291f2982c3",
+      "design_source": "/static/avatar/design-v5/authored/formal-report.reference.png",
+      "clipboard_orientation": "paper_faces_character",
+      "previous_src": "/static/avatar/focus/business/formal-report.svg",
+      "face_design": "two-eye-v5",
+      "design_status": "candidate",
+      "dark_asset_version": "36135d254c9b",
+      "dark_src": "/static/avatar/dark/business/formal-report.svg"
     },
     {
       "id": "business/task-complete",
       "role": "business",
       "label": "Task Complete",
-      "src": "/static/avatar/clean/business/task-complete.svg",
+      "src": "/static/avatar/design-v5/business/task-complete.svg",
       "tags": [
         "task",
         "complete"
@@ -865,137 +1058,214 @@
       "description": "Task Complete",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/business/task-complete.svg"
+      "original_src": "/static/e-preview/assets/poses/business/task-complete.svg",
+      "previous_src": "/static/avatar/clean/business/task-complete.svg",
+      "asset_version": "b43f2ac90627",
+      "face_design": "two-eye-v5",
+      "design_status": "candidate",
+      "gaze_target": "conversation",
+      "dark_asset_version": "906c258c9090",
+      "dark_src": "/static/avatar/dark/business/task-complete.svg"
     },
     {
       "id": "business/teasing",
       "role": "business",
       "label": "Teasing",
-      "src": "/static/avatar/clean/business/teasing.svg",
+      "src": "/static/avatar/design-v5/business/teasing.svg",
       "tags": [
         "teasing"
       ],
       "description": "Teasing",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/business/teasing.svg"
+      "original_src": "/static/e-preview/assets/poses/business/teasing.svg",
+      "previous_src": "/static/avatar/clean/business/teasing.svg",
+      "asset_version": "657b907d9b5f",
+      "face_design": "two-eye-v5",
+      "design_status": "candidate",
+      "gaze_target": "conversation",
+      "dark_asset_version": "ce8f16f56d16",
+      "dark_src": "/static/avatar/dark/business/teasing.svg"
     },
     {
       "id": "business/flirty",
       "role": "business",
       "label": "Flirty",
-      "src": "/static/avatar/clean/business/flirty.svg",
+      "src": "/static/avatar/design-v5/business/flirty.svg",
       "tags": [
         "flirty"
       ],
       "description": "Flirty",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/business/flirty.svg"
+      "original_src": "/static/e-preview/assets/poses/business/flirty.svg",
+      "previous_src": "/static/avatar/clean/business/flirty.svg",
+      "asset_version": "f839235dc11a",
+      "face_design": "two-eye-v5",
+      "design_status": "candidate",
+      "gaze_target": "conversation",
+      "dark_asset_version": "816c0e47a220",
+      "dark_src": "/static/avatar/dark/business/flirty.svg"
     },
     {
       "id": "business/glamour",
       "role": "business",
       "label": "Glamour",
-      "src": "/static/avatar/clean/business/glamour.svg",
+      "src": "/static/avatar/design-v5/business/glamour.svg",
       "tags": [
         "glamour"
       ],
       "description": "Glamour",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/business/glamour.svg"
+      "original_src": "/static/e-preview/assets/poses/business/glamour.svg",
+      "previous_src": "/static/avatar/clean/business/glamour.svg",
+      "asset_version": "c01469987b37",
+      "face_design": "two-eye-v5",
+      "design_status": "candidate",
+      "gaze_target": "conversation",
+      "dark_asset_version": "eb6c715c504f",
+      "dark_src": "/static/avatar/dark/business/glamour.svg"
     },
     {
       "id": "business/silly",
       "role": "business",
       "label": "Silly",
-      "src": "/static/avatar/clean/business/silly.svg",
+      "src": "/static/avatar/design-v5/business/silly.svg",
       "tags": [
         "silly"
       ],
       "description": "Silly",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/business/silly.svg"
+      "original_src": "/static/e-preview/assets/poses/business/silly.svg",
+      "previous_src": "/static/avatar/clean/business/silly.svg",
+      "asset_version": "ac38fdbae508",
+      "face_design": "two-eye-v5",
+      "design_status": "candidate",
+      "gaze_target": "conversation",
+      "dark_asset_version": "54ab63f00a9f",
+      "dark_src": "/static/avatar/dark/business/silly.svg"
     },
     {
       "id": "business/greeting",
       "role": "business",
       "label": "Greeting",
-      "src": "/static/avatar/clean/business/greeting.svg",
+      "src": "/static/avatar/design-v5/business/greeting.svg",
       "tags": [
         "greeting"
       ],
       "description": "Greeting",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/business/greeting.svg"
+      "original_src": "/static/e-preview/assets/poses/business/greeting.svg",
+      "previous_src": "/static/avatar/clean/business/greeting.svg",
+      "asset_version": "abba21a64c44",
+      "face_design": "two-eye-v5",
+      "design_status": "candidate",
+      "gaze_target": "conversation",
+      "dark_asset_version": "1ec513eb1bd5",
+      "dark_src": "/static/avatar/dark/business/greeting.svg"
     },
     {
       "id": "business/listening",
       "role": "business",
       "label": "Listening",
-      "src": "/static/avatar/clean/business/listening.svg",
+      "src": "/static/avatar/design-v5/business/listening.svg",
       "tags": [
         "listening"
       ],
       "description": "Listening",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/business/listening.svg"
+      "original_src": "/static/e-preview/assets/poses/business/listening.svg",
+      "previous_src": "/static/avatar/clean/business/listening.svg",
+      "asset_version": "6e18c1041dc1",
+      "face_design": "two-eye-v5",
+      "design_status": "candidate",
+      "gaze_target": "conversation",
+      "dark_asset_version": "5e382baba866",
+      "dark_src": "/static/avatar/dark/business/listening.svg"
     },
     {
       "id": "business/confused",
       "role": "business",
       "label": "Confused",
-      "src": "/static/avatar/clean/business/confused.svg",
+      "src": "/static/avatar/design-v5/business/confused.svg",
       "tags": [
         "confused"
       ],
       "description": "Confused",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/business/confused.svg"
+      "original_src": "/static/e-preview/assets/poses/business/confused.svg",
+      "previous_src": "/static/avatar/clean/business/confused.svg",
+      "asset_version": "32505fd8fd71",
+      "face_design": "two-eye-v5",
+      "design_status": "candidate",
+      "gaze_target": "conversation",
+      "dark_asset_version": "b1f30aa5b5dc",
+      "dark_src": "/static/avatar/dark/business/confused.svg"
     },
     {
       "id": "business/celebrating",
       "role": "business",
       "label": "Celebrating",
-      "src": "/static/avatar/clean/business/celebrating.svg",
+      "src": "/static/avatar/design-v5/business/celebrating.svg",
       "tags": [
         "celebrating"
       ],
       "description": "Celebrating",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/business/celebrating.svg"
+      "original_src": "/static/e-preview/assets/poses/business/celebrating.svg",
+      "previous_src": "/static/avatar/clean/business/celebrating.svg",
+      "asset_version": "7298274cd145",
+      "face_design": "two-eye-v5",
+      "design_status": "candidate",
+      "gaze_target": "conversation",
+      "dark_asset_version": "eda6f46c249a",
+      "dark_src": "/static/avatar/dark/business/celebrating.svg"
     },
     {
       "id": "business/concerned",
       "role": "business",
       "label": "Concerned",
-      "src": "/static/avatar/clean/business/concerned.svg",
+      "src": "/static/avatar/design-v5/business/concerned.svg",
       "tags": [
         "concerned"
       ],
       "description": "Concerned",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/business/concerned.svg"
+      "original_src": "/static/e-preview/assets/poses/business/concerned.svg",
+      "previous_src": "/static/avatar/clean/business/concerned.svg",
+      "asset_version": "49c770cb91e9",
+      "face_design": "two-eye-v5",
+      "design_status": "candidate",
+      "gaze_target": "conversation",
+      "dark_asset_version": "8ccca48956dc",
+      "dark_src": "/static/avatar/dark/business/concerned.svg"
     },
     {
       "id": "business/sultry",
       "role": "business",
       "label": "Sultry",
-      "src": "/static/avatar/clean/business/sultry.svg",
+      "src": "/static/avatar/design-v5/business/sultry.svg",
       "tags": [
         "sultry"
       ],
       "description": "Sultry",
       "source": "traced-pose",
       "motion": "none",
-      "original_src": "/static/e-preview/assets/poses/business/sultry.svg"
+      "original_src": "/static/e-preview/assets/poses/business/sultry.svg",
+      "previous_src": "/static/avatar/clean/business/sultry.svg",
+      "asset_version": "76a9407b8b22",
+      "face_design": "two-eye-v5",
+      "design_status": "candidate",
+      "gaze_target": "conversation",
+      "dark_asset_version": "53d1d5dde30a",
+      "dark_src": "/static/avatar/dark/business/sultry.svg"
     },
     {
       "id": "academic/S01",
@@ -1024,7 +1294,9 @@
           456
         ],
         "baseline_debris_pixels": 0
-      }
+      },
+      "dark_asset_version": "e2624a3b29c1",
+      "dark_src": "/static/avatar/dark/academic/S01.png"
     },
     {
       "id": "engineering/S02",
@@ -1053,13 +1325,15 @@
           456
         ],
         "baseline_debris_pixels": 0
-      }
+      },
+      "dark_asset_version": "c14acfff3131",
+      "dark_src": "/static/avatar/dark/engineering/S02.png"
     },
     {
       "id": "business/S03",
       "role": "business",
       "label": "Open-palm presentation",
-      "src": "/static/avatar/cutouts/S03.png",
+      "src": "/static/avatar/design-v5/business/S03.svg",
       "tags": [
         "S03",
         "open",
@@ -1068,7 +1342,7 @@
       "description": "Introduces an option or idea with an inviting gesture, useful when the character is offering a choice rather than telling you what to do.",
       "source": "generated-concept",
       "approval": "approved",
-      "asset_version": "752e1f9de1d3",
+      "asset_version": "38cd90ed1a10",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-1.png",
@@ -1082,7 +1356,13 @@
           456
         ],
         "baseline_debris_pixels": 0
-      }
+      },
+      "previous_src": "/static/avatar/cutouts/S03.png",
+      "face_design": "two-eye-v5",
+      "design_status": "candidate",
+      "gaze_target": "conversation",
+      "dark_asset_version": "734fc53a7fe6",
+      "dark_src": "/static/avatar/dark/business/S03.svg"
     },
     {
       "id": "academic/S04",
@@ -1111,7 +1391,9 @@
           456
         ],
         "baseline_debris_pixels": 0
-      }
+      },
+      "dark_asset_version": "6d6366e99a04",
+      "dark_src": "/static/avatar/dark/academic/S04.png"
     },
     {
       "id": "engineering/S05",
@@ -1140,13 +1422,15 @@
           456
         ],
         "baseline_debris_pixels": 0
-      }
+      },
+      "dark_asset_version": "7bf9579cba78",
+      "dark_src": "/static/avatar/dark/engineering/S05.png"
     },
     {
       "id": "business/S06",
       "role": "business",
       "label": "Leaning in to listen",
-      "src": "/static/avatar/cutouts/S06.png",
+      "src": "/static/avatar/design-v5/business/S06.svg",
       "tags": [
         "S06",
         "leaning",
@@ -1155,7 +1439,7 @@
       "description": "Shows active attention during your explanation, making listening feel different from waiting for a task to finish.",
       "source": "generated-concept",
       "approval": "approved",
-      "asset_version": "6d8da302697e",
+      "asset_version": "25fb251f3f24",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-1.png",
@@ -1169,7 +1453,13 @@
           456
         ],
         "baseline_debris_pixels": 0
-      }
+      },
+      "previous_src": "/static/avatar/cutouts/S06.png",
+      "face_design": "two-eye-v5",
+      "design_status": "candidate",
+      "gaze_target": "conversation",
+      "dark_asset_version": "d9f96144731f",
+      "dark_src": "/static/avatar/dark/business/S06.svg"
     },
     {
       "id": "academic/S07",
@@ -1198,7 +1488,9 @@
           456
         ],
         "baseline_debris_pixels": 0
-      }
+      },
+      "dark_asset_version": "75ab67680887",
+      "dark_src": "/static/avatar/dark/academic/S07.png"
     },
     {
       "id": "engineering/S08",
@@ -1227,13 +1519,15 @@
           456
         ],
         "baseline_debris_pixels": 0
-      }
+      },
+      "dark_asset_version": "8d159b4d0f0e",
+      "dark_src": "/static/avatar/dark/engineering/S08.png"
     },
     {
       "id": "business/S09",
       "role": "business",
       "label": "Eureka",
-      "src": "/static/avatar/cutouts/S09.png",
+      "src": "/static/avatar/design-v5/business/S09.svg",
       "tags": [
         "S09",
         "eureka"
@@ -1241,7 +1535,7 @@
       "description": "Marks the moment an explanation or solution clicks, useful for revealing a connection rather than celebrating the entire task.",
       "source": "generated-concept",
       "approval": "approved",
-      "asset_version": "79b5b0ff5b87",
+      "asset_version": "7a1f3457493f",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-1.png",
@@ -1255,7 +1549,13 @@
           456
         ],
         "baseline_debris_pixels": 0
-      }
+      },
+      "previous_src": "/static/avatar/cutouts/S09.png",
+      "face_design": "two-eye-v5",
+      "design_status": "candidate",
+      "gaze_target": "conversation",
+      "dark_asset_version": "838f1d208d41",
+      "dark_src": "/static/avatar/dark/business/S09.svg"
     },
     {
       "id": "academic/S10",
@@ -1283,7 +1583,9 @@
           456
         ],
         "baseline_debris_pixels": 35
-      }
+      },
+      "dark_asset_version": "fd2b332efe75",
+      "dark_src": "/static/avatar/dark/academic/S10.png"
     },
     {
       "id": "engineering/S11",
@@ -1311,13 +1613,15 @@
           456
         ],
         "baseline_debris_pixels": 1
-      }
+      },
+      "dark_asset_version": "71f3ebe2b313",
+      "dark_src": "/static/avatar/dark/engineering/S11.png"
     },
     {
       "id": "business/S12",
       "role": "business",
       "label": "Reassuring",
-      "src": "/static/avatar/cutouts/S12.png",
+      "src": "/static/avatar/design-v5/business/S12.svg",
       "tags": [
         "S12",
         "reassuring"
@@ -1325,7 +1629,7 @@
       "description": "Supports encouragement after a setback with an open, nonjudgmental gesture instead of making every supportive response look worried.",
       "source": "generated-concept",
       "approval": "approved",
-      "asset_version": "ed78d06998f8",
+      "asset_version": "a53357a55d1c",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-1.png",
@@ -1339,7 +1643,13 @@
           456
         ],
         "baseline_debris_pixels": 2
-      }
+      },
+      "previous_src": "/static/avatar/cutouts/S12.png",
+      "face_design": "two-eye-v5",
+      "design_status": "candidate",
+      "gaze_target": "conversation",
+      "dark_asset_version": "3d47a4086dd9",
+      "dark_src": "/static/avatar/dark/business/S12.svg"
     },
     {
       "id": "academic/S13",
@@ -1367,7 +1677,9 @@
           456
         ],
         "baseline_debris_pixels": 22
-      }
+      },
+      "dark_asset_version": "7e32ba36c6f9",
+      "dark_src": "/static/avatar/dark/academic/S13.png"
     },
     {
       "id": "engineering/S14",
@@ -1395,13 +1707,15 @@
           456
         ],
         "baseline_debris_pixels": 0
-      }
+      },
+      "dark_asset_version": "9eaf900abca8",
+      "dark_src": "/static/avatar/dark/engineering/S14.png"
     },
     {
       "id": "business/S15",
       "role": "business",
       "label": "Disappointed",
-      "src": "/static/avatar/cutouts/S15.png",
+      "src": "/static/avatar/design-v5/business/S15.svg",
       "tags": [
         "S15",
         "disappointed"
@@ -1409,7 +1723,7 @@
       "description": "Acknowledges a disappointing result without implying that the character has given up, preserving a useful distinction from frustration.",
       "source": "generated-concept",
       "approval": "approved",
-      "asset_version": "d5a49b8eafd4",
+      "asset_version": "272ee5e308a3",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-1.png",
@@ -1423,7 +1737,13 @@
           456
         ],
         "baseline_debris_pixels": 1
-      }
+      },
+      "previous_src": "/static/avatar/cutouts/S15.png",
+      "face_design": "two-eye-v5",
+      "design_status": "candidate",
+      "gaze_target": "conversation",
+      "dark_asset_version": "373526d50c06",
+      "dark_src": "/static/avatar/dark/business/S15.svg"
     },
     {
       "id": "academic/S16",
@@ -1451,7 +1771,9 @@
           456
         ],
         "baseline_debris_pixels": 10
-      }
+      },
+      "dark_asset_version": "dccd488dc205",
+      "dark_src": "/static/avatar/dark/academic/S16.png"
     },
     {
       "id": "engineering/S17",
@@ -1479,13 +1801,15 @@
           456
         ],
         "baseline_debris_pixels": 1
-      }
+      },
+      "dark_asset_version": "789f4aa52806",
+      "dark_src": "/static/avatar/dark/engineering/S17.png"
     },
     {
       "id": "business/S18",
       "role": "business",
       "label": "Smug / teasing",
-      "src": "/static/avatar/cutouts/S18.png",
+      "src": "/static/avatar/design-v5/business/S18.svg",
       "tags": [
         "S18",
         "smug"
@@ -1493,7 +1817,7 @@
       "description": "Gives teasing observations a confident visual tone, useful for short playful moments when that personality fits the conversation.",
       "source": "generated-concept",
       "approval": "approved",
-      "asset_version": "8b6f2e197407",
+      "asset_version": "22a65b18d942",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-1.png",
@@ -1507,7 +1831,13 @@
           456
         ],
         "baseline_debris_pixels": 0
-      }
+      },
+      "previous_src": "/static/avatar/cutouts/S18.png",
+      "face_design": "two-eye-v5",
+      "design_status": "candidate",
+      "gaze_target": "conversation",
+      "dark_asset_version": "5a41e349e7ec",
+      "dark_src": "/static/avatar/dark/business/S18.svg"
     },
     {
       "id": "academic/S19",
@@ -1537,7 +1867,9 @@
           456
         ],
         "baseline_debris_pixels": 0
-      }
+      },
+      "dark_asset_version": "34ec7029a8cb",
+      "dark_src": "/static/avatar/dark/academic/S19.png"
     },
     {
       "id": "engineering/S20",
@@ -1565,13 +1897,15 @@
           456
         ],
         "baseline_debris_pixels": 0
-      }
+      },
+      "dark_asset_version": "42c3360209c7",
+      "dark_src": "/static/avatar/dark/engineering/S20.png"
     },
     {
       "id": "business/S21",
       "role": "business",
       "label": "Facepalm",
-      "src": "/static/avatar/cutouts/S21.png",
+      "src": "/static/avatar/design-v5/business/S21.svg",
       "tags": [
         "S21",
         "facepalm"
@@ -1579,7 +1913,7 @@
       "description": "Adds an unmistakable comic reaction to an obvious silly mistake; it should remain contextual rather than a default response to the user.",
       "source": "generated-concept",
       "approval": "approved",
-      "asset_version": "025cf3070533",
+      "asset_version": "a430739f6179",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-2.png",
@@ -1593,7 +1927,13 @@
           456
         ],
         "baseline_debris_pixels": 0
-      }
+      },
+      "previous_src": "/static/avatar/cutouts/S21.png",
+      "face_design": "two-eye-v5",
+      "design_status": "candidate",
+      "gaze_target": "conversation",
+      "dark_asset_version": "c90deeec81dd",
+      "dark_src": "/static/avatar/dark/business/S21.svg"
     },
     {
       "id": "academic/S22",
@@ -1622,7 +1962,9 @@
           456
         ],
         "baseline_debris_pixels": 0
-      }
+      },
+      "dark_asset_version": "1dd5b177be75",
+      "dark_src": "/static/avatar/dark/academic/S22.png"
     },
     {
       "id": "engineering/S23",
@@ -1650,13 +1992,15 @@
           456
         ],
         "baseline_debris_pixels": 0
-      }
+      },
+      "dark_asset_version": "1e362652b7ae",
+      "dark_src": "/static/avatar/dark/engineering/S23.png"
     },
     {
       "id": "business/S24",
       "role": "business",
       "label": "Sleepy nod",
-      "src": "/static/avatar/cutouts/S24.png",
+      "src": "/static/avatar/design-v5/business/S24.svg",
       "tags": [
         "S24",
         "sleepy",
@@ -1665,7 +2009,7 @@
       "description": "Provides a gentle winding-down pose for late-night conversation or a goodnight scene, distinct from being upset or disengaged.",
       "source": "generated-concept",
       "approval": "approved",
-      "asset_version": "af41e73542f1",
+      "asset_version": "d9a4a900163b",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-2.png",
@@ -1679,7 +2023,13 @@
           456
         ],
         "baseline_debris_pixels": 0
-      }
+      },
+      "previous_src": "/static/avatar/cutouts/S24.png",
+      "face_design": "two-eye-v5",
+      "design_status": "candidate",
+      "gaze_target": "conversation",
+      "dark_asset_version": "549735a42cd7",
+      "dark_src": "/static/avatar/dark/business/S24.svg"
     },
     {
       "id": "academic/A01",
@@ -1707,7 +2057,9 @@
           456
         ],
         "baseline_debris_pixels": 0
-      }
+      },
+      "dark_asset_version": "f16a387d1e0b",
+      "dark_src": "/static/avatar/dark/academic/A01.png"
     },
     {
       "id": "academic/A02",
@@ -1736,7 +2088,9 @@
           456
         ],
         "baseline_debris_pixels": 147
-      }
+      },
+      "dark_asset_version": "47a7e277e40e",
+      "dark_src": "/static/avatar/dark/academic/A02.png"
     },
     {
       "id": "academic/A03",
@@ -1766,7 +2120,9 @@
         "baseline_debris_pixels": 64
       },
       "original_src": "/static/avatar/cutouts/A03.png",
-      "gaze_target": "book"
+      "gaze_target": "book",
+      "dark_asset_version": "795a4e56ecce",
+      "dark_src": "/static/avatar/dark/academic/A03.svg"
     },
     {
       "id": "academic/A04",
@@ -1794,7 +2150,9 @@
           456
         ],
         "baseline_debris_pixels": 109
-      }
+      },
+      "dark_asset_version": "b16bf4c29249",
+      "dark_src": "/static/avatar/dark/academic/A04.png"
     },
     {
       "id": "academic/A05",
@@ -1823,7 +2181,9 @@
           456
         ],
         "baseline_debris_pixels": 0
-      }
+      },
+      "dark_asset_version": "e1bd7aeb89c6",
+      "dark_src": "/static/avatar/dark/academic/A05.png"
     },
     {
       "id": "academic/A06",
@@ -1852,7 +2212,9 @@
           456
         ],
         "baseline_debris_pixels": 0
-      }
+      },
+      "dark_asset_version": "a4f31df58a71",
+      "dark_src": "/static/avatar/dark/academic/A06.png"
     },
     {
       "id": "academic/A07",
@@ -1881,7 +2243,9 @@
           456
         ],
         "baseline_debris_pixels": 0
-      }
+      },
+      "dark_asset_version": "17dc92946653",
+      "dark_src": "/static/avatar/dark/academic/A07.png"
     },
     {
       "id": "academic/A08",
@@ -1912,7 +2276,9 @@
         "baseline_debris_pixels": 3
       },
       "original_src": "/static/avatar/cutouts/A08.png",
-      "gaze_target": "map"
+      "gaze_target": "map",
+      "dark_asset_version": "81f440ed88ad",
+      "dark_src": "/static/avatar/dark/academic/A08.svg"
     },
     {
       "id": "academic/A09",
@@ -1941,7 +2307,9 @@
           456
         ],
         "baseline_debris_pixels": 0
-      }
+      },
+      "dark_asset_version": "026201edc6ce",
+      "dark_src": "/static/avatar/dark/academic/A09.png"
     },
     {
       "id": "academic/A10",
@@ -1970,7 +2338,9 @@
           456
         ],
         "baseline_debris_pixels": 0
-      }
+      },
+      "dark_asset_version": "ce711943f51b",
+      "dark_src": "/static/avatar/dark/academic/A10.png"
     },
     {
       "id": "engineering/H01",
@@ -2001,7 +2371,9 @@
         "baseline_debris_pixels": 0
       },
       "original_src": "/static/avatar/cutouts/H01.png",
-      "gaze_target": "code panels"
+      "gaze_target": "code panels",
+      "dark_asset_version": "e3a89b25abb1",
+      "dark_src": "/static/avatar/dark/engineering/H01.svg"
     },
     {
       "id": "engineering/H02",
@@ -2030,7 +2402,9 @@
           456
         ],
         "baseline_debris_pixels": 1
-      }
+      },
+      "dark_asset_version": "9072468c9901",
+      "dark_src": "/static/avatar/dark/engineering/H02.png"
     },
     {
       "id": "engineering/H03",
@@ -2059,7 +2433,9 @@
           456
         ],
         "baseline_debris_pixels": 0
-      }
+      },
+      "dark_asset_version": "149ccac0deaa",
+      "dark_src": "/static/avatar/dark/engineering/H03.png"
     },
     {
       "id": "engineering/H04",
@@ -2090,7 +2466,9 @@
         "baseline_debris_pixels": 0
       },
       "original_src": "/static/avatar/cutouts/H04.png",
-      "gaze_target": "keyboard"
+      "gaze_target": "keyboard",
+      "dark_asset_version": "c295a9557fde",
+      "dark_src": "/static/avatar/dark/engineering/H04.svg"
     },
     {
       "id": "engineering/H05",
@@ -2118,7 +2496,9 @@
           456
         ],
         "baseline_debris_pixels": 3
-      }
+      },
+      "dark_asset_version": "49894b39ffae",
+      "dark_src": "/static/avatar/dark/engineering/H05.png"
     },
     {
       "id": "engineering/H06",
@@ -2147,7 +2527,9 @@
           456
         ],
         "baseline_debris_pixels": 0
-      }
+      },
+      "dark_asset_version": "ec9e700e8371",
+      "dark_src": "/static/avatar/dark/engineering/H06.png"
     },
     {
       "id": "engineering/H07",
@@ -2176,7 +2558,9 @@
           456
         ],
         "baseline_debris_pixels": 1
-      }
+      },
+      "dark_asset_version": "4de92570f818",
+      "dark_src": "/static/avatar/dark/engineering/H07.png"
     },
     {
       "id": "engineering/H08",
@@ -2205,7 +2589,9 @@
           456
         ],
         "baseline_debris_pixels": 1
-      }
+      },
+      "dark_asset_version": "45ac944d5113",
+      "dark_src": "/static/avatar/dark/engineering/H08.png"
     },
     {
       "id": "engineering/H09",
@@ -2234,7 +2620,9 @@
           456
         ],
         "baseline_debris_pixels": 0
-      }
+      },
+      "dark_asset_version": "ae44f16ba809",
+      "dark_src": "/static/avatar/dark/engineering/H09.png"
     },
     {
       "id": "engineering/H10",
@@ -2263,13 +2651,15 @@
           456
         ],
         "baseline_debris_pixels": 0
-      }
+      },
+      "dark_asset_version": "b5721e2602fa",
+      "dark_src": "/static/avatar/dark/engineering/H10.png"
     },
     {
       "id": "business/B01",
       "role": "business",
       "label": "Design critique",
-      "src": "/static/avatar/cutouts/B01.png",
+      "src": "/static/avatar/design-v5/business/B01.svg",
       "tags": [
         "B01",
         "design",
@@ -2278,7 +2668,7 @@
       "description": "Supports the Business character's design role by showing evaluation of a layout or proposal, broadening his identity beyond spreadsheets.",
       "source": "generated-concept",
       "approval": "approved",
-      "asset_version": "2bca2948282c",
+      "asset_version": "6254089261fb",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-2.png",
@@ -2292,13 +2682,19 @@
           456
         ],
         "baseline_debris_pixels": 0
-      }
+      },
+      "previous_src": "/static/avatar/cutouts/B01.png",
+      "face_design": "two-eye-v5",
+      "design_status": "candidate",
+      "gaze_target": "conversation",
+      "dark_asset_version": "7700fa2b5a13",
+      "dark_src": "/static/avatar/dark/business/B01.svg"
     },
     {
       "id": "business/B02",
       "role": "business",
       "label": "Delegating a task",
-      "src": "/static/avatar/cutouts/B02.png",
+      "src": "/static/avatar/design-v5/business/B02.svg",
       "tags": [
         "B02",
         "delegating"
@@ -2306,7 +2702,7 @@
       "description": "Makes a handoff to another specialist visible, useful for explaining delegation and who is currently responsible for the next step.",
       "source": "generated-concept",
       "approval": "approved",
-      "asset_version": "2c252ff078af",
+      "asset_version": "1862ad14d6a5",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-2.png",
@@ -2320,13 +2716,19 @@
           456
         ],
         "baseline_debris_pixels": 0
-      }
+      },
+      "previous_src": "/static/avatar/cutouts/B02.png",
+      "face_design": "two-eye-v5",
+      "design_status": "candidate",
+      "gaze_target": "work",
+      "dark_asset_version": "201623836221",
+      "dark_src": "/static/avatar/dark/business/B02.svg"
     },
     {
       "id": "business/B03",
       "role": "business",
       "label": "Delivering a report",
-      "src": "/static/avatar/cutouts/B03.png",
+      "src": "/static/avatar/design-v5/business/B03.svg",
       "tags": [
         "B03",
         "report",
@@ -2335,7 +2737,7 @@
       "description": "Distinguishes presenting a finished report from drafting one, creating a clear moment for the morning-results or task-completion experience.",
       "source": "generated-concept",
       "approval": "approved",
-      "asset_version": "16721851bf09",
+      "asset_version": "2af16c530c98",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-2.png",
@@ -2349,13 +2751,19 @@
           456
         ],
         "baseline_debris_pixels": 0
-      }
+      },
+      "previous_src": "/static/avatar/cutouts/B03.png",
+      "face_design": "two-eye-v5",
+      "design_status": "candidate",
+      "gaze_target": "work",
+      "dark_asset_version": "56e1a1f30fa8",
+      "dark_src": "/static/avatar/dark/business/B03.svg"
     },
     {
       "id": "business/B04",
       "role": "business",
       "label": "Weighing a tradeoff",
-      "src": "/static/avatar/cutouts/B04.png",
+      "src": "/static/avatar/design-v5/business/B04.svg",
       "tags": [
         "B04",
         "negotiating"
@@ -2363,7 +2771,7 @@
       "description": "Shows two competing options being weighed, useful for business decisions where priorities and tradeoffs matter more than a single confident answer.",
       "source": "generated-concept",
       "approval": "approved",
-      "asset_version": "c238ad9bddeb",
+      "asset_version": "ff960895db51",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-2.png",
@@ -2377,13 +2785,19 @@
           456
         ],
         "baseline_debris_pixels": 0
-      }
+      },
+      "previous_src": "/static/avatar/cutouts/B04.png",
+      "face_design": "two-eye-v5",
+      "design_status": "candidate",
+      "gaze_target": "conversation",
+      "dark_asset_version": "b39790fca96d",
+      "dark_src": "/static/avatar/dark/business/B04.svg"
     },
     {
       "id": "business/B05",
       "role": "business",
       "label": "Prioritizing",
-      "src": "/static/avatar/cutouts/B05.png",
+      "src": "/static/avatar/design-v5/business/B05.svg",
       "tags": [
         "B05",
         "prioritizing"
@@ -2391,7 +2805,7 @@
       "description": "Makes reprioritization visible with one task moving ahead of others, matching the need to keep the next steps manageable.",
       "source": "generated-concept",
       "approval": "approved",
-      "asset_version": "59fd61f07669",
+      "asset_version": "db9109254610",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-3.png",
@@ -2405,13 +2819,19 @@
           456
         ],
         "baseline_debris_pixels": 0
-      }
+      },
+      "previous_src": "/static/avatar/cutouts/B05.png",
+      "face_design": "two-eye-v5",
+      "design_status": "candidate",
+      "gaze_target": "work",
+      "dark_asset_version": "dfa813524efa",
+      "dark_src": "/static/avatar/dark/business/B05.svg"
     },
     {
       "id": "business/B06",
       "role": "business",
       "label": "Listening in a meeting",
-      "src": "/static/avatar/cutouts/B06.png",
+      "src": "/static/avatar/design-v5/business/B06.svg",
       "tags": [
         "B06",
         "meeting",
@@ -2420,7 +2840,7 @@
       "description": "Provides an attentive, restrained listening pose for planning conversations, showing that straightforwardness can still include patience.",
       "source": "generated-concept",
       "approval": "approved",
-      "asset_version": "1005d8edcc65",
+      "asset_version": "942a16178340",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-3.png",
@@ -2434,13 +2854,19 @@
           456
         ],
         "baseline_debris_pixels": 0
-      }
+      },
+      "previous_src": "/static/avatar/cutouts/B06.png",
+      "face_design": "two-eye-v5",
+      "design_status": "candidate",
+      "gaze_target": "conversation",
+      "dark_asset_version": "26bf6ece1c6f",
+      "dark_src": "/static/avatar/dark/business/B06.svg"
     },
     {
       "id": "business/B07",
       "role": "business",
       "label": "Checking a budget",
-      "src": "/static/avatar/focus/business/B07.svg",
+      "src": "/static/avatar/design-v5/business/B07.svg",
       "tags": [
         "B07",
         "budget",
@@ -2449,7 +2875,7 @@
       "description": "Signals deliberate review of costs and constraints, distinguishing financial judgment from generic research or report writing.",
       "source": "generated-concept",
       "approval": "approved",
-      "asset_version": "9e806eca0d44",
+      "asset_version": "28e8957b29fc",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-3.png",
@@ -2465,13 +2891,18 @@
         "baseline_debris_pixels": 0
       },
       "original_src": "/static/avatar/cutouts/B07.png",
-      "gaze_target": "spreadsheet"
+      "gaze_target": "work",
+      "previous_src": "/static/avatar/focus/business/B07.svg",
+      "face_design": "two-eye-v5",
+      "design_status": "candidate",
+      "dark_asset_version": "a91363e523ef",
+      "dark_src": "/static/avatar/dark/business/B07.svg"
     },
     {
       "id": "business/B08",
       "role": "business",
       "label": "Monitoring a long task",
-      "src": "/static/avatar/cutouts/B08.png",
+      "src": "/static/avatar/design-v5/business/B08.svg",
       "tags": [
         "B08",
         "job",
@@ -2480,7 +2911,7 @@
       "description": "Represents checking the progress of a long-running task, useful for an eventual overnight-work interface without pretending that monitoring is the work itself.",
       "source": "generated-concept",
       "approval": "approved",
-      "asset_version": "7f501b7f75f5",
+      "asset_version": "4698c584f6ff",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-3.png",
@@ -2494,13 +2925,19 @@
           456
         ],
         "baseline_debris_pixels": 0
-      }
+      },
+      "previous_src": "/static/avatar/cutouts/B08.png",
+      "face_design": "two-eye-v5",
+      "design_status": "candidate",
+      "gaze_target": "conversation",
+      "dark_asset_version": "faa71be2b0fd",
+      "dark_src": "/static/avatar/dark/business/B08.svg"
     },
     {
       "id": "business/B09",
       "role": "business",
       "label": "Reviewing a risk",
-      "src": "/static/avatar/cutouts/B09.png",
+      "src": "/static/avatar/design-v5/business/B09.svg",
       "tags": [
         "B09",
         "risk",
@@ -2509,7 +2946,7 @@
       "description": "Makes a consequential concern visible before action, supporting clear communication about uncertainty, dependencies, or decisions needing the owner's input.",
       "source": "generated-concept",
       "approval": "approved",
-      "asset_version": "a601524a44dc",
+      "asset_version": "4807b9b93560",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-3.png",
@@ -2523,13 +2960,19 @@
           456
         ],
         "baseline_debris_pixels": 0
-      }
+      },
+      "previous_src": "/static/avatar/cutouts/B09.png",
+      "face_design": "two-eye-v5",
+      "design_status": "candidate",
+      "gaze_target": "work",
+      "dark_asset_version": "0bad61b96f5d",
+      "dark_src": "/static/avatar/dark/business/B09.svg"
     },
     {
       "id": "business/B10",
       "role": "business",
       "label": "Closing the laptop",
-      "src": "/static/avatar/focus/business/B10.svg",
+      "src": "/static/avatar/design-v5/business/B10.svg",
       "tags": [
         "B10",
         "closing",
@@ -2538,7 +2981,7 @@
       "description": "Gives a completed session a recognizable ending, pairing a relaxed posture with the point where the character can summarize and hand control back.",
       "source": "generated-concept",
       "approval": "approved",
-      "asset_version": "69c8c73b9c8a",
+      "asset_version": "e6c62e49735a",
       "motion": "none",
       "provenance": {
         "sheet": "assets/proposals/business-3.png",
@@ -2554,7 +2997,12 @@
         "baseline_debris_pixels": 0
       },
       "original_src": "/static/avatar/cutouts/B10.png",
-      "gaze_target": "laptop"
+      "gaze_target": "work",
+      "previous_src": "/static/avatar/focus/business/B10.svg",
+      "face_design": "two-eye-v5",
+      "design_status": "candidate",
+      "dark_asset_version": "61e2fb4a1a79",
+      "dark_src": "/static/avatar/dark/business/B10.svg"
     }
   ],
   "roles": {

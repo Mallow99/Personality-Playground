@@ -374,3 +374,47 @@ same runtime assets beside source views, and records specific repairs by pose ID
 Six newer task poses use local eye overlays over embedded transparent cutouts;
 nine older poses use vector eye edits. Their bodies remain authored images or
 traces. Work-directed gaze is pose-specific; other poses retain their source gaze.
+
+## Design v5: objects have a front, a back and a purpose
+
+The earlier pass removed edge artifacts but missed a more basic design error:
+Business appeared to write on a clipboard whose paper faced the camera. Opaque
+paper alone would not fix that. The writing task needs the paper facing him, with
+the board's plain rear face toward us. The regenerated standing and seated writing
+references now use that arrangement. The pen nib and paper are on the far side;
+the supporting fingers wrap around the near edge. A complete navy backing polygon
+sits beneath the gripping fingers so their contours cannot punch holes in it.
+Presentation boards remain separate poses that can legitimately face the viewer.
+
+The original Business head often had one long eye slit. Moving its pupil preserved
+that ambiguity. V5 uses one reference family with two separated eyes for front,
+three-quarter and downward looks. Most existing body poses keep their authored
+silhouettes; resting poses retain closed eyelids. Forehead-hand poses have explicit
+local eye edits to preserve the overlapping hand. Head coordinates use the source
+manifest's cell-to-canvas transform: failing to apply it briefly produced two heads
+in the reclining proof, which the contact-page inspection caught before publishing.
+The two regenerated writing poses are full authored endpoints, not head swaps.
+
+True-alpha references are classified into the three role colors while retaining
+foreground coverage, including pale fingers. They do not use white as a fourth
+background class. White-looking details inside an object can be solid material.
+That distinction matters: treating every pale patch as background made clipboard
+cells into holes. Display sheets now have explicit opaque paper planes; writing
+clipboards instead have plain opaque rear planes. The reference/crop definitions
+and all source files remain available under poses-v5 and avatar-design-v5.json.
+
+Dark backgrounds exposed another limitation: a navy or charcoal silhouette can be
+correctly cut out and still disappear on black. Dark variants raise each role's
+own tones instead of adding a pale contour glow. There are 128 normal/dark pairs.
+Auto chooses from the visible app surface; the owner can choose Light or Dark
+explicitly for an unknown transparent desktop background. Model tools cannot
+change that owner preference. Three-color families remain separate between roles.
+
+Finally, motion reset must remove only runtime motion transforms. Removing every
+SVG transform would also remove a head's authored placement. The renderer now
+resets only its known moving groups; browser checks preserve the seated head's
+placement when motion is paused and resumed.
+
+This is a design candidate. Numeric checks establish material opacity, contrast,
+asset loading and control behavior; they do not establish the owner's aesthetic
+approval or a universal body rig.

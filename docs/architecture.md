@@ -221,3 +221,23 @@ repeated updates to a loading SVG await the shared loading promise. Browser chec
 cover actual visibility, delayed readiness, motion transforms, hand visibility,
 thinking pose selection, reply/idle cues, background changes and phone layouts.
 Backend presentation fields and model tools are unchanged by this correction.
+
+## V5 Business design and surface contrast
+
+Business now has a shared two-eye head reference family across 42 runtime entries,
+with two regenerated writing endpoints whose paper faces the character. Their
+solid rear board planes sit below gripping fingers. Source and previous artwork
+remain available; v5 is recorded as a candidate rather than silently user-approved.
+Display-board poses keep separate opaque paper surfaces facing their audience.
+
+`build_avatar_design.py` runs after cutout/focus packaging and produces Business
+variants and all 128 dark-background variants. Catalog IDs and model tool contracts
+remain stable. `contrast` is an owner-only auto/light/dark display preference shared
+with the overlay. Auto samples the app surface, not the operating-system screen.
+Unknown transparent desktop surfaces need an explicit owner choice.
+
+The renderer preserves authored SVG transforms while resetting only known motion
+groups. Material checks inspect actual raster opacity of the clipboard backs;
+browser checks cover both art variants, automatic selection, cross-window owner
+preferences and preserved head placement. The original 74 traces and source sheets
+remain available for comparison.

@@ -40,6 +40,8 @@ def test_catalog_has_all_128_local_art_assets():
         {"dock": "center"},
         {"size": "huge"},
         {"javascript": "alert(1)"},
+        {"contrast": "neon"},
+        {"contrast": []},
         {"profile": "academic", "pose_id": "business/standing"},
     ],
 )
@@ -250,3 +252,17 @@ def test_thinking_state_remains_visible_and_owner_can_hide_during_generation(tmp
             assert not (await browser.get("/api/avatar")).json()["visible"]
 
     asyncio.run(scenario())
+
+
+def test_artwork_contrast_is_an_owner_preference():
+    import asyncio
+
+    hub = AvatarHub()
+    assert hub.snapshot()["contrast"] == "auto"
+    hub.update({"contrast": "dark"})
+    hub.update({"profile": "business"})
+    assert hub.snapshot()["contrast"] == "dark"
+    tool = AvatarTools(None, hub, "business")
+    with pytest.raises(ToolError, match="display preferences"):
+        asyncio.run(tool.run("avatar_set", {"contrast": "light"}, {"avatar_set"}))
+    assert hub.snapshot()["contrast"] == "dark"

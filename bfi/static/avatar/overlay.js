@@ -8,6 +8,7 @@ const controller = await connectAvatar([el], (state, _, error) => {
   }
   document.body.dataset.theme = state.profile;
   el.hidden = !state.visible;
+  document.getElementById("contrast").value = state.contrast;
   status.textContent = state.visible
     ? "Local handler · text cues"
     : "Hidden in handler";
@@ -24,3 +25,13 @@ document.getElementById("hide-avatar").addEventListener("click", async () => {
   }
 });
 addEventListener("pagehide", () => controller.close());
+
+document
+  .getElementById("contrast")
+  .addEventListener("change", async (event) => {
+    try {
+      await avatarAPI("", { contrast: event.target.value });
+    } catch (error) {
+      status.textContent = error.message;
+    }
+  });

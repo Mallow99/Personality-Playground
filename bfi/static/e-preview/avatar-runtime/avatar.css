@@ -224,3 +224,6 @@ main,
 #corner-companion .avatar-caption {
   pointer-events: auto;
 }
+.avatar-view[data-contrast="dark"] .avatar-status {
+  color: var(--avatar-paper);
+}

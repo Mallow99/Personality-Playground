@@ -10,6 +10,7 @@ from bfi.tools import ToolError, definition
 CATALOG = ROOT / "bfi/static/avatar/catalog.json"
 DOCKS = ("bottom-right", "bottom-left", "top-right", "top-left")
 SIZES = ("small", "normal", "large")
+CONTRASTS = ("auto", "light", "dark")
 
 
 class AvatarHub:
@@ -29,6 +30,7 @@ class AvatarHub:
             speaking=False,
             speech_until=0,
             motion=True,
+            contrast="auto",
             source="owner",
             conversation_id=None,
         )
@@ -54,6 +56,7 @@ class AvatarHub:
                 "caption",
                 "speaking",
                 "motion",
+                "contrast",
             }:
                 raise ToolError("Unknown avatar field.")
             role = changes.get("profile", self.state["profile"])
@@ -84,6 +87,8 @@ class AvatarHub:
                 raise ToolError("Unknown avatar dock.")
             if changes.get("size", self.state["size"]) not in SIZES:
                 raise ToolError("Unknown avatar size.")
+            if changes.get("contrast", self.state["contrast"]) not in CONTRASTS:
+                raise ToolError("Choose auto, light or dark artwork contrast.")
             if role != self.state["profile"]:
                 self.state.update(
                     caption="",
@@ -215,8 +220,12 @@ class AvatarTools:
                 raise ToolError("Unexpected avatar catalog arguments.")
             return self.hub.search(self.profile, **arguments)
         if name == "avatar_set":
-            if not isinstance(arguments, dict) or "profile" in arguments or "motion" in arguments:
-                raise ToolError("The handler cannot change profile or owner motion preferences.")
+            if not isinstance(arguments, dict) or set(arguments) & {
+                "profile",
+                "motion",
+                "contrast",
+            }:
+                raise ToolError("The handler cannot change profile or owner display preferences.")
             return self.hub.update(arguments, profile=self.profile, source="model_tool")
         return await self.base.run(name, arguments, allowed_names)
 

@@ -7,6 +7,7 @@ from pathlib import Path
 
 import numpy as np
 from avatar_matte import remove_baseline_debris, remove_white_matte
+from build_avatar_design import build_design
 from build_avatar_focus import build_focus
 from PIL import Image
 
@@ -90,6 +91,7 @@ for record in focus:
         entry["layered_src"] = record["src"]
     else:
         entry["src"] = record["src"]
+build_design(entries)
 assert len(entries) == 128 and len({p["id"] for p in entries}) == 128
 catalog = dict(
     version=1,
@@ -113,3 +115,6 @@ shutil.copytree(OUT / "cutouts", demo / "cutouts", dirs_exist_ok=True)
 shutil.copytree(OUT / "focus", demo / "focus", dirs_exist_ok=True)
 
 shutil.copytree(OUT / "clean", demo / "clean", dirs_exist_ok=True)
+
+for folder in ["design-v5", "dark"]:
+    shutil.copytree(OUT / folder, demo / folder, dirs_exist_ok=True)

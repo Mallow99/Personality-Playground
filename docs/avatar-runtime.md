@@ -50,6 +50,8 @@ handle transparency/topmost flags differently.
   Disable it when using the native overlay. The sidebar remains a preview.
 - Global hide/show is shared with other surfaces. The overlay's show button and
   native tray can restore the avatar.
+- Artwork contrast is an owner preference: Auto for the app surface, Light or Dark
+  for a known desktop background. It is shared with the overlay.
 - Motion respects reduced-motion preferences. Static cutouts do not require
   continuous per-frame animation; the reading and Business seated examples have local transforms.
 - The reply indicator is a timed text cue, not audio-driven speech or lip sync.
@@ -166,3 +168,13 @@ separate focus SVG variants, with a gaze_target and original_src. These local ey
 edits keep the body and head silhouettes; other poses retain the source gaze.
 The static preview offers contrasting backgrounds for inspection. Its controls
 report actual results and show layer reveal only when it is supported.
+
+## V5 Business candidate
+
+The 42 Business IDs now use a shared two-eye family. Working and formal-report
+are new authored writing endpoints: their paper faces him and their solid board
+backs face the viewer. All poses also have a separate dark_src, with dark_layered_src
+for the two moving examples. Auto chooses from the app surface. Unknown transparent
+desktop backgrounds need the owner's Light/Dark choice; no screen sampling occurs.
+The model cannot change contrast. The source and previous sprite remain inspectable.
+V5 is a candidate, not recorded as owner-approved artwork.

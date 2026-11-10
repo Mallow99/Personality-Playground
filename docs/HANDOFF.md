@@ -4,6 +4,16 @@ The repository now includes working handler/avatar integration. Start with
 [avatar runtime and launch instructions](avatar-runtime.md), then
 [the learning trail](learning.md) and [architecture decisions](architecture.md).
 
+## Latest v5 design candidate
+
+Business has a consistent two-eye face family across 42 poses. Working and formal
+report are regenerated: the paper faces him, the viewer sees the solid board back,
+and gripping fingers sit above a complete backing plane. Earlier sources remain.
+All 128 poses have separate dark-background variants. Auto uses the app surface;
+choose Dark explicitly for a dark desktop under the transparent overlay. The model
+cannot change that owner preference. V5 remains a visual candidate for review.
+Read research/visual-studies/poses-v5/README.md and check_avatar_design.py.
+
 ## Latest visual/control correction
 
 `e-preview/art-review.html` shows every runtime pose with source comparison and

@@ -32,3 +32,14 @@ body {
 [hidden] {
   display: none !important;
 }
+
+.contrast-control {
+  display: block;
+  width: fit-content;
+  margin: 8px auto;
+  padding: 5px 9px;
+  font: 11px system-ui;
+  color: var(--avatar-dark);
+  background: var(--avatar-paper);
+  border-radius: 4px;
+}

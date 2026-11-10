@@ -30,6 +30,13 @@ try {
     const url = new URL(local(pose.layered_src || pose.src));
     if (pose.asset_version) url.searchParams.set("v", pose.asset_version);
     img.src = url.href;
+    img.dataset.light = url.href;
+    const darkURL = new URL(
+      local(pose.dark_layered_src || pose.dark_src || pose.src),
+    );
+    if (pose.dark_asset_version)
+      darkURL.searchParams.set("v", pose.dark_asset_version);
+    img.dataset.dark = darkURL.href;
     img.alt = pose.label;
     img.className = "packaged";
     img.loading = "lazy";
@@ -38,7 +45,9 @@ try {
     original.className = "original";
     original.loading = "lazy";
     original.alt = pose.label + " source";
-    if (pose.provenance) {
+    if (pose.design_source) {
+      original.src = local(pose.design_source);
+    } else if (pose.provenance) {
       const meta = pose.provenance;
       original.src = local("/static/e-preview/" + meta.sheet);
       original.classList.add("sheet");
@@ -79,6 +88,13 @@ try {
       old.style.display = "block";
       content.append(old);
     }
+    if (pose.previous_src) {
+      const previous = document.createElement("a");
+      previous.href = local(pose.previous_src);
+      previous.textContent = "Before this design pass";
+      previous.style.display = "block";
+      content.append(previous);
+    }
     card.append(content);
     $("cards").append(card);
   }
@@ -95,10 +111,12 @@ try {
   }
   $("role").addEventListener("change", filter);
   $("search").addEventListener("input", filter);
-  $("background").addEventListener(
-    "change",
-    () => (document.body.dataset.background = $("background").value),
-  );
+  $("background").addEventListener("change", () => {
+    const value = $("background").value;
+    document.body.dataset.background = value;
+    for (const image of document.querySelectorAll(".packaged"))
+      image.src = image.dataset[value === "dark" ? "dark" : "light"];
+  });
   $("source").addEventListener("change", () => {
     document.body.dataset.source = String($("source").checked);
     filter();

@@ -1,3 +1,8 @@
+Latest runtime work: [Business v5 candidate](poses-v5/README.md) uses a consistent
+two-eye family and writing boards whose paper faces the character. The normal/dark
+variants are implemented; aesthetic review remains open. The records below are
+historical design studies. Current launch instructions are in docs/HANDOFF.md.
+
 # Character design studies
 
 Latest: [54 illustrated pose suggestions with reasons](pose-proposals/README.md).

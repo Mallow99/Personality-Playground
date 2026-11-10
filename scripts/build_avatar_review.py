@@ -57,10 +57,22 @@ for pose in poses:
         findings.append("Detached baseline/label scraps removed from the runtime copy.")
     if pose.get("provenance", {}).get("baseline_debris_pixels", 0):
         findings.append("Detached caption pixels removed from the cutout.")
-    if pose.get("gaze_target"):
+    if pose.get("face_design"):
         findings.append(
-            f"Local eyes now point toward the {pose['gaze_target']}; body silhouette retained."
+            "Business two-eye design candidate; "
+            "closed eyes and foreground hands remain pose-specific."
         )
+    if pose.get("clipboard_orientation"):
+        findings.append(
+            "Writing clipboard turns toward him: the viewer sees the solid back, "
+            "with paper on the far side."
+        )
+    if pose.get("dark_src"):
+        findings.append(
+            "Separate role-colored artwork is available for dark backgrounds; no edge glow."
+        )
+    if pose.get("gaze_target"):
+        findings.append(f"Gaze is directed toward the {pose['gaze_target']}.")
     if pose["source"] == "generated-concept":
         findings.append("White source matte removed from the transparent edge RGB.")
     rows.append(
