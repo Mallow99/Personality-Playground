@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>A little movement · E character studio</title>
+    <meta
+      name="description"
+      content="One authored Academic reading pose, with limited head, hand and book movement."
+    />
+    <link rel="stylesheet" href="limited-motion.css" />
+    <script type="module" src="limited-motion.js"></script>
+  </head>
+  <body>
+    <main>
+      <a href="index.html">← Back to the character studio</a>
+      <p class="eyebrow">ONE POSE / LIMITED MOVEMENT</p>
+      <h1>Still reading.<br /><em>A little more alive.</em></h1>
+      <p class="intro">
+        The same seated drawing throughout. A small head tilt, a gentle book
+        shift, and a slight adjustment of the hands. The torso, sleeves, and
+        legs stay fixed.
+      </p>
+      <section class="example" aria-label="Limited movement comparison">
+        <div class="art-panel">
+          <div class="stage-label">
+            <span>ACADEMIC / READING</span
+            ><span id="view-label">Limited movement</span>
+          </div>
+          <div id="scene">
+            <div id="limited-actor"></div>
+            <div id="original-actor" hidden></div>
+          </div>
+          <p id="phase" role="status">Loading the reading pose…</p>
+        </div>
+        <div class="panel">
+          <p class="eyebrow">WATCH THE DETAILS</p>
+          <h2>A glance up.<br />Then back to the page.</h2>
+          <p>
+            The hands follow the book, with a tiny grip adjustment of their own.
+            Each hand remains one complete shape.
+          </p>
+          <div class="buttons">
+            <button id="play" disabled>Pause</button
+            ><button id="original" aria-pressed="false" disabled>
+              Compare original still</button
+            ><button id="restart" disabled>Replay</button
+            ><button id="zoom" aria-pressed="false" disabled>Close-up</button>
+          </div>
+          <label
+            >Movement strength <output id="strength-label">1×</output
+            ><input id="strength" type="range" min="0" max="150" value="100"
+          /></label>
+          <label
+            >Inspect a moment<input
+              id="scrub"
+              type="range"
+              min="0"
+              max="1000"
+              value="0"
+          /></label>
+          <p id="motion-note" class="note">
+            An eight-second silent loop. Drag the timeline to inspect it, or
+            compare against the original still.
+          </p>
+          <p class="note">
+            This is a small animation inside one set pose. No full-body pose
+            generation, new character model, or audio is involved.
+          </p>
+          <p id="error" role="alert" hidden></p>
+        </div>
+      </section>
+      <details>
+        <summary>Watch the recorded example</summary>
+        <video
+          id="recording"
+          controls
+          playsinline
+          preload="none"
+          src="assets/reading-limited.mp4"
+          aria-label="Actual browser recording of the limited reading animation"
+        ></video>
+        <p class="note">
+          A recording of the live browser example, without audio.
+        </p>
+      </details>
+      <details>
+        <summary>What is actually moving?</summary>
+        <p>
+          Complete source contours are grouped into the head, the book, and two
+          hands. Small rotations and translations move those groups; the
+          remaining drawing is fixed. At rest the grouped drawing retains over
+          99.99% silhouette overlap with the unsplit SVG.
+        </p>
+        <p>
+          The book and hands move together first. Each hand then adds only a
+          small local adjustment, so this example does not need a reconstructed
+          arm or a new seated pose. It is an animation study for review.
+        </p>
+        <a
+          href="assets/poses/academic/reading.svg"
+          target="_blank"
+          rel="noopener"
+          >Open the original SVG</a
+        >
+      </details>
+    </main>
+  </body>
+</html>

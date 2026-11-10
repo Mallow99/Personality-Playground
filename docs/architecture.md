@@ -158,3 +158,14 @@ Pose transition modes compare rotation-aware interpolation, direct morphing, and
 still swaps. Talking cues are visual only. `pose-review.js` stores explicit owner
 decisions locally and exports JSON; no server write, external sync, or training is
 triggered. The 54 proposed concepts are distinct from 74 available drawings.
+
+## Set-pose movement example
+
+The current direction preserves authored set poses and adds limited local movement.
+A fully poseable model is deferred as separate research. `limited-motion.html`
+demonstrates Academic reading with a fixed body, head tilt, book shift and small
+hand-grip adjustments. `reading-limited.svg` groups complete source contours;
+`reading-limited.json` records source provenance and rest fidelity. The original
+SVG remains unchanged. These assets do not replace the 74-pose catalog or infer
+new anatomy. A separate module controls transforms, comparison, inspection and
+reduced motion. The MP4 is recorded from actual Chromium playback.

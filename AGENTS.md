@@ -75,3 +75,9 @@ the 54 suggestions. They are generated under research/visual-studies/pose-propos
 with one demonstrating character per shared idea and their own roles for specialties.
 They remain unapproved concepts and are separate from the 74 active SVG poses.
 Preserve review codes, saved choices, image cell mappings, hashes, and reasons.
+
+Current direction: retain authored set poses and add limited local hand/head/prop
+motion. A universal poseable model is deferred to the board's Later research card;
+do not replace the library with a generic rig. `limited-motion.html` is a focused
+Academic reading example with a fixed body and pose-local head/book/hand transforms.
+It does not approve new art or establish a reusable full-body model.

@@ -254,3 +254,18 @@ not the source artwork or the 74 active vector poses.
 joins those reasons and image references to the existing codes. Saved review choices
 stay separate from generated metadata, and exported decisions identify the exact
 sheet/cell/hash. Generating an illustration does not mean it was approved or rigged.
+
+## Limited movement inside one authored pose
+
+The reading example preserves the complete seated drawing. `build_limited_motion.py`
+puts intact source contours into a fixed body, head, book, and two hand groups.
+Each visible hand is one connected source shape. No new anatomy or full-body rig
+is inferred. At rest this regrouping retains over 99.99% silhouette overlap with
+the original SVG, which remains available as the still comparison.
+
+`limited-motion.js` animates only four transforms: a small head rotation, a shared
+book/hand shift, and a tiny local rotation of each hand. The hands inherit the book
+movement before adding their grip adjustment. The torso, sleeves, and crossed legs
+stay fixed. A timeline and strength control make the motion inspectable; the
+close-up uses the same SVG with a tighter viewport. Reduced motion disables autoplay.
+This is a pose-specific animation study, not the deferred universal rig project.

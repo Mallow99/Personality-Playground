@@ -1,0 +1,23 @@
+{
+  "source": "poses/academic/reading.svg",
+  "source_sha256": "d30ca77875ad1da3c6e6c66fc274430c4ed8d47d27c634601a9fe5bf93de0931",
+  "assembly_iou": 0.9999520510177171,
+  "method": "whole connected source contours; no anatomical region slicing",
+  "source_form_counts": {
+    "body": 544,
+    "head": 306,
+    "book": 247,
+    "right": 1,
+    "left": 1
+  },
+  "fixed": [
+    "torso",
+    "sleeves",
+    "legs"
+  ],
+  "animated": [
+    "head",
+    "book and attached hands",
+    "small local grip adjustments"
+  ]
+}

@@ -84,3 +84,17 @@ Exported decisions include the sheet hash and cell so the reviewed picture remai
 identifiable. Saved choices retain the same review codes. Validate image coverage,
 hashes, modal behavior, and phone layout with `scripts/check_e_preview.mjs` and
 `uv run --locked --group browser python scripts/browser_e_review.py`.
+
+## One-pose limited movement example
+
+Open `limited-motion.html` for Academic reading: a small head tilt, book movement,
+and local hand-grip adjustments while the torso, sleeves and legs remain fixed.
+Compare the literal original SVG, pause/scrub the eight-second loop, adjust its
+strength, or use the close-up. The page also includes an actual browser recording.
+Reduced motion disables autoplay. This does not require a universal character rig
+and does not replace the existing poses.
+
+Rebuild with `uv run --with numpy --with cairosvg --with shapely python scripts/build_limited_motion.py`.
+Run `uv run --locked --group browser python scripts/browser_limited_motion.py` to
+check the body stays fixed, whole hands, controls, three layouts, reduced motion,
+and record `assets/reading-limited.mp4`.
