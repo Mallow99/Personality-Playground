@@ -1,3 +1,4 @@
+import { RigActor } from "./rig-actor.js";
 import { poseCatalog } from "./pose-catalog.js";
 export { poseCatalog };
 // Presentation only. These components never load models or execute computer actions.
@@ -45,125 +46,16 @@ export const explanationPose = {
 export const motionEnabled = () =>
   document.documentElement.dataset.motion !== "off" &&
   !matchMedia("(prefers-reduced-motion: reduce)").matches;
-const svgCache = new Map();
-async function artwork(id, pose) {
-  const actual = pose === "explaining" ? explanationPose[id] : pose;
-  const key = `${id}-${actual}`;
-  if (!svgCache.has(key)) {
-    const task = fetch(
-      new URL(`assets/poses/${id}/${actual}.svg`, import.meta.url),
-    )
-      .then((r) => {
-        if (!r.ok) throw Error(`Artwork unavailable: ${key}`);
-        return r.text();
-      })
-      .then((text) => {
-        const doc = new DOMParser().parseFromString(text, "image/svg+xml");
-        if (
-          doc.querySelector("parsererror") ||
-          doc.documentElement.localName !== "svg"
-        )
-          throw Error("Invalid bundled artwork");
-        return doc.documentElement;
-      });
-    svgCache.set(key, task);
-    task.catch(() => svgCache.delete(key));
-  }
-  return (await svgCache.get(key)).cloneNode(true);
-}
-export class CharacterActor {
-  constructor(element) {
-    this.el = element;
-    this.profile = "academic";
-    this.pose = "standing";
-    this.generation = 0;
-    this.el.dataset.visible = "true";
-  }
-  async setPose(pose = this.pose, profile = this.profile) {
-    if (
-      !profiles[profile] ||
-      !(
-        pose === "explaining" || poseCatalog[profile].some((p) => p.id === pose)
-      )
-    )
-      throw Error("Unknown character or pose");
-    const ticket = ++this.generation;
-    this.profile = profile;
-    this.pose = pose;
-    const svg = await artwork(profile, pose);
-    if (ticket !== this.generation) return;
-    svg.setAttribute("aria-label", `${profiles[profile].name}, ${pose}`);
-    const old = this.el.querySelector("svg");
-    this.el.replaceChildren(svg);
-    this.el.dataset.pose = pose;
-    this.el.dataset.profile = profile;
-    if (motionEnabled()) {
-      svg.animate(
-        [
-          { opacity: 0, transform: "translateY(6px)" },
-          { opacity: 1, transform: "translateY(0)" },
-        ],
-        { duration: 240, easing: "ease-out" },
-      );
-      if (old) {
-        old.setAttribute("aria-hidden", "true");
-        this.el.prepend(old);
-        const fade = old.animate([{ opacity: 0.65 }, { opacity: 0 }], {
-          duration: 180,
-        });
-        fade.finished.then(
-          () => old.remove(),
-          () => old.remove(),
-        );
-      }
-    }
-  }
-  setSpeaking(value) {
-    this.el.classList.toggle("speaking", !!value);
-  }
-  show() {
-    this.el.dataset.visible = "true";
-  }
-  hide() {
-    this.el.dataset.visible = "false";
-    this.setSpeaking(false);
-  }
-  destroy() {
-    this.generation++;
-    this.el.replaceChildren();
-  }
-}
-export class ProfileTransition {
-  constructor(layer) {
-    this.el = layer;
-    this.generation = 0;
-    this.timer = null;
-    this.el
-      .querySelector("button")
-      .addEventListener("click", () => this.stop());
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") this.stop();
+export class CharacterActor extends RigActor {
+  constructor(el) {
+    super(el, {
+      motionEnabled,
+      duration: 850,
+      resolvePose: (role, pose) =>
+        pose === "explaining" ? explanationPose[role] : pose,
+      validPose: (role, pose) =>
+        !!profiles[role] && poseCatalog[role].some((p) => p.id === pose),
     });
-  }
-  stop() {
-    this.generation++;
-    clearTimeout(this.timer);
-    this.el.hidden = true;
-    this.el.classList.remove("running");
-  }
-  play(profile) {
-    this.stop();
-    if (!profiles[profile] || !motionEnabled()) return;
-    this.el.dataset.profile = profile;
-    this.el.querySelector(".transition-label").textContent =
-      profiles[profile].motif;
-    this.el.hidden = false;
-    void this.el.offsetWidth;
-    this.el.classList.add("running");
-    const ticket = this.generation;
-    this.timer = setTimeout(() => {
-      if (ticket === this.generation) this.stop();
-    }, 2500);
   }
 }
 export const cursorShapes = [
@@ -241,6 +133,8 @@ export const activityPoses = {
     coding: "coding",
     debugging: "debugging",
     security: "security-review",
+    testing: "testing",
+    reviewing: "code-review",
   },
   business: {
     coordinating: "coordinating",

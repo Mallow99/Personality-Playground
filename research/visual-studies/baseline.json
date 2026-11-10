@@ -52,12 +52,16 @@
     "no shared dark/light character fills",
     "no story spoilers"
   ],
-  "production_svg_status": "54_generated_pose_traces_pending_visual_review",
+  "production_svg_status": "74_generated_pose_traces_with_draft_semantic_rigs",
   "existing_svg_proofs": "earlier D feasibility studies only",
   "icons": "face_and_motif_proofs_pending_review",
-  "animation": "motif_v2_and_expanded_pose_preview",
+  "animation": "motif_v2_and_named_piece_morph_prototype",
   "proof_pack": "../../bfi/static/e-preview/index.html",
   "previous_proof_status": "hand-built SVG poses and first transitions rejected by owner",
   "pose_sources": "poses-v2/sources.json",
-  "pose_manifest": "../../bfi/static/e-preview/assets/poses/manifest.json"
+  "pose_manifest": "../../bfi/static/e-preview/assets/poses/manifest.json",
+  "pose_additions": "poses-v3/README.md",
+  "body_guides": "../../config/rigs",
+  "pose_plan": "../../config/pose-plan.json",
+  "visual_review": "prior pose art accepted except Hacker specialist set; revisions and draft body ownership await review"
 }

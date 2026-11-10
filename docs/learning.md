@@ -133,11 +133,11 @@ Each x/y pair is a corner in a 400-by-600 drawing space. The browser connects th
 corners and fills the shape. `data-piece` gives related shapes an inspectable name.
 The gaps between pieces are transparent space, not extra white shapes.
 
-In `components.js`, trace `CharacterActor.setPose`: fetch a bundled SVG, clone it,
-and replace the visible art. A generation number stops an older fetch from winning
-if you select another character quickly. Short opacity/position animations smooth
-the pose swap; this proof does not interpolate every polygon into a new skeleton.
-`setSpeaking` toggles mouth motion. `show`/`hide` control appearance independently.
+In the first proof (now archived), `CharacterActor.setPose` fetched a bundled SVG, cloned it,
+and replaced the visible art. A generation number stopped an older fetch from winning
+if you select another character quickly. Short opacity/position animations smoothed
+the pose swap. The named-piece replacement is explained below.
+`setSpeaking` now toggles presentation gestures. `show`/`hide` control appearance independently.
 
 Then follow a profile button in `studio.js`: it changes theme tokens, chooses art,
 and starts the book/error-window/clipboard transition. `AgentCursor.update` takes
@@ -168,3 +168,28 @@ and book into rigged parts must preserve their contours and be checked again.
 Overlap/color scores compare rendered SVGs to the normalized reference at source
 resolution. They cannot grade good posing or similarity to E. Use the live source
 comparison instead of accepting a passing test as a verdict on the artwork.
+
+## A hand that stays the same hand
+
+The new rig uses names such as `left-hand`, `left-forearm`, and `prop-main` in every
+pose. Read a guide in `config/rigs`: `leftWrist: [330, 160]` is a point in that pose's
+source cell. Head bounds and prop polygons help separate a face from a nearby hand
+or a book from the fingers holding it. Frame matrices account for a figure spilling
+outside its generated cell. The original image remains intact.
+
+`build_e_rigs.py` assigns regions to those guides and intersects them with the
+existing vector contours. The pieces reconstruct the accepted drawing. Guide
+ownership is estimated: a bad wrist point can assign some sleeve to the hand even
+when the assembled picture looks right. Inspect outlines and correct the guide.
+
+`rig-actor.js` matches the same named part and color in two poses, samples outline
+points, aligns their order, and interpolates coordinates. Missing pieces can shrink
+or appear. This is geometric interpolation, not physics, motion capture, or model
+reasoning. Intermediate shapes can deliberately look mechanical. At the end, the
+complete target paths replace the temporary sampled outlines. Independent drift
+adds small movements to individual SVG groups; Motion off/reduced motion stops it.
+
+Select a hand in the studio, move it, then change poses. Its stable name makes the
+relationship inspectable in both the DOM and exported piece map. Preview offsets
+are separate from the saved artwork. The [pose plan](pose-plan.md) records what
+exists, what is proposed, and which application states can reuse a drawing.

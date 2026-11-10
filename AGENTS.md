@@ -48,6 +48,15 @@ and OS control are separate work, not established by the demonstration.
 The owner rejected the first hand-built E SVGs and transitions. Use the generated
 pose sheets in `research/visual-studies/poses-v2/` and their direct boundary traces.
 Do not hand-redesign the figures during conversion. Verify source/SVG overlays;
-technical tests alone do not establish aesthetic similarity. Keep all 54 poses and
+technical tests alone do not establish aesthetic similarity. Keep all generated poses and
 source crops inspectable. Adult playful poses are optional manual choices, separate
 from ordinary activity. Academic also supports prose and Dungeons & Dragons goals.
+
+
+The latest source inventory is 74 poses (24 academic, 26 engineering, 24 business).
+The owner accepted the prior art except Hacker specialist poses; the replacement
+sheet is in poses-v3. Original glamour sources and vectors must be retained alongside
+new sultry poses. Semantic rig guides are in config/rigs; named pieces preserve
+anatomical identity across poses, with draft ownership and visible inspection tools.
+Pose transitions morph matched pieces; do not replace this with whole-card slides.
+Always check crop spill, geometry fidelity, and actual rendered movement.

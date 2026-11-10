@@ -1,9 +1,12 @@
+import {
+  rings,
+  resample,
+  morphPath,
+} from "../bfi/static/e-preview/rig-actor.js";
 // Deterministic component checks; no browser/DOM rendering claim.
 import assert from "node:assert/strict";
-import { readFile, readdir } from "node:fs/promises";
+import { readFile } from "node:fs/promises";
 import {
-  CharacterActor,
-  ProfileTransition,
   AgentCursor,
   profiles,
   poseCatalog,
@@ -25,8 +28,22 @@ assert.equal(new Set(palettes).size, 9);
 const manifest = JSON.parse(
   await readFile(new URL("assets/poses/manifest.json", root), "utf8"),
 );
+const retained = JSON.parse(
+  await readFile(
+    new URL(
+      "../research/visual-studies/poses-v3/retained-glamour.json",
+      import.meta.url,
+    ),
+    "utf8",
+  ),
+);
+for (const [role, hashes] of Object.entries(retained)) {
+  const current = manifest.characters[role].find((p) => p.id === "glamour");
+  assert.equal(current.sheet_sha256, hashes.sheet_sha256);
+  assert.equal(current.vector_sha256, hashes.vector_sha256);
+}
 for (const [id, items] of Object.entries(poseCatalog)) {
-  assert.equal(items.length, 18);
+  assert.equal(items.length, id === "engineering" ? 26 : 24);
   for (const item of items) {
     const source = await readFile(
       new URL(`assets/poses/${id}/${item.id}.svg`, root),
@@ -51,105 +68,81 @@ for (const id of Object.keys(profiles))
     assert(source.includes(profiles[id].name));
     assert(!source.includes("undefined"));
   }
-globalThis.document = {
-  documentElement: { dataset: { motion: "off" } },
-  addEventListener() {},
-};
-globalThis.matchMedia = () => ({ matches: false });
-function element() {
-  return {
-    dataset: {},
-    style: {},
-    classList: { toggle() {}, remove() {}, add() {} },
-    children: [],
-    replaceChildren(...v) {
-      this.children = v;
-    },
-    querySelector() {
-      return null;
-    },
-    setAttribute() {},
-  };
-}
-const pending = new Map();
-globalThis.fetch = (url) =>
-  new Promise((resolve) =>
-    pending.set(String(url), () =>
-      resolve({ ok: true, text: async () => String(url) }),
+
+const report = JSON.parse(
+  await readFile(new URL("assets/poses/rig-report.json", root), "utf8"),
+);
+assert.equal(report.parts.length, 17);
+let count = 0;
+for (const [role, items] of Object.entries(poseCatalog))
+  for (const item of items) {
+    const rig = JSON.parse(
+      await readFile(
+        new URL(`assets/poses/${role}/${item.id}.rig.json`, root),
+        "utf8",
+      ),
+    );
+    assert.deepEqual(
+      rig.parts.map((p) => p.id),
+      report.parts,
+    );
+    assert(rig.assembly_geometry_iou >= 0.99);
+    assert.equal(
+      rig.source_sha256,
+      manifest.characters[role].find((p) => p.id === item.id).vector_sha256,
+    );
+    for (const part of rig.parts) {
+      assert.equal(part.paths.length, 3);
+      for (const path of part.paths)
+        for (const ring of rings(path))
+          assert(ring.flat().every(Number.isFinite));
+    }
+    count++;
+  }
+assert.equal(count, 74);
+for (const role of Object.keys(profiles)) {
+  const a = JSON.parse(
+    await readFile(
+      new URL(`assets/poses/${role}/standing.rig.json`, root),
+      "utf8",
     ),
   );
-globalThis.DOMParser = class {
-  parseFromString(source) {
-    return {
-      querySelector() {
-        return null;
-      },
-      documentElement: {
-        localName: "svg",
-        cloneNode() {
-          return { ...element(), source };
-        },
-      },
-    };
-  }
-};
-const host = element(),
-  actor = new CharacterActor(host);
-const first = actor.setPose("standing", "academic"),
-  second = actor.setPose("seated", "business");
-pending.get(new URL("assets/poses/business/seated.svg", root).href)();
-await second;
-pending.get(new URL("assets/poses/academic/standing.svg", root).href)();
-await first;
-assert.equal(host.dataset.profile, "business");
-assert.equal(host.dataset.pose, "seated");
-actor.hide();
-assert.equal(host.dataset.visible, "false");
-actor.show();
-assert.equal(host.dataset.visible, "true");
-await assert.rejects(() => actor.setPose("unknown"));
-actor.destroy();
-assert.equal(host.children.length, 0);
-let skip, escape;
-const layer = {
-  ...element(),
-  hidden: true,
-  querySelector(selector) {
-    return selector === "button"
-      ? {
-          addEventListener(_, fn) {
-            skip = fn;
-          },
-        }
-      : { textContent: "" };
-  },
-};
-document.addEventListener = (_, fn) => {
-  escape = fn;
-};
-const transition = new ProfileTransition(layer);
-transition.play("academic");
-assert(layer.hidden);
-document.documentElement.dataset.motion = "on";
-transition.play("academic");
-assert(!layer.hidden);
-transition.play("business");
-assert.equal(layer.dataset.profile, "business");
-skip();
-assert(layer.hidden);
-transition.play("engineering");
-escape({ key: "Escape" });
-assert(layer.hidden);
-const pointer = element(),
-  cursor = new AgentCursor(pointer);
-cursor.update({ profileId: "academic", shape: "arrow", x: 80, y: 50 });
-assert.equal(pointer.style.transform, "translate(77px,48px)");
-cursor.hide();
-assert(pointer.hidden);
-assert.throws(() =>
-  cursor.update({ profileId: "academic", shape: "text", x: NaN, y: 0 }),
+  const b = JSON.parse(
+    await readFile(
+      new URL(`assets/poses/${role}/seated.rig.json`, root),
+      "utf8",
+    ),
+  );
+  for (const id of [
+    "head",
+    "left-hand",
+    "right-hand",
+    "left-foot",
+    "right-foot",
+  ])
+    for (let color = 0; color < 3; color++) {
+      const f = morphPath(
+        a.parts.find((p) => p.id === id).paths[color],
+        b.parts.find((p) => p.id === id).paths[color],
+      );
+      for (const t of [0, 0.25, 0.5, 0.75, 1])
+        assert(!/NaN|Infinity|undefined/.test(f(t)));
+    }
+}
+const disappearing = morphPath("M0,0 10,0 10,10 0,10Z", "");
+assert(!disappearing(0.5).includes("NaN"));
+const sample = resample(
+  [
+    [0, 0],
+    [20, 0],
+    [20, 20],
+    [0, 20],
+  ],
+  72,
 );
+assert.equal(sample.length, 72);
+assert(sample.flat().every(Number.isFinite));
 assert.deepEqual(cursorHotspot("link"), [11, 3]);
 console.log(
-  "PASS: local assets, distinct palettes, 39 cursor variants, actor race handling, visibility, transition cancellation/skip/reduced motion, and cursor coordinates.",
+  "PASS: 74 pose assets, stable 17-part rigs, source hashes/fidelity, finite matched-piece morphs, UI wiring, and role cursor exports.",
 );

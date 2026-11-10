@@ -120,10 +120,20 @@ Do not build all of these at once. Prefer one useful, verifiable change at a tim
 ## Pose fidelity correction
 
 The first E approximation was rejected. The preview now consumes a per-character
-catalog of 18 generated-reference poses and directly traced SVGs. Source crops and
+catalog of 74 generated-reference poses (24 Academic, 26 Hacker, 24 Business) and directly traced SVGs. Source crops and
 palette-normalized references remain available beside each vector. Selection still
 uses the actor generation guard; `explaining` remains a compatibility alias for the
 role-specific explanation/report/debugging pose. `poseForActivity` supplies visual
 mappings without introducing tools or agent execution. Dense pixel-boundary paths
-prioritize source fidelity; semantic rigging remains separate. The new motif module
+prioritize source fidelity. The motif module
 uses cancellable WAAPI choreography instead of the initial CSS slide layers.
+
+`config/rigs` holds draft source-cell joint guides, head bounds, and prop regions.
+`build_e_rigs.py` intersects regions with the traced vectors and emits 17 named
+body/prop groups per pose. `.rig.json` retains source guides, canvas transforms,
+paths, pivots, and the source hash; `.rig.svg` is the assembled export.
+`rig-actor.js` interpolates corresponding piece/color contours and restores full
+target paths when movement finishes. Per-piece drift, translation, rotation, and
+pointer dragging are browser-only controls. Reassembly fidelity is measured;
+anatomical ownership remains draft. No database or chat-serving changes are needed.
+`config/pose-plan.json` records available/planned poses and possible state reuse.

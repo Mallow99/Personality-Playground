@@ -15,6 +15,7 @@ const nested = (source, x, y, w, h) =>
     /<svg\b[^>]*>/,
     `<svg x="${x}" y="${y}" width="${w}" height="${h}" viewBox="0 0 512 512">`,
   );
+let poseY = 0;
 let poseSheet = "",
   iconSheet = "",
   cursorSheet = "";
@@ -35,7 +36,7 @@ for (const [row, [id, p]] of Object.entries(Object.entries(profiles))) {
       `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${faceBoxes[id]}" width="100" height="100" overflow="hidden">`,
     ),
   );
-  const y = Number(row) * 1800;
+  const y = poseY;
   poseSheet += `<text x="25" y="${y + 32}" font-family="sans-serif" font-size="20" fill="${p.colors[0]}">${p.name} / E generated poses, directly traced</text>`;
   for (const [index, pose] of poseCatalog[id].entries()) {
     const col = index % 6,
@@ -48,6 +49,7 @@ for (const [row, [id, p]] of Object.entries(Object.entries(profiles))) {
       nested(svg, col * 350 + 15, y + 50 + poseRow * 570, 320, 510) +
       `<text x="${col * 350 + 25}" y="${y + 600 + poseRow * 570}" font-family="sans-serif" font-size="17" fill="${p.colors[0]}">${pose.label}</text>`;
   }
+  poseY += 90 + Math.ceil(poseCatalog[id].length / 6) * 570;
   iconSheet += `<text x="25" y="${Number(row) * 220 + 30}" font-family="sans-serif" font-size="18" fill="${p.colors[0]}">${p.name}</text>`;
   for (const [column, type] of ["face", "motif"].entries())
     for (const [index, size] of [24, 48, 96].entries()) {
@@ -72,8 +74,8 @@ await writeFile(
   new URL("pose-sheet.svg", root),
   frame(
     2100,
-    5400,
-    "E pose library: 54 generated poses, directly traced",
+    poseY,
+    "E pose library: 74 generated poses, directly traced",
     poseSheet,
   ),
 );

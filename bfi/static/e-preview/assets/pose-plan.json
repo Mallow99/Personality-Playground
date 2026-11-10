@@ -1,0 +1,657 @@
+{
+  "version": 1,
+  "rules": [
+    "States may reuse poses; a new application event does not always need new art.",
+    "Playful adult poses require an explicit manual selection.",
+    "Keep original glamour poses alongside sultry additions.",
+    "Body part IDs remain stable across generated poses; occluded parts can be absent."
+  ],
+  "stateBindings": {
+    "idle": "standing",
+    "listening": "listening",
+    "thinking": "thinking",
+    "needs-clarification": "confused",
+    "waiting-for-user": "listening",
+    "blocked": "concerned",
+    "error": "frustrated",
+    "success": "celebrating",
+    "greeting": "greeting",
+    "resting": "tired",
+    "goodnight": "lying-down"
+  },
+  "characters": {
+    "academic": {
+      "available": [
+        {
+          "id": "standing",
+          "label": "Standing",
+          "category": "everyday"
+        },
+        {
+          "id": "standing-2",
+          "label": "Standing 2",
+          "category": "everyday"
+        },
+        {
+          "id": "seated",
+          "label": "Seated",
+          "category": "everyday"
+        },
+        {
+          "id": "seated-2",
+          "label": "Seated 2",
+          "category": "everyday"
+        },
+        {
+          "id": "tired",
+          "label": "Tired",
+          "category": "everyday"
+        },
+        {
+          "id": "lying-down",
+          "label": "Lying Down",
+          "category": "everyday"
+        },
+        {
+          "id": "thinking",
+          "label": "Thinking",
+          "category": "everyday"
+        },
+        {
+          "id": "working",
+          "label": "Working",
+          "category": "everyday"
+        },
+        {
+          "id": "laughing",
+          "label": "Laughing",
+          "category": "everyday"
+        },
+        {
+          "id": "frustrated",
+          "label": "Frustrated",
+          "category": "everyday"
+        },
+        {
+          "id": "exasperated",
+          "label": "Exasperated",
+          "category": "everyday"
+        },
+        {
+          "id": "reading",
+          "label": "Reading",
+          "category": "specialist"
+        },
+        {
+          "id": "chalkboard",
+          "label": "Chalkboard",
+          "category": "specialist"
+        },
+        {
+          "id": "writing-prose",
+          "label": "Writing Prose",
+          "category": "specialist"
+        },
+        {
+          "id": "teasing",
+          "label": "Teasing",
+          "category": "playful"
+        },
+        {
+          "id": "flirty",
+          "label": "Flirty",
+          "category": "playful"
+        },
+        {
+          "id": "glamour",
+          "label": "Glamour",
+          "category": "playful"
+        },
+        {
+          "id": "silly",
+          "label": "Silly",
+          "category": "playful"
+        },
+        {
+          "id": "greeting",
+          "label": "Greeting",
+          "category": "everyday"
+        },
+        {
+          "id": "listening",
+          "label": "Listening",
+          "category": "everyday"
+        },
+        {
+          "id": "confused",
+          "label": "Confused",
+          "category": "everyday"
+        },
+        {
+          "id": "celebrating",
+          "label": "Celebrating",
+          "category": "everyday"
+        },
+        {
+          "id": "concerned",
+          "label": "Concerned",
+          "category": "everyday"
+        },
+        {
+          "id": "sultry",
+          "label": "Sultry",
+          "category": "playful"
+        }
+      ],
+      "planned": [
+        {
+          "id": "pointing-left",
+          "label": "Pointing left",
+          "priority": 1,
+          "reason": "Direct attention to a diagram, document, or UI element.",
+          "status": "planned_not_generated"
+        },
+        {
+          "id": "pointing-right",
+          "label": "Pointing right",
+          "priority": 1,
+          "reason": "The opposite pointing direction needs clear arm/hand ownership.",
+          "status": "planned_not_generated"
+        },
+        {
+          "id": "reassuring",
+          "label": "Encouraging / reassuring",
+          "priority": 1,
+          "reason": "Support without turning every emotional moment into concern.",
+          "status": "planned_not_generated"
+        },
+        {
+          "id": "surprised",
+          "label": "Surprised",
+          "priority": 2,
+          "reason": "A distinct reaction to unexpected results or discoveries.",
+          "status": "planned_not_generated"
+        },
+        {
+          "id": "skeptical",
+          "label": "Skeptical / disagreeing",
+          "priority": 2,
+          "reason": "Express a justified objection with room for humor.",
+          "status": "planned_not_generated"
+        },
+        {
+          "id": "apologetic",
+          "label": "Apologetic / correcting",
+          "priority": 2,
+          "reason": "Acknowledge and repair an actual mistake.",
+          "status": "planned_not_generated"
+        },
+        {
+          "id": "relieved",
+          "label": "Relieved",
+          "priority": 3,
+          "reason": "A quieter successful outcome than celebration.",
+          "status": "planned_not_generated"
+        },
+        {
+          "id": "stretching",
+          "label": "Stretching",
+          "priority": 3,
+          "reason": "A distinct rest/recovery silhouette.",
+          "status": "planned_not_generated"
+        },
+        {
+          "id": "storytelling",
+          "label": "Storytelling / DM narration",
+          "priority": 1,
+          "reason": "Prose and Dungeons & Dragons narration with a story-focused gesture.",
+          "status": "planned_not_generated"
+        },
+        {
+          "id": "diagram-building",
+          "label": "Building a diagram",
+          "priority": 1,
+          "reason": "Actively constructing the explanation instead of only pointing.",
+          "status": "planned_not_generated"
+        },
+        {
+          "id": "annotating",
+          "label": "Annotating a passage",
+          "priority": 2,
+          "reason": "Distinguish close reading from drafting prose.",
+          "status": "planned_not_generated"
+        },
+        {
+          "id": "experimenting",
+          "label": "Experiment / discovery",
+          "priority": 3,
+          "reason": "Curious exploration beyond a teacher role.",
+          "status": "planned_not_generated"
+        }
+      ]
+    },
+    "engineering": {
+      "available": [
+        {
+          "id": "standing",
+          "label": "Standing",
+          "category": "everyday"
+        },
+        {
+          "id": "standing-2",
+          "label": "Standing 2",
+          "category": "everyday"
+        },
+        {
+          "id": "seated",
+          "label": "Seated",
+          "category": "everyday"
+        },
+        {
+          "id": "seated-2",
+          "label": "Seated 2",
+          "category": "everyday"
+        },
+        {
+          "id": "tired",
+          "label": "Tired",
+          "category": "everyday"
+        },
+        {
+          "id": "thinking",
+          "label": "Thinking",
+          "category": "everyday"
+        },
+        {
+          "id": "laughing",
+          "label": "Laughing",
+          "category": "everyday"
+        },
+        {
+          "id": "frustrated",
+          "label": "Frustrated",
+          "category": "everyday"
+        },
+        {
+          "id": "exasperated",
+          "label": "Exasperated",
+          "category": "everyday"
+        },
+        {
+          "id": "teasing",
+          "label": "Teasing",
+          "category": "playful"
+        },
+        {
+          "id": "flirty",
+          "label": "Flirty",
+          "category": "playful"
+        },
+        {
+          "id": "glamour",
+          "label": "Glamour",
+          "category": "playful"
+        },
+        {
+          "id": "silly",
+          "label": "Silly",
+          "category": "playful"
+        },
+        {
+          "id": "greeting",
+          "label": "Greeting",
+          "category": "everyday"
+        },
+        {
+          "id": "listening",
+          "label": "Listening",
+          "category": "everyday"
+        },
+        {
+          "id": "confused",
+          "label": "Confused",
+          "category": "everyday"
+        },
+        {
+          "id": "celebrating",
+          "label": "Celebrating",
+          "category": "everyday"
+        },
+        {
+          "id": "coding",
+          "label": "Coding",
+          "category": "specialist"
+        },
+        {
+          "id": "debugging",
+          "label": "Debugging",
+          "category": "specialist"
+        },
+        {
+          "id": "security-review",
+          "label": "Security Review",
+          "category": "specialist"
+        },
+        {
+          "id": "lying-down",
+          "label": "Lying Down",
+          "category": "everyday"
+        },
+        {
+          "id": "concerned",
+          "label": "Concerned",
+          "category": "everyday"
+        },
+        {
+          "id": "sultry",
+          "label": "Sultry",
+          "category": "playful"
+        },
+        {
+          "id": "working",
+          "label": "Working",
+          "category": "everyday"
+        },
+        {
+          "id": "testing",
+          "label": "Testing",
+          "category": "specialist"
+        },
+        {
+          "id": "code-review",
+          "label": "Code Review",
+          "category": "specialist"
+        }
+      ],
+      "planned": [
+        {
+          "id": "pointing-left",
+          "label": "Pointing left",
+          "priority": 1,
+          "reason": "Direct attention to a diagram, document, or UI element.",
+          "status": "planned_not_generated"
+        },
+        {
+          "id": "pointing-right",
+          "label": "Pointing right",
+          "priority": 1,
+          "reason": "The opposite pointing direction needs clear arm/hand ownership.",
+          "status": "planned_not_generated"
+        },
+        {
+          "id": "reassuring",
+          "label": "Encouraging / reassuring",
+          "priority": 1,
+          "reason": "Support without turning every emotional moment into concern.",
+          "status": "planned_not_generated"
+        },
+        {
+          "id": "surprised",
+          "label": "Surprised",
+          "priority": 2,
+          "reason": "A distinct reaction to unexpected results or discoveries.",
+          "status": "planned_not_generated"
+        },
+        {
+          "id": "skeptical",
+          "label": "Skeptical / disagreeing",
+          "priority": 2,
+          "reason": "Express a justified objection with room for humor.",
+          "status": "planned_not_generated"
+        },
+        {
+          "id": "apologetic",
+          "label": "Apologetic / correcting",
+          "priority": 2,
+          "reason": "Acknowledge and repair an actual mistake.",
+          "status": "planned_not_generated"
+        },
+        {
+          "id": "relieved",
+          "label": "Relieved",
+          "priority": 3,
+          "reason": "A quieter successful outcome than celebration.",
+          "status": "planned_not_generated"
+        },
+        {
+          "id": "stretching",
+          "label": "Stretching",
+          "priority": 3,
+          "reason": "A distinct rest/recovery silhouette.",
+          "status": "planned_not_generated"
+        },
+        {
+          "id": "patch-review",
+          "label": "Reviewing a diff",
+          "priority": 1,
+          "reason": "Explicit comparison of before/after code.",
+          "status": "planned_not_generated"
+        },
+        {
+          "id": "log-investigation",
+          "label": "Investigating logs",
+          "priority": 2,
+          "reason": "Follow evidence across a small set of diagnostic panels.",
+          "status": "planned_not_generated"
+        },
+        {
+          "id": "build-wait",
+          "label": "Waiting for a build",
+          "priority": 3,
+          "reason": "A calmer working/rest blend; current listening/working can serve first.",
+          "status": "planned_not_generated"
+        }
+      ]
+    },
+    "business": {
+      "available": [
+        {
+          "id": "standing",
+          "label": "Standing",
+          "category": "everyday"
+        },
+        {
+          "id": "standing-2",
+          "label": "Standing 2",
+          "category": "everyday"
+        },
+        {
+          "id": "seated",
+          "label": "Seated",
+          "category": "everyday"
+        },
+        {
+          "id": "seated-2",
+          "label": "Seated 2",
+          "category": "everyday"
+        },
+        {
+          "id": "tired",
+          "label": "Tired",
+          "category": "everyday"
+        },
+        {
+          "id": "lying-down",
+          "label": "Lying Down",
+          "category": "everyday"
+        },
+        {
+          "id": "thinking",
+          "label": "Thinking",
+          "category": "everyday"
+        },
+        {
+          "id": "working",
+          "label": "Working",
+          "category": "everyday"
+        },
+        {
+          "id": "laughing",
+          "label": "Laughing",
+          "category": "everyday"
+        },
+        {
+          "id": "frustrated",
+          "label": "Frustrated",
+          "category": "everyday"
+        },
+        {
+          "id": "exasperated",
+          "label": "Exasperated",
+          "category": "everyday"
+        },
+        {
+          "id": "coordinating",
+          "label": "Coordinating",
+          "category": "specialist"
+        },
+        {
+          "id": "formal-report",
+          "label": "Formal Report",
+          "category": "specialist"
+        },
+        {
+          "id": "task-complete",
+          "label": "Task Complete",
+          "category": "specialist"
+        },
+        {
+          "id": "teasing",
+          "label": "Teasing",
+          "category": "playful"
+        },
+        {
+          "id": "flirty",
+          "label": "Flirty",
+          "category": "playful"
+        },
+        {
+          "id": "glamour",
+          "label": "Glamour",
+          "category": "playful"
+        },
+        {
+          "id": "silly",
+          "label": "Silly",
+          "category": "playful"
+        },
+        {
+          "id": "greeting",
+          "label": "Greeting",
+          "category": "everyday"
+        },
+        {
+          "id": "listening",
+          "label": "Listening",
+          "category": "everyday"
+        },
+        {
+          "id": "confused",
+          "label": "Confused",
+          "category": "everyday"
+        },
+        {
+          "id": "celebrating",
+          "label": "Celebrating",
+          "category": "everyday"
+        },
+        {
+          "id": "concerned",
+          "label": "Concerned",
+          "category": "everyday"
+        },
+        {
+          "id": "sultry",
+          "label": "Sultry",
+          "category": "playful"
+        }
+      ],
+      "planned": [
+        {
+          "id": "pointing-left",
+          "label": "Pointing left",
+          "priority": 1,
+          "reason": "Direct attention to a diagram, document, or UI element.",
+          "status": "planned_not_generated"
+        },
+        {
+          "id": "pointing-right",
+          "label": "Pointing right",
+          "priority": 1,
+          "reason": "The opposite pointing direction needs clear arm/hand ownership.",
+          "status": "planned_not_generated"
+        },
+        {
+          "id": "reassuring",
+          "label": "Encouraging / reassuring",
+          "priority": 1,
+          "reason": "Support without turning every emotional moment into concern.",
+          "status": "planned_not_generated"
+        },
+        {
+          "id": "surprised",
+          "label": "Surprised",
+          "priority": 2,
+          "reason": "A distinct reaction to unexpected results or discoveries.",
+          "status": "planned_not_generated"
+        },
+        {
+          "id": "skeptical",
+          "label": "Skeptical / disagreeing",
+          "priority": 2,
+          "reason": "Express a justified objection with room for humor.",
+          "status": "planned_not_generated"
+        },
+        {
+          "id": "apologetic",
+          "label": "Apologetic / correcting",
+          "priority": 2,
+          "reason": "Acknowledge and repair an actual mistake.",
+          "status": "planned_not_generated"
+        },
+        {
+          "id": "relieved",
+          "label": "Relieved",
+          "priority": 3,
+          "reason": "A quieter successful outcome than celebration.",
+          "status": "planned_not_generated"
+        },
+        {
+          "id": "stretching",
+          "label": "Stretching",
+          "priority": 3,
+          "reason": "A distinct rest/recovery silhouette.",
+          "status": "planned_not_generated"
+        },
+        {
+          "id": "design-critique",
+          "label": "Design critique",
+          "priority": 1,
+          "reason": "Evaluate a layout or proposal rather than only business numbers.",
+          "status": "planned_not_generated"
+        },
+        {
+          "id": "delegating",
+          "label": "Delegating a task",
+          "priority": 1,
+          "reason": "Make a clear handoff to another specialist visible.",
+          "status": "planned_not_generated"
+        },
+        {
+          "id": "report-delivery",
+          "label": "Delivering a report",
+          "priority": 2,
+          "reason": "Present a completed result and the evidence behind it.",
+          "status": "planned_not_generated"
+        },
+        {
+          "id": "negotiating",
+          "label": "Weighing a tradeoff",
+          "priority": 3,
+          "reason": "Show deliberate consideration of competing options.",
+          "status": "planned_not_generated"
+        }
+      ]
+    }
+  }
+}

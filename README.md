@@ -118,8 +118,10 @@ It is not needed to start or use the local app. See [planning](docs/planning.md)
 
 The selected visual baseline is **[E](research/visual-studies/option-e.png)**. The
 [reference gallery and design brief](research/visual-studies/README.md) preserve
-the choice and earlier studies. The [E proof pack](bfi/static/e-preview/README.md) now provides 54 generated-reference pose traces, source/SVG comparisons,
-icons, motif transitions, an animated SVG export, and agent cursor studies. Open
+the choice and earlier studies. The [E proof pack](bfi/static/e-preview/README.md) now provides 74 generated-reference pose traces, source/SVG comparisons,
+17 named body pieces per pose, piece morphing and editing controls, icons, motif
+transitions, browser playback recordings, and agent cursor studies. The
+[pose plan](docs/pose-plan.md) distinguishes available artwork from future additions. Open
 `/static/e-preview/index.html` with the local app running. The private hosted preview is linked in the project
 conversation and optional board. The ordinary chat art
 remains the earlier prototype while these proofs await review.

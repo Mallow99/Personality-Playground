@@ -15,8 +15,8 @@ with a waistcoat and compact hairstyle. Preserve the standing and seated poses,
 loose angular pieces, clear gestures, and separate approximately three-color palettes.
 
 See the [design brief](../research/visual-studies/README.md) and
-[selection record](../research/visual-studies/baseline.json). The [E interactive proof](../bfi/static/e-preview/README.md) now contains 18 generated-reference
-pose traces per character, source/SVG comparisons, face/motif icons, revised transitions, speaking/visibility
+[selection record](../research/visual-studies/baseline.json). The [E interactive proof](../bfi/static/e-preview/README.md) now contains 74 generated-reference
+pose traces, source/SVG comparisons, 17 mapped body pieces per pose, face/motif icons, revised transitions, speaking/visibility
 controls, and cursor studies. They await visual review. Earlier D studies remain
 archived. The table below describes
 the earlier app prototype, whose runtime artwork has not been replaced yet.
@@ -107,12 +107,20 @@ expanded directions, proposed personality facets, future capability goals, and
 evaluation ideas. Simultaneous characters are preferred; fast swapping is a
 fallback to measure on the delivered PC, not a permanent single-model restriction.
 
-## Expanded pose review, version 2
+## Expanded pose review, version 3
 
 The owner rejected the first hand-built E SVG poses and motif transitions. The
 [new generated sheets and trace record](../research/visual-studies/poses-v2/README.md)
-now supply 18 poses per individual. Standing/seated variants, fatigue, reclining,
+and [latest additions](../research/visual-studies/poses-v3/README.md)
+supply 24 Academic, 26 Hacker, and 24 Business poses. Standing/seated variants, fatigue, reclining,
 laughter, frustration, and exasperation sit alongside practical specialties and
 optional adult playful studies. The preview provides generated-source,
 normalized-reference, SVG, and wipe views. Activity mappings are presentation
-helpers, not new tools or agent capabilities. Exact tracing is not semantic rigging.
+helpers, not new tools or agent capabilities. The Hacker specialist set was revised;
+original glamour drawings remain beside new sultry choices. The
+[pose inventory](pose-plan.md) records missing practical reactions and specialties.
+
+The actor now morphs 17 stable anatomical/prop groups across poses, with small
+independent movements and an inspector for selecting, dragging, and rotating them.
+Guide ownership remains draft, especially around crossed arms and props. Preserved
+silhouettes do not establish correct anatomy or natural movement.

@@ -1,0 +1,124 @@
+.piece-idle:not(.morphing) .piece-motion {
+  transform-box: view-box;
+  animation: piece-breathe 5.7s ease-in-out infinite;
+  animation-delay: var(--piece-delay);
+}
+@keyframes piece-breathe {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0);
+  }
+  50% {
+    transform: translate(0, -0.75px) rotate(var(--piece-amplitude));
+  }
+}
+.speaking.piece-idle:not(.morphing) [data-part*="hand"] .piece-motion {
+  animation-duration: 2.1s;
+}
+.speaking.piece-idle:not(.morphing) [data-part="head"] .piece-motion {
+  animation-duration: 2.8s;
+}
+.actor.inspect-parts [data-part] path {
+  stroke: var(--accent);
+  stroke-width: 0.6;
+  vector-effect: non-scaling-stroke;
+}
+.actor.inspect-parts [data-part][data-selected] path {
+  stroke: var(--dark);
+  stroke-width: 2;
+  filter: drop-shadow(0 0 2px var(--accent));
+}
+.actor[data-drag="on"] {
+  touch-action: none;
+  cursor: grab;
+}
+.actor[data-drag="on"]:active {
+  cursor: grabbing;
+}
+.rig-toolbar,
+.rig-editor {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 12px;
+}
+.rig-toolbar label {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.rig-editor label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 110px;
+  flex: 1;
+}
+.rig-editor select {
+  padding: 10px;
+  background: var(--page);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font: inherit;
+}
+.rig-editor button {
+  font-size: 11px;
+  align-self: end;
+}
+.rig-toolbar input[type="range"] {
+  max-width: 160px;
+}
+.rig-editor input {
+  width: 100%;
+}
+:root[data-motion="off"] .piece-motion {
+  animation: none !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  .piece-motion {
+    animation: none !important;
+  }
+}
+
+#pose-plan {
+  font-size: 12px;
+}
+#pose-plan ol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 35px;
+  padding-left: 20px;
+}
+#pose-plan li span {
+  display: block;
+  font-size: 10px;
+  color: var(--muted);
+}
+#pose-plan li p {
+  margin: 6px 0;
+  color: var(--muted);
+}
+@media (max-width: 650px) {
+  #pose-plan ol {
+    grid-template-columns: 1fr;
+  }
+}
+
+#stage-pose {
+  max-width: 45%;
+  padding: 6px;
+  background: #fff;
+  color: #302b23;
+  border: 1px solid var(--line);
+  font: 10px system-ui;
+}
+.stage-bottom {
+  gap: 8px;
+  letter-spacing: 0;
+}
+.stage-bottom > span {
+  display: none;
+}

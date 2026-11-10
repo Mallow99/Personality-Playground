@@ -10,6 +10,7 @@
     <title>E studio · Best Friend Initiative</title>
     <link rel="stylesheet" href="studio.css" />
     <link rel="stylesheet" href="motion-v2.css" />
+    <link rel="stylesheet" href="rig.css" />
     <script type="module" src="studio.js"></script>
   </head>
   <body>
@@ -26,7 +27,7 @@
     <main>
       <section class="intro">
         <div>
-          <p class="eyebrow">CHARACTER STUDY / E · 02</p>
+          <p class="eyebrow">CHARACTER STUDY / E · 03</p>
           <h1>Room for<br /><em>individuals.</em></h1>
         </div>
         <p class="intro-copy">
@@ -63,7 +64,10 @@
           <h2 id="character-name">Academic</h2>
           <p id="character-summary" class="character-summary"></p>
           <blockquote id="line"></blockquote>
-          <span class="sample-label">SCRIPTED SAMPLE · NO AUDIO</span>
+          <span class="sample-label">SCRIPTED SAMPLE · NO AUDIO</span
+          ><select id="stage-pose" aria-label="Pose in preview">
+            <option value="standing">Standing</option>
+          </select>
           <div class="controls">
             <label
               >Pose<select id="pose">
@@ -87,6 +91,76 @@
             Ready to explore.
           </p>
         </div>
+      </section>
+      <section id="rig-controls" class="sheet-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">PIECE BY PIECE</p>
+            <h2>The same hand. A different pose.</h2>
+          </div>
+          <p>
+            Named pieces travel between poses.<br />Click a piece to inspect it.
+          </p>
+        </div>
+        <div class="rig-toolbar">
+          <label
+            ><input id="piece-idle" type="checkbox" checked /> Subtle piece
+            motion</label
+          ><label
+            ><input id="piece-outlines" type="checkbox" /> Show mapped
+            pieces</label
+          ><label><input id="piece-drag" type="checkbox" /> Drag pieces</label
+          ><label
+            >Morph time
+            <input
+              id="morph-duration"
+              type="range"
+              min="250"
+              max="1800"
+              value="850"
+          /></label>
+        </div>
+        <div class="rig-editor">
+          <label
+            >Body part
+            <select id="piece-select">
+              <option value="head">Head</option>
+            </select></label
+          ><label
+            >Move X
+            <input
+              id="piece-x"
+              type="range"
+              min="-40"
+              max="40"
+              value="0" /></label
+          ><label
+            >Move Y
+            <input
+              id="piece-y"
+              type="range"
+              min="-40"
+              max="40"
+              value="0" /></label
+          ><label
+            >Rotate
+            <input
+              id="piece-angle"
+              type="range"
+              min="-25"
+              max="25"
+              value="0" /></label
+          ><button id="piece-reset">Reset pieces</button
+          ><button id="piece-export">Download piece map</button>
+        </div>
+        <p id="rig-status" class="fine-print" role="status">
+          Loading body map…
+        </p>
+        <p class="fine-print">
+          Joint guides and piece ownership are editable drafts. Morphing
+          deliberately bends the geometry; the complete target artwork is
+          restored at the end. Dragging here previews movement.
+        </p>
       </section>
       <details class="playback-review">
         <summary>Watch actual browser playback</summary>
@@ -115,6 +189,18 @@
               Character sequence · silent browser recording
             </figcaption>
           </figure>
+          <figure>
+            <video
+              controls
+              playsinline
+              preload="none"
+              src="assets/rig-reel.mp4"
+              aria-label="Recorded body-piece controls and pose morphing"
+            ></video>
+            <figcaption>
+              Body pieces and pose morphing · silent browser recording
+            </figcaption>
+          </figure>
         </div>
       </details>
       <section id="fidelity" class="sheet-section">
@@ -130,7 +216,6 @@
             >View
             <select id="comparison-mode">
               <option value="wipe">Wipe comparison</option>
-              <option value="boundary">Exact boundary trace</option>
               <option value="source">Generated source</option>
               <option value="vector">Traced SVG</option>
               <option value="normalized">Three-color reference</option>
@@ -193,8 +278,8 @@
             <h2>More than a resting face.</h2>
           </div>
           <p>
-            18 poses per individual.<br />Everyday, specialist, and optional
-            playful studies.
+            Expanded poses and mapped body pieces.<br />Everyday, specialist,
+            and optional playful studies.
           </p>
         </div>
         <label class="pose-filter-label"
@@ -217,6 +302,14 @@
           />
         </details>
       </section>
+      <details id="pose-planning">
+        <summary>Pose inventory and next additions</summary>
+        <p class="fine-print">
+          Existing artwork and planned additions are listed separately. Waiting,
+          blocked, and completion states can reuse suitable poses.
+        </p>
+        <div id="pose-plan"></div>
+      </details>
       <section id="icons" class="sheet-section">
         <div class="section-heading">
           <div>

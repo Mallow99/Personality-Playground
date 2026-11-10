@@ -49,6 +49,7 @@ function showActor(value) {
 }
 async function pose(value) {
   $("pose").value = value;
+  $("stage-pose").value = value;
   $("pose-caption").textContent =
     poseCatalog[selected].find((p) => p.id === value)?.label || value;
   updateComparison(value);
@@ -96,6 +97,7 @@ async function choose(id, animate = true) {
   $("pose").innerHTML = available
     .map((p) => `<option value="${p.id}">${p.label}</option>`)
     .join("");
+  $("stage-pose").innerHTML = $("pose").innerHTML;
   $("pose-grid").innerHTML = available
     .map(
       (p) =>
@@ -115,6 +117,7 @@ async function choose(id, animate = true) {
       ),
     );
   filterPoses();
+  renderPosePlan(id);
   $("icon-grid").innerHTML = ["face", "motif"]
     .map(
       (type) =>
@@ -300,3 +303,87 @@ function filterPoses() {
   });
 }
 $("pose-filter").addEventListener("change", filterPoses);
+// Inspect the same semantic part IDs across every pose.
+$("actor").addEventListener("rigchange", (event) => {
+  const { parts } = event.detail;
+  $("piece-select").innerHTML = parts
+    .map(
+      (p) =>
+        `<option value="${p.id}">${p.id.replaceAll("-", " ")}${p.visible ? "" : " (occluded / absent)"}</option>`,
+    )
+    .join("");
+  $("piece-select").value = actor.selected;
+  $("rig-status").textContent =
+    `${parts.filter((p) => p.visible).length} visible pieces · ${parts.length} stable IDs · guide ownership is draft`;
+});
+$("actor").addEventListener("rigpart", (event) => {
+  const { id, offset } = event.detail;
+  $("piece-select").value = id;
+  $("piece-x").value = offset.x;
+  $("piece-y").value = offset.y;
+  $("piece-angle").value = offset.rotation;
+});
+$("piece-select").addEventListener("change", () =>
+  actor.selectPart($("piece-select").value),
+);
+$("piece-idle").addEventListener("change", () =>
+  actor.setIdle($("piece-idle").checked),
+);
+$("piece-outlines").addEventListener("change", () =>
+  actor.showParts($("piece-outlines").checked),
+);
+$("piece-drag").addEventListener("change", () => {
+  actor.dragEnabled = $("piece-drag").checked;
+  $("actor").dataset.drag = actor.dragEnabled ? "on" : "off";
+});
+$("morph-duration").addEventListener("input", () => {
+  actor.options.duration = Number($("morph-duration").value);
+});
+for (const id of ["piece-x", "piece-y", "piece-angle"])
+  $(id).addEventListener("input", () =>
+    actor.setPartOffset(actor.selected, {
+      x: $("piece-x").value,
+      y: $("piece-y").value,
+      rotation: $("piece-angle").value,
+    }),
+  );
+$("piece-reset").addEventListener("click", () => actor.resetParts());
+$("piece-export").addEventListener("click", () => {
+  const data = actor.exportRig();
+  const url = URL.createObjectURL(
+    new Blob([JSON.stringify(data, null, 2)], { type: "application/json" }),
+  );
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `${data.role}-${data.pose}-piece-map.json`;
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+});
+
+const posePlan = fetch(new URL("assets/pose-plan.json", import.meta.url)).then(
+  (r) => {
+    if (!r.ok) throw Error("Pose plan unavailable");
+    return r.json();
+  },
+);
+function renderPosePlan(role) {
+  posePlan
+    .then((plan) => {
+      if (selected !== role) return;
+      const data = plan.characters[role];
+      $("pose-plan").innerHTML =
+        `<p>${data.available.length} available poses · ${data.planned.length} proposed additions</p><ol>${data.planned.map((p) => `<li><strong>${p.label}</strong> <span>Priority ${p.priority} · planned</span><p>${p.reason}</p></li>`).join("")}</ol>`;
+    })
+    .catch((error) => {
+      $("pose-plan").textContent = error.message;
+    });
+}
+
+$("stage-pose").addEventListener(
+  "change",
+  guarded(() => {
+    stopSequence();
+    showActor(true);
+    return pose($("stage-pose").value);
+  }),
+);

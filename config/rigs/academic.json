@@ -1,0 +1,2402 @@
+{
+  "role": "academic",
+  "convention": "Character anatomical left; viewer right in front-facing poses. Crossed-limb assignments follow shoulder/hip identity.",
+  "coordinateSpace": "Original source-cell-local 512x512 coordinates, before any per-pose reframing. Sultry deliberately includes negative x coordinates from the original cell.",
+  "annotationMethod": "Manually estimated from all four actual source sheets and selected individual source crops; draft guide landmarks, not anatomical ground truth.",
+  "poses": {
+    "standing": {
+      "head": [
+        175,
+        20,
+        314,
+        140
+      ],
+      "joints": {
+        "neck": [
+          265,
+          143
+        ],
+        "hip": [
+          248,
+          270
+        ],
+        "leftShoulder": [
+          308,
+          164
+        ],
+        "rightShoulder": [
+          216,
+          162
+        ],
+        "leftElbow": [
+          337,
+          178
+        ],
+        "rightElbow": [
+          225,
+          211
+        ],
+        "leftWrist": [
+          340,
+          131
+        ],
+        "rightWrist": [
+          253,
+          210
+        ],
+        "leftHand": [
+          344,
+          113
+        ],
+        "rightHand": [
+          266,
+          190
+        ],
+        "leftHip": [
+          280,
+          278
+        ],
+        "rightHip": [
+          243,
+          279
+        ],
+        "leftKnee": [
+          320,
+          337
+        ],
+        "rightKnee": [
+          266,
+          341
+        ],
+        "leftAnkle": [
+          281,
+          407
+        ],
+        "rightAnkle": [
+          245,
+          401
+        ],
+        "leftToe": [
+          290,
+          462
+        ],
+        "rightToe": [
+          261,
+          462
+        ]
+      },
+      "props": [
+        {
+          "id": "prop-main",
+          "polygon": [
+            [
+              225,
+              137
+            ],
+            [
+              270,
+              152
+            ],
+            [
+              315,
+              130
+            ],
+            [
+              306,
+              191
+            ],
+            [
+              270,
+              207
+            ],
+            [
+              230,
+              185
+            ]
+          ]
+        }
+      ],
+      "hiddenParts": [],
+      "mappingStatus": "draft"
+    },
+    "standing-2": {
+      "head": [
+        146,
+        19,
+        298,
+        136
+      ],
+      "joints": {
+        "neck": [
+          232,
+          139
+        ],
+        "hip": [
+          231,
+          266
+        ],
+        "leftShoulder": [
+          275,
+          159
+        ],
+        "rightShoulder": [
+          190,
+          165
+        ],
+        "leftElbow": [
+          307,
+          183
+        ],
+        "rightElbow": [
+          177,
+          201
+        ],
+        "leftWrist": [
+          329,
+          153
+        ],
+        "rightWrist": [
+          207,
+          221
+        ],
+        "leftHand": [
+          351,
+          145
+        ],
+        "rightHand": [
+          226,
+          225
+        ],
+        "leftHip": [
+          244,
+          270
+        ],
+        "rightHip": [
+          212,
+          279
+        ],
+        "leftKnee": [
+          264,
+          337
+        ],
+        "rightKnee": [
+          217,
+          339
+        ],
+        "leftAnkle": [
+          236,
+          399
+        ],
+        "rightAnkle": [
+          206,
+          401
+        ],
+        "leftToe": [
+          252,
+          462
+        ],
+        "rightToe": [
+          221,
+          462
+        ]
+      },
+      "props": [],
+      "hiddenParts": [],
+      "mappingStatus": "draft"
+    },
+    "seated": {
+      "head": [
+        147,
+        119,
+        294,
+        239
+      ],
+      "joints": {
+        "neck": [
+          225,
+          240
+        ],
+        "hip": [
+          235,
+          347
+        ],
+        "leftShoulder": [
+          276,
+          253
+        ],
+        "rightShoulder": [
+          174,
+          257
+        ],
+        "leftElbow": [
+          304,
+          293
+        ],
+        "rightElbow": [
+          156,
+          293
+        ],
+        "leftWrist": [
+          282,
+          322
+        ],
+        "rightWrist": [
+          185,
+          319
+        ],
+        "leftHand": [
+          290,
+          327
+        ],
+        "rightHand": [
+          187,
+          327
+        ],
+        "leftHip": [
+          253,
+          346
+        ],
+        "rightHip": [
+          211,
+          350
+        ],
+        "leftKnee": [
+          331,
+          351
+        ],
+        "rightKnee": [
+          154,
+          365
+        ],
+        "leftAnkle": [
+          202,
+          405
+        ],
+        "rightAnkle": [
+          270,
+          409
+        ],
+        "leftToe": [
+          190,
+          412
+        ],
+        "rightToe": [
+          294,
+          414
+        ]
+      },
+      "props": [
+        {
+          "id": "prop-main",
+          "polygon": [
+            [
+              176,
+              287
+            ],
+            [
+              236,
+              309
+            ],
+            [
+              296,
+              283
+            ],
+            [
+              289,
+              349
+            ],
+            [
+              240,
+              361
+            ],
+            [
+              180,
+              344
+            ]
+          ]
+        }
+      ],
+      "hiddenParts": [],
+      "mappingStatus": "draft"
+    },
+    "seated-2": {
+      "head": [
+        130,
+        61,
+        271,
+        177
+      ],
+      "joints": {
+        "neck": [
+          229,
+          182
+        ],
+        "hip": [
+          232,
+          341
+        ],
+        "leftShoulder": [
+          271,
+          191
+        ],
+        "rightShoulder": [
+          186,
+          202
+        ],
+        "leftElbow": [
+          324,
+          213
+        ],
+        "rightElbow": [
+          157,
+          304
+        ],
+        "leftWrist": [
+          296,
+          252
+        ],
+        "rightWrist": [
+          140,
+          361
+        ],
+        "leftHand": [
+          284,
+          267
+        ],
+        "rightHand": [
+          111,
+          367
+        ],
+        "leftHip": [
+          259,
+          331
+        ],
+        "rightHip": [
+          218,
+          345
+        ],
+        "leftKnee": [
+          325,
+          241
+        ],
+        "rightKnee": [
+          305,
+          348
+        ],
+        "leftAnkle": [
+          376,
+          365
+        ],
+        "rightAnkle": [
+          393,
+          410
+        ],
+        "leftToe": [
+          409,
+          373
+        ],
+        "rightToe": [
+          421,
+          416
+        ]
+      },
+      "props": [],
+      "hiddenParts": [],
+      "mappingStatus": "draft"
+    },
+    "tired": {
+      "head": [
+        184,
+        69,
+        330,
+        190
+      ],
+      "joints": {
+        "neck": [
+          253,
+          183
+        ],
+        "hip": [
+          230,
+          258
+        ],
+        "leftShoulder": [
+          290,
+          200
+        ],
+        "rightShoulder": [
+          189,
+          183
+        ],
+        "leftElbow": [
+          288,
+          240
+        ],
+        "rightElbow": [
+          155,
+          247
+        ],
+        "leftWrist": [
+          284,
+          183
+        ],
+        "rightWrist": [
+          235,
+          279
+        ],
+        "leftHand": [
+          304,
+          166
+        ],
+        "rightHand": [
+          241,
+          307
+        ],
+        "leftHip": [
+          280,
+          267
+        ],
+        "rightHip": [
+          172,
+          270
+        ],
+        "leftKnee": [
+          289,
+          337
+        ],
+        "rightKnee": [
+          179,
+          337
+        ],
+        "leftAnkle": [
+          286,
+          409
+        ],
+        "rightAnkle": [
+          196,
+          411
+        ],
+        "leftToe": [
+          306,
+          418
+        ],
+        "rightToe": [
+          222,
+          419
+        ]
+      },
+      "props": [],
+      "hiddenParts": [],
+      "mappingStatus": "draft"
+    },
+    "lying-down": {
+      "head": [
+        20,
+        149,
+        158,
+        263
+      ],
+      "joints": {
+        "neck": [
+          135,
+          265
+        ],
+        "hip": [
+          210,
+          323
+        ],
+        "leftShoulder": [
+          216,
+          244
+        ],
+        "rightShoulder": [
+          84,
+          278
+        ],
+        "leftElbow": [
+          244,
+          272
+        ],
+        "rightElbow": [
+          49,
+          315
+        ],
+        "leftWrist": [
+          235,
+          293
+        ],
+        "rightWrist": [
+          69,
+          274
+        ],
+        "leftHand": [
+          230,
+          302
+        ],
+        "rightHand": [
+          69,
+          257
+        ],
+        "leftHip": [
+          225,
+          317
+        ],
+        "rightHip": [
+          201,
+          331
+        ],
+        "leftKnee": [
+          316,
+          218
+        ],
+        "rightKnee": [
+          318,
+          339
+        ],
+        "leftAnkle": [
+          356,
+          314
+        ],
+        "rightAnkle": [
+          432,
+          345
+        ],
+        "leftToe": [
+          373,
+          321
+        ],
+        "rightToe": [
+          451,
+          344
+        ]
+      },
+      "props": [],
+      "hiddenParts": [],
+      "mappingStatus": "draft"
+    },
+    "thinking": {
+      "head": [
+        188,
+        17,
+        325,
+        132
+      ],
+      "joints": {
+        "neck": [
+          261,
+          132
+        ],
+        "hip": [
+          241,
+          268
+        ],
+        "leftShoulder": [
+          305,
+          152
+        ],
+        "rightShoulder": [
+          224,
+          154
+        ],
+        "leftElbow": [
+          320,
+          190
+        ],
+        "rightElbow": [
+          202,
+          196
+        ],
+        "leftWrist": [
+          286,
+          161
+        ],
+        "rightWrist": [
+          270,
+          211
+        ],
+        "leftHand": [
+          282,
+          145
+        ],
+        "rightHand": [
+          282,
+          214
+        ],
+        "leftHip": [
+          263,
+          276
+        ],
+        "rightHip": [
+          224,
+          277
+        ],
+        "leftKnee": [
+          296,
+          335
+        ],
+        "rightKnee": [
+          242,
+          334
+        ],
+        "leftAnkle": [
+          262,
+          403
+        ],
+        "rightAnkle": [
+          235,
+          402
+        ],
+        "leftToe": [
+          271,
+          455
+        ],
+        "rightToe": [
+          247,
+          455
+        ]
+      },
+      "props": [],
+      "hiddenParts": [],
+      "mappingStatus": "draft"
+    },
+    "working": {
+      "head": [
+        168,
+        109,
+        308,
+        235
+      ],
+      "joints": {
+        "neck": [
+          278,
+          239
+        ],
+        "hip": [
+          318,
+          336
+        ],
+        "leftShoulder": [
+          332,
+          226
+        ],
+        "rightShoulder": [
+          218,
+          258
+        ],
+        "leftElbow": [
+          384,
+          275
+        ],
+        "rightElbow": [
+          171,
+          320
+        ],
+        "leftWrist": [
+          354,
+          299
+        ],
+        "rightWrist": [
+          136,
+          350
+        ],
+        "leftHand": [
+          347,
+          302
+        ],
+        "rightHand": [
+          132,
+          359
+        ],
+        "leftHip": [
+          337,
+          344
+        ],
+        "rightHip": [
+          269,
+          332
+        ],
+        "leftKnee": [
+          294,
+          413
+        ],
+        "rightKnee": [
+          249,
+          363
+        ],
+        "leftAnkle": [
+          375,
+          414
+        ],
+        "rightAnkle": [
+          266,
+          404
+        ],
+        "leftToe": [
+          399,
+          415
+        ],
+        "rightToe": [
+          245,
+          429
+        ]
+      },
+      "props": [
+        {
+          "id": "prop-main",
+          "polygon": [
+            [
+              284,
+              270
+            ],
+            [
+              334,
+              278
+            ],
+            [
+              385,
+              241
+            ],
+            [
+              374,
+              309
+            ],
+            [
+              332,
+              340
+            ],
+            [
+              298,
+              320
+            ]
+          ]
+        },
+        {
+          "id": "prop-secondary",
+          "polygon": [
+            [
+              76,
+              384
+            ],
+            [
+              224,
+              376
+            ],
+            [
+              226,
+              451
+            ],
+            [
+              73,
+              451
+            ]
+          ]
+        }
+      ],
+      "hiddenParts": [],
+      "mappingStatus": "draft"
+    },
+    "laughing": {
+      "head": [
+        128,
+        17,
+        262,
+        121
+      ],
+      "joints": {
+        "neck": [
+          238,
+          124
+        ],
+        "hip": [
+          264,
+          251
+        ],
+        "leftShoulder": [
+          281,
+          140
+        ],
+        "rightShoulder": [
+          172,
+          161
+        ],
+        "leftElbow": [
+          319,
+          184
+        ],
+        "rightElbow": [
+          180,
+          207
+        ],
+        "leftWrist": [
+          322,
+          120
+        ],
+        "rightWrist": [
+          217,
+          170
+        ],
+        "leftHand": [
+          344,
+          112
+        ],
+        "rightHand": [
+          234,
+          162
+        ],
+        "leftHip": [
+          287,
+          266
+        ],
+        "rightHip": [
+          246,
+          259
+        ],
+        "leftKnee": [
+          305,
+          332
+        ],
+        "rightKnee": [
+          241,
+          324
+        ],
+        "leftAnkle": [
+          261,
+          400
+        ],
+        "rightAnkle": [
+          202,
+          404
+        ],
+        "leftToe": [
+          279,
+          450
+        ],
+        "rightToe": [
+          196,
+          454
+        ]
+      },
+      "props": [],
+      "hiddenParts": [],
+      "mappingStatus": "draft"
+    },
+    "frustrated": {
+      "head": [
+        204,
+        51,
+        335,
+        174
+      ],
+      "joints": {
+        "neck": [
+          268,
+          173
+        ],
+        "hip": [
+          258,
+          257
+        ],
+        "leftShoulder": [
+          331,
+          169
+        ],
+        "rightShoulder": [
+          212,
+          156
+        ],
+        "leftElbow": [
+          344,
+          218
+        ],
+        "rightElbow": [
+          182,
+          218
+        ],
+        "leftWrist": [
+          323,
+          205
+        ],
+        "rightWrist": [
+          217,
+          212
+        ],
+        "leftHand": [
+          319,
+          190
+        ],
+        "rightHand": [
+          224,
+          190
+        ],
+        "leftHip": [
+          281,
+          267
+        ],
+        "rightHip": [
+          246,
+          266
+        ],
+        "leftKnee": [
+          330,
+          333
+        ],
+        "rightKnee": [
+          260,
+          332
+        ],
+        "leftAnkle": [
+          301,
+          400
+        ],
+        "rightAnkle": [
+          208,
+          382
+        ],
+        "leftToe": [
+          314,
+          438
+        ],
+        "rightToe": [
+          194,
+          435
+        ]
+      },
+      "props": [],
+      "hiddenParts": [],
+      "mappingStatus": "draft"
+    },
+    "exasperated": {
+      "head": [
+        157,
+        15,
+        290,
+        117
+      ],
+      "joints": {
+        "neck": [
+          255,
+          121
+        ],
+        "hip": [
+          267,
+          235
+        ],
+        "leftShoulder": [
+          305,
+          134
+        ],
+        "rightShoulder": [
+          207,
+          143
+        ],
+        "leftElbow": [
+          319,
+          171
+        ],
+        "rightElbow": [
+          187,
+          191
+        ],
+        "leftWrist": [
+          350,
+          136
+        ],
+        "rightWrist": [
+          165,
+          150
+        ],
+        "leftHand": [
+          381,
+          131
+        ],
+        "rightHand": [
+          143,
+          145
+        ],
+        "leftHip": [
+          293,
+          241
+        ],
+        "rightHip": [
+          250,
+          240
+        ],
+        "leftKnee": [
+          293,
+          311
+        ],
+        "rightKnee": [
+          245,
+          314
+        ],
+        "leftAnkle": [
+          259,
+          373
+        ],
+        "rightAnkle": [
+          211,
+          365
+        ],
+        "leftToe": [
+          281,
+          435
+        ],
+        "rightToe": [
+          195,
+          441
+        ]
+      },
+      "props": [],
+      "hiddenParts": [],
+      "mappingStatus": "draft"
+    },
+    "reading": {
+      "head": [
+        170,
+        113,
+        314,
+        234
+      ],
+      "joints": {
+        "neck": [
+          246,
+          238
+        ],
+        "hip": [
+          246,
+          345
+        ],
+        "leftShoulder": [
+          288,
+          252
+        ],
+        "rightShoulder": [
+          195,
+          253
+        ],
+        "leftElbow": [
+          319,
+          290
+        ],
+        "rightElbow": [
+          165,
+          293
+        ],
+        "leftWrist": [
+          291,
+          319
+        ],
+        "rightWrist": [
+          187,
+          321
+        ],
+        "leftHand": [
+          300,
+          328
+        ],
+        "rightHand": [
+          193,
+          328
+        ],
+        "leftHip": [
+          272,
+          348
+        ],
+        "rightHip": [
+          214,
+          349
+        ],
+        "leftKnee": [
+          350,
+          361
+        ],
+        "rightKnee": [
+          166,
+          366
+        ],
+        "leftAnkle": [
+          212,
+          420
+        ],
+        "rightAnkle": [
+          281,
+          422
+        ],
+        "leftToe": [
+          188,
+          427
+        ],
+        "rightToe": [
+          306,
+          432
+        ]
+      },
+      "props": [
+        {
+          "id": "prop-main",
+          "polygon": [
+            [
+              176,
+              283
+            ],
+            [
+              241,
+              303
+            ],
+            [
+              304,
+              279
+            ],
+            [
+              294,
+              351
+            ],
+            [
+              246,
+              367
+            ],
+            [
+              181,
+              345
+            ]
+          ]
+        }
+      ],
+      "hiddenParts": [],
+      "mappingStatus": "draft"
+    },
+    "chalkboard": {
+      "head": [
+        105,
+        17,
+        240,
+        144
+      ],
+      "joints": {
+        "neck": [
+          181,
+          145
+        ],
+        "hip": [
+          184,
+          271
+        ],
+        "leftShoulder": [
+          230,
+          164
+        ],
+        "rightShoulder": [
+          149,
+          159
+        ],
+        "leftElbow": [
+          264,
+          198
+        ],
+        "rightElbow": [
+          150,
+          204
+        ],
+        "leftWrist": [
+          295,
+          175
+        ],
+        "rightWrist": [
+          177,
+          197
+        ],
+        "leftHand": [
+          325,
+          170
+        ],
+        "rightHand": [
+          183,
+          181
+        ],
+        "leftHip": [
+          207,
+          276
+        ],
+        "rightHip": [
+          162,
+          276
+        ],
+        "leftKnee": [
+          227,
+          334
+        ],
+        "rightKnee": [
+          178,
+          337
+        ],
+        "leftAnkle": [
+          195,
+          407
+        ],
+        "rightAnkle": [
+          171,
+          405
+        ],
+        "leftToe": [
+          211,
+          460
+        ],
+        "rightToe": [
+          179,
+          461
+        ]
+      },
+      "props": [
+        {
+          "id": "prop-main",
+          "polygon": [
+            [
+              246,
+              60
+            ],
+            [
+              468,
+              61
+            ],
+            [
+              468,
+              271
+            ],
+            [
+              250,
+              271
+            ]
+          ]
+        },
+        {
+          "id": "prop-secondary",
+          "polygon": [
+            [
+              148,
+              132
+            ],
+            [
+              181,
+              148
+            ],
+            [
+              224,
+              127
+            ],
+            [
+              214,
+              181
+            ],
+            [
+              182,
+              199
+            ],
+            [
+              152,
+              180
+            ]
+          ]
+        }
+      ],
+      "hiddenParts": [],
+      "mappingStatus": "draft"
+    },
+    "writing-prose": {
+      "head": [
+        167,
+        69,
+        306,
+        175
+      ],
+      "joints": {
+        "neck": [
+          248,
+          178
+        ],
+        "hip": [
+          249,
+          298
+        ],
+        "leftShoulder": [
+          277,
+          192
+        ],
+        "rightShoulder": [
+          190,
+          191
+        ],
+        "leftElbow": [
+          290,
+          232
+        ],
+        "rightElbow": [
+          159,
+          248
+        ],
+        "leftWrist": [
+          299,
+          232
+        ],
+        "rightWrist": [
+          219,
+          246
+        ],
+        "leftHand": [
+          308,
+          232
+        ],
+        "rightHand": [
+          238,
+          250
+        ],
+        "leftHip": [
+          275,
+          300
+        ],
+        "rightHip": [
+          229,
+          302
+        ],
+        "leftKnee": [
+          304,
+          354
+        ],
+        "rightKnee": [
+          276,
+          331
+        ],
+        "leftAnkle": [
+          339,
+          416
+        ],
+        "rightAnkle": [
+          244,
+          431
+        ],
+        "leftToe": [
+          366,
+          420
+        ],
+        "rightToe": [
+          278,
+          447
+        ]
+      },
+      "props": [
+        {
+          "id": "prop-main",
+          "polygon": [
+            [
+              207,
+              240
+            ],
+            [
+              272,
+              252
+            ],
+            [
+              300,
+              234
+            ],
+            [
+              383,
+              255
+            ],
+            [
+              306,
+              271
+            ],
+            [
+              254,
+              261
+            ],
+            [
+              215,
+              265
+            ]
+          ]
+        },
+        {
+          "id": "prop-secondary",
+          "polygon": [
+            [
+              131,
+              184
+            ],
+            [
+              174,
+              184
+            ],
+            [
+              170,
+              269
+            ],
+            [
+              423,
+              269
+            ],
+            [
+              416,
+              287
+            ],
+            [
+              244,
+              288
+            ],
+            [
+              248,
+              361
+            ],
+            [
+              239,
+              451
+            ],
+            [
+              223,
+              451
+            ],
+            [
+              225,
+              365
+            ],
+            [
+              162,
+              365
+            ],
+            [
+              153,
+              451
+            ],
+            [
+              144,
+              451
+            ],
+            [
+              149,
+              352
+            ],
+            [
+              142,
+              289
+            ]
+          ]
+        }
+      ],
+      "hiddenParts": [],
+      "mappingStatus": "draft",
+      "notes": "Desk and chair are partly occluded by the body; inspect prop boundaries after partitioning."
+    },
+    "teasing": {
+      "head": [
+        157,
+        17,
+        284,
+        122
+      ],
+      "joints": {
+        "neck": [
+          248,
+          122
+        ],
+        "hip": [
+          231,
+          243
+        ],
+        "leftShoulder": [
+          286,
+          139
+        ],
+        "rightShoulder": [
+          202,
+          142
+        ],
+        "leftElbow": [
+          302,
+          185
+        ],
+        "rightElbow": [
+          155,
+          184
+        ],
+        "leftWrist": [
+          294,
+          126
+        ],
+        "rightWrist": [
+          199,
+          211
+        ],
+        "leftHand": [
+          305,
+          113
+        ],
+        "rightHand": [
+          216,
+          214
+        ],
+        "leftHip": [
+          247,
+          249
+        ],
+        "rightHip": [
+          215,
+          249
+        ],
+        "leftKnee": [
+          280,
+          310
+        ],
+        "rightKnee": [
+          226,
+          321
+        ],
+        "leftAnkle": [
+          241,
+          391
+        ],
+        "rightAnkle": [
+          206,
+          383
+        ],
+        "leftToe": [
+          255,
+          451
+        ],
+        "rightToe": [
+          223,
+          452
+        ]
+      },
+      "props": [],
+      "hiddenParts": [],
+      "mappingStatus": "draft"
+    },
+    "flirty": {
+      "head": [
+        169,
+        16,
+        295,
+        116
+      ],
+      "joints": {
+        "neck": [
+          242,
+          118
+        ],
+        "hip": [
+          231,
+          239
+        ],
+        "leftShoulder": [
+          285,
+          136
+        ],
+        "rightShoulder": [
+          203,
+          138
+        ],
+        "leftElbow": [
+          309,
+          181
+        ],
+        "rightElbow": [
+          188,
+          172
+        ],
+        "leftWrist": [
+          343,
+          124
+        ],
+        "rightWrist": [
+          227,
+          158
+        ],
+        "leftHand": [
+          365,
+          123
+        ],
+        "rightHand": [
+          241,
+          150
+        ],
+        "leftHip": [
+          254,
+          249
+        ],
+        "rightHip": [
+          215,
+          249
+        ],
+        "leftKnee": [
+          272,
+          306
+        ],
+        "rightKnee": [
+          229,
+          317
+        ],
+        "leftAnkle": [
+          242,
+          380
+        ],
+        "rightAnkle": [
+          216,
+          386
+        ],
+        "leftToe": [
+          257,
+          433
+        ],
+        "rightToe": [
+          225,
+          433
+        ]
+      },
+      "props": [],
+      "hiddenParts": [],
+      "mappingStatus": "draft"
+    },
+    "glamour": {
+      "head": [
+        50,
+        78,
+        179,
+        194
+      ],
+      "joints": {
+        "neck": [
+          146,
+          195
+        ],
+        "hip": [
+          213,
+          306
+        ],
+        "leftShoulder": [
+          224,
+          211
+        ],
+        "rightShoulder": [
+          112,
+          210
+        ],
+        "leftElbow": [
+          245,
+          202
+        ],
+        "rightElbow": [
+          80,
+          286
+        ],
+        "leftWrist": [
+          226,
+          151
+        ],
+        "rightWrist": [
+          80,
+          349
+        ],
+        "leftHand": [
+          204,
+          144
+        ],
+        "rightHand": [
+          55,
+          353
+        ],
+        "leftHip": [
+          230,
+          307
+        ],
+        "rightHip": [
+          190,
+          327
+        ],
+        "leftKnee": [
+          302,
+          202
+        ],
+        "rightKnee": [
+          303,
+          326
+        ],
+        "leftAnkle": [
+          355,
+          314
+        ],
+        "rightAnkle": [
+          451,
+          350
+        ],
+        "leftToe": [
+          372,
+          322
+        ],
+        "rightToe": [
+          480,
+          354
+        ]
+      },
+      "props": [],
+      "hiddenParts": [],
+      "mappingStatus": "draft"
+    },
+    "silly": {
+      "head": [
+        140,
+        62,
+        310,
+        147
+      ],
+      "joints": {
+        "neck": [
+          253,
+          147
+        ],
+        "hip": [
+          237,
+          266
+        ],
+        "leftShoulder": [
+          295,
+          164
+        ],
+        "rightShoulder": [
+          182,
+          163
+        ],
+        "leftElbow": [
+          323,
+          205
+        ],
+        "rightElbow": [
+          141,
+          176
+        ],
+        "leftWrist": [
+          363,
+          149
+        ],
+        "rightWrist": [
+          122,
+          138
+        ],
+        "leftHand": [
+          386,
+          137
+        ],
+        "rightHand": [
+          102,
+          134
+        ],
+        "leftHip": [
+          258,
+          278
+        ],
+        "rightHip": [
+          211,
+          263
+        ],
+        "leftKnee": [
+          310,
+          322
+        ],
+        "rightKnee": [
+          223,
+          337
+        ],
+        "leftAnkle": [
+          283,
+          411
+        ],
+        "rightAnkle": [
+          169,
+          389
+        ],
+        "leftToe": [
+          316,
+          430
+        ],
+        "rightToe": [
+          177,
+          431
+        ]
+      },
+      "props": [
+        {
+          "id": "prop-main",
+          "polygon": [
+            [
+              182,
+              23
+            ],
+            [
+              241,
+              22
+            ],
+            [
+              287,
+              37
+            ],
+            [
+              265,
+              72
+            ],
+            [
+              218,
+              80
+            ],
+            [
+              187,
+              66
+            ]
+          ]
+        }
+      ],
+      "hiddenParts": [],
+      "mappingStatus": "draft"
+    },
+    "greeting": {
+      "head": [
+        176,
+        22,
+        315,
+        141
+      ],
+      "joints": {
+        "neck": [
+          269,
+          143
+        ],
+        "hip": [
+          249,
+          270
+        ],
+        "leftShoulder": [
+          307,
+          163
+        ],
+        "rightShoulder": [
+          217,
+          159
+        ],
+        "leftElbow": [
+          338,
+          194
+        ],
+        "rightElbow": [
+          223,
+          210
+        ],
+        "leftWrist": [
+          352,
+          113
+        ],
+        "rightWrist": [
+          255,
+          200
+        ],
+        "leftHand": [
+          370,
+          91
+        ],
+        "rightHand": [
+          264,
+          185
+        ],
+        "leftHip": [
+          280,
+          280
+        ],
+        "rightHip": [
+          245,
+          278
+        ],
+        "leftKnee": [
+          320,
+          337
+        ],
+        "rightKnee": [
+          263,
+          337
+        ],
+        "leftAnkle": [
+          280,
+          404
+        ],
+        "rightAnkle": [
+          246,
+          403
+        ],
+        "leftToe": [
+          292,
+          460
+        ],
+        "rightToe": [
+          263,
+          460
+        ]
+      },
+      "props": [
+        {
+          "id": "prop-main",
+          "polygon": [
+            [
+              222,
+              137
+            ],
+            [
+              269,
+              153
+            ],
+            [
+              315,
+              131
+            ],
+            [
+              303,
+              193
+            ],
+            [
+              270,
+              207
+            ],
+            [
+              229,
+              188
+            ]
+          ]
+        }
+      ],
+      "hiddenParts": [],
+      "mappingStatus": "draft"
+    },
+    "listening": {
+      "head": [
+        142,
+        90,
+        306,
+        217
+      ],
+      "joints": {
+        "neck": [
+          239,
+          217
+        ],
+        "hip": [
+          231,
+          349
+        ],
+        "leftShoulder": [
+          284,
+          236
+        ],
+        "rightShoulder": [
+          182,
+          240
+        ],
+        "leftElbow": [
+          313,
+          300
+        ],
+        "rightElbow": [
+          149,
+          309
+        ],
+        "leftWrist": [
+          263,
+          230
+        ],
+        "rightWrist": [
+          208,
+          356
+        ],
+        "leftHand": [
+          281,
+          213
+        ],
+        "rightHand": [
+          222,
+          374
+        ],
+        "leftHip": [
+          267,
+          359
+        ],
+        "rightHip": [
+          205,
+          359
+        ],
+        "leftKnee": [
+          353,
+          337
+        ],
+        "rightKnee": [
+          133,
+          368
+        ],
+        "leftAnkle": [
+          163,
+          445
+        ],
+        "rightAnkle": [
+          299,
+          443
+        ],
+        "leftToe": [
+          145,
+          445
+        ],
+        "rightToe": [
+          322,
+          434
+        ]
+      },
+      "props": [],
+      "hiddenParts": [],
+      "mappingStatus": "draft"
+    },
+    "confused": {
+      "head": [
+        128,
+        16,
+        290,
+        127
+      ],
+      "joints": {
+        "neck": [
+          226,
+          130
+        ],
+        "hip": [
+          236,
+          266
+        ],
+        "leftShoulder": [
+          270,
+          147
+        ],
+        "rightShoulder": [
+          181,
+          157
+        ],
+        "leftElbow": [
+          310,
+          179
+        ],
+        "rightElbow": [
+          164,
+          205
+        ],
+        "leftWrist": [
+          332,
+          141
+        ],
+        "rightWrist": [
+          201,
+          221
+        ],
+        "leftHand": [
+          352,
+          137
+        ],
+        "rightHand": [
+          221,
+          226
+        ],
+        "leftHip": [
+          253,
+          273
+        ],
+        "rightHip": [
+          217,
+          272
+        ],
+        "leftKnee": [
+          277,
+          340
+        ],
+        "rightKnee": [
+          219,
+          337
+        ],
+        "leftAnkle": [
+          243,
+          400
+        ],
+        "rightAnkle": [
+          208,
+          402
+        ],
+        "leftToe": [
+          259,
+          455
+        ],
+        "rightToe": [
+          221,
+          456
+        ]
+      },
+      "props": [],
+      "hiddenParts": [],
+      "mappingStatus": "draft"
+    },
+    "celebrating": {
+      "head": [
+        184,
+        38,
+        306,
+        136
+      ],
+      "joints": {
+        "neck": [
+          260,
+          139
+        ],
+        "hip": [
+          250,
+          256
+        ],
+        "leftShoulder": [
+          303,
+          132
+        ],
+        "rightShoulder": [
+          193,
+          132
+        ],
+        "leftElbow": [
+          337,
+          112
+        ],
+        "rightElbow": [
+          166,
+          135
+        ],
+        "leftWrist": [
+          356,
+          69
+        ],
+        "rightWrist": [
+          155,
+          66
+        ],
+        "leftHand": [
+          368,
+          50
+        ],
+        "rightHand": [
+          149,
+          40
+        ],
+        "leftHip": [
+          279,
+          260
+        ],
+        "rightHip": [
+          237,
+          260
+        ],
+        "leftKnee": [
+          322,
+          316
+        ],
+        "rightKnee": [
+          243,
+          323
+        ],
+        "leftAnkle": [
+          286,
+          385
+        ],
+        "rightAnkle": [
+          219,
+          385
+        ],
+        "leftToe": [
+          307,
+          422
+        ],
+        "rightToe": [
+          227,
+          423
+        ]
+      },
+      "props": [],
+      "hiddenParts": [],
+      "mappingStatus": "draft"
+    },
+    "concerned": {
+      "head": [
+        148,
+        22,
+        289,
+        127
+      ],
+      "joints": {
+        "neck": [
+          214,
+          129
+        ],
+        "hip": [
+          185,
+          253
+        ],
+        "leftShoulder": [
+          248,
+          146
+        ],
+        "rightShoulder": [
+          156,
+          145
+        ],
+        "leftElbow": [
+          253,
+          211
+        ],
+        "rightElbow": [
+          139,
+          221
+        ],
+        "leftWrist": [
+          240,
+          173
+        ],
+        "rightWrist": [
+          179,
+          265
+        ],
+        "leftHand": [
+          233,
+          164
+        ],
+        "rightHand": [
+          188,
+          286
+        ],
+        "leftHip": [
+          208,
+          259
+        ],
+        "rightHip": [
+          160,
+          256
+        ],
+        "leftKnee": [
+          209,
+          327
+        ],
+        "rightKnee": [
+          174,
+          324
+        ],
+        "leftAnkle": [
+          190,
+          388
+        ],
+        "rightAnkle": [
+          145,
+          390
+        ],
+        "leftToe": [
+          212,
+          428
+        ],
+        "rightToe": [
+          151,
+          428
+        ]
+      },
+      "props": [],
+      "hiddenParts": [],
+      "mappingStatus": "draft",
+      "notes": "Ignore the neighboring sultry figure fragment at the original cell right edge; root crops that contamination out."
+    },
+    "sultry": {
+      "head": [
+        -42,
+        145,
+        119,
+        271
+      ],
+      "joints": {
+        "neck": [
+          87,
+          277
+        ],
+        "hip": [
+          168,
+          342
+        ],
+        "leftShoulder": [
+          186,
+          255
+        ],
+        "rightShoulder": [
+          17,
+          291
+        ],
+        "leftElbow": [
+          211,
+          292
+        ],
+        "rightElbow": [
+          -3,
+          340
+        ],
+        "leftWrist": [
+          198,
+          310
+        ],
+        "rightWrist": [
+          7,
+          277
+        ],
+        "leftHand": [
+          191,
+          319
+        ],
+        "rightHand": [
+          17,
+          267
+        ],
+        "leftHip": [
+          185,
+          338
+        ],
+        "rightHip": [
+          160,
+          352
+        ],
+        "leftKnee": [
+          278,
+          216
+        ],
+        "rightKnee": [
+          290,
+          363
+        ],
+        "leftAnkle": [
+          344,
+          338
+        ],
+        "rightAnkle": [
+          433,
+          374
+        ],
+        "leftToe": [
+          357,
+          346
+        ],
+        "rightToe": [
+          459,
+          376
+        ]
+      },
+      "props": [],
+      "hiddenParts": [],
+      "mappingStatus": "draft",
+      "notes": "Source spilled left of original cell. Apply the recorded root reframe transform to all landmarks and head bounds before building the rig."
+    }
+  }
+}

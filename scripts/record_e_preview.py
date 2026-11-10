@@ -57,7 +57,7 @@ with tempfile.TemporaryDirectory(prefix="bfi-e-record-") as folder:
     try:
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=True, executable_path="/usr/bin/chromium")
-            for kind in ["motif", "character"]:
+            for kind in ["motif", "character", "rig"]:
                 context = browser.new_context(
                     viewport={"width": 1120, "height": 900},
                     record_video_dir=str(OUT / kind),
@@ -70,10 +70,32 @@ with tempfile.TemporaryDirectory(prefix="bfi-e-record-") as folder:
                     for role in ["academic", "engineering", "business"]:
                         page.locator(f'button[data-profile="{role}"]').click()
                         page.wait_for_timeout(2500)
+                elif kind == "rig":
+                    page.locator(".workbench").evaluate("el=>el.scrollIntoView({block:'start'})")
+                    page.evaluate(
+                        "() => {const el=document.querySelector('#piece-outlines');"
+                        "el.checked=true;el.dispatchEvent(new Event('change'));}"
+                    )
+                    page.evaluate(
+                        "() => {const el=document.querySelector('#piece-select');"
+                        "el.value='left-hand';el.dispatchEvent(new Event('change'));}"
+                    )
+                    page.evaluate(
+                        "() => {const el=document.querySelector('#piece-x');"
+                        "el.value=25;el.dispatchEvent(new Event('input'));}"
+                    )
+                    page.wait_for_timeout(1000)
+                    page.evaluate("() => document.querySelector('#piece-reset').click()")
+                    page.locator("#stage-pose").select_option("seated")
+                    page.wait_for_timeout(1600)
+                    page.locator("#stage-pose").select_option("standing-2")
+                    page.wait_for_timeout(1600)
+                    page.locator("#stage-pose").select_option("greeting")
+                    page.wait_for_timeout(1600)
                 else:
                     page.locator(".workbench").evaluate("el=>el.scrollIntoView({block:'start'})")
                     page.locator("#sequence").click()
-                    page.wait_for_timeout(12800)
+                    page.wait_for_timeout(14500)
                 video = page.video
                 context.close()
                 publish_recording(video.path(), kind + "-reel.mp4")

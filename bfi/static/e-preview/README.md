@@ -1,63 +1,67 @@
-# E pose studio, revision 2
+# E pose and body-piece studio, revision 3
 
-The private hosted preview is linked in the project conversation and board. Locally,
-open `/static/e-preview/index.html` with BFI running. This static page makes no model
-calls and does not operate the computer. Ordinary chat artwork is unchanged.
+The owner-private hosted demo is linked in the project conversation and private
+board. Locally open `/static/e-preview/index.html` with BFI running. This preview
+runs without models or computer control; ordinary chat artwork remains unchanged.
 
-The owner rejected the original hand-built E SVGs. This revision generated nine
-pose sheets **before** conversion and directly traced 54 poses, 18 per character.
-The [source record](../../../research/visual-studies/poses-v2/README.md) preserves
-the sheets, crop bounds, method, and limitations. Earlier approximations are archived.
+There are **74 poses**: Academic 24, Hacker 26, Business 24. New greeting, listening,
+confused, celebrating, concerned, and sultry poses supplement the existing library.
+The Hacker specialist poses were regenerated with coding, debugging, security
+review, working, testing, and code review. Original glamour poses remain unchanged.
+The [pose plan](../../../config/pose-plan.json) separates available artwork, proposed
+additions, priorities, reasons, and application states that can reuse poses.
 
-Each role has 11 everyday poses, three specialist poses, and four optional adult
-playful studies. Academic includes reading, chalkboard teaching, prose writing, and
-Dungeons & Dragons planning. Hacker includes security review, coding, and debugging.
-Business includes coordination, formal reports, and task completion. The playful
-set is a manual choice, not an automatic working state.
+## Try the pieces
 
-The preview includes generated-source, normalized-reference, SVG and wipe views,
-face/motif icons, role cursor exports, revised motif transitions, speaking gestures,
-and appearance/pose controls. A speaking gesture is not lip synchronization or audio.
+Choose a pose in the stage dropdown, then another pose. Each character has the same
+17 body-piece IDs: head, neck, torso, upper arms, forearms, hands, thighs, shins,
+feet, and two props. Visible pieces move/morph to their counterpart in the next pose.
+Absent/occluded pieces may collapse or appear. The full target paths are restored
+at the end; intermediate outlines use sampled geometry and can look intentionally
+mechanical. Changing characters uses its separate motif transition.
 
-## Fidelity
+Under **Piece by piece**, enable outlines, select/click a body part, and move or
+rotate it. Drag pieces can be enabled for direct movement. Reset restores the
+preview offsets. Download piece map exports guides, named paths, pivots, and preview
+offsets. Subtle piece motion is independently switchable. Motion off/reduced motion
+settles immediately on the target pose and disables drift. A speaking gesture does
+not imply audio or lip synchronization.
 
-Each SVG follows the actual reference pixel boundaries. Palette normalization
-removes generated texture and keeps three distinct colors per role. All 54 exact boundary traces match their normalized reference's occupancy at
-source resolution. The displayed SVGs clean the contours within 0.75 source pixels
-for crisp scaling; occupancy overlap is 99.03–99.69% and palette agreement on
-shared occupied pixels is 99.67–99.93%. Both versions are inspectable. That does not prove pose quality, agreement with E, or pixel equality
-to the unnormalized generated source. Inspect the source/SVG slider yourself.
-These are contour traces, not yet semantic head/arm/prop rigs.
+## How it is built
 
-## Reusable interfaces
+Original generated sheets and frame corrections are recorded under
+`research/visual-studies/poses-v2` and `poses-v3`. Direct contour traces, source PNGs,
+normalized references, exact-boundary alternatives, and wipe views remain inspectable.
+Crop spill is corrected through explicit frames, not by clipping missing limbs.
 
-`CharacterActor.setPose(pose, profile)` loads a catalog pose with stale-response
-protection. `setSpeaking`, `show`, `hide`, and `destroy` are presentation controls.
-`explaining` remains an alias for the character's specialist explanation pose.
-`poseForActivity(profile, activity)` suggests a visual mapping; it grants no tools.
-`MotifTransition.play(profile)` and `stop()` manage the revised cancellable WAAPI
-motifs. Skip/Escape, reduced motion, and Motion off end their animations cleanly.
-`AgentCursor.update({profileId, shape, x, y})` positions an input-transparent pointer
-at its hotspot. It does not click or install a native operating-system cursor.
+`config/rigs/*.json` contains per-pose joint guides, head bounds, prop regions, and
+occlusion notes. These are draft estimates that can be corrected. The builder maps
+foreground to named bones/props, intersects those regions with the existing SVG
+contours, and writes `.rig.svg` and `.rig.json` without redrawing the character.
+Reassembled rigs currently retain at least 99.7% silhouette overlap with their
+unsplit vectors at source resolution. This is a rendering measure, not proof that
+every anatomical assignment is right. Inspect the piece maps, especially crossed
+arms and occluded limbs. They are prototypes, not motion-capture anatomy.
+
+## Interfaces
+
+`CharacterActor.setPose(pose, profile)` now interpolates semantic pieces, with stale
+loads/cancellation protection. `setSpeaking`, `show`, `hide`, `destroy` remain.
+`setIdle`, `showParts`, `selectPart`, `setPartOffset`, `resetParts`, and `exportRig`
+serve the inspector. Guides stay inspectable in source-cell coordinates; frame
+matrices map them into each exported pose canvas. Morphing is independent of model
+loading, tools, and personality training.
 
 ## Reproduce
 
 ```sh
-UV_CACHE_DIR=/tmp/bfi-uv-cache uv run --with cairosvg --with numpy python scripts/trace_e_poses.py
+uv run --with cairosvg --with numpy python scripts/trace_e_poses.py
+uv run --with cairosvg --with numpy --with shapely python scripts/build_e_rigs.py
+python scripts/build_e_pose_plan.py
 node scripts/check_e_preview.mjs
 uv run --locked --group browser python scripts/browser_e_preview.py
 ```
 
-Run from repository root. The trace manifest contains source/vector hashes and
-comparison measurements. Browser screenshots and recordings are saved under ignored
-`runs/e-preview-v2`. Exported sheets are regenerated with `node scripts/export_e_art.mjs`.
-
-## Verification of revision 2
-
-Real Chromium checks passed all 54 pose selections, source/reference/vector image
-loads, category filters, desktop/tablet/phone widths, motif playback/cancellation,
-rapid switching, speaking/appearance sequence, reduced motion, and cursor sampling,
-with no page errors. Screenshots were inspected. The playback videos in the page
-are actual Chromium recordings at native timing, not rendered SVG-frame exports.
-Record them again using `uv run --locked --group browser python scripts/record_e_preview.py`.
-The code/palette and trace checks, Ruff, and 43 existing Python tests passed.
+Run from the repository root. `rig-report.json` records coverage and reassembly
+checks. Source comparisons and rig debug masks are saved under ignored `runs/`.
+Browser recordings are genuine Chromium playback, without audio or model calls.
