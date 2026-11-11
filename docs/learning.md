@@ -21,11 +21,13 @@ need to read every line first.
 2. **`bfi/static/app.js`** — find `addEventListener("submit"` and `api`. JavaScript
    captures the draft and makes an HTTP request. `fetch` asks the Python server for
    a result; `await` lets it wait without freezing the page.
-3. **`bfi/main.py`** — find `MessageInput`, the `send` route, and `context_for`.
-   FastAPI maps the URL to a Python function. Pydantic rejects malformed input.
-   Context assembly chooses which saved messages the model will actually see.
+3. **`bfi/workspace.py`**, then **`bfi/jobs.py`** — find `JobInput`, `submit`, and
+   `run`. FastAPI validates the request and returns a durable job ID. The queue
+   waits for the single generation resource; reloading the page can reconnect.
+   In **`bfi/main.py`**, `generate` and `context_for` assemble the model's context.
+   The old synchronous `send` route remains available for earlier clients.
 4. **`bfi/backends.py`** — compare `MockBackend.complete` and
-   `OpenAIBackend.complete`. One builds fixed text. The other asks another program
+   `OpenAIBackend.complete` and `complete_stream`. One builds fixed text. The others ask another program
    for a model response. Their common interface lets the application replace one
    without rewriting the route.
 5. **`bfi/store.py`** — find `append_exchange`. SQL inserts the two messages and
@@ -437,3 +439,40 @@ The current state is preserved for comparison. No further art, rollback or previ
 deployment was made for this handoff. `docs/HANDOFF.md` records the owner's actual
 requirements, known checkpoints, likely investigation points and useful functional
 fixes that should not be discarded blindly.
+
+## Why the handler has a queue and a separate knowledge store
+
+A model response may take much longer than a page request. `bfi/jobs.py` gives it a
+persistent identity before work starts. The browser can ask for that job after a
+reload, display provisional text, or cancel it. A semaphore allows one generation
+sequence at a time. Cancellation interrupts an `await`; `finally` releases local
+resources. The app cannot promise that an external server stops GPU work merely
+because its HTTP client disconnected.
+
+The stream is a preview until the model protocol finishes successfully.
+`OpenAIBackend.complete_stream` reads actual SSE frames; it rejects malformed or
+incomplete streams. `generate` saves a user/assistant pair only after completion.
+That is why a cancelled reply may have appeared on screen without becoming part
+of the saved conversation. On a handler restart, queued/running jobs become
+interrupted. Replaying automatically would be dangerous once tools have effects,
+so retry remains a deliberate new submission.
+
+Conversation history and memory solve different problems. History preserves what
+was said in one conversation. `bfi/knowledge.py` stores an explicitly saved fact,
+preference, experience or decision with a source and a scope. A correction creates
+a new revision and removes the old one from active search. Forget deletes that
+memory family, but earlier conversations, tool traces and exports are separate
+records. Nothing in this mechanism changes model weights.
+
+SQLite FTS5 is a lexical search engine: it matches words in the saved text. It is
+small and inspectable but does not infer semantic similarity like an embedding
+model. The first retrieval combines matches with a few recent saved records,
+subject to a character budget. Profile checks happen in Python/SQL, so a model
+cannot obtain another profile's memory by choosing a tool argument. Context uses
+these records as referenced user data, not new system instructions.
+
+The same store indexes full research reports in overlapping sections. Search
+results point to the saved report, source and review date. Reading a tool's manual
+establishes documented support; it does not show the tool running on your PC.
+The research library therefore stays broader than the installed handler. Read
+`docs/handler.md` when ready to connect a real runtime and measure what it does.

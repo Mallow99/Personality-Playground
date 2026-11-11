@@ -1,4 +1,50 @@
-# Handoff: visual regression, work paused
+# Handoff: local handler and paused visual work
+
+## Handler checkpoint (2026-11-11)
+
+The owner delegated best judgment on the initial tooling and asked for a working
+handler now, with a deeper review later. The implementation is on
+`bfi/handler-core`, based on `work` at `ef00ef2`; it does not resume visual work.
+Start with [the handler guide](handler.md). Its first version adds:
+
+- Replaceable loopback runtime presets, profile routing, sampling/context controls,
+  and a `/handler` setup/inspection workspace.
+- Persistent single-resource generation jobs with cancellation, idempotent
+  submission, reload recovery, and interruption without replay after restart.
+- Actual SSE previews for plain-text compatible requests. Tool-loop replies remain
+  buffered; failed/incomplete streams never become successful conversation pairs.
+- Owner-saved memory with profile/shared scopes, source references, corrections,
+  forgetting, export, and explicit context inclusion. No model-written memory or
+  background extraction is enabled.
+- A `/library` search/import/export UI backed by SQLite FTS5. The two original
+  reports and 168-URL source catalog are versioned in `research/tooling/`.
+  Model research tools are read-only and opted in per message.
+
+The full reports and handler handoff also live in the private Notion page
+**BFI research library and handler handoff**, linked from the BFI project home.
+Future chats with that connection should search that title. Do not rely on this
+temporary cloud workspace for continuity. Preserve the reports separately until
+the owner asks for the eventual combined report; that consolidation is not done.
+
+Verification: 85 backend tests passed; Ruff checks and real Chromium flows cover
+memory corrections/export/forget, library search/import, SSE preview, reload,
+cancellation, and desktop/phone layouts. The existing chat smoke check also passed.
+The HTTP model server used in browser checks was explicitly simulated. No GPU
+inference, PC performance, LoRA loading/training, voice/video, image generation,
+external runtime lifecycle, or native Windows overlay result is established.
+
+Provisional choice: keep FastAPI/httpx and SQLite without adding an embedding
+service, vector database, heavy orchestration framework, or GPU dependency. The
+memory/provider boundary and compatible model endpoints remain replaceable. This
+is a single-process local prototype. Starting the app defaults to visibly labeled
+mock mode; real replies require a separately running model server.
+
+The next machine session should identify the actual PC/OS, run one compatible
+model, record model/server/quantization/context/latency/RAM/VRAM, and validate tool
+calling before choosing optimization or adding voice/media/training services.
+Training personality into weights remains a central separate experiment.
+
+## Visual handoff remains in effect
 
 **Latest owner decision (2026-11-10): the latest artwork dropped significantly in
 quality across the board. V5 is rejected. The owner requested a handoff and will

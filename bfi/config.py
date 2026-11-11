@@ -9,6 +9,8 @@ from urllib.parse import urlsplit
 
 from pydantic import BaseModel, ConfigDict, Field
 
+from bfi.runtimes import preset
+
 ROOT = Path(__file__).resolve().parent.parent
 
 
@@ -37,8 +39,18 @@ class Settings:
     project_root: Path | None = None
     search_api_key: str = ""
     adapter_label: str = ""
+    runtime: str = "custom"
+    temperature: float = 0.7
+    top_p: float | None = None
+    queue_limit: int = 16
+    memory_chars: int = 4000
 
     def __post_init__(self):
+        preset(self.runtime)
+        if not 0 <= self.temperature <= 2 or (self.top_p is not None and not 0 < self.top_p <= 1):
+            raise ValueError("Temperature must be 0–2; top-p must be greater than 0 and at most 1.")
+        if not 1 <= self.queue_limit <= 100 or not 0 <= self.memory_chars <= 12000:
+            raise ValueError("Queue limit must be 1–100; memory budget must be 0–12000 chars.")
         if self.backend not in {"mock", "openai"}:
             raise ValueError("BFI_BACKEND must be mock or openai.")
         url = urlsplit(self.base_url)
@@ -71,9 +83,11 @@ class Settings:
             value = Path(os.getenv(name, default))
             return value if value.is_absolute() else ROOT / value
 
+        runtime = os.getenv("BFI_RUNTIME", "custom")
+        chosen = preset(runtime)
         return cls(
-            backend=os.getenv("BFI_BACKEND", "mock"),
-            base_url=os.getenv("BFI_BASE_URL", "http://127.0.0.1:8080/v1").rstrip("/"),
+            backend=os.getenv("BFI_BACKEND", "mock" if runtime == "custom" else "openai"),
+            base_url=os.getenv("BFI_BASE_URL", chosen["base_url"]).rstrip("/"),
             model=os.getenv("BFI_MODEL", "local-model"),
             api_key=os.getenv("BFI_API_KEY", ""),
             timeout=float(os.getenv("BFI_TIMEOUT_SECONDS", "120")),
@@ -86,18 +100,35 @@ class Settings:
             project_root=path("BFI_PROJECT_ROOT", ".") if os.getenv("BFI_PROJECT_ROOT") else None,
             search_api_key=os.getenv("BFI_BRAVE_API_KEY", ""),
             adapter_label=os.getenv("BFI_ADAPTER_LABEL", ""),
+            runtime=runtime,
+            temperature=float(os.getenv("BFI_TEMPERATURE", "0.7")),
+            top_p=float(os.environ["BFI_TOP_P"]) if os.getenv("BFI_TOP_P") else None,
+            queue_limit=int(os.getenv("BFI_QUEUE_LIMIT", "16")),
+            memory_chars=int(os.getenv("BFI_MEMORY_CHARS", "4000")),
         )
 
     def for_profile(self, profile_id):
         """Each profile may use its own local server/model; omitted values inherit defaults."""
         prefix = f"BFI_{profile_id.upper()}_"
+        runtime = os.getenv(prefix + "RUNTIME", self.runtime)
+        chosen = preset(runtime)
         return replace(
             self,
-            backend=os.getenv(prefix + "BACKEND", self.backend),
-            base_url=os.getenv(prefix + "BASE_URL", self.base_url).rstrip("/"),
+            backend=os.getenv(
+                prefix + "BACKEND",
+                "openai" if runtime != self.runtime and runtime != "custom" else self.backend,
+            ),
+            base_url=os.getenv(
+                prefix + "BASE_URL",
+                chosen["base_url"] if runtime != self.runtime else self.base_url,
+            ).rstrip("/"),
             model=os.getenv(prefix + "MODEL", self.model),
             api_key=os.getenv(prefix + "API_KEY", self.api_key),
             adapter_label=os.getenv(prefix + "ADAPTER_LABEL", self.adapter_label),
+            runtime=runtime,
+            temperature=float(os.getenv(prefix + "TEMPERATURE", str(self.temperature))),
+            max_tokens=int(os.getenv(prefix + "MAX_TOKENS", str(self.max_tokens))),
+            context_chars=int(os.getenv(prefix + "CONTEXT_CHARS", str(self.context_chars))),
         )
 
     @property

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BFI · Handler and research</title>
+  <link rel="icon" href="/static/mark.svg" />
+  <link rel="stylesheet" href="/static/workspace.css" />
+  <script type="module" src="/static/workspace.js"></script>
+</head>
+<body>
+  <header><a class="brand" href="/">Best Friend Initiative</a>
+    <nav aria-label="Workspace"><a href="/">Chat</a><a href="/handler">Handler & memory</a>
+      <a href="/library">Research library</a></nav></header>
+  <main>
+    <p class="eyebrow">YOUR LOCAL WORKSPACE</p>
+    <h1 id="page-heading">Handler & memory</h1>
+    <p class="intro">One place to connect your models, keep useful knowledge, and pick up where you left off.</p>
+    <p id="notice" role="status" hidden></p>
+    <section id="handler-section">
+      <div class="section-top"><h2>Model connections</h2><button id="check-connections">Check connections</button></div>
+      <div id="connections" class="cards"></div>
+      <details class="panel"><summary>Prepare a connection</summary>
+        <p>Start your chosen model server separately. Download these settings, review the model ID, then copy them into .env and restart BFI. Existing chats keep their model identity.</p>
+        <form id="connection-form" class="form-grid">
+          <label>Runtime<select id="runtime"></select></label>
+          <label>Model ID<input id="model-id" maxlength="300" placeholder="The exact ID advertised by your server" required /></label>
+          <button type="submit">Download connection settings</button>
+        </form>
+        <pre id="connection-preview"></pre>
+        <p class="muted">This prepares settings; it does not install a server, download weights, or verify a trained adapter.</p>
+      </details>
+      <section class="panel"><div class="section-top"><h2>Generation queue</h2><button id="refresh-jobs">Refresh</button></div>
+        <p class="muted">One reply at a time. You can cancel work here or in chat. Interrupted jobs are kept for inspection and never replayed automatically.</p>
+        <div id="jobs"></div>
+      </section>
+      <section class="panel"><div class="section-top"><h2>Saved memory</h2><button id="export-memory">Export memories</button></div>
+        <p>Save facts, preferences, and decisions you want the characters to recall. Shared records are available to all characters; a character record stays within that character's context.</p>
+        <form id="memory-form" class="form-grid">
+          <input id="memory-id" type="hidden" />
+          <label>Memory<textarea id="memory-content" maxlength="2000" rows="3" required></textarea></label>
+          <label>Source or reason<input id="memory-source" maxlength="1000" placeholder="For example: my correction today, or a project note" required /></label>
+          <label>Scope<select id="memory-scope"><option value="shared">Shared</option><option value="academic">Academic</option><option value="engineering">Coding / security</option><option value="business">Business</option><option value="companion">Original draft</option></select></label>
+          <label>Kind<select id="memory-kind"><option value="fact">Fact</option><option value="preference">Preference</option><option value="decision">Decision</option><option value="experience">Experience</option></select></label>
+          <div><button id="save-memory" type="submit">Save memory</button><button id="clear-memory" type="button" class="secondary">Clear form</button></div>
+        </form>
+        <label class="filter-label">Show records<select id="memory-filter"><option value="">All scopes</option><option value="shared">Shared</option><option value="academic">Academic</option><option value="engineering">Coding / security</option><option value="business">Business</option></select></label>
+        <div id="memories" class="cards"></div>
+        <p class="muted">Corrections preserve earlier versions in export. Forget removes a saved memory and its corrections. Past conversations, tool traces, backups and earlier exports are separate records. No automatic memory extraction or weight training runs here.</p>
+      </section>
+    </section>
+    <section id="library-section">
+      <div class="section-top"><h2>Research library</h2><button id="export-research">Export library</button></div>
+      <p>Search across saved reports and their source catalog. Keep individual reports for a future combined report. Published capabilities remain separate from measurements on your PC.</p>
+      <form id="research-form" class="search-form"><label for="research-query" class="sr-only">Search research</label><input id="research-query" type="search" maxlength="300" placeholder="Try inference, quantization, voice, training, or a tool name" /><button type="submit">Search</button></form>
+      <p id="search-status" role="status"></p>
+      <div id="research-results" class="cards"></div>
+      <h3>Saved reports and source catalog</h3><div id="documents" class="cards"></div>
+      <article id="report" class="panel" hidden><div class="section-top"><h2 id="report-title"></h2><button id="close-report" class="secondary">Close report</button></div><p id="report-source" class="muted"></p><pre id="report-content" class="report-content"></pre></article>
+      <details class="panel"><summary>Add a report or research note</summary>
+        <form id="report-form" class="form-grid">
+          <label>Title<input id="new-report-title" maxlength="200" required /></label>
+          <label>Topic<input id="new-report-category" maxlength="80" placeholder="For example: inference or training" required /></label>
+          <label>Source<input id="new-report-source" maxlength="1500" placeholder="URL, filename, or conversation reference" required /></label>
+          <label>Review date<input id="new-report-date" type="date" required /></label>
+          <label>Report text<textarea id="new-report-content" rows="10" maxlength="200000" required></textarea></label>
+          <button type="submit">Save report</button>
+        </form>
+      </details>
+    </section>
+  </main>
+  <footer>Local storage · Replaceable model connections · Saved sources and visible results</footer>
+</body>
+</html>

@@ -26,7 +26,7 @@ def reserve_port():
     return sock
 
 
-def start_app(backend, data_dir, endpoint, project_dir):
+def start_app(backend, data_dir, endpoint, project_dir, timeout=2):
     reservation = reserve_port()
     port = reservation.getsockname()[1]
     reservation.close()
@@ -38,7 +38,7 @@ def start_app(backend, data_dir, endpoint, project_dir):
         "BFI_API_KEY": "",
         "BFI_MODEL": "smoke-model",
         "BFI_CHARACTER_FILE": str(ROOT / "config/character.json"),
-        "BFI_TIMEOUT_SECONDS": "2",
+        "BFI_TIMEOUT_SECONDS": str(timeout),
         "BFI_HISTORY_PAIRS": "12",
         "BFI_CONTEXT_CHARS": "24000",
         "BFI_PROFILES_FILE": str(ROOT / "config/profiles.json"),

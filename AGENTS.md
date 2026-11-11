@@ -1,5 +1,11 @@
 # Project working agreement
 
+**Handler work (2026-11-11): the owner delegated provisional tooling choices and
+requested implementation. Read `docs/handler.md` and the new handler section in
+`docs/HANDOFF.md`. The research reports/source catalog are in `research/tooling/`
+and a private Notion library. This authorization covers functional handler work;
+the visual pause below still applies.**
+
 **Latest owner decision: V5 visual quality is rejected as a significant regression
 across the board. Visual work is paused for a new-chat handoff. Read
 `docs/HANDOFF.md` first. Do not treat earlier completion reports/tests or candidate

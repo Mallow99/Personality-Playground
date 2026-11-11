@@ -119,6 +119,7 @@ class OpenAIBackend:
         listed = self.settings.model in ids
         return {
             "state": "reachable" if listed else "unconfirmed",
+            "advertised_models": ids[:100],
             "label": "Endpoint reachable" if listed else "Model not listed",
             "detail": "The server advertises the configured model. Generation is not yet tested."
             if listed
@@ -130,15 +131,115 @@ class OpenAIBackend:
         data = await self.request(
             "POST",
             "/chat/completions",
-            json={
-                "model": self.settings.model,
-                "messages": messages,
-                "stream": False,
-                "temperature": 0.7,
-                "max_tokens": self.settings.max_tokens,
-            },
+            json=self.body(messages),
         )
         return self.parse_reply(data)
+
+    def body(self, messages, stream=False):
+        body = {
+            "model": self.settings.model,
+            "messages": messages,
+            "stream": stream,
+            "temperature": self.settings.temperature,
+            "max_tokens": self.settings.max_tokens,
+        }
+        if self.settings.top_p is not None:
+            body["top_p"] = self.settings.top_p
+        return body
+
+    async def complete_stream(self, messages, on_delta):
+        """Read genuine SSE deltas. A failed/unfinished stream is never committed as a reply."""
+        headers = (
+            {"Authorization": f"Bearer {self.settings.api_key}"} if self.settings.api_key else {}
+        )
+        content, model, usage, finished = [], None, None, False
+        size = 0
+        try:
+            async with (
+                httpx.AsyncClient(
+                    timeout=self.settings.timeout,
+                    headers=headers,
+                    trust_env=False,
+                    follow_redirects=False,
+                    transport=self.transport,
+                ) as client,
+                client.stream(
+                    "POST",
+                    self.settings.base_url.rstrip("/") + "/chat/completions",
+                    json=self.body(messages, stream=True),
+                ) as response,
+            ):
+                response.raise_for_status()
+                if "text/event-stream" not in response.headers.get("content-type", ""):
+                    raise BackendError(
+                        "This endpoint did not return an SSE stream. Turn off live "
+                        "reply display for this request.",
+                        "stream_unsupported",
+                    )
+                async for line in response.aiter_lines():
+                    if not line.startswith("data:"):
+                        continue
+                    payload = line[5:].strip()
+                    if payload == "[DONE]":
+                        finished = True
+                        break
+                    data = json.loads(payload)
+                    if data.get("error"):
+                        raise ValueError("stream error")
+                    if data.get("model") is not None:
+                        if not isinstance(data["model"], str):
+                            raise ValueError("invalid model")
+                        model = data["model"]
+                    if isinstance(data.get("usage"), dict):
+                        usage = {
+                            k: v
+                            for k, v in data["usage"].items()
+                            if k in {"prompt_tokens", "completion_tokens", "total_tokens"}
+                            and type(v) is int
+                            and v >= 0
+                        }
+                    choices = data.get("choices", [])
+                    if not choices:
+                        continue
+                    delta = choices[0].get("delta", {})
+                    if delta.get("tool_calls"):
+                        raise ValueError("unexpected tool call")
+                    text = delta.get("content")
+                    if text is not None:
+                        if not isinstance(text, str):
+                            raise ValueError("invalid delta")
+                        size += len(text)
+                        if size > 160000:
+                            raise ValueError("response too large")
+                        content.append(text)
+                        on_delta(text)
+                    if choices[0].get("finish_reason") is not None:
+                        finished = True
+        except httpx.TimeoutException as exc:
+            raise BackendError(
+                "The model stream timed out. Partial text was not saved as a completed reply.",
+                "timeout",
+                504,
+            ) from exc
+        except (httpx.RequestError, httpx.HTTPStatusError) as exc:
+            raise BackendError(
+                "The model stream failed. Check the local server and its streaming "
+                "support. No mock reply was substituted.",
+                "stream_connection",
+            ) from exc
+        except (ValueError, TypeError, KeyError, IndexError, AttributeError) as exc:
+            raise BackendError(
+                "The server returned an invalid or excessive stream. No completed reply was saved.",
+                "invalid_stream",
+            ) from exc
+        text = "".join(content)
+        if not finished or not text.strip():
+            raise BackendError(
+                "The model stream ended without a completed text reply. Partial "
+                "text was not committed.",
+                "incomplete_stream",
+            )
+        return {"content": text, "reported_model": model, "usage": usage}
 
     @staticmethod
     def parse_reply(data):
@@ -175,15 +276,15 @@ class OpenAIBackend:
         context, trace, usage = list(messages), [], {}
         allowed = {d["function"]["name"] for d in definitions}
         for generation in range(4):
-            body = {
-                "model": self.settings.model,
-                "messages": context,
-                "stream": False,
-                "temperature": 0.7,
-                "max_tokens": self.settings.max_tokens,
-            }
+            body = self.body(context)
             if len(trace) < 3:
                 body.update(tools=definitions, tool_choice="auto")
+            if len(json.dumps(body["messages"], ensure_ascii=False)) > self.settings.context_chars:
+                raise BackendError(
+                    "Tool results exceeded the configured context budget. "
+                    "Narrow the request or raise BFI_CONTEXT_CHARS.",
+                    "context_limit",
+                )
             data = await self.request("POST", "/chat/completions", json=body)
             try:
                 message = data["choices"][0]["message"]

@@ -29,6 +29,12 @@ make informed changes. Start with [the code walkthrough](docs/learning.md).
   behavior still needs a PC check. See [avatar setup](docs/avatar-runtime.md).
 - Optional read-only project tools and Brave web search, with a real result
   inspector and per-message opt-in for model-requested tool calls.
+- A durable generation queue, cancellation, reload recovery, and genuine live
+  reply previews for plain-text requests on SSE-compatible endpoints.
+- Owner-saved cross-conversation memory with character scopes, sources,
+  corrections, forgetting, export, and a searchable research library.
+- A `/handler` setup/inspection page and `/library` research page. See the
+  [handler guide](docs/handler.md) for connection presets and current boundaries.
 - A [route to the first personality-training experiment](docs/training.md), with
   an unmodified-model comparison and a research question still open for discussion.
 
@@ -37,8 +43,8 @@ and model. The app never silently switches to mock if that server fails.
 
 There is no completed personality-training experiment, computer control, code
 execution, cloud delegation, calendar access, audio, verified native desktop behavior, model
-lifecycle management, or cross-conversation memory yet. Saved chat history is the
-first persistence layer; it is not a general memory system. Profiles are currently
+lifecycle management, or automatic memory extraction yet. Saved memories are
+owner-curated; private scopes are enforced by the application. Profiles are currently
 prompt configured; the weight-training goal remains explicit.
 
 For the next session, read [the handoff](docs/HANDOFF.md) and [how the avatar works](docs/avatar-runtime.md).
@@ -184,7 +190,7 @@ Tool-enabled requests also send actual tool results to the selected model. Saved
 provenance and exports may include project text and search queries. A configured
 adapter label records intent; it does not train, load, or independently identify a LoRA.
 
-One app process, one active model request sequence, non-streaming text, and one local user are
+One app process, one active model request sequence, and one local user are
 intentional limits. Replies display as plain text. There is no authentication;
 keep the app bound to `127.0.0.1`. This is not a shared or public deployment service.
 The app does not start, load, or unload model servers. Stop the separate inference

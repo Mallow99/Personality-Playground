@@ -241,3 +241,40 @@ groups. Material checks inspect actual raster opacity of the clipboard backs;
 browser checks cover both art variants, automatic selection, cross-window owner
 preferences and preserved head placement. The original 74 traces and source sheets
 remain available for comparison.
+
+## Local handler, explicit memory and research library (2026-11-11)
+
+Keep the existing FastAPI/httpx application as the coordinator. Runtime presets
+select conventional loopback OpenAI-compatible endpoints; they do not install,
+start or prove an inference engine. Profile-specific settings and reply provenance
+retain the actual configured route and sampling/context limits. Optimization that
+belongs to the inference server remains there until hardware measurements justify
+it. Avoid a second orchestration framework or mandatory GPU service for this step.
+
+`JobManager` persists a bounded queue in a separate SQLite database and serializes
+model/tool sequences through one resource gate. Stable request IDs deduplicate
+submission. Cancellation closes the client request and preserves the successful-
+exchange-only history invariant. A server restart marks unfinished work interrupted
+without replay, since an earlier tool may already have run. The legacy synchronous
+endpoint respects pending work. Browser polling reconnects across page reloads;
+plain-text model calls read genuine SSE deltas, while tool loops stay buffered.
+
+`Knowledge` stores owner-saved memories and sourced research separately from chat
+history. Memory corrections are transactions with retained superseded revisions;
+forget removes the correction family and its search entries. Model context can
+retrieve only shared records and its own profile. Inputs remain untrusted reference
+data in a user-role message, with an explicit budget and saved source references.
+There are no automatic/model-authored writes, graph service or embeddings yet.
+This favors inspectability and small resource use; richer retrieval can replace it.
+
+The bundled reports have stable IDs, content hashes, review dates and a versioned
+manifest. SQLite FTS5 indexes overlapping sections, and read-only model tools can
+return those sections with sources when opted in. Owner imports/exports use the
+same local store. Full research copies and a private Notion index provide continuity
+for connected future chats; the running app has no Notion dependency.
+
+The new workspace uses plain DOM text rendering. No artwork was regenerated,
+rolled back or deployed; v5 remains rejected and visual work remains paused.
+Backend tests and Chromium against a simulated HTTP/SSE server establish transport,
+queue, scope, persistence and browser behavior. They establish no model quality,
+GPU inference, training, real LoRA serving, voice/media or native Windows result.
