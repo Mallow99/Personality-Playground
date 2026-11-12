@@ -1,86 +1,53 @@
 # How the foundation fits together
 
-## The short version
-
-The browser presents the conversation. The Python application decides what to send,
-calls a replaceable inference adapter, and saves the successful exchange. The model
-server is a separate process. SQLite is a file containing the conversation tables.
+The primary interface is a standalone desktop application. The Tk window sends
+requests to the existing FastAPI application **in process**, using an HTTPX ASGI
+transport. No web server or listening port is started by BFI. A separate model
+server is still required for real inference and is contacted over its configured
+loopback endpoint. SQLite stores conversations locally.
 
 ```mermaid
 flowchart LR
-    UI[Browser: HTML, CSS, JavaScript] --> API[FastAPI: validate and assemble context]
-    API --> Adapter{Configured adapter}
-    Adapter --> Mock[Mock: scripted text]
-    Adapter --> Local[Loopback model server]
-    API <--> DB[(SQLite conversation file)]
+    UI[Native Tk desktop window] --> App[In-process application: validation and context]
+    App --> Adapter{Configured adapter}
+    Adapter --> Mock[Scripted mock]
+    Adapter --> Local[Separate loopback model server]
+    App <--> DB[(SQLite conversation file)]
 ```
 
-## Decisions made for milestone 01
+## Decisions
 
-| Decision                                 | Reason                                                                    | Cost / when to reconsider                                                        |
-| ---------------------------------------- | ------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| Python + FastAPI                         | Typed request validation and a familiar path into Python training tools   | Adds a server process; revisit if deployment needs change                        |
-| Plain HTML/CSS/JS                        | No frontend framework or build pipeline to learn before tracing a message | Manual UI state updates; reconsider when interface complexity warrants it        |
-| SQLite via Python's standard library     | Inspectable local storage without installing a database service           | Add explicit migrations before changing schema; not a multi-user database design |
-| An adapter with `status` and `complete`  | Keeps backend-specific behavior out of routes and UI                      | Only the initial API subset is supported                                         |
-| Mock by explicit configuration           | Development can proceed before hardware or model setup                    | Scripted replies prove application behavior, never model capability              |
-| Character and backend snapshots per chat | Reopening a chat does not silently change its prompt or mix backends      | Edit configuration and begin a new conversation to use changes                   |
-| Plain text, complete replies             | Easier error handling and safe rendering with `textContent`               | No rich Markdown or token streaming yet                                          |
-| One process / one generation             | Matches a single local GPU and deterministic history order                | Additional sends receive a clear “busy” response; no task queue                  |
-| uv + lockfile                            | Reproducible dependency installs on Windows and Linux                     | Updating dependencies is a deliberate `uv lock --upgrade` change                 |
+| Decision | Reason and tradeoff |
+| --- | --- |
+| Standalone Tk desktop | Meets the desktop requirement using Python's GUI toolkit. The initial interface is functional, not a packaged or visually polished product. |
+| In-process FastAPI and HTTPX | Preserves tested validation and application behavior without opening a server port. The internal request boundary can be simplified later. |
+| Worker thread for requests | Keeps the window responsive while inference runs. One operation at a time keeps conversation order predictable. |
+| SQLite | Inspectable local history without a database service; explicit migrations will be needed for schema changes. |
+| Separate model adapter | Mock is explicitly labeled; the real adapter calls a separately managed local endpoint and never silently falls back. |
+| Character and backend snapshots | Existing conversations preserve their character and cannot mix different backend configurations. |
+| Plain text, complete replies | Clear rendering and error handling; streaming is not implemented. |
+| uv and lockfile | Reproducible dependency installs; updates are deliberate. |
 
-These are starting choices, not permanent commitments. None chooses a model family,
-final character, training framework, or research hypothesis.
+## One exchange
 
-## One successful exchange
+1. `DesktopApp.send` reads the draft and runs the request in a worker thread.
+2. The internal message route validates it, checks the saved backend identity, and
+   uses `context_for` to select complete recent exchanges.
+3. The adapter returns a scripted mock reply or calls the configured model server.
+4. `Store.append_exchange` commits both messages together, then the desktop renders
+   the saved conversation and source metadata. On failure the draft is retained;
+   creating a new conversation before a failed request can leave an empty record.
 
-1. `app.js` prevents the browser's normal form submission, reads the draft, and
-   creates a conversation if needed.
-2. `POST /api/conversations/{id}/messages` validates the message and checks that the
-   conversation belongs to the configured backend, endpoint, and model.
-3. `context_for` assembles the snapshotted system prompt, recent complete exchanges,
-   and the new user message, subject to pair and character limits.
-4. The selected adapter returns text and source information. For real inference it
-   calls `POST /v1/chat/completions`; for mock it constructs an explicitly labeled
-   fixed reply. No route executes model-generated tools.
-5. `append_exchange` inserts the user and assistant rows in one database transaction.
-   They either both commit or neither does.
-6. The API returns the stored conversation. The UI renders text, clears the draft,
-   refreshes the session list, and offers provenance details on each assistant reply.
+The reply source records backend, endpoint, requested and reported model IDs,
+elapsed time, token counts when supplied, and omitted history. A server-reported
+ID is not proof of the exact weights. Exported history includes private text.
 
-If inference fails, there is no successful pair to store: the draft stays in the
-browser and the transcript remains unchanged. A newly created empty conversation
-may remain and can be retried or deleted. Reloading the page can lose an unsent draft.
+## Extension points, not implemented features
 
-## Source records and limits
-
-Each assistant row records backend, configured endpoint, requested and reported model
-IDs, elapsed request time, selected numeric usage counts, omitted history count,
-and cloud/locality declarations. A reported ID is the server's claim, not proof of
-weight identity. Reproducible experiments will additionally need artifact hashes,
-adapter IDs, quantization, chat template, sampling settings, and exact server versions.
-
-Browser requests are same-origin. Mutations with another Origin are rejected, and
-Host headers are restricted to local names. Backend URLs must be loopback addresses;
-redirects and environment HTTP proxies are disabled for those local calls. Secrets
-stay in server-side configuration. These are boundaries for a local prototype,
-not a replacement for authentication if public serving is added later.
-
-## Extension points, not features already implemented
-
-- **Memory:** separate user-inspectable facts from raw transcripts; include source,
-  timestamp, correction, deletion, and consent controls. Log exactly what was retrieved.
-- **Tools:** introduce typed tool requests, supported service APIs, permissions,
-  results, and citations. Tool text must remain distinguishable from model guesses.
-- **Calendar:** Google Calendar with Canvas synced into it is the deadline source of
-  truth. A future read-only connector should expose freshness and sync failures.
-- **Frontier assistance:** a separate explicit provider adapter, supported API and
-  billing model, visible limits, consent about shared data, usage accounting, and
-  result provenance. A subscription does not automatically include API credits.
-- **Model lifecycle:** a backend capability interface for load/unload, actual memory
-  measurements, and user-visible switching. Today this is managed manually outside BFI.
-- **Training:** offline experiment scripts and versioned artifacts, isolated from chat
-  serving. Curated updates can develop character over time; conversations do not
-  immediately change weights.
-
-Do not build all of these at once. Prefer one useful, verifiable change at a time.
+- **Memory:** inspectable facts with sources, correction, deletion, and retrieval records.
+- **Tools:** typed requests, permissions, actual results, failure handling, and citations.
+- **Calendar:** a future read-only connector should report freshness and sync failures.
+- **Frontier assistance:** explicit provider, consent, usage accounting, and provenance.
+- **Model lifecycle:** load/unload capabilities and measured memory use.
+- **Training:** reproducible offline experiments and evaluation against the unmodified
+  starting checkpoint; conversations do not automatically change weights.

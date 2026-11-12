@@ -50,7 +50,7 @@ training updates; individual conversations should not automatically edit weights
 
 | Stage                                       | Useful result                                                 | Evidence before calling it complete                                             |
 | ------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| 01 — foundation                             | Chat, history, config, backend status                         | API and browser checks; explicit mock/local distinction                         |
+| 01 — foundation                             | Chat, history, config, backend status                         | Desktop and application checks; explicit mock/local distinction                         |
 | 02 — actual local inference                 | One model on the delivered PC; a smaller fallback             | Recorded versions, correct GPU use, latency, RAM/VRAM, repeatable launch        |
 | 03 — first controlled training study        | Small personality adapter and honest before/after comparison  | Complete experiment record, holdout evaluation, served adapter, base comparison |
 | 04 — inspectable memory and one useful tool | Correctable facts and a grounded narrow workflow              | Source records, deletion behavior, real tool failures, freshness                |

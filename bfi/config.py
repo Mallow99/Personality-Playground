@@ -1,4 +1,4 @@
-"""Configuration lives on the server; credentials never enter the browser."""
+"""Configuration and credentials stay inside the local application."""
 
 import ipaddress
 import os

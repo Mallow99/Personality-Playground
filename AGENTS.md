@@ -1,6 +1,6 @@
 # Project working agreement
 
-This is both a local AI character application and a skill-building project for its
+This is a standalone desktop AI character application and a skill-building project for its
 owner. Explain consequential decisions plainly and point to the actual code. Keep
 `docs/learning.md` and the decision record in `docs/architecture.md` aligned with
 meaningful changes, so the owner can inspect, explain, and reproduce the work.
@@ -16,6 +16,8 @@ story spoilers. Do not assume RAM upgrades, other hardware, or school funding.
 
 Use `uv sync --locked`, `uv run --locked pytest`, `uv run --locked ruff check .`, and
 `uv run --locked ruff format --check .` for relevant Python changes. Keep private
-history, credentials, model files, adapters, and run artifacts outside Git. The app
-is a single-process local prototype; do not expose it publicly without designing
+history, credentials, model files, adapters, and run artifacts outside Git. The desktop
+app is a single-process local prototype; do not expose it publicly without designing
 authentication and reviewing its data boundaries.
+
+The primary interface must remain a standalone desktop application, not a browser UI.

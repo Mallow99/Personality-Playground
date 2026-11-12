@@ -15,7 +15,7 @@ make informed changes. Start with [the code walkthrough](docs/learning.md).
 
 ## Milestone 01: a small, working foundation
 
-- A browser chat interface for one provisional character.
+- A standalone desktop chat window for one provisional character.
 - A replaceable backend: a clearly labeled scripted mock, or a configurable
   loopback OpenAI-compatible chat endpoint.
 - Saved conversations in SQLite, JSON export, and deletion.
@@ -43,8 +43,10 @@ uv sync --locked
 uv run --locked python -m bfi
 ```
 
-Open **http://127.0.0.1:8000** in your browser. The same commands work in Windows
-PowerShell and on Linux. Stop the application with **Ctrl+C** in its terminal.
+The command opens the standalone desktop window. Close the window to exit. The same
+commands work in Windows PowerShell and on Linux with a graphical desktop and Tk
+installed. Python on Windows normally includes Tk; Linux may require its tkinter
+package. This is a Python application, not yet a packaged installer or executable.
 The checked-in `uv.lock` records exact dependency versions; `--locked` refuses to
 silently change that record. No Node.js, GPU, model download, or subscription is
 needed for mock mode.
@@ -109,7 +111,8 @@ computes. It records the requested ID and the server-reported ID separately, wit
 | Why these components were chosen           | [Architecture and decisions](docs/architecture.md) |
 | Character name, description, and prompt    | [config/character.json](config/character.json)     |
 | Endpoint, model, and context limits        | [.env.example](.env.example)                       |
-| API routes and the request flow            | [bfi/main.py](bfi/main.py)                         |
+| Desktop window and message flow            | [bfi/desktop.py](bfi/desktop.py)                   |
+| Internal application routes                | [bfi/main.py](bfi/main.py)                         |
 | Real server requests and the mock          | [bfi/backends.py](bfi/backends.py)                 |
 | SQLite tables and persistence              | [bfi/store.py](bfi/store.py)                       |
 | Hardware checks and compatibility evidence | [Hardware notes](docs/hardware.md)                 |
@@ -130,9 +133,8 @@ contract, persistence, context selection, provenance, and failure handling. It d
 not download or exercise a model. GitHub Actions runs these checks on Windows and
 Linux. See [verification notes](docs/verification.md) for what was actually run here.
 
-An optional [browser smoke script](scripts/browser_smoke.py) checks the UI using
-temporary data and saves screenshots. Its extra dependencies are not needed to run
-the app; installation and reproduction commands are in the verification notes.
+The desktop uses an in-process application interface and does not open a listening
+web server. See [verification notes](docs/verification.md) for tested scope.
 
 ## Data and current limits
 
@@ -149,8 +151,8 @@ are approximate guards, not model-specific token budgeting. Context overflow can
 still happen; reduce the limits if your server rejects requests.
 
 One app process, one active generation, non-streaming text, and one local user are
-intentional limits. Replies display as plain text. There is no authentication;
-keep the app bound to `127.0.0.1`. This is not a shared or public deployment service.
+intentional limits. Replies display as plain text. The desktop app is intended for one
+local user, not shared or public deployment.
 The app does not start, load, or unload model servers. Stop the separate inference
 process to release its model; merely closing this UI does not free VRAM.
 

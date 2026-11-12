@@ -3,8 +3,7 @@ import time
 
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, Request
-from fastapi.responses import FileResponse, JSONResponse
-from fastapi.staticfiles import StaticFiles
+from fastapi.responses import JSONResponse
 from pydantic import BaseModel, Field
 from starlette.middleware.trustedhost import TrustedHostMiddleware
 
@@ -48,13 +47,11 @@ def create_app(settings=None, backend=None):
     generation_lock = asyncio.Lock()
 
     @app.middleware("http")
-    async def local_browser_boundary(request: Request, call_next):
+    async def local_request_boundary(request: Request, call_next):
         if request.method in {"POST", "DELETE", "PUT", "PATCH"}:
             origin = request.headers.get("origin")
             if origin and origin != str(request.base_url).rstrip("/"):
-                return JSONResponse(
-                    {"detail": "Use the app from its own local browser address."}, 403
-                )
+                return JSONResponse({"detail": "Use the local application address."}, 403)
         response = await call_next(request)
         response.headers["X-Content-Type-Options"] = "nosniff"
         response.headers["Referrer-Policy"] = "no-referrer"
@@ -144,11 +141,5 @@ def create_app(settings=None, backend=None):
                 "context_messages_omitted": omitted,
             }
             return store.append_exchange(cid, content, result["content"], provenance)
-
-    app.mount("/static", StaticFiles(directory=ROOT / "bfi/static"), name="static")
-
-    @app.get("/")
-    async def index():
-        return FileResponse(ROOT / "bfi/static/index.html")
 
     return app

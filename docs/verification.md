@@ -1,74 +1,31 @@
-# What was actually verified
+# Verification
 
-Milestone 01 was checked in a Linux cloud development workspace on November 9,
-2026, using Python 3.12.14, uv 0.13.5, and Chromium 156.0.8078.79. This workspace is not the purchased Windows
-PC, and has no configured inference server or selected model. No claim about its
-7900 XTX performance, AMD training, or learned personality follows from these checks.
+The initial application tests were run in a Linux cloud workspace, not on the
+purchased Windows PC. They use temporary databases and simulated model-server
+responses. They cover persistence, snapshots, backend separation, validation,
+context trimming, source metadata, failures, and overlapping generation. They do
+not establish real inference, GPU performance, training, or Windows compatibility.
 
-## Automated application checks
+Run the current checks with:
 
 ```sh
 uv sync --locked
-uv run --locked pytest -q
+uv run --locked pytest
 uv run --locked ruff check .
 uv run --locked ruff format --check .
 ```
 
-Result: **27 tests passed**; lint and Python formatting passed. The tests cover
-restart persistence, character snapshots, backend separation, request validation,
-deletion, context trimming, API request shape, source metadata, credential exclusion,
-backend errors, model-status uncertainty, local browser boundaries, and overlapping
-generation. HTTP adapter tests use simulated responses; they do not run a model.
+On November 12, 2026, the Tk desktop was launched in the Linux cloud desktop
+using a disposable database. A mock exchange was sent, the application was
+restarted, the saved conversation reopened, and a second message sent. This does
+not establish Windows behavior or real model inference.
 
-The installed Starlette test client emits one upstream deprecation warning about
-its use of `httpx`. This does not fail the suite; revisit the development test
-transport when upgrading dependencies. JavaScript syntax was also checked with
-`node --check bfi/static/app.js`; Node is not needed to run the application.
+For a desktop check, run `uv run --locked python -m bfi` on a machine with a
+working graphical desktop and Tk. In mock mode, send a message, inspect source
+details, close and reopen the app, select the saved conversation, export it, and
+check deletion on disposable data. Also check that an unavailable model server
+shows an error and retains the draft. Desktop usability, accessibility, and the
+Windows build still require validation on the target machine.
 
-GitHub Actions is configured to run the Python checks on Windows and Linux with
-Python 3.11. Those hosted runs have not been observed in this workspace. Local Linux
-success should not be reported as a successful Windows or hosted CI run.
-
-## Repeatable browser check
-
-The optional [`scripts/browser_smoke.py`](../scripts/browser_smoke.py) starts two
-temporary application processes: a labeled mock and an endpoint configuration whose
-server is deliberately unavailable. It uses disposable databases, then terminates
-those processes. It does not open or delete your normal conversation data.
-
-Install the optional browser-test dependencies and browser, then run:
-
-```sh
-uv sync --locked --group browser
-uv run --locked --group browser playwright install chromium
-uv run --locked --group browser python scripts/browser_smoke.py
-```
-
-This environment already had system Chromium, so the actual successful command was:
-
-```sh
-uv run --locked --group browser python scripts/browser_smoke.py --chromium /usr/bin/chromium
-```
-
-Result: **passed**. Verified visibly labeled mock replies, sending with Enter,
-plain-text rendering, per-reply provenance, JSON export, reload persistence,
-new/reopened conversations, the status dialog, deletion, draft retention after a
-real HTTP connection failure, and continued operation with browser storage disabled.
-Checked layouts at 1440×1000, 768×1024, and 390×844 with no horizontal page overflow.
-The main test page produced no JavaScript errors or external network requests.
-
-Screenshots and the scripted test export are saved under `runs/browser-smoke/`,
-which Git ignores. Initial home and mobile screenshots were also visually inspected.
-To inspect without installing browser automation, repeat these actions manually
-using the walkthrough in `learning.md` and the normal mock app.
-
-## Remaining validation
-
-- Actual local inference on the delivered PC, including GPU use and latency.
-- Specific Windows/AMD driver and training-stack compatibility.
-- Real model aliases, templates, context/token limits, and quantized artifacts.
-- A trained adapter, held-out base comparison, conversion/reload, and custom serving.
-- Human usability and accessibility feedback beyond keyboard controls, semantic
-  labels, focus styling, reduced-motion handling, and the browser layout checks.
-
-No real-model benchmark or training result has been manufactured to fill those gaps.
+Actual local inference, AMD training-stack compatibility, a trained adapter and
+held-out comparison, and verified custom-model serving remain open milestones.
