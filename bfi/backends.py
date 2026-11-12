@@ -5,28 +5,30 @@ from typing import Protocol
 import httpx
 
 from bfi.config import Settings
+from bfi.errors import AppError
 
 
-class BackendError(Exception):
-    def __init__(self, message, code="backend_error", status=502):
-        self.message, self.code, self.status = message, code, status
-        super().__init__(message)
+class BackendError(AppError):
+    def __init__(self, message, code="backend_error"):
+        super().__init__(message, code)
 
 
 class Backend(Protocol):
-    async def status(self) -> dict: ...
-    async def complete(self, messages: list[dict]) -> dict: ...
+    """Both methods block, so the desktop calls them on its worker thread."""
+
+    def status(self) -> dict: ...
+    def complete(self, messages: list[dict]) -> dict: ...
 
 
 class MockBackend:
-    async def status(self):
+    def status(self):
         return {
             "state": "mock",
             "label": "Mock backend",
             "detail": "Scripted replies only. No model is loaded and no inference is running.",
         }
 
-    async def complete(self, messages):
+    def complete(self, messages):
         return {
             "content": "[Mock reply · no model inference]\n\n"
             "Your message reached the application. This is a scripted response, "
@@ -40,23 +42,25 @@ class MockBackend:
 
 
 class OpenAIBackend:
+    """Talks to a separately started server that speaks the OpenAI chat-completions format."""
+
     def __init__(self, settings: Settings, transport=None):
         self.settings, self.transport = settings, transport
 
-    async def request(self, method, path, **kwargs):
+    def request(self, method, path, **kwargs):
         headers = (
             {"Authorization": f"Bearer {self.settings.api_key}"} if self.settings.api_key else {}
         )
         try:
             # Never forward loopback conversations through an environment HTTP proxy.
-            async with httpx.AsyncClient(
+            with httpx.Client(
                 timeout=self.settings.timeout,
                 headers=headers,
                 trust_env=False,
                 follow_redirects=False,
                 transport=self.transport,
             ) as client:
-                response = await client.request(
+                response = client.request(
                     method, self.settings.base_url.rstrip("/") + path, **kwargs
                 )
                 response.raise_for_status()
@@ -66,7 +70,6 @@ class OpenAIBackend:
                 "The model server timed out. It may still be loading or generating. "
                 "Check its terminal, or increase BFI_TIMEOUT_SECONDS.",
                 "timeout",
-                504,
             ) from exc
         except httpx.HTTPStatusError as exc:
             status = exc.response.status_code
@@ -95,9 +98,9 @@ class OpenAIBackend:
                 "invalid_response",
             ) from exc
 
-    async def status(self):
+    def status(self):
         try:
-            data = await self.request("GET", "/models", timeout=min(5, self.settings.timeout))
+            data = self.request("GET", "/models", timeout=min(5, self.settings.timeout))
             models = data["data"]
             if not isinstance(models, list):
                 raise TypeError
@@ -124,8 +127,8 @@ class OpenAIBackend:
             "aliases. You can try a message; check the server configuration if it fails.",
         }
 
-    async def complete(self, messages):
-        data = await self.request(
+    def complete(self, messages):
+        data = self.request(
             "POST",
             "/chat/completions",
             json={

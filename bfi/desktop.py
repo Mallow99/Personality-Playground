@@ -1,33 +1,46 @@
-"""Native desktop interface. The application API runs in-process, without a web server."""
+"""Native desktop window.
 
-import asyncio
+Threading rule: Tk widgets are touched only on the main thread. Anything slow (the model,
+the database) runs on one worker thread at a time; the worker puts its outcome on a queue,
+and `poll` picks it up on the main thread.
+"""
+
 import json
 import queue
 import threading
 import tkinter as tk
+import traceback
 from pathlib import Path
 from tkinter import filedialog, messagebox, scrolledtext, ttk
 
-import httpx
+from bfi.errors import AppError
+from bfi.service import ChatService
 
-from bfi.main import create_app
+APP_NAME = "Best Friend Initiative"
+IDLE_HINT = "Message (Ctrl+Enter to send)"
+SENDING = "Waiting for the reply…"
+POLL_MS = 50
+_window = None
 
 
 class DesktopApp:
-    def __init__(self, root, app=None):
+    def __init__(self, root, service):
         self.root = root
-        self.app = app or create_app()
-        self.current = None
+        self.service = service
+        self.config = service.config()
+        self.current = None  # the open conversation, or None for an unsaved new one
         self.conversations = []
-        self.busy = False
+        self.busy = None  # label of the running task, or None when idle
+        self.closed = False
         self.results = queue.Queue()
-        root.title("Best Friend Initiative")
+        root.title(APP_NAME)
         root.geometry("1000x700")
         root.minsize(640, 450)
         root.columnconfigure(1, weight=1)
         root.rowconfigure(1, weight=1)
+        root.protocol("WM_DELETE_WINDOW", self.close)
 
-        self.mode = tk.StringVar(value="Loading configuration…")
+        self.mode = tk.StringVar()
         ttk.Label(root, textvariable=self.mode, padding=10).grid(
             row=0, column=0, columnspan=2, sticky="ew"
         )
@@ -60,57 +73,83 @@ class DesktopApp:
         )
         self.transcript = scrolledtext.ScrolledText(panel, wrap="word", state="disabled")
         self.transcript.grid(row=1, column=0, columnspan=2, sticky="nsew")
-        ttk.Label(panel, text="Message (Ctrl+Enter to send)").grid(row=2, column=0, sticky="w")
+        self.hint = tk.StringVar(value=IDLE_HINT)
+        ttk.Label(panel, textvariable=self.hint).grid(row=2, column=0, sticky="w")
         self.draft = tk.Text(panel, height=4, wrap="word")
         self.draft.grid(row=3, column=0, sticky="ew", pady=(4, 0))
         self.draft.bind("<Control-Return>", self.send)
         self.send_button = ttk.Button(panel, text="Send", command=self.send)
         self.send_button.grid(row=3, column=1, padx=(8, 0), sticky="s")
-        self.config = None
-        self.run_task(self.initialize, self.initialized)
-        root.after(50, self.poll)
 
-    async def request(self, method, path, **kwargs):
-        async with httpx.AsyncClient(
-            transport=httpx.ASGITransport(app=self.app), base_url="http://localhost"
-        ) as client:
-            response = await client.request(method, "/api" + path, **kwargs)
-        if response.is_error:
-            detail = response.json().get("detail", "Request failed.")
-            raise RuntimeError(detail if isinstance(detail, str) else "Invalid request.")
-        return None if response.status_code == 204 else response.json()
+        self.render()
+        self.run_task("Loading conversations…", service.conversations, self.loaded)
+        root.after(POLL_MS, self.poll)
 
-    def run_task(self, operation, callback):
+    # --- Worker thread plumbing -------------------------------------------------------
+
+    def run_task(self, label, operation, done):
+        """Run `operation()` off the main thread, then call `done(result)` on the main thread."""
         if self.busy:
             return
-        self.busy = True
+        self.busy = label
         self.controls()
 
         def worker():
             try:
-                self.results.put((callback, asyncio.run(operation()), None))
-            except Exception as exc:
-                self.results.put((callback, None, exc))
+                outcome = (done, operation(), None)
+            except Exception as exc:  # delivered to the main thread and shown there
+                outcome = (done, None, exc)
+            self.results.put(outcome)
 
         threading.Thread(target=worker, daemon=True).start()
 
     def poll(self):
+        if self.closed:
+            return
         try:
             while True:
-                callback, result, error = self.results.get_nowait()
-                self.busy = False
-                self.controls()
-                if error:
-                    messagebox.showerror("Best Friend Initiative", str(error), parent=self.root)
-                else:
-                    callback(result)
-                self.controls()
+                self.finish(*self.results.get_nowait())
         except queue.Empty:
             pass
-        self.root.after(50, self.poll)
+        finally:
+            # Reschedule even if a callback raised, or the window would stop responding
+            # to finished work for the rest of the session.
+            if not self.closed:
+                self.root.after(POLL_MS, self.poll)
+
+    def finish(self, done, result, error):
+        self.busy = None
+        self.controls()
+        if error is None:
+            done(result)
+            return
+        if isinstance(error, AppError):
+            message = error.message
+        else:
+            traceback.print_exception(error)
+            message = (
+                f"Something unexpected went wrong ({type(error).__name__}: {error}).\n\n"
+                "Your draft is kept. The full details were printed to the terminal."
+            )
+        self.show_error(message)
+        if not self.closed:
+            self.render()  # re-sync the list selection with the conversation actually open
+
+    # --- Dialogs (separate methods so tests can replace them) ---------------------------
+
+    def show_error(self, message):
+        messagebox.showerror(APP_NAME, message, parent=self.root)
+
+    def show_info(self, title, message):
+        messagebox.showinfo(title, message, parent=self.root)
+
+    def confirm(self, title, message):
+        return messagebox.askyesno(title, message, parent=self.root)
+
+    # --- Rendering ------------------------------------------------------------------------
 
     def controls(self):
-        state = "disabled" if self.busy else "normal"
+        idle = not self.busy
         for widget in (
             self.new_button,
             self.listbox,
@@ -118,27 +157,20 @@ class DesktopApp:
             self.send_button,
             self.draft,
         ):
-            widget.configure(state=state)
+            widget.configure(state="normal" if idle else "disabled")
         for widget in (self.export_button, self.delete_button, self.source_button):
-            widget.configure(state="normal" if self.current and not self.busy else "disabled")
-
-    async def initialize(self):
-        return await self.request("GET", "/config"), await self.request("GET", "/conversations")
-
-    def initialized(self, result):
-        self.config, self.conversations = result
-        self.render()
+            widget.configure(state="normal" if self.current and idle else "disabled")
+        self.hint.set(self.busy or IDLE_HINT)
 
     def render(self):
+        self.listbox.configure(state="normal")
         self.listbox.delete(0, tk.END)
         for index, conversation in enumerate(self.conversations):
             self.listbox.insert(tk.END, conversation["title"])
             if self.current and conversation["id"] == self.current["id"]:
                 self.listbox.selection_set(index)
         self.title.set(self.current["title"] if self.current else "New conversation")
-        if self.current and self.current["backend"] != {
-            key: self.config[key] for key in ("backend", "endpoint", "requested_model")
-        }:
+        if self.current and not self.service.can_continue(self.current):
             self.mode.set("Archived model configuration — start a new conversation to send.")
         elif self.config["backend"] == "mock":
             self.mode.set("Mock mode — scripted replies; no model inference.")
@@ -156,13 +188,18 @@ class DesktopApp:
         self.transcript.see(tk.END)
         self.controls()
 
+    # --- Actions. The draft is cleared only after a successful send. --------------------
+
+    def loaded(self, conversations):
+        self.conversations = conversations
+        self.render()
+
     def new_chat(self):
         self.current = None
-        self.draft.delete("1.0", tk.END)
         self.render()
         self.draft.focus_set()
 
-    def select_chat(self, _event):
+    def select_chat(self, _event=None):
         selected = self.listbox.curselection()
         if self.busy or not selected:
             return
@@ -170,15 +207,11 @@ class DesktopApp:
         if self.current and self.current["id"] == cid:
             return
 
-        async def operation():
-            return await self.request("GET", f"/conversations/{cid}")
-
         def done(conversation):
             self.current = conversation
-            self.draft.delete("1.0", tk.END)
             self.render()
 
-        self.run_task(operation, done)
+        self.run_task("Opening conversation…", lambda: self.service.conversation(cid), done)
 
     def send(self, _event=None):
         content = self.draft.get("1.0", "end-1c").strip()
@@ -186,44 +219,32 @@ class DesktopApp:
             return "break"
         cid = self.current["id"] if self.current else None
 
-        async def operation():
-            nonlocal cid
-            if cid is None:
-                conversation = await self.request("POST", "/conversations")
-                cid = conversation["id"]
-            conversation = await self.request(
-                "POST", f"/conversations/{cid}/messages", json={"content": content}
-            )
-            return conversation, await self.request("GET", "/conversations")
-
-        def done(result):
-            self.current, self.conversations = result
+        def done(conversation):
+            self.current = conversation
+            summary = {k: v for k, v in conversation.items() if k != "messages"}
+            self.conversations = [summary] + [
+                c for c in self.conversations if c["id"] != conversation["id"]
+            ]
             self.draft.delete("1.0", tk.END)
             self.render()
             self.draft.focus_set()
 
-        self.run_task(operation, done)
+        self.run_task(SENDING, lambda: self.service.send(cid, content), done)
         return "break"
 
     def delete_chat(self):
-        if not self.current or not messagebox.askyesno(
-            "Delete conversation",
-            "Delete this conversation and all its messages?",
-            parent=self.root,
+        if not self.current or not self.confirm(
+            "Delete conversation", "Delete this conversation and all its messages?"
         ):
             return
         cid = self.current["id"]
 
-        async def operation():
-            await self.request("DELETE", f"/conversations/{cid}")
-            return await self.request("GET", "/conversations")
-
-        def done(conversations):
+        def done(_result):
             self.current = None
-            self.conversations = conversations
+            self.conversations = [c for c in self.conversations if c["id"] != cid]
             self.render()
 
-        self.run_task(operation, done)
+        self.run_task("Deleting…", lambda: self.service.delete(cid), done)
 
     def export_chat(self):
         if not self.current:
@@ -240,15 +261,13 @@ class DesktopApp:
                     json.dumps(self.current, indent=2, ensure_ascii=False), encoding="utf-8"
                 )
             except OSError as exc:
-                messagebox.showerror("Export failed", str(exc), parent=self.root)
+                self.show_error(f"Export failed: {exc}")
 
     def check_status(self):
-        async def operation():
-            return await self.request("GET", "/status")
-
         self.run_task(
-            operation,
-            lambda status: messagebox.showinfo(status["label"], status["detail"], parent=self.root),
+            "Checking the backend…",
+            self.service.status,
+            lambda status: self.show_info(status["label"], status["detail"]),
         )
 
     def sources(self):
@@ -269,8 +288,36 @@ class DesktopApp:
         )
         text.configure(state="disabled")
 
+    def close(self):
+        # Only complete exchanges are saved, so closing mid-reply discards the sent message.
+        if self.busy == SENDING and not self.confirm(
+            "A reply is still being generated",
+            "If you close now, the message you just sent and its reply will not be saved.\n\n"
+            "Close anyway?",
+        ):
+            return
+        self.closed = True
+        self.root.destroy()
+
 
 def main():
     root = tk.Tk()
-    DesktopApp(root)
+    root.withdraw()
+    try:
+        service = ChatService.from_env()
+    except Exception as exc:
+        if isinstance(exc, AppError):
+            message = exc.message
+        else:
+            traceback.print_exc()
+            message = f"{type(exc).__name__}: {exc}"
+        messagebox.showerror(APP_NAME, f"The app could not start.\n\n{message}")
+        root.destroy()
+        return 1
+    # Kept in a module global so the window is never garbage-collected before the process
+    # exits: Tcl aborts if that happens on the worker thread, which may still be running.
+    global _window
+    _window = DesktopApp(root, service)
+    root.deiconify()
     root.mainloop()
+    return 0

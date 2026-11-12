@@ -3,11 +3,17 @@ on: [push, pull_request]
 permissions:
   contents: read
 jobs:
-  foundation:
+  checks:
     strategy:
+      fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest]
     runs-on: ${{ matrix.os }}
+    env:
+      # uv's own Python build bundles Tk; a system Python may not.
+      UV_PYTHON_PREFERENCE: only-managed
+      # The desktop-window tests must actually run here, not skip.
+      BFI_REQUIRE_TK: "1"
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v6
@@ -15,6 +21,11 @@ jobs:
           python-version: "3.11"
           enable-cache: true
       - run: uv sync --locked
-      - run: uv run --locked pytest
+      - name: Tests (Linux, on a virtual display)
+        if: runner.os == 'Linux'
+        run: xvfb-run -a uv run --locked pytest
+      - name: Tests (Windows)
+        if: runner.os == 'Windows'
+        run: uv run --locked pytest
       - run: uv run --locked ruff check .
       - run: uv run --locked ruff format --check .
