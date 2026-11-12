@@ -21,3 +21,6 @@ app is a single-process local prototype; do not expose it publicly without desig
 authentication and reviewing its data boundaries.
 
 The primary interface must remain a standalone desktop application, not a browser UI.
+
+Read `FABLE_BRIEF.md` for the owner’s product direction, comparison research, and
+prioritized next steps; check the current code and newer user requests for changes.

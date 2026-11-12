@@ -13,6 +13,8 @@ This project also builds its owner's skills. AI can do much of the coding, but t
 owner should be able to inspect it, reproduce the results, explain the choices, and
 make informed changes. Start with [the code walkthrough](docs/learning.md).
 
+For Fable and future contributors, see the [product and agent roadmap](FABLE_BRIEF.md).
+
 ## Milestone 01: a small, working foundation
 
 - A standalone desktop chat window for one provisional character.
