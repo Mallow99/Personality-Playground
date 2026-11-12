@@ -4,6 +4,7 @@ const $ = (id) => document.getElementById(id);
 let config;
 let current = null;
 let busy = false;
+let activeJob = null;
 let loading = false;
 let status = null;
 let selectedProfile = "academic";
@@ -54,7 +55,9 @@ async function startAvatar() {
         return;
       }
       avatarState = state;
-      document.body.dataset.theme = state.profile;
+      // Ignore a stale overlay poll while a character switch is still being acknowledged.
+      const desired = activeProfile().id === "companion" ? "academic" : activeProfile().id;
+      if (state.profile === desired) document.body.dataset.theme = state.profile;
       $("corner-companion").hidden =
         !state.visible || !$("mirror-avatar").checked;
       $("sidebar-avatar").hidden = !$("corner-companion").hidden;
@@ -139,6 +142,10 @@ function updateControls() {
   $("allow-project").disabled = locked || !config?.tools.project_files;
   $("allow-web").disabled = locked || !config?.tools.web_search;
   $("allow-avatar").disabled = locked;
+  $("use-memory").disabled = locked;
+  $("stream-reply").disabled = locked;
+  $("allow-research").disabled = locked;
+  $("cancel-generation").hidden = !busy || !activeJob;
   $("avatar-pose").disabled = locked;
   document
     .querySelectorAll(".conversation-item, [data-prompt]")
@@ -282,6 +289,10 @@ function render() {
         "Earlier messages omitted from context",
         String(p.context_messages_omitted),
       );
+      if (p.memory_records?.length)
+        addDefinition(list, "Saved memory references", JSON.stringify(p.memory_records, null, 2));
+      if (p.generation_settings)
+        addDefinition(list, "Generation settings", JSON.stringify(p.generation_settings, null, 2));
       details.append(list);
       article.append(details);
     }
@@ -382,6 +393,34 @@ async function refreshStatus() {
   }
 }
 
+async function waitForReply(job, pending) {
+  activeJob = job.id;
+  updateControls();
+  while (true) {
+    job = await api(`/jobs/${job.id}`);
+    if (job.state === "succeeded")
+      return api(`/conversations/${job.conversation_id}`);
+    if (["failed", "interrupted", "cancelled"].includes(job.state))
+      throw new Error(job.error || "Reply cancelled. No completed reply was saved.");
+    pending.textContent = job.partial || (job.state === "queued"
+      ? "Queued — waiting for the current reply…"
+      : "Working on your reply…");
+    await new Promise((resolve) => setTimeout(resolve, 250));
+  }
+}
+
+$("cancel-generation").addEventListener("click", async () => {
+  if (!activeJob) return;
+  $("cancel-generation").disabled = true;
+  try {
+    await api(`/jobs/${activeJob}/cancel`, { method: "POST" });
+  } catch (error) {
+    showError(error);
+  } finally {
+    $("cancel-generation").disabled = false;
+  }
+});
+
 $("chat-form").addEventListener("submit", async (event) => {
   event.preventDefault();
   const content = $("message").value.trim();
@@ -399,15 +438,20 @@ $("chat-form").addEventListener("submit", async (event) => {
       });
       rememberConversation(current.id);
     }
-    current = await api(`/conversations/${current.id}/messages`, {
+    const job = await api(`/conversations/${current.id}/jobs`, {
       method: "POST",
       body: JSON.stringify({
         content,
         project_tools: $("allow-project").checked,
         web_search: $("allow-web").checked,
         avatar_tools: $("allow-avatar").checked,
+        use_memory: $("use-memory").checked,
+        research_tools: $("allow-research").checked,
+        stream_reply: $("stream-reply").checked,
+        request_id: crypto.randomUUID(),
       }),
     });
+    current = await waitForReply(job, pending);
     $("message").value = "";
     render();
     await refreshList();
@@ -416,8 +460,10 @@ $("chat-form").addEventListener("submit", async (event) => {
   } finally {
     pending.remove();
     busy = false;
+    activeJob = null;
     $("allow-project").checked = false;
     $("allow-web").checked = false;
+    $("allow-research").checked = false;
     updateControls();
     $("message").focus();
   }
@@ -590,12 +636,32 @@ async function init() {
     $("tool-capabilities").textContent =
       `Project files: ${config.tools.project_files ? "enabled" : "not configured"}. Web search: ${config.tools.web_search ? "enabled" : "not configured"}. ${config.tools.detail}`;
     const conversations = await refreshList();
-    const saved = rememberedConversation();
+    const saved = new URLSearchParams(location.search).get("conversation") || rememberedConversation();
     if (!fromUrl && saved && conversations.some((c) => c.id === saved))
       current = await api(`/conversations/${saved}`);
     render();
     await refreshList();
     refreshStatus();
+    if (current) {
+      const jobs = await api(`/jobs?conversation_id=${encodeURIComponent(current.id)}`);
+      const unfinished = jobs.find((job) => ["queued", "running"].includes(job.state));
+      if (unfinished) {
+        busy = true;
+        $("message").value = unfinished.input_content;
+        const pending = node("div", "pending", "Reconnecting to your reply…");
+        $("messages").append(pending);
+        try {
+          current = await waitForReply(unfinished, pending);
+          $("message").value = "";
+          render();
+          await refreshList();
+        } finally {
+          pending.remove();
+          busy = false;
+          activeJob = null;
+        }
+      }
+    }
   } catch (error) {
     showError(error);
   } finally {

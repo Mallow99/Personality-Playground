@@ -32,6 +32,8 @@
       <button id="new-chat" class="new-chat">
         <span>＋</span> New conversation
       </button>
+      <a class="studio-link" href="/handler">Handler & memory <span>→</span></a>
+      <a class="studio-link" href="/library">Research library <span>→</span></a>
       <div class="section-label">
         YOUR CONVERSATIONS <span id="conversation-count">0</span>
       </div>
@@ -48,7 +50,7 @@
           </div>
         </div>
         <div class="version">
-          <span>BFI / v0.1</span><span>FOUNDATION</span>
+          <span>BFI / v0.2</span><span>LOCAL HANDLER</span>
         </div>
       </div>
     </aside>
@@ -149,6 +151,11 @@
                   >Enter to send <span>·</span> Shift + Enter for a new
                   line</span
                 ><button
+                  id="cancel-generation"
+                  type="button"
+                  class="text-button"
+                  hidden
+                >Cancel reply</button><button
                   id="send"
                   type="submit"
                   aria-label="Send message"
@@ -163,6 +170,9 @@
               ><span>Take it one step at a time.</span>
             </div>
             <div class="tool-permissions">
+              <label><input id="stream-reply" type="checkbox" checked /> Live reply preview</label>
+              <label><input id="use-memory" type="checkbox" checked /> Saved memory</label>
+              <label><input id="allow-research" type="checkbox" /> Research lookup</label>
               <label
                 ><input id="allow-avatar" type="checkbox" checked /> Model
                 avatar poses</label
@@ -248,11 +258,11 @@
             ><small>No personality training yet.</small>
           </div>
           <div class="character-fact">
-            <span>MEMORY / MILESTONE 01</span
-            ><strong>Conversation history</strong
+            <span>SAVED KNOWLEDGE</span
+            ><strong>History & saved memory</strong
             ><small
-              >Recent turns are sent for context. Cross-chat memory comes
-              later.</small
+              >Recent turns and permitted saved memories can inform a reply.
+              Inspect or correct memory in the handler.</small
             >
           </div>
           <details class="prompt-details">

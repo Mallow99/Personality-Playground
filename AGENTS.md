@@ -1,5 +1,18 @@
 # Project working agreement
 
+**Memory/personality follow-up (2026-11-12): the owner asked for a sleep/consolidation
+workflow and editable personality settings, and explicitly asked to reuse existing
+work. LangMem now generates typed review proposals; SQLite retains revisions,
+lineage and undo. See `docs/handler.md` and `research/tooling/memory-sleep-2026-11-12.md`.
+Personality scaffolds remain provisional, and the separate weight-training goal
+remains central. Do not describe simulated model reviews as real inference.**
+
+**Handler work (2026-11-11): the owner delegated provisional tooling choices and
+requested implementation. Read `docs/handler.md` and the new handler section in
+`docs/HANDOFF.md`. The research reports/source catalog are in `research/tooling/`
+and a private Notion library. This authorization covers functional handler work;
+the visual pause below still applies.**
+
 **Latest owner decision: V5 visual quality is rejected as a significant regression
 across the board. Visual work is paused for a new-chat handoff. Read
 `docs/HANDOFF.md` first. Do not treat earlier completion reports/tests or candidate

@@ -1,0 +1,34 @@
+[
+  {
+    "id": "full-stack-2026-11-11",
+    "title": "Full AI tooling stack \u2014 inference, optimization, tools, training and operations",
+    "category": "architecture",
+    "file": "full-stack-2026-11-11.md",
+    "source": "research/tooling/full-stack-2026-11-11.md",
+    "reviewed_at": "2026-11-11"
+  },
+  {
+    "id": "memory-2026-11-11",
+    "title": "Memory systems \u2014 comparisons and supporting tools",
+    "category": "memory",
+    "file": "memory-2026-11-11.md",
+    "source": "research/tooling/memory-2026-11-11.md",
+    "reviewed_at": "2026-11-11"
+  },
+  {
+    "id": "source-catalog-2026-11-11",
+    "title": "AI tooling \u2014 source catalog and evidence",
+    "category": "sources",
+    "file": "sources-2026-11-11.md",
+    "source": "research/tooling/sources-2026-11-11.md",
+    "reviewed_at": "2026-11-11"
+  },
+  {
+    "id": "memory-sleep-2026-11-12",
+    "title": "Memory sleep \u2014 existing approaches and the BFI integration",
+    "category": "memory",
+    "file": "memory-sleep-2026-11-12.md",
+    "source": "research/tooling/memory-sleep-2026-11-12.md",
+    "reviewed_at": "2026-11-12"
+  }
+]

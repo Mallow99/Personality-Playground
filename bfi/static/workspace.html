@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BFI · Handler and research</title>
+  <link rel="icon" href="/static/mark.svg" />
+  <link rel="stylesheet" href="/static/workspace.css" />
+  <script type="module" src="/static/workspace.js"></script>
+</head>
+<body>
+  <header><a class="brand" href="/">Best Friend Initiative</a>
+    <nav aria-label="Workspace"><a href="/">Chat</a><a href="/handler">Handler & memory</a>
+      <a href="/library">Research library</a><a href="/personalities">Personalities</a></nav></header>
+  <main>
+    <p class="eyebrow">YOUR LOCAL WORKSPACE</p>
+    <h1 id="page-heading">Handler & memory</h1>
+    <p class="intro">One place to connect your models, keep useful knowledge, and pick up where you left off.</p>
+    <p id="notice" role="status" hidden></p>
+    <section id="handler-section">
+      <div class="section-top"><h2>Model connections</h2><button id="check-connections">Check connections</button></div>
+      <div id="connections" class="cards"></div>
+      <details class="panel"><summary>Prepare a connection</summary>
+        <p>Start your chosen model server separately. Download these settings, review the model ID, then copy them into .env and restart BFI. Existing chats keep their model identity.</p>
+        <form id="connection-form" class="form-grid">
+          <label>Runtime<select id="runtime"></select></label>
+          <label>Model ID<input id="model-id" maxlength="300" placeholder="The exact ID advertised by your server" required /></label>
+          <button type="submit">Download connection settings</button>
+        </form>
+        <pre id="connection-preview"></pre>
+        <p class="muted">This prepares settings; it does not install a server, download weights, or verify a trained adapter.</p>
+      </details>
+      <section class="panel"><div class="section-top"><h2>Generation queue</h2><button id="refresh-jobs">Refresh</button></div>
+        <p class="muted">One reply at a time. You can cancel work here or in chat. Interrupted jobs are kept for inspection and never replayed automatically.</p>
+        <div id="jobs"></div>
+      </section>
+      <section class="panel"><div class="section-top"><h2>Saved memory</h2><button id="export-memory">Export memories</button></div>
+        <p>Save facts, preferences, and decisions you want the characters to recall. Shared records are available to all characters; a character record stays within that character's context.</p>
+        <form id="memory-form" class="form-grid">
+          <input id="memory-id" type="hidden" />
+          <label>Memory<textarea id="memory-content" maxlength="2000" rows="3" required></textarea></label>
+          <label>Source or reason<input id="memory-source" maxlength="1000" placeholder="For example: my correction today, or a project note" required /></label>
+          <label>Scope<select id="memory-scope"><option value="shared">Shared</option><option value="academic">Academic</option><option value="engineering">Coding / security</option><option value="business">Business</option><option value="companion">Original draft</option></select></label>
+          <label>Kind<select id="memory-kind"><option value="fact">Fact</option><option value="preference">Preference</option><option value="decision">Decision</option><option value="experience">Experience</option></select></label>
+          <label>Importance<select id="memory-importance"><option value="1">1 · Low</option><option value="2">2</option><option value="3" selected>3 · Normal</option><option value="4">4</option><option value="5">5 · High</option></select></label>
+          <label>Recall keywords<input id="memory-keywords" maxlength="480" placeholder="Up to 8 alternate words, separated by commas" /></label>
+          <div><button id="save-memory" type="submit">Save memory</button><button id="clear-memory" type="button" class="secondary">Clear form</button></div>
+        </form>
+        <label class="filter-label">Show records<select id="memory-filter"><option value="">All scopes</option><option value="shared">Shared</option><option value="academic">Academic</option><option value="engineering">Coding / security</option><option value="business">Business</option></select></label>
+        <div id="memories" class="cards"></div>
+        <p class="muted">Corrections preserve earlier versions in export. Forget removes the saved memory family, linked consolidations and related review drafts. Past conversations, tool traces, backups and earlier exports are separate records. No automatic chat extraction or weight training runs here.</p>
+        <details><summary>Test recall</summary>
+          <p class="muted">Check current shared and character records using their text and alternate keywords.</p>
+          <form id="recall-form" class="form-grid"><label>Search<input id="recall-query" maxlength="300" required /></label><label>Character<select id="recall-profile"><option value="academic">Academic</option><option value="engineering">Engineering</option><option value="business">Business</option></select></label><button type="submit">Test recall</button></form>
+          <div id="recall-results" class="cards"></div>
+        </details>
+      </section>
+      <section class="panel" id="sleep-section">
+        <div class="section-top"><h2>Memory sleep</h2><button id="refresh-sleep" class="secondary">Refresh review</button></div>
+        <p>Give saved memories a quiet review: combine duplicates, suggest clearer wording and search keywords, and flag contradictions. Original sources stay inspectable, and applied changes can be undone.</p>
+        <p class="muted">Powered by LangMem when a real model with structured tool calls is connected. Without one, exact-duplicate cleanup still works. A consistency review cannot establish whether a real-world fact is true.</p>
+        <form id="sleep-settings-form" class="form-grid">
+          <label class="check"><input type="checkbox" id="sleep-enabled" /> Sleep automatically while idle</label>
+          <label class="check"><input type="checkbox" id="sleep-model-review" /> Include model-assisted review</label>
+          <label class="check"><input type="checkbox" id="sleep-auto-merge" /> Apply exact duplicate merges automatically</label>
+          <label>Wait after activity (minutes)<input type="number" id="sleep-idle" min="1" max="1440" required /></label>
+          <label>Minimum time between automatic passes (minutes)<input type="number" id="sleep-interval" min="5" max="10080" required /></label>
+          <label>Model review records per pass<input type="number" id="sleep-limit" min="2" max="100" required /></label>
+          <label>Review output token limit<input type="number" id="sleep-tokens" min="128" max="4096" required /></label>
+          <label>Shared-memory reviewer<select id="sleep-reviewer"><option value="academic">Academic connection</option><option value="engineering">Engineering connection</option><option value="business">Business connection</option></select></label>
+          <div><button type="submit">Save sleep settings</button><button type="button" id="run-sleep">Sleep now</button><button type="button" id="stop-sleep" class="secondary">Stop sleep</button></div>
+        </form>
+        <p class="muted">Chat interrupts sleep and has priority. Private memories are reviewed only through their own character's connection. Model suggestions wait here for review; ambiguous conflicts need your resolution.</p>
+        <div id="sleep-runs" role="status"></div>
+        <h3>Changes and suggestions</h3><div id="sleep-proposals" class="cards"></div>
+      </section>
+    </section>
+    <section id="personality-section" class="panel">
+      <div class="section-top"><h2>Character personalities</h2><button id="export-personalities" class="secondary">Export personalities</button></div>
+      <p>Starting points for Academic, Engineering and Business. We can craft their full personalities later; these settings give each one a separate, editable place to grow.</p>
+      <p class="muted">Saved settings apply to new chats. Existing conversations keep their personality snapshot. These are provisional prompt settings, not trained model weights, and do not grant tool permissions.</p>
+      <div id="personality-cards" class="cards"></div>
+      <label class="filter-label">Edit character<select id="personality-profile"><option value="academic">Academic</option><option value="engineering">Engineering</option><option value="business">Business</option></select></label>
+      <p id="personality-version" class="muted"></p>
+      <form id="personality-form"><div id="personality-fields" class="form-grid"></div>
+        <button type="submit" id="save-personality">Save personality</button><button type="button" id="preview-personality" class="secondary">Preview prompt</button>
+      </form>
+      <details id="personality-preview"><summary>Actual prompt preview</summary><pre id="personality-prompt"></pre></details>
+      <details><summary>Saved revisions</summary><div id="personality-history"></div></details>
+    </section>
+    <section id="library-section">
+      <div class="section-top"><h2>Research library</h2><button id="export-research">Export library</button></div>
+      <p>Search across saved reports and their source catalog. Keep individual reports for a future combined report. Published capabilities remain separate from measurements on your PC.</p>
+      <form id="research-form" class="search-form"><label for="research-query" class="sr-only">Search research</label><input id="research-query" type="search" maxlength="300" placeholder="Try inference, quantization, voice, training, or a tool name" /><button type="submit">Search</button></form>
+      <p id="search-status" role="status"></p>
+      <div id="research-results" class="cards"></div>
+      <h3>Saved reports and source catalog</h3><div id="documents" class="cards"></div>
+      <article id="report" class="panel" hidden><div class="section-top"><h2 id="report-title"></h2><button id="close-report" class="secondary">Close report</button></div><p id="report-source" class="muted"></p><pre id="report-content" class="report-content"></pre></article>
+      <details class="panel"><summary>Add a report or research note</summary>
+        <form id="report-form" class="form-grid">
+          <label>Title<input id="new-report-title" maxlength="200" required /></label>
+          <label>Topic<input id="new-report-category" maxlength="80" placeholder="For example: inference or training" required /></label>
+          <label>Source<input id="new-report-source" maxlength="1500" placeholder="URL, filename, or conversation reference" required /></label>
+          <label>Review date<input id="new-report-date" type="date" required /></label>
+          <label>Report text<textarea id="new-report-content" rows="10" maxlength="200000" required></textarea></label>
+          <button type="submit">Save report</button>
+        </form>
+      </details>
+    </section>
+  </main>
+  <footer>Local storage · Replaceable model connections · Saved sources and visible results</footer>
+</body>
+</html>
