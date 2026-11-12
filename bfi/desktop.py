@@ -83,7 +83,7 @@ class DesktopApp:
 
         self.render()
         self.run_task("Loading conversations…", service.conversations, self.loaded)
-        root.after(POLL_MS, self.poll)
+        self.poll_timer = root.after(POLL_MS, self.poll)
 
     # --- Worker thread plumbing -------------------------------------------------------
 
@@ -115,7 +115,7 @@ class DesktopApp:
             # Reschedule even if a callback raised, or the window would stop responding
             # to finished work for the rest of the session.
             if not self.closed:
-                self.root.after(POLL_MS, self.poll)
+                self.poll_timer = self.root.after(POLL_MS, self.poll)
 
     def finish(self, done, result, error):
         self.busy = None
@@ -297,6 +297,7 @@ class DesktopApp:
         ):
             return
         self.closed = True
+        self.root.after_cancel(self.poll_timer)
         self.root.destroy()
 
 

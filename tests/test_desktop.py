@@ -51,29 +51,34 @@ def idle(app):
     return lambda: not app.busy
 
 
-def make_root():
+@pytest.fixture(scope="session")
+def tk_root():
+    """One Tk interpreter for the whole run, as in the real app. Creating and destroying
+    many interpreters in one process fails intermittently on Windows."""
     try:
-        return tk.Tk()
+        root = tk.Tk()
     except tk.TclError as exc:
         if REQUIRE_TK:
             raise
         pytest.skip(f"No display for Tk: {exc}")
+    root.withdraw()
+    yield root
+    root.destroy()
 
 
 @pytest.fixture(autouse=True)
 def tk_objects_die_on_the_main_thread():
-    """Tcl aborts the process if an old Tk interpreter is garbage-collected on a worker
-    thread, so collect leftovers here, on the main thread, around every test."""
+    """Tk objects must not be garbage-collected on a worker thread, so collect
+    leftovers here, on the main thread, around every test."""
     gc.collect()
     yield
     gc.collect()
 
 
 @pytest.fixture
-def app(settings):
-    root = make_root()
+def app(settings, tk_root):
     backend = GateBackend()
-    window = desktop.DesktopApp(root, ChatService(settings, backend))
+    window = desktop.DesktopApp(tk.Toplevel(tk_root), ChatService(settings, backend))
     window.backend, window.errors, window.answers = backend, [], []
     window.show_error = window.errors.append
     window.confirm = lambda *_: window.answers.pop(0)
@@ -82,7 +87,7 @@ def app(settings):
     backend.release.set()
     if not window.closed:
         pump(window, idle(window))
-        root.destroy()
+        window.close()
 
 
 def write(app, text):
@@ -204,7 +209,9 @@ def test_archived_conversation_is_labelled_and_send_explains(app, settings):
     assert draft(app) == "Continue?"
 
 
-def test_unexpected_errors_are_reported_and_the_window_keeps_working(app, capsys):
+def test_unexpected_errors_are_reported_and_the_window_keeps_working(
+    app, tk_root, capsys, monkeypatch
+):
     def explode():
         raise KeyError("label")
 
@@ -214,7 +221,7 @@ def test_unexpected_errors_are_reported_and_the_window_keeps_working(app, capsys
     assert "KeyError" in capsys.readouterr().err
 
     reported = []
-    app.root.report_callback_exception = lambda *exc: reported.append(exc)
+    monkeypatch.setattr(tk_root, "report_callback_exception", lambda *exc: reported.append(exc))
     app.run_task("Testing…", lambda: 1, lambda _: 1 / 0)  # a bug inside a UI callback
     pump(app, lambda: reported)
     write(app, "Still alive")
@@ -223,7 +230,7 @@ def test_unexpected_errors_are_reported_and_the_window_keeps_working(app, capsys
     assert draft(app) == "" and len(app.service.conversations()) == 1
 
 
-def test_startup_problem_is_shown_instead_of_a_bare_traceback(monkeypatch):
+def test_startup_problem_is_shown_instead_of_a_bare_traceback(tk_root, monkeypatch):
     shown = []
 
     def broken():
@@ -231,6 +238,6 @@ def test_startup_problem_is_shown_instead_of_a_bare_traceback(monkeypatch):
 
     monkeypatch.setattr(desktop.ChatService, "from_env", staticmethod(broken))
     monkeypatch.setattr(desktop.messagebox, "showerror", lambda *args, **_: shown.append(args))
-    make_root().destroy()  # skips here when there is no display
+    monkeypatch.setattr(desktop.tk, "Tk", lambda: tk.Toplevel(tk_root))
     assert desktop.main() == 1
     assert "BFI_BACKEND must be mock or openai." in shown[0][1]
