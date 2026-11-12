@@ -5,6 +5,13 @@ not claims about trained traits, independent experience, or tools already availa
 E remains the selected visual baseline. Names remain open. The voices in the current
 chat configuration have not been changed by the visual proof.
 
+The current [personality workshop drafts](personality-drafts.md) develop the owner's
+latest brief: Olive is their suggested Academic name; Violet and Slate are proposed
+color names for Hacker and Business. These are discussion drafts, not activated
+profiles or trained traits. The staged direction is prompts and curated experience
+first, then evaluating LoRA/QLoRA against the starting model for personality and
+competence. The original training ambition remains in place.
+
 All three should have interests, judgment, relationships, humor, contradictions, and
 ways to reconsider a belief. Their expertise is one part of their identity. Keep
 behavior consistent across ordinary conversation, uncertainty, disagreement, and

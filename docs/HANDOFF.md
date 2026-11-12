@@ -1,5 +1,22 @@
 # Handoff: local handler and paused visual work
 
+## Personality workshop drafts
+
+The owner now wants to build the three personalities together before training.
+Read [personality-drafts.md](personality-drafts.md): their suggested Academic name
+is Olive; Violet (Hacker) and Slate (Business) are assistant-proposed color names.
+The drafts develop eccentric teacher/writer, sassy technical partner and serious
+coordinator directions. Names and elaborations remain open for discussion.
+
+The owner dislikes dialogue or exposed reasoning that narrates reading persona
+instructions. The drafts call for natural task-facing speech, not repeated role
+introductions, forced mannerisms or fabricated memories. Prompts still condition
+the model; this is not proof the traits are learned or control over internal thought.
+No runtime personalities were activated, model training performed, or artwork changed
+in this workshop. Stable approved behavior may later inform a curated LoRA/QLoRA
+dataset; raw memories and model-generated preferences are not automatically training
+data. Capability regressions and the exact starting model still need evaluation.
+
 ## Memory sleep and personality controls (2026-11-12)
 
 The owner requested smarter recall, sleep-time consolidation/correction, and a
