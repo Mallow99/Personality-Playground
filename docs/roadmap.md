@@ -1,17 +1,15 @@
-# Brief for Fable: build a capable local AI companion
+# Roadmap: a capable local AI companion
 
-**Purpose:** give Fable and future contributors the owner's product direction, an
-honest picture of the starting point, comparable projects to investigate, and a
-prioritized roadmap. This is a living brief, not a claim that the proposed features
-already exist or an instruction to implement the whole roadmap in one pass.
+**Purpose:** the owner's product direction, an honest picture of where the code is,
+comparable projects to learn from, and the order of work. It began as a brief written
+for one review session on November 12, 2026 and is now the standing roadmap. It does
+not claim that proposed features exist.
 
-**Read first:** [working agreement](AGENTS.md), [README](README.md),
-[vision](docs/vision.md), [architecture](docs/architecture.md),
-[training plan](docs/training.md), [hardware notebook](docs/hardware.md), and
-[verification](docs/verification.md). Inspect the current code and Git status before
-changing anything; the repository may have advanced since this brief was written.
-When the documents disagree, clarify the current state from code and the owner's
-most recent direction rather than silently accepting stale text.
+**How to use it:** the concrete, ready-to-start work is in [tasks.md](tasks.md). This
+file explains why those tasks exist and what comes after them. Also read the
+[working agreement](../AGENTS.md), [architecture](architecture.md), and
+[verification notes](verification.md). When documents disagree, trust the code and the
+owner's most recent direction, then fix the stale text.
 
 ## The owner's goal
 
@@ -52,33 +50,64 @@ change into homework. Avoid Cyberpunk and Capri story spoilers in examples or da
 - The initial target is one local user, not a public multi-user service. Real local
   inference, GPU use, and AMD training need measurement on the owner's PC.
 
-## Current baseline, checked November 12, 2026
+## Current baseline on `main`, checked November 12, 2026
 
-The latest baseline when this was written is commit `a21c5f3`. Re-check HEAD and the
-code before relying on the list below.
-
-- `python -m bfi` opens a Tk standalone desktop window. It calls the FastAPI
-  application in-process through HTTPX; BFI does not start a listening web server.
-  A separately started model server may listen on loopback.
-- Conversation creation, selection, SQLite history, JSON export, deletion, a
-  provisional character snapshot, backend status, and reply provenance exist.
-- The default backend is a labeled scripted mock; the other adapter can call a
-  configured loopback OpenAI-compatible server. The real server and model have not
-  been verified on the owner's machine.
-- It has one active generation, plain text, no streaming, and approximate character
-  budgeting. The prototype runs from Python; it is not yet a packaged Windows app.
-- It does **not** yet execute tools, control the desktop, maintain general
-  cross-conversation memory, manage/load models, delegate to cloud providers, train
-  a model, update itself, or integrate the calendar.
-- Prior verification recorded 28 passing automated tests and a limited Linux desktop
-  mock/send/reopen smoke check. These are not Windows, real model, GPU, or training
-  validation. See [verification](docs/verification.md) for the actual evidence.
+- `python -m bfi` opens a Tk desktop window. The window calls a plain Python
+  `ChatService` ([bfi/service.py](../bfi/service.py)) directly; there is no web
+  server, HTTP layer, or browser anywhere in the app. A separately started model
+  server may listen on loopback.
+- Conversations, SQLite history, JSON export, deletion, one provisional character
+  snapshot per conversation, backend status, and reply provenance exist.
+- The default backend is a labeled scripted mock. The other adapter calls a
+  configured loopback OpenAI-compatible server. No real server or model has been
+  verified on the owner's machine.
+- One generation at a time, plain text, no streaming, no way to stop a reply except
+  closing the window, approximate character budgeting. It runs from Python; it is
+  not a packaged Windows app.
+- It does **not** execute tools, control the desktop, keep cross-conversation memory,
+  offer more than one character, manage models, delegate to cloud providers, train a
+  model, update itself, or read the calendar.
+- Evidence: 40 automated tests, including tests that drive the real Tk window on a
+  virtual display, and a Linux smoke run. Nothing has been run on Windows by a
+  person, against a real model, on a GPU, or for training. See
+  [verification](verification.md).
 
 The planned PC is a Windows 11 machine with an RX 7900 XTX (24 GB VRAM), 32 GB RAM,
 and a 1 TB SSD. Verify actual hardware, drivers, and stability when available. An
 approximately 27B companion model and a smaller fallback are aspirations, not proven
 fits; training feasibility is a different question from inference fit. Do not assume
 additional RAM, a Linux installation, cloud training budget, or outside funding.
+
+## Earlier work on other branches
+
+Before the app became desktop-only, about twenty commits of work were built on the
+original **browser** interface. They were never merged, and `main` restarted from the
+first commit. That work is real and tested, but it is welded to a web UI the owner has
+since ruled out, so it is a **source to port from, not something to merge**.
+
+| Branch | State | What is there |
+| --- | --- | --- |
+| `work` (draft PR #1) | Frozen. Visual work paused by the owner; the "V5" artwork was rejected. | Avatar art pipeline and 128-pose catalog (about 170 MB of assets), three character themes, an optional PySide6 transparent overlay window, browser pages. |
+| `bfi/handler-core` (draft PR #2, built on `work`) | Frozen. | Everything in `work`, plus the pieces listed below. 104 backend tests. |
+
+Worth porting from `bfi/handler-core` (read a file with
+`git show origin/bfi/handler-core:<path>`):
+
+| Piece | Source files on that branch | Where it lands |
+| --- | --- | --- |
+| Streaming replies and cancellation | `bfi/backends.py` (`complete_stream`), `bfi/jobs.py`, `tests/test_handler.py` | [Task A1](tasks.md) |
+| Three selectable character profiles | `config/profiles.json`, `bfi/config.py` (`for_profile`), `tests/test_profiles_tools.py` | [Task A3](tasks.md) |
+| Read-only project-file tools and a bounded tool loop (at most three calls) | `bfi/tools.py`, `bfi/backends.py` (`complete_with_tools`), `docs/tools.md` | [Tasks A4–A5](tasks.md) |
+| Owner-saved memory with scopes, corrections, forgetting | `bfi/knowledge.py`, `docs/handler.md` | Later; listed in tasks.md |
+| Personality settings with revisions | `bfi/personality.py` | Later |
+| Research library (SQLite FTS5) and research reports | `bfi/knowledge.py`, `research/tooling/` | Later |
+| Memory "sleep" review with LangMem | `bfi/memory_sleep.py` | Later; needs a real tool-capable model first |
+| Character directions and personality drafts | `docs/character-directions.md`, `docs/personality-drafts.md` | Already copied to `main` |
+
+Rules for porting: copy the logic and its tests, not the FastAPI routes, the
+JavaScript, or the asyncio job queue. Port one piece per change. Do not merge or
+rebase those branches into `main`, and do not copy the avatar assets while visual
+work is paused. The branch's own `docs/HANDOFF.md` records the owner's art feedback.
 
 ## What to learn from other products
 
@@ -209,7 +238,7 @@ source control and locally installed/running app data are separate things.
 
 ### 6. Personality training, voice, and identity
 
-- Preserve [the training plan](docs/training.md): choose a narrow research question,
+- Preserve [the training plan](training.md): choose a narrow research question,
   verify hardware and serving, curate licensed/consented examples, isolate a held-out
   set, train a small adapter, compare it to the exact starting checkpoint, and verify
   the resulting artifact can be served. Keep task quality and undesired behavior in
@@ -234,52 +263,67 @@ The school deadline source of truth is Google Calendar with Canvas synchronized 
 it. A future read-only integration should show real data, source and freshness, and
 sync failures. Do not invent deadlines or assume Canvas sync is working.
 
-## Proposed order and completion evidence
+## Order of work and completion evidence
 
-| Priority | Milestone | Evidence needed before calling it done |
+| Priority | Milestone | Status and evidence needed before calling it done |
 | --- | --- | --- |
-| 0 | Harden the current desktop foundation | Review thread/UI lifetime, draft retention, cancellation/close behavior, concurrent access and error handling. Focused tests plus actual desktop checks; record Windows gaps. |
-| 1 | Establish actual local inference | On the owner's PC, verify exact server/model versions, successful generation, GPU use, latency, RAM/VRAM, and repeatable startup. Start small. |
-| 2 | Agent architecture and one read-only task | Select or adapt a harness; implement a bounded loop and one useful, workspace-scoped, read-only tool. Demonstrate actual result, validation, failure handling, stop/limits, and readable activity. Use a fake model for deterministic tests and a real capable model when available. |
+| 0 | Harden the desktop foundation | **Done on Linux, November 12, 2026**: service layer, draft retention, close-during-reply prompt, atomic first exchange, window tests. Still open: a person running the [Windows checklist](tasks.md). |
+| 1 | Establish actual local inference | On the owner's PC, verify exact server/model versions, successful generation, GPU use, latency, RAM/VRAM, and repeatable startup. Start small. Owner task P2. |
+| 2 | Streaming, Stop, and one read-only agent task | Tasks A1–A5: live reply text, a Stop button, a bounded tool loop, and workspace-scoped file reading with a visible record of each call. Fake model for deterministic tests; a real tool-capable model when available. |
 | 3 | Previewed changes and controlled execution | Explicitly scoped edits, diffs, checkpoints or recoverable state, and appropriate user controls. Verify denial, failure, and restoration paths. |
 | 4 | Memory, a useful integration, and model lifecycle | Real inspect/correct/delete memory, one source-grounded workflow such as calendar reading, and tested server-specific model controls. These can be separate milestones. |
-| 5 | First controlled personality adapter | A reproducible, small, held-out before/after study with saved artifact, serving proof, resource measurements, and honest results. Begin compatibility investigation early; do not wait for all app features. |
+| 5 | First controlled personality adapter | A reproducible, small, held-out before/after study with saved artifact, serving proof, resource measurements, and honest results. The compatibility gate (owner task P4) can start as soon as the PC works; do not wait for app features. |
 | 6 | Packaging and safe updates | Windows installer or equivalent, versioned releases, upgrade/rollback and data migration tests. |
-| Later | Computer use, voice, cloud delegation, richer character | Concrete user benefit, real integrations, tested permissions and provenance, hardware and provider evidence. |
+| Later | Computer use, voice, cloud delegation, richer character and visuals | Concrete user benefit, real integrations, tested permissions and provenance, hardware and provider evidence. |
 
-This sequence is a proposal; stages can overlap. For the owner's earlier rough
-planning, local inference was estimated at 2–5 engineering days plus troubleshooting;
-a narrow tool or memory feature at roughly 1–3 weeks; a first training study at
-3–8+ weeks. These are speculative ranges for one developer with AI assistance,
-not deadlines or guarantees. Windows packaging, AMD compatibility, evaluation,
-integrations, and data work may change the estimate substantially. Re-estimate after
-inspecting the chosen implementation and actual PC.
+Stages can overlap. Priorities 1 and 5 need the owner at the PC; priorities 2–4 can
+proceed in parallel without it.
 
-## First assignment for Fable: high value, bounded usage
+### The agent loop: adapt our own earlier code
 
-The owner has limited Fable 5.2 usage. Do not try to implement the entire vision in
-one session. Start by reviewing the current desktop app for high-impact correctness
-and data-safety issues, especially worker-thread/UI interactions, draft retention on
-failure, conversation persistence, closing during a generation, and test gaps.
-Compare the agent architecture to Hermes/OpenClaw/Cursor only as needed to identify
-an appropriate next seam; do not import a full framework for this first pass.
+The comparison above asks whether to integrate a framework, adapt a component, fork,
+or build. Recommendation: **adapt the bounded loop already written on
+`bfi/handler-core`**, rather than adopting Hermes Agent, OpenClaw, or Open Interpreter.
 
-Deliver in one focused session:
+- It is about 90 lines the owner already has tests for: at most three tool calls,
+  tool names checked against the set enabled for that message, argument size limits,
+  every call and result recorded with the reply, and a clear failure when the model
+  misbehaves.
+- It speaks the standard OpenAI `tools` / `tool_calls` format, which llama.cpp's
+  server supports when started with `--jinja`, as do LM Studio and Ollama. Tool-call
+  quality varies by model and chat template and has not been measured here.
+- A framework would bring its own process model, storage, and permission system into
+  an app that is under a thousand lines; that is hard to inspect and harder to explain.
+  Revisit if the loop outgrows roughly 300 lines or needs sub-agents.
+- First tool: read-only file listing and reading inside one folder the owner picks.
+  Acceptance tests and limits are in tasks A4 and A5.
+- Main risks: small local models emitting malformed tool calls (handled as a visible
+  failure, never a fabricated success), and file contents being treated as
+  instructions (tool output is data; say so in the system prompt and never grant
+  authority from it). Simulated tool calls in tests are not evidence of real model
+  performance.
 
-1. Inspect current code and existing tests. Identify a small number of verified,
-   consequential problems; distinguish observed failures from hypotheses.
-2. Fix the highest-impact issues that fit coherently in the session. Preserve the
-   desktop direction, saved data, backend distinction, and current capabilities.
-3. Add focused tests for real regression risks; exercise the UI where the environment
-   permits. Run the checks in `AGENTS.md`, state actual results and limitations, and
-   update the architecture/learning notes if the design meaningfully changes.
-4. End with a short proposal for a *separate* narrow agent-loop milestone: recommend
-   integrate/adapt/build, identify one useful read-only tool, acceptance tests, and
-   likely cost/risks. Do not call simulated tool behavior real model performance.
+## Decisions waiting on the owner
 
-If the owner instead explicitly asks Fable to implement an agent feature, follow
-that newer request. Ask only for decisions that materially block the chosen work;
-make routine implementation choices and explain them.
+These block or shape later work. Each has a recommendation; none has been acted on.
+
+1. **The old branches and draft PRs #1 and #2.** Recommendation: keep both branches
+   as an archive and close the two PRs without merging, with a link to this section.
+2. **Desktop toolkit: stay on Tk, or move to Qt (PySide6)?** Decide before any task
+   that adds a second window. Tk is built into Python and enough for chat. It cannot
+   draw SVG, has weak per-pixel transparency, and has no rich-text or Markdown view.
+   The avatar overlay on `work` already uses PySide6 for exactly those reasons. Qt is a
+   far larger dependency than anything the app has now, and its LGPL license needs
+   attention when packaging. Recommendation: if the on-screen character is still wanted, switch
+   before building more windows; the window code is about 300 lines today and all
+   logic lives in the service, so the switch is cheap now and expensive later.
+3. **One character or three.** `main` has one provisional "Companion". The newer
+   direction is three specialists; see [character-directions.md](character-directions.md)
+   and [personality-drafts.md](personality-drafts.md). Task A3 adds the mechanism
+   with the provisional profiles; activating the Olive/Violet/Slate drafts is the
+   owner's call.
+4. **Project license.** None is chosen. Needed before reusing code with obligations
+   or inviting contributions.
 
 ## Sources and follow-up research
 

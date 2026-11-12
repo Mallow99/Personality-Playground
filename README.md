@@ -13,7 +13,8 @@ This project also builds its owner's skills. AI can do much of the coding, but t
 owner should be able to inspect it, reproduce the results, explain the choices, and
 make informed changes. Start with [the code walkthrough](docs/learning.md).
 
-For Fable and future contributors, see the [product and agent roadmap](FABLE_BRIEF.md).
+Where the project is going: the [roadmap](docs/roadmap.md). Work that is ready to
+start, written so it can be handed to an AI model: the [task cards](docs/tasks.md).
 
 ## Milestone 01: a small, working foundation
 
@@ -89,7 +90,7 @@ take priority over `.env`. Relative paths resolve from the repository root.
    BFI_MODEL=local-model
    ```
 
-4. Restart the app, open the backend status panel, and check the connection. The
+4. Restart the app and click **Check backend**. The
    configured model must match a server ID or alias. A successful `/models` check
    establishes reachability, not successful generation. Send a short message to test
    generation, then inspect its source information.
@@ -113,12 +114,14 @@ computes. It records the requested ID and the server-reported ID separately, wit
 | Why these components were chosen           | [Architecture and decisions](docs/architecture.md) |
 | Character name, description, and prompt    | [config/character.json](config/character.json)     |
 | Endpoint, model, and context limits        | [.env.example](.env.example)                       |
-| Desktop window and message flow            | [bfi/desktop.py](bfi/desktop.py)                   |
-| Internal application routes                | [bfi/main.py](bfi/main.py)                         |
+| Desktop window, worker thread, dialogs     | [bfi/desktop.py](bfi/desktop.py)                   |
+| Application rules, with no window code     | [bfi/service.py](bfi/service.py)                   |
 | Real server requests and the mock          | [bfi/backends.py](bfi/backends.py)                 |
 | SQLite tables and persistence              | [bfi/store.py](bfi/store.py)                       |
 | Hardware checks and compatibility evidence | [Hardware notes](docs/hardware.md)                 |
-| Larger ambition and next milestones        | [Project vision](docs/vision.md)                   |
+| Larger ambition                            | [Project vision](docs/vision.md)                   |
+| Order of work and open decisions           | [Roadmap](docs/roadmap.md)                         |
+| What to build next, card by card           | [Task cards](docs/tasks.md)                        |
 | First controlled training experiment       | [Training plan](docs/training.md)                  |
 
 ## Verify it
@@ -130,13 +133,17 @@ uv run --locked ruff check .
 uv run --locked ruff format --check .
 ```
 
-The automated suite uses temporary databases and fake HTTP responses to test the API
-contract, persistence, context selection, provenance, and failure handling. It does
-not download or exercise a model. GitHub Actions runs these checks on Windows and
-Linux. See [verification notes](docs/verification.md) for what was actually run here.
+On Linux the window tests need a display; without one they are skipped. To run them
+anyway, use a virtual display: `xvfb-run -a uv run --locked pytest`.
 
-The desktop uses an in-process application interface and does not open a listening
-web server. See [verification notes](docs/verification.md) for tested scope.
+The suite uses temporary databases and simulated model-server responses to test
+persistence, context selection, provenance, failure handling, and the real Tk window
+(sending, failures, draft retention, closing mid-reply). It does not download or
+exercise a model. GitHub Actions runs the same checks on Windows and Linux for every
+push. See [verification notes](docs/verification.md) for what was actually run and
+what still needs a person at a Windows PC.
+
+The app contains no web server and opens no listening port.
 
 ## Data and current limits
 
@@ -152,8 +159,12 @@ be sent; per-reply provenance reports omissions. Character counts and pair limit
 are approximate guards, not model-specific token budgeting. Context overflow can
 still happen; reduce the limits if your server rejects requests.
 
+Only complete exchanges are saved. If a reply fails, nothing is written and your
+draft stays in the message box. If you close the window while a reply is being
+generated, the message you sent is discarded; the app asks before closing.
+
 One app process, one active generation, non-streaming text, and one local user are
-intentional limits. Replies display as plain text. The desktop app is intended for one
+intentional limits. There is no Stop button yet. Replies display as plain text. The desktop app is intended for one
 local user, not shared or public deployment.
 The app does not start, load, or unload model servers. Stop the separate inference
 process to release its model; merely closing this UI does not free VRAM.

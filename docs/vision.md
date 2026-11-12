@@ -9,8 +9,12 @@ System prompts and application features are supporting layers, not a quiet chang
 
 Two appealing directions are a helpful, opinionated, responsible character with a
 somewhat serious Jarvis feel, and a helpful, sassy, expressive character with a more
-cyberpunk identity. Neither is chosen yet. The initial “Companion” configuration and
-green geometric artwork are provisional scaffolding, not a final character decision.
+cyberpunk identity. Neither is chosen as the final character. The owner's later
+direction develops this into three specialists (Academic, Hacker, and Business), with
+draft personalities recorded in [character-directions.md](character-directions.md) and
+[personality-drafts.md](personality-drafts.md). Those are discussion drafts. The app
+itself still ships one provisional “Companion” configuration, which is scaffolding,
+not a character decision.
 Avoid Cyberpunk and Capri story spoilers in character design, examples, and datasets.
 
 Practical competence matters alongside personality. A character may specialize in a
@@ -46,16 +50,9 @@ of truth; an AI-generated date is not a replacement for that source.
 Memory supports the trained personality. Long-term development may involve curated
 training updates; individual conversations should not automatically edit weights.
 
-## Incremental route
+## Route
 
-| Stage                                       | Useful result                                                 | Evidence before calling it complete                                             |
-| ------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| 01 — foundation                             | Chat, history, config, backend status                         | Desktop and application checks; explicit mock/local distinction                         |
-| 02 — actual local inference                 | One model on the delivered PC; a smaller fallback             | Recorded versions, correct GPU use, latency, RAM/VRAM, repeatable launch        |
-| 03 — first controlled training study        | Small personality adapter and honest before/after comparison  | Complete experiment record, holdout evaluation, served adapter, base comparison |
-| 04 — inspectable memory and one useful tool | Correctable facts and a grounded narrow workflow              | Source records, deletion behavior, real tool failures, freshness                |
-| 05 — supported frontier help and lifecycle  | Visible delegation limits and usable model switching          | Per-result provenance, usage accounting, measured release/reload behavior       |
-| Later                                       | Voice, richer identity, more characters, larger training runs | Clear user benefit and measured hardware feasibility                            |
-
-Stages can overlap when justified. Do not assume the purchased hardware is stable,
-RAM upgrades are worthwhile, or school funding is available before checking.
+The ordered milestones, the evidence each needs, and the decisions still open are in
+the [roadmap](roadmap.md). Work that is ready to start is in the [task cards](tasks.md).
+Do not assume the purchased hardware is stable, RAM upgrades are worthwhile, or school
+funding is available before checking.
