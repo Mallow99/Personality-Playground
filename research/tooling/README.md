@@ -12,6 +12,8 @@ that every researched tool is installed or tested. The review date is
 - [Source catalog](sources-2026-11-11.md): 168 documentation/repository URLs and
   recorded source hashes. Links may change; hashes describe captured research
   evidence, not current upstream behavior or local performance.
+- [Memory sleep follow-up](memory-sleep-2026-11-12.md): Letta, Mem0 Dream and
+  LangMem comparison, reused library, application boundaries and verification.
 
 `bundle.json` is the versioned import manifest. At app startup,
 `bfi/knowledge.py` indexes its documents into `data/knowledge.sqlite3` using

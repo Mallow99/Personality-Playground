@@ -15,6 +15,8 @@ from bfi.backends import BackendError, MockBackend, OpenAIBackend
 from bfi.config import ROOT, Character, Settings
 from bfi.jobs import JobManager
 from bfi.knowledge import Knowledge, KnowledgeTools
+from bfi.memory_sleep import MemorySleep
+from bfi.personality import Personalities
 from bfi.store import Store
 from bfi.tools import ToolError, ToolRunner
 from bfi.workspace import MessageInput, install_workspace
@@ -90,12 +92,17 @@ def create_app(settings=None, backend=None):
     knowledge = Knowledge(
         settings.data_dir / "knowledge.sqlite3", ROOT / "research/tooling/bundle.json"
     )
+    personalities = Personalities(knowledge, {pid: c for pid, (c, _) in profiles.items()})
 
     @asynccontextmanager
     async def lifespan(app):
+        scheduler = asyncio.create_task(sleeper.scheduler(), name="bfi-sleep-scheduler")
         try:
             yield
         finally:
+            scheduler.cancel()
+            await asyncio.gather(scheduler, return_exceptions=True)
+            await sleeper.wake()
             await jobs.shutdown()
 
     app = FastAPI(
@@ -110,6 +117,7 @@ def create_app(settings=None, backend=None):
     app.state.avatar = avatar
     app.state.knowledge = knowledge
     app.state.backends = backends
+    app.state.personalities = personalities
 
     @app.middleware("http")
     async def local_browser_boundary(request: Request, call_next):
@@ -119,6 +127,9 @@ def create_app(settings=None, backend=None):
                 return JSONResponse(
                     {"detail": "Use the app from its own local browser address."}, 403
                 )
+            sleeper.last_activity = time.monotonic()
+            if request.method == "POST" and request.url.path.startswith("/api/conversations"):
+                await sleeper.wake()
         response = await call_next(request)
         response.headers["X-Content-Type-Options"] = "nosniff"
         response.headers["Referrer-Policy"] = "no-referrer"
@@ -155,7 +166,7 @@ def create_app(settings=None, backend=None):
             "profiles": [
                 {
                     "id": pid,
-                    "character": char.model_dump(),
+                    "character": personalities.snapshot(char),
                     **route.identity,
                     "adapter_label": route.adapter_label,
                     "adapter_verified": False,
@@ -167,6 +178,8 @@ def create_app(settings=None, backend=None):
             "handler": {
                 "queued_generation": True,
                 "memory": True,
+                "memory_sleep": "LangMem review and reversible duplicate consolidation",
+                "personality_settings": True,
                 "research": True,
                 "streaming": "plain replies on compatible real endpoints",
             },
@@ -212,7 +225,7 @@ def create_app(settings=None, backend=None):
     @app.post("/api/conversations", status_code=201)
     def new_conversation(payload: ConversationInput | None = None):
         char, route = get_profile(payload.profile_id if payload else "companion")
-        return store.create(char.model_dump(), route.identity)
+        return store.create(personalities.snapshot(char), route.identity)
 
     @app.post("/api/tools/inspect")
     async def inspect_tool(payload: ToolInput):
@@ -319,6 +332,9 @@ def create_app(settings=None, backend=None):
                         "usage": result["usage"],
                         "context_messages_omitted": omitted,
                         "profile_id": profile_id,
+                        "personality_revision": conversation["character"].get(
+                            "personality_revision"
+                        ),
                         "configured_adapter": route.adapter_label or None,
                         "adapter_verified": False,
                         "tool_steps": result.get("tool_steps", []),
@@ -353,8 +369,12 @@ def create_app(settings=None, backend=None):
         return await generate(cid, MessageInput.model_validate(payload), on_delta)
 
     jobs = JobManager(settings.data_dir / "jobs.sqlite3", execute_job, settings.queue_limit)
+    sleeper = MemorySleep(knowledge, profiles, generation_lock, jobs.has_pending)
+    app.state.memory_sleep = sleeper
     app.state.jobs = jobs
-    install_workspace(app, settings, profiles, backends, knowledge, jobs, get_conversation)
+    install_workspace(
+        app, settings, profiles, backends, knowledge, jobs, get_conversation, sleeper, personalities
+    )
 
     app.mount("/static", StaticFiles(directory=ROOT / "bfi/static"), name="static")
 

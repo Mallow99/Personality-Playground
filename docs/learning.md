@@ -476,3 +476,48 @@ results point to the saved report, source and review date. Reading a tool's manu
 establishes documented support; it does not show the tool running on your PC.
 The research library therefore stays broader than the installed handler. Read
 `docs/handler.md` when ready to connect a real runtime and measure what it does.
+
+## What memory sleep can and cannot learn
+
+This increment reuses LangMem rather than inventing a consolidation model.
+`langmem_review` in `bfi/memory_sleep.py` creates its typed memory manager and points
+it at the configured local endpoint. `ReviewBatch` describes what the model may
+suggest. The library returns those suggestions; application code decides how they
+can change SQLite. That boundary keeps a model-generated sentence from becoming an
+unexamined replacement for an owner fact.
+
+Three operations deserve different treatment. Two identical records can be merged
+without guessing their meaning. A paraphrase may contain a date or qualifier that
+must survive compression. A contradiction does not identify which version is true.
+Exact duplicate changes are reversible; semantic changes wait in the review page.
+A pending conflict adds a warning to retrieved evidence, rather than silently giving
+the character one chosen answer. Alternate keywords improve lexical recall, while
+importance controls which general records remain available in a limited context.
+
+The original and resulting records are linked. Applying checks that the source
+snapshot still matches current data, which prevents a delayed model response from
+overwriting a newer owner correction. Undo is similarly conditional. Forget follows
+correction/consolidation links and purges related review drafts, so the audit log
+cannot resurrect that memory. Old exported files and conversation text remain
+separate records. Export includes the local review history and source links.
+
+Sleep is an ordinary background task, not a second GPU. It uses the same generation
+lock as chat. A new chat cancels the review and takes priority. An idle timer delays
+work and limits how often it runs; it cannot run while the application is closed.
+The browser tests call the real library through a simulated HTTP server. This proves
+the wiring and lifecycle behavior, not whether a real model consolidates well.
+
+## A personality editor is a configuration layer
+
+`bfi/personality.py` provides typed fields for tone, traits, values, interests,
+relationship and speaking style, initiative, humor and boundaries. Optional fictional
+backstory and custom notes remain editable. The starting values simply make each
+character ready for the later personality discussion.
+
+Saving writes a revision rather than overwriting history. Preview shows the compiled
+prompt that will be sent to the model; restoring old settings makes another revision.
+A new conversation snapshots the active settings. An old conversation retains its
+old prompt, so later configuration does not rewrite what that conversation meant.
+This makes experiments explainable: compare which revision changed the behavior.
+None of this updates model weights. The separate personality-training experiment
+remains necessary to test whether a learned adapter can carry the desired traits.

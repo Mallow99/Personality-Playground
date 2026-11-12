@@ -33,6 +33,10 @@ make informed changes. Start with [the code walkthrough](docs/learning.md).
   reply previews for plain-text requests on SSE-compatible endpoints.
 - Owner-saved cross-conversation memory with character scopes, sources,
   corrections, forgetting, export, and a searchable research library.
+- Memory sleep using LangMem for review, reversible exact-duplicate consolidation,
+  conflict proposals, recall keywords, importance and an idle schedule that yields to chat.
+- Editable, versioned personality scaffolds for all three characters, with prompt
+  previews, export and restore. New chats snapshot the chosen revision.
 - A `/handler` setup/inspection page and `/library` research page. See the
   [handler guide](docs/handler.md) for connection presets and current boundaries.
 - A [route to the first personality-training experiment](docs/training.md), with

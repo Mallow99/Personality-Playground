@@ -161,7 +161,12 @@ def test_model_memory_search_cannot_choose_another_scope(settings):
 
 def test_library_is_searchable_and_import_survives_restart(settings):
     with client(settings) as app:
-        assert len(app.get("/api/research").json()["documents"]) == 3
+        bundled_ids = {d["id"] for d in app.get("/api/research").json()["documents"]}
+        assert {
+            "full-stack-2026-11-11",
+            "memory-2026-11-11",
+            "source-catalog-2026-11-11",
+        } <= bundled_ids
         result = app.get("/api/research", params={"q": "speculative quantization"}).json()
         assert result["results"]
         assert all(hit["source"] for hit in result["results"])
@@ -181,7 +186,8 @@ def test_library_is_searchable_and_import_survives_restart(settings):
             app.get("/api/research", params={"q": "uniqueheliotrope"}).json()["results"][0]["id"]
             == doc["id"]
         )
-        assert len(app.get("/api/research/export").json()["documents"]) == 4
+        exported_ids = {d["id"] for d in app.get("/api/research/export").json()["documents"]}
+        assert exported_ids == bundled_ids | {doc["id"]}
     with client(settings) as restarted:
         saved = restarted.get(f"/api/research/{doc['id']}").json()
         assert saved["content"] == "uniqueheliotrope inference evidence"

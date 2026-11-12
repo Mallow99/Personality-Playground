@@ -10,6 +10,8 @@ from pydantic import BaseModel, ConfigDict, Field
 
 from bfi.config import ROOT
 from bfi.jobs import QueueFull
+from bfi.memory_sleep import Keyword, ProposalAction, SleepSettings
+from bfi.personality import PersonalityChange, PersonalityRestore, PersonalitySettings
 from bfi.runtimes import catalog
 
 Scope = Literal["shared", "companion", "academic", "engineering", "business"]
@@ -37,6 +39,8 @@ class MemoryInput(BaseModel):
     scope: Scope = "shared"
     kind: Literal["fact", "preference", "decision", "experience"] = "fact"
     source: str = Field(min_length=1, max_length=1000)
+    importance: int = Field(default=3, ge=1, le=5)
+    keywords: list[Keyword] = Field(default_factory=list, max_length=8)
 
 
 class ResearchInput(BaseModel):
@@ -48,7 +52,9 @@ class ResearchInput(BaseModel):
     reviewed_at: date
 
 
-def install_workspace(app, settings, profiles, backends, knowledge, jobs, get_conversation):
+def install_workspace(
+    app, settings, profiles, backends, knowledge, jobs, get_conversation, sleeper, personalities
+):
     @app.get("/api/handler")
     async def handler():
         return {
@@ -77,6 +83,8 @@ def install_workspace(app, settings, profiles, backends, knowledge, jobs, get_co
                 "provider": "sqlite-owner-curated-v1",
                 "automatic_writes": False,
                 "character_scopes_enforced": True,
+                "consolidation_provider": "langmem",
+                "automatic_changes": "Exact duplicates only; model proposals require review.",
             },
             "research": {"provider": "sqlite-fts5-v1", "documents": len(knowledge.documents())},
             "services": {
@@ -131,6 +139,66 @@ def install_workspace(app, settings, profiles, backends, knowledge, jobs, get_co
     def remember(payload: MemoryInput):
         return knowledge.remember(**payload.model_dump())
 
+    @app.get("/api/memory/recall")
+    def recall(
+        q: str = Query(min_length=1, max_length=300),
+        profile: Literal["academic", "engineering", "business"] = "academic",
+    ):
+        return {"profile": profile, "records": knowledge.search_memories(q, profile)}
+
+    @app.get("/api/memory/sleep")
+    def sleep_status():
+        return {
+            "settings": sleeper.settings(),
+            "runs": sleeper.runs(),
+            "proposals": sleeper.proposals(),
+            "provider": "langmem",
+            "verification": "Consistency review, not external fact verification.",
+        }
+
+    @app.put("/api/memory/sleep/settings")
+    def sleep_settings(payload: SleepSettings):
+        return sleeper.configure(payload)
+
+    @app.post("/api/memory/sleep/run", status_code=202)
+    async def sleep_now():
+        try:
+            return sleeper.start()
+        except ValueError as exc:
+            raise HTTPException(409, str(exc)) from exc
+
+    @app.post("/api/memory/sleep/cancel")
+    async def cancel_sleep():
+        await sleeper.wake()
+        return {"stopped": True}
+
+    @app.post("/api/memory/proposals/{pid}/apply")
+    def apply_proposal(pid: str, payload: ProposalAction | None = None):
+        try:
+            return sleeper.apply(pid, payload)
+        except KeyError as exc:
+            raise HTTPException(404, exc.args[0]) from exc
+        except ValueError as exc:
+            raise HTTPException(409, str(exc)) from exc
+
+    @app.post("/api/memory/proposals/{pid}/undo")
+    def undo_proposal(pid: str):
+        try:
+            sleeper.undo(pid)
+            return {"undone": True}
+        except KeyError as exc:
+            raise HTTPException(404, exc.args[0]) from exc
+        except ValueError as exc:
+            raise HTTPException(409, str(exc)) from exc
+
+    @app.post("/api/memory/proposals/{pid}/dismiss")
+    def dismiss_proposal(pid: str):
+        try:
+            sleeper.dismiss(pid)
+            return {"dismissed": True}
+        except ValueError as exc:
+            raise HTTPException(409, str(exc)) from exc
+
     @app.patch("/api/memory/{mid}")
     def correct(mid: str, payload: MemoryInput):
         try:
@@ -150,6 +218,7 @@ def install_workspace(app, settings, profiles, backends, knowledge, jobs, get_co
         return {
             "format": "bfi-owner-memory-v1",
             "records": knowledge.memories(history=True, limit=None),
+            "maintenance": sleeper.export(),
             "forget_scope": "Saved memory and its corrections only. Past conversation text, "
             "tool traces and earlier exports/backups are separate records.",
         }
@@ -188,7 +257,62 @@ def install_workspace(app, settings, profiles, backends, knowledge, jobs, get_co
             raise HTTPException(404, "Saved report not found.")
         return document
 
+    @app.get("/api/personalities")
+    def personality_list():
+        return personalities.list()
+
+    @app.get("/api/personalities/export")
+    def export_personalities():
+        return {
+            "format": "bfi-personalities-v1",
+            "profiles": [
+                {"profile": p["profile"], "versions": personalities.history(p["profile"])}
+                for p in personalities.list()
+            ],
+        }
+
+    @app.get("/api/personalities/{pid}/history")
+    def personality_history(pid: str):
+        try:
+            return personalities.history(pid)
+        except KeyError as exc:
+            raise HTTPException(404, exc.args[0]) from exc
+
+    @app.post("/api/personalities/{pid}/preview")
+    def preview_personality(pid: str, payload: PersonalitySettings):
+        try:
+            return {"compiled_prompt": personalities.compile(pid, payload)}
+        except KeyError as exc:
+            raise HTTPException(404, exc.args[0]) from exc
+        except ValueError as exc:
+            raise HTTPException(422, str(exc)) from exc
+
+    @app.put("/api/personalities/{pid}")
+    def save_personality(pid: str, payload: PersonalityChange):
+        try:
+            return personalities.save(pid, payload.settings, payload.expected_revision)
+        except KeyError as exc:
+            raise HTTPException(404, exc.args[0]) from exc
+        except ValueError as exc:
+            raise HTTPException(409, str(exc)) from exc
+
+    @app.post("/api/personalities/{pid}/restore")
+    def restore_personality(pid: str, payload: PersonalityRestore):
+        try:
+            old = personalities.get(pid, payload.revision)
+            return personalities.save(
+                pid,
+                PersonalitySettings.model_validate(old["settings"]),
+                payload.expected_revision,
+                reason=f"Restored from revision {payload.revision}",
+            )
+        except KeyError as exc:
+            raise HTTPException(404, exc.args[0]) from exc
+        except ValueError as exc:
+            raise HTTPException(409, str(exc)) from exc
+
     @app.get("/handler")
     @app.get("/library")
+    @app.get("/personalities")
     def workspace():
         return FileResponse(ROOT / "bfi/static/workspace.html")

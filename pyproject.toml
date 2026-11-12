@@ -6,6 +6,8 @@ requires-python = ">=3.11"
 dependencies = [
     "fastapi>=0.115,<1",
     "httpx>=0.28,<1",
+    "langchain-openai>=1.7.4",
+    "langmem>=0.0.30",
     "python-dotenv>=1,<2",
     "uvicorn>=0.34,<1",
 ]

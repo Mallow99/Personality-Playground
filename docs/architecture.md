@@ -278,3 +278,38 @@ rolled back or deployed; v5 remains rejected and visual work remains paused.
 Backend tests and Chromium against a simulated HTTP/SSE server establish transport,
 queue, scope, persistence and browser behavior. They establish no model quality,
 GPU inference, training, real LoRA serving, voice/media or native Windows result.
+
+## Reused memory consolidation and personality controls (2026-11-12)
+
+The owner asked to reuse an existing sleep-time approach. We compared Letta dreaming,
+Mem0 Dream and LangMem, then selected LangMem's typed `create_memory_manager` behind
+a local OpenAI-compatible adapter. The source comparison and exact dependency
+versions are in `research/tooling/memory-sleep-2026-11-12.md`. Its proposal schema
+restricts outputs to source-linked merges, wording corrections, conflicts and recall
+keywords. It receives no store-writing, browsing or execution tools. LangSmith
+tracing is disabled; no hosted-model or embedding fallback is configured.
+
+Application policy stays in BFI: a persistent review log, transactionally applied
+changes, lineage and stale-source checks. Exact duplicates may merge automatically
+within the same scope/kind, retaining source records. Other model suggestions wait
+for inspection; ambiguous conflicts need explicit owner text and a reason. Valid
+pending conflicts travel with retrieved records as warnings. Undo cannot overwrite
+later edits, and forgetting purges connected consolidations and review snapshots.
+This is consistency checking against evidence, not automatic world-fact verification.
+
+The idle scheduler defaults to ten quiet minutes and at least one hour between
+attempts. It calls the library through the same async generation lock as chat and
+is preempted when chat arrives. A separate threaded reflection executor would not
+share that resource gate, so BFI keeps this small scheduling adapter. Model work is
+bounded; coverage is reported and unreviewed records are prioritized. The local
+app must be running. Interrupted work is retained but never replayed automatically.
+FTS5 adds reviewed aliases; importance influences general-context selection. There
+is still no automatic extraction from chat history or embedding service.
+
+`Personalities` stores separate structured settings and immutable revisions for the
+three profiles. It compiles them alongside the existing profile instructions.
+New conversations snapshot that compiled prompt and revision; existing chats remain
+stable. Preview, stale-save protection, restore-as-new-revision and export support
+later collaborative crafting. These provisional settings do not train weights,
+change tool permissions or establish final character identities. Tests use the
+actual LangMem library with simulated model transports; no PC inference is claimed.

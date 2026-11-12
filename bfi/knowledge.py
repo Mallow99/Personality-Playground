@@ -18,6 +18,17 @@ def match_query(value):
     return " OR ".join('"' + word + '"' for word in words)
 
 
+def memory_key(value):
+    # Preserve case and punctuation: changing either can change a fact's meaning.
+    return " ".join(value.split())
+
+
+def decode_memory(row):
+    result = dict(row)
+    result["keywords"] = json.loads(result["keywords"])
+    return result
+
+
 class Knowledge:
     def __init__(self, path: Path, bundle: Path | None = None):
         self.path = path
@@ -39,6 +50,11 @@ class Knowledge:
                     document_id UNINDEXED, section UNINDEXED, title, content
                 );
             """)
+            columns = {row[1] for row in db.execute("PRAGMA table_info(memories)")}
+            if "importance" not in columns:
+                db.execute("ALTER TABLE memories ADD COLUMN importance INTEGER NOT NULL DEFAULT 3")
+            if "keywords" not in columns:
+                db.execute("ALTER TABLE memories ADD COLUMN keywords TEXT NOT NULL DEFAULT '[]'")
         if bundle and bundle.exists():
             self.index_bundle(bundle)
 
@@ -52,7 +68,7 @@ class Knowledge:
         finally:
             db.close()
 
-    def remember(self, content, scope, kind, source, replaces=None):
+    def remember(self, content, scope, kind, source, replaces=None, importance=3, keywords=None):
         mid, timestamp = str(uuid4()), now()
         with self.connect() as db:
             # Lock before reading a revision so concurrent corrections cannot both win.
@@ -74,16 +90,33 @@ class Knowledge:
                 )
                 db.execute("DELETE FROM memory_search WHERE id=?", (replaces,))
             db.execute(
-                "INSERT INTO memories VALUES (?, ?, ?, ?, ?, ?, 'current', ?, ?)",
-                (mid, root, content, scope, kind, source, timestamp, timestamp),
+                "INSERT INTO memories "
+                "(id,root_id,content,scope,kind,source,status,created_at,updated_at,"
+                "importance,keywords) "
+                "VALUES (?, ?, ?, ?, ?, ?, 'current', ?, ?, ?, ?)",
+                (
+                    mid,
+                    root,
+                    content,
+                    scope,
+                    kind,
+                    source,
+                    timestamp,
+                    timestamp,
+                    importance,
+                    json.dumps(keywords or []),
+                ),
             )
-            db.execute("INSERT INTO memory_search VALUES (?, ?)", (mid, content))
+            db.execute(
+                "INSERT INTO memory_search VALUES (?, ?)",
+                (mid, content + " " + " ".join(keywords or [])),
+            )
         return self.memory(mid)
 
     def memory(self, mid):
         with self.connect() as db:
             row = db.execute("SELECT * FROM memories WHERE id=?", (mid,)).fetchone()
-            return dict(row) if row else None
+            return decode_memory(row) if row else None
 
     def memories(self, scope=None, history=False, limit=1000):
         clauses, params = [], []
@@ -99,7 +132,7 @@ class Knowledge:
             params.append(limit)
         with self.connect() as db:
             return [
-                dict(row)
+                decode_memory(row)
                 for row in db.execute(
                     "SELECT * FROM memories" + where + tail,
                     params,
@@ -111,50 +144,59 @@ class Knowledge:
         if not match:
             return []
         with self.connect() as db:
-            return [
-                dict(row)
+            records = [
+                decode_memory(row)
                 for row in db.execute(
                     "SELECT m.* FROM memory_search f JOIN memories m ON m.id=f.id "
                     "WHERE memory_search MATCH ? AND m.status='current' "
-                    "AND m.scope IN ('shared', ?) ORDER BY rank LIMIT ?",
+                    "AND m.scope IN ('shared', ?) ORDER BY rank, m.importance DESC LIMIT ?",
                     (match, profile, limit),
                 )
             ]
+        return self.review_notes(records) if hasattr(self, "review_notes") else records
 
     def memory_context(self, query, profile, budget):
         matches = self.search_memories(query, profile)
         # Recent explicitly saved preferences/decisions remain useful for new topics too.
         with self.connect() as db:
             recent = [
-                dict(row)
+                decode_memory(row)
                 for row in db.execute(
                     "SELECT * FROM memories WHERE status='current' AND scope IN ('shared', ?) "
-                    "ORDER BY created_at DESC LIMIT 5",
+                    "ORDER BY importance DESC, created_at DESC LIMIT 5",
                     (profile,),
                 )
             ]
         selected, seen, length = [], set(), 0
-        for memory in matches + recent:
-            if memory["id"] in seen:
+        candidates = matches + recent
+        if hasattr(self, "review_notes"):
+            candidates = self.review_notes(candidates)
+        for memory in candidates:
+            key = (memory["scope"], memory["kind"], memory_key(memory["content"]))
+            if key in seen:
                 continue
             cost = len(json.dumps(memory, ensure_ascii=False))
             if length + cost > budget:
                 continue
-            seen.add(memory["id"])
+            seen.add(key)
             selected.append(memory)
             length += cost
         return selected
 
     def forget(self, mid):
         with self.connect() as db:
+            db.execute("BEGIN IMMEDIATE")
             row = db.execute("SELECT root_id FROM memories WHERE id=?", (mid,)).fetchone()
             if not row:
                 return False
-            db.execute(
-                "DELETE FROM memory_search WHERE id IN (SELECT id FROM memories WHERE root_id=?)",
-                (row["root_id"],),
-            )
-            db.execute("DELETE FROM memories WHERE root_id=?", (row["root_id"],))
+            ids = {
+                r[0]
+                for r in db.execute("SELECT id FROM memories WHERE root_id=?", (row["root_id"],))
+            }
+            if hasattr(self, "forget_related"):
+                ids = self.forget_related(db, ids)
+            db.executemany("DELETE FROM memory_search WHERE id=?", [(i,) for i in ids])
+            db.executemany("DELETE FROM memories WHERE id=?", [(i,) for i in ids])
             return True
 
     def put_document(self, did, title, category, source, content, reviewed_at, bundled=False):

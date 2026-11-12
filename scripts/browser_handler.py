@@ -28,6 +28,69 @@ def main():
     async def complete(request: Request):
         body = await request.json()
         requests.append(body)
+        if any(t["function"]["name"] == "ReviewBatch" for t in body.get("tools", [])):
+            records = []
+            for message in body["messages"]:
+                text = message.get("content") or ""
+                if not isinstance(text, str):
+                    continue
+                # LangMem wraps the JSON in a session transcript; decode the embedded array.
+                for start, char in enumerate(text):
+                    if char != "[":
+                        continue
+                    try:
+                        value, _ = json.JSONDecoder().raw_decode(text[start:])
+                        if (
+                            isinstance(value, list)
+                            and value
+                            and isinstance(value[0], dict)
+                            and "id" in value[0]
+                        ):
+                            records = value
+                            break
+                    except ValueError:
+                        pass
+            assert records, "LangMem fixture received no source records"
+            record = records[0]
+            # This is a fixed fixture response, not a real consolidation model.
+            return {
+                "id": "simulated-review",
+                "object": "chat.completion",
+                "created": 0,
+                "model": "simulated-http-fixture",
+                "choices": [
+                    {
+                        "index": 0,
+                        "message": {
+                            "role": "assistant",
+                            "content": None,
+                            "tool_calls": [
+                                {
+                                    "id": "review-call",
+                                    "type": "function",
+                                    "function": {
+                                        "name": "ReviewBatch",
+                                        "arguments": json.dumps(
+                                            {
+                                                "proposals": [
+                                                    {
+                                                        "action": "enrich",
+                                                        "source_ids": [record["id"]],
+                                                        "content": record["content"],
+                                                        "keywords": ["mnemosyne"],
+                                                        "reason": "Fixture recall word",
+                                                    }
+                                                ]
+                                            }
+                                        ),
+                                    },
+                                }
+                            ],
+                        },
+                        "finish_reason": "tool_calls",
+                    }
+                ],
+            }
         if not body.get("stream"):
             return {
                 "model": "simulated-http-fixture",
@@ -113,6 +176,27 @@ def main():
                 download.value.save_as(str(output / "memory-export.json"))
                 exported = json.loads((output / "memory-export.json").read_text())
                 assert {r["status"] for r in exported["records"]} == {"current", "superseded"}
+                page.locator("#memory-content").fill("Owner prefers a bounded 8192 context.")
+                page.locator("#memory-source").fill("Scripted duplicate owner record")
+                page.locator("#save-memory").click()
+                expect(page.locator("#memories .card")).to_have_count(2)
+                page.locator("#run-sleep").click()
+                expect(page.locator("#sleep-runs")).to_contain_text("completed", timeout=15000)
+                expect(page.locator("#memories .card")).to_have_count(1)
+                applied = page.locator("#sleep-proposals .card").filter(has_text="merge · applied")
+                applied.get_by_role("button", name="Undo change", exact=True).click()
+                expect(page.locator("#memories .card")).to_have_count(2)
+                page.locator("#run-sleep").click()
+                expect(page.locator("#memories .card")).to_have_count(1)
+                expect(page.locator("#run-sleep")).to_be_enabled(timeout=15000)
+                pending = page.locator("#sleep-proposals .card").filter(has_text="enrich · pending")
+                expect(pending).to_have_count(1)
+                pending.get_by_role("button", name="Apply edit", exact=True).click()
+                expect(page.locator("#memories")).to_contain_text("mnemosyne")
+                page.get_by_text("Test recall", exact=True).first.click()
+                page.locator("#recall-query").fill("mnemosyne")
+                page.locator("#recall-form button").click()
+                expect(page.locator("#recall-results .card")).to_have_count(1)
                 page.screenshot(path=str(output / "handler-desktop.png"), full_page=True)
                 page.set_viewport_size({"width": 390, "height": 844})
                 assert not page.evaluate("document.documentElement.scrollWidth > innerWidth")
@@ -144,6 +228,28 @@ def main():
                 page.set_viewport_size({"width": 1440, "height": 1000})
                 page.screenshot(path=str(output / "library-desktop.png"), full_page=True)
 
+                page.goto(url + "/personalities")
+                expect(page.locator("#personality-cards .card")).to_have_count(3)
+                page.locator("#personality-tone").fill("A thoughtful browser-starlight voice")
+                page.locator("#preview-personality").click()
+                expect(page.locator("#personality-prompt")).to_contain_text("browser-starlight")
+                page.locator("#save-personality").click()
+                expect(page.locator("#personality-version")).to_contain_text("Revision 2")
+                page.reload()
+                expect(page.locator("#personality-tone")).to_have_value(
+                    "A thoughtful browser-starlight voice"
+                )
+                page.locator("#personality-profile").select_option("engineering")
+                expect(page.locator("#personality-tone")).not_to_have_value(
+                    "A thoughtful browser-starlight voice"
+                )
+                page.locator("#personality-profile").select_option("academic")
+                page.screenshot(path=str(output / "personalities-desktop.png"), full_page=True)
+                page.set_viewport_size({"width": 390, "height": 844})
+                assert not page.evaluate("document.documentElement.scrollWidth > innerWidth")
+                page.screenshot(path=str(output / "personalities-phone.png"), full_page=True)
+                page.set_viewport_size({"width": 1440, "height": 1000})
+
                 page.goto(url)
                 expect(page.locator("#message")).to_be_enabled()
                 page.locator("#allow-avatar").uncheck()
@@ -154,6 +260,7 @@ def main():
                 expect(page.locator(".pending")).to_contain_text("Simulated server")
                 expect(page.locator(".message.assistant")).to_contain_text("A live reply.")
                 assert "8192" in json.dumps(requests[-1]["messages"])
+                assert "browser-starlight" in json.dumps(requests[-1]["messages"])
                 assert "4096" not in json.dumps(requests[-1]["messages"])
                 page.locator("#allow-avatar").uncheck()
                 page.locator("#message").fill("Please cancel this reply")
@@ -191,7 +298,9 @@ def main():
         server.should_exit = True
         thread.join(timeout=5)
     print(
-        "Handler browser checks passed: memory correction/export/forget, library import/search, "
+        "Handler browser checks passed: memory correction/export/forget, sleep merge/undo, "
+        "LangMem HTTP integration, recall enrichment, personality save/reload/isolation, "
+        "library import/search, "
         "SSE preview, buffered replies, reload recovery, cancellation, and desktop/phone layouts."
     )
     print("This used a simulated HTTP model server, not real inference. Evidence:", output)

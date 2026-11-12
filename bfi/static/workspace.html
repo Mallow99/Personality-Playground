@@ -11,7 +11,7 @@
 <body>
   <header><a class="brand" href="/">Best Friend Initiative</a>
     <nav aria-label="Workspace"><a href="/">Chat</a><a href="/handler">Handler & memory</a>
-      <a href="/library">Research library</a></nav></header>
+      <a href="/library">Research library</a><a href="/personalities">Personalities</a></nav></header>
   <main>
     <p class="eyebrow">YOUR LOCAL WORKSPACE</p>
     <h1 id="page-heading">Handler & memory</h1>
@@ -42,12 +42,51 @@
           <label>Source or reason<input id="memory-source" maxlength="1000" placeholder="For example: my correction today, or a project note" required /></label>
           <label>Scope<select id="memory-scope"><option value="shared">Shared</option><option value="academic">Academic</option><option value="engineering">Coding / security</option><option value="business">Business</option><option value="companion">Original draft</option></select></label>
           <label>Kind<select id="memory-kind"><option value="fact">Fact</option><option value="preference">Preference</option><option value="decision">Decision</option><option value="experience">Experience</option></select></label>
+          <label>Importance<select id="memory-importance"><option value="1">1 · Low</option><option value="2">2</option><option value="3" selected>3 · Normal</option><option value="4">4</option><option value="5">5 · High</option></select></label>
+          <label>Recall keywords<input id="memory-keywords" maxlength="480" placeholder="Up to 8 alternate words, separated by commas" /></label>
           <div><button id="save-memory" type="submit">Save memory</button><button id="clear-memory" type="button" class="secondary">Clear form</button></div>
         </form>
         <label class="filter-label">Show records<select id="memory-filter"><option value="">All scopes</option><option value="shared">Shared</option><option value="academic">Academic</option><option value="engineering">Coding / security</option><option value="business">Business</option></select></label>
         <div id="memories" class="cards"></div>
-        <p class="muted">Corrections preserve earlier versions in export. Forget removes a saved memory and its corrections. Past conversations, tool traces, backups and earlier exports are separate records. No automatic memory extraction or weight training runs here.</p>
+        <p class="muted">Corrections preserve earlier versions in export. Forget removes the saved memory family, linked consolidations and related review drafts. Past conversations, tool traces, backups and earlier exports are separate records. No automatic chat extraction or weight training runs here.</p>
+        <details><summary>Test recall</summary>
+          <p class="muted">Check current shared and character records using their text and alternate keywords.</p>
+          <form id="recall-form" class="form-grid"><label>Search<input id="recall-query" maxlength="300" required /></label><label>Character<select id="recall-profile"><option value="academic">Academic</option><option value="engineering">Engineering</option><option value="business">Business</option></select></label><button type="submit">Test recall</button></form>
+          <div id="recall-results" class="cards"></div>
+        </details>
       </section>
+      <section class="panel" id="sleep-section">
+        <div class="section-top"><h2>Memory sleep</h2><button id="refresh-sleep" class="secondary">Refresh review</button></div>
+        <p>Give saved memories a quiet review: combine duplicates, suggest clearer wording and search keywords, and flag contradictions. Original sources stay inspectable, and applied changes can be undone.</p>
+        <p class="muted">Powered by LangMem when a real model with structured tool calls is connected. Without one, exact-duplicate cleanup still works. A consistency review cannot establish whether a real-world fact is true.</p>
+        <form id="sleep-settings-form" class="form-grid">
+          <label class="check"><input type="checkbox" id="sleep-enabled" /> Sleep automatically while idle</label>
+          <label class="check"><input type="checkbox" id="sleep-model-review" /> Include model-assisted review</label>
+          <label class="check"><input type="checkbox" id="sleep-auto-merge" /> Apply exact duplicate merges automatically</label>
+          <label>Wait after activity (minutes)<input type="number" id="sleep-idle" min="1" max="1440" required /></label>
+          <label>Minimum time between automatic passes (minutes)<input type="number" id="sleep-interval" min="5" max="10080" required /></label>
+          <label>Model review records per pass<input type="number" id="sleep-limit" min="2" max="100" required /></label>
+          <label>Review output token limit<input type="number" id="sleep-tokens" min="128" max="4096" required /></label>
+          <label>Shared-memory reviewer<select id="sleep-reviewer"><option value="academic">Academic connection</option><option value="engineering">Engineering connection</option><option value="business">Business connection</option></select></label>
+          <div><button type="submit">Save sleep settings</button><button type="button" id="run-sleep">Sleep now</button><button type="button" id="stop-sleep" class="secondary">Stop sleep</button></div>
+        </form>
+        <p class="muted">Chat interrupts sleep and has priority. Private memories are reviewed only through their own character's connection. Model suggestions wait here for review; ambiguous conflicts need your resolution.</p>
+        <div id="sleep-runs" role="status"></div>
+        <h3>Changes and suggestions</h3><div id="sleep-proposals" class="cards"></div>
+      </section>
+    </section>
+    <section id="personality-section" class="panel">
+      <div class="section-top"><h2>Character personalities</h2><button id="export-personalities" class="secondary">Export personalities</button></div>
+      <p>Starting points for Academic, Engineering and Business. We can craft their full personalities later; these settings give each one a separate, editable place to grow.</p>
+      <p class="muted">Saved settings apply to new chats. Existing conversations keep their personality snapshot. These are provisional prompt settings, not trained model weights, and do not grant tool permissions.</p>
+      <div id="personality-cards" class="cards"></div>
+      <label class="filter-label">Edit character<select id="personality-profile"><option value="academic">Academic</option><option value="engineering">Engineering</option><option value="business">Business</option></select></label>
+      <p id="personality-version" class="muted"></p>
+      <form id="personality-form"><div id="personality-fields" class="form-grid"></div>
+        <button type="submit" id="save-personality">Save personality</button><button type="button" id="preview-personality" class="secondary">Preview prompt</button>
+      </form>
+      <details id="personality-preview"><summary>Actual prompt preview</summary><pre id="personality-prompt"></pre></details>
+      <details><summary>Saved revisions</summary><div id="personality-history"></div></details>
     </section>
     <section id="library-section">
       <div class="section-top"><h2>Research library</h2><button id="export-research">Export library</button></div>

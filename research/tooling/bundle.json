@@ -22,5 +22,13 @@
     "file": "sources-2026-11-11.md",
     "source": "research/tooling/sources-2026-11-11.md",
     "reviewed_at": "2026-11-11"
+  },
+  {
+    "id": "memory-sleep-2026-11-12",
+    "title": "Memory sleep \u2014 existing approaches and the BFI integration",
+    "category": "memory",
+    "file": "memory-sleep-2026-11-12.md",
+    "source": "research/tooling/memory-sleep-2026-11-12.md",
+    "reviewed_at": "2026-11-12"
   }
 ]

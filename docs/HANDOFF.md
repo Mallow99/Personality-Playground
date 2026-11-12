@@ -1,5 +1,31 @@
 # Handoff: local handler and paused visual work
 
+## Memory sleep and personality controls (2026-11-12)
+
+The owner requested smarter recall, sleep-time consolidation/correction, and a
+place to configure the three personalities before crafting them together. They
+specifically asked to check existing systems and avoid starting from scratch.
+
+The same `bfi/handler-core` branch / draft PR #2 now adds LangMem-backed typed
+review, reversible exact duplicate merges, conflict flags, alternate recall keywords,
+importance and a recall inspector. Sleep is manual or idle-triggered and yields
+to chat. It reviews saved memories, not raw conversation extraction or model weights.
+Only exact duplicates apply automatically; other edits remain inspectable proposals.
+Stale edits and unsafe undo are rejected. Forget includes linked consolidations
+and relevant review snapshots. The app must be running for idle sleep to work.
+
+`/personalities` exposes independent, persistent settings for Academic, Engineering
+and Business, prompt preview, revisions, restore and export. These are deliberately
+provisional scaffolds. New chats snapshot the active revision; old chats stay stable.
+No final personality, training, GPU performance, voice/media or visual approval is
+implied. Review [the implementation guide](handler.md) and
+[the comparison note](../research/tooling/memory-sleep-2026-11-12.md).
+
+Validation covers 104 backend tests, Ruff, existing Chromium chat smoke and expanded
+handler browser flows. The new flows exercise real LangMem library/HTTP integration
+using a simulated tool-capable server, merge/undo, recall enrichment, and personality
+save/reload/isolation. Real-model memory quality is still unmeasured.
+
 ## Handler checkpoint (2026-11-11)
 
 The owner delegated best judgment on the initial tooling and asked for a working

@@ -25,6 +25,11 @@ button:disabled { opacity:.55; cursor:wait; }.secondary { background:#fff; color
 label { display:flex; flex-direction:column; gap:6px; font-size:13px; font-weight:600; }
 input,textarea,select { width:100%; padding:10px 12px; border:1px solid #bac9b9; border-radius:7px; background:#fff; color:var(--ink); font:inherit; min-width:0; }
 textarea { resize:vertical; }
+.check { flex-direction:row; align-items:center; font-weight:500; }.check input { width:auto; }
+.card textarea,.card input { margin:8px 0; }.card button { margin:5px 5px 5px 0; }
+.card details { font-size:12px; margin:12px 0; }.card details p { border-left:2px solid var(--line); padding-left:10px; }
+.card a { display:inline-block; margin-left:5px; }
+#personality-form { margin:22px 0; } #sleep-runs p { overflow-wrap:anywhere; }
 .filter-label { max-width:260px; }.search-form { display:flex; gap:10px; margin-top:22px; }.search-form input { flex:1; }
 pre { white-space:pre-wrap; overflow-wrap:anywhere; background:#f1f4ed; padding:15px; border-radius:8px; font:12px/1.7 ui-monospace,monospace; }
 .report-content { max-height:70vh; overflow:auto; background:transparent; padding:0; }

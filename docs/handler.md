@@ -2,7 +2,8 @@
 
 The handler coordinates the existing character app and replaceable local model
 connections. It now provides an owner workspace at `/handler`, a research library
-at `/library`, and queued generation in chat. It runs without Notion, an API key,
+at `/library`, personality controls at `/personalities`, and queued generation in chat.
+It runs without Notion, an API key,
 an embedding model, a vector service, or a GPU in explicitly labeled mock mode.
 Real responses require a separately running model server.
 
@@ -70,25 +71,89 @@ enter that profile's context. The server enforces this rule. Corrections are
 transactional and remove superseded versions from active retrieval.
 
 The chat's Saved memory checkbox controls context inclusion. Retrieval combines
-bounded lexical matches with a few recent owner-saved records; `BFI_MEMORY_CHARS`
+bounded lexical matches (including alternate recall keywords) with a few important
+or recent owner-saved records, suppressing exact duplicates; `BFI_MEMORY_CHARS`
 defaults to 4000. The application logs which record IDs/sources were retrieved.
 Those references establish supplied evidence, not proof the model used it well.
 When Research lookup is opted in, a real tool-capable model can search saved
 research and, if Saved memory is enabled, its permitted memory scope.
 
-Models cannot write memory through these tools. There is no automatic fact
-extraction, embedding service, background consolidation, or online weight update.
-This baseline was chosen to keep sources/corrections inspectable and resource use
-small before comparing advanced memory providers.
+Models cannot write memory through chat tools. There is no automatic extraction
+from conversations, embedding service, or online weight update. The separate sleep
+workflow below reviews already-saved records.
 
-Forget removes the saved record and its correction family from memory and its
-search index. It does not erase earlier conversation text, completed tool traces,
+Forget removes the connected saved-memory family, including its corrections,
+consolidated descendants/retained sources and related review drafts, from memory
+and its search index. It does not erase earlier conversation text, completed tool traces,
 backups, or exported files. These are separate records and retention choices.
-Memory exports include earlier corrected versions; ordinary retrieval does not.
+Memory exports include earlier corrected versions and sleep audit/lineage;
+ordinary retrieval does not.
+
+## Memory sleep and review
+
+The owner asked for an existing approach rather than inventing a consolidation
+engine. We compared Letta dreaming, Mem0 Dream and LangMem. The
+[research note](../research/tooling/memory-sleep-2026-11-12.md) records sources,
+tradeoffs and the implemented boundary. `langmem` and `langchain-openai` are now
+locked dependencies. `create_memory_manager` performs typed proposal extraction;
+it does not directly write or delete BFI's database.
+
+At `/handler`, Memory sleep runs manually with **Sleep now**, or automatically
+while the app remains running. Defaults: enabled, ten idle minutes, at least an
+hour between automatic attempts, up to 20 candidate records, and a 2048-token
+model output limit. The page can change these values, disable model review, or
+disable automatic exact merges. Oldest unreviewed records get considered first;
+context fit may reduce coverage. A run reports how many records it reviewed.
+Cross-batch semantic comparisons are not comprehensive.
+
+Exact duplicate cleanup needs no model. It compares text after whitespace
+normalization, preserving case/punctuation, scope and kind. Automatic merges keep
+original records as superseded, retain source links and offer **Undo change**.
+Model-assisted review needs a real endpoint with structured function-tool support.
+Mock mode explicitly reports that limitation; it never pretends to have reviewed
+meaning or verified facts. It can still perform exact cleanup.
+
+LangMem can propose semantic merges, evidence-supported wording corrections,
+alternate recall keywords, or conflicts. Only exact duplicates apply automatically.
+Review/edit other proposals in the page, then apply or dismiss them. Resolving a
+conflict requires your own text and source/reason. Pending valid conflicts are
+marked in recall/context so a character is not silently given a settled fact.
+This checks consistency against supplied evidence; it is not internet fact checking.
+
+Shared memories use the selected shared reviewer connection. Each private scope
+uses only its own profile's endpoint, in a separate call. No hosted model fallback,
+embedding request or LangSmith tracing is enabled. Sleep holds the same local
+generation lock as chat, and a new chat request preempts/cancels sleep. Closing
+the external HTTP request does not prove the runtime immediately stops GPU work.
+
+Review runs, proposals and settings persist in `knowledge.sqlite3`. Restarted work
+becomes interrupted without replay. Applying checks that the exact source records
+are still current; undo refuses to overwrite newer edits. Forget purges related
+proposal snapshots, preventing undo or a late model result from restoring forgotten
+text. Separate old exports/conversations/backups remain separate records.
+
+Use **Test recall** to check keywords and character scope. Importance (1–5) affects
+which records remain available as general context; it is not model confidence.
+
+## Personality settings ready for later crafting
+
+`/personalities` provides independent Academic, Engineering and Business editors:
+display name, purpose, tone, traits, values, interests, relationship/speaking style,
+humor, initiative, response length, boundaries, fictional backstory and custom notes.
+The initial values are provisional scaffolds based on the existing profiles, not
+final characters. The optional backstories are blank.
+
+Preview shows the actual compiled system prompt. Saving creates a durable revision;
+history can restore an earlier revision as a new one. Export includes all revisions.
+Stale saves are rejected so two browser tabs do not overwrite each other's work.
+New conversations snapshot the active revision and record it in reply provenance.
+Existing conversations retain their earlier prompt; start a new chat for new settings.
+The original profile's evidence/tool rules remain part of the compiled prompt.
+Style controls do not grant tools, change memory scope or train model weights.
 
 ## Research library and cross-chat continuity
 
-Two original research reports and the 168-URL source catalog are bundled under
+The two original research reports, 168-URL source catalog and later research notes are bundled under
 `research/tooling/`. A manifest indexes them into SQLite FTS5 at startup. Results
 retain the source, review date, document ID, and section number. Indexing uses no
 model calls or remote service. Quotes and operators in queries are treated as
